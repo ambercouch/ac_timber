@@ -1,29 +1,35 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js" lang="{{ function('language_attributes') }}">
 <head>
-  <meta charset="utf-8">
+  <meta charset="{{ function('bloginfo', 'charset') }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title></title>
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="{{ function('bloginfo','pingback_url') }}">
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+  {{ function('wp_head') }}
 </head>
 
-<body>
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please
-  <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
+<body class="{{ body_class }}">
+<div id="page" class="site">
+  <header id="masthead" class="site--masthead" role="banner">
+    <div class="masthead">
+      <div class="masthead__branding">
 
-{% block content %}
-  <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
-{% endblock %}
+      </div>
+    </div>
+  </header>
+  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_act' ); ?></a>
+  <!--[if lt IE 8]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please
+    <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  {% block content %}
+    <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+  {% endblock %}
+</div>
+
 
 </body>
 
