@@ -1,0 +1,31 @@
+  <div class="masthead">
+    <div class="masthead__branding">
+      {% if fn('is_front_page') %}
+        <h1 class="site-title">
+          <a href="{{ site.url }} " rel="home">{{ site.name }}</a>
+        </h1>
+      {% else %}
+        <span class="site-title">
+               <a href="{{ site.url }} " rel="home">{{ site.name }}</a>
+            </span>
+      {% endif %}
+    </div>
+
+    <nav class="masthead__navigation" role="navigation">
+      <div class="naigavigation--primary">
+        <ul class="naigavigation--primary__list">
+          {% for item in menuPrimary.get_items %}
+            <li class="naigavigation--primary__item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
+              {% if item.get_children %}
+                <ul class="naigavigation--primary__sub-list">
+                  {% for child in item.get_children %}
+                    <li class="naigavigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
