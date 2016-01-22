@@ -1,0 +1,23 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% block content %}
+  <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }}">
+
+    <header class="entry-header post{{ postFormatClass }}__header ">
+
+      {% if fn('is_single') %}
+        <h1 class="entry-title post{{ postFormatClass }}__title--single">
+          {{ post.title }}
+        </h1>
+      {% else %}
+        <h2 class="entry-title post{{ postFormatClass }}__title--list">
+          {{ post.title }}
+        </h2>
+      {% endif %}
+
+    </header>
+    <div class="entry-content post{{ postFormatClass }}">
+      {{ post.post_excerpt | ac_dd }}
+    </div>
+
+  </article>
+{% endblock %}
