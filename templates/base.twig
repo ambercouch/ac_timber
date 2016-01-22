@@ -1,36 +1,34 @@
 <!doctype html>
-<html class="no-js" lang="{{ function('language_attributes') }}">
+<html {{ site.language_attributes }}>
 <head>
-  <meta charset="{{ function('bloginfo', 'charset') }}">
+
+  <meta charset="{{ site.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link rel="pingback" href="{{ function('bloginfo','pingback_url') }}">
+  <link rel="pingback" href="{{ site.pingback_url }}">
 
-  {{ function('wp_head') }}
+  {{ fn('wp_head') }}
+
 </head>
 
 <body class="{{ body_class }}">
 <div id="page" class="site">
-  <header id="masthead" class="site--masthead" role="banner">
-    <div class="masthead">
-      <div class="masthead__branding">
 
-      </div>
-    </div>
+  {% include 'site-accessibility.twig' %}
+
+  <header id="masthead" class="site--masthead" role="banner">
+
+    {% include 'masthead.twig' %}
+
   </header>
-  <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_act' ); ?></a>
-  <!--[if lt IE 8]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please
-    <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+
 
   {% block content %}
     <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
   {% endblock %}
-</div>
 
-
+</div>{# /#page #}
 </body>
 
 </html>
