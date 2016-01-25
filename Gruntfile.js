@@ -73,7 +73,7 @@ module.exports = function (grunt) {
           options: {
               svg: {
                   style: "display:none",
-                  viewBox: '0 0 101 101'
+                  viewBox: '0 0 100 100'
               },
               fixedSizeVersion: {
                   width: 50,
@@ -88,7 +88,7 @@ module.exports = function (grunt) {
           },
           default: {
               files: {
-                  'assets/img/defs.svg': ['assets/img/svg/*.svg']
+                  'dist/assets/img/defs.svg': ['assets/images/svg/*.svg']
               }
               //your_target: {
 
