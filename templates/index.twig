@@ -1,12 +1,10 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <p>Hello world! This AC Timber. I am the content Block inside index.twig.</p>
+
   {% for post in posts %}
-
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-
     {% include 'content'~postFormat~'.twig' %}<br>
-
   {% endfor %}
+
 {% endblock %}
