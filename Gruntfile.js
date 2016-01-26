@@ -64,7 +64,7 @@ module.exports = function (grunt) {
                   ]
               },
               options: {
-                  proxy: 'cardiffmusic.local',
+                  proxy: 'strettonclimatecare.local',
                   watchTask: true
               }
           }
@@ -74,15 +74,6 @@ module.exports = function (grunt) {
               svg: {
                   style: "display:none",
                   viewBox: '0 0 100 100'
-              },
-              fixedSizeVersion: {
-                  width: 50,
-                  height: 50,
-                  suffix: '-fix',
-                  maxDigits: {
-                      translation: 4,
-                      scale: 4,
-                  },
               },
               prefix: 'icon-', // This will prefix each ID
           },
@@ -121,5 +112,6 @@ module.exports = function (grunt) {
   // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass', 'postcss', 'uglify', 'svgstore']);
     grunt.registerTask('serve', ['browserSync', 'watch']);
+    grunt.registerTask('css', ['sass', 'postcss']);
 
 };

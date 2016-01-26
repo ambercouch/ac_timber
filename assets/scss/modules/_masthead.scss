@@ -1,0 +1,6 @@
+.masthead{
+
+  &__navigation{
+    @extend %off-page--curtain;
+  }
+}
