@@ -3,3 +3,4 @@
 
 require_once get_template_directory() . '/lib/functions--timber.php';
 require_once get_template_directory() . '/lib/functions--theme-setup.php';
+require_once get_template_directory() . '/lib/functions--enqueue.php';
