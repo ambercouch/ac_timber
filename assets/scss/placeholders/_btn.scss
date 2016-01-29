@@ -1,0 +1,10 @@
+%btn{
+  @extend .btn;
+}
+.btn--cta1{
+  @extend .btn;
+  background: $brand-col-1;
+  border-color: $brand-col-1;
+  @include inuit-font-size(18px);
+  width: 265px;
+}

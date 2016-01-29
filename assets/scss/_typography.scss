@@ -3,12 +3,39 @@
  */
 html{
   font-family: $base-font-family;
+  font-weight: 300;
 }
 
 @include headings(1,6){
   font-family: $heading-font-family;
+  font-weight: 900;
   margin-top: 0;
 }
+
+h1 {
+  @include inuit-font-size($inuit-heading-size-1);
+}
+
+h2 {
+  @include inuit-font-size($inuit-heading-size-2);
+}
+
+h3 {
+  @include inuit-font-size($inuit-heading-size-3);
+}
+
+h4 {
+  @include inuit-font-size($inuit-heading-size-4);
+}
+
+h5 {
+  @include inuit-font-size($inuit-heading-size-5);
+}
+
+h6 {
+  @include inuit-font-size($inuit-heading-size-6);
+}
+
 
 p{
   margin-top: 0;

@@ -1,0 +1,13 @@
+html {
+  font-size: ($inuit-base-font-size / 16px) * 1em; /* [1] */
+  line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
+
+  @include media-query(lap){
+    font-size: ($inuit-base-font-size / 16px) * 0.9em; /* [1] */
+    line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
+  }
+  @include media-query(palm){
+    font-size: ($inuit-base-font-size / 16px) * 0.71em; /* [1] */
+    line-height: ($inuit-base-line-height / $inuit-base-font-size) * 1.1; /* [1] */
+  }
+}

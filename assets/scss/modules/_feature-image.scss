@@ -1,5 +1,30 @@
-.feature-image__img {
-  width: 100%;
-  height: 100%;
-  display: block;
+
+.feature-image {
+  position: relative;
+
+  @include media-query(lap-and-up) {
+    article:nth-of-type(even) & {
+
+      @include internal-arrow(left);
+
+    }
+    article:nth-of-type(odd) & {
+      @include internal-arrow(right);
+    }
+  }
+  @include media-query(palm){
+    @include internal-arrow(bottom);
+    margin-bottom: $inuit-base-spacing-unit--large;
+  }
+
+  &__img {
+    width: 500px;
+    height: 500px;
+    max-width: 100%;
+    object-fit: cover;
+    @include media-query(palm) {
+      width: 100%;
+      height: 250px;
+    }
+  }
 }

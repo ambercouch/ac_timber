@@ -1,74 +1,186 @@
-.post{
+.post {
+  @extend .u-1-of-1-lap;
+  @extend .u-1-of-1-palm;
+
   background: #fff;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 1000px;
   height: 500px;
   overflow: hidden;
   box-shadow: $z1-shadow;
+  margin-bottom: $inuit-base-spacing-unit--large * 2;
 
-  &__feature-image{
-    width: 50%;
-    overflow: hidden;
-    flex-basis: 100%;
+  @include media-query(palm) {
+    flex-wrap: nowrap;
+    height: auto;
   }
-  &__header{
+}
+
+/*
+ *.post Elements
+ */
+.post {
+  &__feature-image {
+    @extend .u-1-of-2-desk;
+    @extend .u-2-of-5-lap;
+    @extend .u-1-of-1-palm;
+
+    overflow: hidden;
+    @include media-query(lap-and-up){
+      flex-basis: 100%;
+    }
+
+
+    @include media-query(lap-and-up) {
+      article:nth-last-of-type(odd) & {
+        order: 9;
+      }
+    }
+
+  }
+  &__header {
+    @extend .u-1-of-2-desk;
+    @extend .u-3-of-5-lap;
+    @extend .u-1-of-1-palm;
+
     display: flex;
     flex-direction: column-reverse;
-    width: 50%;
     overflow: hidden;
     padding: $inuit-base-spacing-unit--large;
     padding-bottom: 0;
 
+    @include media-query(palm) {
+      padding-top: 0;
+    }
   }
-  &__body{
-    width: 50%;
+  &__title {
+    @include inuit-font-size($inuit-heading-size-1, 1);
+
+    text-transform: uppercase;
+
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-1, 1.2);
+    }
+    a {
+      transition: all 0.3s ease;
+      color: $col-scc-gray;
+      text-decoration: none;
+      &:hover {
+        color: $brand-col-2;
+      }
+    }
+  }
+  &__post-meta {
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+  &__body {
+    @extend .u-1-of-2-desk;
+    @extend .u-3-of-5-lap;
+    @extend .u-1-of-1-palm;
+
     padding: 0 $inuit-base-spacing-unit--large;
   }
-  &__footer{
-    width: 50%;
+  &__footer {
+    @extend .u-1-of-2-desk;
+    @extend .u-3-of-5-lap;
+    @extend .u-1-of-1-palm;
+
     padding: 0 $inuit-base-spacing-unit--large;
     align-self: flex-end;
     flex-grow: 1;
     position: relative;
+    @include media-query(palm){
+      padding: 0 $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large * 1.5;
+    }
   }
-  &__comment-link{
+  &__read-more {
+    @include inuit-font-size($inuit-heading-size-2, 1);
+
+    transition: all 0.3s ease;
+    color: $col-scc-gray;
+    text-transform: uppercase;
+    font-family: $heading-font-family;
+    text-decoration: none;
+    &:hover {
+      color: $brand-col-2;
+    }
+
+  }
+  &__comment-link {
+    color: $col-scc-gray;
+    text-decoration: none;
     position: absolute;
     padding: $inuit-base-spacing-unit;
     bottom: 0;
     right: 0;
   }
+  &__comment-count {
+    color: $col-scc-gray;
+    background: $brand-col-1;
+    padding: 0 0.5em;
+    color: #fff;
+    font-family: $heading-font-family;
+  }
+}
 
-  &--aside__feature-image{
-     @extend .post__feature-image;
-   }
-  &--aside__header{
-    @extend .post__header;
-  }
-  &--aside__body{
-    @extend .post__body;
-  }
-  &--aside__footer{
-    @extend .post__footer;
-  }
-  &--aside__comment-link{
-    @extend .post__comment-link;
-  }
-
-  &--quote__feature-image{
+/**
+ * Modifiers
+ */
+.post{
+  &--aside__feature-image {
     @extend .post__feature-image;
   }
-  &--quote__header{
+  &--aside__header {
     @extend .post__header;
   }
-  &--quote__body{
+  &--aside__post-meta {
+    @extend .post__post-meta;
+  }
+  &--aside__title {
+    @extend .post__title
+  }
+  &--aside__body {
     @extend .post__body;
   }
-  &--quote__footer{
+  &--aside__footer {
     @extend .post__footer;
   }
-  &--quote__comment-link{
+  &--aside__read-more {
+    @extend .post__read-more;
+  }
+  &--aside__comment-link {
     @extend .post__comment-link;
+  }
+  &--aside__comment-count {
+    @extend .post__comment-count;
+  }
+
+  &--quote__feature-image {
+    @extend .post__feature-image;
+  }
+  &--quote__header {
+    @extend .post__header;
+  }
+  &--quote__post-meta {
+    @extend .post__post-meta;
+  }
+  &--quote__title {
+    @extend .post__title
+  }
+  &--quote__body {
+    @extend .post__body;
+  }
+  &--quote__footer {
+    @extend .post__footer;
+  }
+  &--quote__read-more {
+    @extend .post__read-more;
+  }
+  &--quote__comment-link {
+    @extend .post__comment-link;
+  }
+  &--quote__comment-count {
+    @extend .post__comment-count;
   }
 }

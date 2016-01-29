@@ -3,8 +3,12 @@
 
 @import "../vendor/inuit-defaults/settings.defaults";
 @import "var/settings.defaults";
-@import "var/settings.shadows";
+
 @import "var/settings.colours";
+@import "var/settings.fonts";
+@import "var/settings.headings";
+@import "var/settings.container";
+@import "var/settings.shadows";
 
 @import "../vendor/inuit-responsive-settings/settings.responsive";
 @import "var/settings.responsive";
@@ -12,33 +16,33 @@
 @import "../vendor/inuit-functions/tools.functions";
 @import "../vendor/inuit-mixins/tools.mixins";
 @import "../vendor/inuit-tools-widths/tools.widths";
-@import "../vendor/inuit-responsive-settings/settings.responsive";
+
 @import "../vendor/inuit-responsive-tools/tools.responsive";
 //@import "tools.aliases";
-//
+
 @import "../vendor/inuit-normalize/generic.normalize";
 @import "../vendor/inuit-box-sizing/generic.box-sizing";
 @import "../vendor/inuit-shared/generic.shared";
-@import "base";
-
 @import "../vendor/inuit-page/base.page";
 @import "../vendor/inuit-headings/base.headings";
+
+
 
 ////@import "base.links";
 ////@import "base.quotes";
 //
-//@import "../vendor/inuit-buttons/objects.buttons";
+@import "../vendor/inuit-buttons/objects.buttons";
 //@import "../vendor/inuit-layout/objects.layout";
 //@import "../vendor/inuit-media/objects.media";
 
+@import "base";
 @import "mixins";
 @import "helpers";
-@import "var/settings.container";
-@import "var/settings.fonts";
 @import "typography";
-@import "var/settings.container";
 @import "accessibility";
+
 @import "placeholders/off-page";
+@import "placeholders/btn";
 
 
 @import "modules/main";
@@ -48,6 +52,7 @@
 @import "modules/post";
 @import "modules/post-meta";
 @import "modules/feature-image";
+@import "modules/hero";
 //@import "ui/modules/placeholders/container";
 //@import "ui/modules/placeholders/layout";
 //@import "ui/modules/placeholders/responsive-toggle";

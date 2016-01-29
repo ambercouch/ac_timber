@@ -4,3 +4,13 @@
     @extend %off-page--curtain;
   }
 }
+
+.masthead{
+  &__branding{
+    @extend .u-1-of-1;
+
+    position: absolute;
+    bottom: 100%;
+    background: #fff;
+  }
+}

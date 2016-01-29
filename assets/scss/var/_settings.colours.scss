@@ -9,7 +9,10 @@ and open the template in the editor.
 */
 
 $col-scc-gray-xxlight : #f1f1f1;
+$col-scc-gray : #474b4c;
+$col-scc-orange : #d47a1c;
+$col-scc-teal : #0b556d;
 
-$brand-col-1 : #d47a1c;
-$brand-col-2 : #0b556d;
+$brand-col-1 : $col-scc-orange;
+$brand-col-2 : $col-scc-teal;
 
