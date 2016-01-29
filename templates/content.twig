@@ -31,21 +31,21 @@
     {% if  post.post_excerpt != '' %}
       <div class="entry-content post{{ postFormatClass }}__body">
         {{ post.post_excerpt }}
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More &hellip;</a>
       </div>
 
     {% else %}
       <div class="entry-content post{{ postFormatClass }}__body">
         <p>{{ post.content | striptags | truncate(20) }}</p>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More &hellip;</a>
       </div>
 
     {% endif %}
+
     <footer class="post{{ postFormatClass }}__footer">
       <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
-        <span>{{ post.comment_count }} Comments </span>
+        <span class="post{{ postFormatClass }}__comment-count" >{{ post.comment_count }}</span> Comments
       </a>
-
     </footer>
 
   </article>

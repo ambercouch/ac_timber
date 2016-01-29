@@ -19,10 +19,12 @@
   {% include 'site-accessibility.twig' %}
 
   <header id="masthead" class="site__masthead" role="banner">
-
     {% include 'masthead.twig' %}
-
   </header>
+
+  {%  block hero %}
+    {% include 'hero.twig' %}
+  {% endblock %}
 
   <section id="primary" class="site__main">
     <div class="main">
@@ -36,28 +38,13 @@
   </section>
 
 </div>{# /#page #}
-<link rel="stylesheet" href="{{ site.theme.link }}/style.css">
-<script>
+<footer class="site__footer" role="contentinfo">
+  <div class="footer">
 
-  var showButton, container;
+  </div>
+</footer>
+{% include 'footer_scripts.twig' %}
+{{ fn('wp_footer') }}
 
-  showButton = document.getElementById('menuButton');
-  container = document.getElementById('primaryNavigation');
-
-  console.log(showButton);
-  showButton.onclick = function () {
-    console.log(showButton.dataset.state);
-    if ('off' === showButton.dataset.state) {
-      showButton.dataset.state = 'on';
-      container.dataset.state = 'on';
-    } else {
-      showButton.dataset.state = 'off';
-      container.dataset.state = 'off';
-    }
-    console.log(showButton.dataset.state);
-  }
-
-</script>
 </body>
-
 </html>
