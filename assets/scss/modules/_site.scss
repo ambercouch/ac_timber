@@ -14,9 +14,10 @@
     &[data-hidden=false]{
       transform: translate(0, 100%);
     }
-
   }
 
-
+  &__main{
+    padding-top:$inuit-base-spacing-unit--large * 2;
+  }
 
 }

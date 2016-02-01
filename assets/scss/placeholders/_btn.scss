@@ -8,4 +8,11 @@
   @include inuit-font-size(18px);
   width: 270px;
   white-space: pre;
+  margin-bottom: $inuit-base-spacing-unit;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  @include media-query(lap-and-up){
+    margin-bottom: 0;
+  }
 }

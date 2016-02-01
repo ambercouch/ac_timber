@@ -4,9 +4,13 @@
     display: block;
   }
   &__logo{
-    height: 50px;
-    width: 300px;
+    @include size(200px, 33px);
+    margin-left: 6px;
     display: block;
+    @include media-query(lap-and-up){
+      @include size(300px, 50px);
+      margin-left: 6px;
+    }
   }
 
 }

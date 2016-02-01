@@ -2,7 +2,6 @@
   position: relative;
   height: 100vh;
   width: 100vw;
-  margin-bottom:$inuit-base-spacing-unit--large * 2;
   @include color-overlay($brand-col-2, 0.4);
   overflow: hidden;
 }
@@ -12,7 +11,7 @@
  */
 .hero{
   &__logo{
-    margin-bottom: $inuit-base-spacing-unit--large;
+    margin-bottom: $inuit-base-spacing-unit;
   }
   &__image{
     position: absolute;
@@ -41,9 +40,23 @@
     }
   }
   &__call-to-action{
+    //@extend .u-1-of-2-desk;
+    max-width: 650px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
     justify-content: space-around;
-    @extend .u-1-of-2-desk;
     margin: 0 auto;
+    @include media-query(lap-and-up){
+      flex-direction: row;
+    }
   }
+  &__scroll-to{
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+  }
+
 }
