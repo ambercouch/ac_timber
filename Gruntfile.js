@@ -59,9 +59,7 @@ module.exports = function (grunt) {
             dev: {
                 bsFiles: {
                     src: [
-                        'style.css',
-                        '*.php',
-                        '*.twig'
+                        '*.{css,php,twig}'
                     ]
                 },
                 options: {
