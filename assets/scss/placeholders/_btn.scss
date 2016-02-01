@@ -2,17 +2,23 @@
   @extend .btn;
 }
 .btn--cta1{
-  @extend .btn;
+  @extend %btn;
+  transition: box-shadow 0.3s ease;
   background: $brand-col-1;
   border-color: $brand-col-1;
-  @include inuit-font-size(18px);
+  @include inuit-font-size(20px);
   width: 270px;
   white-space: pre;
   margin-bottom: $inuit-base-spacing-unit;
+  box-shadow: 0 3px 1px rgba(#000, 0.15);
   &:last-child{
     margin-bottom: 0;
   }
   @include media-query(lap-and-up){
     margin-bottom: 0;
+    @include inuit-font-size(18px);
+  }
+  &:hover{
+    box-shadow: 0 3px 1px rgba(#000, 0.25);
   }
 }

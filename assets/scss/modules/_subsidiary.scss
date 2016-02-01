@@ -1,0 +1,13 @@
+.subsidiary{
+  max-width:$site-container-width;
+  margin: 0 auto;
+  color: #fff;
+  padding-bottom: $inuit-base-spacing-unit--large;
+}
+
+.subsidiary{
+  &__island{
+    display: flex;
+    justify-content: space-around;
+  }
+}

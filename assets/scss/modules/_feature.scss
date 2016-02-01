@@ -1,0 +1,43 @@
+.feature{
+  max-width:$site-container-width;
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  padding-bottom: $inuit-base-spacing-unit--large;
+}
+.feature{
+
+  &__title{
+    @include inuit-font-size($inuit-heading-size-1);
+    text-transform: uppercase;
+  }
+
+  &__body{
+    @include inuit-font-size(28px, 1.3);
+    margin: 0 $inuit-base-spacing-unit--small ;
+  }
+  &__video{
+    background: #fff;
+    padding: $inuit-base-spacing-unit--small / 2;
+    margin: $inuit-base-spacing-unit--small auto ;
+    max-width: 800px;
+    @include media-query(lap-and-up){
+      padding: $inuit-base-spacing-unit--small;
+    }
+    iframe{
+      display: block;
+    }
+  }
+  &__content{
+    @extend .u-4-of-5-desk;
+    padding: 0 1em;
+    margin: 0 auto;
+    @include media-query(lap-and-up){
+      padding: 0;
+    }
+  }
+  &__cta{
+    display: flex;
+    justify-content: center;
+  }
+}

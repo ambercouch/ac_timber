@@ -60,3 +60,12 @@
   }
 
 }
+.has-icon{
+  line-height: 1 !important;
+}
+.has-icon__icon{
+  @include size(1em);
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 1 !important;
+}

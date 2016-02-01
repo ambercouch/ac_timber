@@ -21,6 +21,7 @@
     "inuit-shared": "~0.1.5",
     "inuit-spacing-responsive": "~0.0.8",
     "inuit-starter-kit": "~0.2.9",
-    "inuit-widths-responsive": "~0.2.2"
+    "inuit-widths-responsive": "~0.2.2",
+    "jquery.fitvids": "fitvids#~1.1.0"
   }
 }

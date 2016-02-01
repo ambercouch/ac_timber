@@ -14,7 +14,7 @@ module.exports = function (grunt) {
             },
             js: {
                 files: 'assets/js/*.js',
-                tasks: ['uglify']
+                tasks: ['jshint','uglify']
             }
         },
         sass: {
@@ -45,12 +45,17 @@ module.exports = function (grunt) {
                 src: 'style.css'
             }
         },//postcss
+        jshint: {
+            src: [
+                'assets/js/ac_timber.js'
+            ]
+        },
         uglify: {
             my_target: {
                 files: {
-                    'assets/dist/js/main.js': [
-                        '../_s/assets/dist/js/main.js',
-                        'assets/js/cm.js'
+                    'dist/js/main.js': [
+                        'assets/js/ac_timber.js',
+                        'assets/vendor/jquery.fitvids/jquery.fitvids.js'
                     ]
                 }
             }
@@ -102,11 +107,14 @@ module.exports = function (grunt) {
     // 3. Where we tell Grunt we plan to use this plug-in.
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-jshint');grunt.loadNpmTasks('grunt-contrib-jshint');grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-postcss');
-    grunt.loadNpmTasks('grunt-criticalcss');
+    //grunt.loadNpmTasks('grunt-criticalcss');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
     grunt.registerTask('default', ['sass', 'postcss', 'uglify', 'svgstore']);

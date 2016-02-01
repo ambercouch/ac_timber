@@ -20,6 +20,7 @@ if ( ! class_exists( 'Timber' ) ) {
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $context['foo'] = 'bar';
+$context['wp_oembed_get'] = TimberHelper::function_wrapper( 'wp_oembed_get', array('https://www.youtube.com/watch?v=FV96XY7Etmo', ['width'=>780]) );
 $templates = array( 'index.twig' );
 if ( is_home() ) {
     array_unshift( $templates, 'home.twig' );

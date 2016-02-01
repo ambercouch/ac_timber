@@ -12,7 +12,7 @@
       @include internal-arrow(right);
     }
   }
-  @include media-query(palm){
+  @include media-query(palm) {
     @include internal-arrow(bottom);
     margin-bottom: $inuit-base-spacing-unit--large;
   }
@@ -26,5 +26,34 @@
       width: 100%;
       height: 250px;
     }
+  }
+}
+
+.feature-image {
+  &--island {
+    position: relative;
+    @include color-overlay($brand-col-2, 0.3);
+    &__img {
+      width:100%;
+      display: block;
+    }
+
+    &__icon {
+      display: block;
+      @include size(200px, 100px);
+      margin: 0 auto;
+    }
+
+  }
+}
+
+.has-overlay{
+  position: relative;
+  &__overlay{
+    z-index: 999;
+    position:absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 100%;
   }
 }

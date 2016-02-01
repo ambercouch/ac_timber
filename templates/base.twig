@@ -13,17 +13,23 @@
 </head>
 
 <body class="{{ body_class }}">
+
 {% include 'defs.svg' %}
+
 <div id="page" class="site">
 
   {% include 'site-accessibility.twig' %}
 
-  <header id="act_masthead" data-hidden="true" class="site__masthead" role="banner">
-    {% include 'masthead.twig' %}
-  </header>
+  {% block masthead %}
+    <header id="act_masthead" data-hidden="true" class="site__masthead" role="banner">
+      {% include 'masthead.twig' %}
+    </header>
+  {% endblock %}
 
-  {%  block hero %}
-    {% include 'hero.twig' %}
+  {% block hero %}
+    <section class="site__hero">
+      {% include 'hero.twig' %}
+    </section>
   {% endblock %}
 
   <section id="primary" class="site__main">
@@ -37,12 +43,26 @@
     </div>
   </section>
 
+  {% block feature %}
+    <section id="feature" class="site__feature">
+      {% include 'feature.twig' %}
+    </section>
+  {% endblock %}
+
+  {% block subsidiary %}
+    <section id="subsidiary" class="site__subsidiary">
+      {% include 'subsidiary.twig' %}
+    </section>
+  {% endblock %}
+
 </div>{# /#page #}
+
 <footer class="site__footer" role="contentinfo">
   <div class="footer">
 
   </div>
 </footer>
+
 {% include 'footer_scripts.twig' %}
 {{ fn('wp_footer') }}
 
