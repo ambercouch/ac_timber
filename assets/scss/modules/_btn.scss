@@ -1,16 +1,35 @@
-.btn--menu{
-  position: fixed;
-  top: 2em;
+.btn{
+  display: block;
+  &__icon{
+    fill:#fff;
+    display: block;
+    @include size(2.2em);
+    margin: 0 auto 0;
+    position: relative;
+    top: 0.5em;
+
+  }
+}
+.btn--square{
   border: 0;
+  padding: 0;
+  @include inuit-font-size(14px);
+  @include size(3.2em);
+  background: rgba($brand-col-1, 0.2);
+  &:hover{
+    background: rgba($brand-col-1, 1);
+  }
+}
+
+.btn--menu{
+  @extend .btn--square;
+  position: fixed;
+  top: $inuit-base-spacing-unit--small;
   right: 2em;
-  background: none;
-  font-size: 14px;
-  font-size: 0.875rem;
-  width: 3.2em;
-  height: 3.2em;
+
   z-index: 99999;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-  background: rgba($brand-col-1, 0.2);
+
   &[data-state=on]{
     transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     right: 14rem;
@@ -70,4 +89,13 @@
     transform: rotate(45deg) translate(-0.3em, 0);
 
   }
+}
+
+.btn--twitter{
+  @extend .btn;
+  @extend .btn--square;
+}
+.btn--twitter{
+  @extend .btn;
+  @extend .btn--square;
 }

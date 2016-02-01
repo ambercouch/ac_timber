@@ -1,30 +1,28 @@
 .masthead{
 
-  &__navigation{
-    @extend %off-page--curtain;
-  }
+  max-width: $site-container-width;
+  margin: 0 auto;
+  padding-top: $inuit-base-spacing-unit--small;
+  padding-bottom: $inuit-base-spacing-unit--small;
+  display: flex;
+
 }
 
 .masthead{
 
-  background: #fff;
-  z-index:999;
-  width: 100%;
-  position: fixed;
-  bottom: 100%;
-
-  transition: transform 0.3s ease;
-
-  &[data-hidden=true]{
-    transform: translate(0, 0);
-  }
-  &[data-hidden=false]{
-    transform: translate(0, 100%);
-  }
-
   &__branding{
-    @extend .u-1-of-1;
-
-
+    @extend .u-1-of-2-desk;
   }
+
+  &__navigation--social{
+    @extend .u-1-of-2-desk;
+  }
+
+  &__navigation{
+    @extend %off-page--curtain;
+  }
+
+
+
+
 }

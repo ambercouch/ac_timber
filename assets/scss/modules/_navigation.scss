@@ -1,0 +1,9 @@
+.navigation{
+  &--social{
+    display: flex;
+    justify-content: flex-end;
+    &__btn{
+      margin-right: $inuit-base-spacing-unit;
+    }
+  }
+}

@@ -1,10 +1,10 @@
 %off-page--curtain {
-  position: fixed;
+  position: absolute;
   overflow: auto;
   top: 0;
   right: -400px;
   right: -20rem;
-  height: 100%;
+  height: 100vh;
   width: 400px;
   width: 20rem;
   background: $brand-col-1;

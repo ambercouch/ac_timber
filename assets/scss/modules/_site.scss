@@ -1,0 +1,22 @@
+.site{
+  &__masthead{
+    background: #fff;
+    z-index:999;
+    width: 100%;
+    position: fixed;
+    bottom: 100%;
+    transition: transform 0.3s ease;
+
+    &[data-hidden=true]{
+      transform: translate(0, 0);
+    }
+
+    &[data-hidden=false]{
+      transform: translate(0, 100%);
+    }
+
+  }
+
+
+
+}
