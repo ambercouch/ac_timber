@@ -1,14 +1,14 @@
-  <div id="act_masthead" class="masthead" data-hidden="true">
-    <div class="masthead__branding">
-      <div class="masthead__site-title">
+<div class="masthead" >
+  <div class="masthead__branding">
+    <div class="masthead__site-title">
       {% if fn('is_front_page') %}
         <h1 class="site-title">
           <a class="site-title__link" href="{{ site.url }} " rel="home">
-          <svg class="icon site-title__logo" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none" >
-            <title>{{ site.title }}</title>
-            <desc>{{ site.description }}</desc>
-            <use xlink:href="#icon-stretton-climate-care-logo-type" />
-          </svg>
+            <svg class="icon site-title__logo" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none">
+              <title>{{ site.title }}</title>
+              <desc>{{ site.description }}</desc>
+              <use xlink:href="#icon-stretton-climate-care-logo-type"/>
+            </svg>
           </a>
         </h1>
       {% else %}
@@ -16,32 +16,21 @@
                <a href="{{ site.url }} " rel="home">{{ site.name }}</a>
             </span>
       {% endif %}
-      </div>
     </div>
-
-
-    <button id="menuButton" class="btn--menu" data-state="off">
-      <div class="btn--menu__bar--tl"></div>
-      <div class="btn--menu__bar--tr"></div>
-      <div class="btn--menu__bar--m"></div>
-      <div class="btn--menu__bar--br"></div>
-      <div class="btn--menu__bar--bl"></div>
-    </button>
-    <nav class="masthead__navigation" id="primaryNavigation" role="navigation" data-state="off">
-      <div class="naigavigation--primary">
-        <ul class="naigavigation--primary__list">
-          {% for item in menuPrimary.get_items %}
-            <li class="naigavigation--primary__item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
-              {% if item.get_children %}
-                <ul class="naigavigation--primary__sub-list">
-                  {% for child in item.get_children %}
-                    <li class="naigavigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
   </div>
+
+  <nav class="masthead__navigation--social">
+    {% include 'navigation--social.twig' %}
+  </nav>
+
+  <button id="menuButton" class="btn--menu" data-state="off">
+    <div class="btn--menu__bar--tl"></div>
+    <div class="btn--menu__bar--tr"></div>
+    <div class="btn--menu__bar--m"></div>
+    <div class="btn--menu__bar--br"></div>
+    <div class="btn--menu__bar--bl"></div>
+  </button>
+  <nav class="masthead__navigation" id="primaryNavigation" role="navigation" data-state="off">
+  {% include 'navigation--primary.twig' %}
+  </nav>
+</div>
