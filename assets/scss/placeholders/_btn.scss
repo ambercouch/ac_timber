@@ -6,8 +6,9 @@
   transition: box-shadow 0.3s ease;
   background: $brand-col-1;
   border-color: $brand-col-1;
-  @include inuit-font-size(20px);
+  @include inuit-font-size(22px);
   width: 270px;
+  max-width: 100%;
   white-space: pre;
   margin-bottom: $inuit-base-spacing-unit;
   box-shadow: 0 3px 1px rgba(#000, 0.15);
@@ -17,6 +18,9 @@
   @include media-query(lap-and-up){
     margin-bottom: 0;
     @include inuit-font-size(18px);
+  }
+  @include media-query(lap-and-up){
+    padding: $inuit-base-spacing-unit--small;
   }
   &:hover{
     box-shadow: 0 3px 1px rgba(#000, 0.25);

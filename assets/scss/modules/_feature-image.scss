@@ -50,7 +50,7 @@
 .has-overlay{
   position: relative;
   &__overlay{
-    z-index: 999;
+    z-index: 99;
     position:absolute;
     top: 50%;
     transform: translate(0,-50%);

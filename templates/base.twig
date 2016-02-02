@@ -57,13 +57,14 @@
 
 </div>{# /#page #}
 
+{% block footer %}
 <footer class="site__footer" role="contentinfo">
-  <div class="footer">
-
-  </div>
+  {% include 'footer.twig' %}
 </footer>
+{% endblock %}
 
 {% include 'footer_scripts.twig' %}
+
 {{ fn('wp_footer') }}
 
 </body>

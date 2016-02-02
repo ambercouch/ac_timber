@@ -8,6 +8,11 @@
 .subsidiary{
   &__island{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
+    margin: 0 $inuit-base-spacing-unit--small;
+    @include media-query(lap-and-up){
+      margin: 0;
+    }
   }
 }
