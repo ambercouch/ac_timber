@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: 'assets/scss/**/*.scss',
-                tasks: ['sass', 'postcss']
+                tasks: ['sass']
             },
             svg: {
                 files: 'assets/images/svg/*.svg',
@@ -64,7 +64,8 @@ module.exports = function (grunt) {
             dev: {
                 bsFiles: {
                     src: [
-                        '*.{css,php,twig}'
+                        '*.{css,php,twig}',
+                        '**/*.twig'
                     ]
                 },
                 options: {
