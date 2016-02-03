@@ -12,7 +12,7 @@
 
 </head>
 
-<body class="{{ body_class }}">
+<body class="{{ body_class }}" {{ fn('_act_body_data') }}>
 
 {% include 'defs.svg' %}
 
@@ -21,7 +21,7 @@
   {% include 'site-accessibility.twig' %}
 
   {% block masthead %}
-    <header id="act_masthead" data-hidden="true" class="site__masthead" role="banner">
+    <header id="act_masthead" data-hidden="{{ fn('is_paged') ? 'false' : 'true' }}" class="site__masthead" role="banner">
       {% include 'masthead.twig' %}
     </header>
   {% endblock %}
@@ -34,7 +34,7 @@
 
   <section id="primary" class="site__main">
     <div class="main">
-      <main class="main__content">
+      <main class="main__content {{ fn('is_paged') ? 'is-paged' : '' }}">
         {% block content %}
           <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
         {% endblock %}

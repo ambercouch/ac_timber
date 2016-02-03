@@ -1,0 +1,17 @@
+.footer{
+  max-width: $site-container-width;
+  margin: 0 auto;
+  padding: $inuit-base-spacing-unit--large 0 $inuit-base-spacing-unit;
+  text-align: center;
+}
+
+.footer{
+
+  &__content{
+    padding-bottom: $inuit-base-spacing-unit;
+    @include inuit-font-size($small-size);
+  }
+  &__site-info{
+    @include inuit-font-size($micro-size);
+  }
+}

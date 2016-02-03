@@ -1,12 +1,12 @@
 /*
  *
  */
-html{
+html {
   font-family: $base-font-family;
   font-weight: 300;
 }
 
-@include headings(1,6){
+@include headings(1, 6) {
   font-family: $heading-font-family;
   font-weight: 900;
   margin-top: 0;
@@ -36,11 +36,45 @@ h6 {
   @include inuit-font-size($inuit-heading-size-6);
 }
 
-
-p{
+p {
   margin-top: 0;
-  strong{
+  strong {
     font-weight: 500;
+  }
+}
+
+a {
+  color: $brand-col-3;
+  position: relative;
+
+  &:after{
+    transition: all 0.1s ease;
+    position: absolute;
+    content: '';
+    background: rgba($brand-col-3--dark, 0);
+    left: 50%;
+    height: 2em;
+    width: 100%;
+    bottom: -0.5em;
+    transform: translate(-50%, 0);
+  }
+  &:hover {
+    color: $brand-col-3--dark;
+
+  }
+  &:active {
+    color: $brand-col-3--light;
+    &:after{
+      position: absolute;
+      content: '';
+      background: rgba($brand-col-3--dark, 0.1);
+      left: 50%;
+      height: 2em;
+      width: 100%;
+      bottom: -0.5em;
+      transform: translate(-50%, 0);
+    }
+
   }
 }
 

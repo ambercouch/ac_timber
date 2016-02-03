@@ -1,3 +1,4 @@
+
 .post-meta{
   position: relative;
   height: 36px;
@@ -25,6 +26,32 @@
     vertical-align: middle;
     position: relative;
     border-right: solid 0.5em #fff;
+    background: $brand-col-1;
+  }
+}
+
+.post-meta{
+  .is-paged &{
+    height: 36px;
+  }
+
+  &::before{
+    .is-paged &{
+
+    }
+  }
+
+  &__date{
+    .is-paged &{
+      @include inuit-font-size($micro-size);
+      line-height: 36px;
+    }
+  }
+  &__icon{
+    @include size(36px, 28px);
+    vertical-align: middle;
+    position: relative;
+    border-right: solid 0.25em #fff;
     background: $brand-col-1;
   }
 }

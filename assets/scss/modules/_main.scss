@@ -1,4 +1,14 @@
-.main{
-  max-width: $site-container-width ;
-  margin: 0 auto;
+.main {
+  max-width: $site-container-width;
+  margin: 0 auto $inuit-base-spacing-unit--large * 2;
+}
+
+.main {
+  &__content {
+    &.is-paged {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
 }
