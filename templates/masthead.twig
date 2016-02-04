@@ -1,4 +1,4 @@
-<div class="masthead" >
+<div class="masthead">
   <div class="masthead__branding">
     <div class="masthead__site-title">
       {% if fn('is_front_page') %}
@@ -13,8 +13,14 @@
         </h1>
       {% else %}
         <span class="site-title">
-               <a href="{{ site.url }} " rel="home">{{ site.name }}</a>
-            </span>
+               <a class="site-title__link" href="{{ site.url }} " rel="home">
+                 <svg class="icon site-title__logo" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none">
+                   <title>{{ site.title }}</title>
+                   <desc>{{ site.description }}</desc>
+                   <use xlink:href="#icon-stretton-climate-care-logo-type"/>
+                 </svg>
+               </a>
+        </span>
       {% endif %}
     </div>
   </div>
@@ -31,6 +37,6 @@
     <div class="btn--menu__bar--bl"></div>
   </button>
   <nav class="masthead__navigation" id="primaryNavigation" role="navigation" data-state="off">
-  {% include 'navigation--primary.twig' %}
+    {% include 'navigation--primary.twig' %}
   </nav>
 </div>

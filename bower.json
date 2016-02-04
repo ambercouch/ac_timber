@@ -15,6 +15,7 @@
   ],
   "dependencies": {
     "inuit-buttons": "~0.4.2",
+    "inuit-clearfix": "~0.2.2",
     "inuit-headings": "~0.3.1",
     "inuit-normalize.css": "inuit-normalize#~3.0.3",
     "inuit-responsive-tools": "~0.1.3",

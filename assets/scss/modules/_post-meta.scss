@@ -48,10 +48,12 @@
     }
   }
   &__icon{
-    @include size(36px, 28px);
-    vertical-align: middle;
-    position: relative;
-    border-right: solid 0.25em #fff;
-    background: $brand-col-1;
+    .is-paged & {
+      @include size(42px, 36px);
+      vertical-align: middle;
+      position: relative;
+      border-right: solid 0.25em #fff;
+      background: $brand-col-1;
+    }
   }
 }

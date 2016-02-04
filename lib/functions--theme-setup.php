@@ -60,6 +60,7 @@ if ( ! function_exists( '_act_setup' ) ) :
         ) ) );
 
         add_image_size ( 'feature500', 500, 500, true );
+        add_image_size ( 'feature1000', 1000, 250, true );
 
     }
 endif;

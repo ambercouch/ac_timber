@@ -20,9 +20,24 @@
     @include size(500px);
     max-width: 100%;
     object-fit: cover;
+    display: block;
     @include media-query(palm) {
       width: 100%;
       height: 250px;
+    }
+  }
+}
+
+.feature-image {
+  &--single-post {
+    @extend .feature-image;
+    &__img {
+      @extend .feature-image__img;
+      @include size(1000px, 250px);
+
+    }
+    &:after {
+      display: none !important;
     }
   }
 }

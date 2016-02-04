@@ -5,11 +5,11 @@
 {% block content %}
   <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }} {{ postPagedClass }}">
 
-    <div class="post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
+    <a  href="{{ post.link }}" class="post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
       <div class="feature-image">
         <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
-    </div>
+    </a>
 
     <header class="entry-header post{{ postFormatClass }}__header {{ postPagedClass }}">
       <h2 class="entry-title post{{ postFormatClass }}__title {{ postPagedClass }}">

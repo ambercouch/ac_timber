@@ -5,6 +5,21 @@ ACT = {
             console.log('common');
 
             $('.fitvid').fitVids();
+
+            var showButton, container;
+
+            showButton = document.getElementById('menuButton');
+            container = document.getElementById('primaryNavigation');
+
+            showButton.onclick = function () {
+                if ('off' === showButton.dataset.state) {
+                    showButton.dataset.state = 'on';
+                    container.dataset.state = 'on';
+                } else {
+                    showButton.dataset.state = 'off';
+                    container.dataset.state = 'off';
+                }
+            };
         }
     },
     page: {
@@ -32,7 +47,7 @@ ACT = {
                 } else {
                     showButton.dataset.state = 'off';
                     container.dataset.state = 'off';
-                    //setTimeout(endScroll, 500);
+                    setTimeout(endScroll, 500);
 
                 }
             };

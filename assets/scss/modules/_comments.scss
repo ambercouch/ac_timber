@@ -1,0 +1,20 @@
+.comments{
+  padding: 0 $inuit-base-spacing-unit;
+}
+
+.comments{
+
+  &__title{
+    @include inuit-font-size($inuit-heading-size-1);
+    background: $brand-col-2--light;
+    padding: 0 $inuit-base-spacing-unit--small;
+    color: #fff6de;
+  }
+  &__response{
+    padding: 0 $inuit-base-spacing-unit--small;
+  }
+  &__respond{
+
+  }
+
+}

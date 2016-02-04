@@ -2,4 +2,7 @@
 .visuallyhidden{
   @include accessible-hidden;
 }
+.cf{
+  @extend .clearfix;
+}
 

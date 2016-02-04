@@ -21,7 +21,7 @@
   {% include 'site-accessibility.twig' %}
 
   {% block masthead %}
-    <header id="act_masthead" data-hidden="{{ fn('is_paged') ? 'false' : 'true' }}" class="site__masthead" role="banner">
+    <header id="act_masthead" data-hidden="{{ (not fn('is_paged') and fn('is_home')) ? 'true' : 'false' }}" class="site__masthead" role="banner">
       {% include 'masthead.twig' %}
     </header>
   {% endblock %}

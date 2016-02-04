@@ -1,0 +1,213 @@
+.single-post {
+  @extend .u-1-of-1-lap;
+  @extend .u-1-of-1-palm;
+
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: auto;
+  overflow: hidden;
+  box-shadow: $z1-shadow;
+  margin-bottom: $inuit-base-spacing-unit--large;
+
+  @include media-query(lap-and-up) {
+    flex-wrap: wrap;
+    height: auto;
+    margin-bottom: $inuit-base-spacing-unit--large * 2;
+  }
+
+  &:last-of-type{
+    margin-bottom: $inuit-base-spacing-unit--large;
+  }
+}
+
+/*
+ *.single-post Elements
+ */
+.single-post {
+
+  &__feature-image {
+    @extend .u-1-of-1;
+
+    overflow: hidden;
+
+    @include media-query(lap-and-up) {
+      flex-basis: 100%;
+    }
+
+    &:after {
+      display: none !important;
+    }
+
+  }
+  &__header {
+    @extend .u-1-of-1-desk;
+
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
+    padding: 0 $inuit-base-spacing-unit;
+    position: relative;
+    top: -$inuit-base-spacing-unit--large;
+
+    @include media-query(palm) {
+      padding-top: 0;
+    }
+  }
+  &__title {
+    @include inuit-font-size($inuit-heading-size-1, 1);
+    padding: 0 $inuit-base-spacing-unit;
+
+    text-transform: uppercase;
+
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-1, 1.2);
+    }
+    a {
+      transition: all 0.3s ease;
+      color: $col-scc-gray;
+      text-decoration: none;
+      text-shadow: 0px 1px 0px rgba(0, 0, 0, 0);
+      &:hover {
+        color: $brand-col-2;
+        text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  &__post-meta {
+    margin-bottom: $inuit-base-spacing-unit;
+    padding: $inuit-base-spacing-unit;
+    padding-bottom: 0;
+    background: #fff;
+  }
+  &__body {
+    @extend .u-1-of-1-desk;
+    @extend %post__img;
+    padding: 0 $inuit-base-spacing-unit--large;
+    position: relative;
+    top: -$inuit-base-spacing-unit--large;
+    line-height: 1.5;
+  }
+  &__footer {
+    @extend .u-1-of-1-desk;
+
+    padding: 0 $inuit-base-spacing-unit--large;
+    align-self: flex-end;
+    flex-grow: 1;
+    position: relative;
+    @include media-query(palm) {
+      padding: 0 $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large * 1.5;
+    }
+  }
+  &__comment-link {
+    color: $col-scc-gray;
+    text-decoration: none;
+    position: absolute;
+    padding: $inuit-base-spacing-unit;
+    bottom: 0;
+    right: 0;
+  }
+  &__comment-count {
+    color: $col-scc-gray;
+    background: $brand-col-1;
+    padding: 0 0.5em;
+    color: #fff;
+    font-family: $heading-font-family;
+  }
+}
+
+/**
+ * Modifiers
+ */
+.single-post {
+  &--aside {
+    @extend .single-post;
+    &__feature-image {
+      @extend .single-post__feature-image;
+    }
+    &__header {
+      @extend .single-post__header;
+    }
+    &__post-meta {
+      @extend .single-post__post-meta;
+    }
+    &__title {
+      @extend .single-post__title
+    }
+    &__body {
+      @extend .single-post__body;
+    }
+    &__footer {
+      @extend .single-post__footer;
+    }
+    &__read-more {
+      @extend .single-post__read-more;
+    }
+    &__comment-link {
+      @extend .single-post__comment-link;
+    }
+    &__comment-count {
+      @extend .single-post__comment-count;
+    }
+  }
+  &--quote {
+    @extend .single-post;
+    &__feature-image {
+      @extend .single-post__feature-image;
+    }
+    &__header {
+      @extend .single-post__header;
+    }
+    &__post-meta {
+      @extend .single-post__post-meta;
+    }
+    &__title {
+      @extend .single-post__title
+    }
+    &__body {
+      @extend .single-post__body;
+    }
+    &__footer {
+      @extend .single-post__footer;
+    }
+    &__read-more {
+      @extend .single-post__read-more;
+    }
+    &__comment-link {
+      @extend .single-post__comment-link;
+    }
+    &__comment-count {
+      @extend .single-post__comment-count;
+    }
+  }
+  &--video {
+    &__feature-image {
+      @extend .single-post__feature-image;
+    }
+    &__header {
+      @extend .single-post__header;
+    }
+    &__post-meta {
+      @extend .single-post__post-meta;
+    }
+    &__title {
+      @extend .single-post__title
+    }
+    &__body {
+      @extend .single-post__body;
+    }
+    &__footer {
+      @extend .single-post__footer;
+    }
+    &__read-more {
+      @extend .single-post__read-more;
+    }
+    &__comment-link {
+      @extend .single-post__comment-link;
+    }
+    &__comment-count {
+      @extend .single-post__comment-count;
+    }
+  }
+}

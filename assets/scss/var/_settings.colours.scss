@@ -11,6 +11,8 @@ and open the template in the editor.
 $col-scc-gray-xxlight : #f1f1f1;
 $col-scc-gray : #474b4c;
 $col-scc-orange : #d47a1c;
+$col-scc-orange--dark : #914a00;
+$col-scc-orange--light : #e39848;
 $col-scc-teal : #0b556d;
 $col-scc-teal--light : #31778e;
 $col-scc-green : #088031;
@@ -19,6 +21,8 @@ $col-scc-green--dark : #004e1b;
 
 
 $brand-col-1 : $col-scc-orange;
+$brand-col-1--light : $col-scc-orange--light;
+$brand-col-1--dark : $col-scc-orange--dark;
 $brand-col-2 : $col-scc-teal;
 $brand-col-2--light : $col-scc-teal--light;
 $brand-col-3 : $col-scc-green;

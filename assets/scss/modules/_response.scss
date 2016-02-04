@@ -1,0 +1,37 @@
+.response {
+  background: #fff;
+  padding-bottom: $inuit-base-spacing-unit ;
+  margin-bottom: $inuit-base-spacing-unit--large;
+  box-shadow: $z1-shadow;
+}
+
+.response {
+  &__header {
+    padding: $inuit-base-spacing-unit 0;
+    margin: 0 $inuit-base-spacing-unit;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 6px;
+      background: $brand-col-1;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+  }
+  &__author {
+     @include inuit-font-size($inuit-heading-size-2, 1);
+     margin-bottom: 0;
+     position: relative;
+     display: inline-block;
+     background: #fff;
+     padding: 0 $inuit-base-spacing-unit--small 0 0;
+   }
+  &__content {
+    padding: 0 $inuit-base-spacing-unit--large;
+  }
+
+}

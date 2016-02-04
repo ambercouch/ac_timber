@@ -1,3 +1,9 @@
 body{
   background: $col-scc-gray-xxlight;
+  &.single-post{
+    display: block;
+    height: auto;
+    box-shadow: none;
+    background: $col-scc-gray-xxlight;
+  }
 }
