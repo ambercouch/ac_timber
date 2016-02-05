@@ -16,16 +16,7 @@
         <a href="{{ post.link }}">{{ post.title }}</a>
       </h2>
       <div class="entry-meta post{{ postFormatClass }}__post-meta {{ postPagedClass }}">
-        <div class="post-meta">
-
-          <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none">
-            <title>{{ postFormatRead }}</title>
-            <desc>Post type {{ postFormatRead }}</desc>
-            <use xlink:href="#icon-post{{ postFormat }}"/>
-          </svg>
-
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
+        {% include 'post-meta.twig' %}
       </div>
     </header>
     {% if  not fn('is_paged') %}

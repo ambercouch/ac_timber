@@ -11,12 +11,12 @@
 .masthead{
 
   &__branding{
-    @extend .u-1-of-2-desk;
+    @extend .u-1-of-3-desk;
   }
 
   &__navigation--social{
-    @extend .u-1-of-2-desk;
-    @extend .u-1-of-2-lap;
+    @extend .u-2-of-3-desk;
+    @extend .u-2-of-3-lap;
     display: none;
     @include media-query(lap-and-up){
       display: block;

@@ -16,22 +16,13 @@
         <span>{{ post.title }}</span>
       </h2>
       <div class="entry-meta single-post{{ postFormatClass }}__post-meta {{ postPagedClass }}">
-        <div class="post-meta">
-
-          <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none">
-            <title>{{ postFormatRead }}</title>
-            <desc>Post type {{ postFormatRead }}</desc>
-            <use xlink:href="#icon-post{{ postFormat }}"/>
-          </svg>
-
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
+        {% include 'post-meta.twig' %}
       </div>
     </header>
 
-      <div class="entry-content single-post{{ postFormatClass }}__body {{ postPagedClass }}">
-       {{ post.content }}
-      </div>
+    <div class="entry-content single-post{{ postFormatClass }}__body {{ postPagedClass }}">
+      {{ post.content }}
+    </div>
 
     <footer class="single-post{{ postFormatClass }}__footer {{ postPagedClass }}">
       <a class="single-post{{ postFormatClass }}__comment-link {{ postPagedClass }}" href="{{ post.link }}#comments">

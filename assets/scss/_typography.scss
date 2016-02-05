@@ -78,3 +78,10 @@ p a {
   }
 }
 
+%link-style--bc2{
+  color: $brand-col-2;
+  &:hover{
+    color: $brand-col-2--light;
+  }
+}
+

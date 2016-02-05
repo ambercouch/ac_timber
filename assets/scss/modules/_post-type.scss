@@ -1,0 +1,21 @@
+.post-type{
+  &__icon{
+    @include size(48px, 36px);
+    vertical-align: middle;
+    position: relative;
+    border-right: solid 0.5em #fff;
+    background: $brand-col-1;
+  }
+}
+
+.post-type{
+  &__icon{
+    .is-paged & {
+      @include size(42px, 36px);
+      vertical-align: middle;
+      position: relative;
+      border-right: solid 0.25em #fff;
+      background: $brand-col-1;
+    }
+  }
+}

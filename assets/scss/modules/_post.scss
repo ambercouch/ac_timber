@@ -9,6 +9,7 @@
   height: auto;
   overflow: hidden;
   box-shadow: $z1-shadow;
+  margin-top: $inuit-base-spacing-unit;
   margin-bottom: $inuit-base-spacing-unit--large;
 
   @include media-query(lap-and-up) {
@@ -37,7 +38,7 @@
     }
 
     @include media-query(lap-and-up) {
-      article:nth-last-of-type(odd) & {
+      .post:nth-of-type(odd) & {
         order: 9;
       }
     }

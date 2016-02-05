@@ -16,8 +16,11 @@
 
     display: flex;
     justify-content: flex-end;
+    position: relative;
+
     &__btn {
       margin-right: $inuit-base-spacing-unit;
+      flex-shrink: 0;
     }
   }
 }

@@ -20,6 +20,16 @@ ACT = {
                     container.dataset.state = 'off';
                 }
             };
+
+            $(document).on('click', '.btn--search' , function(){
+                console.log('click');
+               if( $(this).attr('data-state','on').length){
+                   $(this).attr('data-state','off');
+               }else{
+               $(this).attr('data-state','off');
+               }
+
+            });
         }
     },
     page: {

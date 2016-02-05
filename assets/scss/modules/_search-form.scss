@@ -1,0 +1,32 @@
+.search-form {
+  max-width: 250px;
+  width: 100%;
+  position: relative;
+  &[data-state=off]{
+    max-width: 0px;
+    opacity: 0;
+  }
+  &[data-state=on]{
+    max-width: 250px;
+
+  }
+}
+
+.search-form {
+  &__search-field {
+    box-sizing: border-box;
+    @include inuit-font-size($micro-size);
+    padding: 0 $inuit-base-spacing-unit--small / 2;
+    display: block;
+    box-sizing: border-box;
+    border: solid 5px rgba($col-scc-gray, 0.2);
+    max-width: 350px;
+    width: 80%;
+    margin-right: $inuit-base-spacing-unit--small;
+  }
+  &__accessibility {
+    display: block;
+    height: 100%;
+    display: flex;
+  }
+}

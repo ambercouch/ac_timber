@@ -18,14 +18,4 @@ function _set_offset_on_front_page(&$query)
         $query->query_vars['offset'] = (($query->query_vars['paged'] - 2) * $posts_per_page) + 3;
     }
 }
-//add_action('pre_get_posts', '_set_home_post_count');
-//function _set_home_post_count(&$query)
-//{
-////    global $wp_query;
-////    $p = $wp_query->query_vars['paged'];
-////    echo $p; die;
-//    if(is_front_page() || !is_paged())
-//    {
-//        //echo 'tester'; die();
-//    }
-//}
+

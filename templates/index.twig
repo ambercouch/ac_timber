@@ -1,19 +1,22 @@
 {% extends "base.twig" %}
 
   {% block hero %}
-    {% if not fn('is_paged') %}
+    {% if not fn('is_paged') and not fn('is_category')and not fn('is_tag')%}
       {{ parent() }}
     {% endif %}
   {% endblock %}
 
 
 {% block content %}
-  {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+  {% if fn('is_archive')%}
+    {% include 'main__header.twig'  %}
+  {% endif %}
+  {{  fn('is_paged') or fn('is_category') or fn('is_tag') ? fn('the_posts_navigation') : '' }}
 
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
     {% include 'content'~postFormat~'.twig' %}
   {% endfor %}
-  {{ fn('the_posts_navigation') }}
 
+  {{ fn('the_posts_navigation') }}
 {% endblock %}
