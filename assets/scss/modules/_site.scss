@@ -4,15 +4,19 @@
     z-index:999;
     width: 100%;
     position: fixed;
-    bottom: 100%;
+    top: 0;
     transition: transform 0.3s ease;
 
+    .admin-bar &{
+      top: 32px;
+    }
+
     &[data-hidden=true]{
-      transform: translate(0, 0);
+      transform: translate(0, -100%);
     }
 
     &[data-hidden=false]{
-      transform: translate(0, 100%);
+      transform: translate(0, 0);
     }
   }
 
