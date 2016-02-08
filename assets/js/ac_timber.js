@@ -6,7 +6,7 @@ ACT = {
 
             $('.fitvid').fitVids();
 
-            var showButton, container;
+            var showButton, container, searchButton, searchForm;
 
             showButton = document.getElementById('menuButton');
             container = document.getElementById('primaryNavigation');
@@ -21,15 +21,20 @@ ACT = {
                 }
             };
 
-            $(document).on('click', '.btn--search' , function(){
-                console.log('click');
-               if( $(this).attr('data-state','on').length){
-                   $(this).attr('data-state','off');
-               }else{
-               $(this).attr('data-state','off');
-               }
+            searchButton = document.getElementById('mastheadSearchBtn');
+            searchForm = document.getElementById('mastheadSearchForm');
 
-            });
+            searchButton.onclick = function(){
+                console.log('click');
+                if ('off' === searchButton.dataset.state) {
+                    searchButton.dataset.state = 'on';
+                    searchForm.dataset.state = 'on';
+                } else {
+                    searchButton.dataset.state = 'off';
+                    searchForm.dataset.state = 'off';
+                }
+
+            };
         }
     },
     page: {
