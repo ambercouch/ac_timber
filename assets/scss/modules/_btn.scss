@@ -103,3 +103,27 @@
   @extend .btn;
   @extend .btn--square;
 }
+
+.btn--toggle-map{
+  @extend .btn--cta2--small;
+  background: $brand-col-3--light;
+  border-color: $brand-col-3--light;
+}
+.btn--toggle-map{
+  &__show{
+    [data-state=off] &{
+      display: block;
+    }
+    [data-state=on] &{
+      display: none;
+    }
+  }
+  &__hide{
+    [data-state=off] &{
+      display: none;
+    }
+    [data-state=on] &{
+      display: off;
+    }
+  }
+}

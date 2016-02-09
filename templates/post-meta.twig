@@ -9,12 +9,19 @@
       </svg>
     </div>
   </div>
-
-  <div class="post-meta__published">
-    <div class="published">
-      {{ fn('_act_posted_on') }}
+  {% if  fn('get_post_type') != 'event' %}
+    <div class="post-meta__published">
+      <div class="published">
+        {{ fn('_act_posted_on') }}
+      </div>
     </div>
-  </div>
+    <div class="post-meta__event-info">
+      <div class="event-info">
+        Location
+      </div>
+    </div>
+
+  {% endif %}
 
   <div class="post-meta__tagged">
     <div class="tagged">

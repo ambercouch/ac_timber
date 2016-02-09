@@ -1,0 +1,89 @@
+.event{
+  padding-bottom: $inuit-base-spacing-unit;
+  box-shadow: $z2-shadow;
+}
+.event{
+  &__title{
+    margin: 0;
+    padding-right: $inuit-base-spacing-unit * 2.5;
+    background: $brand-col-2--dark;
+    background-image: url('assets/images/svg/calendar--white.svg');
+    background-repeat: no-repeat;
+    background-position: 97.6% center ;
+
+  }
+  &__link{
+    transition: all 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+    background: $brand-col-2--dark;
+    padding:$inuit-base-spacing-unit--small;
+    display: block;
+    letter-spacing: 1px;
+    &:hover{
+      color: #fff;
+      background: darken($brand-col-2--dark, 2.5%);
+    }
+    &--false{
+      @extend .event__link;
+      &:hover{
+        color: #fff;
+        background: $brand-col-2--dark;
+      }
+    }
+  }
+  &__date {
+    display: block;
+    background: $brand-col-2--light;
+    color: #fff;
+    padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
+    @include inuit-font-size($milli-size);
+    margin-bottom: $inuit-base-spacing-unit--small;
+  }
+  &__description{
+    margin: 0;
+  }
+
+  &__address{
+    display: block;
+    @include inuit-font-size($milli-size);
+    padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+    address{
+      margin-bottom: 0;
+      background: rgba($brand-col-3--light, 0.5);
+      padding: 0 $inuit-base-spacing-unit--small / 2 ;
+      font-style: normal;
+      display: inline-block;
+    }
+
+  }
+  &__excerpt{
+    display: block;
+    padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+  }
+  &__read-more{
+    display: block;
+    padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+  }
+  &__more-link{
+    @extend %link-style--read-more;
+  }
+  &__map-container{
+    transition: all 0.3s ease;
+    overflow: hidden;
+    &[data-state=off]{
+      max-height: 0;
+    }
+    &[data-state=on]{
+      max-height: 250px;
+    }
+  }
+  &__map{
+    display: block;
+    padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+  }
+  &__control{
+   display: flex;
+    justify-content: flex-end;
+  }
+}

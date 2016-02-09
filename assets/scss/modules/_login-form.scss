@@ -1,0 +1,48 @@
+.login-form{
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+.login-form{
+ &__fields{
+   border: none;
+   background: rgba($brand-col-1--light, 0.8);
+   padding: $inuit-base-spacing-unit;
+   box-shadow: $z1-shadow;
+ }
+  &__label{
+    margin-bottom: $inuit-base-spacing-unit--small;
+    display: block;
+    @include inuit-font-size($small-size);
+  }
+  &__input{
+    @extend %input-style-1;
+    border-color: $brand-col-1--light;
+    margin-bottom: $inuit-base-spacing-unit--small /2;
+  }
+}
+
+.login-form{
+  &__label{
+    &--username{
+      @extend  .login-form__label;
+    }
+    &--password{
+      @extend  .login-form__label;
+    }
+  }
+  &__input{
+    &--username{
+      @extend  .login-form__input;
+    }
+    &--password{
+      @extend  .login-form__input;
+    }
+    &--submit{
+      @extend .btn--cta2;
+      width: 100%;
+      margin-bottom: $inuit-base-spacing-unit--small;
+    }
+  }
+}

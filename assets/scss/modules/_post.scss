@@ -102,16 +102,7 @@
     }
   }
   &__read-more {
-    @include inuit-font-size($inuit-heading-size-2, 1);
-
-    transition: all 0.3s ease;
-    color: $col-scc-gray;
-    text-transform: uppercase;
-    font-family: $heading-font-family;
-    text-decoration: none;
-    &:hover {
-      color: $brand-col-2;
-    }
+    @extend %link-style--read-more;
 
   }
   &__comment-link {
@@ -222,6 +213,7 @@
       @extend .post__comment-count;
     }
   }
+
 }
 @include media-query(lap-and-up) {
   .post {

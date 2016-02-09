@@ -88,6 +88,9 @@
     position: relative;
     top: -$inuit-base-spacing-unit--large;
     line-height: 1.5;
+    a{
+      @extend %file-link;
+    }
   }
   &__footer {
     @extend .u-1-of-1-desk;
@@ -182,6 +185,36 @@
     }
   }
   &--video {
+    &__feature-image {
+      @extend .single-post__feature-image;
+    }
+    &__header {
+      @extend .single-post__header;
+    }
+    &__post-meta {
+      @extend .single-post__post-meta;
+    }
+    &__title {
+      @extend .single-post__title
+    }
+    &__body {
+      @extend .single-post__body;
+    }
+    &__footer {
+      @extend .single-post__footer;
+    }
+    &__read-more {
+      @extend .single-post__read-more;
+    }
+    &__comment-link {
+      @extend .single-post__comment-link;
+    }
+    &__comment-count {
+      @extend .single-post__comment-count;
+    }
+  }
+  &--event {
+    @extend .single-post;
     &__feature-image {
       @extend .single-post__feature-image;
     }

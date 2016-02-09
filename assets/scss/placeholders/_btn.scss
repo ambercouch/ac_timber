@@ -1,11 +1,9 @@
 %btn{
   @extend .btn;
 }
-.btn--cta1{
-  @extend %btn;
+.btn--cta{
   transition: box-shadow 0.3s ease;
-  background: $brand-col-1;
-  border-color: $brand-col-1;
+  @extend %btn;
   @include inuit-font-size(22px);
   width: 270px;
   max-width: 100%;
@@ -15,14 +13,36 @@
   &:last-child{
     margin-bottom: 0;
   }
+
   @include media-query(lap-and-up){
     margin-bottom: 0;
     @include inuit-font-size(18px);
   }
   @include media-query(lap-and-up){
-    padding: $inuit-base-spacing-unit--small;
+    //padding: $inuit-base-spacing-unit--small;
   }
   &:hover{
     box-shadow: 0 3px 1px rgba(#000, 0.25);
   }
 }
+.btn--cta1{
+  @extend %btn;
+  @extend .btn--cta;
+  background: $brand-col-1;
+  border-color: $brand-col-1;
+}
+.btn--cta2{
+  @extend %btn;
+  @extend .btn--cta;
+  background: $brand-col-3--light;
+  border-color: $brand-col-3;
+}
+
+.btn--cta2--small{
+  @extend %btn--small;
+  width: auto;
+  @extend .btn--cta;
+  background: $brand-col-3--light;
+  border-color: $brand-col-3;
+}
+

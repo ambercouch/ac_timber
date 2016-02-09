@@ -43,45 +43,11 @@ p {
   }
 }
 
-p a {
-  color: $brand-col-3;
-  position: relative;
-
-  &:after{
-    transition: all 0.1s ease;
-    position: absolute;
-    content: '';
-    background: rgba($brand-col-3--dark, 0);
-    left: 50%;
-    height: 2em;
-    width: 100%;
-    bottom: -0.5em;
-    transform: translate(-50%, 0);
-  }
-  &:hover {
-    color: $brand-col-3--dark;
-
-  }
-  &:active {
-    color: $brand-col-3--light;
-    &:after{
-      position: absolute;
-      content: '';
-      background: rgba($brand-col-3--dark, 0.1);
-      left: 50%;
-      height: 2em;
-      width: 100%;
-      bottom: -0.5em;
-      transform: translate(-50%, 0);
-    }
-
-  }
+p a,
+li a,
+dl a{
+  @extend %link-style--1;
 }
 
-%link-style--bc2{
-  color: $brand-col-2;
-  &:hover{
-    color: $brand-col-2--light;
-  }
-}
+
 

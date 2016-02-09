@@ -1,0 +1,96 @@
+%link-style--1 {
+  color: $brand-col-3;
+  position: relative;
+
+  &:after{
+    transition: all 0.1s ease;
+    position: absolute;
+    content: '';
+    background: rgba($brand-col-3--dark, 0);
+    left: 50%;
+    height: 2em;
+    width: 100%;
+    bottom: -0.5em;
+    transform: translate(-50%, 0);
+  }
+  &:hover {
+    color: $brand-col-3--dark;
+    cursor: pointer;
+  }
+  &:active {
+    color: $brand-col-3--light;
+    &:after{
+      position: absolute;
+      content: '';
+      background: rgba($brand-col-3--dark, 0.1);
+      left: 50%;
+      height: 2em;
+      width: 100%;
+      bottom: -0.5em;
+      transform: translate(-50%, 0);
+    }
+
+  }
+}
+
+%link-style--2,
+%link-style--bc2{
+  color: $brand-col-2;
+  &:hover{
+    color: $brand-col-2--light;
+    cursor: pointer;
+  }
+}
+
+%link-icon-space{
+  padding-right: $inuit-base-spacing-unit;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+}
+%file-link-boxed{
+  text-decoration: none;
+  border: solid 1px;
+  padding: $inuit-base-spacing-unit--small;
+  margin-bottom: $inuit-base-spacing-unit--small;
+  display: block;
+  background-position: 98% center;
+  background-size: 36px;
+  &:hover{
+    background-color: $brand-col-3--light;
+    color: #fff;
+    border-color: $brand-col-3--dark;
+    box-shadow: $z2-shadow;
+  }
+}
+%file-link{
+  &[href$='.doc'],
+  &[href$='.docx']{
+    @extend %link-icon-space;
+    background-image: url('assets/images/svg/file-word.svg');
+    @extend %file-link-boxed
+}
+  &[href$='.pdf']{
+    @extend %link-icon-space;
+    background-image: url('assets/images/svg/file-pdf.svg');
+    @extend %file-link-boxed
+  }
+  &[href$='.xls']{
+    @extend %link-icon-space;
+    background-image: url('assets/images/svg/file-excel.svg');
+    @extend %file-link-boxed
+  }
+}
+
+%link-style--read-more{
+  @include inuit-font-size($inuit-heading-size-2, 1);
+
+  transition: all 0.3s ease;
+  color: $col-scc-gray;
+  text-transform: uppercase;
+  font-family: $heading-font-family;
+  text-decoration: none;
+  &:hover {
+    color: $brand-col-2;
+  }
+}

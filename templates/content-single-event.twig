@@ -1,0 +1,31 @@
+{% block content %}
+  <article id="post-{{ post-id }}" class="single-post--event {{ post.class }} {{ postPagedClass }}">
+
+    <div class="single-post--event__feature-image {{ postPagedClass }}">
+      <div class="feature-image--single-post">
+        <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-post__img" alt="{{ post.title }}"/>
+      </div>
+    </div>
+
+    <header class="entry-header single-post--event__header {{ postPagedClass }}">
+      <h2 class="entry-title single-post--event__title {{ postPagedClass }}">
+        <span>{{ post.title }}</span>
+      </h2>
+      <div class="entry-meta single-post--event__post-meta {{ postPagedClass }}">
+        {% include 'post-meta.twig' %}
+      </div>
+    </header>
+
+    <div class="entry-content single-post--event__body {{ postPagedClass }}">
+      {{ post.content }}
+    </div>
+
+    <footer class="single-post--event__footer {{ postPagedClass }}">
+      <a class="single-post--event__comment-link {{ postPagedClass }}" href="{{ post.link }}#comments">
+        <span class="single-post--event__comment-count {{ postPagedClass }}">{{ post.comment_count }}</span>
+        Comments
+      </a>
+    </footer>
+
+  </article>
+{% endblock %}

@@ -41,6 +41,47 @@ ACT = {
         init: function () {
             //uncomment to debug
             //console.log('pages');
+        },
+        events: function(){
+            console.log('events');
+            var maps,map, mapButtons,mapButton, events;
+            events = document.getElementsByClassName('event');
+
+            console.log(events);
+            //console.log(mapButtons);
+
+            [].forEach.call(events, function(e,i) {
+                mapButtons = e.getElementsByClassName('btn--toggle-map');
+                maps = e.getElementsByClassName('event__map-container');
+
+                console.log(mapButtons);
+                if(mapButtons[0]) {
+                    mapButton = mapButtons[0];
+                    map = maps[0];
+                    mapButton.onclick = function () {
+                        if ('off' === mapButton.dataset.state) {
+                            mapButton.dataset.state = 'on';
+                            map.dataset.state = 'on';
+                        } else {
+                            mapButton.dataset.state = 'off';
+                            map.dataset.state = 'off';
+                        }
+                    };
+                }
+            });
+
+            //searchButton.onclick = function(){
+            //    console.log('click');
+            //    if ('off' === searchButton.dataset.state) {
+            //        searchButton.dataset.state = 'on';
+            //        searchForm.dataset.state = 'on';
+            //    } else {
+            //        searchButton.dataset.state = 'off';
+            //        searchForm.dataset.state = 'off';
+            //    }
+            //
+            //};
+
         }
     },
     post: {
