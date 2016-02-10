@@ -22,17 +22,39 @@
 }
 
 .btn--menu{
+
   @extend .btn--square;
   position: fixed;
-  top: $inuit-base-spacing-unit--small;
+  top: 92px;
   right: 2em;
   background: rgba($brand-col-1, 0.7);
   z-index: 99999;
-  transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
+  transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08),
+  top 0.3s ease;
 
   &[data-state=on]{
     transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     right: 17rem;
+    &:before{
+      display: none;
+    }
+  }
+  [data-hidden="false"] &{
+    top: $inuit-base-spacing-unit--small;
+
+  }
+  &:before{
+    content : "MENU";
+    left: - $inuit-base-spacing-unit * 1.5;
+    position: relative;
+    @include inuit-font-size($inuit-heading-size-5);
+    color: #fff;
+    @include media-query(desk){
+      left: - $inuit-base-spacing-unit--large;
+    }
+    [data-hidden="false"] &{
+      color: $brand-col-2;
+    }
   }
 }
 .btn--menu__bar {
