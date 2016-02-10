@@ -57,28 +57,32 @@ $classes = $eo_event_loop_args['class'];
                     <h4 class="event__title">
                         <?php if ($event_content != '') : ?>
                         <a class="event__link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-                    </h4>
-                    <?php else : ?>
-                        <span class="event__link--false"><?php the_title(); ?></span>
-                    <?php endif; ?>
+                        <?php else : ?>
+                            <span class="event__link--false"><?php the_title(); ?></span>
+                        <?php endif; ?>
+                        <span class="event__date" ><?php echo eo_get_the_start('l, M jS Y'); ?></span>
+
                     </h4>
                     </dt>
                     <dd class="event__description">
-                        <span class="event__date"><?php echo eo_get_the_start($format); ?></span>
+                        <div class="event__info">
+                            <span class="event__label" >Time: </span>
+                            <span class="event__time" ><?php echo eo_get_the_start($time_format); ?></span>
+                        </div>
                         <?php if (get_the_excerpt() != '') : ?>
                             <div class="event__excerpt">
                                 <?php echo get_the_excerpt(); ?>
                             </div>
                             <?php if ($event_content != '') : ?>
                                 <div class="event__read-more">
-                                     <a class="event__more-link">Read More &hellip;</a>
+                                     <a href="<?php the_permalink(); ?>" class="event__more-link">Read More &hellip;</a>
                                 </div>
                             <?php endif; ?>
                         <?php endif; ?>
 
                         <?php if ($event_venue['address'] != '') : ?>
                             <div class="event__address">
-                                <span>Location: </span>
+                                <span class="event__label" >Location: </span>
                                 <address>
                                     <?php echo (null !== eo_get_venue_name()) ? eo_get_venue_name() . ', ' : ''; ?>
                                     <?php echo isset($event_venue['address']) ? $event_venue['address'] . ', ' : ''; ?>

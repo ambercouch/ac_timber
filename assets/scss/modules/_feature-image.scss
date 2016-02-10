@@ -13,7 +13,7 @@
 
   @include media-query(palm) {
     @include internal-arrow(bottom);
-    margin-bottom: $inuit-base-spacing-unit--large;
+    //margin-bottom: $inuit-base-spacing-unit--large;
   }
 
   &__img {

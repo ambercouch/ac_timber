@@ -1,0 +1,20 @@
+{% extends 'content-single-page.twig' %}
+
+{% block content %}
+  <div class="entry-content single-page__body--event ">
+    {{ post.content }}
+  </div>
+{% endblock %}
+
+{%  block footer %}
+  <footer class="single-page__footer ">
+    <div class="event__map">
+      <div class="event__control">
+        <button class="btn--toggle-map" data-state="off"><span class="btn--toggle-map__show">View Map</span><span class="btn--toggle-map__hide">Hide Map</span></button>
+      </div>
+      <div class="event__map-container" data-state="off">
+       {{ fn('eo_get_venue_map')}}
+      </div>
+    </div>
+  </footer>
+{% endblock %}

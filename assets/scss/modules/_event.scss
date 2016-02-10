@@ -5,18 +5,28 @@
 .event{
   &__title{
     margin: 0;
-    padding-right: $inuit-base-spacing-unit * 2.5;
+
     background: $brand-col-2--dark;
     background-image: url('assets/images/svg/calendar--white.svg');
     background-repeat: no-repeat;
-    background-position: 97.6% center ;
+    background-position: 97.6% 85% ;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column-reverse;
 
+    @include media-query(lap-and-up){
+      padding-right: $inuit-base-spacing-unit * 2.5;
+      flex-wrap: nowrap;
+      background-position: 97.6% center ;
+      flex-direction: row;
+    }
   }
   &__link{
     transition: all 0.3s ease;
     color: #fff;
     text-decoration: none;
-    background: $brand-col-2--dark;
+
     padding:$inuit-base-spacing-unit--small;
     display: block;
     letter-spacing: 1px;
@@ -32,13 +42,31 @@
       }
     }
   }
-  &__date {
+  &__info {
     display: block;
     background: $brand-col-2--light;
     color: #fff;
     padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
-    @include inuit-font-size($milli-size);
+
     margin-bottom: $inuit-base-spacing-unit--small;
+  }
+  &__time{
+    font-weight: 600;
+  }
+  &__date{
+    padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+    color: #fff;
+    font-family: $base-font-family;
+    background: $brand-col-2--light;
+    width: 100%;
+    @include media-query(lap-and-up){
+      width: auto;
+      padding:$inuit-base-spacing-unit--small;
+    }
+
+  }
+  &__label{
+    @include inuit-font-size($milli-size);
   }
   &__description{
     margin: 0;
@@ -47,7 +75,7 @@
   &__address{
     display: block;
     @include inuit-font-size($milli-size);
-    padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+    padding:$inuit-base-spacing-unit--small $inuit-base-spacing-unit--small ;
     address{
       margin-bottom: 0;
       background: rgba($brand-col-3--light, 0.5);

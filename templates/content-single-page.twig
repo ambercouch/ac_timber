@@ -1,0 +1,36 @@
+<article id="post-{{ post.id }}" class="single-page">
+  {% block featureImage %}
+    <div class="single-page__feature-image ">
+      <div class="feature-image--single-page">
+        {% if(post.thumbnail.src()) %}
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+        {% else %}
+          <img src="/content/uploads/2016/02/stretton-climate-care-home-1000x250.jpg" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+        {% endif %}
+      </div>
+    </div>
+  {% endblock %}
+  {% block header %}
+    <header class="entry-header single-page__header ">
+      <h2 class="entry-title single-page__title ">
+        <span>{{ post.title }}</span>
+      </h2>
+      <div class="entry-meta single-page__post-meta ">
+        {% include 'post-meta--page.twig' %}
+      </div>
+    </header>
+  {%  endblock %}
+
+  {% block content %}
+    <div class="entry-content single-page__body ">
+      {{ post.content }}
+    </div>
+  {% endblock %}
+
+  {%  block footer %}
+    <footer class="single-page__footer ">
+     
+    </footer>
+  {% endblock %}
+
+</article>

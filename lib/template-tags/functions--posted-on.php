@@ -13,6 +13,6 @@ if (!function_exists('_act_posted_on')) :
         $time_string = sprintf($time_string, esc_attr(get_the_date('c')), esc_html(get_the_date()), esc_attr(get_the_modified_date('c')), esc_html(get_the_modified_date()));
         $posted_on = sprintf(esc_html_x('%s', 'post date', '_s'), '<a title="Published" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $time_string . '</a>');
         //$byline = sprintf(esc_html_x('by %s', 'post author', '_s'), '<span class="author vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta('ID'))) . '">' . esc_html(get_the_author()) . '</a></span>');
-        echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+        echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
     }
 endif;

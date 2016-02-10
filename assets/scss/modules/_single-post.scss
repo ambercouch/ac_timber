@@ -220,6 +220,7 @@
     }
     &__header {
       @extend .single-post__header;
+
     }
     &__post-meta {
       @extend .single-post__post-meta;
@@ -232,6 +233,7 @@
     }
     &__footer {
       @extend .single-post__footer;
+      @extend .clearfix;
     }
     &__read-more {
       @extend .single-post__read-more;
@@ -241,6 +243,17 @@
     }
     &__comment-count {
       @extend .single-post__comment-count;
+    }
+    &__subsidiary{
+      @extend .clearfix;
+      position: relative;
+      top: -$inuit-base-spacing-unit--large;
+      padding: 0 $inuit-base-spacing-unit--large;
+      //padding-bottom: $inuit-base-spacing-unit--small;
+      @include media-query(lap-and-up){
+        padding-bottom: $inuit-base-spacing-unit--large;
+      }
+
     }
   }
 }

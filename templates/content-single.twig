@@ -2,15 +2,19 @@
 {% set postPagedClass = fn('is_paged') ? 'is-paged' : '' %}
 {% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
 
-{% block content %}
-  <article id="post-{{ post-id }}" class="single-post{{ postFormatClass }} {{ post.class }} {{ postPagedClass }}">
-
+  <article id="post-{{ post.id }}" class="single-post{{ postFormatClass }} {{ post.class }} {{ postPagedClass }}">
+    {% block featureImage %}
     <div class="single-post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
       <div class="feature-image--single-post">
-        <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-post__img" alt="{{ post.title }}"/>
+        {% if(post.thumbnail.src()) %}
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-post__img" alt="{{ post.title }}"/>
+        {% else %}
+          <img src="/content/uploads/2016/02/stretton-climate-care-home-1000x250.jpg" class="feature-image--single-post__img" alt="{{ post.title }}"/>
+        {% endif %}
       </div>
     </div>
-
+    {% endblock %}
+    {% block header %}
     <header class="entry-header single-post{{ postFormatClass }}__header {{ postPagedClass }}">
       <h2 class="entry-title single-post{{ postFormatClass }}__title {{ postPagedClass }}">
         <span>{{ post.title }}</span>
@@ -19,17 +23,19 @@
         {% include 'post-meta.twig' %}
       </div>
     </header>
-
+    {%  endblock %}
+    {% block content %}
     <div class="entry-content single-post{{ postFormatClass }}__body {{ postPagedClass }}">
       {{ post.content }}
     </div>
-
+    {% endblock %}
+    {%  block footer %}
     <footer class="single-post{{ postFormatClass }}__footer {{ postPagedClass }}">
       <a class="single-post{{ postFormatClass }}__comment-link {{ postPagedClass }}" href="{{ post.link }}#comments">
         <span class="single-post{{ postFormatClass }}__comment-count {{ postPagedClass }}">{{ post.comment_count }}</span>
         Comments
       </a>
     </footer>
+    {% endblock %}
 
   </article>
-{% endblock %}

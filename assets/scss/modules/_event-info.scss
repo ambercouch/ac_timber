@@ -1,0 +1,45 @@
+.event-info{
+  padding: $inuit-base-spacing-unit--small;
+  margin-top:$inuit-base-spacing-unit;
+  background: $col-scc-gray-xxlight;
+  box-shadow: $z1-shadow;
+}
+
+.event-info{
+  &__date{
+    font-weight: bold;
+    @include inuit-font-size($inuit-heading-size-4);
+  }
+  &__address{
+
+   address{
+     display: inline;
+     @include inuit-font-size($inuit-heading-size-4);
+     font-style: normal;
+   }
+  }
+  &__time{
+    @include inuit-font-size($inuit-heading-size-4);
+    font-weight: 600;
+  }
+  &__label{
+    @include inuit-font-size($inuit-heading-size-4);
+    font-weight: 100;
+    width: 70px;
+    display: inline-block;
+    @include media-query(lap-and-up){
+      @include inuit-font-size($micro-size);
+    }
+  }
+  &__title{
+    margin-bottom: $inuit-base-spacing-unit--small;
+    border-bottom: solid 1px rgba($col-scc-gray, 0.2);
+  }
+  &__table{
+    vertical-align: top;
+    td{
+      vertical-align: top;
+    }
+
+  }
+}
