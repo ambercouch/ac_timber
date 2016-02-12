@@ -1,0 +1,9 @@
+.alignleft{
+  max-width: 50% !important;
+  @include media-query(palm){
+    float: none !important;
+    margin: 0 auto !important;
+    margin-bottom: $inuit-base-spacing-unit !important;
+    max-width: 75% !important;
+  }
+}

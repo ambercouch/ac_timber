@@ -2,18 +2,23 @@
 
 function _act_get_body_data() {
     global $post;
-    $body_data = array();
-
+    $body_data =array();
+//  echo 'pid';
+//
     $post_type = get_post_type(get_the_ID());
-    $body_data['post-type'] = $post_type;
-    $post_slug = $post->post_name;
 
     if (is_front_page()) {
-        $post_slug = 'home';
+        $post_type = 'home';
     }
+
+    $body_data['post-type'] = $post_type;
+
+    $post_slug = $post->post_name;
+
     if (is_home()) {
         $post_slug = 'blog';
     }
+
     if (is_home() && is_paged()) {
         $post_slug = 'blog_paged';
     }

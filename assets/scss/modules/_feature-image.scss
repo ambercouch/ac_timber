@@ -30,6 +30,17 @@
 
 .feature-image {
   &--single-post {
+     @extend .feature-image;
+     &__img {
+       @extend .feature-image__img;
+       @include size(1000px, 250px);
+
+     }
+     &:after {
+       display: none !important;
+     }
+   }
+  &--single-page {
     @extend .feature-image;
     &__img {
       @extend .feature-image__img;

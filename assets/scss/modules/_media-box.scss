@@ -1,0 +1,37 @@
+.media-box{
+  display: flex;
+  margin-bottom:$inuit-base-spacing-unit;
+  padding: $inuit-base-spacing-unit;
+  box-shadow: $z1-shadow;
+}
+.media-box{
+  &__image{
+    width:25%;
+    img{
+      width: 100%;
+      display: block;
+      border-left: solid $inuit-base-spacing-unit--small /2  $brand-col-2;
+      .is-right &{
+        border-right: solid $inuit-base-spacing-unit--small /2  $brand-col-2;
+        border-left: none;
+      }
+    }
+  }
+
+  &__text{
+    padding-left: $inuit-base-spacing-unit;
+    .is-right &{
+      padding-left: 0;
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+
+  &__title{
+    margin-bottom: 0;
+    color: $brand-col-2;
+  }
+  &.is-right{
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}

@@ -13,7 +13,6 @@
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
     {% include 'content-single-page.twig' %}
   {% endfor %}
-
 {% endblock %}
 
 

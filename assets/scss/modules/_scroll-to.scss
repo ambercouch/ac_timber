@@ -4,12 +4,14 @@
 
 .scroll-to{
   &__link{
+    outline: none;
     @include size(3.5em, 7em);
     margin: 0 auto;
     display: block;
     @include media-query(lap-and-up){
       @include size(2.5em, 5em);
     }
+
   }
   &__icon{
     @include size(3.5em);

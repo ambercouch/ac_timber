@@ -14,7 +14,8 @@
       @extend .single-post__post-meta;
     }
     &__title {
-      @extend .single-post__title
+      @extend .single-post__title;
+      @include inuit-font-size($inuit-heading-size-1, 1);
     }
     &__body {
       @extend .single-post__body;

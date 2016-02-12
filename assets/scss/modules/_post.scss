@@ -60,12 +60,12 @@
     }
   }
   &__title {
-    @include inuit-font-size($inuit-heading-size-1, 1);
+    @include inuit-font-size($inuit-heading-size-2, 1);
 
     text-transform: uppercase;
 
     @include media-query(palm) {
-      @include inuit-font-size($inuit-heading-size-1, 1.2);
+      @include inuit-font-size($inuit-heading-size-2, 1.2);
     }
     a {
       transition: all 0.3s ease;

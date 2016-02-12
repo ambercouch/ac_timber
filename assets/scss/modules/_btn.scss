@@ -47,10 +47,13 @@
     content : "MENU";
     left: - $inuit-base-spacing-unit * 1.5;
     position: relative;
-    @include inuit-font-size($inuit-heading-size-5);
+    @include inuit-font-size(16px);
     color: #fff;
     @include media-query(desk){
-      left: - $inuit-base-spacing-unit--large;
+       left: - $inuit-base-spacing-unit--large;
+     }
+    @include media-query(lap){
+      display: none;
     }
     [data-hidden="false"] &{
       color: $brand-col-2;
