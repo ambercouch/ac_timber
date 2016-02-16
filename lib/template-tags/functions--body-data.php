@@ -7,6 +7,10 @@ function _act_get_body_data() {
 //
     $post_type = get_post_type(get_the_ID());
 
+    if (is_archive()){
+        $post_type = "archive";
+    }
+
     if (is_front_page()) {
         $post_type = 'home';
     }
@@ -14,6 +18,11 @@ function _act_get_body_data() {
     $body_data['post-type'] = $post_type;
 
     $post_slug = $post->post_name;
+
+    if (is_archive()){
+        $tax = get_taxonomy( get_queried_object()->taxonomy );
+        $post_slug = sanitize_title( $tax->labels->singular_name);
+    }
 
     if (is_home()) {
         $post_slug = 'blog';

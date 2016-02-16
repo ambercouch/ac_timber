@@ -13,7 +13,7 @@
   {% if  fn('get_post_type') != 'event' %}
     <div class="post-meta__published">
       <div class="published">
-        {{ fn('_act_posted_on') }}
+        {{ fn('_act_posted_on', post.ID ) }}
       </div>
     </div>
   {% else %}
