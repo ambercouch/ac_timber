@@ -18,7 +18,7 @@ if ( ! class_exists( 'Timber' ) ) {
     return;
 }
 
-//TODO : move this in out of the template and in to a fucntion file
+//TODO : move this in out of the template and in to a function file
 if(is_home() && !is_paged()){
     global $query_string;
     parse_str( $query_string, $args );

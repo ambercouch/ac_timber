@@ -1,0 +1,14 @@
+dl{
+  margin-bottom: $inuit-base-spacing-unit;
+
+}
+dt{
+  font-weight: 600;
+  color: $brand-col-3;
+  border-bottom:solid 1px rgba($brand-col-3--light, 0.5);
+  margin-bottom: $inuit-base-spacing-unit--small;
+}
+dd{
+  margin-left: 1em;
+  padding-left: 0;
+}
