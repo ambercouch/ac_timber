@@ -3,7 +3,7 @@ ACT = {
         init: function () {
 
             'use strict';
-            console.log('common');
+            //console.log('common');
 
             $('.fitvid').fitVids();
 
@@ -21,9 +21,9 @@ ACT = {
             [].forEach.call(ddMenus, function(e,i) {
                 var itemid = e.dataset.itemid;
 
-                console.log( e);
+                //console.log( e);
 
-                console.log(itemid);
+                //console.log(itemid);
                 var ddButton = document.getElementById('linkId'+itemid);
                 var subMenu = document.getElementById('listId'+itemid);
                 ACT.ac_fn.open(subMenu, ddButton);
@@ -41,14 +41,14 @@ ACT = {
             var maps,map, mapButtons,mapButton, events;
             events = document.getElementsByClassName('event');
 
-            console.log(events);
+            //console.log(events);
             //console.log(mapButtons);
 
             [].forEach.call(events, function(e,i) {
                 mapButtons = e.getElementsByClassName('btn--toggle-map');
                 maps = e.getElementsByClassName('event__map-container');
 
-                console.log(mapButtons);
+                //console.log(mapButtons);
                 if(mapButtons[0]) {
                     mapButton = mapButtons[0];
                     map = maps[0];
@@ -112,13 +112,14 @@ ACT = {
             $(window).scroll(function () {
 
                 if (ACT.settings.acScrolling === false) {
-                    setTimeout(ACT.ac_fn.startScroll(showButton), 200);
+                    setTimeout(function(){ACT.ac_fn.startScroll(showButton);}, 200);
                 }
+                
                 if (scrollTimer) {
                     clearTimeout(scrollTimer);   // clear any previous pending timer
                 }
 
-                scrollTimer = setTimeout(ACT.ac_fn.endScroll(showButton), 200);   // set new timer
+                scrollTimer = setTimeout(function(){ACT.ac_fn.endScroll(showButton);}, 200);   // set new timer
 
             });
 
@@ -136,7 +137,7 @@ ACT = {
     ac_fn: {
         open : function (container, showButton ) {
             showButton.onclick = function () {
-                console.log('clicker');
+                //console.log('clicker');
 
                 if ('off' === showButton.dataset.state) {
                     showButton.dataset.state = 'on';
@@ -166,7 +167,7 @@ ACT = {
             ACT.settings.acScrolling = false;
 
             var acScrollTop = $(window).scrollTop();
-
+            console.log('endScroll()');
             if ($('#act_masthead').data('hidden') === true && acScrollTop >= 100) {
                 $('#act_masthead').data('hidden', false);
                 $('#act_masthead').attr('data-hidden', false);
