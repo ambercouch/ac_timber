@@ -26,7 +26,12 @@
   }
 
   &__navigation{
+
     @extend %off-page--curtain;
+
+    [data-hidden=true] &{
+      top:78px
+  }
   }
 
 
