@@ -3,6 +3,10 @@
   box-shadow: $z2-shadow;
 }
 .event{
+  &__header{
+    margin-bottom: 0;
+    border: none;
+  }
   &__title{
     margin: 0;
 
@@ -44,7 +48,7 @@
   }
   &__info {
     display: block;
-    background: $brand-col-2--light;
+    background: $brand-col-1;
     color: #fff;
     padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
 
@@ -57,7 +61,7 @@
     padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
     color: #fff;
     font-family: $base-font-family;
-    background: $brand-col-2--light;
+    background: $brand-col-1;
     width: 100%;
     @include media-query(lap-and-up){
       width: auto;

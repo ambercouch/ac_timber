@@ -17,16 +17,16 @@ ACT = {
 
 
             var ddMenus = document.getElementsByClassName('menu-item-has-children');
+            var ddList;
+            var itemid;
 
             [].forEach.call(ddMenus, function(e,i) {
-                var itemid = e.dataset.itemid;
-
-                //console.log( e);
-
-                //console.log(itemid);
+                itemid = e.dataset.itemid;
+                ddList = e.parentNode;
+                var ddparent = document.getElementById('itemId'+itemid);
                 var ddButton = document.getElementById('linkId'+itemid);
                 var subMenu = document.getElementById('listId'+itemid);
-                ACT.ac_fn.open(subMenu, ddButton);
+                ACT.ac_fn.open(subMenu, ddButton, ddparent, ddList);
             });
 
         }
@@ -114,7 +114,7 @@ ACT = {
                 if (ACT.settings.acScrolling === false) {
                     setTimeout(function(){ACT.ac_fn.startScroll(showButton);}, 200);
                 }
-                
+
                 if (scrollTimer) {
                     clearTimeout(scrollTimer);   // clear any previous pending timer
                 }
@@ -135,21 +135,24 @@ ACT = {
         }
     },
     ac_fn: {
-        open : function (container, showButton ) {
+        open : function (container, showButton, parent, listParent ) {
             showButton.onclick = function () {
                 //console.log('clicker');
 
                 if ('off' === showButton.dataset.state) {
                     showButton.dataset.state = 'on';
                     container.dataset.state = 'on';
+                    parent.dataset.state = 'on';
+
                 } else {
                     showButton.dataset.state = 'off';
                     container.dataset.state = 'off';
+                    parent.dataset.state = 'off';
                 }
             };
         },
         startScroll: function(showButton){
-
+            ACT.settings.acScrolling = true;
             var acScrollTop = $(window).scrollTop();
 
             console.log('startScroll()');
@@ -161,7 +164,7 @@ ACT = {
                 $('#act_masthead').data('hidden', true);
                 $('#act_masthead').attr('data-hidden', true);
             }
-            ACT.settings.acScrolling = true;
+
         },
         endScroll: function(showButton){
             ACT.settings.acScrolling = false;
