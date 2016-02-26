@@ -8,27 +8,28 @@
 .event-info{
   &__date{
     font-weight: bold;
-    @include inuit-font-size($inuit-heading-size-4);
+    @include inuit-font-size($inuit-heading-size-6);
   }
   &__address{
 
    address{
      display: inline;
-     @include inuit-font-size($inuit-heading-size-4);
+     @include inuit-font-size($inuit-heading-size-6);
+     @include inuit-font-size($inuit-heading-size-6);
      font-style: normal;
    }
   }
   &__time{
-    @include inuit-font-size($inuit-heading-size-4);
+    @include inuit-font-size($inuit-heading-size-6);
     font-weight: 600;
   }
   &__label{
-    @include inuit-font-size($inuit-heading-size-4);
+    @include inuit-font-size($inuit-heading-size-6);
     font-weight: 100;
-    width: 70px;
+    width: 100px;
     display: inline-block;
     @include media-query(lap-and-up){
-      @include inuit-font-size($micro-size);
+      @include inuit-font-size($inuit-heading-size-6);
     }
   }
   &__title{
@@ -37,6 +38,7 @@
   }
   &__table{
     vertical-align: top;
+    margin-bottom: $inuit-base-spacing-unit--small;
     td{
       vertical-align: top;
     }

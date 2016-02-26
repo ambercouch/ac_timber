@@ -20,14 +20,19 @@ ACT = {
             var ddList;
             var itemid;
 
-            [].forEach.call(ddMenus, function(e,i) {
+            [].forEach.call(ddMenus, function (e, i) {
                 itemid = e.dataset.itemid;
                 ddList = e.parentNode;
-                var ddparent = document.getElementById('itemId'+itemid);
-                var ddButton = document.getElementById('linkId'+itemid);
-                var subMenu = document.getElementById('listId'+itemid);
+                var ddparent = document.getElementById('itemId' + itemid);
+                var ddButton = document.getElementById('linkId' + itemid);
+                var subMenu = document.getElementById('listId' + itemid);
                 ACT.ac_fn.open(subMenu, ddButton, ddparent, ddList);
             });
+
+            var drawers = document.getElementsByClassName('newsletter-drawer');
+            var drawerButton = 'newsletter-drawer__title';
+            var drawerContent = 'newsletter-drawer__content';
+            ACT.ac_fn.open_collection( drawers, drawerButton, drawerContent);
 
         }
     },
@@ -36,33 +41,14 @@ ACT = {
             //uncomment to debug
             //console.log('pages');
         },
-        events: function(){
+        events: function () {
             //console.log('events');
-            var maps,map, mapButtons,mapButton, events;
-            events = document.getElementsByClassName('event');
 
-            //console.log(events);
-            //console.log(mapButtons);
+            var events = document.getElementsByClassName('event');
+            var mapButton = 'btn--toggle-map';
+            var map = 'event__map-container';
 
-            [].forEach.call(events, function(e,i) {
-                mapButtons = e.getElementsByClassName('btn--toggle-map');
-                maps = e.getElementsByClassName('event__map-container');
-
-                //console.log(mapButtons);
-                if(mapButtons[0]) {
-                    mapButton = mapButtons[0];
-                    map = maps[0];
-                    mapButton.onclick = function () {
-                        if ('off' === mapButton.dataset.state) {
-                            mapButton.dataset.state = 'on';
-                            map.dataset.state = 'on';
-                        } else {
-                            mapButton.dataset.state = 'off';
-                            map.dataset.state = 'off';
-                        }
-                    };
-                }
-            });
+            ACT.ac_fn.open_collection(events, mapButton, map);
 
         }
     },
@@ -71,13 +57,13 @@ ACT = {
             //uncomment to debug
             //console.log('posts');
         },
-        blog : function () {
+        blog: function () {
 
-            $(function() {
-                $('a[href*="#"]:not([href="#"])').click(function() {
-                    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            $(function () {
+                $('a[href*="#"]:not([href="#"])').click(function () {
+                    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
                         var target = $(this.hash);
-                        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                         if (target.length) {
                             $('html, body').animate({
                                 scrollTop: target.offset().top
@@ -93,17 +79,6 @@ ACT = {
             showButton = document.getElementById('menuButton');
             container = document.getElementById('primaryNavigation');
 
-            showButton.onclick = function () {
-                if ('off' === showButton.dataset.state) {
-                    showButton.dataset.state = 'on';
-                    container.dataset.state = 'on';
-                } else {
-                    showButton.dataset.state = 'off';
-                    container.dataset.state = 'off';
-                    setTimeout(endScroll, 500);
-
-                }
-            };
 
             var scrollTimer = null;
             var acScrolling = false;
@@ -112,30 +87,25 @@ ACT = {
             $(window).scroll(function () {
 
                 if (ACT.settings.acScrolling === false) {
-                    setTimeout(function(){ACT.ac_fn.startScroll(showButton);}, 200);
+                    setTimeout(function () {
+                        ACT.ac_fn.startScroll(showButton);
+                    }, 200);
                 }
 
                 if (scrollTimer) {
                     clearTimeout(scrollTimer);   // clear any previous pending timer
                 }
 
-                scrollTimer = setTimeout(function(){ACT.ac_fn.endScroll(showButton);}, 200);   // set new timer
+                scrollTimer = setTimeout(function () {
+                    ACT.ac_fn.endScroll(showButton);
+                }, 200);   // set new timer
 
             });
-
-            function startScroll() {
-
-
-            }
-
-            function endScroll() {
-
-            }
 
         }
     },
     ac_fn: {
-        open : function (container, showButton, parent, listParent ) {
+        open: function (container, showButton, parent, listParent) {
             showButton.onclick = function () {
                 //console.log('clicker');
 
@@ -151,7 +121,23 @@ ACT = {
                 }
             };
         },
-        startScroll: function(showButton){
+        open_collection: function (collection, buttonClass, containerClass) {
+
+            [].forEach.call(collection, function (e, i) {
+                var buttons, containers, button, container;
+                buttons = e.getElementsByClassName(buttonClass);
+                containers = e.getElementsByClassName(containerClass);
+
+                //console.log(mapButtons);
+                if (buttons[0]) {
+                    button = buttons[0];
+                    container = containers[0];
+                    ACT.ac_fn.open(container, button);
+                }
+            });
+
+        },
+        startScroll: function (showButton) {
             ACT.settings.acScrolling = true;
             var acScrollTop = $(window).scrollTop();
 
@@ -166,7 +152,7 @@ ACT = {
             }
 
         },
-        endScroll: function(showButton){
+        endScroll: function (showButton) {
             ACT.settings.acScrolling = false;
 
             var acScrollTop = $(window).scrollTop();
@@ -181,8 +167,8 @@ ACT = {
             }
         }
     },
-    settings : {
-        acScrolling : false
+    settings: {
+        acScrolling: false
     }
 };
 UTIL = {
@@ -210,6 +196,6 @@ UTIL = {
     }
 };
 
-    jQuery(window).load(UTIL.init);
+jQuery(window).load(UTIL.init);
 
 

@@ -4,13 +4,13 @@
 }
 .event{
   &__header{
-    margin-bottom: 0;
+    margin-bottom: $inuit-base-spacing-unit--small;
     border: none;
   }
   &__title{
     margin: 0;
 
-    background: $brand-col-2--dark;
+    background: $brand-col-2--light;
     background-image: url('assets/images/svg/calendar--white.svg');
     background-repeat: no-repeat;
     background-position: 97.6% 85% ;
@@ -42,13 +42,13 @@
       @extend .event__link;
       &:hover{
         color: #fff;
-        background: $brand-col-2--dark;
+        background: $brand-col-2;
       }
     }
   }
   &__info {
     display: block;
-    background: $brand-col-1;
+    background: $brand-col-1--light;
     color: #fff;
     padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
 
@@ -56,6 +56,7 @@
   }
   &__time{
     font-weight: 600;
+    @include inuit-font-size($inuit-heading-size-6);
   }
   &__date{
     padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
@@ -63,14 +64,15 @@
     font-family: $base-font-family;
     background: $brand-col-1;
     width: 100%;
+    @include inuit-font-size($inuit-heading-size-6);
     @include media-query(lap-and-up){
       width: auto;
-      padding:$inuit-base-spacing-unit--small;
+      padding:$inuit-base-spacing-unit--small $inuit-base-spacing-unit;
     }
 
   }
   &__label{
-    @include inuit-font-size($milli-size);
+    @include inuit-font-size($inuit-heading-size-6);
   }
   &__description{
     margin: 0;

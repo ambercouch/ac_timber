@@ -90,6 +90,9 @@
     line-height: 1.5;
     a{
       @extend %file-link;
+
+   //@extend %link-style--1;
+    //
     }
   }
   &__footer {

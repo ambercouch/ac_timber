@@ -60,15 +60,13 @@ $classes = $eo_event_loop_args['class'];
                         <?php else : ?>
                             <span class="event__link--false"><?php the_title(); ?></span>
                         <?php endif; ?>
-                        <span class="event__date" ><?php echo eo_get_the_start('l, M jS Y'); ?></span>
+                        <span class="event__date" ><?php echo eo_get_the_start('l, M jS Y'); ?> | <?php echo eo_get_the_start($time_format); ?></span>
+
 
                     </h4>
                     </dt>
                     <dd class="event__description">
-                        <div class="event__info">
-                            <span class="event__label" >Time: </span>
-                            <span class="event__time" ><?php echo eo_get_the_start($time_format); ?></span>
-                        </div>
+
                         <?php if (get_the_excerpt() != '') : ?>
                             <div class="event__excerpt">
                                 <?php echo get_the_excerpt(); ?>
