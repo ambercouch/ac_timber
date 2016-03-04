@@ -1,0 +1,56 @@
+.wpcf7-form{
+  max-width: 500px;
+  margin: 0 auto;
+}
+.wpcf7-form{
+  &__fields{
+
+    border: none;
+    background: rgba($brand-col-1--light, 0.8);
+    padding: $inuit-base-spacing-unit /2;
+    box-shadow: $z1-shadow;
+    @include media-query(lap-and-up){
+      padding: $inuit-base-spacing-unit;
+    }
+  }
+  &__label{
+    margin-bottom: $inuit-base-spacing-unit--small;
+    display: block;
+    @include inuit-font-size($small-size);
+  }
+  &__input{
+    @extend %input-style-1;
+    border-color: $brand-col-1--light;
+    margin-bottom: $inuit-base-spacing-unit--small /2;
+  }
+}
+
+.wpcf7-form {
+  &__label {
+    &--username {
+      @extend .wpcf7-form__label;
+    }
+    &--email {
+      @extend .wpcf7-form__label;
+    }
+    &--message {
+      @extend .wpcf7-form__label;
+    }
+  }
+  &__input {
+    &--username {
+      @extend .wpcf7-form__input;
+    }
+    &--email {
+       @extend .wpcf7-form__input;
+     }
+    &--message {
+      @extend .wpcf7-form__input;
+    }
+    &--submit {
+      @extend .btn--cta2;
+      width: 100%;
+      margin-bottom: $inuit-base-spacing-unit--small;
+    }
+  }
+}
