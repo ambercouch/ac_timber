@@ -1,27 +1,38 @@
-.wpcf7-form{
+.wpcf7-form {
   max-width: 500px;
   margin: 0 auto;
+  .wpcf7-form--fullwidth &{
+    max-width: 100%;
+  }
 }
-.wpcf7-form{
-  &__fields{
+
+.wpcf7-form {
+  &__fields {
 
     border: none;
-    background: rgba($brand-col-1--light, 0.8);
+    background: rgba($brand-col-3--light, 0.5);
     padding: $inuit-base-spacing-unit /2;
     box-shadow: $z1-shadow;
-    @include media-query(lap-and-up){
+    @include media-query(lap-and-up) {
       padding: $inuit-base-spacing-unit;
     }
   }
-  &__label{
+  &__label {
     margin-bottom: $inuit-base-spacing-unit--small;
     display: block;
     @include inuit-font-size($small-size);
   }
-  &__input{
+  &__input {
     @extend %input-style-1;
-    border-color: $brand-col-1--light;
+    border-color: $brand-col-3--light;
     margin-bottom: $inuit-base-spacing-unit--small /2;
+  }
+  &__wrapper {
+    display: block;
+    margin-bottom: $inuit-base-spacing-unit--small;
+  }
+  &__help {
+    @include inuit-font-size($micro-size);
   }
 }
 
@@ -34,23 +45,79 @@
       @extend .wpcf7-form__label;
     }
     &--message {
+       @extend .wpcf7-form__label;
+     }
+    &--address1 {
       @extend .wpcf7-form__label;
+    }
+    &--address2 {
+      @extend .wpcf7-form__label;
+    }
+    &--tel {
+      @extend .wpcf7-form__label;
+    }
+    &--tel2 {
+      @extend .wpcf7-form__label;
+    }
+    &--name {
+      @extend .wpcf7-form__label;
+    }
+    &--postcode {
+      @extend .wpcf7-form__label;
+    }
+    &--town {
+      @extend .wpcf7-form__label;
+    }
+    &--gift {
+      @extend .wpcf7-form__label;
+      margin-bottom: 0;
     }
   }
   &__input {
     &--username {
       @extend .wpcf7-form__input;
     }
+    &--name {
+      @extend .wpcf7-form__input;
+    }
+    &--tel {
+      @extend .wpcf7-form__input;
+    }
+    &--tel2 {
+      @extend .wpcf7-form__input;
+    }
+    &--address1 {
+      @extend .wpcf7-form__input;
+    }
+    &--address2{
+      @extend .wpcf7-form__input;
+    }
+    &--town{
+      @extend .wpcf7-form__input;
+    }
+    &--postcode{
+      @extend .wpcf7-form__input;
+    }
     &--email {
-       @extend .wpcf7-form__input;
-     }
+      @extend .wpcf7-form__input;
+    }
     &--message {
       @extend .wpcf7-form__input;
     }
     &--submit {
-      @extend .btn--cta2;
+      @extend .btn--cta3;
       width: 100%;
       margin-bottom: $inuit-base-spacing-unit--small;
     }
   }
 }
+
+.wpcf7-form {
+  &--subscription {
+    &__fields {
+      @extend .wpcf7-form__fields;
+    }
+  }
+
+}
+

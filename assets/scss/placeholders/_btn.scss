@@ -46,3 +46,11 @@
   border-color: $brand-col-3;
 }
 
+.btn--cta3{
+  @extend %btn;
+  @extend .btn--cta;
+  background: $brand-col-1--light;
+  border-color: $brand-col-1;
+}
+
+
