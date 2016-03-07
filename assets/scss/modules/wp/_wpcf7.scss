@@ -1,20 +1,34 @@
 .wpcf7-form {
   max-width: 500px;
   margin: 0 auto;
+  background: rgba($brand-col-3--light, 0.5);
+  padding: $inuit-base-spacing-unit /2;
+  padding-bottom:0;
+  box-shadow: $z1-shadow;
+  text-align: left;
+  @include media-query(desk) {
+    padding: $inuit-base-spacing-unit  /2 ;
+  }
   .wpcf7-form--fullwidth &{
     max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 .wpcf7-form {
   &__fields {
-
     border: none;
-    background: rgba($brand-col-3--light, 0.5);
-    padding: $inuit-base-spacing-unit /2;
-    box-shadow: $z1-shadow;
-    @include media-query(lap-and-up) {
-      padding: $inuit-base-spacing-unit;
+    margin: 0;
+    padding: 0 $inuit-base-spacing-unit--small /2;
+    &--full{
+      @extend .wpcf7-form__fields;
+      width:100% !important;
+    }
+    .wpcf7-form--fullwidth &{
+      @include media-query(lap-and-up) {
+        width: 33%;
+      }
     }
   }
   &__label {
@@ -25,7 +39,7 @@
   &__input {
     @extend %input-style-1;
     border-color: $brand-col-3--light;
-    margin-bottom: $inuit-base-spacing-unit--small /2;
+    margin-bottom: 0;
   }
   &__wrapper {
     display: block;
@@ -39,6 +53,12 @@
 .wpcf7-form {
   &__label {
     &--username {
+      @extend .wpcf7-form__label;
+    }
+    &--sub {
+      @extend .wpcf7-form__label;
+    }
+    &--donation {
       @extend .wpcf7-form__label;
     }
     &--email {
@@ -75,6 +95,12 @@
   }
   &__input {
     &--username {
+      @extend .wpcf7-form__input;
+    }
+    &--sub {
+      @extend .wpcf7-form__input;
+    }
+    &--donation{
       @extend .wpcf7-form__input;
     }
     &--name {
@@ -116,8 +142,25 @@
   &--subscription {
     &__fields {
       @extend .wpcf7-form__fields;
+      &--full{
+        @extend .wpcf7-form__fields--full;
+        width:100% !important;
+      }
     }
   }
 
 }
+div.wpcf7-response-output{
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
 
+span.wpcf7-not-valid-tip{
+  color: #fff;
+  background: red;
+  padding: 0 1em;
+}
+input.wpcf7-not-valid{
+  border-color: red;
+}
