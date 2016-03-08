@@ -1,15 +1,15 @@
 .login-form{
   max-width: 500px;
   margin: 0 auto;
-
+  background: rgba($brand-col-1--light, 0.8) !important;
+  padding: $inuit-base-spacing-unit;
+  box-shadow: $z1-shadow;
 }
 
 .login-form{
  &__fields{
    border: none;
-   background: rgba($brand-col-1--light, 0.8);
-   padding: $inuit-base-spacing-unit;
-   box-shadow: $z1-shadow;
+
  }
   &__label{
     margin-bottom: $inuit-base-spacing-unit--small;

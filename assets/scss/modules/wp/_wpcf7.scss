@@ -20,14 +20,24 @@
   &__fields {
     border: none;
     margin: 0;
-    padding: 0 $inuit-base-spacing-unit--small /2;
+    padding: 0 $inuit-base-spacing-unit--small;
     &--full{
       @extend .wpcf7-form__fields;
       width:100% !important;
+
     }
     .wpcf7-form--fullwidth &{
       @include media-query(lap-and-up) {
         width: 33%;
+      }
+      &:nth-of-type(1){
+        background: rgba(#fff, 0.4);
+      }
+      &:nth-of-type(2){
+        background: rgba(#fff, 0.2);
+      }
+      &:nth-of-type(3){
+        background: rgba(#fff, 0);
       }
     }
   }
@@ -35,6 +45,9 @@
     margin-bottom: $inuit-base-spacing-unit--small;
     display: block;
     @include inuit-font-size($small-size);
+    small{
+      line-height: 1;
+    }
   }
   &__input {
     @extend %input-style-1;
@@ -44,9 +57,10 @@
   &__wrapper {
     display: block;
     margin-bottom: $inuit-base-spacing-unit--small;
+    @include inuit-font-size($micro-size, 1.5);
   }
   &__help {
-    @include inuit-font-size($micro-size);
+    @include inuit-font-size($micro-size, 1.5);
   }
 }
 
@@ -60,6 +74,9 @@
     }
     &--donation {
       @extend .wpcf7-form__label;
+      small{
+        line-height: 1;
+      }
     }
     &--email {
       @extend .wpcf7-form__label;
@@ -99,6 +116,9 @@
     }
     &--sub {
       @extend .wpcf7-form__input;
+
+        height: 52px
+
     }
     &--donation{
       @extend .wpcf7-form__input;
@@ -133,7 +153,8 @@
     &--submit {
       @extend .btn--cta3;
       width: 100%;
-      margin-bottom: $inuit-base-spacing-unit--small;
+      margin-top: $inuit-base-spacing-unit--small;
+      font-weight: 500;
     }
   }
 }

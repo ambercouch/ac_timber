@@ -3,7 +3,7 @@ ACT = {
         init: function () {
 
             'use strict';
-            //console.log('common');
+            console.log('common');
 
             $('.fitvid').fitVids();
 
@@ -50,6 +50,33 @@ ACT = {
 
             ACT.ac_fn.open_collection(events, mapButton, map);
 
+        },
+        join_us: function () {
+            //wpcf7-form-control
+            //console.log('join us');
+            var dropDown = document.getElementById('subInput');
+            var textInput = document.getElementById('donationInput');
+            var optionVal;
+
+            dropDown.onchange = function(){
+                switch(dropDown.options[dropDown.selectedIndex].index) {
+                    case 0:
+                        optionVal = '£0';
+                        break;
+                    case 1:
+                        optionVal = '£5';
+                        break;
+                    case 2:
+                        optionVal = '£7.50';
+                        break;
+                    case 3:
+                        optionVal = '£10';
+                        break;
+                    default:
+                        optionVal = '£0';
+                }
+                textInput.value = optionVal;
+            };
         }
     },
     home: {

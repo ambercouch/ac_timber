@@ -1,5 +1,8 @@
 ol{
     margin-left:0;
     //@include inuit-font-size($small-size, 1.3);
+    @include media-query(palm){
+        padding: 0;
+    }
 
 }
