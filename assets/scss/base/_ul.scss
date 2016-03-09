@@ -11,3 +11,10 @@ ul ul{
 ul ul li {
   margin-bottom: 0;
 }
+
+.ul--inline{
+  li{
+    display:inline;
+    list-style: none;
+  }
+}
