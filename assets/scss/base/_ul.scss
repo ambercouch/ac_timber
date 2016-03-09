@@ -16,5 +16,13 @@ ul ul li {
   li{
     display:inline;
     list-style: none;
+    padding-right: 0.5em;
+    border-right: solid 1px;
+    margin-right: 0.5em;
+    &:last-child{
+      padding-right: 0;
+      border-right: none;
+      margin-right: 0;
+    }
   }
 }
