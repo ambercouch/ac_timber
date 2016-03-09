@@ -13,6 +13,9 @@ ul ul li {
 }
 
 .ul--inline{
+  ul{
+    padding-left: 0;
+  }
   li{
     display:inline;
     list-style: none;
