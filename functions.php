@@ -1,10 +1,12 @@
 <?php
 //Love, love, love, love all you functions.
 
+require_once get_template_directory() . '/lib/functions--settings.php';
 require_once get_template_directory() . '/lib/functions--timber.php';
 require_once get_template_directory() . '/lib/functions--theme-setup.php';
 require_once get_template_directory() . '/lib/functions--enqueue.php';
 require_once get_template_directory() . '/lib/functions--template-tags.php';
+require_once get_template_directory() . '/lib/functions--widget-areas.php';
 
 
 add_action('pre_get_posts', '_set_offset_on_front_page');
