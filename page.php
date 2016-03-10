@@ -25,4 +25,6 @@ $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
 
+require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
+
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

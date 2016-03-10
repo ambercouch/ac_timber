@@ -35,6 +35,9 @@
   p{
     margin-bottom: $inuit-base-spacing-unit--small;
   }
+  a{
+    @extend %link-style--1;
+  }
 
 }
 .comment-form__submit-wrapper{
