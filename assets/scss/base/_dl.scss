@@ -12,12 +12,21 @@ dd{
   margin-left: 1em;
   padding-left: 0;
   .alignleft{
-    margin-left:0 !important;
+    @include media-query(lap-and-up) {
+      margin-left: 0 !important;
+    }
   }
   .alignright{
-    margin-right:0 !important;
+    @include media-query(lap-and-up) {
+      margin-right: 0 !important;
+    }
   }
   img{
-    width:20%
+    @include media-query(lap) {
+      width: 33%
+    }
+    @include media-query(desk) {
+      width: 20%
+    }
   }
 }
