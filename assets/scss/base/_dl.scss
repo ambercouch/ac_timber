@@ -1,6 +1,6 @@
 dl{
   margin-bottom: $inuit-base-spacing-unit;
-
+  @extend %clearfix;
 }
 dt{
   font-weight: 600;
@@ -11,4 +11,13 @@ dt{
 dd{
   margin-left: 1em;
   padding-left: 0;
+  .alignleft{
+    margin-left:0 !important;
+  }
+  .alignright{
+    margin-right:0 !important;
+  }
+  img{
+    width:20%
+  }
 }

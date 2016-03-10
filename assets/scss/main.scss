@@ -22,12 +22,14 @@
 @import "../vendor/inuit-shared/generic.shared";
 @import "../vendor/inuit-page/base.page";
 @import "../vendor/inuit-headings/base.headings";
+
 ////@import "base.links";
 ////@import "base.quotes";
 //
 @import "../vendor/inuit-buttons/objects.buttons";
 //@import "../vendor/inuit-layout/objects.layout";
-//@import "../vendor/inuit-media/objects.media";
+@import "var/settings.widths";
+@import "../vendor/inuit-media/objects.media";
 
 @import "base";
 @import "mixins";
@@ -40,6 +42,7 @@
 @import "placeholders/post__image";
 @import "placeholders/input";
 @import "placeholders/links";
+@import "placeholders/media";
 
 @import "modules/main";
 @import "modules/site";

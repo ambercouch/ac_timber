@@ -24,6 +24,7 @@
     "inuit-starter-kit": "~0.2.9",
     "inuit-widths-responsive": "~0.2.2",
     "jquery.fitvids": "fitvids#~1.1.0",
-    "remodal": "~1.0.6"
+    "remodal": "~1.0.6",
+    "inuit-media": "^0.4.2"
   }
 }
