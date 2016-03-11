@@ -8,9 +8,13 @@
 
 
 {% block content %}
+  {% if fn('is_home')%}
+    {% include 'main__header--blog.twig'  %}
+  {% endif %}
   {% if fn('is_archive')%}
     {% include 'main__header.twig'  %}
   {% endif %}
+
   {{  fn('is_paged') or fn('is_category') or fn('is_tag') ? fn('the_posts_navigation') : '' }}
 
   {% for post in posts %}
