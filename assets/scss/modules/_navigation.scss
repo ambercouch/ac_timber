@@ -117,6 +117,7 @@
 .menu-item-has-children{
   position: relative;
   &:after{
+    pointer-events: none;
     transition: all 0.3s ease;
     content:'';
     @include size(14px);

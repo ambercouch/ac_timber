@@ -82,6 +82,7 @@
     display: block;
     @include inuit-font-size($milli-size);
     padding:$inuit-base-spacing-unit--small $inuit-base-spacing-unit--small ;
+    clear: both;
     address{
       margin-bottom: 0;
       background: rgba($brand-col-3--light, 0.5);
@@ -94,6 +95,13 @@
   &__excerpt{
     display: block;
     padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+    .wp-post-image{
+      @include media-query(lap-and-up){
+        float: right;
+      }
+      margin:0 auto $inuit-base-spacing-unit--small;
+
+    }
   }
   &__read-more{
     display: block;
@@ -115,6 +123,9 @@
   &__map{
     display: block;
     padding:$inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small ;
+    clear: both;
+    margin-top: $inuit-base-spacing-unit;
+
   }
   &__control{
    display: flex;

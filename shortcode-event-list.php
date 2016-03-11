@@ -69,6 +69,9 @@ $classes = $eo_event_loop_args['class'];
 
                         <?php if (get_the_excerpt() != '') : ?>
                             <div class="event__excerpt">
+                                <?php if(has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('thumbnail'); ?>
+                                <?php endif; ?>
                                 <?php echo get_the_excerpt(); ?>
                             </div>
                             <?php if ($event_content != '') : ?>
