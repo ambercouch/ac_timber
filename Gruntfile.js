@@ -94,16 +94,19 @@ module.exports = function (grunt) {
         criticalcss: {
             custom: {
                 options: {
-                    url: "http://ambercouch.local/",
+                    url: "http://strettonclimatecare.local/2015/12/you-aint-seen-nothing-yet/",
                     width: 1200,
                     height: 900,
-                    outputfile: "assets/css/critical.css",
+                    outputfile: "templates/critical--page.css",
                     filename: "style.css", // Using path.resolve( path.join( ... ) ) is a good idea here
                     buffer: 800 * 1024,
                     ignoreConsole: false
                 }
             }
         }
+
+
+
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
@@ -114,7 +117,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-svgstore');
     grunt.loadNpmTasks('grunt-browser-sync');
     grunt.loadNpmTasks('grunt-postcss');
-    //grunt.loadNpmTasks('grunt-criticalcss');
+    grunt.loadNpmTasks('grunt-criticalcss');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
 
@@ -122,5 +125,6 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['sass', 'postcss', 'uglify', 'svgstore']);
     grunt.registerTask('serve', ['browserSync', 'watch']);
     grunt.registerTask('css', ['sass', 'postcss']);
+    grunt.registerTask('criticalcsspage');
 
 };
