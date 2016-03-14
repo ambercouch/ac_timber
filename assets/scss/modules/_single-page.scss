@@ -1,5 +1,8 @@
 .single-page{
   @extend .single-post;
+  a{
+    @extend %link-style--1;
+  }
 }
 
 .single-page {
