@@ -4,6 +4,8 @@
   width: 100vw;
   @include color-overlay($brand-col-2, 0.4);
   overflow: hidden;
+  background: url('/content/uploads/2016/02/stretton-climate-care-home.jpg') 50% 50%;
+  background-size: cover;
 }
 
 /*
@@ -17,6 +19,7 @@
     position: absolute;
     height: 100vh;
     width: 100vw;
+    display: none;
   }
   &__img{
     height: 100vh;
