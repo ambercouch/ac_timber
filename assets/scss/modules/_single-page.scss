@@ -1,6 +1,6 @@
 .single-page{
   @extend .single-post;
-  a{
+  > a{
     @extend %link-style--1;
   }
 }
