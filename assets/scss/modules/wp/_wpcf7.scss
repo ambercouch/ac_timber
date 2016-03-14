@@ -66,6 +66,9 @@
 
 .wpcf7-form {
   &__label {
+    &--title {
+      @extend .wpcf7-form__label;
+    }
     &--username {
       @extend .wpcf7-form__label;
     }
@@ -90,6 +93,9 @@
     &--address2 {
       @extend .wpcf7-form__label;
     }
+    &--address3 {
+      @extend .wpcf7-form__label;
+    }
     &--tel {
       @extend .wpcf7-form__label;
     }
@@ -111,6 +117,9 @@
     }
   }
   &__input {
+    &--title {
+      @extend .wpcf7-form__input;
+    }
     &--username {
       @extend .wpcf7-form__input;
     }
@@ -136,6 +145,9 @@
       @extend .wpcf7-form__input;
     }
     &--address2{
+      @extend .wpcf7-form__input;
+    }
+    &--address3{
       @extend .wpcf7-form__input;
     }
     &--town{
