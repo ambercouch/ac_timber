@@ -213,7 +213,35 @@
       @extend .post__comment-count;
     }
   }
-
+  &--link {
+    &__feature-image {
+      @extend .post__feature-image;
+    }
+    &__header {
+      @extend .post__header;
+    }
+    &__post-meta {
+      @extend .post__post-meta;
+    }
+    &__title {
+      @extend .post__title
+    }
+    &__body {
+      @extend .post__body;
+    }
+    &__footer {
+      @extend .post__footer;
+    }
+    &__read-more {
+      @extend .post__read-more;
+    }
+    &__comment-link {
+      @extend .post__comment-link;
+    }
+    &__comment-count {
+      @extend .post__comment-count;
+    }
+  }
 }
 @include media-query(lap-and-up) {
   .post {
