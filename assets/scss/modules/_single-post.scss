@@ -34,7 +34,7 @@
     min-height: 250px;
 
     @include media-query(lap-and-up) {
-      flex-basis: 100%;
+      //flex-basis: 100%;
     }
 
     &:after {
