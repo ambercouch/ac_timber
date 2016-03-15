@@ -146,22 +146,25 @@ ACT = {
     ac_fn: {
         open: function (container, showButton, parent, listParent) {
             showButton.onclick = function () {
-                //console.log('clicker');
+                console.log('clicker');
 
                 if ('off' === showButton.dataset.state) {
                     showButton.dataset.state = 'on';
                     container.dataset.state = 'on';
+                    $(container).addClass('ac-on');
                     parent.dataset.state = 'on';
 
                 } else {
                     showButton.dataset.state = 'off';
                     container.dataset.state = 'off';
+                    $(container).removeClass('ac-on');
                     parent.dataset.state = 'off';
                 }
             };
         },
         open_collection: function (collection, buttonClass, containerClass) {
 
+            
             [].forEach.call(collection, function (e, i) {
                 var buttons, containers, button, container;
                 buttons = e.getElementsByClassName(buttonClass);
