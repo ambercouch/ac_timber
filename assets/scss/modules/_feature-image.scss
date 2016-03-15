@@ -2,6 +2,14 @@
 .feature-image {
   position: relative;
 
+  &.compat-object-fit{
+    background-size: cover;
+    background-position: center center;
+    .feature-image__img{
+      opacity: 0;
+    }
+  }
+
   @include media-query(lap-and-up) {
     article:nth-of-type(odd) & {
       @include internal-arrow(left);
@@ -58,8 +66,11 @@
     position: relative;
     @include color-overlay($brand-col-2, 0.3);
     &__img {
-      width: 100%;
+      width: inherit;  /* Make images fill their parent's space. Solves IE8. */
+      max-width: 100%; /* Add !important if needed. */
+      height: auto;
       display: block;
+
     }
 
     &__icon {

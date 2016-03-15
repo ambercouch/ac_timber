@@ -7,6 +7,18 @@ ACT = {
 
             $('.fitvid').fitVids();
 
+            if ( ! Modernizr.objectfit ) {
+                $('div[class^="feature-image"]').each(function () {
+                    var $container = $(this),
+                        imgUrl = $container.find('img').prop('src');
+                    if (imgUrl) {
+                        $container
+                            .css('backgroundImage', 'url(' + imgUrl + ')')
+                            .addClass('compat-object-fit');
+                    }
+                });
+            }
+
             var showButton = document.getElementById('menuButton');
             var container = document.getElementById('primaryNavigation');
             ACT.ac_fn.open(container, showButton);
