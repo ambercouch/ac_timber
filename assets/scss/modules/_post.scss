@@ -61,8 +61,7 @@
   }
   &__title {
     @include inuit-font-size($inuit-heading-size-2, 1);
-
-
+    text-transform: uppercase;
 
     @include media-query(palm) {
       @include inuit-font-size($inuit-heading-size-2, 1.2);
