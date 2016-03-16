@@ -145,26 +145,26 @@ ACT = {
     },
     ac_fn: {
         open: function (container, showButton, parent, listParent) {
+            var elState = $(showButton).attr('data-state');
             showButton.onclick = function () {
                 console.log('clicker');
-
-                if ('off' === showButton.dataset.state) {
-                    showButton.dataset.state = 'on';
-                    container.dataset.state = 'on';
+                elState = $(showButton).attr('data-state');
+                if ('off' === elState ) {
+                    $(showButton).attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
                     $(container).addClass('ac-on');
-                    parent.dataset.state = 'on';
 
                 } else {
-                    showButton.dataset.state = 'off';
-                    container.dataset.state = 'off';
+                    $(showButton).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
                     $(container).removeClass('ac-on');
-                    parent.dataset.state = 'off';
                 }
             };
         },
         open_collection: function (collection, buttonClass, containerClass) {
 
-            
             [].forEach.call(collection, function (e, i) {
                 var buttons, containers, button, container;
                 buttons = e.getElementsByClassName(buttonClass);
