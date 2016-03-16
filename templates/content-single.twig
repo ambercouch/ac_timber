@@ -6,7 +6,7 @@
     {% block featureImage %}
     <div class="single-post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
       <div class="feature-image--single-post">
-        {% if(post.thumbnail.src()) and post.get_field('single_default_feature' == false) %}
+        {% if(post.thumbnail.src() and post.get_field('single_default_feature') == false) %}
           <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-post__img" alt="{{ post.title }}"/>
         {% else %}
           <img src="/content/uploads/2016/02/stretton-climate-care-home-1000x250.jpg" class="feature-image--single-post__img" alt="{{ post.title }}"/>
