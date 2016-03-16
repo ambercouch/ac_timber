@@ -5,7 +5,7 @@ if (!function_exists('_act_posted_on')) :
      */
     function _act_posted_on($post_id = null)
     {
-        $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
+        $time_string = '<time class="entry-date published updated post-meta__date--published" datetime="%1$s">%2$s</time>';
         if (get_the_time('U') !== get_the_modified_time('U'))
         {
             $time_string = '<time class="post-meta__date--published entry-date published" datetime="%1$s">%2$s</time><time class="post-meta__date--updated" datetime="%3$s">%4$s</time>';

@@ -24,6 +24,8 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+$context['footer_widgets'] = Timber::get_widgets('Footer');
+
 
 require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
 

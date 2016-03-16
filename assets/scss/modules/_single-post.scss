@@ -17,8 +17,9 @@
     margin-bottom: $inuit-base-spacing-unit--large * 2;
   }
 
-  &:last-of-type{
+  &:last-of-type:not(body){
     margin-bottom: $inuit-base-spacing-unit--large;
+
   }
 }
 
