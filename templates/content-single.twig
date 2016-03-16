@@ -6,10 +6,12 @@
     {% block featureImage %}
     <div class="single-post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
       <div class="feature-image--single-post">
-        {% if(post.thumbnail.src() and post.get_field('single_default_feature') == false) %}
-          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-post__img" alt="{{ post.title }}"/>
+        {% if( post.get_field('single_alt_feature')) %}
+          <img src="{{ post.get_field('single_alt_feature') }}" class="feature-image--single-post__img feature-img--alt" alt="{{ post.title }}"/>
+        {% elseif(post.thumbnail.src() and post.get_field('single_default_feature') == false) %}
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-post__img feature-img" alt="{{ post.title }}"/>
         {% else %}
-          <img src="/content/uploads/2016/02/stretton-climate-care-home-1000x250.jpg" class="feature-image--single-post__img" alt="{{ post.title }}"/>
+          <img src="/content/uploads/2016/02/stretton-climate-care-home-1000x250.jpg" class="feature-image--single-post__img feature-img--default" alt="{{ post.title }}"/>
         {% endif %}
       </div>
     </div>
