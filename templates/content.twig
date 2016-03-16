@@ -7,8 +7,12 @@
 
     <a  href="{{ post.link }}" class="post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
       <div class="feature-image">
+  {% if(post.thumbnail.src()) %}
         <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
-      </div>
+  {% else %}
+    <img src="/content/uploads/2016/03/stretton-climate-care.jpg" class="feature-image__img" alt="{{ post.title }}"/>
+  {% endif %}
+    </div>
     </a>
 
     <header class="entry-header post{{ postFormatClass }}__header {{ postPagedClass }}">
