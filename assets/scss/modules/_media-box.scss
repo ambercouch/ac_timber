@@ -26,13 +26,15 @@
   }
 
   &__text{
-    padding-left: $inuit-base-spacing-unit;
+    padding-left: 0;
     width:100%;
     @include media-query('lap'){
       width:66.66%;
+      padding-left: $inuit-base-spacing-unit;
     }
     @include media-query('desk'){
       width:75%;
+      padding-left: $inuit-base-spacing-unit;
     }
     .is-right &{
       padding-left: 0;
