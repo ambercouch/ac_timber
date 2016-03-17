@@ -38,7 +38,17 @@
     }
     .is-right &{
       padding-left: 0;
-      padding-right: $inuit-base-spacing-unit;
+      padding-right: 0;
+
+      @include media-query('lap'){
+        width:66.66%;
+        padding-right: $inuit-base-spacing-unit;
+      }
+      @include media-query('desk'){
+        width:75%;
+        padding-right: $inuit-base-spacing-unit;
+      }
+
     }
   }
 
