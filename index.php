@@ -1,3 +1,4 @@
+<!-- test template -->
 <?php
 /**
  * The main template file
