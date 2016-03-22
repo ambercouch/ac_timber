@@ -56,7 +56,8 @@ module.exports = function (grunt) {
                     'dist/js/main.js': [
                         'assets/js/ac_timber.js',
                         'assets/vendor/jquery.fitvids/jquery.fitvids.js',
-                        'assets/vendor/remodal/dist/remodal.js'
+                        'assets/vendor/remodal/dist/remodal.js',
+                        'assets/js/wp/wpcf7.js'
                     ]
                 }
             }
