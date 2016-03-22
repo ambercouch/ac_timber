@@ -19,3 +19,13 @@ function _act_scripts() {
 //    }
 }
 add_action( 'wp_enqueue_scripts', '_act_scripts' );
+
+function _act_dequeue_script() {
+//    echo 'test'; die();
+
+    wp_dequeue_script( 'jquery' );
+    wp_dequeue_script('jquery-migrate');
+    wp_deregister_script( 'jquery' );
+    wp_deregister_script( 'jquery-migrate' );
+}
+add_action( 'wp_print_scripts', '_act_dequeue_script', 100 );
