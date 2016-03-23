@@ -23,6 +23,10 @@ add_action( 'wp_enqueue_scripts', '_act_scripts' );
 function _act_dequeue_script() {
 //    echo 'test'; die();
 
+//    wp_deregister_script( 'jquery-migrate' );
+//    wp_register_script( 'jquery-migrate', includes_url( '/js/jquery/jquery-migrate.js' ), false, NULL, true );
+//    wp_enqueue_script( 'jquery-migrate' );
+
     wp_dequeue_script( 'jquery' );
     wp_dequeue_script('jquery-migrate');
     wp_deregister_script( 'jquery' );
