@@ -1,0 +1,16 @@
+/*
+ *
+ */
+html{
+  font-family: $base-font-family;
+}
+
+@include headings(1,6){
+  font-family: $heading-font-family;
+  margin-top: 0;
+}
+
+p{
+  margin-top: 0;
+}
+

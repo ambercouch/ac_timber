@@ -1,25 +1,28 @@
 {% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+
 {% block content %}
   <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }}">
 
     <div class="post{{ postFormatClass }}__feature-image">
       <div class="feature-image">
-        <img src="{{ post.thumbnail.src }}" class="feature-image__img" alt="{{ post.title }}"/>
+        <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
 
     <header class="entry-header post{{ postFormatClass }}__header ">
-      {% if fn('is_single') %}
-        <h1 class="entry-title post{{ postFormatClass }}__title--single">
-          {{ post.title }}
-        </h1>
-      {% else %}
-        <h2 class="entry-title post{{ postFormatClass }}__title--list">
-          <a href="{{ post.link }}">{{ post.title }}</a>
-        </h2>
-      {% endif %}
+      <h2 class="entry-title post{{ postFormatClass }}__title">
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      </h2>
       <div class="entry-meta post{{ postFormatClass }}__post-meta">
         <div class="post-meta">
+
+          <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none" >
+            <title>{{ postFormatRead }}</title>
+            <desc>Post type {{ postFormatRead }}</desc>
+            <use xlink:href="#icon-post{{ postFormat }}" />
+          </svg>
+
           <span class="post-meta__date">{{ post.date }}</span>
         </div>
       </div>
@@ -28,16 +31,18 @@
     {% if  post.post_excerpt != '' %}
       <div class="entry-content post{{ postFormatClass }}__body">
         {{ post.post_excerpt }}
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
-      <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+
     {% else %}
       <div class="entry-content post{{ postFormatClass }}__body">
-        {{ post.content | truncate(20) }}
+        <p>{{ post.content | striptags | truncate(20) }}</p>
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
-      <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+
     {% endif %}
     <footer class="post{{ postFormatClass }}__footer">
-      <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments" >
+      <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
         <span>{{ post.comment_count }} Comments </span>
       </a>
 

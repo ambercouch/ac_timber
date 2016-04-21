@@ -1,0 +1,11 @@
+.post-meta{
+  @include inuit-font-size($milli-size);
+  margin-bottom: $inuit-base-spacing-unit;
+
+  &__date{
+
+  }
+  &__icon{
+    display: none;
+  }
+}
