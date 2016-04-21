@@ -64,7 +64,7 @@ module.exports = function (grunt) {
                   ]
               },
               options: {
-                  proxy: 'cardiffmusic.local',
+                  proxy: 'http://thomasvaughanltd.local/',
                   watchTask: true
               }
           }
@@ -97,7 +97,7 @@ module.exports = function (grunt) {
     criticalcss: {
         custom: {
             options: {
-                url: "http://ambercouch.local/",
+                url: "http://thomasvaughanltd.local/",
                     width: 1200,
                     height: 900,
                     outputfile: "assets/css/critical.css",
