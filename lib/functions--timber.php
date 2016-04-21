@@ -35,6 +35,9 @@ class StarterSite extends TimberSite {
         //site vars
         $context['site'] = $this;
 
+        //Template settings
+        $context['acSettings'] = acSettings();
+
         //Primary Menu
         $context['menuPrimary'] = new TimberMenu('primary');
         return $context;

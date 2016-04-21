@@ -1,14 +1,14 @@
   <div class="masthead">
     <div class="masthead__branding">
-      {% if fn('is_front_page') %}
-        <h1 class="site-title">
-          <a href="{{ site.url }} " rel="home">{{ site.name }}</a>
-        </h1>
-      {% else %}
-        <span class="site-title">
-               <a href="{{ site.url }} " rel="home">{{ site.name }}</a>
-            </span>
-      {% endif %}
+      <div class="masthead__site-title">
+
+        {%  if acSettings.svgLogo  %}
+          {%  include 'site-title-svg.twig' %}
+        {% else %}
+          {% include 'site-title-text.twig' %}
+        {% endif %}
+
+      </div>
     </div>
 
     <nav class="masthead__navigation" role="navigation">
