@@ -3,12 +3,13 @@
 
 {% block content %}
   <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }}">
-
+  {% if post.thumbnail %}
     <div class="post{{ postFormatClass }}__feature-image">
       <div class="feature-image">
         <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
+  {%  endif %}
 
     <header class="entry-header post{{ postFormatClass }}__header ">
       <h2 class="entry-title post{{ postFormatClass }}__title">
