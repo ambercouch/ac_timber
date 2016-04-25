@@ -3,6 +3,7 @@
 
     function acSettings()
     {
-        $settings['svgLogo'] = Null;
+        $settings['svgLogo'] = null;
+        $settings['typeKitId'] = 'hej7ovh';
         return $settings;
     }

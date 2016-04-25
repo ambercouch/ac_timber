@@ -1,0 +1,17 @@
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+/**
+ * Headings 1–6.
+ */
+
+$scale : 1.5;
+// Predefine the variables below in order to alter and enable specific features.
+$inuit-heading-size-1:  $inuit-base-font-size * ($scale * 3);
+$inuit-heading-size-2:  $inuit-base-font-size * ($scale * 2);
+$inuit-heading-size-3:  $inuit-base-font-size * $scale;
+$inuit-heading-size-4:  $inuit-base-font-size;
+$inuit-heading-size-5:  $inuit-base-font-size / $scale;
+$inuit-heading-size-6:  $inuit-base-font-size / ($scale * 2);
+
