@@ -47,34 +47,34 @@
   }
 
   &--aside__feature-image{
-     @extend .post__feature-image;
+     //@extend .post__feature-image;
    }
   &--aside__header{
-    @extend .post__header;
+    //@extend .post__header;
   }
   &--aside__body{
-    @extend .post__body;
+    //@extend .post__body;
   }
   &--aside__footer{
-    @extend .post__footer;
+    //@extend .post__footer;
   }
   &--aside__comment-link{
-    @extend .post__comment-link;
+    //@extend .post__comment-link;
   }
 
   &--quote__feature-image{
-    @extend .post__feature-image;
+    //@extend .post__feature-image;
   }
   &--quote__header{
-    @extend .post__header;
+    //@extend .post__header;
   }
   &--quote__body{
-    @extend .post__body;
+    //@extend .post__body;
   }
   &--quote__footer{
-    @extend .post__footer;
+    //@extend .post__footer;
   }
   &--quote__comment-link{
-    @extend .post__comment-link;
+    //@extend .post__comment-link;
   }
 }
