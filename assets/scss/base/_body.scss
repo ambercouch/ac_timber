@@ -1,20 +1,18 @@
 /**
- * 1. 18px on palm
- * 2. 24px on lap
- * 3. 27px on desk
+
  */
 body{
   background: $col-act-gray-xxlight;
 
   @include media-query(palm){
-    font-size: .6667em; /* [3] */
+    @include inuit-font-size($inuit-base-font-size, 1.2);
   }
 
   @include media-query(lap){
-    font-size: .8889em; /* [3] */
+    @include inuit-font-size($inuit-base-font-size--lap, 1.2);
   }
 
   @include media-query(desk){
-    font-size: 1em; /* [3] */
+    @include inuit-font-size($inuit-base-font-size--desk, 1.2);
   }
 }

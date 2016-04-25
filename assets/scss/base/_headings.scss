@@ -1,0 +1,67 @@
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+
+/**
+ * Headings 1–6.
+ */
+
+h1 {
+    @include media-query(palm){
+        @include inuit-font-size($inuit-heading-size-1, 1.2);
+    }
+
+    @include media-query(lap){
+        @include inuit-font-size($inuit-heading-size-1--lap, 1.2);
+    }
+
+    @include media-query(desk){
+        @include inuit-font-size($inuit-heading-size-1--desk, 1.2);
+    }
+}
+
+h2 {
+    @include media-query(lap){
+        @include inuit-font-size($inuit-heading-size-2);
+    }
+    @include media-query(desk){
+        @include inuit-font-size($inuit-heading-size-2--desk);
+    }
+}
+
+h3 {
+    @include media-query(lap){
+        @include inuit-font-size($inuit-heading-size-3);
+    }
+    @include media-query(desk){
+        @include inuit-font-size($inuit-heading-size-3--desk);
+    }
+}
+
+h4 {
+    @include media-query(lap){
+        @include inuit-font-size($inuit-heading-size-4);
+    }
+    @include media-query(desk){
+        @include inuit-font-size($inuit-heading-size-4--desk);
+    }
+}
+
+h5 {
+    @include media-query(lap){
+        @include inuit-font-size($inuit-heading-size-5);
+    }
+    @include media-query(desk){
+        @include inuit-font-size($inuit-heading-size-5--desk);
+    }
+}
+
+
+h6 {
+    @include media-query(lap){
+    @include inuit-font-size($inuit-heading-size-6);
+}
+    @include media-query(desk){
+        @include inuit-font-size($inuit-heading-size-6--desk);
+    }
+}
