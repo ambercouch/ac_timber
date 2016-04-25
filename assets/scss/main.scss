@@ -41,7 +41,8 @@
 @import "typography";
 @import "var/settings.container";
 @import "accessibility";
-@import "placeholders/off-page";
+
+@import "placeholders";
 
 @import "modules/site";
 @import "modules/main";
@@ -51,7 +52,8 @@
 @import "modules/post";
 @import "modules/post-meta";
 @import "modules/feature-image";
-//@import "ui/modules/placeholders/container";
+@import "modules/single-page";
+@import "modules/aside";
 //@import "ui/modules/placeholders/layout";
 //@import "ui/modules/placeholders/responsive-toggle";
 //@import "ui/modules/placeholders/menu--responsive-expand";

@@ -1,0 +1,8 @@
+.aside{
+  &--main {
+
+    @include media-query(lap-and-up) {
+      max-width: 340px;
+    }
+  }
+}

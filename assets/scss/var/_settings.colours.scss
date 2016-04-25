@@ -10,7 +10,14 @@ and open the template in the editor.
 
 $col-act-gray-xxlight : #fafafa;
 
+$col-tvb-gold : #868032;
+$col-tvb-gold--light : #848167;
+
+$brand-bg : $col-act-gray-xxlight;
+
 $brand-col-1 : #505151;
 $brand-col-1--dark : darken(#505151, 10%);
-$brand-col-2 : #0b556d;
+$brand-col-2 : $col-tvb-gold;
+$brand-col-2--light : $col-tvb-gold--light;
+
 

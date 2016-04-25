@@ -1,5 +1,11 @@
 .masthead{
+  max-width: 1148px;
+  margin: 0 auto;
+
   &__navigation{
     @extend %off-page--curtain;
+  }
+  &__branding{
+    padding:$inuit-base-spacing-unit 0 ;
   }
 }

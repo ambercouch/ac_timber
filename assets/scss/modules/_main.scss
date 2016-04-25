@@ -1,3 +1,28 @@
 .main{
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main__content{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  @include media-query(lap){
+    width: 75%
+  }
+  @include media-query(desk){
+    width: 66.666%
+  }
+  padding: $inuit-base-spacing-unit;
+}
+.main__aside{
+  background: $brand-col-2--light;
+  width: 100%;
+  @include media-query(lap){
+    width: 25%
+  }
+  @include media-query(desk){
+    width: 33.333%
+  }
+  padding: $inuit-base-spacing-unit;
 }
