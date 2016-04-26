@@ -54,35 +54,8 @@
 @import "modules/feature-image";
 @import "modules/single-page";
 @import "modules/aside";
-//@import "ui/modules/placeholders/layout";
-//@import "ui/modules/placeholders/responsive-toggle";
-//@import "ui/modules/placeholders/menu--responsive-expand";
-//@import "ui/modules/placeholders/menu--responsive-expand-break-points";
-//@import "ui/modules/placeholders/nav";
-//@import "ui/modules/placeholders/nav-break-points";
-//@import "ui/modules/site";
-//@import "ui/modules/master-header";
-//@import "ui/modules/navigation";
-//@import "ui/modules/content";
-//@import "ui/modules/subsidiary";
-//@import "ui/modules/footer";
-//@import "ui/modules/menu";
-//@import "ui/modules/branding";
-//@import "ui/accessibility";
-//@import "ui/modules/post";
-//@import "ui/modules/widget";
-//@import "ui/modules/sidebar";
-//@import "ui/modules/branding";
-//@import "ui/modules/widgets/search-form";
-//@import "ui/accessibility";
-//
-//
-//
-////@import "components.page-head";
-////@import "components.page-foot";
-////@import "components.site-nav";
-////@import "components.ads";
-////@import "components.promo";
+@import "modules/hero";
+
 @import "var/settings.widths";
 @import "../vendor/inuit-widths/trumps.widths";
 @import "../vendor/inuit-widths-responsive/trumps.widths-responsive";

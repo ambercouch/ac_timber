@@ -1,0 +1,19 @@
+.hero{
+  height: calc(100vh - 130px);
+  position: relative;
+  background-position: 50% 90%;
+  background-size: cover;
+  &__content{
+    position: absolute;
+    width: 100%;
+    bottom:0;
+    background: $brand-col-1;
+  }
+  &__call-to-action{
+    width: 1148px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    padding: $inuit-base-spacing-unit--large 0 ;
+  }
+}
