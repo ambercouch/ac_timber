@@ -1,6 +1,9 @@
 .site{
   &__masthead{
     background: $brand-col-1;
-    padding: 0 $inuit-base-spacing-unit;
+    @include media-query(lap-and-up){
+      padding: 0 $inuit-base-spacing-unit;
+    }
+    padding: 0 $inuit-base-spacing-unit--small;
   }
 }

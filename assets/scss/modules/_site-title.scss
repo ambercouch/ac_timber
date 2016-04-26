@@ -3,9 +3,16 @@
   &__link{
     display: block;
   }
-  &__logo{
-    height: 50px;
-    width: 300px;
-  }
+  &__icon{
 
+    width: 250px;
+    height: 50px;
+    max-width: 70vw;
+    @include media-query(lap-and-up){
+      max-width: 50vw;
+      width: 400px;
+      height: 71px;
+    }
+
+  }
 }

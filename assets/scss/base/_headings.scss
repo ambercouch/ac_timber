@@ -6,6 +6,7 @@
  * Headings 1–6.
  */
 
+
 h1 {
     @include media-query(palm){
         @include inuit-font-size($inuit-heading-size-1, 1.2);

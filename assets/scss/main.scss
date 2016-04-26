@@ -2,7 +2,6 @@
 
 @import "../vendor/inuit-defaults/settings.defaults";
 
-
 @import "var/settings.shadows";
 @import "var/settings.colours";
 @import "var/settings.defaults";
@@ -47,6 +46,7 @@
 @import "modules/site";
 @import "modules/main";
 @import "modules/site-title";
+
 @import "modules/btn";
 @import "modules/masthead";
 @import "modules/post";
