@@ -6,4 +6,7 @@
     }
     padding: 0 $inuit-base-spacing-unit--small;
   }
+  &__main{
+    background: linear-gradient(to right, $col-act-gray-xxlight 0%, $col-act-gray-xxlight 50%,$brand-col-2--light 50%,$brand-col-2--light 100%);
+  }
 }
