@@ -24,9 +24,12 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+
 //$context['footer_widgets'] = Timber::get_widgets('Footer');
 
-
 //require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
-
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+$templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
+if ( is_front_page() ) {
+    array_unshift( $templates, 'front-page.twig' );
+}
+Timber::render( $templates, $context );
