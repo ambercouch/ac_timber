@@ -6,9 +6,12 @@
     @extend %off-page--curtain;
   }
   &__branding{
-    padding:$inuit-base-spacing-unit--small 0 ;
+    padding:$inuit-base-spacing-unit--small 0;
     @include media-query(lap-and-up){
-      padding:$inuit-base-spacing-unit 0 ;
+      padding:$inuit-base-spacing-unit 0;
+    }
+    @include media-query(narrow){
+      padding:$inuit-base-spacing-unit--small 0;
     }
   }
 }

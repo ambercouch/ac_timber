@@ -71,3 +71,21 @@
 
   }
 }
+
+.btn--cta1{
+  color: #fff;
+  text-decoration: none;
+  font-family: $heading-font-family;
+  @include media-query(palm) {
+    @include inuit-font-size($inuit-heading-size-3,1.4);
+  }
+  @include media-query(lap) {
+    @include inuit-font-size($inuit-heading-size-3--lap,1.4);
+  }
+  @include media-query(desk) {
+    @include inuit-font-size($inuit-heading-size-3--desk,1.4);
+  }
+
+
+
+}
