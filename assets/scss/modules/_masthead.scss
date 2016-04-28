@@ -4,8 +4,9 @@
   display: flex;
   justify-content: space-between;
   &__navigation{
+    display: flex;
+    align-items: flex-end;
     @include media-query(portrait){
-      background: #fff !important;
       height: 100%;
     }
 
