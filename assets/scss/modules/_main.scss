@@ -2,7 +2,7 @@
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  max-width: 1148px;
+  max-width: $act-site-width;
 }
 .main__content{
   background: $col-act-gray-xxlight;
@@ -15,7 +15,7 @@
   @include media-query(desk){
     width: 66.666%
   }
-  padding: $inuit-base-spacing-unit;
+  padding: $inuit-base-spacing-unit--large * 2 $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
 }
 .main__aside{
   background: $brand-col-2--light;
@@ -26,5 +26,6 @@
   @include media-query(desk){
     width: 33.333%
   }
-  padding: $inuit-base-spacing-unit;
+  padding: $inuit-base-spacing-unit--large * 2  $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large;
+
 }
