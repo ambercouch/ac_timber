@@ -15,7 +15,7 @@ $breakpoints: (
     "portable"      "screen and (max-width: 1023px)",
     "desk"          "screen and (min-width: 1024px)",
     "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)",
-    "narrow" "screen and (max-height: 595px) and (orientation: landscape)",
+    "narrow" "screen and (max-height: 650px) and (orientation: landscape)",
     "portrait" "screen and (max-width: 990px) and (orientation: portrait)"
 );
 
