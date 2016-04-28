@@ -1,12 +1,13 @@
 @import "style";
 
-@import "../vendor/inuit-defaults/settings.defaults";
+
 
 @import "var/settings.shadows";
 @import "var/settings.colours";
 @import "var/settings.defaults";
 @import "var/settings.headings";
 
+@import "../vendor/inuit-defaults/settings.defaults";
 
 @import "../vendor/inuit-responsive-settings/settings.responsive";
 @import "var/settings.responsive";
@@ -14,7 +15,6 @@
 @import "../vendor/inuit-functions/tools.functions";
 @import "../vendor/inuit-mixins/tools.mixins";
 @import "../vendor/inuit-tools-widths/tools.widths";
-@import "../vendor/inuit-responsive-settings/settings.responsive";
 @import "../vendor/inuit-responsive-tools/tools.responsive";
 //@import "tools.aliases";
 //
@@ -49,6 +49,7 @@
 
 @import "modules/btn";
 @import "modules/masthead";
+@import "modules/navigation";
 @import "modules/post";
 @import "modules/post-meta";
 @import "modules/feature-image";
