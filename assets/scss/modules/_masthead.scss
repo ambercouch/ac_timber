@@ -1,9 +1,14 @@
 .masthead{
-  max-width: 1148px;
+  max-width: $act-site-width;
   margin: 0 auto;
-
+  display: flex;
+  justify-content: space-between;
   &__navigation{
-    @extend %off-page--curtain;
+    @include media-query(portrait){
+      background: #fff !important;
+      height: 100%;
+    }
+
   }
   &__branding{
     padding:$inuit-base-spacing-unit--small 0;

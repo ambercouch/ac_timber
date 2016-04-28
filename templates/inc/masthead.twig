@@ -10,16 +10,19 @@
 
       </div>
     </div>
-
+<script>
+  var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  //alert(width);
+</script>
     <nav class="masthead__navigation" role="navigation">
-      <div class="naigavigation--primary">
-        <ul class="naigavigation--primary__list">
+      <div class="navigation--primary">
+        <ul class="navigation--primary__list">
           {% for item in menuPrimary.get_items %}
-            <li class="naigavigation--primary__item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
+            <li class="navigation--primary__item {{item.classes | join(' ')}}"><a class="navigation--primary__link" href="{{item.get_link}}">{{item.title}}</a>
               {% if item.get_children %}
-                <ul class="naigavigation--primary__sub-list">
+                <ul class="navigation--primary__sub-list">
                   {% for child in item.get_children %}
-                    <li class="naigavigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+                    <li class="navigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
                   {% endfor %}
                 </ul>
               {% endif %}
