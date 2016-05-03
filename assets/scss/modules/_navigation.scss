@@ -1,6 +1,6 @@
 .navigation--primary{
   height: 100%;
-  @include media-query(palm) {
+  @include media-query(plm) {
     @include inuit-font-size($inuit-heading-size-5);
     //background: pink;
   }
@@ -24,10 +24,12 @@
   &__item{
     transition: border-color 0.3s ease;
     list-style: none;
-
-    margin: 0 $inuit-base-spacing-unit--small;
+    margin: 0 $inuit-base-spacing-unit--small / 2;
     border-bottom: solid 3px transparent;
     text-decoration: none;
+    @include media-query(desk){
+      margin: 0 $inuit-base-spacing-unit--small;
+    }
     &:hover{
       border-bottom: solid 3px $col-act-gray-xxlight;
     }
@@ -36,11 +38,13 @@
 
   &__link{
     transition: background 0.3s ease;
-    padding: $inuit-base-spacing-unit--small;
+    padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small * 1.5;
     display: block;
     color: $col-act-gray-xxlight;
     text-decoration: none;
-
+    @include media-query(desk){
+      padding: $inuit-base-spacing-unit--small  $inuit-base-spacing-unit--small  $inuit-base-spacing-unit--small * 1.5;
+    }
     &:hover{
       color: #fff;
       //background: rgba(#fff,0.05);

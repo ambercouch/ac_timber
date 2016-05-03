@@ -7,7 +7,10 @@
     display: flex;
     align-items: flex-end;
     @include media-query(portrait){
-      @extend %off-page--curtain;
+      @include off-page--curtain();
+    }
+    @include media-query(palm){
+      @include off-page--curtain();
     }
   }
 
