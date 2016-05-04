@@ -14,7 +14,8 @@
   {#var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;#}
   {#//alert(width);#}
 {#</script>#}
-    <nav class="masthead__navigation" role="navigation">
+    <button id="menuButton" class="btn--menu" data-state="off"> <span class="btn--menu__bar--tl"></span> <span class="btn--menu__bar--tr"></span> <span class="btn--menu__bar--m"></span> <span class="btn--menu__bar--br"></span> <span class="btn--menu__bar--bl"></span> </button>
+    <nav id="primaryNavigation" class="masthead__navigation" role="navigation" data-state="off">
       <div class="navigation--primary">
         <ul class="navigation--primary__list">
           {% for item in menuPrimary.get_items %}
