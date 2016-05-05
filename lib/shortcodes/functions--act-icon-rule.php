@@ -7,31 +7,21 @@
 
 
 //[actcard]
-function actCard($atts, $content)
+function actIconRule($atts)
 {
 
-    $a = shortcode_atts( array(
-        'type' => 'default',
-        'title' => 'Add a title',
-        'image' => ''
-    ), $atts );
+    $a = shortcode_atts(array(
+
+    ), $atts);
 
 
-    $output = '<div class="card--'.$a['type'].'" >';
-    $output .= '<div class="card--'.$a['type'].'__front">';
-    $output .= '<div class="card--'.$a['type'].'__title">';
-    $output .= $a['title'];
-    $output .= '</div>';
-    $output .= '<div class="card--'.$a['type'].'__image" >';
-    $output .= '<img class="card--'.$a['type'].'__img" src="'.$a['image'].'" alt="'.$a['title'].'">';
-    $output .= '</div>';
-    $output .= '</div>';
-    $output .= '<div class="card--'.$a['type'].'__back">';
-    $output .= '<div class="card--'.$a['type'].'__content" >'.$content.'</div>';
-    $output .= '</div>';
+    $output = '<div class="icon__rule">';
+    $output .= '<svg class="icon--flourish-leaf ">';
+    $output .= '<use xlink:href="#icon-flourish-leaf" />';
+    $output .= '</svg>';
     $output .= '</div>';
 
     return $output;
 }
 
-add_shortcode('actcard', 'actCard');
+add_shortcode('actirule', 'actIconRule');

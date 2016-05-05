@@ -13,6 +13,7 @@
 
   &__rule{
     //padding: 0 20px;
+    position: relative;
     &:after{
       content: '';
       display: block;

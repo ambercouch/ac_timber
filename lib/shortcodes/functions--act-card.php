@@ -27,7 +27,7 @@ function actCard($atts, $content)
     $output .= '</div>';
     $output .= '</div>';
     $output .= '<div class="card--'.$a['type'].'__back">';
-    $output .= '<div class="card--'.$a['type'].'__content" >'.$content.'</div>';
+    $output .= '<div class="card--'.$a['type'].'__content" >'.do_shortcode($content).'</div>';
     $output .= '</div>';
     $output .= '</div>';
 
