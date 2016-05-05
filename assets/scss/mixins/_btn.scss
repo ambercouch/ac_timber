@@ -1,0 +1,21 @@
+@mixin btn($color : $brand-col-2, $hover : $brand-col-2--dark, $border : $brand-col-2--dark){
+  @extend .btn;
+  position: relative;
+  background: $color;
+  @if ($border != false){
+    border-color: $border;
+  }
+  @else {
+    border: none;
+  }
+  box-shadow: $z2-shadow;
+  font-family: $heading-font-family;
+  text-shadow: 0 1px 0 rgba(#000, 0.2);
+  &:hover{
+    background: $hover;
+  }
+  &:active{
+    top: 1px;
+    box-shadow: $z1-shadow;
+  }
+}

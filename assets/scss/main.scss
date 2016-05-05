@@ -29,7 +29,7 @@
 ////@import "base.links";
 ////@import "base.quotes";
 //
-//@import "../vendor/inuit-buttons/objects.buttons";
+@import "../vendor/inuit-buttons/objects.buttons";
 //@import "../vendor/inuit-layout/objects.layout";
 //@import "../vendor/inuit-media/objects.media";
 
@@ -59,6 +59,8 @@
 @import "modules/widget";
 @import "modules/icon";
 @import "modules/card";
+@import "modules/island";
+@import "modules/cta";
 
 @import "var/settings.widths";
 @import "../vendor/inuit-widths/trumps.widths";

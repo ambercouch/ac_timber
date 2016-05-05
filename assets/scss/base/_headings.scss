@@ -31,9 +31,14 @@ h2 {
 }
 
 h3 {
-    @include media-query(lap){
+    @include media-query(palm){
         @include inuit-font-size($inuit-heading-size-3);
     }
+
+    @include media-query(lap){
+        @include inuit-font-size($inuit-heading-size-3--lap);
+    }
+
     @include media-query(desk){
         @include inuit-font-size($inuit-heading-size-3--desk);
     }

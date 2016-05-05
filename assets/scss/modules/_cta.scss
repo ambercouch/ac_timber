@@ -1,0 +1,24 @@
+.cta {
+  &--ad {
+    @include media-query(desk) {
+      @include inuit-font-size($inuit-heading-size-6--desk);
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-heading-size-6--lap);
+    }
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-6, 1.2);
+    }
+    border: solid 1px $brand-col-2;
+    padding: $inuit-base-spacing-unit--small;
+    text-align: center;
+    &__title {
+      color: $brand-col-2;
+      margin-bottom: 0;
+    }
+    &__btn {
+      @include btn();
+      //background: #000;
+    }
+  }
+}
