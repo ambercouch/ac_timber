@@ -5,3 +5,5 @@ require_once get_template_directory() . '/lib/functions--ac-settings.php';
 require_once get_template_directory() . '/lib/functions--timber.php';
 require_once get_template_directory() . '/lib/functions--theme-setup.php';
 require_once get_template_directory() . '/lib/functions--template-tags.php';
+require_once get_template_directory() . '/lib/functions--widget-areas.php';
+require_once get_template_directory() . '/lib/functions--shortcode.php';

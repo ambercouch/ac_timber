@@ -19,7 +19,8 @@ if ( ! class_exists( 'Timber' ) ) {
 }
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
-$context['foo'] = 'bar';
+$context['footer_widgets'] = Timber::get_widgets('Footer');
+$context['primary_widgets'] = Timber::get_widgets('Primary');
 $templates = array( 'index.twig' );
 if ( is_home() ) {
     array_unshift( $templates, 'home.twig' );

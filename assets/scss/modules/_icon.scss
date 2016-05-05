@@ -1,0 +1,28 @@
+.icon{
+  margin: $inuit-base-spacing-unit--small auto;
+  display: block;
+  color: $brand-col-1;
+  fill: $brand-col-1;
+  position: relative;
+  z-index:2;
+  &--flourish-leaf{
+    @extend .icon;
+    @include size(25px);
+    background: $brand-col-1--light;
+  }
+
+  &__rule{
+    //padding: 0 20px;
+    &:after{
+      content: '';
+      display: block;
+      position: absolute;
+      width: 50%;
+      border-bottom: solid 1px $brand-col-1;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+}

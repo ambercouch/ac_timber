@@ -17,7 +17,9 @@ $brand-bg : $col-act-gray-xxlight;
 
 $brand-col-1 : #505151;
 $brand-col-1--dark : darken(#505151, 10%);
+$brand-col-1--light : lighten(#505151, 46%);
 $brand-col-2 : $col-tvb-gold;
 $brand-col-2--light : $col-tvb-gold--light;
+$brand-col-2--dark : darken($col-tvb-gold, 10%);
 
 

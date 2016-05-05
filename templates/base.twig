@@ -57,13 +57,13 @@
           {% endif %}
         {% endblock %}
       </main>
+      {% block sidebar %}
       <div class="main__aside">
         <aside class="aside--main">
-          {% block sidebar %}
-          <h3>Our Products </h3>
-          {% endblock %}
+            {% include 'inc/sidebar.twig'  %}
         </aside>
       </div>
+      {% endblock %}
     </div>
   </section>
 
