@@ -10,10 +10,10 @@ function _act_widgets_init() {
             'name' => __($sidebar , '_s'),
             'id' => 'aside-'.strtolower($sidebar),
             'description' => '',
-            'before_widget' => '<aside id="%1$s" class="widget '.strtolower($sidebar).'__widget %2$s">',
-            'after_widget' => '</aside>',
-            'before_title' => '<h3 class="widget__title">',
-            'after_title' => '</h3>',
+            'before_widget' => '<aside id="%1$s" class="'.strtolower($sidebar).'__widget %2$s"><div  class="widget widget--'.strtolower($sidebar).'">',
+            'after_widget' => '</div></aside>',
+            'before_title' => '<h3 class="widget--'.strtolower($sidebar).'__title">',
+            'after_title' => '</h3>'
         ));
     }
 

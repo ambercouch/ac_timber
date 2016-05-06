@@ -67,7 +67,22 @@
     </div>
   </section>
 
+  {% block subsidiary %}
+    <section id="subsidiary" class="site__subsidiary">
+      {% include 'inc/subsidiary.twig' %}
+    </section>
+  {% endblock %}
+
 </div>{# /#page #}
+
+{% block footer %}
+  <footer class="site__footer" role="contentinfo">
+    {% include 'inc/footer.twig' %}
+  </footer>
+{% endblock %}
+
+{% include 'inc/footer_scripts.twig' %}
+
 <link rel="stylesheet" href="{{ site.theme.link }}/style.css">
 <script>
 

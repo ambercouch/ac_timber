@@ -1,0 +1,40 @@
+.footer{
+
+  padding: $inuit-base-spacing-unit 0 0;
+  text-align: center;
+  background: $brand-col-1--light;
+}
+
+.footer{
+
+  &__content{
+    max-width: $act-site-width;
+    //background: #000;
+    margin: 0 auto;
+    padding-bottom: $inuit-base-spacing-unit;
+    //@include inuit-font-size($small-size);
+    line-height: 1.3;
+    display: flex;
+  }
+  &__widget{
+    max-width: 33.333%;
+  }
+  &__site-info{
+    @include inuit-font-size($inuit-heading-size-6--desk);
+    background: $brand-col-1;
+    color: #fff;
+    padding: $inuit-base-spacing-unit--small 0;
+    p{
+      margin-bottom: 0 !important;
+    }
+    a{
+      color: $brand-col-2--light;
+      &:hover{
+       color: lighten($brand-col-2--light,10%);
+      }
+    }
+  }
+  ul, p{
+    margin-bottom: $inuit-base-spacing-unit--small;
+  }
+}
