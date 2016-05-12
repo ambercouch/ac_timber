@@ -13,17 +13,27 @@ $icon-flourish-leaf-silver :  '%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A
 }
 
 .widget{
+
   &--primary {
      &__title {
        @extend .widget__title;
      }
-   }
+  }
+
   &--footer {
     text-align: left;
     padding-right:$inuit-base-spacing-unit--large;
+    @include inuit-font-size($inuit-heading-size-4);
     &__title {
-      //@extend .widget__title;
-      @include brand-title($brand-col-1--dark, $brand-col-1--light);
+     @extend .h4;
+      @include brand-title($brand-col-2--dark, $brand-col-1--light);
+      margin-bottom: $inuit-base-spacing-unit!important;
+    }
+  }
+
+  &--contact{
+    ul{
+      @extend .list-bare;
     }
   }
 }
