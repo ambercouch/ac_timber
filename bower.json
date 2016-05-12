@@ -22,6 +22,7 @@
     "inuit-spacing-responsive": "~0.0.8",
     "inuit-starter-kit": "~0.2.9",
     "inuit-widths-responsive": "~0.2.2",
-    "inuit-list-bare": "^0.3.0"
+    "inuit-list-bare": "^0.3.0",
+    "flickity": "^1.2.1"
   }
 }

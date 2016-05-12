@@ -48,9 +48,9 @@ module.exports = function (grunt) {
       uglify: {
           my_target: {
               files: {
-                  'assets/dist/js/main.js': [
-                      '../_s/assets/dist/js/main.js',
-                      'assets/js/cm.js'
+                  'dist/js/main.js': [
+                      'assets/vendor/flickity/dist/flickity.pkgd.min.js',
+                      'assets/js/act.js'
                   ]
               }
           }
