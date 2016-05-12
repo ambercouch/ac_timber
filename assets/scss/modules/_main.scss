@@ -10,13 +10,28 @@
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
   @include media-query(lap) {
-    width: 66.666%
+    width: 66.666%;
+    padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
+
   }
   @include media-query(desk) {
-    width: 66.666%
+    width: 66.666%;
+    padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
+
   }
-  padding: $inuit-base-spacing-unit--large * 1.5 $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
+  &--full-width{
+    @extend .main__content;
+    margin: 0 auto;
+    @include media-query(lap) {
+      width: 80%
+    }
+    @include media-query(desk) {
+      width: 80%
+    }
+  }
+
 }
 
 .main__aside {
@@ -29,9 +44,9 @@
     width: 33.333%
   }
   @include media-query(desk) {
-    padding: $inuit-base-spacing-unit--large * 1.5 $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large;
+    padding: $inuit-base-spacing-unit--large  $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large;
   }
   @include media-query(lap) {
-    padding: $inuit-base-spacing-unit--large * 1.5 $inuit-base-spacing-unit--small $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
+    padding: $inuit-base-spacing-unit--large  $inuit-base-spacing-unit--small $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
   }
 }

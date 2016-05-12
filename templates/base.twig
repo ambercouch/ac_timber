@@ -34,9 +34,9 @@
     </section>
   {% endblock %}
 
-  <section id="primary" class="site__main">
-    <div class="main">
-      <main class="main__content">
+  <section id="primary" class="site__main{{ template_class }}">
+    <div class="main{{ template_class }}">
+      <main class="main__content{{ template_class }}">
         {% block content %}
           <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
         {% endblock %}

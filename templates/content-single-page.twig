@@ -1,4 +1,4 @@
-<article id="post-{{ post.id }}" class="single-page">
+<article id="post-{{ post.id }}" class="single-page{{ template_class }}">
 
   {% if(post.thumbnail or acSettings.defaultImage) %}
     <div class="single-page__feature-image ">
