@@ -15,9 +15,63 @@
 
 }
 
-.gallery__image{
+.gallery__content{
   //height: 100%;
   width: 100%;
+  text-align: center;
+
+}
+.gallery__wrapper{
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+.gallery__info{
+  width: 100%;
+  transition: transform 0.3s ease;
+  position: absolute;
+  left:0;
+  bottom:0;
+  padding: $inuit-base-spacing-unit--small;
+  color: #fff;
+  background: rgba(0,0,0, 0.6);
+  //transform: translate(0,50%);
+  //.gallery__wrapper:hover &{
+  //  transform: translate(0,0);
+  //}
+}
+.gallery__title{
+
+  margin-bottom: 0.2em;
+  @include media-query(palm){
+    @include inuit-font-size($inuit-heading-size-5, 1);
+  }
+  @include media-query(lap){
+    @include inuit-font-size($inuit-heading-size-5--lap, 1);
+  }
+  @include media-query(desk){
+    @include inuit-font-size($inuit-heading-size-5--desk, 1);
+  }
+}
+.gallery__text{
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+  @include media-query(palm){
+    @include inuit-font-size($inuit-heading-size-6, 1);
+  }
+  @include media-query(lap){
+    @include inuit-font-size($inuit-heading-size-6--lap, 1);
+  }
+  @include media-query(desk){
+    @include inuit-font-size($inuit-heading-size-6--desk, 1);
+  }
+  .gallery__wrapper:hover &{
+    max-height: 5em;
+  }
 }
 
 .gallery__img{
