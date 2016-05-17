@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="{{ body_class }}">
+<body class="{{ body_class }}" {{ fn('_act_body_data') }}>
 {% include 'inc/defs.svg' ignore missing %}
 <div id="page" class="site">
 

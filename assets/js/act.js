@@ -2,22 +2,226 @@
  * Created by Richard on 12/05/2016.
  */
 
-console.log('actjs');
+
+ACT = {
+    common: {
+        init: function () {
+
+            'use strict';
+            console.log('common');
+
+            console.log('actjs');
 
 
-$('.gallery__slides').flickity({
-    initialIndex: 0,
-    contain: true,
-    // setGallerySize: true,
-    imagesLoaded: true,
-    cellAlign: 'center'
-});
+            // $('.fitvid').fitVids();
 
-$('.gallery__controller').flickity({
-    asNavFor: '.gallery__slides',
-    contain: true,
-    setGallerySize: false,
-    pageDots: false
-});
+            // if ( ! Modernizr.objectfit ) {
+            //     $('div[class^="feature-image"]').each(function () {
+            //         var $container = $(this),
+            //             imgUrl = $container.find('img').prop('src');
+            //         if (imgUrl) {
+            //             $container
+            //                 .css('backgroundImage', 'url(' + imgUrl + ')')
+            //                 .addClass('compat-object-fit');
+            //         }
+            //     });
+            // }
+
+            var showButton = document.getElementById('menuButton');
+            var container = document.getElementById('primaryNavigation');
+            ACT.ac_fn.open(container, showButton);
+            //
+            // var searchButton = document.getElementById('mastheadSearchBtn');
+            // var searchForm = document.getElementById('mastheadSearchForm');
+            // ACT.ac_fn.open(searchForm, searchButton);
+
+
+            // var ddMenus = document.getElementsByClassName('menu-item-has-children');
+            // var ddList;
+            // var itemid;
+            //
+            // [].forEach.call(ddMenus, function (e, i) {
+            //     itemid = e.dataset.itemid;
+            //     ddList = e.parentNode;
+            //     var ddparent = document.getElementById('itemId' + itemid);
+            //     var ddButton = document.getElementById('linkId' + itemid);
+            //     var subMenu = document.getElementById('listId' + itemid);
+            //     ACT.ac_fn.open(subMenu, ddButton, ddparent, ddList);
+            // });
+
+            // var drawers = document.getElementsByClassName('newsletter-drawer');
+            // var drawerButton = 'newsletter-drawer__title';
+            // var drawerContent = 'newsletter-drawer__content';
+            // ACT.ac_fn.open_collection( drawers, drawerButton, drawerContent);
+
+        }
+    },
+    page: {
+        init: function () {
+            //uncomment to debug
+            console.log('pages');
+        },
+        bathroom_inspiration: function () {
+            ACT.ac_fn.gallery();
+        }
+    },
+    home: {
+        init: function () {
+            //uncomment to debug
+            //console.log('posts');
+        }
+    },
+    ac_fn: {
+        open: function (container, showButton, parent, listParent) {
+            var elState = $(showButton).attr('data-state');
+            showButton.onclick = function () {
+                console.log('clicker');
+                elState = $(showButton).attr('data-state');
+                if ('off' === elState) {
+                    $(showButton).attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('ac-on');
+
+                } else {
+                    $(showButton).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('ac-on');
+                }
+            };
+        },
+        open_collection: function (collection, buttonClass, containerClass) {
+
+            [].forEach.call(collection, function (e, i) {
+                var buttons, containers, button, container;
+                buttons = e.getElementsByClassName(buttonClass);
+                containers = e.getElementsByClassName(containerClass);
+
+                //console.log(mapButtons);
+                if (buttons[0]) {
+                    button = buttons[0];
+                    container = containers[0];
+                    ACT.ac_fn.open(container, button);
+                }
+            });
+
+        },
+        startScroll: function (showButton) {
+            ACT.settings.acScrolling = true;
+            var acScrollTop = $(window).scrollTop();
+
+            console.log('startScroll()');
+            if ($('#act_masthead').data('hidden') === true && acScrollTop >= 100) {
+                $('#act_masthead').data('hidden', false);
+                $('#act_masthead').attr('data-hidden', false);
+            }
+            if ($('#act_masthead').data('hidden') === false && acScrollTop <= 100 && showButton.dataset.state === 'off') {
+                $('#act_masthead').data('hidden', true);
+                $('#act_masthead').attr('data-hidden', true);
+            }
+
+        },
+        endScroll: function (showButton) {
+            ACT.settings.acScrolling = false;
+
+            var acScrollTop = $(window).scrollTop();
+            console.log('endScroll()');
+            if ($('#act_masthead').data('hidden') === true && acScrollTop >= 100) {
+                $('#act_masthead').data('hidden', false);
+                $('#act_masthead').attr('data-hidden', false);
+            }
+            if ($('#act_masthead').data('hidden') === false && acScrollTop <= 100 && showButton.dataset.state === 'off') {
+                $('#act_masthead').data('hidden', true);
+                $('#act_masthead').attr('data-hidden', true);
+            }
+        },
+        gallery: function () {
+
+            $('.gallery__slides').flickity({
+                initialIndex: 0,
+                contain: true,
+                imagesLoaded: true,
+                cellAlign: 'center'
+            });
+
+            $('.gallery__controller').flickity({
+                asNavFor: '.gallery__slides',
+                contain: true,
+                setGallerySize: false,
+                pageDots: false
+            });
+
+            var slides =  $('.gallery__slide').clone();
+            var controls = $('.gallery__thumb').clone();
+            $(document).on('click', '.filter-controls__tag', function (e) {
+                var fState =  $(this).attr('data-state');
+                var fType =  $(this).attr('data-type');
+                var activeFillters = $(this).parent().find('[data-state=on]').length;
+                var el = $('[data-type='+fType+']');
+                console.log('AF'+activeFillters);
+                if('on' === fState && activeFillters > 1){
+                    $(this).attr('data-state', 'off');
+                    $('.gallery__slides').flickity('remove', el);
+                  $('.gallery__controller').flickity('remove', el);
+                    console.log(slides);
+                }else if('off' === fState){
+                    $(this).attr('data-state', 'on');
+                    $(slides).each(function (i,e) {
+                        var eType = $(e).attr('data-type')
+
+                        var cell = $(e);
+                        if(eType == fType) {
+                            $('.gallery__slides').flickity('append', cell);
+                        }
+                    });
+                    $(controls).each(function (i,e) {
+                        var eType = $(e).attr('data-type')
+
+                        var cell = $(e);
+                        if(eType == fType) {
+                            $('.gallery__controller').flickity('append', cell);
+                        }
+                    });
+
+
+                    // $('.gallery__controller').flickity('append', $(controls).find('[data-type='+fType+']'));
+                    console.log(slides);
+                }
+
+            });
+
+        }
+    },
+    settings: {
+        acScrolling: false
+    }
+};
+UTIL = {
+    exec: function (template, handle) {
+        var ns = ACT;
+
+        handle = (handle === undefined) ? "init" : handle;
+
+        if (template !== '' && ns[template] && typeof ns[template][handle] === 'function') {
+            ns[template][handle]();
+        }
+
+    },
+
+    init: function () {
+
+        var body = document.body,
+            template = body.getAttribute('data-post-type'),
+            handle = body.getAttribute('data-post-slug');
+
+        UTIL.exec('common');
+        UTIL.exec(template);
+        UTIL.exec(template, handle);
+
+    }
+};
+
+jQuery(window).load(UTIL.init);
 
 
