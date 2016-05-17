@@ -4,3 +4,9 @@
   padding: $inuit-base-spacing-unit--small;
   //box-shadow: $z2-shadow;
 }
+.island{
+  &--transparent{
+    @extend .island;
+    background: transparent;
+  }
+}

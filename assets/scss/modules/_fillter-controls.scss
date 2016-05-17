@@ -1,0 +1,39 @@
+.filter-controls{
+  @extend .island--transparent;
+}
+.filter-controls{
+
+  &__title{
+    margin-bottom: 0;
+  }
+  &__tags{
+    @include inuit-font-size($inuit-heading-size-6);
+
+    @include media-query(lap){
+      @include inuit-font-size($inuit-heading-size-6--lap)
+    }
+
+
+    @include media-query(desk){
+      @include inuit-font-size($inuit-heading-size-6--desk)
+    }
+  }
+
+  &__tag{
+    border: none;
+    opacity: .5;
+    background: transparent;
+    &:hover{
+      opacity: 0.8;
+      background: rgba($brand-col-2--light, 0.3);
+    }
+    &[data-state=on]{
+      opacity: 1;
+      background: rgba($brand-col-2--light, 1);
+      color: #fff;
+      &:hover{
+
+      }
+    }
+  }
+}
