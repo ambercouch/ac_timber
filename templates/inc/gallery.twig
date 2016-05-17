@@ -1,0 +1,22 @@
+<div class="gallery">
+<div class="gallery__slides">
+  {%  for item in post.get_field('images') %}
+    <figure class="gallery__slide">
+      <div class="gallery__image">
+      <img class="gallery__img" src="{{ item.image.sizes.large }}" alt="{{ item.image_title }}">
+      </div>
+    </figure>
+  {% endfor %}
+</div>
+  <div class="gallery__controller">
+    {%  for item in post.get_field('images') %}
+      <div class="gallery__thumb">
+        <div class="gallery__thumb-image">
+        <img class="gallery__thumb-img" src="{{ item.image.sizes.thumbnail }}" alt="{{ item.image_title }}">
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+<hr>

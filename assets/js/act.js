@@ -5,7 +5,7 @@
 console.log('actjs');
 
 
-$('#gallery-1').flickity({
+$('.gallery__slides').flickity({
     initialIndex: 0,
     contain: true,
     // setGallerySize: true,
@@ -13,9 +13,11 @@ $('#gallery-1').flickity({
     cellAlign: 'center'
 });
 
-$('#gallery-2').flickity({
-    asNavFor: '#gallery-1',
+$('.gallery__controller').flickity({
+    asNavFor: '.gallery__slides',
     contain: true,
     setGallerySize: false,
     pageDots: false
 });
+
+

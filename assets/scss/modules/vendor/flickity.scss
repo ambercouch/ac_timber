@@ -111,11 +111,11 @@ http://flickity.metafizzy.co
 /* ---- page dots ---- */
 
 .flickity-page-dots {
-  position: absolute;
+  //position: absolute;
   width: 100%;
-  bottom: -25px;
+  //bottom: -25px;
   padding: 0;
-  margin: 0;
+  margin: $inuit-base-spacing-unit--small 0 0 0 ;
   list-style: none;
   text-align: center;
   line-height: 1;
@@ -127,7 +127,7 @@ http://flickity.metafizzy.co
   display: inline-block;
   width: 10px;
   height: 10px;
-  margin: 0 8px;
+  margin:12px;
   background: #333;
   border-radius: 50%;
   filter: alpha(opacity=25); /* IE8 */
@@ -140,13 +140,7 @@ http://flickity.metafizzy.co
   opacity: 1;
 }
 
-/* G1 carousel height */
-#gallery-1 {
-  //height: 500px;
-}
-#gallery-1 .flickity-slider{
 
-}
 /* cell inherit height from carousel */
 #gallery-1 .gallery-item {
   //height: 100%;
