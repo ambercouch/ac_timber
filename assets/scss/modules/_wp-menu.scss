@@ -1,0 +1,55 @@
+.menu-inspire-container {
+ @extend .island--transparent;
+  padding: $inuit-base-spacing-unit 0 0;
+  .menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  .menu-item {
+    transition: all 0.3s ease;
+    max-width: 20%;
+    opacity: 0.9;
+    &:hover{
+      opacity: 1;
+      box-shadow: $z1-shadow;
+    }
+    a{
+      text-decoration: none;
+    }
+  }
+  .attachment-thumbnail {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .menu__title {
+    transition: background 0.3s ease;
+
+    text-align: center;
+    font-family: $heading-font-family;
+    display: block;
+    text-decoration: none;
+    background: $brand-col-2--light;
+    color: #fff;
+    padding: 0 0.3em;
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-5)
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-heading-size-5--lap)
+    }
+    @include media-query(desk) {
+      @include inuit-font-size($inuit-heading-size-5--desk)
+    }
+
+  }
+  .menu-item:hover .menu__title {
+    background: $brand-col-2;
+  }
+
+}
