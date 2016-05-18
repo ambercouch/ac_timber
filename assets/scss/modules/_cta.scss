@@ -10,11 +10,14 @@
       @include inuit-font-size($inuit-heading-size-6, 1.2);
     }
     border: solid 1px $brand-col-2;
-    padding: $inuit-base-spacing-unit--small;
+    padding: $inuit-base-spacing-unit--small  $inuit-base-spacing-unit--small 0;
     text-align: center;
     &__title {
       color: $brand-col-2;
       margin-bottom: 0;
+    }
+    &__link{
+      margin-bottom:$inuit-base-spacing-unit;
     }
     &__btn {
       @include btn();
