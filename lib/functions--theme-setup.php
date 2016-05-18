@@ -60,6 +60,7 @@ if ( ! function_exists( '_act_setup' ) ) :
         ) ) );
 
         add_image_size ( 'feature500', 500, 500, true );
+        add_image_size ( 'feature500x600', 500, 600, true );
         add_image_size ( 'feature1000', 1000, 250, true );
 
         //shortcode in text widgets

@@ -28,6 +28,52 @@ function  tvb_tiles() {
     register_post_type('tile', $args);
     //course_dates
 
+    $labels = array(
+        'name'              => _x( 'Tile Colours', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Tile Colour', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Tile Colours' ),
+        'all_items'         => __( 'All Tile Colours' ),
+        'edit_item'         => __( 'Edit Tile Colour' ),
+        'update_item'       => __( 'Update Tile Colour' ),
+        'add_new_item'      => __( 'Add New Tile Colour' ),
+        'new_item_name'     => __( 'New Tile Colour Name' ),
+        'menu_name'         => __( 'Tile Colour' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'colour' ),
+    );
+
+    register_taxonomy( 'tile_colour', array( 'tile' ), $args );
+
+    $labels = array(
+        'name'              => _x( 'Tile Material', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Tile Material', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Tile Material' ),
+        'all_items'         => __( 'All Tile Material' ),
+        'edit_item'         => __( 'Edit Tile Material' ),
+        'update_item'       => __( 'Update Tile Material' ),
+        'add_new_item'      => __( 'Add New Tile Material' ),
+        'new_item_name'     => __( 'New Tile Material Name' ),
+        'menu_name'         => __( 'Tile Material' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'colour' ),
+    );
+
+    register_taxonomy( 'tile_material', array( 'tile' ), $args );
+
 }
 
 add_action('init', 'tvb_tiles');

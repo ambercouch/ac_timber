@@ -7,19 +7,20 @@
     <div class="tile__feature-image">
       <div class="feature-image">
 
-        <img class="feature-image__img"  src="{{post.get_field('image_room_set').sizes.thumbnail }}" alt="{{ post.title }} >
-
+        <a class="tile__link--image" href="{{ post.link }}">
+          <img class="feature-image__img"  src="{{post.get_field('image_room_set').sizes.feature500x600 }}" alt="{{ post.title }}" >
+        </a>
       </div>
     </div>
 
     <header class="entry-header tile__header ">
       <h2 class="entry-title tile__title">
-        <a href="{{ post.link }}">{{ post.title }}</a>
+        <a class="tile__link--title" href="{{ post.link }}">{{ post.title }}</a>
       </h2>
     </header>
 
     <footer class="tile__footer">
-
+      <a class="tile__link--more" href="{{ post.link }}">More Info »</a>
     </footer>
 
   </article>
