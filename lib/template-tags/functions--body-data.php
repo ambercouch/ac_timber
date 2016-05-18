@@ -19,7 +19,7 @@ function _act_get_body_data() {
 
     $post_slug = $post->post_name;
 
-    if (is_archive()){
+    if (is_archive() and isset(get_queried_object()->taxonomy)){
         $tax = get_taxonomy( get_queried_object()->taxonomy );
         $post_slug = sanitize_title( $tax->labels->singular_name);
     }
