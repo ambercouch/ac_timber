@@ -3,3 +3,11 @@
   height: 100%;
   display: block;
 }
+
+.feature-image--single-page{
+  margin: 0 0 $inuit-base-spacing-unit 0;
+  display: none;
+  &__img{
+    @extend .feature-image__img;
+  }
+}

@@ -24,12 +24,22 @@
   &--full-width{
     @extend .main__content;
     margin: 0 auto;
+    display: block;
     @include media-query(lap) {
       width: 80%
     }
     @include media-query(desk) {
       width: 80%
     }
+  }
+
+  &--parent-page{
+    @extend .main__content--full-width;
+  }
+  &--archive-tile{
+    @extend .main__content--full-width;
+    display: flex;
+    justify-content: space-around;
   }
 
 }
