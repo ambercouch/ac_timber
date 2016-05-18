@@ -1,0 +1,26 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+
+{% block content %}
+  <article id="post-{{ post.id }}" class="tile {{ post.class }}">
+
+    <div class="tile__feature-image">
+      <div class="feature-image">
+
+        <img class="feature-image__img"  src="{{post.get_field('image_room_set').sizes.thumbnail }}" alt="{{ post.title }} >
+
+      </div>
+    </div>
+
+    <header class="entry-header tile__header ">
+      <h2 class="entry-title tile__title">
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      </h2>
+    </header>
+
+    <footer class="tile__footer">
+
+    </footer>
+
+  </article>
+{% endblock %}
