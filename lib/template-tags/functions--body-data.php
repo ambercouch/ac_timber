@@ -18,10 +18,12 @@ function _act_get_body_data() {
     $body_data['post-type'] = $post_type;
 
     $post_slug = $post->post_name;
-
+    
     if (is_archive() and isset(get_queried_object()->taxonomy)){
         $tax = get_taxonomy( get_queried_object()->taxonomy );
         $post_slug = sanitize_title( $tax->labels->singular_name);
+    }else{
+        $post_slug = get_queried_object()->name;
     }
 
     if (is_home()) {
