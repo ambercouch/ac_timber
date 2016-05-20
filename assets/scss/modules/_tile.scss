@@ -23,6 +23,9 @@
   &__link {
     text-decoration: none;
   }
+  &__icon{
+
+  }
   &__footer {
     border-bottom: solid 1px $brand-col-1;
     padding-bottom: $inuit-base-spacing-unit--small /2;
@@ -41,5 +44,11 @@
 .tile__link {
   &--title {
     @extend .tile__link;
+  }
+  &--more{
+    transition: padding 0.3s ease;
+    &:hover{
+      padding-right: $inuit-base-spacing-unit--small / 4;
+    }
   }
 }
