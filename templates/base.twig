@@ -9,8 +9,11 @@
   <link rel="pingback" href="{{ site.pingback_url }}">
 
   {% if acSettings.typeKitId %}
-  <script src="https://use.typekit.net/{{ acSettings.typeKitId }}.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <script src="https://use.typekit.net/{{ acSettings.typeKitId }}.js"></script>
+    <script>try {
+        Typekit.load({async: true});
+      } catch (e) {
+      }</script>
   {% endif %}
 
   {{ fn('wp_head') }}
@@ -23,9 +26,9 @@
 
   {% include 'site-accessibility.twig' %}
   {% block masthead %}
-  <header id="masthead" class="site__masthead" role="banner">
-    {% include 'inc/masthead.twig' %}
-  </header>
+    <header id="masthead" class="site__masthead" role="banner">
+      {% include 'inc/masthead.twig' %}
+    </header>
   {% endblock %}
 
   {% block hero %}
@@ -37,9 +40,11 @@
   <section id="primary" class="site__main{{ template_class }}">
     <div class="main{{ template_class }}">
       <main class="main__content{{ template_class }}">
-        {% block content %}
-          <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
-        {% endblock %}
+        <div class="content{{ template_class }}">
+          {% block content %}
+            <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+          {% endblock %}
+        </div>
         {% block belowContent %}
           {% if (fn('comments_open')) %}
             <section id="comments" class="comments">
@@ -58,11 +63,11 @@
         {% endblock %}
       </main>
       {% block sidebar %}
-      <div class="main__aside">
-        <aside class="aside--main">
-            {% include 'inc/sidebar.twig'  %}
-        </aside>
-      </div>
+        <div class="main__aside">
+          <aside class="aside--main">
+            {% include 'inc/sidebar.twig' %}
+          </aside>
+        </div>
       {% endblock %}
     </div>
   </section>
