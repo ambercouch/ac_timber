@@ -25,6 +25,8 @@
     @extend .main__content;
     margin: 0 auto;
     display: block;
+    padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
+
     @include media-query(lap) {
       width: 80%
     }
@@ -38,8 +40,8 @@
   }
   &--archive-tile{
     @extend .main__content--full-width;
-    display: flex;
-    justify-content: space-around;
+    //display: flex;
+    //justify-content: space-around;
   }
 
 }

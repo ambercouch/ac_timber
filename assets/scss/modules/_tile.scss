@@ -1,6 +1,13 @@
 .tile {
-  width: 25%;
+
+  width: 100%;
   padding: $inuit-base-spacing-unit--small / 2;
+  @include media-query(lap){
+    width: 33.333%;
+  }
+  @include media-query(desk){
+    width: 25%;
+  }
 
 }
 
@@ -47,7 +54,7 @@
   }
   &--more{
     transition: padding 0.3s ease;
-    &:hover{
+    &:hover, &:active{
       padding-right: $inuit-base-spacing-unit--small / 4;
     }
   }

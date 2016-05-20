@@ -71,6 +71,23 @@ ACT = {
             //console.log('posts');
         }
     },
+    archive: {
+        init:function () {
+
+        },
+        tile : function () {
+            console.log('tile archive');
+            var grid = document.querySelector('.content--archive-tile');
+            var iso = new Isotope( grid, {
+                // options...
+                itemSelector: '.tile',
+                percentPosition: true,
+                masonry: {
+                    columnWidth: '.tile'
+                }
+            });
+        }
+    },
     ac_fn: {
         open: function (container, showButton, parent, listParent) {
             var elState = $(showButton).attr('data-state');
