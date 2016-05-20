@@ -23,6 +23,7 @@
     "inuit-starter-kit": "~0.2.9",
     "inuit-widths-responsive": "~0.2.2",
     "inuit-list-bare": "^0.3.0",
-    "flickity": "^1.2.1"
+    "flickity": "^1.2.1",
+    "isotope": "^3.0.0"
   }
 }

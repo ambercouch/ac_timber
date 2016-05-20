@@ -50,6 +50,7 @@ module.exports = function (grunt) {
               files: {
                   'dist/js/main.js': [
                       'assets/vendor/flickity/dist/flickity.pkgd.min.js',
+                      'assets/vendor/isotope/dist/isotope.pkgd.min.js',
                       'assets/js/act.js'
                   ]
               }
