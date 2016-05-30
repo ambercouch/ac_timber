@@ -49,10 +49,10 @@ ACT = {
             //     ACT.ac_fn.open(subMenu, ddButton, ddparent, ddList);
             // });
 
-            // var drawers = document.getElementsByClassName('newsletter-drawer');
-            // var drawerButton = 'newsletter-drawer__title';
-            // var drawerContent = 'newsletter-drawer__content';
-            // ACT.ac_fn.open_collection( drawers, drawerButton, drawerContent);
+            var drawers = document.getElementsByClassName('drawer');
+            var drawerButton = 'drawer__title';
+            var drawerContent = 'drawer__content';
+            ACT.ac_fn.open_collection( drawers, drawerButton, drawerContent);
 
         }
     },

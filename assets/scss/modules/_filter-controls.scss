@@ -8,6 +8,7 @@
   }
   &__tags{
     @include inuit-font-size($inuit-heading-size-6);
+    margin-bottom:$inuit-base-spacing-unit--small;
 
     @include media-query(lap){
       @include inuit-font-size($inuit-heading-size-6--lap)

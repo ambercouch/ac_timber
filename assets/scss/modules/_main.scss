@@ -5,6 +5,10 @@
   max-width: $act-site-width;
 }
 
+.main__title{
+  @include brand-title();
+  margin-bottom: $inuit-base-spacing-unit !important;
+}
 .main__content {
   background: $col-act-gray-xxlight;
   width: 100%;

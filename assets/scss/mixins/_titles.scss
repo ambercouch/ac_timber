@@ -11,14 +11,14 @@ $icon : '%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A/
     margin-bottom: $inuit-base-spacing-unit--large;
   }
   &:after{
-    width: 40px;
+    width: 1em;
     height: auto;
     content: url('data:image/svg+xml,' + $data);
     background: $bg;
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 80%);
+    transform: translate(-50%, 75%);
     padding: 0 0.1em;
 
   }

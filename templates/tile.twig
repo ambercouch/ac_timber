@@ -9,6 +9,34 @@
 {% block sidebar %}
 {% endblock %}
 
+{% block before_content %}
+  <h1 class="main__title"><span>Tile gallery</span></h1>
+  <div class="drawer">
+    <div class="drawer__title" data-state="off">FILTERS</div>
+    <div class="drawer__content" data-state="off" class="filter-controls">
+      <div class="filter-controls__cats">
+        <h5 class="filter-controls__title">Tile Types</h5>
+        <div class="filter-controls__tags">
+          <button class="filter-controls__tag" data-state="off">Wall Tiles</button>
+          <button class="filter-controls__tag" data-state="on">Floor Tiles</button>
+        </div>
+      </div>
+      <div class="filter-controls__tags">
+        <h5 class="filter-controls__title">Tile Colours</h5>
+        <div class="filter-controls__tags">
+          <button class="filter-controls__tag" data-state="on">White</button>
+          <button class="filter-controls__tag" data-state="on">Cream</button>
+        </div>
+        <h5 class="filter-controls__title">Tile Material</h5>
+        <div class="filter-controls__tags">
+          <button class="filter-controls__tag" data-state="on">Stone</button>
+          <button class="filter-controls__tag" data-state="on">Glass</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}

@@ -17,11 +17,20 @@ if ( ! class_exists( 'Timber' ) ) {
     echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
     return;
 }
+//$args = array(
+//    'taxonomy' => 'tile_colour',
+//    'hide_empty' => false,
+//);
+//$tags_array = get_terms($args);
+//echo '<pre>';
+//print_r($tags_array);
+//die();
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $context['footer_widgets'] = Timber::get_widgets('Footer');
 $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['template_class'] = '--archive-tile';
+$context['tags'] = '--archive-tile';
 $templates = array( 'tile.twig' , 'index.twig');
 
 Timber::render( $templates, $context );
