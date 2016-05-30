@@ -14,6 +14,7 @@
   <div class="drawer">
     <div class="drawer__title" data-state="off">FILTERS</div>
     <div class="drawer__content" data-state="off" class="filter-controls">
+
       <div class="filter-controls__cats">
         <h5 class="filter-controls__title">Tile Types</h5>
         <div class="filter-controls__tags">
@@ -21,17 +22,20 @@
           <button class="filter-controls__tag" data-state="on">Floor Tiles</button>
         </div>
       </div>
+
       <div class="filter-controls__tags">
-        <h5 class="filter-controls__title">Tile Colours</h5>
+
+        {{ dump(tile_filters) }}
+        {% for filter in tile_filters %}
+        <h5 class="filter-controls__title">{{ filter.name }}</h5>
         <div class="filter-controls__tags">
           <button class="filter-controls__tag" data-state="on">White</button>
           <button class="filter-controls__tag" data-state="on">Cream</button>
         </div>
-        <h5 class="filter-controls__title">Tile Material</h5>
-        <div class="filter-controls__tags">
-          <button class="filter-controls__tag" data-state="on">Stone</button>
-          <button class="filter-controls__tag" data-state="on">Glass</button>
-        </div>
+        {% endfor %}
+
+
+
       </div>
     </div>
   </div>
