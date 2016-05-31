@@ -1,0 +1,29 @@
+<div class="drawer">
+  <div class="drawer__title" data-state="off">FILTERS</div>
+  <div class="drawer__content" data-state="off" class="filter-controls">
+
+    <div class="filter-controls__cats">
+      <h5 class="filter-controls__title">Tile Type</h5>
+      <div class="filter-controls__tags" data-tax="Tile_type">
+        <button class="filter-controls__tag" data-state="off" data-filter="tile_type-wall-tile" >Wall Tiles</button>
+        <button class="filter-controls__tag" data-state="off" data-filter="tile_type-floor-tile  ">Floor Tiles</button>
+      </div>
+    </div>
+
+    <div class="filter-controls__tags">
+
+      {#{{ dump(tile_filters) }}#}
+      {% for key,filter in tile_filters %}
+        <h5 class="filter-controls__title">{{ filter.name }}</h5>
+        <div class="filter-controls__tags" data-tax="{{  key }}">
+          {% for tag in filter.tags %}
+            <button class="filter-controls__tag" data-state="off" data-filter="{{  key }}-{{ tag.slug }}">{{tag.name}}</button>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+
+
+    </div>
+  </div>
+</div>
