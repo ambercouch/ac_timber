@@ -77,13 +77,44 @@ ACT = {
         },
         tile : function () {
             // console.log('tile archive');
-            var grid = document.querySelector('.content--archive-tile');
-            var iso = new Isotope( grid, {
+            var $grid = $('.content--archive-tile').isotope({
                 itemSelector: '.tile',
                 percentPosition: true,
                 masonry: {
                     columnWidth: '.tile'
                 }
+            });
+
+            var filters = {};
+
+            function concatValues( obj ) {
+                var value = '';
+                for ( var prop in obj ) {
+
+                    value += obj[ prop ];
+                }
+                return value;
+            }
+
+            $(document).on('click' , '.filter-controls__tag', function(){
+                var $this =  $(this)
+                var $parent = $this.parent();
+                var tax = $parent.attr('data-tax');
+                var filter = $this.not('[data-state=on]').attr('data-filter') != undefined ? '.'+$this.attr('data-filter') : '';
+                var filterVal;
+
+                filters[tax] = filter;
+
+                filterVal = concatValues(filters);
+
+                console.log(filters);
+                console.log(filterVal);
+                $grid.isotope({ filter: filterVal });
+
+                $parent.find('[data-state=on]').not(this).attr('data-state', 'off');
+                $(this).attr('data-state', function (i, attr) {
+                    return attr === 'on' ? 'off' : 'on';
+                })
             });
         }
     },
