@@ -1,0 +1,19 @@
+.tile-info{
+  &__title{
+    font-family: $base-font-family;
+    margin-bottom: 0;
+    font-weight:normal;
+    color: $brand-col-2;
+  }
+  &__info{
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-6--palm);
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-heading-size-6--lap);
+    }
+    @include media-query(desk) {
+       @include inuit-font-size($inuit-heading-size-6--desk);
+     }
+  }
+}

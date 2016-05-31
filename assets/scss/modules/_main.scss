@@ -25,6 +25,33 @@
     padding: $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
 
   }
+
+}
+
+.main__aside {
+  background: $brand-col-2--light;
+  width: 100%;
+  @include media-query(lap) {
+    width: 33.333%
+  }
+  @include media-query(desk) {
+    width: 33.333%
+  }
+  @include media-query(desk) {
+    padding: $inuit-base-spacing-unit--large  $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large;
+  }
+  @include media-query(lap) {
+    padding: $inuit-base-spacing-unit--large  $inuit-base-spacing-unit--small $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
+  }
+}
+
+.main {
+ &--tile{
+   @extend .main;
+ }
+}
+
+.main__content{
   &--full-width{
     @extend .main__content;
     margin: 0 auto;
@@ -47,22 +74,8 @@
     //display: flex;
     //justify-content: space-around;
   }
+  &--tile{
+    @extend .main__content;
+  }
 
-}
-
-.main__aside {
-  background: $brand-col-2--light;
-  width: 100%;
-  @include media-query(lap) {
-    width: 33.333%
-  }
-  @include media-query(desk) {
-    width: 33.333%
-  }
-  @include media-query(desk) {
-    padding: $inuit-base-spacing-unit--large  $inuit-base-spacing-unit $inuit-base-spacing-unit--large $inuit-base-spacing-unit--large;
-  }
-  @include media-query(lap) {
-    padding: $inuit-base-spacing-unit--large  $inuit-base-spacing-unit--small $inuit-base-spacing-unit--large $inuit-base-spacing-unit;
-  }
 }

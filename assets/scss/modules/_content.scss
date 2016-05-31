@@ -1,0 +1,8 @@
+.content{
+  width:100%;
+}
+.content{
+  &--tile{
+    @extend .content;
+  }
+}
