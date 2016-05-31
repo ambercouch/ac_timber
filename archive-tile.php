@@ -33,9 +33,6 @@ $tags_array = get_terms($args);
 $fillterItems['tile_colour']['name'] = "Tile Colour";
 $fillterItems['tile_colour']['tags'] = $tags_array;
 
-//echo '<pre>';
-//print_r($fillterItems);
-//die();
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $context['footer_widgets'] = Timber::get_widgets('Footer');
@@ -43,6 +40,6 @@ $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['template_class'] = '--archive-tile';
 $context['tags'] = '--archive-tile';
 $context['tile_filters'] = $fillterItems;
-$templates = array( 'tile.twig' , 'index.twig');
+$templates = array( 'archive-tile.twig' , 'index.twig');
 
 Timber::render( $templates, $context );
