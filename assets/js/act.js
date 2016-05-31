@@ -76,10 +76,9 @@ ACT = {
 
         },
         tile : function () {
-            console.log('tile archive');
+            // console.log('tile archive');
             var grid = document.querySelector('.content--archive-tile');
             var iso = new Isotope( grid, {
-                // options...
                 itemSelector: '.tile',
                 percentPosition: true,
                 masonry: {
