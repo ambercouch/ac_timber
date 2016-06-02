@@ -32,12 +32,10 @@
     //width: 50%;
     //padding: 0 $inuit-base-spacing-unit--large;
   }
-  &__footer{
-    //width: 50%;
-    //padding: 0 $inuit-base-spacing-unit--large;
-    //align-self: flex-end;
-    //flex-grow: 1;
-    //position: relative;
+  &__tile-info{
+
+    padding: $inuit-base-spacing-unit--small 0 ;
+
   }
   &__comment-link{
     //position: absolute;

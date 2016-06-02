@@ -1,0 +1,23 @@
+.tile-meta {
+  @extend .list-bare;
+  padding: $inuit-base-spacing-unit--small / 2;
+  background: rgba(#000, 0.08);
+  &__item{
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-6);
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-heading-size-6--lap);
+    }
+    @include media-query(desk) {
+      @include inuit-font-size($inuit-heading-size-6--desk);
+    }
+    margin-bottom: $inuit-base-spacing-unit--small / 2;
+    border-bottom: solid 1px ;
+  }
+  &__label{
+    color: $brand-col-2;
+  }
+
+}
+

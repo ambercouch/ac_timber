@@ -26,21 +26,32 @@
       </div>
     {% endif %}
 
-    <div class="entry-content single-tile__tile-info ">
-      <div class="tile-info">
-        {% if(post.get_field('tile_information')) %}
-          <h5 class="tile-info__title">Tile Info</h5>
-          <div class="tile-info__info">
-            {{ post.get_field('tile_information') }}
-          </div>
-        {% endif %}
-      </div>
+    <div class="entry-content single-tile__tile-meta ">
+      <ul class="tile-meta">
+        <li class="tile-meta__item"><label class="tile-meta__label">Tile Type</label> : {{ post.get_field('tile_type') | replace('-', ' ') | title}}</li>
+        <li class="tile-meta__item"><label class="tile-meta__label">Tile Size</label> : {{ post.get_field('tile_size') | replace('-', ' ') | title}} </li>
+        <li class="tile-meta__item"><label class="tile-meta__label">Tile Colour</label> : {{ tile_colour | join(', ') }} </li>
+        <li class="tile-meta__item"><label class="tile-meta__label">Tile Material</label> : {{ tile_material | join(', ') }} </li>
+      </ul>
     </div>
 
   </div>
 
 
-  <footer class="single-page__footer ">
+  <footer class="single-tile__tile-info ">
+    <div class="tile-info">
+      {% if(post.get_field('tile_information')) %}
+        <h5 class="tile-info__title">Tile Info</h5>
+        <div class="tile-info__info">
+          {{ post.get_field('tile_information') }}
+        </div>
+      {% endif %}
+    </div>
+    <div class="call-to-action">
+      {#{{ post.get_field('call-to-action') }}#}
+      {% set cta = post.get_field('call-to-action') %}
+      {  fn('do_shortcode', cta) %}
+    </div>
   </footer>
 
 
