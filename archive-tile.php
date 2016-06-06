@@ -33,6 +33,14 @@ $tags_array = get_terms($args);
 $fillterItems['tile_colour']['name'] = "Tile Colour";
 $fillterItems['tile_colour']['tags'] = $tags_array;
 
+$args = array(
+    'taxonomy' => 'tile_size',
+    'hide_empty' => false,
+);
+$tags_array = get_terms($args);
+$fillterItems['tile_size']['name'] = "Tile Size";
+$fillterItems['tile_size']['tags'] = $tags_array;
+
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $context['footer_widgets'] = Timber::get_widgets('Footer');

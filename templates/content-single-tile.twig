@@ -29,7 +29,7 @@
     <div class="entry-content single-tile__tile-meta ">
       <ul class="tile-meta">
         <li class="tile-meta__item"><label class="tile-meta__label">Tile Type</label> : {{ post.get_field('tile_type') | replace('-', ' ') | title}}</li>
-        <li class="tile-meta__item"><label class="tile-meta__label">Tile Size</label> : {{ post.get_field('tile_size') | replace('-', ' ') | title}} </li>
+        <li class="tile-meta__item"><label class="tile-meta__label">Tile Size</label> : {{ tile_size | join(', ') }} </li>
         <li class="tile-meta__item"><label class="tile-meta__label">Tile Colour</label> : {{ tile_colour | join(', ') }} </li>
         <li class="tile-meta__item"><label class="tile-meta__label">Tile Material</label> : {{ tile_material | join(', ') }} </li>
       </ul>
@@ -48,9 +48,7 @@
       {% endif %}
     </div>
     <div class="call-to-action">
-      {#{{ post.get_field('call-to-action') }}#}
-      {% set cta = post.get_field('call-to-action') %}
-      {  fn('do_shortcode', cta) %}
+      {{    fn('do_shortcode', post.get_field('call-to-action')) }}
     </div>
   </footer>
 

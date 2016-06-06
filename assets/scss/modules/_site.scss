@@ -10,3 +10,9 @@
     background: linear-gradient(to right, $col-act-gray-xxlight 0%, $col-act-gray-xxlight 50%,$brand-col-2--light 50%,$brand-col-2--light 100%);
   }
 }
+
+.site__main{
+  &--tile{
+    @extend .site__main;
+  }
+}

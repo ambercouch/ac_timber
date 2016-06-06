@@ -70,3 +70,4 @@ if ( ! function_exists( '_act_setup' ) ) :
 endif;
 
 add_action( 'after_setup_theme', '_act_setup' );
+

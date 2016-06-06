@@ -74,6 +74,29 @@ function  tvb_tiles() {
 
     register_taxonomy( 'tile_material', array( 'tile' ), $args );
 
+    $labels = array(
+        'name'              => _x( 'Tile Size', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Tile Size', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Tile Size' ),
+        'all_items'         => __( 'All Tile Sizes' ),
+        'edit_item'         => __( 'Edit Tile Size' ),
+        'update_item'       => __( 'Update Tile Size' ),
+        'add_new_item'      => __( 'Add New Tile Size' ),
+        'new_item_name'     => __( 'New Tile Size' ),
+        'menu_name'         => __( 'Tile Size' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'size' ),
+    );
+
+    register_taxonomy( 'tile_size', array( 'tile' ), $args );
+
 }
 
 add_action('init', 'tvb_tiles');

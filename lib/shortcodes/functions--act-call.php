@@ -9,8 +9,8 @@
 //[actcard]
 function actCall($atts, $content)
 {
-    var_dump($atts);
-    die;
+//    var_dump($atts);
+//    die;
     $a = shortcode_atts(array(
         'title' => 'Add a Title',
         'text' => 'Add Some text',

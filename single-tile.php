@@ -20,6 +20,14 @@ foreach ($tile_material as $key => $material){
     $tile_material[$key] = $material->name;
 }
 
+$tile_size = get_the_terms($post->ID, 'tile_size');
+foreach ($tile_size as $key => $size){
+    $tile_size[$key] = $size->name;
+}
+
+//var_dump(get_field('call-to-action'));
+//die;
+
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
 $context['footer_widgets'] = Timber::get_widgets('Footer');
@@ -27,6 +35,14 @@ $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['template_class'] = '--tile';
 $context['tile_colour'] = $tile_colours;
 $context['tile_material'] = $tile_material;
+$context['tile_size'] = $tile_size;
+
+//$cta = get_field('call-to-action');
+//var_dump($cta);
+//
+//$context['cta'] = do_shortcode($cta);
+//var_dump($context['cta']);
+//die;
 //echo '<pre>';
 //print_r($context['tile_colour']);
 //die;
