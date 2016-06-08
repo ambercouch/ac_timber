@@ -5,13 +5,22 @@
   background-position: 50% 90%;
   background-size: cover;
   @include media-query(narrow){
-    height: calc(100vh - 107px);
+    height: calc(100vh - 82px);
   }
   &__content{
     position: absolute;
     width: 100%;
     bottom:0;
     background: $brand-col-1;
+  }
+  &__offer{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;
+    padding: $inuit-base-spacing-unit--small $inuit-base-spacing-unit;
+    text-align: center;
   }
   &__menu{
     width: 1148px;

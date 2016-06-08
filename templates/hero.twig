@@ -1,26 +1,18 @@
 
 <div class="hero" style="background-image: url('/wp-content/uploads/2016/04/thomas-vaughn-bathrooms-hero.jpg');">
   <div class="hero__container">
-    {#<div class="hero__image">#}
-    {#<img  alt="" class="hero__img" src="/content/uploads/2016/02/stretton-climate-care-home.jpg"#}
-    {#srcset="/content/uploads/2016/02/stretton-climate-care-home-300x225.jpg 300w,#}
-    {#/content/uploads/2016/02/stretton-climate-care-home-768x576.jpg 768w,#}
-    {#/content/uploads/2016/02/stretton-climate-care-home-1024x768.jpg 1024w,#}
-    {#/content/uploads/2016/02/stretton-climate-care-home.jpg 1900w"#}
-    {#>#}
-    {#</div>#}
 
+    <div class="hero__offer">
+      <div class="offer">
+        10% Off all Tiles in September!
+      </div>
+    </div>
     <div class="hero__content">
-      {#<div class="hero__logo">#}
-        {#<svg class="icon hero__svg" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none" >#}
-          {#<title>{{ site.title }}</title>#}
-          {#<desc>{{ site.description }}</desc>#}
-          {#<use xlink:href="#icon-stretton-climate-care-logo-main" />#}
-        {#</svg>#}
-      {#</div>#}
+
+
       <div class="hero__call-to-action">
         <ul class="hero__menu">
-          <li class="hero__menu__item"><a class="hero__link " href="/our-work" >Our<br> Work</a></li>
+          <li class="hero__menu__item"><a class="hero__link " href="{{   fn('get_post_type_archive_link', 'our-work')  }}" >Our<br> Work</a></li>
           <li class="hero__menu__item"><a class="hero__link" href="/be-inspired" >Be<br> Inspired</a></li>
           <li class="hero__menu__item"><a class="hero__link" href="{{   fn('get_post_type_archive_link', 'tile')  }}" >Tile<br> Galley</a></li>
         </ul>
