@@ -24,7 +24,7 @@
 
   {% if(post.get_field('add_a_gallery')) %}
     <div class="single-page__gallery">
-      {% include 'inc/gallery.twig' %}
+      {% include 'inc/gallery.twig' with {'gFilters' : 'true'} %}
     </div>
   {% endif %}
 

@@ -5,4 +5,13 @@
   &--tile{
     @extend .content;
   }
+  &--our-work{
+    @extend .content;
+  }
+  &--archive-tile{
+    display: flex;
+  }
+  &--archive-our-work{
+    display: flex;
+  }
 }

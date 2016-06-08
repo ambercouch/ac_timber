@@ -10,17 +10,23 @@ if ( ! class_exists( 'Timber' ) ) {
     return;
 }
 
+$tile_colours = [];
+$tile_colours = (get_the_terms($post->ID, 'tile_colour'))?get_the_terms($post->ID, 'tile_colour'): $tile_colours;
 $tile_colours = get_the_terms($post->ID, 'tile_colour');
 foreach ($tile_colours as $key => $colour){
     $tile_colours[$key] = $colour->name;
 }
 
+$tile_material = [];
+$tile_material = (get_the_terms($post->ID, 'tile_material'))?get_the_terms($post->ID, 'tile_material')   :$tile_material;
 $tile_material = get_the_terms($post->ID, 'tile_material');
 foreach ($tile_material as $key => $material){
     $tile_material[$key] = $material->name;
 }
 
-$tile_size = get_the_terms($post->ID, 'tile_size');
+$tile_size = [];
+// Get the term or leave as empty array
+$tile_size = (get_the_terms($post->ID, 'tile_size')) ? get_the_terms($post->ID, 'tile_size') : $tile_size;
 foreach ($tile_size as $key => $size){
     $tile_size[$key] = $size->name;
 }

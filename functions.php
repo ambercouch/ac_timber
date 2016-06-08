@@ -9,3 +9,4 @@ require_once get_template_directory() . '/lib/functions--widget-areas.php';
 require_once get_template_directory() . '/lib/functions--shortcode.php';
 require_once get_template_directory() . '/lib/functions--cpt.php';
 require_once get_template_directory() . '/lib/functions--tile.php';
+require_once get_template_directory() . '/lib/functions--our-work.php';

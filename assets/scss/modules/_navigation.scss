@@ -1,6 +1,6 @@
 .navigation--primary{
   height: 100%;
-  @include media-query(plm) {
+  @include media-query(palm) {
     @include inuit-font-size($inuit-heading-size-5);
     //background: pink;
   }

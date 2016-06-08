@@ -66,13 +66,18 @@
     }
   }
 
+  &--our-work{
+    @extend .main__content--full-width;
+  }
+
   &--parent-page{
     @extend .main__content--full-width;
   }
   &--archive-tile{
     @extend .main__content--full-width;
-    //display: flex;
-    //justify-content: space-around;
+  }
+  &--archive-our-work{
+    @extend .main__content--full-width;
   }
   &--tile{
     @extend .main__content;

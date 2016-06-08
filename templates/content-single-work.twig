@@ -1,0 +1,41 @@
+<article id="post-{{ post.id }}" class="single-work">
+
+  {% if(post.get_field('image_room_set')) %}
+    <div class="single-work__feature-image ">
+      <div class="feature-image--single-work">
+        <img class="feature-image--single-work__img" src="{{ post.get_field('image_room_set').sizes.feature500x600 }}" alt="{{ post.title }}">
+
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="single-work__wrapper">
+
+    <header class="entry-header single-work__header ">
+      <h1 class="entry-title single-work__title ">
+        <span>{{ post.title }}</span>
+      </h1>
+      {#<div class="entry-meta single-page__post-meta ">#}
+      {#{% include 'post-meta--page.twig' %}#}
+      {#</div>#}
+    </header>
+
+    {% if(post.get_field('add_a_gallery')) %}
+      <div class="single-page__gallery">
+        {% include 'inc/gallery.twig' %}
+      </div>
+    {% endif %}
+
+  </div>
+
+  <div class="entry-content single-page__body ">
+    {{ post.content }}
+  </div>
+
+  <footer class="single-work__tile-info ">
+
+
+  </footer>
+
+
+</article>

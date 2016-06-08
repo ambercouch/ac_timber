@@ -1,5 +1,12 @@
 <article id="post-{{ post.id }}" class="single-tile">
-
+  <header class="entry-header single-tile__header ">
+    <h1 class="entry-title single-tile__title ">
+      <span>{{ post.title }}</span>
+    </h1>
+    {#<div class="entry-meta single-page__post-meta ">#}
+    {#{% include 'post-meta--page.twig' %}#}
+    {#</div>#}
+  </header>
   {% if(post.get_field('image_room_set')) %}
     <div class="single-tile__feature-image ">
       <div class="feature-image--single-tile">
@@ -11,20 +18,13 @@
 
   <div class="single-tile__wrapper">
 
-    <header class="entry-header single-tile__header ">
-      <h1 class="entry-title single-tile__title ">
-        <span>{{ post.title }}</span>
-      </h1>
-      {#<div class="entry-meta single-page__post-meta ">#}
-      {#{% include 'post-meta--page.twig' %}#}
-      {#</div>#}
-    </header>
-
     {% if(post.get_field('add_a_gallery')) %}
-      <div class="single-page__gallery">
+      <div class="single-tile__gallery">
         {% include 'inc/gallery.twig' %}
       </div>
     {% endif %}
+
+
 
     <div class="entry-content single-tile__tile-meta ">
       <ul class="tile-meta">
@@ -34,6 +34,12 @@
         <li class="tile-meta__item"><label class="tile-meta__label">Tile Material</label> : {{ tile_material | join(', ') }} </li>
       </ul>
     </div>
+
+    {% if(post.get_field('image_tile')) %}
+      <div class="single-tile__gallery">
+        <img class="feature-image--single-tile__img" src="{{ post.get_field('image_tile').sizes.medium }}" alt="{{ post.title }} Tile">
+      </div>
+    {% endif %}
 
   </div>
 

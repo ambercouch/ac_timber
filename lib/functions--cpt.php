@@ -1,6 +1,6 @@
 <?php
 function  tvb_tiles() {
-    //course dates
+//Tiles
     $labels = array(
         'name' => _x('Tiles', 'post type general name'),
         'singular_name' => _x('Tile', 'post type singular name'),
@@ -26,8 +26,8 @@ function  tvb_tiles() {
         'has_archive' => 'tiles'
     );
     register_post_type('tile', $args);
-    //course_dates
 
+//Tile colours
     $labels = array(
         'name'              => _x( 'Tile Colours', 'taxonomy general name' ),
         'singular_name'     => _x( 'Tile Colour', 'taxonomy singular name' ),
@@ -50,7 +50,7 @@ function  tvb_tiles() {
     );
 
     register_taxonomy( 'tile_colour', array( 'tile' ), $args );
-
+//Tile Material
     $labels = array(
         'name'              => _x( 'Tile Material', 'taxonomy general name' ),
         'singular_name'     => _x( 'Tile Material', 'taxonomy singular name' ),
@@ -73,7 +73,7 @@ function  tvb_tiles() {
     );
 
     register_taxonomy( 'tile_material', array( 'tile' ), $args );
-
+//Tile size
     $labels = array(
         'name'              => _x( 'Tile Size', 'taxonomy general name' ),
         'singular_name'     => _x( 'Tile Size', 'taxonomy singular name' ),
@@ -100,3 +100,59 @@ function  tvb_tiles() {
 }
 
 add_action('init', 'tvb_tiles');
+
+
+function  tvb_work() {
+//Tiles
+    $labels = array(
+        'name' => _x('Our Work', 'post type general name'),
+        'singular_name' => _x('Our Work', 'post type singular name'),
+        'add_new' => _x('Add New', 'Work'),
+        'add_new_item' => __('Add New Work'),
+        'edit_item' => __('Edit Work'),
+        'new_item' => __('New Work'),
+        'all_items' => __('All Work'),
+        'view_item' => __('View Work'),
+        'search_items' => __('Search Work'),
+        'not_found' => __('No Work found'),
+        'not_found_in_trash' => __('No Work found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Our Work'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-awards',
+        'description' => 'Thomas Vaughan work galleries',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title', 'editor'),
+        'has_archive' => 'thomas-vaughan-gallery'
+    );
+    register_post_type('our-work', $args);
+
+//Work Type
+    $labels = array(
+        'name'              => _x( 'Work Type', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Work Type', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Types' ),
+        'all_items'         => __( 'All Types' ),
+        'edit_item'         => __( 'Edit Type' ),
+        'update_item'       => __( 'Update Type' ),
+        'add_new_item'      => __( 'Add New Type' ),
+        'new_item_name'     => __( 'New Type' ),
+        'menu_name'         => __( 'Work Type' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'work-type' ),
+    );
+
+    register_taxonomy( 'work_type', array( 'our-work' ), $args );
+}
+
+add_action('init', 'tvb_work');

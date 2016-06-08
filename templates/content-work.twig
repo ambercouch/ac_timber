@@ -1,0 +1,27 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+
+{% block content %}
+  <article id="post-{{ post.id }}" class="our-work {{ post.class }} work_type-{{ post.get_field('work_type') }}">
+
+    <div class="our-work__feature-image">
+      <div class="feature-image">
+
+        <a class="feature-image__link" href="{{ post.link }}">
+          <img class="feature-image__img"  src="{{post.get_field('images')[0].image.sizes.feature500x600 }}" alt="{{ post.title }}" >
+        </a>
+      </div>
+    </div>
+
+    <header class="entry-header our-work__header ">
+      <h2 class="entry-title our-work__title">
+        <a class="our-work__link--title" href="{{ post.link }}">{{ post.title }}</a>
+      </h2>
+    </header>
+
+    <footer class="our-work__footer">
+      <a class="our-work__link--more" href="{{ post.link }}">View Gallery</a> <span class="tile__icon">&raquo;</span>
+    </footer>
+
+  </article>
+{% endblock %}

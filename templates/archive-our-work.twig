@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block hero %}
+{% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block before_content %}
+  <h1 class="main__title"><span>Thomas Vaughan Gallery</span></h1>
+ {%  include 'inc/work-filters.twig' %}
+{% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include 'content-work.twig' %}
+  {% endfor %}
+
+{% endblock %}

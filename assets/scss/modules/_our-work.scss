@@ -1,0 +1,61 @@
+.our-work {
+
+  width: 100%;
+  padding: $inuit-base-spacing-unit--small / 2;
+  @include media-query(lap){
+    width: 33.333%;
+  }
+  @include media-query(desk){
+    width: 25%;
+  }
+
+}
+
+.our-work {
+  &__title {
+    font-family: $base-font-family;
+    font-weight: 500;
+    color: $brand-col-1;
+    margin-bottom: 0;
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-5);
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-heading-size-5--lap);
+    }
+    @include media-query(desk) {
+      @include inuit-font-size($inuit-heading-size-5--desk);
+    }
+  }
+  &__link {
+    text-decoration: none;
+  }
+  &__icon{
+
+  }
+  &__footer {
+    border-bottom: solid 1px $brand-col-1;
+    padding-bottom: $inuit-base-spacing-unit--small /2;
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-small-print);
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-small-print--lap);
+    }
+    @include media-query(desk) {
+      @include inuit-font-size($inuit-small-print--desk);
+    }
+  }
+}
+
+.tile__link {
+  &--title {
+    @extend .tile__link;
+  }
+  &--more{
+    transition: padding 0.3s ease;
+    &:hover, &:active{
+      padding-right: $inuit-base-spacing-unit--small / 4;
+    }
+  }
+}
