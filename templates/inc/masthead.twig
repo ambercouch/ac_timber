@@ -14,22 +14,8 @@
   {#var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;#}
   {#//alert(width);#}
 {#</script>#}
+
     <button id="menuButton" class="btn--menu" data-state="off"> <span class="btn--menu__bar--tl"></span> <span class="btn--menu__bar--tr"></span> <span class="btn--menu__bar--m"></span> <span class="btn--menu__bar--br"></span> <span class="btn--menu__bar--bl"></span> </button>
-    <nav id="primaryNavigation" class="masthead__navigation" role="navigation" data-state="off">
-      <div class="navigation--primary">
-        <ul class="navigation--primary__list">
-          {% for item in menuPrimary.get_items %}
-            <li class="navigation--primary__item {{item.classes | join(' ')}}"><a class="navigation--primary__link" href="{{item.get_link}}">{{item.title}}</a>
-              {% if item.get_children %}
-                <ul class="navigation--primary__sub-list">
-                  {% for child in item.get_children %}
-                    <li class="navigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </nav>
+    {% include 'inc/masthead-navigation.twig' %}
+
   </div>

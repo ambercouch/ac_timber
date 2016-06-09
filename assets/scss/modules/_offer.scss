@@ -8,6 +8,7 @@
     @include media-query(palm){
       @include inuit-font-size($inuit-heading-size-6);
     }
+
     @include media-query(lap){
       @include inuit-font-size($inuit-heading-size-6--lap);
     }

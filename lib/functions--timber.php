@@ -40,6 +40,9 @@ class StarterSite extends TimberSite {
 
         //Primary Menu
         $context['menuPrimary'] = new TimberMenu('primary');
+        $context['menuCta'] = new TimberMenu(21);
+
+
         return $context;
     }
 
