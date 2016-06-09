@@ -37,3 +37,12 @@ $icon-flourish-leaf-silver :  '%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A
     }
   }
 }
+
+.widget{
+  &--our-products{
+    display: none;
+    @include media-query(lap-and-up){
+      display: block;
+    }
+  }
+}
