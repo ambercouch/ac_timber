@@ -10,6 +10,7 @@
       @include off-page--curtain();
     }
     @include media-query(palm){
+      align-items: flex-start;
       @include off-page--curtain();
     }
   }

@@ -1,6 +1,6 @@
 .btn--menu{
   position: fixed;
-  top: 2em;
+  top: 1em;
   border: 0;
   right: 2em;
   background: none;
@@ -19,7 +19,7 @@
   }
   &[data-state=on]{
     transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-    right: 14rem;
+    right: 13rem;
   }
 }
 .btn--menu__bar {

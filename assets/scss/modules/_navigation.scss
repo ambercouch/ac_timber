@@ -1,17 +1,15 @@
 .navigation--primary{
-  height: 100%;
-  @include media-query(palm) {
-    @include inuit-font-size($inuit-heading-size-5);
-    //background: pink;
+  height: auto;
+  width: 100%;
+  margin:$inuit-base-spacing-unit--large * 1.5 0 0 $inuit-base-spacing-unit;
+
+  @include media-query(lap-and-up){
+    margin: 0 ;
+    height: 100%;
+    width: auto;
   }
-  @include media-query(desk) {
-    @include inuit-font-size($inuit-heading-size-5--desk);
-   // background: deepskyblue;
-  }
-  @include media-query(lap) {
-    @include inuit-font-size($inuit-heading-size-5--lap);
-   // background: lawngreen;
-  }
+
+
 
   &__list{
 
@@ -49,7 +47,16 @@
     display: block;
     color: $col-act-gray-xxlight;
     text-decoration: none;
+
+    @include media-query(palm) {
+      @include inuit-font-size($inuit-heading-size-1);
+    }
+    @include media-query(lap) {
+      @include inuit-font-size($inuit-heading-size-5--lap);
+      // background: lawngreen;
+    }
     @include media-query(desk){
+      @include inuit-font-size($inuit-heading-size-5--desk);
       padding: $inuit-base-spacing-unit--small  $inuit-base-spacing-unit--small  $inuit-base-spacing-unit--small * 1.5;
     }
     &:hover{

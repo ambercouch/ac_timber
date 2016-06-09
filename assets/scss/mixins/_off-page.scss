@@ -11,6 +11,6 @@
   transition: right 0.4s cubic-bezier(0.6, 0.72, 0.38, 1.08);
   z-index: 9999;
   &[data-state=on]{
-    right: -0rem;
+    right: -3rem;
   }
 }
