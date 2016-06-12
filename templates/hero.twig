@@ -1,32 +1,32 @@
-<div class="hero" style="background-image: url('/wp-content/uploads/2016/04/thomas-vaughn-bathrooms-hero.jpg');">
+{%  set bannerImg = fn('get_field','banner_image','options')   %}
+{% if  fn('get_field','link_type','options') == 'page'%}
+{%  set adLink = fn('get_field','link_page','options') %}
+{% else %}
+{%  set adLink = fn('get_field','link_url','options') %}
+{% endif %}
+<div class="hero" style="background-image: url('{{  bannerImg.url }}');">
   <div class="hero__container">
 
+{% if  fn('get_field','show_ad','options')  %}
     <div class="hero__offer">
       <div class="offer">
         <div class="offer__text">10% Off all Tiles in September!</div>
-        <a class="offer__link" href="/contact">contact us for more info.</a>
+        {% if fn('get_field','link_text','options') != '' %}
+        <a class="offer__link" href="{{ adLink }}">contact us for more info.</a>
+        {% endif %}
       </div>
     </div>
+    {% endif %}
     <div class="hero__content">
-
-
       <div class="hero__call-to-action">
         <ul class="hero__menu">
-          <li class="hero__menu__item"><a class="hero__link " href="{{   fn('get_post_type_archive_link', 'our-work')  }}" >Our<br> Work</a></li>
-          <li class="hero__menu__item"><a class="hero__link" href="/be-inspired" >Be<br> Inspired</a></li>
-          <li class="hero__menu__item"><a class="hero__link" href="{{   fn('get_post_type_archive_link', 'tile')  }}" >Tile<br> Galley</a></li>
+          {% for item in menuCta.get_items %}
+          <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
+          {% endfor %}
+          {#<li class="hero__menu__item"><a class="hero__link" href="/be-inspired" >Be<br> Inspired</a></li>#}
+          {#<li class="hero__menu__item"><a class="hero__link" href="{{   fn('get_post_type_archive_link', 'tile')  }}" >Tile<br> Galley</a></li>#}
         </ul>
       </div>
     </div>
-    {#<div class="hero__scroll-to">#}
-      {#<div class="scroll-to"><a href="#primary" class="scroll-to__link">#}
-          {#<svg class="scroll-to__icon" role="img" aria-label="Scroll to content" preserveAspectRatio="none">#}
-            {#<title>Scroll icon</title>#}
-            {#<desc>Scroll to content</desc>#}
-            {#<use xlink:href="#icon-scroll-down" />#}
-          {#</svg>#}
-        {#</a>#}
-      {#</div>#}
-    {#</div>#}
   </div>
 </div>

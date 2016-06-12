@@ -15,9 +15,17 @@
     //@include inuit-font-size($small-size);
     line-height: 1.3;
     display: flex;
+    flex-direction:column;
+    @include media-query(lap-and-up){
+      flex-direction:row;
+    }
   }
   &__widget{
-    width: 33.333%;
+    width: 100%;
+    margin-bottom: $inuit-base-spacing-unit;
+    @include media-query(lap-and-up){
+      width: 33.333%;
+    }
   }
   &__site-info{
     @include inuit-font-size($inuit-heading-size-6--desk);

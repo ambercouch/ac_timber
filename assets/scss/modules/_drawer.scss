@@ -1,11 +1,11 @@
 .drawer{
-  border-bottom:solid 3px $brand-col-1--light;
+  border-bottom:solid 2px $brand-col-1;
   margin-bottom: $inuit-base-spacing-unit;
 }
 
 .drawer__title{
   transition: all 0.3s ease;
-  background: $brand-col-1--light;
+  background: $brand-col-1;
   padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
   margin-bottom: $inuit-base-spacing-unit--small / 4;
   color: #fff;
@@ -18,7 +18,8 @@
     @include size(24px);
     position: absolute;
     right: $inuit-base-spacing-unit;
-    top:16px;
+    top: 50%;
+    transform: translate(0,-50%);
     background-image: url('assets/images/svg/plus--white.svg');
     background-size: 24px;
   }
@@ -32,7 +33,7 @@
     margin-bottom: $inuit-base-spacing-unit / 2;
     &:after{
       opacity: 1;
-      transform: rotateZ(45deg);
+      transform: translate(0,-50%) rotateZ(45deg) ;
     }
   }
 }

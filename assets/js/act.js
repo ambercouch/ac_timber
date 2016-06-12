@@ -86,6 +86,9 @@ ACT = {
             var grid = '.content--archive-our-work';
             var item = '.our-work';
             ACT.ac_fn.isotope(grid, item);
+
+
+
         }
     },
     our_work: {
@@ -227,10 +230,16 @@ ACT = {
 
             var filters = {};
 
+            function getHashFilter() {
+                // get filter=filterName
+                var matches = location.hash.match( /filter=([^&]+)/i );
+                var hashFilter = matches && matches[1];
+                return hashFilter && decodeURIComponent( hashFilter );
+            }
+
             function concatValues( obj ) {
                 var value = '';
                 for ( var prop in obj ) {
-
                     value += obj[ prop ];
                 }
                 return value;
@@ -247,15 +256,51 @@ ACT = {
 
                 filterVal = concatValues(filters);
 
-                console.log(filters);
-                console.log(filterVal);
-                $grid.isotope({ filter: filterVal });
+                location.hash = 'filter=' + encodeURIComponent( filterVal );
+
 
                 $parent.find('[data-state=on]').not(this).attr('data-state', 'off');
                 $(this).attr('data-state', function (i, attr) {
                     return attr === 'on' ? 'off' : 'on';
                 })
             });
+
+            var isIsotopeInit = false;
+
+            function onHashchange() {
+                var hashFilter = getHashFilter();
+
+                if ( !hashFilter ) {
+                    console.log('!hashFilter');
+                    $grid.isotope({ filter: getHashFilter() });
+                    return;
+                }
+                $('#isoFilters > [data-state=off]').attr('data-state', 'on');
+                var arrayHashFilter = hashFilter.split('.');
+
+                //Clean Array
+                arrayHashFilter = arrayHashFilter.filter(Boolean);
+
+                isIsotopeInit = true;
+                $grid.isotope({ filter: getHashFilter() });
+
+                $('.filter-controls__tags [data-state=on]').attr('data-state', 'off');
+                $.each(arrayHashFilter, function (i) {
+                    var $filter = $('.filter-controls__tags [data-filter='+arrayHashFilter[i]+']')
+                    $filter.attr('data-state', 'on');
+                    var $parent = $filter.parent();
+                    var tax = $parent.attr('data-tax');
+
+                    filters[tax] = '.'+arrayHashFilter[i];
+                });
+            }
+
+            $(window).on( 'hashchange', onHashchange );
+
+            // trigger event handler to init Isotope
+            onHashchange();
+
+
         }
     },
     settings: {

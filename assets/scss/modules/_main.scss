@@ -6,9 +6,17 @@
 }
 
 .main__title{
-  @include brand-title();
+  @include brand-title($brand-col-1--dark, $brand-bg);
   margin-bottom: $inuit-base-spacing-unit !important;
 }
+.main__title{
+  &--our-work{
+    @include brand-title($brand-col-1--dark, $brand-bg, false);
+
+  }
+}
+
+
 .main__content {
   background: $col-act-gray-xxlight;
   width: 100%;

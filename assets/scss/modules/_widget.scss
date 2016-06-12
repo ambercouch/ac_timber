@@ -22,8 +22,10 @@ $icon-flourish-leaf-silver :  '%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A
 
   &--footer {
     text-align: left;
-    padding-right:$inuit-base-spacing-unit--large;
     @include inuit-font-size($inuit-heading-size-4);
+    @include media-query(lap-and-up){
+      padding-right:$inuit-base-spacing-unit--large;
+    }
     &__title {
      @extend .h4;
       @include brand-title($brand-col-2--dark, $brand-col-1--light);

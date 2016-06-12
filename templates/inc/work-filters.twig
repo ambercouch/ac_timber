@@ -1,12 +1,9 @@
-<div class="drawer">
+<div id="isoFilters" class="drawer">
   <div class="drawer__title" data-state="off">FILTERS</div>
   <div class="drawer__content" data-state="off" class="filter-controls">
 
-
-
     <div class="filter-controls__tags">
 
-      {#{{ dump(tile_filters) }}#}
       {% for key,filter in tile_filters %}
         <h5 class="filter-controls__title">{{ filter.name }}</h5>
         <div class="filter-controls__tags" data-tax="{{  key }}">
@@ -15,8 +12,6 @@
           {% endfor %}
         </div>
       {% endfor %}
-
-
 
     </div>
   </div>
