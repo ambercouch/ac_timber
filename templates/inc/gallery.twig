@@ -5,10 +5,12 @@
         <div class="gallery__content">
           <div class="gallery__wrapper">
             <img class="gallery__img" src="{{ item.image.sizes.large }}" alt="{{ item.image_title }}">
+           {% if item.image_title or item.image_description %}
             <div class="gallery__info">
               <h3 class="gallery__title">{{ item.image_title }}</h3>
               <p class="gallery__text">{{ item.image_description }}</p>
             </div>
+            {% endif %}
           </div>
         </div>
 

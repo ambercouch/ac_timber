@@ -12,7 +12,9 @@
 .main__title{
   &--our-work{
     @include brand-title($brand-col-1--dark, $brand-bg, false);
-
+  }
+  &--tile{
+    @include brand-title($brand-col-1--dark, $brand-bg, false);
   }
 }
 
