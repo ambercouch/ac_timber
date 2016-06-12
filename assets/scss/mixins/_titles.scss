@@ -3,6 +3,10 @@ $icon : '%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A/
   border-bottom: solid 2px $color;
   padding-bottom: 0.5em;
   position: relative;
+  @if $data == false {
+    margin-bottom: 4px !important;
+  }
+  @if $data != false {
   @include media-query(lap){
     margin-bottom: $inuit-base-spacing-unit * 1.5;
   }
@@ -10,16 +14,18 @@ $icon : '%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A/
   @include media-query(desk){
     margin-bottom: $inuit-base-spacing-unit--large;
   }
-  &:after{
-    width: 1em;
-    height: auto;
-    content: url('data:image/svg+xml,' + $data);
-    background: $bg;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 75%);
-    padding: 0 0.1em;
 
+    &:after {
+      width: 1em;
+      height: auto;
+      content: url('data:image/svg+xml,' + $data);
+      background: $bg;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 75%);
+      padding: 0 0.1em;
+
+    }
   }
 }
