@@ -78,7 +78,7 @@ if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_sub_page(array(
         'page_title' 	=> 'General Settings',
-        'menu_title'	=> 'General Settings',
+        'menu_title'	=> 'Generalgr Settings',
         'parent_slug'	=> 'theme-general-settings',
     ));
 
@@ -119,4 +119,36 @@ function disable_default_dashboard_widgets() {
 }
 
 add_action( 'wp_dashboard_setup', 'disable_default_dashboard_widgets' );
+
+
+// RSS Dashboard Widget
+function actLinks() {
+    add_thickbox();
+    ?>
+
+        <h4 style="margin-bottom: 0;">
+
+        </h4>
+    <ul>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdTXBTWkI5NlczakU&TB_iframe=true&width=600&height=550" class="thickbox">Home Page - Overview</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdRk5OLUlVU1VqaWM&TB_iframe=true&width=600&height=550" class="thickbox">Our Work - Overview</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdeUtUVlBGajk5OUk&TB_iframe=true&width=600&height=550" class="thickbox">Be Inspired - Overview</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdeUtUVlBGajk5OUk&TB_iframe=true&width=600&height=550" class="thickbox">Tile Gallery - Overview</a></li>
+
+    </ul>
+    
+    <?php
+}
+
+// calling all custom dashboard widgets
+function bones_custom_dashboard_widgets() {
+    wp_add_dashboard_widget( 'actLinks', __( 'Website Videos', 'act' ), 'actLinks' );
+    /*
+    Be sure to drop any other created Dashboard Widgets
+    in this function and they will all load.
+    */
+}
+
+// adding any custom widgets
+add_action( 'wp_dashboard_setup', 'bones_custom_dashboard_widgets' );
 
