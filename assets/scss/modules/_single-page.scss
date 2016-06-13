@@ -43,10 +43,15 @@
   }
   &__title{
     @include brand-title();
-
     a{
-      text-decoration: none;;
+      text-decoration: none;
     }
+  }
+  &__title{
+   &--full-width{
+     @include brand-title($brand-col-1--dark,$brand-bg,false);
+   }
+
   }
 
   &--aside__feature-image{

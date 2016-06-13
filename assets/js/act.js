@@ -180,42 +180,89 @@ ACT = {
 
             var slides =  $('.gallery__slide').clone();
             var controls = $('.gallery__thumb').clone();
+            var arrayFilters = {};
+            $.each(slides, function (i,el) {
+                var filter = $(el).attr('data-type');
+                arrayFilters[filter] = false;
+            });
+
+            console.log(arrayFilters);
             $(document).on('click', '.filter-controls__tag', function (e) {
                 var fState =  $(this).attr('data-state');
                 var fType =  $(this).attr('data-type');
                 var activeFillters = $(this).parent().find('[data-state=on]').length;
                 var el = $('[data-type='+fType+']');
-                console.log('AF'+activeFillters);
-                if('on' === fState && activeFillters > 1){
+
+
+                if('on' === fState){
                     $(this).attr('data-state', 'off');
-                    $('.gallery__slides').flickity('remove', el);
-                  $('.gallery__controller').flickity('remove', el);
-                    console.log(slides);
+                    arrayFilters[fType] = false;
+                    appendEls();
                 }else if('off' === fState){
                     $(this).attr('data-state', 'on');
-                    $(slides).each(function (i,e) {
-                        var eType = $(e).attr('data-type')
+                    arrayFilters[fType] = true;
+                    appendEls();
 
-                        var cell = $(e);
-                        if(eType == fType) {
-                            $('.gallery__slides').flickity('append', cell);
-                        }
-                    });
-                    $(controls).each(function (i,e) {
-                        var eType = $(e).attr('data-type')
-
-                        var cell = $(e);
-                        if(eType == fType) {
-                            $('.gallery__controller').flickity('append', cell);
-                        }
-                    });
-
-
-                    // $('.gallery__controller').flickity('append', $(controls).find('[data-type='+fType+']'));
-                    console.log(slides);
                 }
 
             });
+
+            function appendEls() {
+                var allFalse = $.inArray(true, $.map(arrayFilters, function(obj){return obj})) < 0;
+                
+                if (allFalse){
+                    console.log('allFalse');
+                    $.each(arrayFilters, function (i) {
+                        arrayFilters[i] = true;
+                    });
+                }
+                
+                
+                $.each(arrayFilters, function (i) {
+                    //console.log(i);
+                    var filter = i;
+                    var elLength = $('.gallery__slides [data-type='+filter+']').length
+                    if(arrayFilters[i] == true && elLength == 0){
+                        console.log('true');
+                        console.log(filter);
+                        // $('.gallery__slides').flickity('remove', $('[data-type='+filter+']'));
+                        // $('.gallery__controller').flickity('remove', $('[data-type='+filter+']'));
+                        console.log('slides');
+                        $.each(slides , function (i,el) {
+                            console.log(el);
+                            if($(el).attr('data-type') == filter){
+                                console.log('True');
+                                console.log('DT - ' + $(el).attr('data-type'));
+                                console.log('FT - ' + filter );
+                                $('.gallery__slides').flickity('append', el);
+                            }else {
+                                console.log('False');
+                                console.log('DT - ' + $(el).attr('data-type'));
+                                console.log('FT - ' + filter );
+                            }
+                        });
+                        console.log('controls');
+                        $.each(controls , function (i,el) {
+                            console.log(el);
+                            if($(el).attr('data-type') == filter){
+                          $('.gallery__controller').flickity('append', el);
+                            }
+                        })
+                    }else if(arrayFilters[i] == false){
+                        console.log('false');
+                        console.log(filter);
+                        $('.gallery__slides').flickity('remove', $('[data-type='+filter+']'));
+                        $('.gallery__controller').flickity('remove', $('[data-type='+filter+']'));
+                    }
+                })
+
+                if (allFalse){
+                    console.log('allFalse');
+                    $.each(arrayFilters, function (i) {
+                        arrayFilters[i] = false;
+                    });
+                }
+            }
 
         },
         isotope : function (grid, item) {

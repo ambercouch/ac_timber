@@ -1,6 +1,4 @@
-<?php
-/**
- * Template Name: Full Width Page
+<?php /** Template Name: Full Width Page
  *
  * @package WordPress
  * @subpackage ac_timber

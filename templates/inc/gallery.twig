@@ -1,4 +1,18 @@
 <div class="gallery">
+  {% if gFilters %}
+    <div class="gallery__filter-controls">
+      <div class="drawer ">
+        <div class="drawer__title" data-state="off">FILTERS</div>
+        <div class="drawer__content" data-state="off">
+          <div class="filter-controls__tags">
+            <h5 class="filter-controls__title">Type</h5>
+            <button class="filter-controls__tag" data-state="off" data-type="contemporary">Contemporary</button>
+            <button class="filter-controls__tag" data-state="off" data-type="traditional">Traditional</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif   %}
   <div class="gallery__slides">
     {% for item in post.get_field('images') %}
       <figure class="gallery__slide" data-type="{{ item.type }}">
@@ -26,16 +40,6 @@
       </div>
     {% endfor %}
   </div>
-  {% if gFilters %}
-  <div class="gallery__filter-controls">
-    <div class="filter-controls">
-      <h5 class="filter-controls__title">Filter</h5>
-      <div class="filter-controls__tags">
-        <button class="filter-controls__tag" data-state="on" data-type="contemporary">Contemporary</button>
-        <button class="filter-controls__tag" data-state="on" data-type="traditional">Traditional</button>
-      </div>
-    </div>
-  </div>
-  {% endif   %}
+
 </div>
 <hr>
