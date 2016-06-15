@@ -10,9 +10,9 @@
 {% if  fn('get_field','show_ad','options')  %}
     <div class="hero__offer">
       <div class="offer">
-        <div class="offer__text">10% Off all Tiles in September!</div>
+        <div class="offer__text">{{ fn('get_field','ad_text','options')  }}</div>
         {% if fn('get_field','link_text','options') != '' %}
-        <a class="offer__link" href="{{ adLink }}">contact us for more info.</a>
+        <a class="offer__link" href="{{ adLink }}">{{ fn('get_field','link_text','options')  }}</a>
         {% endif %}
       </div>
     </div>
