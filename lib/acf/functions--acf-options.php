@@ -13,7 +13,7 @@ if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_sub_page(array(
         'page_title' 	=> 'General Settings',
-        'menu_title'	=> 'Generalgr Settings',
+        'menu_title'	=> 'General Settings',
         'parent_slug'	=> 'theme-general-settings',
     ));
 
