@@ -1,0 +1,13 @@
+.body {
+  &__item {
+    width: 50%;
+    &:first-child {
+      padding-right: $inuit-base-spacing-unit;
+    }
+  }
+}
+.body {
+  &--wrapper {
+    display: flex;
+  }
+}

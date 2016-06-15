@@ -1,0 +1,35 @@
+.cf{
+  @extend .island;
+}
+
+.cf{
+  &__label{
+    width:100%;
+    display: block;
+  }
+  &__label-text{
+    @include inuit-font-size($inuit-heading-size-6--desk);
+  }
+  &__input{
+    display: block;
+    width:100%;
+
+    span{
+      display: block;
+      width:100%;
+    }
+    input{
+      display: block;
+      width: 100%;
+      padding: 0 $inuit-base-spacing-unit--small;
+    }
+    textarea{
+      display: block;
+      width: 100%;
+    }
+    [type=submit]{
+      margin-top: $inuit-base-spacing-unit;
+      @include btn();
+    }
+  }
+}

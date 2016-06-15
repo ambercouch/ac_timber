@@ -1,0 +1,45 @@
+<article id="post-{{ post.id }}" class="single-page{{ template_class }}">
+
+  {% if(post.thumbnail or acSettings.defaultImage) %}
+    <div class="single-page__feature-image ">
+      <div class="feature-image--single-page">
+        {% if(post.thumbnail.src()) %}
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+        {% else %}
+          <img src="{{ acSettings.defaultImage }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+
+  <header class="entry-header single-page__header ">
+    <h1 class="entry-title single-page__title{{ template_class }} ">
+      <span>{{ post.title }}</span>
+    </h1>
+    {#<div class="entry-meta single-page__post-meta ">#}
+    {#{% include 'post-meta--page.twig' %}#}
+    {#</div>#}
+  </header>
+
+  {% if(post.get_field('add_a_gallery')) %}
+    <div class="single-page__gallery">
+      {% include 'inc/gallery.twig' with {'gFilters' : 'true'} %}
+    </div>
+  {% endif %}
+
+  <div class="entry-content single-page__body ">
+    <div class="body--wrapper">
+
+      <div class="body__item">{{ post.content }}</div>
+      <div class="body__item">{{ post.get_field('contact_form') }}</div>
+    </div>
+
+  </div>
+
+
+  <footer class="single-page__footer ">
+  </footer>
+
+
+</article>
