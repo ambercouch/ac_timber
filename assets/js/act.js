@@ -60,9 +60,10 @@ ACT = {
         init: function () {
             //uncomment to debug
             console.log('pages');
+            ACT.ac_fn.gallery();
         },
         bathroom_inspiration: function () {
-            ACT.ac_fn.gallery();
+            // ACT.ac_fn.gallery();
         }
     },
     home: {
