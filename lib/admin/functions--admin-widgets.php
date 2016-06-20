@@ -23,6 +23,23 @@ function actVideoOverview() {
     <?php
 }
 
+// Video Overview
+function actVideoTutorials() {
+    add_thickbox();
+    ?>
+    <p>Watch videos for information on updating the website.</p>
+    <ul>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdc0VaMnRRX0YyRkU&TB_iframe=true&width=600&height=550" class="thickbox">Banner Ad - Tutorial</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdUmJTc1QzUG5FYTg&TB_iframe=true&width=600&height=550" class="thickbox">Hero Image - Tutorial</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdTzByV2tkU2pkVDg&TB_iframe=true&width=600&height=550" class="thickbox">Our Work - Tutorial</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdazUzN2FRZ2tFRDA&TB_iframe=true&width=600&height=550" class="thickbox">Be Inspired - Tutorial</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdMF9lMTFvY2pLOEk&TB_iframe=true&width=600&height=550" class="thickbox">Tile Gallery - Tutorial</a></li>
+
+    </ul>
+
+    <?php
+}
+
 // Dashboard Intro
 function actDashboardIntro() {
     ?>
@@ -37,7 +54,9 @@ function actDashboardIntro() {
 // calling all custom dashboard widgets
 function bones_custom_dashboard_widgets() {
     wp_add_dashboard_widget( 'act-intro', __( 'Thomas Vaughan Website by AmberCouch', 'act' ), 'actDashboardIntro' );
-    wp_add_dashboard_widget( 'act-video-overview', __( 'Website Video Overview', 'act' ), 'actVideoOverview' );
+
+    add_meta_box( 'act-video-overview', __( 'Website Video Overview', 'act' ), 'actVideoOverview', 'dashboard', 'side' );
+    add_meta_box( 'act-video-tutorials', __( 'Website Video Tutorials', 'act' ), 'actVideoTutorials', 'dashboard', 'side' );
 }
 
 // adding any custom widgets
