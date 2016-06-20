@@ -34,9 +34,23 @@ function actVideoTutorials() {
         <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdTzByV2tkU2pkVDg&TB_iframe=true&width=600&height=550" class="thickbox">Our Work - Tutorial</a></li>
         <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdazUzN2FRZ2tFRDA&TB_iframe=true&width=600&height=550" class="thickbox">Be Inspired - Tutorial</a></li>
         <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdMF9lMTFvY2pLOEk&TB_iframe=true&width=600&height=550" class="thickbox">Tile Gallery - Tutorial</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdNkVMOWR1Xzc2TWs&TB_iframe=true&width=600&height=550" class="thickbox">Page Update - Tutorial</a></li>
+        <li><a href="https://drive.google.com/open?id=0B2_KLu_jilZdelV5allqblVrSWM&TB_iframe=true&width=600&height=550" class="thickbox">Call To Action - Tutorial</a></li>
 
     </ul>
 
+    <?php
+}
+
+// Short Code Help
+function actShortCodeHelp() {
+    ?>
+    <p>Short Codes to use on pages.</p>
+    <h3>Call To Action Box</h3>
+    <span class="shortcode">
+        <textarea  rows="4" onfocus="this.select();" readonly="readonly"  class="large-text code">[actcall title='Free Design Consultation' btn='BOOK NOW' url='/contact' text='Arrange your free design consultation with our experienced advisers today']</textarea>
+    </span>
+    Right click / Copy the code to use on any page.
     <?php
 }
 
@@ -57,6 +71,7 @@ function bones_custom_dashboard_widgets() {
 
     add_meta_box( 'act-video-overview', __( 'Website Video Overview', 'act' ), 'actVideoOverview', 'dashboard', 'side' );
     add_meta_box( 'act-video-tutorials', __( 'Website Video Tutorials', 'act' ), 'actVideoTutorials', 'dashboard', 'side' );
+    add_meta_box( 'act-short-codes', __( 'Website Short Codes', 'act' ), 'actShortCodeHelp', 'dashboard', 'side' );
 }
 
 // adding any custom widgets
