@@ -1,8 +1,13 @@
+<div class="masthead__widget-area">
+</div>
   <div class="masthead">
+
     <div class="masthead__branding">
       <div class="masthead__site-title">
 
-        {%  if acSettings.svgLogo  %}
+        {% if fn('get_field', 'company_logo', 'option') != false %}
+          {%  include 'inc/site-title-upload.twig' %}
+        {%  elseif acSettings.svgLogo   %}
           {%  include 'inc/site-title-svg.twig' %}
         {% else %}
           {% include 'inc/site-title-text.twig' %}
