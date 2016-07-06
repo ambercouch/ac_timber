@@ -64,7 +64,8 @@ module.exports = function (grunt) {
                   ]
               },
               options: {
-                  proxy: 'http://thomasvaughanltd.local/',
+                  proxy: 'paintinganddecoratingtips.local',
+                  proxy: 'paintinganddecoratingtips.local',
                   watchTask: true
               }
           }
@@ -88,7 +89,7 @@ module.exports = function (grunt) {
           },
           default: {
               files: {
-                  'templates/inc/defs.svg': ['assets/img/svg/*.svg']
+                  'assets/img/defs.svg': ['assets/img/svg/*.svg']
               }
               //your_target: {
 
@@ -97,7 +98,7 @@ module.exports = function (grunt) {
     criticalcss: {
         custom: {
             options: {
-                url: "http://thomasvaughanltd.local/",
+                url: "http://ambercouch.local/",
                     width: 1200,
                     height: 900,
                     outputfile: "assets/css/critical.css",
