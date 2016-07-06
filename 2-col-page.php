@@ -1,4 +1,4 @@
-<?php /** Template Name: Contact Page
+<?php /** Template Name: Two Column Page
  *
  * @package WordPress
  * @subpackage ac_timber
@@ -12,5 +12,5 @@ $context['footer_widgets'] = Timber::get_widgets('Footer');
 $context['template_class'] = '--contact';
 
 //require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
-$templates = array( 'page-contact.twig', 'page.twig' );
+$templates = array( 'page-2-col.twig', 'page.twig' );
 Timber::render( $templates, $context );
