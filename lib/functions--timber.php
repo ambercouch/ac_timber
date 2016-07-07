@@ -56,10 +56,9 @@ class StarterSite extends TimberSite {
 
 new StarterSite();
 
-function ac_dd($var)
-{
-    $var = var_export($var, true);
-    return '<pre>'. $var . '</pre>';
+function ac_dd($var){
+    echo '<pre>', print_r($var, true), '</pre>';
+    die();
 }
 
 function myfoo( $text ) {
