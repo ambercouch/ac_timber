@@ -32,6 +32,8 @@ class StarterSite extends TimberSite {
 
     function add_to_context( $context ) {
 
+        $context['company_logo'] = get_field('company_logo', 'options');
+
         //site vars
         $context['site'] = $this;
 
