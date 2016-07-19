@@ -1,0 +1,13 @@
+.content{
+
+}
+
+.content{
+  &--feature-cats{
+
+    @include media-query(lap-and-up){
+      display: flex;
+    }
+
+  }
+}

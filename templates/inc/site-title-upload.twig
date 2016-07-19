@@ -12,12 +12,14 @@
   </h1>
 {% else %}
   <span class="site-title">
-               <a href="{{ site.url }} " rel="home">
+               <a class="site-title__link" href="{{ site.url }} " rel="home">
                  {#<svg class="icon site-title__icon" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none" >#}
                    {#<title>{{ site.title }}</title>#}
                    {#<desc>{{ site.description }}</desc>#}
                    {#<use xlink:href="#icon-logo" />#}
                  {#</svg>#}
+                 <img class="site-title__logo--img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
+
                </a>
             </span>
 {% endif %}

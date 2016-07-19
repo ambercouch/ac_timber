@@ -1,0 +1,19 @@
+.feature-cat{
+  width: 100%;
+  padding: 0 $inuit-base-spacing-unit;
+  margin-bottom:$inuit-base-spacing-unit;
+  @include media-query(lap-and-up){
+    width: 50%;
+  }
+}
+
+.feature-cat{
+  &__title{
+    background: $brand-col-1;
+    color: #fff;
+    padding: 0.5em 1em;
+    @include inuit-font-size($inuit-heading-size-6);
+    font-weight:500;
+    text-transform: uppercase;
+  }
+}

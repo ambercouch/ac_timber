@@ -5,6 +5,7 @@
 @import "var/settings.colours";
 @import "var/settings.defaults";
 @import "var/settings.shadows";
+@import "var/settings.headings";
 
 @import "../vendor/inuit-responsive-settings/settings.responsive";
 @import "var/settings.responsive";
@@ -43,6 +44,8 @@
 
 
 @import "modules/main";
+@import "modules/content";
+@import "modules/feature-cat";
 @import "modules/site-title";
 @import "modules/btn";
 @import "modules/masthead";

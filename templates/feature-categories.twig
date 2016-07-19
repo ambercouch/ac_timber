@@ -1,0 +1,27 @@
+{% extends "base.twig" %}
+
+  {% block hero %}
+  {% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+
+{% block content %}
+  {% for cat in feature_cats %}
+    <div class="feature-cat">
+      <h2 class="feature-cat__title">{{ cat.title }}</h2>
+      {% for post in cat.posts %}
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include 'content-feature-cats'~postFormat~'.twig' %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
