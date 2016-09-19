@@ -15,7 +15,7 @@
     margin-bottom: $inuit-base-spacing-unit;
   }
   &__header{
-    //margin-bottom: $inuit-base-spacing-unit--small;
+    margin-bottom: $inuit-base-spacing-unit--small /2;
     //display: flex;
     //flex-direction: column-reverse;
     //width: 50%;
@@ -23,6 +23,9 @@
     //padding: $inuit-base-spacing-unit--large;
     //padding-bottom: 0;
 
+  }
+  &__post-meta{
+    padding: $inuit-base-spacing-unit--small /2 0 ;
   }
   &__body{
     //width: 50%;
@@ -93,7 +96,7 @@
 .post{
   &--video{
     &__header{
-      //@extend .post__header;
+      @extend .post__header;
     }
     &__title{
       @extend .post__title;
@@ -106,6 +109,9 @@
     }
     &__footer{
       @extend .post__footer;
+    }
+    &__post-meta{
+      @extend .post__post-meta;
     }
     &__comment-link{
       @extend .post__comment-link;

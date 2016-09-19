@@ -1,5 +1,5 @@
 .post-meta{
-  @include inuit-font-size($inuit-small-print);
+  @include inuit-font-size($inuit-small-print, 1.4);
   //margin-bottom: $inuit-base-spacing-unit;
 
   &__date{
