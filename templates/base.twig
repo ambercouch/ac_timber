@@ -25,11 +25,11 @@
   </header>
 
   <section id="primary" class="site__main">
-    <div class="main">
+    <div class="main{{ main_mod }}">
       <main class="main__content">
         {% block before_content %}
         {% endblock %}
-        <div class="content">
+        <div class="content{{ content_mod }}">
           {% block content %}
             <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
           {% endblock %}
