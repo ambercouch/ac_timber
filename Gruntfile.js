@@ -49,7 +49,8 @@ module.exports = function (grunt) {
           my_target: {
               files: {
                   'dist/js/main.js': [
-                     'assets/js/ac_timber.js'
+                     'assets/js/ac_timber.js',
+                      'assets/vendor/jquery.fitvids/jquery.fitvids.js'
                   ]
               }
           }

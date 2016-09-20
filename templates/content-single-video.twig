@@ -31,7 +31,7 @@
       <div class="entry-content single-article--video__body">
         {% if post.get_field('video_id') %}
           {% set video_url = 'https://www.youtube.com/watch?v='~post.get_field('video_id') %}
-        <div class="single-article--video__embed">
+        <div data-fitvid class="video-embed">
           {{  fn('wp_oembed_get', video_url ) }}
         </div>
           {% endif %}
