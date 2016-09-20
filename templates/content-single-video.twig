@@ -11,21 +11,7 @@
   {%  endif %}
 
     <header class="entry-header single-article--video__header ">
-      <h2 class="entry-title single-article--video__title">
-        <a href="{{ post.link }}">{{ post.title }}</a>
-      </h2>
-      <div class="entry-meta single-article--video__post-meta">
-        <div class="post-meta">
 
-          {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
-            {#<title>{{ postFormat }}</title>#}
-            {#<desc>Post type {{ postFormat }}</desc>#}
-            {#<use xlink:href="#icon-post{{ postFormat }}" />#}
-          {#</svg>#}
-
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
-      </div>
     </header>
 
       <div class="entry-content single-article--video__body">
@@ -35,7 +21,26 @@
           {{  fn('wp_oembed_get', video_url ) }}
         </div>
           {% endif %}
-        <div class="single-article--video__content">{{ post.content }}</div>
+
+        <h2 class="entry-title single-article--video__title">
+          {{ post.title }}
+        </h2>
+        <div class="entry-meta single-article--video__post-meta">
+          <div class="post-meta">
+
+            {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
+            {#<title>{{ postFormat }}</title>#}
+            {#<desc>Post type {{ postFormat }}</desc>#}
+            {#<use xlink:href="#icon-post{{ postFormat }}" />#}
+            {#</svg>#}
+
+            {#<span class="post-meta__date">{{ post.date }}</span>#}
+          </div>
+        </div>
+
+        <div class="single-article--video__content">
+          {{ post.content }}
+        </div>
 
       </div>
 
