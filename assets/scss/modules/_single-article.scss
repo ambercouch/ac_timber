@@ -7,7 +7,7 @@
   //height: 500px;
   //overflow: hidden;
   //box-shadow: $z1-shadow;
-  max-width: 800px;
+  max-width: $article-max-width;
   margin: 0 auto $inuit-base-spacing-unit--large;
   border-bottom:solid 1px;
   padding-bottom:$inuit-base-spacing-unit;
