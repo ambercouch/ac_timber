@@ -1,8 +1,12 @@
 {%  set bannerImg = fn('get_field','banner_image','options')   %}
 {%  set bannerContent = fn('get_field','banner_content','options')   %}
+{%  set bannerLogo = fn('get_field','banner_logo','options')   %}
 <div class="hero" style="background-image: url('{{  bannerImg.url }}');">
   <div class="hero__container">
     <div class="hero__body">
+      <div class="hero__logo">
+          <img class="hero__logo-img" src=" {{  bannerLogo.url  }}" alt="{{ site.title }} - {{ site.description }}">
+      </div>
       <div class="hero__content">
         hero content
       </div>
