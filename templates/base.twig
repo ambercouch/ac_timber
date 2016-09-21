@@ -27,8 +27,28 @@
   <section id="primary" class="site__main">
     <div class="main">
       <main class="main__content">
-        {% block content %}
-          <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+        {% block before_content %}
+        {% endblock %}
+        <div class="content{{ template_class }}">
+          {% block content %}
+            <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+          {% endblock %}
+        </div>
+        {% block belowContent %}
+          {% if (fn('comments_open')) %}
+            <section id="comments" class="comments">
+              <h3 class="comments__title">Comments</h3>
+              <div class="comments__response">
+                {% for cmt in post.get_comments() %}
+                  {% include "inc/comment.twig" with {comment:cmt} %}
+                {% endfor %}
+              </div>
+              <h3 class="comments__title">Leave a Reply</h3>
+              <div class="comments__respond">
+                {{ comment_form }}
+              </div>
+            </section>
+          {% endif %}
         {% endblock %}
       </main>
       <!-- Sidebar should go here when needed -->

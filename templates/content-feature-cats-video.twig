@@ -1,0 +1,56 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+
+  <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
+  {% if post.get_field('video_id') %}
+    <div class="post{{ postFormatClass }}__feature-image">
+      <div class="feature-image">
+        <a href="{{ post.link }}">
+        <img src="http://img.youtube.com/vi/{{ post.get_field('video_id') }}/maxresdefault.jpg" class="feature-image__img" alt="{{ post.title }}"/>
+          <svg class="feature-image__play-button" viewBox="0 0 200 200" alt="Play video">
+            <circle cx="100" cy="100" r="90" fill="none" stroke-width="15" stroke="#fff"></circle>
+            <polygon points="70, 55 70, 145 145, 100" fill="#fff"></polygon>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  {%  endif %}
+
+    <header class="entry-header post{{ postFormatClass }}__header ">
+      <h2 class="entry-title post{{ postFormatClass }}__title">
+        <a class="entry-header post{{ postFormatClass }}__title-link " post{{ postFormatClass }}__header href="{{ post.link }}">{{ post.title }}</a>
+      </h2>
+      <div class="entry-meta post{{ postFormatClass }}__post-meta">
+        <div class="post-meta">
+          <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none" >
+            <title>{{ postFormatRead }}</title>
+            <desc>Post type {{ postFormatRead }}</desc>
+            <use xlink:href="#icon-post{{ postFormat }}" />
+          </svg>
+          <span class="post-meta__date">{{ post.date }}</span>
+        </div>
+      </div>
+    </header>
+
+    {% if  post.post_excerpt != '' %}
+      <div class="entry-content post{{ postFormatClass }}__body">
+        {{ post.post_excerpt }}
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+      </div>
+
+    {% else %}
+      <div class="entry-content post{{ postFormatClass }}__body">
+        <p>{{ post.content | striptags | truncate(20) }}</p>
+        {#<a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>#}
+      </div>
+
+    {% endif %}
+    <footer class="post{{ postFormatClass }}__footer">
+      <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
+        <span>{{ post.comment_count }} Comments </span>
+      </a>
+
+    </footer>
+
+  </article>
