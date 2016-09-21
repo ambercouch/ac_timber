@@ -44,6 +44,14 @@ class StarterSite extends TimberSite {
         $context['menuPrimary'] = new TimberMenu('primary');
 
         $context['menuHero'] = new TimberMenu('hero');
+
+        foreach( unserialize(SIDEBARS) as $sidebar ) {
+            $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
+        }
+
+//        $context['primary_widgets'] = Timber::get_widgets('Primary');
+//        $context['subsidiary_widgets'] = Timber::get_widgets('Subsidiary');
+
         return $context;
     }
 
