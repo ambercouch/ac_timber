@@ -18,11 +18,17 @@
 
   {% include 'site-accessibility.twig' %}
 
+  {% block header %}
   <header id="masthead" class="site__masthead" role="banner">
-
     {% include 'inc/masthead.twig' %}
-
   </header>
+  {% endblock %}
+
+  {% block hero %}
+    <section class="site__hero">
+      {% include 'inc/hero.twig' %}
+    </section>
+  {% endblock %}
 
   <section id="primary" class="site__main">
     <div class="main{{ main_mod }}">

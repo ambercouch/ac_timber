@@ -1,0 +1,13 @@
+.hero{
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.hero{
+
+ &__menu{
+  @extend .list-inline;
+  text-align: center;
+ }
+
+}

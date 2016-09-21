@@ -32,6 +32,7 @@
 //@import "../vendor/inuit-buttons/objects.buttons";
 //@import "../vendor/inuit-layout/objects.layout";
 //@import "../vendor/inuit-media/objects.media";
+@import "../vendor/inuit-list-inline/objects.list-inline";
 
 @import "mixins";
 @import "helpers";
@@ -56,6 +57,7 @@
 @import "modules/video-embed";
 @import "modules/comments";
 @import "modules/comment-form";
+@import "modules/hero";
 //@import "ui/modules/placeholders/container";
 //@import "ui/modules/placeholders/layout";
 //@import "ui/modules/placeholders/responsive-toggle";
