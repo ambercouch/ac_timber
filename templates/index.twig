@@ -1,10 +1,9 @@
 {% extends "base.twig" %}
 
 {% block content %}
-
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include 'content'~postFormat~'.twig' %}<br>
+    {% include 'content-single-page.twig' %}<br>
   {% endfor %}
 
 {% endblock %}

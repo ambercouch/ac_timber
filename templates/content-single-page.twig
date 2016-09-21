@@ -1,3 +1,4 @@
+{%  set hideTitle = fn('get_field','hide_title')   %}
 <article id="post-{{ post.id }}" class="single-page">
 
   {% if(post.thumbnail or acSettings.defaultImage) %}
@@ -12,15 +13,16 @@
     </div>
   {% endif %}
 
-
+{% if hideTitle != true %}
     <header class="entry-header single-page__header ">
       <h1 class="entry-title single-page__title ">
         <span>{{ post.title }}</span>
       </h1>
       <div class="entry-meta single-page__post-meta ">
-        {% include 'post-meta--page.twig' %}
+        {% include 'inc/post-meta--page.twig' %}
       </div>
     </header>
+  {% endif %}
 
 
 
