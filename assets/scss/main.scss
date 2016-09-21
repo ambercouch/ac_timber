@@ -2,9 +2,9 @@
 
 
 @import "../vendor/inuit-defaults/settings.defaults";
+@import "var/settings.colours";
 @import "var/settings.defaults";
 @import "var/settings.shadows";
-@import "var/settings.colours";
 
 @import "../vendor/inuit-responsive-settings/settings.responsive";
 @import "var/settings.responsive";
@@ -23,6 +23,7 @@
 
 @import "../vendor/inuit-page/base.page";
 @import "../vendor/inuit-headings/base.headings";
+
 
 ////@import "base.links";
 ////@import "base.quotes";

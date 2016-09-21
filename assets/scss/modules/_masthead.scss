@@ -1,5 +1,19 @@
 .masthead{
+  max-width: $site-container-width;
+  margin: 0 auto;
+  background: #fff;
+  padding: $inuit-base-spacing-unit;
+  border-bottom:solid 3px #dd3526;
+}
+.masthead{
   &__navigation{
     @extend %off-page--curtain;
+  }
+  &__widget-area{
+    width: 100%;
+    margin: 0 auto;
+    max-width: $site-container-width;
+    height: $inuit-base-spacing-unit;
+    background: #2f2d35;
   }
 }
