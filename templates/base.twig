@@ -65,6 +65,12 @@
     </div>
   </section>
 
+  {% block subsidiary %}
+    <section id="subsidiary" class="site__subsidiary">
+      {% include 'inc/subsidiary.twig' %}
+    </section>
+  {% endblock %}
+
 </div>{# /#page #}
 
 {% block footer %}
