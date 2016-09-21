@@ -1,0 +1,18 @@
+{%  set bannerImg = fn('get_field','banner_image','options')   %}
+{%  set bannerImg = fn('get_field','banner_content','options')   %}
+<div class="hero" style="background-image: url('{{  bannerImg.url }}');">
+  <div class="hero__container">
+    <div class="hero__body">
+      <div class="hero__content">
+        hero content
+      </div>
+      <div class="hero__call-to-action">
+        <ul class="hero__menu">
+          {% for item in menuHero.get_items %}
+          <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
+          {% endfor %}
+          </ul>
+      </div>
+    </div>
+  </div>
+</div>
