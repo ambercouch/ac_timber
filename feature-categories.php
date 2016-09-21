@@ -24,7 +24,7 @@ foreach ($cat_ids as $cat_id)
 $context['feature_cats'] = $fCats;
 $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['footer_widgets'] = Timber::get_widgets('Footer');
-$context['template_class'] = '--feature-cats';
+$context['content_mod'] = '--feature-cats';
 
 //require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
 $templates = array( 'feature-categories.twig' );

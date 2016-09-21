@@ -13,6 +13,8 @@ $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
 
+require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';
+
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

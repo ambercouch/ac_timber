@@ -36,9 +36,9 @@
 @import "mixins";
 @import "helpers";
 @import "var/settings.container";
+@import "var/settings.article";
 @import "var/settings.fonts";
 @import "typography";
-@import "var/settings.container";
 @import "accessibility";
 @import "placeholders/off-page";
 
@@ -52,6 +52,10 @@
 @import "modules/post";
 @import "modules/post-meta";
 @import "modules/feature-image";
+@import "modules/single-article";
+@import "modules/video-embed";
+@import "modules/comments";
+@import "modules/comment-form";
 //@import "ui/modules/placeholders/container";
 //@import "ui/modules/placeholders/layout";
 //@import "ui/modules/placeholders/responsive-toggle";
@@ -86,6 +90,8 @@
 @import "../vendor/inuit-widths/trumps.widths";
 @import "../vendor/inuit-widths-responsive/trumps.widths-responsive";
 @import "../vendor/inuit-spacing/trumps.spacing";
+@import "../vendor/inuit-clearfix/trumps.clearfix";
+
 
 
 

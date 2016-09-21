@@ -1,4 +1,4 @@
-.post{
+.single-article{
   //background: #fff;
   //display: flex;
   //flex-wrap: wrap;
@@ -7,9 +7,10 @@
   //height: 500px;
   //overflow: hidden;
   //box-shadow: $z1-shadow;
+  max-width: $article-max-width;
+  margin: 0 auto $inuit-base-spacing-unit--large;
   border-bottom:solid 1px;
   padding-bottom:$inuit-base-spacing-unit;
-  margin-bottom:$inuit-base-spacing-unit--large;
 
   &__feature-image{
     margin-bottom: $inuit-base-spacing-unit;
@@ -61,60 +62,61 @@
     }
   }
   &--aside__feature-image{
-     //@extend .post__feature-image;
+     //@extend .single-article__feature-image;
    }
   &--aside__header{
-    //@extend .post__header;
+    //@extend .single-article__header;
   }
   &--aside__body{
-    //@extend .post__body;
+    //@extend .single-article__body;
   }
   &--aside__footer{
-    //@extend .post__footer;
+    //@extend .single-article__footer;
   }
   &--aside__comment-link{
-    //@extend .post__comment-link;
+    //@extend .single-article__comment-link;
   }
 
   &--quote__feature-image{
-    //@extend .post__feature-image;
+    //@extend .single-article__feature-image;
   }
   &--quote__header{
-    //@extend .post__header;
+    //@extend .single-article__header;
   }
   &--quote__body{
-    //@extend .post__body;
+    //@extend .single-article__body;
   }
   &--quote__footer{
-    //@extend .post__footer;
+    //@extend .single-article__footer;
   }
   &--quote__comment-link{
-    //@extend .post__comment-link;
+    //@extend .single-article__comment-link;
   }
 }
 
-.post{
+.single-article{
   &--video{
+    @extend .single-article;
     &__header{
-      @extend .post__header;
+      @extend .single-article__header;
     }
     &__title{
-      @extend .post__title;
+      @extend .single-article__title;
     }
     &__body{
       @include inuit-font-size($inuit-heading-size-5);
     }
     &__feature-image{
-      @extend .post__feature-image;
+      @extend .single-article__feature-image;
     }
     &__footer{
-      @extend .post__footer;
+      @extend .single-article__footer;
     }
     &__post-meta{
-      @extend .post__post-meta;
+      @extend .single-article__post-meta;
     }
     &__comment-link{
-      @extend .post__comment-link;
+      @extend .single-article__comment-link;
     }
 
   }
