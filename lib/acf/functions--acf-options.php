@@ -36,3 +36,4 @@ require_once get_template_directory() . '/lib/acf/acf-options--branding.php';
 require_once get_template_directory() . '/lib/acf/acf-options--contact.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-image.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-content.php';
+require_once get_template_directory() . '/lib/acf/acf-options--footer-info.php';
