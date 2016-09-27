@@ -32,6 +32,9 @@ class StarterSite extends TimberSite {
 
     function add_to_context( $context ) {
 
+        remove_filter ('acf_the_content', 'wpautop');
+        $context['site_info'] = get_field('site_info', 'options');
+
         $context['company_logo'] = get_field('company_logo', 'options');
 
         //site vars
