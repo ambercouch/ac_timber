@@ -11,10 +11,11 @@
 
 
 {% block content %}
-
+  <div class="archive-control--top"><a class="archive-control__link--top" href="/thomas-vaughan-gallery">&laquo; Back to Our Work</a></div>
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
     {% include 'content-single-work.twig' %}
   {% endfor %}
+<div class="archive-control--bottom"><a class="archive-control__link--bottom" href="/our-work">&laquo; Back to Our Work</a></div>
 
 {% endblock %}

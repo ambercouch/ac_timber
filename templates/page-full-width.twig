@@ -11,11 +11,12 @@
 
 
 {% block content %}
-
+  {%  if has_parent == true  %}  <div class="archive-control--top"><a class="archive-control__link--top" href="/be-inspired/">&laquo; Back to Be Inspired </a></div>{% endif  %}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
     {% include 'content-single-page.twig' %}
   {% endfor %}
+  {%  if has_parent == true  %}  <div class="archive-control--bottom"><a class="archive-control__link--bottom" href="/be-inspired/">&laquo; Back to Be Inspired </a></div>{% endif  %}
 
 {% endblock %}
 
