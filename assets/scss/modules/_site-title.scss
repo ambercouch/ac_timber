@@ -9,9 +9,9 @@
     height: 50px;
     max-width: 70vw;
     @include media-query(lap-and-up){
-      max-width: 50vw;
-      width: 250px;
-      height: 50px;
+      max-width: 40vw;
+      width: 330px;
+      height: 60px;
     }
 
   }
