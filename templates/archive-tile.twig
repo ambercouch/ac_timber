@@ -15,10 +15,17 @@
 {% endblock %}
 
 {% block content %}
+{% if posts is empty %}
+  <p>There are currently no tiles on our website. <a href="/contact">Contact us</a> for more information about our range of tiles.</p>
 
+{% else %}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
     {% include 'content-tile.twig' %}
   {% endfor %}
+{% endif %}
 
+{% endblock %}
+
+{% block belowContent %}
 {% endblock %}
