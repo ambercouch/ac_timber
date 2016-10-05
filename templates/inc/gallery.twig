@@ -6,8 +6,9 @@
         <div class="drawer__content" data-state="off">
           <div class="filter-controls__tags">
             <h5 class="filter-controls__title">Type</h5>
-            <button class="filter-controls__tag" data-state="off" data-type="contemporary">Contemporary</button>
-            <button class="filter-controls__tag" data-state="off" data-type="traditional">Traditional</button>
+            {% for type in imageFilters %}
+              <button class="filter-controls__tag" data-state="off" data-type="{{ type }}">{{ type | replace({'-':' '}) | title }}</button>
+            {% endfor %}
           </div>
         </div>
       </div>

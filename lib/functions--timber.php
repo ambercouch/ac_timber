@@ -12,6 +12,7 @@ Timber::$dirname = array('templates', 'views');
 class StarterSite extends TimberSite {
 
     function __construct() {
+
         add_theme_support( 'post-formats' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
@@ -42,6 +43,14 @@ class StarterSite extends TimberSite {
         $context['menuPrimary'] = new TimberMenu('primary');
         $context['menuCta'] = new TimberMenu(21);
 
+        if (get_field('images')) {
+            foreach (get_field('images') as $image){
+                $type = $image['type'];
+                $context['imageFilters'][$type] = $type;
+            }
+        }
+
+
 
         return $context;
     }
@@ -60,7 +69,8 @@ new StarterSite();
 function ac_dd($var)
 {
     $var = var_export($var, true);
-    return '<pre>'. $var . '</pre>';
+    echo '<pre>'. $var . '</pre>';
+    die();
 }
 
 function myfoo( $text ) {
