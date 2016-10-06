@@ -10,6 +10,10 @@
   }
   &--archive-tile{
     display: flex;
+    &.is-empty{
+      display: block;
+      padding-top: $inuit-base-spacing-unit;
+    }
   }
   &--archive-our-work{
     display: flex;
