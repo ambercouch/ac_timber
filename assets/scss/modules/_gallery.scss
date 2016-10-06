@@ -22,11 +22,14 @@
 
 }
 .gallery__wrapper{
+  transition: opacity 0.3s ease;
   margin: 0 auto;
   display: inline-block;
   text-align: left;
   position: relative;
   overflow: hidden;
+  opacity: 1;
+
 }
 .gallery__info{
   width: 100%;
