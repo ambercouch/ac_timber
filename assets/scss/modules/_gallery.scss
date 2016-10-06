@@ -87,6 +87,9 @@
   //height: 150px;
   height: 10vh;
   margin-bottom: $inuit-base-spacing-unit--small;
+  max-width: 100%;
+  width: 600px;
+  margin: 0 auto;
 }
 
 .gallery__thumb {

@@ -169,14 +169,16 @@ ACT = {
                 initialIndex: 0,
                 contain: true,
                 imagesLoaded: true,
-                cellAlign: 'center'
+                cellAlign: 'center',
+                lazyLoad: true
             });
 
             $('.gallery__controller').flickity({
                 asNavFor: '.gallery__slides',
                 contain: true,
                 setGallerySize: false,
-                pageDots: false
+                pageDots: false,
+                lazyLoad: true
             });
 
             var slides =  $('.gallery__slide').clone();

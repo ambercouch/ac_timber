@@ -19,7 +19,7 @@
       <figure class="gallery__slide" data-type="{{ item.type }}">
         <div class="gallery__content">
           <div class="gallery__wrapper">
-            <img class="gallery__img" src="{{ item.image.sizes.large }}" alt="{{ item.image_title }}">
+            <img class="gallery__img"  data-flickity-lazyload="{{ item.image.sizes.large }}" alt="{{ item.image_title }}">
            {% if item.image_title or item.image_description %}
             <div class="gallery__info">
               <h3 class="gallery__title">{{ item.image_title }}</h3>
