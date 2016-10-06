@@ -12,6 +12,8 @@ ACT = {
 
             console.log('actjs');
 
+            $('body').removeClass('no-js');
+            $('body').addClass('js');
 
             // $('.fitvid').fitVids();
 

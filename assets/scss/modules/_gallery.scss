@@ -28,7 +28,9 @@
   text-align: left;
   position: relative;
   overflow: hidden;
+  .js &{
   opacity: 1;
+  }
 
 }
 .gallery__info{
