@@ -78,7 +78,7 @@ ACT = {
         },
         tile : function () {
             console.log('tile');
-            var grid = '.content--archive-tile';
+            var grid = '.content--archive-tile:not(.is-empty)';
             var item = '.tile';
             ACT.ac_fn.isotope(grid, item);
         },

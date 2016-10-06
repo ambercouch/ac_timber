@@ -43,7 +43,7 @@
       <main class="main__content{{ template_class }}">
         {% block before_content %}
         {% endblock %}
-        <div class="content{{ template_class }}">
+        <div class="content{{ template_class }} {{ archive_empty }}">
           {% block content %}
             <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
           {% endblock %}

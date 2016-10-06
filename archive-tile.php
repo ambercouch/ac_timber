@@ -12,11 +12,13 @@
  * @subpackage  Timber
  * @since   Timber 0.1
  */
-
 if ( ! class_exists( 'Timber' ) ) {
     echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
     return;
 }
+
+global $post;
+
 $args = array(
     'taxonomy' => 'tile_material',
     'hide_empty' => false,
@@ -48,6 +50,8 @@ $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['template_class'] = '--archive-tile';
 $context['tags'] = '--archive-tile';
 $context['tile_filters'] = $fillterItems;
+$context['archive_empty'] = ($post)? 'has-posts' : 'is-empty';
 $templates = array( 'archive-tile.twig' , 'index.twig');
+
 
 Timber::render( $templates, $context );

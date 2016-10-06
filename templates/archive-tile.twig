@@ -11,13 +11,18 @@
 
 {% block before_content %}
   <h1 class="main__title--tile"><span>Tile Gallery</span></h1>
- {%  include 'inc/tile-filters.twig' %}
+{% if posts is empty %}
+
+{% else %}
+  {%  include 'inc/tile-filters.twig' %}
+{% endif %}
 {% endblock %}
 
 {% block content %}
 {% if posts is empty %}
-  <p>There are currently no tiles on our website. <a href="/contact">Contact us</a> for more information about our range of tiles.</p>
+  <p style="text-align:center" ><img src="http://www.thomasvaughanltd.co.uk/wp-content/uploads/2016/10/tvb-tile-gallery.jpg" alt="Thomas Vaughan Floor and Wall Tiles"/></p>
 
+  <p style="text-align:center">There are currently no tiles on our website. <a href="/contact">Contact us</a> for more information about our range of tiles.</p>
 {% else %}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
