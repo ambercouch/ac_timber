@@ -8,6 +8,14 @@
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="{{ site.pingback_url }}">
 
+  <style>
+    .gallery__wrapper{
+      opacity: 0;
+    }
+  {% include 'inc/critical.css' %}
+
+  </style>
+
   {% if acSettings.typeKitId %}
     <script src="https://use.typekit.net/{{ acSettings.typeKitId }}.js"></script>
     <script>try {
