@@ -28,9 +28,9 @@
     margin: 0 auto;
     display: flex;
     justify-content: inherit;
-    padding: $inuit-base-spacing-unit 0 ;
+    padding: $inuit-base-spacing-unit / 2 0 ;
     @include media-query(narrow) {
-      padding: $inuit-base-spacing-unit--small 0;
+      padding: $inuit-base-spacing-unit--small / 2 0;
     }
     &__item{
       list-style:none;
@@ -50,7 +50,7 @@
     @extend .btn--cta1;
     display: block;
     width: 90%;
-   padding: $inuit-base-spacing-unit--small 0;
+    padding: $inuit-base-spacing-unit--small / 2 0;
     margin: 0 auto;
     background: rgba($brand-col-1--dark, 0);
     text-shadow: 0 1px 0 rgba($brand-col-1--dark, 0.5);

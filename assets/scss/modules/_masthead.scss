@@ -11,10 +11,12 @@
     }
     @include media-query(portrait){
       @include off-page--curtain();
+      background: darken($brand-col-1, 10%) ;
     }
     @include media-query(palm){
       align-items: flex-start;
       @include off-page--curtain();
+      background: darken($brand-col-1, 10%) ;
     }
   }
 

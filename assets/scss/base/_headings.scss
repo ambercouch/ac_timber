@@ -28,6 +28,7 @@ h2, .h2 {
     @include media-query(desk){
         @include inuit-font-size($inuit-heading-size-2--desk);
     }
+    margin-bottom:0;
 }
 
 h3, .h3 {

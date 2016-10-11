@@ -75,7 +75,8 @@
       width: 80%
     }
     @include media-query(desk) {
-      width: 80%
+      width: 80%;
+      //min-height:50vh;
     }
   }
 
