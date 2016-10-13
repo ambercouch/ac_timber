@@ -64,8 +64,7 @@ module.exports = function (grunt) {
                   ]
               },
               options: {
-                  proxy: 'paintinganddecoratingtips.local',
-                  proxy: 'paintinganddecoratingtips.local',
+                  proxy: 'iglooconstruction.local',
                   watchTask: true
               }
           }
