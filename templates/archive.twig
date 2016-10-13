@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+
+  {% block hero %}
+  {% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+{% block before_content %}
+  <div class="archive-content">
+    <h2  class="archive-content__title" >{{ title }}</h2>
+    <div class="archive-content__content">
+      {{ taxContent }}
+    </div>
+  </div>
+{% endblock %}
+{% block content %}
+  {% for post in posts %}
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include 'content-' ~ taxSlug ~ '.twig' %}
+  {% endfor %}
+{% endblock %}
+
+{% block belowContent %}
+{% endblock %}
+
+{% block subsidiary %}
+{% endblock %}
+
+
+

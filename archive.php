@@ -41,7 +41,12 @@ if ( is_day() ) {
     $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
     $context['title'] = $term->name;
     $context['taxonomy'] = $term->taxonomy;
+
+    $tax = get_taxonomy($term->taxonomy);
+    $context['taxSlug'] = $tax->rewrite['slug'];
+
     $context['description'] = $term->description;
+    $context['taxContent'] = get_field('category_content', $term->taxonomy . '_' . $term->term_id);;
     array_unshift( $templates, 'archive-' . $term->slug . '.twig' );
 }
 
