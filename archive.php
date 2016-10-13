@@ -46,7 +46,10 @@ if ( is_day() ) {
     $context['taxSlug'] = $tax->rewrite['slug'];
 
     $context['description'] = $term->description;
-    $context['taxContent'] = get_field('category_content', $term->taxonomy . '_' . $term->term_id);;
+    $context['taxContent'] = get_field('category_content', $term->taxonomy . '_' . $term->term_id);
+    $context['taxIcon'] = get_field('category_icon', $term->taxonomy . '_' . $term->term_id);
+    $context['taxImage'] = get_field('category_image', $term->taxonomy . '_' . $term->term_id);
+    $context['taxFooter'] = get_field('category_footer', $term->taxonomy . '_' . $term->term_id);
     array_unshift( $templates, 'archive-' . $term->slug . '.twig' );
 }
 

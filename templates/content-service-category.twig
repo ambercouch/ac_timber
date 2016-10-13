@@ -15,18 +15,6 @@
       <h2 class="entry-title post{{ postFormatClass }}__title">
         <a href="{{ post.link }}">{{ post.title }}</a>
       </h2>
-      <div class="entry-meta post{{ postFormatClass }}__post-meta">
-        <div class="post-meta">
-
-          <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none" >
-            <title>{{ postFormatRead }}</title>
-            <desc>Post type {{ postFormatRead }}</desc>
-            <use xlink:href="#icon-post{{ postFormat }}" />
-          </svg>
-
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
-      </div>
     </header>
 
     {% if  post.post_excerpt != '' %}
@@ -40,12 +28,9 @@
         <p>{{ post.content | striptags | truncate(20) }}</p>
         <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
-
     {% endif %}
+
     <footer class="post{{ postFormatClass }}__footer">
-      <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
-        <span>{{ post.comment_count }} Comments </span>
-      </a>
 
     </footer>
 

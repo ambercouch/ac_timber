@@ -1,6 +1,11 @@
 {% extends "base.twig" %}
 
   {% block hero %}
+    <section class="site__hero">
+      <div class="hero" style="background-image: url('{{  taxImage.url }}');">
+        <img src="{{ taxImage.url }}" alt="{{ taxImage.alt }}" class="hero__image">
+      </div>
+    </section>
   {% endblock %}
 
 {% block feature %}
@@ -14,6 +19,11 @@
     </div>
   </div>
 {% endblock %}
+
+{% block contentHeader  %}
+  <h3>Our Services</h3>
+{% endblock %}
+
 {% block content %}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
@@ -22,6 +32,9 @@
 {% endblock %}
 
 {% block belowContent %}
+<section class="archive-footer">
+  {{ taxFooter }}
+  </section>
 {% endblock %}
 
 {% block subsidiary %}
