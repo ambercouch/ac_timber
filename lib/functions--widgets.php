@@ -94,13 +94,13 @@ class Act_Tax_Link extends WP_Widget {
 
     parent::__construct(
         'act_taxonomy_info_link', // Base ID
-        'Taxonomy Term Link', // Name
+        'Term Link', // Name
         array('description' => __('Displays the content in a taxonomy term.', 'act'),) // Args
     );
   }
 
   public function form($instance) {
-    if (isset($instance['title'])) {
+    if (isset($instance['tax_term'])) {
       $title = $instance['title'];
     } else {
       $title = __('New title', 'ambercouch');
@@ -150,17 +150,32 @@ class Act_Tax_Link extends WP_Widget {
     extract($args);
 
 $term = get_term($instance['tax_term'], 'service_category');
+    $term_link = get_term_link($term->term_id, $term->taxonomy);
+
     $icon = get_field('category_icon', 'service_category_4');
 
     echo $before_widget;
 
-    echo '<img src="' . $icon['url'] . '" >';
-    echo $before_title;
-    echo  $term->name;
-    echo $after_title;
-    echo  $term->;
+    ?>
 
-
+    <div class="widget-term-info">
+      <div class="widget-term-info__image">
+        <img src="<?php echo $icon['url'] ?>" alt="<?php echo ($icon['alt'] == '' ) ? $term->name : $icon['alt']?>" class="widget-term-info__img">
+      </div>
+      <div class="widget-term-info__title">
+        <h4 class="widget-term-info__h4" >
+          <?php echo  $term->name; ?>
+        </h4>
+      </div>
+      <div class="widget-term-info__description">
+        <?php echo  wpautop($term->description); ?>
+      </div>
+      <widget-term-info__footer>
+        <div class="widget-term-info__btn"><a href="<?php echo  $term_link; ?>" class="btn--cta1">Find Out More</a></div>
+        <div class="widget-term-info__btn"><a href="/contact" class="btn--cta2">Contact Us</a></div>
+      </widget-term-info__footer>
+    </div>
+<?php
     echo $after_widget;
 
   }
