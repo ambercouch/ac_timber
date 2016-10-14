@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+  {% block hero %}
+    <section class="site__hero">
+      <div class="hero" >
+        <img src="{{ post.get_field('service_image').url }}" alt="" class="hero__image">
+      </div>
+    </section>
+  {% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+{% block content %}
+  {% for post in posts %}
+    {% include 'content-single-service.twig' %}
+  {% endfor %}
+{% endblock %}
+
+{% block belowContent %}
+{% endblock %}
+
+{% block subsidiary %}
+{% endblock %}
+
+
+
+
+
+
