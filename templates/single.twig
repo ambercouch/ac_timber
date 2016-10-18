@@ -6,11 +6,10 @@
 {% block feature %}
 {% endblock %}
 
-
 {% block content %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
   {% for post in posts %}
-    {% set postFormat = fn('get_post_format', post)? fn('get_post_format', post) : '' %}
+    {% set postFormat = fn('get_post_format', post)? fn('get_post_format', post) : 'page' %}
     {% include 'content-single-'~postFormat~'.twig' %}
   {% endfor %}
   {{ fn('the_posts_navigation') }}
