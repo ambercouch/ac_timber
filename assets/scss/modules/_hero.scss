@@ -1,4 +1,6 @@
 .hero{
+ @include colour-cast($brand-col-1, 0.2, 0);
+
  background-repeat: no-repeat;
  background-size: cover;
  height: 100vh;
@@ -7,6 +9,8 @@
 }
 
 .hero{
+
+
 
  &__container{
   position: absolute;
