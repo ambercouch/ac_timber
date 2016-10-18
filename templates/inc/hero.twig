@@ -13,7 +13,7 @@
       <div class="hero__call-to-action">
         <ul class="hero__menu">
           {% for item in menuHero.get_items %}
-          <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
+          <li class="hero__menu-item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
           {% endfor %}
           </ul>
       </div>

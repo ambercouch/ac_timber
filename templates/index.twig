@@ -1,5 +1,8 @@
 {% extends "base.twig" %}
 
+{% block header %}
+{% endblock %}
+
 {% block content %}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
