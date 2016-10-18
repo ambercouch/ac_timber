@@ -19,6 +19,9 @@
    top: 35%;
   }
  }
+ &__content{
+  color: #fff;
+ }
 
  &__menu{
   @extend .list-inline;
