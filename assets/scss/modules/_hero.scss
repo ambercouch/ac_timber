@@ -24,12 +24,11 @@
  &__link {
   @extend .btn;
   font-size: $inuit-heading-size-6;
+  .hero__menu-item:last-child &{
+   @include btn-brand1;
+  }
   .hero__menu-item:first-child &{
-   background: transparent;
-   border-color: #fff;
-   border-width: 3px;
-   box-shadow: 1px 1px 3px rgba(0,0,0, 0.2);
-   text-shadow: 1px 1px 3px rgba(0,0,0, 0.2);
+   @include btn-ghost;
   }
  }
 
