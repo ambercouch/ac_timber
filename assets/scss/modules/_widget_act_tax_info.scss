@@ -1,5 +1,14 @@
 .widget_act_tax_info{
   width: 50%;
+  padding: 0 $inuit-base-spacing-unit;
+  margin-bottom:$inuit-base-spacing-unit;
+}
+
+.widget--subsidiary{
+  border-bottom: solid 3px $brand-col-1;
+  .subsidiary__widget:first-child &{
+    border-bottom: none;
+  }
 }
 
 .widget_act_tax_info{
@@ -36,11 +45,30 @@
   }
   &__menu{
     @extend .list-inline;
+    display: flex;
+    justify-content:space-around;
+    width: 350px;
+    margin: 0 auto;
   }
   &__menu-link{
     @extend .btn;
+    @extend .btn--small;
     width: 100%;
     @include inuit-font-size($inuit-heading-size-6);
+    text-transform: uppercase;
+    width: 140px;
 
+  }
+}
+
+.widget_act_tax_info__menu-link{
+  &--more{
+    @extend .widget_act_tax_info__menu-link;
+    @include btn-ghost($brand-col-1, $brand-col-1, false);
+  }
+  &--contact{
+    @extend .widget_act_tax_info__menu-link;
+    @include btn-brand1;
+    box-shadow: none;
   }
 }
