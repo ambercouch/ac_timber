@@ -11,8 +11,12 @@ and open the template in the editor.
 $col-act-gray-xxlight : #e5e5e5;
 
 $igloo-blue: #00667d;
+$igloo-blue--dark: #004454;
+$igloo-blue--xdark: darken(#004454, 8%);
 $igloo-grey: #4b4e4f;
 
 $brand-col-1 : $igloo-blue;
+$brand-col-1--dark : $igloo-blue--dark;
+$brand-col-1--xdark : $igloo-blue--xdark;
 $brand-col-2 : $igloo-grey;
 
