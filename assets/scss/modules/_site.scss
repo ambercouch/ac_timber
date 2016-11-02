@@ -3,6 +3,9 @@
 }
 
 .site{
+  &__masthead{
+    background: $brand-col-1;
+  }
   &__main{
     background: $brand-col-1;
     margin-bottom:$inuit-base-spacing-unit; 

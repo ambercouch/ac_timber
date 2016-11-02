@@ -1,13 +1,11 @@
 .masthead{
   max-width: $site-container-width;
   margin: 0 auto;
-  background: #fff;
-  padding: $inuit-base-spacing-unit;
-  border-bottom:solid 3px #dd3526;
+  padding: 0 $inuit-base-spacing-unit $inuit-base-spacing-unit;
 }
 .masthead{
   &__navigation{
-    @extend %off-page--curtain;
+    //@extend %off-page--curtain;
   }
   &__widget-area{
     width: 100%;

@@ -1,0 +1,9 @@
+.navigation--primary{
+//  display: none;
+}
+
+.navigation--primary{
+  &__list{
+    @extend .list-inline;
+  }
+}
