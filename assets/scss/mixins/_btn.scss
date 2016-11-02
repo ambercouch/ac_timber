@@ -1,5 +1,6 @@
-@mixin btn-ghost($border-color : #fff, $color: #fff, $shadow : true, $border-width : 3px){
-  background: transparent;
+@mixin btn-ghost($border-color : #fff, $color: #fff, $shadow : true, $border-width : 3px, $bg-color : #000, $hover-percent : 0.15){
+  transition: background 0.3s ease;
+  background: rgba($bg-color, 0);
   border-color: $border-color;
   color: $color;
   border-width: $border-width;
@@ -7,12 +8,20 @@
     box-shadow: 1px 1px 3px rgba(0,0,0, 0.2);
     text-shadow: 1px 1px 2px rgba(0,0,0, 0.3);
   }
-
+&:hover{
+  background: rgba($bg-color, $hover-percent);
+  color: $color;
+}
 
 }
 
 @mixin btn-brand1(){
+  transition: background 0.3s ease;
   background: $brand-col-1;
   border: solid 3px $brand-col-1;
   box-shadow: 1px 1px 3px rgba(0,0,0, 0.2);
+  &:hover{
+
+    background: darken($brand-col-1, 3%);
+  }
 }

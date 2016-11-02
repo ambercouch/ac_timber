@@ -1,10 +1,13 @@
 .subsidiary{
   max-width: $site-container-width;
   margin: 0 auto;
-  padding:$inuit-base-spacing-unit;
+  padding:0;
   display: flex;
   flex-wrap: wrap;
 
+  @include media-query(lap-and-up){
+    padding:$inuit-base-spacing-unit;
+  }
 }
 
 .subsidiary{
