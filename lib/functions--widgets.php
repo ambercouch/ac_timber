@@ -255,42 +255,42 @@ class Act_Company_Address extends WP_Widget
 
         $output = '';
         $output .= $before_widget;
-        $output .= '<div class="act_company_address__container">';
-        $output .= '<div class="act_company_address__company" itemscope itemtype="http://schema.org/LocalBusiness">';
+        $output .= '<div class="widget_act_company_address__container">';
+        $output .= '<div class="widget_act_company_address__company" itemscope itemtype="http://schema.org/LocalBusiness">';
         if(isset($company['company_name']))
         {
-            $output .= '<span class="act_company_address__company-name" itemprop="name">';
+            $output .= '<span class="widget_act_company_address__company-name" itemprop="name">';
             $output .= $company['company_name'];
             $output .= ' </span><!-- .act_company_address__company-name -->';
         }
         if(isset($company['address']))
         {
-            $output .= '<div class="act_company_address__company-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
+            $output .= '<div class="widget_act_company_address__company-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
 
             if(isset($company['address']['street_address']))
             {
-                $output .= '<span class="act_company_address__street-address" itemprop="streetAddress">';
+                $output .= '<span class="widget_act_company_address__street-address" itemprop="streetAddress">';
                 $output .= $company['address']['street_address'];
                 $output .= ' </span>';
             }
 
             if(isset($company['address']['address_locality']))
             {
-                $output .= '<span class="act_company_address__locality" itemprop="addressLocality">';
+                $output .= '<span class="widget_act_company_address__locality" itemprop="addressLocality">';
                 $output .= $company['address']['address_locality'];
                 $output .= ' </span>';
             }
 
             if(isset($company['address']['city']))
             {
-                $output .= '<span class="act_company_address__city" itemprop="addressRegion">';
+                $output .= '<span class="widget_act_company_address__city" itemprop="addressRegion">';
                 $output .= $company['address']['city'];
                 $output .= ' </span>';
             }
 
             if(isset($company['address']['postcode']))
             {
-                $output .= '<span class="act_company_address__postcode itemprop="postalCode">';
+                $output .= '<span class="widget_act_company_address__postcode itemprop="postalCode">';
                 $output .= $company['address']['postcode'];
                 $output .= ' </span>';
             }
