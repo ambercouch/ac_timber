@@ -210,3 +210,46 @@ class Act_Tax_Link extends WP_Widget
 }
 
 register_widget('Act_Tax_Link');
+
+class Act_Company_Address extends WP_Widget
+{
+
+    public function __construct()
+    {
+
+        parent::__construct('act_company_address', // Base ID
+            'Company Address', // Name
+            array('description' => __('Displays company address from the site options.', 'act'),)
+        );
+    }
+
+    public function form($instance)
+    {
+        ?>
+        <p>No settings required.</p>
+        <?php
+    }
+
+    public function update($new_instance, $old_instance)
+    {
+
+    }
+
+    public function widget($args, $instance)
+    {
+
+        $company_name = get_field('company_name', 'option');
+        
+        $output = '';
+        $output .= $before_widget;
+        $output .= '<div class="act_company_address__container">';
+        $output .= $company_name;
+        $output .= '</div>';
+        $output .= $after_widget;
+
+        echo $output;
+    }
+
+}
+
+register_widget('Act_Company_Address');
