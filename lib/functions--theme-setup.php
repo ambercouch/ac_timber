@@ -62,6 +62,9 @@ if ( ! function_exists( '_act_setup' ) ) :
 
         add_image_size ( 'feature500', 500, 500, true );
 
+        add_filter('widget_text','do_shortcode');
+
+
     }
 endif;
 
