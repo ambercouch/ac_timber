@@ -16,3 +16,15 @@ function act_bloginfo( $atts ) {
     return get_bloginfo($key);
 }
 add_shortcode('act_bloginfo', 'act_bloginfo');
+
+function act_option_logo( $atts ) {
+
+    $logo = get_field('company_logo', 'option');
+    if ($logo == ''){
+        return;
+    }
+
+    $output = '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'" />';
+    return $output  ;
+}
+add_shortcode('act_option_logo', 'act_option_logo');
