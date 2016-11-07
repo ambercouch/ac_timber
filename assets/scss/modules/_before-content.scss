@@ -1,0 +1,23 @@
+.before-content{
+  margin-bottom: $inuit-base-spacing-unit--large;
+}
+.before-content{
+ &--archive{
+   @extend .before-content;
+ }
+}
+.before-content--archive{
+  &__title{
+    @include brand-title();
+  }
+  &__body{
+    text-align: center;
+    font-weight: 100;
+    @include media-query(desk){
+      width: 75%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+  }
+}
