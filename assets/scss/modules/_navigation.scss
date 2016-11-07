@@ -5,5 +5,16 @@
 .navigation--primary{
   &__list{
     @extend .list-inline;
+    text-align: center;
+  }
+  &__item{
+    padding:0 $inuit-base-spacing-unit--tiny;
+  }
+  &__link{
+    color: white;
+    text-decoration: none;
+    padding: $inuit-base-spacing-unit--tiny;
+    @include inuit-font-size($inuit-heading-size-6);
+    font-weight:100;
   }
 }
