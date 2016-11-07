@@ -50,6 +50,7 @@ if ( is_day() ) {
     $context['taxIcon'] = get_field('category_icon', $term->taxonomy . '_' . $term->term_id);
     $context['taxImage'] = get_field('category_image', $term->taxonomy . '_' . $term->term_id);
     $context['taxFooter'] = get_field('category_footer', $term->taxonomy . '_' . $term->term_id);
+    $context['content_mod'] = '--archive';
     array_unshift( $templates, 'archive-' . $term->slug . '.twig' );
 }
 

@@ -12,16 +12,20 @@
 {% endblock %}
 
 {% block before_content %}
-  <div class="archive-content">
-    <h2  class="archive-content__title" >{{ title }}</h2>
-    <div class="archive-content__content">
+  <div class="before-content--archive">
+    <div  class="before-content--archive__title" >
+      <h2  class="before-content--archive__header" >{{ title }}</h2>
+    </div>
+    <div class="before-content--archive__body">
       {{ taxContent }}
     </div>
   </div>
 {% endblock %}
 
 {% block contentHeader  %}
-  <h3>Our Services</h3>
+  <div class="content__title">
+    <h3 class="content__header">Our Services</h3>
+  </div>
 {% endblock %}
 
 {% block content %}

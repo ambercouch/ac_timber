@@ -1,12 +1,30 @@
 .content{
 
 }
+.content{
+  &__title{
+    text-align: center;
+  }
+  &__header{
+    font-weight: 100;
+    @include inuit-font-size($inuit-heading-size-2);
+  }
+}
 
 .content{
   &--feature-cats{
 
     @include media-query(lap-and-up){
       display: flex;
+    }
+
+  }
+  &--archive{
+
+    @include media-query(desk){
+      width: 75%;
+      margin: 0 auto;
+      max-width: 800px;
     }
 
   }
