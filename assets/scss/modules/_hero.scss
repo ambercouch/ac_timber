@@ -71,3 +71,16 @@
  }
 
 }
+
+.hero--archive{
+  @extend .hero;
+  height: 200px;
+  overflow: hidden;
+ position: relative;
+}
+.hero--archive{
+ &__image{
+  position: absolute;
+  z-index: -1;
+ }
+}
