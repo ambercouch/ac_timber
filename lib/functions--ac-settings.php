@@ -3,7 +3,7 @@
 
 
 //Define your sidebars here
-define('SIDEBARS', serialize(array('Primary','Subsidiary','Footer')));
+define('SIDEBARS', serialize(array('Primary','Masthead','Subsidiary','Footer')));
 
 
     function acSettings()
