@@ -113,33 +113,13 @@ class Act_Tax_Link extends WP_Widget
 
     public function form($instance)
     {
-        if (isset($instance['tax_term']))
-        {
-            $title = $instance['title'];
-        } else
-        {
-            $title = __('New title', 'ambercouch');
-        }
-        if (isset($instance['post_type']))
-        {
-            $post_type = $instance['post_type'];
-        } else
-        {
-            $post_type = __('', 'ambercouch');
-        }
+        
         if (isset($instance['tax_term']))
         {
             $tax_term = $instance['tax_term'];
         } else
         {
             $tax_term = __('', 'act');
-        }
-        if (isset($instance['show']))
-        {
-            $show = $instance['show'];
-        } else
-        {
-            $show = __('1', 'ambercouch');
         }
 
         $terms = get_terms(array(
