@@ -7,8 +7,11 @@
     background: $brand-col-1;
   }
   &__main{
-    background: $brand-col-1;
+    background: white;
     margin-bottom:$inuit-base-spacing-unit; 
+    body.home &{
+      background: $brand-col-1;
+    }
   }
   &__footer{
     background: $igloo-blue--xdark;

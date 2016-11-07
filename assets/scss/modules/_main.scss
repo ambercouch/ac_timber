@@ -2,5 +2,8 @@
   max-width: $site-container-width;
   margin: 0 auto;
   padding:$inuit-base-spacing-unit;
-  color: #fff;
+
+  body.home &{
+    color: #fff;
+  }
 }
