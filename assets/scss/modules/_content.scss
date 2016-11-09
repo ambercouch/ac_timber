@@ -8,6 +8,7 @@
   &__header{
     font-weight: 100;
     @include inuit-font-size($inuit-heading-size-2);
+    color: $brand-col-1;
   }
 }
 

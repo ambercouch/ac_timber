@@ -1,0 +1,129 @@
+.service{
+  //background: #fff;
+  display: flex;
+  //flex-wrap: wrap;
+  flex-direction: row-reverse;
+  //width: 1000px;
+  //height: 500px;
+  //overflow: hidden;
+  //box-shadow: $z1-shadow;
+  padding-bottom:$inuit-base-spacing-unit;
+  margin-bottom:$inuit-base-spacing-unit--large;
+
+  &__feature-image{
+    margin-bottom: $inuit-base-spacing-unit;
+    padding-left:$inuit-base-spacing-unit--large;
+    width: 50%;
+  }
+  &__content{
+    width: 50%;
+    text-align: right;
+    padding-right:$inuit-base-spacing-unit--large;
+    padding-top: $inuit-base-spacing-unit;
+  }
+  &__header{
+    margin-bottom: 0;
+
+
+  }
+  &__service-meta{
+    padding: $inuit-base-spacing-unit--small /2 0 ;
+  }
+  &__body{
+    //width: 50%;
+    //padding: 0 $inuit-base-spacing-unit--large;
+    @include inuit-font-size($inuit-heading-size-5, 1.3);
+    p{
+
+      font-weight:500 !important;
+      margin-bottom:0;
+    }
+  }
+  &__read-more{
+    text-decoration: none;
+    color: $brand-col-1;
+  }
+  &__footer{
+    //width: 50%;
+    //padding: 0 $inuit-base-spacing-unit--large;
+    //align-self: flex-end;
+    //flex-grow: 1;
+    //position: relative;
+    @include inuit-font-size($inuit-small-print, 1);
+  }
+  &__comment-link{
+    @include inuit-font-size($inuit-small-print, 1);
+    //position: absolute;
+    //padding: $inuit-base-spacing-unit;
+    //bottom: 0;
+    //right: 0;
+  }
+  &__title{
+    //border-bottom: solid 1px;
+    @include inuit-font-size($inuit-heading-size-3);
+    text-transform: uppercase;
+    margin-bottom: 0;
+    a{
+      text-decoration: none;
+      color: $brand-col-1;
+    }
+  }
+  &--aside__feature-image{
+     //@extend .service__feature-image;
+   }
+  &--aside__header{
+    //@extend .service__header;
+  }
+  &--aside__body{
+    //@extend .service__body;
+  }
+  &--aside__footer{
+    //@extend .service__footer;
+  }
+  &--aside__comment-link{
+    //@extend .service__comment-link;
+  }
+
+  &--quote__feature-image{
+    //@extend .service__feature-image;
+  }
+  &--quote__header{
+    //@extend .service__header;
+  }
+  &--quote__body{
+    //@extend .service__body;
+  }
+  &--quote__footer{
+    //@extend .service__footer;
+  }
+  &--quote__comment-link{
+    //@extend .service__comment-link;
+  }
+}
+
+.service{
+  &--video{
+    &__header{
+      @extend .service__header;
+    }
+    &__title{
+      @extend .service__title;
+    }
+    &__body{
+      @include inuit-font-size($inuit-heading-size-5);
+    }
+    &__feature-image{
+      @extend .service__feature-image;
+    }
+    &__footer{
+      @extend .service__footer;
+    }
+    &__service-meta{
+      @extend .service__service-meta;
+    }
+    &__comment-link{
+      @extend .service__comment-link;
+    }
+
+  }
+}

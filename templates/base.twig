@@ -36,7 +36,7 @@
   <section id="primary" class="site__main">
     <div class="main{{ main_mod }}">
       <main class="main__content">
-        {% block before_content %}
+        {% block beforeContent %}
         {% endblock %}
         <div class="content{{ content_mod }}">
           {% block contentHeader %}
@@ -47,7 +47,7 @@
           {% block contentFooter %}
           {% endblock %}
         </div>
-        {% block belowContent %}
+        {% block afterContent %}
           {% if (fn('comments_open')) %}
             <section id="comments" class="comments">
               <h3 class="comments__title">Comments</h3>

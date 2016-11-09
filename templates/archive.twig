@@ -11,7 +11,7 @@
 {% block feature %}
 {% endblock %}
 
-{% block before_content %}
+{% block beforeContent %}
   <div class="before-content--archive">
     <div  class="before-content--archive__title" >
       <h2  class="before-content--archive__header" >{{ title }}</h2>
@@ -35,9 +35,11 @@
   {% endfor %}
 {% endblock %}
 
-{% block belowContent %}
-<section class="archive-footer">
+{% block afterContent %}
+<section class="after-content--archive">
+  <div class="after-content--archive__content">
   {{ taxFooter }}
+  </div>
   </section>
 {% endblock %}
 
