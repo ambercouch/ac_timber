@@ -1,6 +1,7 @@
 @mixin brand-title(){
   position: relative;
   text-align: center;
+  text-transform: uppercase;
 
   &:before{
     content: '';
