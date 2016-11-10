@@ -25,3 +25,21 @@ function my_change_sort_order($query){
         $query->set( 'orderby', 'menu_order' );
     endif;
 };
+
+function get_attachment_url_by_title( $title ) {
+
+    $attachment = get_page_by_title($title, OBJECT, 'attachment');
+    //print_r($attachment);
+
+    if ( $attachment ){
+
+        $attachment_url = $attachment->guid;
+
+    }else{
+        return 'image-not-found';
+    }
+
+    return $attachment;
+}
+
+
