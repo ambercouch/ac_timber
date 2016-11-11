@@ -4,10 +4,10 @@
 
 {% if hideTitle != true %}
     <header class="entry-header single-service__header ">
-      {{ serviceCategory }}
-      <h1 class="entry-title single-service__title ">
-        <span>{{ post.title }}</span>
-      </h1>
+      <span class="single-service__category">{{  serviceCategory }}</span>
+      <div class="entry-title single-service__title ">
+        <h1 class="entry-title single-service__h1 " >{{ post.title }}</h1>
+      </div>
       <div class="entry-meta single-service__post-meta ">
         {% include 'inc/post-meta--page.twig' %}
       </div>
@@ -17,8 +17,16 @@
 
 
     <div class="entry-content single-service__body ">
-      {{ post.content }}
+      <div class="entry-content single-service__content ">
+        {{ post.content }}
+      </div>
+      {% if contentImage %}
+      <div class="entry-content single-service__content-image ">
+        <img src="{{ contentImage.sizes.large }}" alt="{{ contentImage.alt }}" class="single-service__img">
+      </div>
+      {% endif %}
     </div>
+
 
 
 
