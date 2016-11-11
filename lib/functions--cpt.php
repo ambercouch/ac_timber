@@ -1,6 +1,6 @@
 <?php
 function  act_cpt() {
-//Tiles
+
     $labels = array(
         'name' => _x('Services', 'post type general name'),
         'singular_name' => _x('Service', 'post type singular name'),
@@ -9,7 +9,7 @@ function  act_cpt() {
         'edit_item' => __('Edit Service'),
         'new_item' => __('New Service'),
         'all_items' => __('All Services'),
-        'view_item' => __('View Servicee'),
+        'view_item' => __('View Service'),
         'search_items' => __('Search Services'),
         'not_found' => __('No Services found'),
         'not_found_in_trash' => __('No Services found in the trash'),
