@@ -6,6 +6,7 @@
  height: 100vh;
  width: 100vw;
  position: relative;
+ background-position: 50%;
 }
 
 .hero{
@@ -83,4 +84,16 @@
   position: absolute;
   z-index: -1;
  }
+}
+
+.hero--service{
+
+ @extend .hero--archive;
+}
+
+.hero--service{
+ &__image{
+  @extend .hero--archive__image;
+ }
+
 }
