@@ -13,8 +13,8 @@ $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
 
-$service_category = wp_get_post_terms($post->ID, 'service_category');
-$context['serviceCategory']  = $service_category[0]->name;
+//$service_category = wp_get_post_terms($post->ID, 'service_category');
+//$context['serviceCategory']  = $service_category[0]->name;
 
 require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';
 
