@@ -1,0 +1,11 @@
+.single-page{
+ padding:$inuit-base-spacing-unit--large 0;
+}
+
+.single-page{
+ &__body{
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto;
+ }
+}
