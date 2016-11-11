@@ -2,8 +2,8 @@
 
   {% block hero %}
     <section class="site__hero">
-      <div class="hero" >
-        <img src="{{ post.get_field('service_image').url }}" alt="" class="hero__image">
+      <div class="hero--service" style="background-image: url('{{  bannerImage.url }}');" >
+        <img src="{{ bannerImage.url }}" alt="{{ bannerImage.alt }}" class="hero--service__image">
       </div>
     </section>
   {% endblock %}
@@ -17,7 +17,12 @@
   {% endfor %}
 {% endblock %}
 
-{% block belowContent %}
+{% block afterContent %}
+  <section class="after-content--service">
+    <div class="after-content--service__content">
+      {{ serviceFooter }}
+    </div>
+  </section>
 {% endblock %}
 
 {% block subsidiary %}
