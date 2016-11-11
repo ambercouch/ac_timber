@@ -155,7 +155,7 @@ class Act_Tax_Link extends WP_Widget
         $term = get_term($instance['tax_term'], 'service_category');
         $term_link = get_term_link($term->term_id, $term->taxonomy);
 
-        $icon = get_field('category_icon', 'service_category_4');
+        $icon = get_field('category_icon', 'service_category_'.$term->term_id);
 
         echo $before_widget;
 
