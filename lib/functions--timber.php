@@ -48,6 +48,8 @@ class StarterSite extends TimberSite {
 
         $context['menuHero'] = new TimberMenu('hero');
 
+        $context['bannerImage'] = get_field('banner_image', 'options');
+
         foreach( unserialize(SIDEBARS) as $sidebar ) {
             $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
         }
