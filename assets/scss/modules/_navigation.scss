@@ -11,10 +11,15 @@
     padding:0 $inuit-base-spacing-unit--tiny;
   }
   &__link{
+    transition: background 0.3s ease;
     color: white;
     text-decoration: none;
     padding: $inuit-base-spacing-unit--tiny;
     @include inuit-font-size($inuit-heading-size-6);
     font-weight:100;
+    background: rgba($brand-col-1--dark, 0);
+    &:hover{
+      background: rgba($brand-col-1--dark, 0.3);
+    }
   }
 }
