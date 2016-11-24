@@ -18,11 +18,17 @@
 
   {% include 'site-accessibility.twig' %}
 
+  {% block header %}
   <header id="masthead" class="site__masthead" role="banner">
-
     {% include 'inc/masthead.twig' %}
-
   </header>
+  {% endblock %}
+
+  {% block hero %}
+    <section class="site__hero">
+      {% include 'inc/hero.twig' %}
+    </section>
+  {% endblock %}
 
   <section id="primary" class="site__main">
     <div class="main{{ main_mod }}">
@@ -30,8 +36,12 @@
         {% block before_content %}
         {% endblock %}
         <div class="content{{ content_mod }}">
+          {% block contentHeader %}
+          {% endblock %}
           {% block content %}
             <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+          {% endblock %}
+          {% block contentFooter %}
           {% endblock %}
         </div>
         {% block belowContent %}
@@ -59,7 +69,22 @@
     </div>
   </section>
 
+  {% block subsidiary %}
+    <section id="subsidiary" class="site__subsidiary">
+      {% include 'inc/subsidiary.twig' %}
+    </section>
+  {% endblock %}
+
 </div>{# /#page #}
+
+{% block footer %}
+  <footer class="site__footer" role="contentinfo">
+    {% include 'inc/footer.twig' %}
+  </footer>
+{% endblock %}
+
+{% include 'inc/footer_scripts.twig' %}
+
 <link rel="stylesheet" href="{{ site.theme.link }}/style.css">
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
