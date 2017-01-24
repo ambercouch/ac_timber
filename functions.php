@@ -13,6 +13,11 @@ require_once get_template_directory() . '/lib/acf/functions--acf-page-settings.p
 require_once get_template_directory() . '/lib/functions--template-tags.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
+require_once get_template_directory() . '/lib/admin/functions--cpt-tax-filter.php';
+
+new Tax_CTP_Filter(array(
+    'service' => array('service_category')
+));
 
 //sets the service order to menu_order on the service type archive
 add_action( 'pre_get_posts', 'my_change_sort_order');
