@@ -22,14 +22,30 @@
     margin-bottom: $inuit-base-spacing-unit--large;
   }
   &__content{
-    width: 50%;
-    padding-right:$inuit-base-spacing-unit--large;
+    width: 100%;
+    @include media-query(lap-and-up){
+      width: 50%;
+      padding-right:$inuit-base-spacing-unit--large;
+    }
+    .has-no-content-image &{
+      @include media-query(lap-and-up){
+        width: 75%;
+        padding-right:0;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
   }
   &__content-image{
-    width: 50%;
-    padding-left:$inuit-base-spacing-unit--large;
+    width: 100%;
+    @include media-query(lap-and-up) {
+      width: 50%;
+      padding-left: $inuit-base-spacing-unit--large;
+    }
   }
+
   &__img{
     max-width: 100%;
   }
 }
+

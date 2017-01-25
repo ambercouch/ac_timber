@@ -16,8 +16,8 @@
 
 
 
-    <div class="entry-content single-service__body ">
-      <div class="entry-content single-service__content ">
+    <div class="entry-content single-service__body  {{ contentImage ? '' : 'has-no-content-image' }} ">
+      <div class="entry-content single-service__content  ">
         {{ post.content }}
       </div>
       {% if contentImage %}
