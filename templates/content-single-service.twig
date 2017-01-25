@@ -4,7 +4,7 @@
 
 {% if hideTitle != true %}
     <header class="entry-header single-service__header ">
-      <span class="single-service__category">{{  serviceCategory }}</span>
+      <span class="single-service__category"><a class="single-service__category-link" href="{{ site.url }}/service-category/{{ serviceCategory.slug}}">{{ serviceCategory.name }}</a></span>
       <div class="entry-title single-service__title ">
         <h1 class="entry-title single-service__h1 " >{{ post.title }}</h1>
       </div>

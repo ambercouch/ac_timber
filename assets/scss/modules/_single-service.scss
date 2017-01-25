@@ -17,6 +17,10 @@
     text-transform: uppercase;
     color: $brand-col-1;
   }
+  &__category-link{
+    text-decoration: none;
+    color: $brand-col-1;
+  }
   &__body{
     display: flex;
     margin-bottom: $inuit-base-spacing-unit--large;

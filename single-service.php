@@ -14,7 +14,9 @@ $post = Timber::query_post();
 $context['post'] = $post;
 
 $service_category = wp_get_post_terms($post->ID, 'service_category');
-$context['serviceCategory']  = $service_category[0]->name;
+
+
+$context['serviceCategory']  = $service_category[0];
 
 $context['serviceImage'] = get_field('service_image');
 
