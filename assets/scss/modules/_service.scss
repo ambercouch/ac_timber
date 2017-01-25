@@ -40,8 +40,14 @@
     }
   }
   &__read-more{
+    padding: $inuit-base-spacing-unit--tiny 0;
+  }
+  &__read-more-link{
     text-decoration: none;
     color: $brand-col-1;
+    display: inline-block;
+    background: $brand-col-1--xlight;
+    padding: 0 $inuit-base-spacing-unit--tiny;
   }
   &__footer{
     //width: 50%;

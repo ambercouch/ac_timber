@@ -6,7 +6,9 @@
   {% if post.thumbnail %}
     <div class="service{{ postFormatClass }}__feature-image">
       <div class="feature-image">
-        <img src="{{ post.thumbnail.src('thumb500x250') }}" class="feature-image__img" alt="{{ post.title }}"/>
+        <a href="{{ post.link }}" class="feature-image__link">
+          <img src="{{ post.thumbnail.src('thumb500x250') }}" class="feature-image__img" alt="{{ post.title }}"/>
+        </a>
       </div>
     </div>
   {%  endif %}
@@ -23,7 +25,9 @@
     {% if  post.post_excerpt != '' %}
       <div class="entry-content service{{ postFormatClass }}__body">
         {{ post.post_excerpt }}
-        <a href="{{ post.link }}" class="service{{ postFormatClass }}__read-more">Read More</a>
+        <div class="service{{ postFormatClass }}__read-more">
+        <a href="{{ post.link }}" class="service{{ postFormatClass }}__read-more-link">More Info</a>
+        </div>
       </div>
 
     {% else %}
