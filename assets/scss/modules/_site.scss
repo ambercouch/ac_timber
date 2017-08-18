@@ -1,0 +1,20 @@
+.site{
+
+}
+
+.site{
+  &__masthead{
+    //background: $brand-col-1;
+  }
+  &__main{
+    //background: white;
+
+    //body.home &{
+    //  background: $brand-col-1;
+    //  margin-bottom:$inuit-base-spacing-unit;
+    //}
+  }
+  &__footer{
+    background: #ccc;
+  }
+}
