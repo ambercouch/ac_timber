@@ -699,6 +699,9 @@ p {
   [data-state=on].masthead__navigation {
     right: -0rem; }
 
+.page {
+  min-height: 100vh; }
+
 .main {
   max-width: 1200px;
   margin: 0 auto;
