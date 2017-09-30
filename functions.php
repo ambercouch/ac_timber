@@ -8,6 +8,7 @@ require_once get_template_directory() . '/lib/functions--ac-shortcode.php';
 require_once get_template_directory() . '/lib/functions--widget-areas.php';
 require_once get_template_directory() . '/lib/functions--widgets.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-options.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-video-settings.php';
 require_once get_template_directory() . '/lib/functions--template-tags.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
