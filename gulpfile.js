@@ -21,14 +21,14 @@ var jsScripts;
 var jsPath = 'assets/js/'
 var jsVendorPath = 'assets/vendor/'
 var jsCustomScripts = [
-    'ac_craft.js',
+    'ac_timber.js',
     // 'custom.js',
 ];
 var jsVendorScripts = [
     //All ready deprecated with browserify
     // 'jquery/dist/jquery.slim.js',
-    // 'fitvids/.jquery.fitvids.js',
-    'flickity/dist/flickity.pkgd.js',
+    'fitvids/jquery.fitvids.js',
+    //'flickity/dist/flickity.pkgd.js',
 ];
 
 for (var i = 0; i < jsVendorScripts.length; i++) {
@@ -62,7 +62,7 @@ gulp.task('scripts', function (cb) {
             concat('main.js'),
             // browserify(),
             // uglify(),
-            gulp.dest('assets/js/')
+            gulp.dest('dist/js/')
         ],
         cb
     );
@@ -93,7 +93,7 @@ gulp.task('serve', ['sass'], function () {
     gulp.watch("assets/scss/**/*.scss", ['sass']);
     // gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
     // gulp.watch("craft/templates/**/*.html").on('change', browserSync.reload);
-    // gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
+    gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
 });
 
 gulp.task('svgstore', function () {
