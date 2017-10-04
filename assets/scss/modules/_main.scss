@@ -1,6 +1,4 @@
 .main{
-  max-width: $site-container-width;
-  margin: 0 auto;
-  background: #fff;
-  padding:$inuit-base-spacing-unit;
+  @extend .site-container;
+  padding-top: $inuit-base-spacing-unit--large;
 }
