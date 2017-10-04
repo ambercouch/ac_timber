@@ -1,7 +1,8 @@
 .site-title{
   display: block;
-  margin: 0;
-  width: 500px;
+  margin: $inuit-base-spacing-unit 0;
+  width: 340px;
+  height: 20px;
   max-width:100%;
   &__link{
     display: block;
@@ -9,5 +10,4 @@
   &__logo--img{
     display: block;
   }
-
 }
