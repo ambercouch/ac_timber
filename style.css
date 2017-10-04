@@ -699,14 +699,17 @@ p {
   [data-state=on].masthead__navigation {
     right: -0rem; }
 
+.site-container, .main, .masthead {
+  max-width: 1600px;
+  margin: 0 auto;
+  background: white;
+  padding: 24px 192px; }
+
 .page {
   min-height: 100vh; }
 
 .main {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 24px; }
+  padding-top: 48px; }
 
 .site__footer {
   background: #ccc; }
@@ -735,8 +738,9 @@ p {
 
 .site-title {
   display: block;
-  margin: 0;
-  width: 500px;
+  margin: 24px 0;
+  width: 340px;
+  height: 20px;
   max-width: 100%; }
   .site-title__link {
     display: block; }
@@ -805,16 +809,14 @@ p {
     transform: rotate(45deg) translate(-0.3em, 0); }
 
 .masthead {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #fff;
-  padding: 24px;
-  border-bottom: solid 3px #dd3526; }
+  padding: 24px 24px;
+  border-bottom: solid 24px #2f2d35; }
 
 .masthead__widget-area {
+  display: none;
   width: 100%;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1600px;
   height: 24px;
   background: #2f2d35; }
 
@@ -990,7 +992,7 @@ p {
   padding-top: 48px; }
 
 .footer__content {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 48px 0 48px;
   border-top: solid 3px white; }
