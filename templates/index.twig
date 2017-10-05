@@ -7,7 +7,7 @@
 
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include 'content'~postFormat~'.twig' %}<br>
+    {% include ['content'~postFormat~'.twig', 'content.twig'] %}<br>
   {% endfor %}
 
 {% endblock %}
