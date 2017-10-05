@@ -46,16 +46,8 @@
   @extend .single-page__heading;
 }
 
-[class*='single-page__heading-link--']{
-  @extend .single-page__heading-link;
-}
-
 [class*='single-page__feature-image--']{
   @extend .single-page__feature-image;
-}
-
-[class*='single-page__post-meta--']{
-  @extend .single-page__post-meta
 }
 
 [class*='single-page__body--']{
