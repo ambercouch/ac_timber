@@ -1,12 +1,17 @@
 <!doctype html>
 <html {{ site.language_attributes }}>
 <head>
+  {% block before_head %}
+  {% endblock %}
 
   <meta charset="{{ site.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="{{ site.pingback_url }}">
+
+  {% block after_head %}
+  {% endblock %}
 
   {{ fn('wp_head') }}
 
