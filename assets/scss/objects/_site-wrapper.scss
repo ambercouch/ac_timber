@@ -1,0 +1,8 @@
+$site-wrapper-color : white;
+$site-wrapper-padding : $inuit-global-spacing-unit  $inuit-global-spacing-unit-huge;
+
+.o-site-wrapper{
+  @extend .o-wrapper;
+  background: $site-wrapper-color;
+  padding: $site-wrapper-padding;
+}

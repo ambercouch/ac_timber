@@ -17,12 +17,14 @@
 @import "var/settings.headings";
 @import "var/settings.widths";
 
+
+
 /*
  INUIT FRAME WORK
  */
 @import "inuit";
 
-@import "var/settings.container";
+
 
 
 /*
@@ -32,7 +34,6 @@
 @import "mixins";
 @import "helpers";
 @import "base";
-@import "var/settings.container";
 @import "var/settings.article";
 @import "var/settings.fonts";
 @import "typography";
@@ -41,7 +42,7 @@
 @import "placeholders/cf";
 
 //OBJECTS
-@import "objects/site-container";
+@import "objects/site-wrapper";
 
 
 @import "modules/page";

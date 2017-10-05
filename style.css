@@ -694,13 +694,13 @@ table {
  */
 /* stylelint-disable */
 /* stylelint-enable */
-.o-wrapper {
+.o-wrapper, .o-site-wrapper, .main, .masthead, .masthead__widget-area, .footer__content {
   padding-right: 35px;
   padding-left: 35px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1400; }
-  .o-wrapper:after {
+  max-width: 1600px; }
+  .o-wrapper:after, .o-site-wrapper:after, .main:after, .masthead:after, .masthead__widget-area:after, .footer__content:after {
     content: "" !important;
     display: block !important;
     clear: both !important; }
@@ -2862,10 +2862,6 @@ table {
   display: none !important; }
 
 /*
-  This variable sets the width of the site used as max width in 
-  placeholders/_container.scss
-*/
-/*
   UTILITIES
 */
 /**
@@ -3030,10 +3026,6 @@ a:hover, a:focus {
   placeholders/_container.scss
 */
 /*
-  This variable sets the width of the site used as max width in 
-  placeholders/_container.scss
-*/
-/*
  *
  */
 /*
@@ -3069,11 +3061,9 @@ p {
   display: block !important;
   clear: both !important; }
 
-.site-container, .main, .masthead {
-  max-width: 1600px;
-  margin: 0 auto;
+.o-site-wrapper, .main, .masthead, .masthead__widget-area, .footer__content {
   background: white;
-  padding: 35px 280px; }
+  padding: 35px 140px; }
 
 .page {
   min-height: 100vh; }
@@ -3186,7 +3176,6 @@ p {
   display: none;
   width: 100%;
   margin: 0 auto;
-  max-width: 1600px;
   height: 35px;
   background: #2f2d35; }
 
@@ -3224,8 +3213,8 @@ p {
   line-height: 1; }
 
 .post__comment-link, [class*='post__comment-link--'] {
-  font-size: 10.21546px;
-  font-size: 0.46434rem;
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
   line-height: 1; }
 
 .post-meta {
@@ -3364,7 +3353,6 @@ p {
   padding-top: 70px; }
 
 .footer__content {
-  max-width: 1600px;
   margin: 0 auto;
   padding: 70px 0 70px;
   border-top: solid 3px white; }

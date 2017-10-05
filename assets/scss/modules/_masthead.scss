@@ -1,5 +1,5 @@
 .masthead{
-  @extend .site-container;
+  @extend .o-site-wrapper;
   padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
   border-bottom:solid $inuit-global-spacing-unit #2f2d35;
 }
@@ -8,10 +8,10 @@
     @extend %off-page--curtain;
   }
   &__widget-area{
+    @extend .o-site-wrapper;
     display: none;
     width: 100%;
     margin: 0 auto;
-    max-width: $site-container-width;
     height: $inuit-global-spacing-unit;
     background: #2f2d35;
   }

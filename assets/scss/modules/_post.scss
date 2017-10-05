@@ -45,7 +45,7 @@
   }
 
   &comment-link{
-    @include inuit-font-size($inuit-small-print, 1);
+    @include inuit-font-size($inuit-font-size-h5, 1);
   }
 }
 

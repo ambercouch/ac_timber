@@ -4,7 +4,7 @@
 
 .footer{
   &__content{
-    max-width: $site-container-width;
+    @extend .o-site-wrapper;
     margin: 0 auto;
     padding: $inuit-global-spacing-unit-large 0 $inuit-global-spacing-unit-large;
     border-top:solid 3px white;
