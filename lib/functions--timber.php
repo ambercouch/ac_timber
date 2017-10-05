@@ -32,28 +32,36 @@ class StarterSite extends TimberSite {
 
     function add_to_context( $context ) {
 
+        //Site vars
+        $context['site'] = $this;
+
+        //AC Template settings
+        $context['acSettings'] = acSettings();
+
+
+        //Remove the auto p from afc
         remove_filter ('acf_the_content', 'wpautop');
+
         $context['site_info'] = get_field('site_info', 'options');
 
         $context['company_logo'] = get_field('company_logo', 'options');
 
-        //site vars
-        $context['site'] = $this;
+        //Add the auto p from afc
+        add_filter ('acf_the_content', 'wpautop');
 
-        //Template settings
-        $context['acSettings'] = acSettings();
 
         //Primary Menu
         $context['menuPrimary'] = new TimberMenu('primary');
 
+        //Hero Menu
         $context['menuHero'] = new TimberMenu('hero');
 
+        //Set up sidebars defined functions--ac-sidebars.php
         foreach( unserialize(SIDEBARS) as $sidebar ) {
             $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
         }
 
-//        $context['primary_widgets'] = Timber::get_widgets('Primary');
-//        $context['subsidiary_widgets'] = Timber::get_widgets('Subsidiary');
+        $context['hidePageTitle'] = get_field('hide_title', $post_id);
 
         return $context;
     }

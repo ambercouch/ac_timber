@@ -1,4 +1,4 @@
-<article id="post-{{ post.id }}" class="single-page{{ templateClass }}">
+<article id="post-{{ post.id }}" class="single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
   {% if(post.thumbnail or acSettings.defaultImage) %}
     <div class="single-page__feature-image{{ templateClass }} ">
@@ -12,10 +12,12 @@
     </div>
   {% endif %}
 
-    <header class="entry-header single-page__header{{ templateClass }} ">
+    <header class="entry-header single-page__header{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
+      {% if not hidePageTitle %}
       <h1 class="entry-title single-page_heading{{ templateClass }} ">
         <span>{{ post.title }}</span>
       </h1>
+      {% endif %}
     </header>
 
     <div class="entry-content single-page__body{{ templateClass }} ">
