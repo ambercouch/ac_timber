@@ -87,7 +87,7 @@ gulp.task('sass', function (cb) {
 gulp.task('serve', ['sass'], function () {
 
     browserSync.init({
-        proxy: "shopifythemegallery.local"
+        proxy: "angharadbridal.local"
     });
 
     gulp.watch("assets/scss/**/*.scss", ['sass']);
