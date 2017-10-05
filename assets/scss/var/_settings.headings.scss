@@ -1,9 +1,9 @@
 /*------------------------------------*\
-    #HEADINGS
+    #fontS
 \*------------------------------------*/
 
 /**
- * Headings 1–6.
+ * fonts 1–6.
  */
 
 $scale : 1.21141;
@@ -11,31 +11,34 @@ $scale--palm : 1.1006;
 $scale--lap : 1.1447;
 $scale--desk : 1.21141;
 
+$font-size-giga: $inuit-global-font-size * pow($scale, 6 );
+$font-size-mega: $inuit-global-font-size * pow($scale, 5 );
+$font-size-kilo: $inuit-global-font-size * pow($scale, 4 );
 
 // Predefine the variables below in order to alter and enable specific features.
-$inuit-heading-size-1:  $inuit-global-font-size * ($scale * $scale * $scale );
-$inuit-heading-size-2:  $inuit-global-font-size * ($scale * $scale);
-$inuit-heading-size-3:  $inuit-global-font-size * $scale;
-$inuit-heading-size-4:  $inuit-global-font-size;
-$inuit-heading-size-5:  $inuit-global-font-size / $scale;
-$inuit-heading-size-6:  $inuit-global-font-size / ($scale * $scale);
+$inuit-font-size-h1:   $inuit-global-font-size * pow($scale, 3 );
+$inuit-font-size-h2:   $inuit-global-font-size * pow($scale, 2 );
+$inuit-font-size-h3:   $inuit-global-font-size * $scale;
+$inuit-font-size-h4:   $inuit-global-font-size;
+$inuit-font-size-h5:   $inuit-global-font-size / $scale;
+$inuit-font-size-h6:   $inuit-global-font-size / pow($scale, 2 );
 
-$inuit-small-print:  $inuit-global-font-size / ($scale * $scale * $scale);
+$inuit-small-print:   $inuit-global-font-size / pow($scale, 4 );;
 
-//$inuit-heading-size-1--lap:  $inuit-global-font-size--lap * ($scale--lap  * $scale--lap * $scale--lap);
-//$inuit-heading-size-2--lap:  $inuit-global-font-size--lap * ($scale--lap  * $scale--lap);
-//$inuit-heading-size-3--lap:  $inuit-global-font-size--lap * $scale--lap ;
-//$inuit-heading-size-4--lap:  $inuit-global-font-size--lap;
-//$inuit-heading-size-5--lap:  $inuit-global-font-size--lap / $scale--lap ;
-//$inuit-heading-size-6--lap:  $inuit-global-font-size--lap / ($scale--lap  * $scale--lap);
+//$inuit-font-size-h1--lap:   $inuit-global-font-size-h-lap * ($scale--lap  * $scale--lap * $scale--lap);
+//$inuit-font-size-h2--lap:   $inuit-global-font-size-h-lap * ($scale--lap  * $scale--lap);
+//$inuit-font-size-h3--lap:   $inuit-global-font-size-h-lap * $scale--lap ;
+//$inuit-font-size-h4--lap:   $inuit-global-font-size-h-lap;
+//$inuit-font-size-h5--lap:   $inuit-global-font-size-h-lap / $scale--lap ;
+//$inuit-font-size-h6--lap:   $inuit-global-font-size-h-lap / ($scale--lap  * $scale--lap);
 //
-//$inuit-small-print--lap:  $inuit-global-font-size--lap / ($scale--lap * $scale--lap * $scale--lap);
+//$inuit-small-print--lap:   $inuit-global-font-size-h-lap / ($scale--lap * $scale--lap * $scale--lap);
 //
-//$inuit-heading-size-1--desk:  $inuit-global-font-size--desk * ($scale--desk  * $scale--desk * $scale--desk);
-//$inuit-heading-size-2--desk:  $inuit-global-font-size--desk * ($scale--desk  * $scale--desk);
-//$inuit-heading-size-3--desk:  $inuit-global-font-size--desk * $scale--desk ;
-//$inuit-heading-size-4--desk:  $inuit-global-font-size--desk;
-//$inuit-heading-size-5--desk:  $inuit-global-font-size--desk / $scale--desk ;
-//$inuit-heading-size-6--desk:  $inuit-global-font-size--desk / ($scale--desk  * $scale--desk);
+//$inuit-font-size-h1--desk:   $inuit-global-font-size-h-desk * ($scale--desk  * $scale--desk * $scale--desk);
+//$inuit-font-size-h2--desk:   $inuit-global-font-size-h-desk * ($scale--desk  * $scale--desk);
+//$inuit-font-size-h3--desk:   $inuit-global-font-size-h-desk * $scale--desk ;
+//$inuit-font-size-h4--desk:   $inuit-global-font-size-h-desk;
+//$inuit-font-size-h5--desk:   $inuit-global-font-size-h-desk / $scale--desk ;
+//$inuit-font-size-h6--desk:   $inuit-global-font-size-h-desk / ($scale--desk  * $scale--desk);
 //
-//$inuit-small-print--desk:  $inuit-global-font-size--desk / ($scale--desk * $scale--desk * $scale--desk);
+//$inuit-small-print--desk:   $inuit-global-font-size-h-desk / ($scale--desk * $scale--desk * $scale--desk);

@@ -15,7 +15,7 @@
     margin: 0 auto $inuit-global-spacing-unit;
   }
   &__site-info{
-    @include inuit-font-size($inuit-heading-size-6, 1)
+    @include inuit-font-size($inuit-font-size-h6, 1)
     text-align: center;
     padding: $inuit-global-spacing-unit;
     background: black;

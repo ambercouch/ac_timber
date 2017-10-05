@@ -16,6 +16,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 */
 /*
+ FUCTIONS
+ */
+/*
  SETTINGS
  */
 /*
@@ -33,10 +36,10 @@ and open the template in the editor.
 /*
  *
  */
-/*------------------------------------*    #HEADINGS
+/*------------------------------------*    #fontS
 \*------------------------------------*/
 /**
- * Headings 1–6.
+ * fonts 1–6.
  */
 /*
  INUIT FRAME WORK
@@ -617,34 +620,34 @@ html {
  * http://csswizardry.com/2016/02/managing-typography-on-large-apps/).
  */
 h1 {
-  font-size: 36px;
-  font-size: 1.63636rem;
-  line-height: 1.95556; }
+  font-size: 39.11075px;
+  font-size: 1.77776rem;
+  line-height: 1.80002; }
 
 h2 {
-  font-size: 28px;
-  font-size: 1.27273rem;
-  line-height: 1.25714; }
+  font-size: 32.28531px;
+  font-size: 1.46751rem;
+  line-height: 1.09028; }
 
 h3 {
-  font-size: 24px;
-  font-size: 1.09091rem;
-  line-height: 1.46667; }
+  font-size: 26.65102px;
+  font-size: 1.21141rem;
+  line-height: 1.32077; }
 
 h4 {
-  font-size: 20px;
-  font-size: 0.90909rem;
-  line-height: 1.76; }
+  font-size: 22px;
+  font-size: 1rem;
+  line-height: 1.6; }
 
 h5 {
-  font-size: 18px;
-  font-size: 0.81818rem;
-  line-height: 1.95556; }
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1.93826; }
 
 h6 {
-  font-size: 16px;
-  font-size: 0.72727rem;
-  line-height: 2.2; }
+  font-size: 14.99134px;
+  font-size: 0.68142rem;
+  line-height: 2.34802; }
 
 /* ==========================================================================
    #IMAGES
@@ -2745,34 +2748,34 @@ table {
  *
  */
 .u-h1 {
-  font-size: 36px !important;
-  font-size: 1.63636rem !important;
-  line-height: 1.95556 !important; }
+  font-size: 39.11075px !important;
+  font-size: 1.77776rem !important;
+  line-height: 1.80002 !important; }
 
 .u-h2 {
-  font-size: 28px !important;
-  font-size: 1.27273rem !important;
-  line-height: 1.25714 !important; }
+  font-size: 32.28531px !important;
+  font-size: 1.46751rem !important;
+  line-height: 1.09028 !important; }
 
 .u-h3 {
-  font-size: 24px !important;
-  font-size: 1.09091rem !important;
-  line-height: 1.46667 !important; }
+  font-size: 26.65102px !important;
+  font-size: 1.21141rem !important;
+  line-height: 1.32077 !important; }
 
 .u-h4 {
-  font-size: 20px !important;
-  font-size: 0.90909rem !important;
-  line-height: 1.76 !important; }
+  font-size: 22px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important; }
 
 .u-h5 {
-  font-size: 18px !important;
-  font-size: 0.81818rem !important;
-  line-height: 1.95556 !important; }
+  font-size: 18.16066px !important;
+  font-size: 0.82548rem !important;
+  line-height: 1.93826 !important; }
 
 .u-h6 {
-  font-size: 16px !important;
-  font-size: 0.72727rem !important;
-  line-height: 2.2 !important; }
+  font-size: 14.99134px !important;
+  font-size: 0.68142rem !important;
+  line-height: 2.34802 !important; }
 
 /* ==========================================================================
    #PRINT
@@ -3216,18 +3219,18 @@ p {
   line-height: 1.6; }
 
 .post__footer, [class*='post__footer--'] {
-  font-size: 18px;
-  font-size: 0.81818rem;
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
   line-height: 1; }
 
 .post__comment-link, [class*='post__comment-link--'] {
-  font-size: 12.37511px;
-  font-size: 0.56251rem;
+  font-size: 10.21546px;
+  font-size: 0.46434rem;
   line-height: 1; }
 
 .post-meta {
-  font-size: 12.37511px;
-  font-size: 0.56251rem;
+  font-size: 10.21546px;
+  font-size: 0.46434rem;
   line-height: 1.4; }
   .post-meta__icon {
     display: none; }
@@ -3277,12 +3280,12 @@ p {
   .single-article__post-meta, .single-article--video__post-meta {
     padding: 35px 0; }
   .single-article__footer, .single-article--video__footer {
-    font-size: 12.37511px;
-    font-size: 0.56251rem;
+    font-size: 10.21546px;
+    font-size: 0.46434rem;
     line-height: 1; }
   .single-article__comment-link, .single-article--video__comment-link {
-    font-size: 12.37511px;
-    font-size: 0.56251rem;
+    font-size: 10.21546px;
+    font-size: 0.46434rem;
     line-height: 1; }
   .single-article__title, .single-article--video__title {
     font-size: 22px;
@@ -3328,24 +3331,24 @@ p {
 .comment-form textarea {
   border: solid 5px rgba(0, 0, 0, 0.2);
   padding: 35px 70px;
-  font-size: 12.37511px;
-  font-size: 0.56251rem;
-  line-height: 2.84442;
+  font-size: 10.21546px;
+  font-size: 0.46434rem;
+  line-height: 3.44576;
   width: 100%; }
 
 .comment-form input:not([type=submit]) {
   border: solid 5px rgba(0, 0, 0, 0.2);
   padding: 35px 70px;
-  font-size: 12.37511px;
-  font-size: 0.56251rem;
-  line-height: 2.84442;
+  font-size: 10.21546px;
+  font-size: 0.46434rem;
+  line-height: 3.44576;
   width: 100%; }
 
 .comment-form label {
   display: block;
-  font-size: 12.37511px;
-  font-size: 0.56251rem;
-  line-height: 2.84442; }
+  font-size: 10.21546px;
+  font-size: 0.46434rem;
+  line-height: 3.44576; }
 
 .comment-form p {
   margin-bottom: 70px; }

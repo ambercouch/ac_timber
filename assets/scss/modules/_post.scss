@@ -13,7 +13,7 @@
   }
 
   &heading{
-    @include inuit-font-size($inuit-heading-size-2);
+    @include inuit-font-size($inuit-font-size-h2);
     margin-bottom: 0;
     &:after{
       //display: block;
@@ -37,7 +37,7 @@
   }
 
   &body{
-    @include inuit-font-size($inuit-heading-size-4);
+    @include inuit-font-size($inuit-font-size-h4);
   }
 
   &footer{
