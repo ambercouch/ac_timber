@@ -1,0 +1,73 @@
+//.post Block
+.single-page {
+  display: block;
+}
+
+//.post Elements
+.single-page__{
+
+  &header{
+    margin-bottom: $inuit-global-spacing-unit-large /2;
+  }
+
+  &heading{
+    margin-bottom: 0;
+    &:after{
+
+    }
+  }
+
+  &feature-image{
+    margin-bottom: $inuit-global-spacing-unit;
+  }
+
+  &body{
+    display: block;
+  }
+
+  &footer{
+    @include inuit-font-size($inuit-font-size-h5, 1);
+  }
+
+  &comment-link{
+    @include inuit-font-size($inuit-font-size-h5, 1);
+  }
+}
+
+[class*='single-page--']{
+  @extend .post;
+}
+
+[class*='single-page__header--']{
+  @extend .single-page__header;
+}
+
+[class*='single-page__heading--']{
+  @extend .single-page__heading;
+}
+
+[class*='single-page__heading-link--']{
+  @extend .single-page__heading-link;
+}
+
+[class*='single-page__feature-image--']{
+  @extend .single-page__feature-image;
+}
+
+[class*='single-page__post-meta--']{
+  @extend .single-page__post-meta
+}
+
+[class*='single-page__body--']{
+  @extend .single-page__body
+}
+
+[class*='single-page__footer--']{
+  @extend .single-page__footer;
+}
+
+[class*='single-page__comment-link--']{
+  @extend .single-page__comment-link
+}
+
+
