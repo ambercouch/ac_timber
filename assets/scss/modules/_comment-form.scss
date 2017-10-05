@@ -1,29 +1,29 @@
 .comment-form{
-  padding: 0 $inuit-base-spacing-unit--small;
+  padding: 0 $inuit-global-spacing-unit-large;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .comment-form{
   &__notes{
-    margin-bottom: $inuit-base-spacing-unit;
-    padding: $inuit-base-spacing-unit--small / 2 $inuit-base-spacing-unit--small;
+    margin-bottom: $inuit-global-spacing-unit;
+    padding: $inuit-global-spacing-unit-large / 2 $inuit-global-spacing-unit-large;
     background: #fff;
     @include inuit-font-size($milli-size);
   }
   &__comment{
-    margin-bottom: $inuit-base-spacing-unit--small;
+    margin-bottom: $inuit-global-spacing-unit-large;
   }
 
   textarea{
     border: solid 5px rgba(#000, 0.2);
-    padding: $inuit-base-spacing-unit--small /2 $inuit-base-spacing-unit--small;
+    padding: $inuit-global-spacing-unit-large /2 $inuit-global-spacing-unit-large;
     @include inuit-font-size($inuit-small-print);
     width: 100%;
   }
   input:not([type=submit]){
     border: solid 5px rgba(#000, 0.2);
-    padding: $inuit-base-spacing-unit--small /2 $inuit-base-spacing-unit--small;
+    padding: $inuit-global-spacing-unit-large /2 $inuit-global-spacing-unit-large;
     @include inuit-font-size($inuit-small-print);
     width: 100%;
   }
@@ -33,16 +33,15 @@
     @include inuit-font-size($inuit-small-print);
   }
   p{
-    margin-bottom: $inuit-base-spacing-unit--small;
+    margin-bottom: $inuit-global-spacing-unit-large;
   }
   a{
     //@extend %link-style--1;
   }
-
 }
 .comment-form__submit-wrapper{
-  @extend .clearfix;
-  padding: $inuit-base-spacing-unit--small 0;
+  @extend .cf;
+  padding: $inuit-global-spacing-unit-large 0;
 }
 .comment-form__submit{
   //@extend .btn--cta1;
