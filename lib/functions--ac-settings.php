@@ -1,11 +1,6 @@
 <?php
 
-
-
-//Define your sidebars here
-define('SIDEBARS', serialize(array('Primary','Subsidiary','Footer')));
-
-
+//Site settings
     function acSettings()
     {
         $settings['svgLogo'] = null;
