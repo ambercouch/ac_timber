@@ -16,10 +16,7 @@
     @include inuit-font-size($inuit-font-size-h2);
     margin-bottom: 0;
     &:after{
-      //display: block;
-      //width: 50%;
-      //content: '';
-      //border-bottom:solid 1px;
+
     }
   }
 
@@ -33,7 +30,6 @@
 
   &post-meta{
     display: block;
-    //padding: $inuit-global-spacing-unit-large /2 0 ;
   }
 
   &body{
