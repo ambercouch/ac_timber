@@ -3179,7 +3179,7 @@ p {
   height: 35px;
   background: #2f2d35; }
 
-.post, [class*='post--'] {
+.post, [class*='post--'], [class*='single-page--'] {
   border-bottom: solid 1px;
   padding-bottom: 35px;
   margin-bottom: 70px; }
@@ -3217,12 +3217,41 @@ p {
   font-size: 0.82548rem;
   line-height: 1; }
 
-.post-meta {
+.post-meta, [class*=post-meta--] {
   font-size: 18.16066px;
   font-size: 0.82548rem;
   line-height: 1.93826; }
-  .post-meta__icon {
-    display: none; }
+
+.post-meta__post-type, [class*=post-meta__post-type--] {
+  visibility: inherit;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.post-meta__post-date, [class*=post-meta__post-date--] {
+  visibility: inherit; }
+
+.post-meta__post-tags, [class*=post-meta__post-tags--] {
+  visibility: inherit; }
+
+.post-meta__post-cats, [class*=post-meta__post-cats--] {
+  visibility: inherit; }
+
+.post-meta__post-author, [class*=post-meta__post-author--] {
+  visibility: inherit; }
+
+.post-type, [class*=post-type--] {
+  visibility: visible;
+  display: block; }
+
+.post-type__icon, [class*=post-type__icon--] {
+  font-size: 32.28531px;
+  font-size: 1.46751rem;
+  line-height: 1.09028;
+  display: block;
+  width: 1em;
+  height: 1em;
+  margin-top: 0.05em; }
 
 .feature-image {
   position: relative; }
@@ -3258,47 +3287,76 @@ p {
   cursor: pointer; }
 
 .single-article, .single-article--video {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto 70px;
   border-bottom: solid 1px;
   padding-bottom: 35px; }
-  .single-article__feature-image, .single-article--video__feature-image {
-    margin-bottom: 35px; }
-  .single-article__header, .single-article--video__header {
-    margin-bottom: 35px; }
-  .single-article__post-meta, .single-article--video__post-meta {
-    padding: 35px 0; }
-  .single-article__footer, .single-article--video__footer {
-    font-size: 10.21546px;
-    font-size: 0.46434rem;
-    line-height: 1; }
-  .single-article__comment-link, .single-article--video__comment-link {
-    font-size: 10.21546px;
-    font-size: 0.46434rem;
-    line-height: 1; }
-  .single-article__title, .single-article--video__title {
-    font-size: 22px;
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 0; }
-    .single-article__title a, .single-article--video__title a {
-      text-decoration: none; }
-    .single-article__title:after, .single-article--video__title:after {
-      display: block;
-      width: 50%;
-      content: '';
-      border-bottom: solid 1px; }
 
-.single-article--video__body {
+.single-article__feature-image, [class*='single-article__feature-image--'], .single-article--videofeature-image {
+  margin-bottom: 35px; }
+
+.single-article__header, [class*='single-article__header--'], .single-article--videoheader {
+  margin-bottom: 35px;
+  position: relative; }
+
+.single-article__heading, [class*='single-article__heading--'] {
+  margin-bottom: 35px;
+  padding-left: 1.3em; }
+
+.single-article__title, [class*='single-article__title--'], .single-article--videotitle {
+  display: inline; }
+
+.single-article__post-meta, [class*='single-article__post-meta--'], .single-article--videopost-meta {
+  padding: 35px 0; }
+
+.single-article__body, [class*='single-article__body--'] {
+  display: block; }
+
+.single-article__footer, [class*='single-article__footer--'], .single-article--videofooter {
+  font-size: 14.99134px;
+  font-size: 0.68142rem;
+  line-height: 1; }
+
+.single-article__comment-link, [class*='single-article__comment-link--'], .single-article--videocomment-link {
+  font-size: 14.99134px;
+  font-size: 0.68142rem;
+  line-height: 1; }
+
+.single-article--videobody {
   font-size: 18.16066px;
   font-size: 0.82548rem;
   line-height: 1.93826; }
+
+.single-page {
+  display: block; }
+
+.single-page__header, [class*='single-page__header--'] {
+  margin-bottom: 35px; }
+
+.single-page__heading, [class*='single-page__heading--'] {
+  margin-bottom: 0; }
+
+.single-page__feature-image, [class*='single-page__feature-image--'] {
+  margin-bottom: 35px; }
+
+.single-page__body, [class*='single-page__body--'] {
+  display: block; }
+
+.single-page__footer, [class*='single-page__footer--'] {
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1; }
+
+.single-page__comment-link, [class*='single-page__comment-link--'] {
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1; }
 
 .video-embed {
   margin-bottom: 35px; }
 
 .comments {
-  max-width: 800px;
+  max-width: 100%;
   margin: 0 auto; }
 
 .comment-form {

@@ -1,121 +1,123 @@
-.single-article{
-  //background: #fff;
-  //display: flex;
-  //flex-wrap: wrap;
-  //flex-direction: column;
-  //width: 1000px;
-  //height: 500px;
-  //overflow: hidden;
-  //box-shadow: $z1-shadow;
+.single-article {
   max-width: $article-max-width;
   margin: 0 auto $inuit-global-spacing-unit-large;
-  border-bottom:solid 1px;
-  padding-bottom:$inuit-global-spacing-unit;
+  border-bottom: solid 1px;
+  padding-bottom: $inuit-global-spacing-unit;
+}
 
-  &__feature-image{
+.single-article__{
+
+  &feature-image{
     margin-bottom: $inuit-global-spacing-unit;
   }
-  &__header{
+  
+  &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
-    //display: flex;
-    //flex-direction: column-reverse;
-    //width: 50%;
-    //overflow: hidden;
-    //padding: $inuit-global-spacing-unit-large;
-    //padding-bottom: 0;
-
+    position: relative;
   }
-  &__post-meta{
+
+  &heading{
+    margin-bottom: $inuit-global-spacing-unit-large /2;
+    padding-left: 1.3em;
+    &:after{
+      //display: block;
+      //width: 50%;
+      //content: '';
+      //border-bottom:solid 1px;
+    }
+  }
+
+  &title{
+    display: inline;
+  }
+
+  &post-meta{
     padding: $inuit-global-spacing-unit-large /2 0 ;
   }
-  &__body{
+  
+  &body{
+    display: block;
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
   }
-  &__footer{
+  
+  &footer{
+    @include inuit-font-size($inuit-font-size-h6, 1);
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
     //align-self: flex-end;
     //flex-grow: 1;
     //position: relative;
-    @include inuit-font-size($inuit-small-print, 1);
   }
-  &__comment-link{
-    @include inuit-font-size($inuit-small-print, 1);
+  
+  &comment-link{
+    @include inuit-font-size($inuit-font-size-h6, 1);
     //position: absolute;
     //padding: $inuit-global-spacing-unit;
     //bottom: 0;
     //right: 0;
   }
-  &__title{
-    //border-bottom: solid 1px;
-    @include inuit-font-size($inuit-font-size-h4);
-    margin-bottom: 0;
-    a{
-      text-decoration: none;;
-    }
-    &:after{
-      display: block;
-      width: 50%;
-      content: '';
-      border-bottom:solid 1px;
-    }
-  }
-  &--aside__feature-image{
-     //@extend .single-article__feature-image;
-   }
-  &--aside__header{
-    //@extend .single-article__header;
-  }
-  &--aside__body{
-    //@extend .single-article__body;
-  }
-  &--aside__footer{
-    //@extend .single-article__footer;
-  }
-  &--aside__comment-link{
-    //@extend .single-article__comment-link;
-  }
-
-  &--quote__feature-image{
-    //@extend .single-article__feature-image;
-  }
-  &--quote__header{
-    //@extend .single-article__header;
-  }
-  &--quote__body{
-    //@extend .single-article__body;
-  }
-  &--quote__footer{
-    //@extend .single-article__footer;
-  }
-  &--quote__comment-link{
-    //@extend .single-article__comment-link;
-  }
 }
+
+[class*='post--']{
+  @extend .post;
+}
+
+[class*='single-article__header--']{
+  @extend .single-article__header;
+}
+
+[class*='single-article__heading--']{
+  @extend .single-article__heading;
+}
+
+[class*='single-article__title--']{
+  @extend .single-article__title;
+}
+
+[class*='single-article__feature-image--']{
+  @extend .single-article__feature-image;
+}
+
+[class*='single-article__post-meta--']{
+  @extend .single-article__post-meta
+}
+
+[class*='single-article__body--']{
+  @extend .single-article__body
+}
+
+[class*='single-article__footer--']{
+  @extend .single-article__footer;
+}
+
+[class*='single-article__comment-link--']{
+  @extend .single-article__comment-link
+}
+
 
 .single-article{
   &--video{
     @extend .single-article;
-    &__header{
+    &header{
       @extend .single-article__header;
     }
-    &__title{
+    &title{
       @extend .single-article__title;
     }
-    &__body{
+    &body{
       @include inuit-font-size($inuit-font-size-h5);
     }
-    &__feature-image{
+    &feature-image{
       @extend .single-article__feature-image;
     }
-    &__footer{
+    &footer{
       @extend .single-article__footer;
     }
-    &__post-meta{
+    &post-meta{
       @extend .single-article__post-meta;
     }
-    &__comment-link{
+    &comment-link{
       @extend .single-article__comment-link;
     }
 

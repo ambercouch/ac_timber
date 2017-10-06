@@ -98,18 +98,19 @@ gulp.task('serve', ['sass'], function () {
 
 gulp.task('svgstore', function () {
     return gulp
-        .src('assets/images/svg/**/*.svg')
+        .src('assets/images/svg/*.svg')
         .pipe(svgmin(function (file) {
             //var prefix = path.basename(file.relative, path.extname(file.relative));
+            var prefix = 'tester';
             return {
                 plugins: [{
                     cleanupIDs: {
-                        //prefix: prefix + '-',
+                        prefix: prefix + '-',
                         minify: true
                     }
                 }]
             }
         }))
         .pipe(svgstore())
-        .pipe(gulp.dest('assets/images'));
+        .pipe(gulp.dest('templates/inc'));
 });

@@ -1,10 +1,53 @@
 .post-meta{
   @include inuit-font-size($inuit-font-size-h5);
+}
 
-  &__date{
+.post-meta__{
 
+  &post-type{
+    visibility: inherit;
+    position: absolute;
+    top:0;
+    left: 0;
   }
-  &__icon{
-    display: none;
+
+  &post-date{
+    visibility: inherit;
   }
+
+  &post-tags{
+    visibility: inherit;
+  }
+
+  &post-cats{
+    visibility: inherit;
+  }
+
+  &post-author{
+    visibility: inherit;
+  }
+}
+
+[class*=post-meta--]{
+  @extend .post-meta;
+}
+
+[class*=post-meta__post-type--]{
+  @extend .post-meta__post-type;
+}
+
+[class*=post-meta__post-date--]{
+  @extend .post-meta__post-date;
+}
+
+[class*=post-meta__post-tags--]{
+  @extend .post-meta__post-tags;
+}
+
+[class*=post-meta__post-cats--]{
+  @extend .post-meta__post-cats;
+}
+
+[class*=post-meta__post-author--]{
+  @extend .post-meta__post-author;
 }

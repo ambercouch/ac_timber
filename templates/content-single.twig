@@ -1,52 +1,37 @@
-{% set postFormat = postFormat? fn('get_post_format', post) : '' %}
-
 {% block content %}
-  <article id="post-{{ post.id }}" class="single-article {{ post.class }}">
+  <article id="post-{{ post.id }}" class="single-article{{ postFormatClass }} {{ post.class }}">
+
   {% if post.thumbnail %}
-    <div class="single-article__feature-image">
+    <div class="single-article__feature-image{{ postFormatClass }}">
       <div class="feature-image">
         <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
   {%  endif %}
 
-    <header class="entry-header single-article--video__header ">
+    <header class="entry-header single-article__header{{ postFormatClass }} ">
+
+      <h2 class="entry-title single-article__heading{{ postFormatClass }}">
+        <span class="single-article__title{{ postFormatClass }}">{{ post.title }}</span>
+      </h2>
+
+      <div class="entry-meta single-article__post-meta{{ postFormatClass }}">
+
+          {% include 'post-meta.twig' %}
+
+      </div>
 
     </header>
 
-      <div class="entry-content single-article--video__body">
-        {% if post.get_field('video_id') %}
-          {% set video_url = 'https://www.youtube.com/watch?v='~post.get_field('video_id') %}
-        <div data-fitvid class="video-embed">
-          {{  fn('wp_oembed_get', video_url ) }}
-        </div>
-          {% endif %}
+      <div class="entry-content single-article__body{{ postFormatClass }}">
 
-        <h2 class="entry-title single-article__title">
-          {{ post.title }}
-        </h2>
-        <div class="entry-meta single-article--video__post-meta">
-          <div class="post-meta">
-
-            {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
-            {#<title>{{ postFormat }}</title>#}
-            {#<desc>Post type {{ postFormat }}</desc>#}
-            {#<use xlink:href="#icon-post{{ postFormat }}" />#}
-            {#</svg>#}
-
-            {#<span class="post-meta__date">{{ post.date }}</span>#}
-          </div>
-        </div>
-
-        <div class="single-article--video__content">
+        <div class="single-article__content{{ postFormatClass }}">
           {{ post.content }}
         </div>
 
       </div>
 
-
-    <footer class="single-article--video__footer">
-
+    <footer class="single-article__footer{{ postFormatClass }}">
 
     </footer>
 

@@ -1,4 +1,3 @@
-{% set postFormat = postFormat? fn('get_post_format', post) : '' %}
 
 {% block content %}
   <article id="post-{{ post.id }}" class="single-article--video {{ post.class }}">
