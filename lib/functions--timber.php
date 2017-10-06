@@ -38,18 +38,6 @@ class StarterSite extends TimberSite {
         //AC Template settings
         $context['acSettings'] = acSettings();
 
-
-        //Remove the auto p from afc
-        remove_filter ('acf_the_content', 'wpautop');
-
-        $context['site_info'] = get_field('site_info', 'options');
-
-        $context['company_logo'] = get_field('company_logo', 'options');
-
-        //Add the auto p from afc
-        add_filter ('acf_the_content', 'wpautop');
-
-
         //Primary Menu
         $context['menuPrimary'] = new TimberMenu('primary');
 
@@ -61,7 +49,26 @@ class StarterSite extends TimberSite {
             $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
         }
 
+        /*
+         * ACF Settings Setup
+         */
+
+        //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
+        $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
+
+        //ACF options
+        //Remove the auto p from afc
+        remove_filter ('acf_the_content', 'wpautop');
+
+        $context['site_info'] = get_field('site_info', 'options');
+
+        $context['company_logo'] = get_field('company_logo', 'options');
+
+        //Add the auto p from afc
+        add_filter ('acf_the_content', 'wpautop');
+
+        $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
 
         return $context;
     }
