@@ -3300,14 +3300,17 @@ p {
   position: relative; }
 
 .single-article__heading, [class*='single-article__heading--'] {
-  margin-bottom: 35px;
+  margin-bottom: 0;
   padding-left: 1.3em; }
 
 .single-article__title, [class*='single-article__title--'], .single-article--videotitle {
   display: inline; }
 
 .single-article__post-meta, [class*='single-article__post-meta--'], .single-article--videopost-meta {
-  padding: 35px 0; }
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1.93826;
+  padding: 0; }
 
 .single-article__body, [class*='single-article__body--'] {
   display: block; }
