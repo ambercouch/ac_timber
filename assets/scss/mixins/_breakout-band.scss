@@ -1,0 +1,19 @@
+@mixin breakout-band(){
+  background: $brand-col-1--xlight;
+  position: relative;
+  z-index: 1;
+  padding-top:$inuit-base-spacing-unit--large;
+  padding-bottom:$inuit-base-spacing-unit--large;
+  &:after{
+    position: absolute;
+    content: '';
+    width: 100vw;
+    right: 50%;
+    top: 0;
+    height: 100%;
+    display: block;
+    background: $brand-col-1--xlight;
+    z-index: -1;
+    transform: translate( 50%, 0 );
+  }
+}
