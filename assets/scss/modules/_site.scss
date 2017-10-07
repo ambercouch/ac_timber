@@ -2,19 +2,21 @@
 
 }
 
-.site{
-  &__masthead{
+.site__{
+  &masthead{
     //background: $brand-col-1;
   }
-  &__main{
+  &hero{
+    height: 100vh;
+  }
+  &main{
     //background: white;
 
     //body.home &{
     //  background: $brand-col-1;
     //  margin-bottom:$inuit-global-spacing-unit;
-    //}
   }
-  &__footer{
+  &footer{
     background: #ccc;
   }
 }
