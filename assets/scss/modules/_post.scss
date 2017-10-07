@@ -10,11 +10,13 @@
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    position: relative;
   }
 
   &heading{
     @include inuit-font-size($inuit-font-size-h2);
     margin-bottom: 0;
+    margin-left: 1.5em;
     &:after{
 
     }
