@@ -69,6 +69,8 @@ class StarterSite extends TimberSite {
         add_filter ('acf_the_content', 'wpautop');
 
         $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
+        $context['postEditUrl'] =  get_edit_post_link($post_id);
+
 
         return $context;
     }
