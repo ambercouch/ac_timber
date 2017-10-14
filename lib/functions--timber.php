@@ -15,10 +15,20 @@ class StarterSite extends TimberSite {
         add_theme_support( 'post-formats' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
+
+        add_image_size ( 'feature500', 500, 500, true );
+        add_image_size ( 'feature16-9', 1600, 900, true );
+        add_image_size ( 'feature16-4', 1600, 400, true );
+
+
+
+
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
+
         parent::__construct();
     }
 
@@ -70,6 +80,8 @@ class StarterSite extends TimberSite {
 
         $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
         $context['postEditUrl'] =  get_edit_post_link($post_id);
+
+//        $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
 
 
         return $context;

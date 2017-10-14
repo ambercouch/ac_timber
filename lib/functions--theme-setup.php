@@ -59,7 +59,6 @@ if ( ! function_exists( '_act_setup' ) ) :
             'default-image' => '',
         ) ) );
 
-        add_image_size ( 'feature500', 500, 500, true );
 
     }
 endif;
