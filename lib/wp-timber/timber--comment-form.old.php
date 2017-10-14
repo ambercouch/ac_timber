@@ -19,3 +19,4 @@ $args = array(
     'format'               => 'html5',
 );
 $context['comment_form'] = TimberHelper::get_comment_form(null, $args);
+$context['comment_list'] = wp_list_comments('', get_comments(array('post_id' => $post_id)));
