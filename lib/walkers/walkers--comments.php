@@ -4,7 +4,7 @@ class Ac_Walker_Comment extends Walker_Comment {
     protected function html5_comment( $comment, $depth, $args ) {
         $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
         ?>
-        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent comment__item' : 'comment__item', $comment ); ?>>
+        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent comment-respond__item' : 'comment__item', $comment ); ?>>
         <article id="div-comment-<?php comment_ID(); ?>" class="comment">
             <footer class="comment__meta">
                 <div class="comment__author vcard">
