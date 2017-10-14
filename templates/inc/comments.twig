@@ -1,0 +1,18 @@
+<section id="comments" class="comments">
+  <h3 class="comments__title">Comments</h3>
+  <div class="comments__responses">
+
+    {%   if post.get_comments() %}
+      <ol class="comments__list">
+        {{ comment_list }}
+      </ol>
+    {%  else %}
+      <p>No one has left a comment yet - Why not be the first!</p>
+    {% endif %}
+
+  </div>
+  <h3 class="comments__title">Leave a Reply</h3>
+  <div class="comments__respond">
+    {{ post.comment_form(comment_form_args) }}
+  </div>
+</section>
