@@ -4,7 +4,7 @@
   {% if post.thumbnail %}
     <div class="single-article__feature-image{{ postFormatClass }}">
       <div class="feature-image">
-        <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
+        <img src="{{ post.thumbnail.src('feature16-4') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
   {%  endif %}
@@ -16,9 +16,7 @@
       </h2>
 
       <div class="entry-meta single-article__post-meta{{ postFormatClass }}">
-
           {% include 'inc/post-meta.twig' %}
-
       </div>
 
     </header>
