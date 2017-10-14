@@ -4,10 +4,10 @@ class Ac_Walker_Comment extends Walker_Comment {
     protected function html5_comment( $comment, $depth, $args ) {
         $tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
         ?>
-        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'parent comment-respond__item' : 'comment__item', $comment ); ?>>
-        <article id="div-comment-<?php comment_ID(); ?>" class="comment">
-            <footer class="comment__meta">
-                <div class="comment__author vcard">
+        <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'comments__item--parent' : 'comments__item--children', $comment ); ?>>
+        <article id="div-comment-<?php comment_ID(); ?>" class="response">
+            <footer class="response__meta">
+                <div class="response__author vcard">
                     <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
                     <?php
                     /* translators: %s: comment author link */
@@ -17,7 +17,7 @@ class Ac_Walker_Comment extends Walker_Comment {
                     ?>
                 </div><!-- .comment-author -->
 
-                <div class="comment__metadata">
+                <div class="response__metadata">
                     <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
                         <time datetime="<?php comment_time( 'c' ); ?>">
                             <?php
@@ -30,11 +30,11 @@ class Ac_Walker_Comment extends Walker_Comment {
                 </div><!-- .comment-metadata -->
 
                 <?php if ( '0' == $comment->comment_approved ) : ?>
-                    <p class="comment__awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+                    <p class="response__awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
                 <?php endif; ?>
             </footer><!-- .comment-meta -->
 
-            <div class="comment__content">
+            <div class="response__content">
                 <?php comment_text(); ?>
             </div><!-- .comment-content -->
 
@@ -43,11 +43,29 @@ class Ac_Walker_Comment extends Walker_Comment {
                 'add_below' => 'div-comment',
                 'depth'     => $depth,
                 'max_depth' => $args['max_depth'],
-                'before'    => '<div class="comment__reply-link">',
+                'before'    => '<div class="response__reply-link">',
                 'after'     => '</div>'
             ) ) );
             ?>
         </article><!-- .comment-body -->
         <?php
     }
+
+    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $GLOBALS['comment_depth'] = $depth + 1;
+
+        switch ( $args['style'] ) {
+            case 'div':
+                break;
+            case 'ol':
+                $output .= '<ol class="comments__list--children">' . "\n";
+                break;
+            case 'ul':
+            default:
+                $output .= '<ul class="comments__list--children">' . "\n";
+                break;
+        }
+    }
+
+
 }

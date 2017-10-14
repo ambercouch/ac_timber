@@ -12,6 +12,16 @@
   &heading{
     display: block;
   }
+  &list{
+    margin: 0;
+    margin-bottom:$inuit-global-spacing-unit;
+  }
+  &item{
+    list-style: none;
+    background: #ddd;
+    margin-bottom: $inuit-global-spacing-unit;
+    padding-bottom: $inuit-global-spacing-unit;
+  }
 }
 
 [class*=comments__wrapper--]{
@@ -22,8 +32,23 @@
   @extend .comments__heading;
 }
 
+[class*=comments__list--]{
+  @extend .comments__list;
+}
+
+[class*=comments__item--]{
+  @extend .comments__item;
+}
+
 .comments__wrapper--{
   &responses{
     background: #eee;
+  }
+}
+
+.comments__item--{
+  &children{
+    margin: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+    background: #fff;
   }
 }
