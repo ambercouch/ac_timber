@@ -2,3 +2,28 @@
   max-width: $article-max-width;
   margin: 0 auto;
 }
+
+.comments__{
+  &wrapper{
+    display: block;
+    padding:$inuit-global-spacing-unit;
+    margin-bottom:$inuit-global-spacing-unit;
+  }
+  &heading{
+    display: block;
+  }
+}
+
+[class*=comments__wrapper--]{
+  @extend .comments__wrapper;
+}
+
+[class*=comments__heading--]{
+  @extend .comments__heading;
+}
+
+.comments__wrapper--{
+  &responses{
+    background: #eee;
+  }
+}
