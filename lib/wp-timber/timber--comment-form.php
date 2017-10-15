@@ -4,12 +4,13 @@
 add_filter( 'comment_form_default_fields', 'act_comment_form_fields' );
 function act_comment_form_fields( $fields ) {
     $fields   =  array(
-        'author' => '<div class="comment-respond__author">' . '<label class="comment-respond__label" for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-            '<input class="comment-respond__input--text" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
-        'email'  => '<div class="comment-respond__email"><label class="comment-respond__label" for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-            '<input class="comment-respond__input--text" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></div>',
-        'url'    => '<div class="comment-respond__url"><label class="comment-respond__label" for="url">' . __( 'Website' ) . '</label> ' .
-            '<input class="comment-respond__input--text" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></div>',
+        'author' => '<div class="comment-respond__input-wrapper--author">' . '<label class="comment-respond__label" for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            '<input class="comment-respond__input--text" placeholder="' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
+        'email'  => '<div class="comment-respond__input-wrapper--email"><label class="comment-respond__label" for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            '<input class="comment-respond__input--text" placeholder="' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />'.
+            '<div class="comment-respond__email-notes"><small>Your email will not be published</small></div></div>',
+        'url'    => '<div class="comment-respond__input-wrapper--url"><label class="comment-respond__label" for="url">' . __( 'Website' ) . '</label> ' .
+            '<input class="comment-respond__input--text" placeholder="' . __( 'Website' ) . '" gid="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></div>',
     );
     return $fields;
 }
@@ -67,17 +68,18 @@ $context['comment_list'] = wp_list_comments($args, get_comments(array('post_id' 
 
 // $args for comment_form()
 $args = array(
-    'comment_field'        => '<div class="comment-respond__comment"><label class="comment-respond__label" for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea class="comment-respond__input--textarea" id="comment" name="comment" cols="45" rows="4"  aria-required="true" required="required"></textarea></div>',
+    'comment_field'        => '<div class="comment-respond__input-wrapper--comment"><label class="comment-respond__label" for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea placeholder="' . _x( 'Your comment...', 'noun' ) . '" class="comment-respond__input--textarea" id="comment" name="comment" cols="45" rows="4"  aria-required="true" required="required"></textarea></div>',
     /** This filter is documented in wp-includes/link-template.php */
     'must_log_in'          => '<div class="comment-respond__log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</div>',
     /** This filter is documented in wp-includes/link-template.php */
     'logged_in_as'         => '<div class="comment-respond__logged-in">' . sprintf( __( '<a href="%1$s" aria-label="Logged in as %2$s. Edit your profile.">Logged in as %2$s</a>. <a href="%3$s">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</div>',
-    'comment_notes_before' => '<div class="comment-respond__notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span> </div>',
+//    'comment_notes_before' => '<div class="comment-respond__notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span> </div>',
+    'comment_notes_before' => '',
     'comment_notes_after'  => '',
     'class_form'           => 'comment-respond__form',
     'class_submit'         => 'comment-respond__submit',
     'title_reply'          => '',
-    'title_reply_to'       => __( 'Leave a Reply to %s' ),
+    'title_reply_to'       => '<div class="comment-respond__reply-to">' . __( 'Reply to %s' ) .'</div>',
     'title_reply_before'   => '',
     'title_reply_after'    => '',
     'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
