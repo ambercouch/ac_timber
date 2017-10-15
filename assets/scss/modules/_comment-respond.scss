@@ -1,0 +1,50 @@
+.comment-respond{
+  padding: 0 $inuit-global-spacing-unit-large;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+.comment-respond__{
+
+  &notes{
+    margin-bottom: $inuit-global-spacing-unit;
+    padding: $inuit-global-spacing-unit-small;
+    background: #fff;
+    @include inuit-font-size($inuit-font-size-h5,1);
+  }
+
+  &input{
+    border: solid 5px rgba(#000, 0.2);
+    padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-tiny;
+    @include inuit-font-size($inuit-font-size-h5, 1);
+    width: 100%;
+    display: block;
+  }
+
+  &label{
+
+  }
+
+}
+
+[class*=comment-respond__input--]{
+  @extend .comment-respond__input;
+}
+
+.comment-respond__input--{
+  &text{
+
+  }
+
+}
+.comment-form__submit-wrapper{
+  @extend .cf;
+  padding: $inuit-global-spacing-unit-large 0;
+}
+.comment-form__submit{
+  //@extend .btn--cta1;
+  display: inline-block;
+  float: right;
+}

@@ -4,14 +4,12 @@
 add_filter( 'comment_form_default_fields', 'act_comment_form_fields' );
 function act_comment_form_fields( $fields ) {
     $fields   =  array(
-        'author' => '<div class="comment-respond__author">' . '<label for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-            '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
-        'email'  => '<div class="comment-respond__email"><label for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-            '<input id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></div>',
-        'url'    => '<div class="comment-respond__url"><label for="url">' . __( 'Website' ) . '</label> ' .
-            '<input id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></div>',
-        'cancel_reply_before'  => ' <small class="comment-respond__cancel-reply">',
-        'cancel_reply_after'   => '</small>'
+        'author' => '<div class="comment-respond__author">' . '<label class="comment-respond__label" for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            '<input class="comment-respond__input--text" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
+        'email'  => '<div class="comment-respond__email"><label class="comment-respond__label" for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
+            '<input class="comment-respond__input--text" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></div>',
+        'url'    => '<div class="comment-respond__url"><label class="comment-respond__label" for="url">' . __( 'Website' ) . '</label> ' .
+            '<input class="comment-respond__input--text" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></div>',
     );
     return $fields;
 }
@@ -32,6 +30,18 @@ function act_cancel_comment_reply_link( $formatted_link ){
     //Add class to cancel-reply-link
     $formatted_link = '<a class="comment__cancel-reply-link" rel="nofollow" id="cancel-comment-reply-link" href="' . $link . '"' . $style . '>' . $text . '</a>';
     return $formatted_link;
+}
+
+//Reorder the form fields
+add_filter( 'comment_form_fields', 'act_reorder_comment_form_fields' );
+function act_reorder_comment_form_fields( $fields ) {
+    //save the comment field
+    $comment_field = $fields['comment'];
+    //Unset the comment field
+    unset( $fields['comment'] );
+    //Set the comment field (It is set as the last item in the array)
+    $fields['comment'] = $comment_field;
+    return $fields;
 }
 
 // $args for comment_list
@@ -57,7 +67,7 @@ $context['comment_list'] = wp_list_comments($args, get_comments(array('post_id' 
 
 // $args for comment_form()
 $args = array(
-    'comment_field'        => '<div class="comment-respond__comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea id="comment" name="comment" cols="45" rows="4"  aria-required="true" required="required"></textarea></div>',
+    'comment_field'        => '<div class="comment-respond__comment"><label class="comment-respond__label" for="comment">' . _x( 'Comment', 'noun' ) . '</label> <textarea class="comment-respond__input--textarea" id="comment" name="comment" cols="45" rows="4"  aria-required="true" required="required"></textarea></div>',
     /** This filter is documented in wp-includes/link-template.php */
     'must_log_in'          => '<div class="comment-respond__log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</div>',
     /** This filter is documented in wp-includes/link-template.php */

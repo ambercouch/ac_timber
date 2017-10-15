@@ -8,6 +8,7 @@
     display: block;
     padding:$inuit-global-spacing-unit;
     margin-bottom:$inuit-global-spacing-unit;
+    background: #eee;
   }
   &heading{
     display: block;
@@ -42,7 +43,8 @@
 
 .comments__wrapper--{
   &responses{
-    background: #eee;
+    margin-bottom:0;
+    border-bottom:solid #ccc;
   }
 }
 
