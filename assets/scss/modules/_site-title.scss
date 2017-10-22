@@ -4,10 +4,17 @@
   width: 340px;
   height: 20px;
   max-width:100%;
-  &__link{
+}
+
+.site-title__{
+  &link{
     display: block;
   }
-  &__logo--img{
+  &logo--img{
     display: block;
   }
+}
+
+[class*=site-title--]{
+  @extend .site-title;
 }
