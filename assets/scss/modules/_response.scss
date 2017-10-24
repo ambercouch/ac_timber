@@ -1,3 +1,58 @@
 .response{
-  padding: $inuit-global-spacing-unit;
+  padding: $inuit-global-spacing-unit-tiny;
+
+
+  grid-template-columns:33.3% auto;
+  grid-column-gap: $inuit-global-spacing-unit-tiny;
+  grid-template-rows: auto;
+  //grid-template-areas: 'head content';
+
+  @include mq($from : mobile){
+    display: grid;
+  }
+
+  @include mq($from : tablet){
+    padding: $inuit-global-spacing-unit-small;
+    grid-template-columns:25% auto;
+
+    grid-column-gap: $inuit-global-spacing-unit-small;
+  }
+  @include mq($from : desktop){
+    padding: $inuit-global-spacing-unit;
+    grid-column-gap: $inuit-global-spacing-unit;
+    grid-template-columns:15% auto;
+  }
+
+}
+
+.response__{
+  &meta{
+    //grid-area: content;
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+  &content{
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  &metadata{
+    //grid-area: head;
+  }
+  &author-avatar{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  &reply-link{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    text-align: right;
+  }
+  &date{
+    @include inuit-font-size($inuit-font-size-h5)
+  }
 }
