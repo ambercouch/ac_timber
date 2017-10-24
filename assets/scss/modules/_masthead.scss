@@ -1,18 +1,27 @@
 .masthead{
-  @extend .o-site-wrapper;
-  padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
+
+
   border-bottom:none;
+  background: transparent;
+  position: absolute;
+  z-index: 9999;
+  width: 100%;
 }
-.masthead{
-  &__navigation{
+.masthead__{
+  &navigation{
     @extend %off-page--curtain;
   }
-  &__widget-area{
+  &widget-area{
     @extend .o-site-wrapper;
     display: none;
     width: 100%;
     margin: 0 auto;
     height: $inuit-global-spacing-unit;
     background: #2f2d35;
+  }
+  &branding{
+    @extend .o-site-wrapper;
+    background: transparent;
+    padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
   }
 }
