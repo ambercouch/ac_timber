@@ -6,12 +6,22 @@
 .comments__{
   &wrapper{
     display: block;
-    padding:$inuit-global-spacing-unit;
+    padding:$inuit-global-spacing-unit-small 0;
     margin-bottom:$inuit-global-spacing-unit;
     background: #eee;
+    @include mq($from : tablet){
+      padding:$inuit-global-spacing-unit;
+
+    }
   }
   &heading{
     display: block;
+    padding: 0 $inuit-global-spacing-unit;
+    margin-bottom:  $inuit-global-spacing-unit-small;
+    @include mq($from : tablet){
+      padding:0;
+      margin-bottom:  $inuit-global-spacing-unit;
+    }
   }
   &list{
     margin: 0;
@@ -50,7 +60,16 @@
 
 .comments__item--{
   &children{
-    margin: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+    margin: 0 0 $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
     background: #fff;
+
+    @include mq($from : tablet, $until : desktop){
+      margin: 0 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;
+
+    }
+    @include mq($from : desktop){
+      margin: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+
+    }
   }
 }

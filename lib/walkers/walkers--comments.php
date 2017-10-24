@@ -6,18 +6,15 @@ class Ac_Walker_Comment extends Walker_Comment {
         ?>
         <<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $this->has_children ? 'comments__item--parent' : 'comments__item--children', $comment ); ?>>
         <article id="div-comment-<?php comment_ID(); ?>" class="response">
-            <footer class="response__meta">
-                <div class="response__author vcard">
-                    <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-                    <?php
-                    /* translators: %s: comment author link */
-                    printf( __( '%s <span class="says">says:</span>' ),
-                        sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
-                    );
-                    ?>
-                </div><!-- .comment-author -->
-
+          <div class="response__author-avatar vcard">
+              <?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+          </div><!-- .comment-author -->
+          <footer class="response__meta">
                 <div class="response__metadata">
+                    <div class="response__author-name">
+                        <?php echo get_comment_author_link( $comment ); ?>
+                    </div>
+                  <div class="response__date">
                     <a href="<?php echo esc_url( get_comment_link( $comment, $args ) ); ?>">
                         <time datetime="<?php comment_time( 'c' ); ?>">
                             <?php
@@ -27,17 +24,16 @@ class Ac_Walker_Comment extends Walker_Comment {
                         </time>
                     </a>
                     <?php edit_comment_link( __( 'Edit' ), '<span class="edit-link">', '</span>' ); ?>
+                  </div>
                 </div><!-- .comment-metadata -->
 
                 <?php if ( '0' == $comment->comment_approved ) : ?>
                     <p class="response__awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
                 <?php endif; ?>
             </footer><!-- .comment-meta -->
-
-            <div class="response__content">
-                <?php comment_text(); ?>
-            </div><!-- .comment-content -->
-
+          <div class="response__content">
+              <?php comment_text(); ?>
+          </div><!-- .comment-content -->
             <?php
             comment_reply_link( array_merge( $args, array(
                 'add_below' => 'div-comment',

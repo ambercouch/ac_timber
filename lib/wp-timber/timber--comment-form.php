@@ -25,14 +25,6 @@ function act_comment_form_defaults( $defaults ) {
     return $defaults;
 }
 
-//Update cancel_comment_reply_link
-add_filter( 'cancel_comment_reply_link', 'act_cancel_comment_reply_link');
-function act_cancel_comment_reply_link( $formatted_link ){
-    //Add class to cancel-reply-link
-    $formatted_link = '<a class="comment__cancel-reply-link" rel="nofollow" id="cancel-comment-reply-link" href="' . $link . '"' . $style . '>' . $text . '</a>';
-    return $formatted_link;
-}
-
 //Reorder the form fields
 add_filter( 'comment_form_fields', 'act_reorder_comment_form_fields' );
 function act_reorder_comment_form_fields( $fields ) {
@@ -44,27 +36,6 @@ function act_reorder_comment_form_fields( $fields ) {
     $fields['comment'] = $comment_field;
     return $fields;
 }
-
-// $args for comment_list
-$args = array(
-    'walker'            => New Ac_Walker_Comment, //new walker to just update the comment template
-    'max_depth'         => '2', //set depth to 2 for only 1 reply deep
-    'style'             => 'ol',
-    'callback'          => null,
-    'end-callback'      => null,
-    'type'              => 'all',
-    'reply_text'        => 'Reply',
-    'page'              => '',
-    'per_page'          => '',
-    'avatar_size'       => 100,
-    'reverse_top_level' => null,
-    'reverse_children'  => '',
-    'format'            => 'html5',
-    'short_ping'        => false,
-    'echo'              => false // don't echo the form as we will store it in the twig context var
-);
-// $args for comment_list passed to twig
-$context['comment_list'] = wp_list_comments($args, get_comments(array('post_id' => $post->ID)));
 
 // $args for comment_form()
 $args = array(
@@ -88,3 +59,40 @@ $args = array(
 );
 // $args for comment_form() passed to twig templates
 $context['comment_form_args'] = $args;
+
+
+//Update cancel_comment_reply_link
+add_filter( 'get_comment_author_link', 'act_get_comment_author_link', 10, 3);
+function act_get_comment_author_link( $return, $author, $comment_comment_id ){
+    //Add class to cancel-reply-link
+    return  $return;
+}
+
+//Update cancel_comment_reply_link
+add_filter( 'cancel_comment_reply_link', 'act_cancel_comment_reply_link');
+function act_cancel_comment_reply_link( $formatted_link ){
+    //Add class to cancel-reply-link
+    $formatted_link = '<a class="comment__cancel-reply-link" rel="nofollow" id="cancel-comment-reply-link" href="' . $link . '"' . $style . '>' . $text . '</a>';
+    return $formatted_link;
+}
+
+// $args for comment_list
+$args = array(
+    'walker'            => New Ac_Walker_Comment, //new walker to just update the comment template
+    'max_depth'         => '2', //set depth to 2 for only 1 reply deep
+    'style'             => 'ol',
+    'callback'          => null,
+    'end-callback'      => null,
+    'type'              => 'all',
+    'reply_text'        => 'Reply',
+    'page'              => '',
+    'per_page'          => '',
+    'avatar_size'       => 100,
+    'reverse_top_level' => null,
+    'reverse_children'  => '',
+    'format'            => 'html5',
+    'short_ping'        => false,
+    'echo'              => false // don't echo the form as we will store it in the twig context var
+);
+// $args for comment_list passed to twig
+$context['comment_list'] = wp_list_comments($args, get_comments(array('post_id' => $post->ID)));
