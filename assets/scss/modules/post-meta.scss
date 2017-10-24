@@ -12,6 +12,8 @@
   }
 
   &post-date{
+    @include inuit-font-size($inuit-font-size-h5, 1.5);
+    display: block;
     visibility: inherit;
   }
 
@@ -25,6 +27,11 @@
 
   &post-author{
     visibility: inherit;
+  }
+
+  &post-edit{
+    @include inuit-font-size($inuit-font-size-h5, 1.5);
+    display: block;
   }
 }
 

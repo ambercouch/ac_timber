@@ -1,6 +1,7 @@
 <?php
-//Love, love, love, love all you functions
 
+
+//Love, love, love, love all you functions
 require_once get_template_directory() . '/lib/functions--ac-sidebars.php';
 require_once get_template_directory() . '/lib/functions--ac-settings.php';
 require_once get_template_directory() . '/lib/functions--timber.php';
@@ -16,6 +17,13 @@ require_once get_template_directory() . '/lib/functions--cpt.php';
 
 require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
+require_once get_template_directory() . '/lib/functions--walkers.php';
+
+
+//function comment_layout($comment, $args, $depth) {
+//    $GLOBALS['comment'] = $comment;
+//return 'commenters';
+//}
 
 //function add_style_select_buttons( $buttons ) {
 //    array_unshift( $buttons, 'styleselect' );

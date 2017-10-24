@@ -1,0 +1,27 @@
+<div class="post-meta">
+
+  <div class="post-meta__post-type">
+    <div class="post-type">
+      <svg class="icon post-type__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none">
+        <title>{{ postFormat }}</title>
+        <desc>Post type {{ postFormat }}</desc>
+        <use xlink:href="#post-{{ postFormat }}"/>
+      </svg>
+    </div>
+  </div>
+
+
+  <div class="post-meta__tagged">
+    <div class="tagged">
+      {{ fn('_act_entry_footer') }}
+    </div>
+  </div>
+
+  <span class="post-meta__post-date">{{ post.date }}</span>
+{% if postEditUrl != '' %}
+  <span class="post-meta__post-edit">
+  <a  class="post-meta__post-edit-link" href="{{ postEditUrl }}" title="Edit {{ post.title }}">Edit</a>
+  </span>
+{% endif %}
+
+</div>

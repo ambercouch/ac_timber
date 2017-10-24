@@ -1,6 +1,3 @@
-{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
-{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
-
 <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
   {% if post.get_field('video_id') %}
     <div class="post__feature-image{{ postFormatClass }}">
@@ -21,17 +18,7 @@
       <a class="entry-header post__heading-link{{ postFormatClass }}"  href="{{ post.link }}">{{ post.title }}</a>
     </h2>
     <div class="entry-meta post__post-meta{{ postFormatClass }}">
-      <div class="post-meta">
-
-        <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none" >
-          <title>{{ postFormatRead }}</title>
-          <desc>Post type {{ postFormatRead }}</desc>
-          <use xlink:href="#icon-post{{ postFormat }}" />
-        </svg>
-
-        <span class="post-meta__date">{{ post.date }}</span>
-
-      </div>
+      {% include 'inc/post-meta.twig' %}
     </div>
   </header>
 

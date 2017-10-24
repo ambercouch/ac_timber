@@ -53,22 +53,7 @@
         </div>
         {% block belowContent %}
           {% if (fn('comments_open')) %}
-            <section id="comments" class="comments">
-              <h3 class="comments__title">Comments</h3>
-              <div class="comments__response">
-                {%   if post.get_comments() %}
-                {% for cmt in post.get_comments() %}
-                  {% include "inc/comment.twig" with {comment:cmt} %}
-                {% endfor %}
-                {%  else %}
-                <p>No one has left a comment yet - Why not be the first!</p>
-                {% endif %}
-              </div>
-              <h3 class="comments__title">Leave a Reply</h3>
-              <div class="comments__respond">
-                {{ comment_form }}
-              </div>
-            </section>
+            {% include 'inc/comments.twig' %}
           {% endif %}
         {% endblock %}
       </main>

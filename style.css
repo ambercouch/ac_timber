@@ -3065,7 +3065,7 @@ p {
   [data-state=on].masthead__navigation {
     right: -0rem; }
 
-.cf:after, .comment-form__submit-wrapper:after {
+.cf:after {
   content: "" !important;
   display: block !important;
   clear: both !important; }
@@ -3073,6 +3073,22 @@ p {
 .o-site-wrapper, .main, .masthead__widget-area, .masthead__branding, .footer__content {
   background: white;
   padding: 35px 140px; }
+
+.o-btn, .comment-respond__submit, .comment-respond__input--submit {
+  transition: background 0.3s ease;
+  display: block;
+  line-height: 1;
+  width: 100%;
+  border: none;
+  padding: 18px 9px;
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1;
+  background: #414042;
+  color: #fff; }
+
+.o-btn:hover, .comment-respond__submit:hover, .comment-respond__input--submit:hover {
+  background: #282728; }
 
 .page {
   min-height: 100vh; }
@@ -3232,13 +3248,15 @@ p {
   margin-bottom: 70px; }
 
 .post__header, [class*='post__header--'] {
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  position: relative; }
 
 .post__heading, [class*='post__heading--'] {
   font-size: 32.28531px;
   font-size: 1.46751rem;
   line-height: 1.09028;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  margin-left: 1.5em; }
 
 .post__heading-link, [class*='post__heading-link--'] {
   text-decoration: none; }
@@ -3276,6 +3294,10 @@ p {
   left: 0; }
 
 .post-meta__post-date, [class*=post-meta__post-date--] {
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1.5;
+  display: block;
   visibility: inherit; }
 
 .post-meta__post-tags, [class*=post-meta__post-tags--] {
@@ -3286,6 +3308,12 @@ p {
 
 .post-meta__post-author, [class*=post-meta__post-author--] {
   visibility: inherit; }
+
+.post-meta__post-edit {
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1.5;
+  display: block; }
 
 .post-type, [class*=post-type--] {
   visibility: visible;
@@ -3409,53 +3437,73 @@ p {
   max-width: 100%;
   margin: 0 auto; }
 
-.comment-form {
+.comments__wrapper, [class*=comments__wrapper--] {
+  display: block;
+  padding: 35px;
+  margin-bottom: 35px;
+  background: #eee; }
+
+.comments__heading, [class*=comments__heading--] {
+  display: block; }
+
+.comments__list, [class*=comments__list--] {
+  margin: 0;
+  margin-bottom: 35px; }
+
+.comments__item, [class*=comments__item--] {
+  list-style: none;
+  background: #ddd;
+  margin-bottom: 35px;
+  padding-bottom: 35px; }
+
+.comments__wrapper--responses {
+  margin-bottom: 0;
+  border-bottom: solid #ccc; }
+
+.comments__item--children {
+  margin: 0 35px 35px 70px;
+  background: #fff; }
+
+.comment-respond {
   padding: 0 70px;
   max-width: 800px;
   margin: 0 auto; }
 
-.comment-form__notes {
+.comment-respond__notes {
   margin-bottom: 35px;
-  padding: 35px 70px;
+  padding: 18px;
   background: #fff;
-  font-size: 18px;
-  font-size: 0.81818rem;
-  line-height: 1.95556; }
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1; }
 
-.comment-form__comment {
-  margin-bottom: 70px; }
-
-.comment-form textarea {
+.comment-respond__input, [class*=comment-respond__input--] {
   border: solid 5px rgba(0, 0, 0, 0.2);
-  padding: 35px 70px;
-  font-size: 10.21546px;
-  font-size: 0.46434rem;
-  line-height: 3.44576;
-  width: 100%; }
+  padding: 18px 9px;
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 1;
+  width: 100%;
+  display: block; }
 
-.comment-form input:not([type=submit]) {
-  border: solid 5px rgba(0, 0, 0, 0.2);
-  padding: 35px 70px;
-  font-size: 10.21546px;
-  font-size: 0.46434rem;
-  line-height: 3.44576;
-  width: 100%; }
+.comment-respond__label {
+  display: none; }
 
-.comment-form label {
-  display: block;
-  font-size: 10.21546px;
-  font-size: 0.46434rem;
-  line-height: 3.44576; }
+.comment-respond__input-wrapper, [class*=comment-respond__input-wrapper--] {
+  margin-bottom: 9px; }
 
-.comment-form p {
-  margin-bottom: 70px; }
+.comment-respond__reply-to {
+  margin-bottom: 9px; }
 
-.comment-form__submit-wrapper {
-  padding: 70px 0; }
+.comment-respond__email-notes {
+  line-height: 1.3; }
+  .comment-respond__email-notes small {
+    font-size: 14.99134px;
+    font-size: 0.68142rem;
+    line-height: 1; }
 
-.comment-form__submit {
-  display: inline-block;
-  float: right; }
+.response {
+  padding: 35px; }
 
 .footer {
   padding-top: 70px; }
