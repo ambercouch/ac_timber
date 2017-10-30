@@ -66,6 +66,9 @@ ACT = {
         },
         bathroom_inspiration: function () {
             // ACT.ac_fn.gallery();
+        },
+        admin_forms_time_sheet: function (){
+
         }
     },
     home: {
