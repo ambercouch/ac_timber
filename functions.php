@@ -14,6 +14,15 @@ require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php
 require_once get_template_directory() . '/lib/functions--tile.php';
 require_once get_template_directory() . '/lib/functions--our-work.php';
 
+function my_enqueue($hook) {
+//    if ('edit.php' !== $hook) {
+//        return;
+//    }
+    wp_enqueue_script('my_custom_script', get_bloginfo('template_directory') . '/dist/js/adminscript.js');
+}
+
+add_action('admin_enqueue_scripts', 'my_enqueue');
+
 
 
 
