@@ -32,4 +32,9 @@ $templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
 if ( is_front_page() ) {
     array_unshift( $templates, 'front-page.twig' );
 }
-Timber::render( $templates, $context );
+
+if ( post_password_required( $post->ID ) ) {
+    Timber::render( 'single-password.twig', $context );
+} else {
+    Timber::render( $templates, $context );
+}
