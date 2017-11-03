@@ -8,19 +8,19 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
-
-
-
-{% block feature %}
-{% endblock %}
-
-
 {% block content %}
 
   {% for post in posts %}
     {% include 'content-single-page'~template_slug~'.twig' %}
   {% endfor %}
 
+{% endblock %}
+
+
+  {% block subsidiary %}
+    <section id="subsidiary" class="site__subsidiary">
+      {% include 'inc/navigation-service.twig' %}
+    </section>
 {% endblock %}
 
 
