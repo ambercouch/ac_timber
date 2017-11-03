@@ -54,6 +54,9 @@ class StarterSite extends TimberSite {
         //Hero Menu
         $context['menuHero'] = new TimberMenu('hero');
 
+        //Primary Menu
+        $context['menuServices'] = new TimberMenu('services');
+
         //Set up sidebars defined functions--ac-sidebars.php
         foreach( unserialize(SIDEBARS) as $sidebar ) {
             $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
@@ -63,6 +66,7 @@ class StarterSite extends TimberSite {
          * ACF Settings Setup
          */
 
+        global $post_id;
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
