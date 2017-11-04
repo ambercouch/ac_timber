@@ -1,9 +1,10 @@
 .site-title{
   display: block;
   margin: 0;
-  width: 340px;
-  height: 20px;
+  width: auto;
+  height: auto;
   max-width:100%;
+  text-align: center;
   &__link{
     display: block;
   }
