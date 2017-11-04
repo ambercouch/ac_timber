@@ -16,6 +16,7 @@
 @import "var/settings.shadows";
 @import "var/settings.headings";
 @import "var/settings.widths";
+@import "var/settings.responsive";
 
 
 
@@ -67,6 +68,9 @@
 @import "modules/response";
 @import "modules/footer";
 @import "modules/widget_act_company_address";
+@import "modules/navigation";
+@import "modules/subsidiary";
+@import "modules/image-menu-item";
 
 //@import "ui/modules/placeholders/container";
 //@import "ui/modules/placeholders/layout";
@@ -77,7 +81,7 @@
 //@import "ui/modules/placeholders/nav-break-points";
 //@import "ui/modules/site";
 //@import "ui/modules/master-header";
-//@import "ui/modules/navigation";
+
 //@import "ui/modules/content";
 //@import "ui/modules/subsidiary";
 //@import "ui/modules/footer";
