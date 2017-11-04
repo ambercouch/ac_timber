@@ -29,6 +29,9 @@
   <header id="masthead" class="site__masthead {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
     {% include 'inc/masthead.twig' %}
   </header>
+<nav id="navPrimary" class="site__navigation" >
+  {% include 'inc/navigation-primary.twig' %}
+</nav>
   {% endblock %}
 
   {% block hero %}
