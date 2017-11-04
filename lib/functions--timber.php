@@ -19,8 +19,9 @@ class StarterSite extends TimberSite {
         add_image_size ( 'feature500', 500, 500, true );
         add_image_size ( 'feature16-9', 1600, 900, true );
         add_image_size ( 'feature16-4', 1600, 400, true );
-
-
+        add_image_size ( 'serviceMenuLarge', 600, 900, true );
+        add_image_size ( 'serviceMenuMedium', 400, 600, true );
+        add_image_size ( 'serviceMenuSmall', 200, 300, true );
 
 
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
@@ -44,6 +45,7 @@ class StarterSite extends TimberSite {
 
         //Site vars
         $context['site'] = $this;
+        $context['environment'] = ENVIRONMENT;
 
         //AC Template settings
         $context['acSettings'] = acSettings();
@@ -54,6 +56,9 @@ class StarterSite extends TimberSite {
         //Hero Menu
         $context['menuHero'] = new TimberMenu('hero');
 
+        //Primary Menu
+        $context['menuServices'] = new TimberMenu('services');
+
         //Set up sidebars defined functions--ac-sidebars.php
         foreach( unserialize(SIDEBARS) as $sidebar ) {
             $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
@@ -63,6 +68,7 @@ class StarterSite extends TimberSite {
          * ACF Settings Setup
          */
 
+        global $post_id;
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
