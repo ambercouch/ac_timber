@@ -8,6 +8,9 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
+{% block hero %}
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}
@@ -17,10 +20,8 @@
 {% endblock %}
 
 
-  {% block subsidiary %}
-    <section id="subsidiary" class="site__subsidiary">
-      {% include 'inc/navigation-service.twig' %}
-    </section>
+{% block subsidiary %}
+
 {% endblock %}
 
 
