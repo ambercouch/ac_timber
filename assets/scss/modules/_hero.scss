@@ -3,6 +3,10 @@
   height: 100vh;
   position: relative;
   background-position: center 0;
+  background-size: cover;
+  @include mq($from : desktop){
+    background-position: center 25%;
+  }
 }
 
 .hero__{
@@ -11,6 +15,7 @@
     top:50%;
     transform: translate(0,-50%);
     width: 100%;
+    z-index: 1;
     //background: rgba(#fff, 0.8 );
   }
   &body{
