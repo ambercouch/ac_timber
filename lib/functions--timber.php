@@ -22,7 +22,7 @@ class StarterSite extends TimberSite {
         add_image_size ( 'serviceMenuLarge', 600, 900, true );
         add_image_size ( 'serviceMenuMedium', 400, 600, true );
         add_image_size ( 'serviceMenuSmall', 200, 300, true );
-        
+
 
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
@@ -45,6 +45,7 @@ class StarterSite extends TimberSite {
 
         //Site vars
         $context['site'] = $this;
+        $context['environment'] = ENVIRONMENT;
 
         //AC Template settings
         $context['acSettings'] = acSettings();
