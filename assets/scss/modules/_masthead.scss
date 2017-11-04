@@ -1,7 +1,7 @@
 .masthead{
   @extend .o-site-wrapper;
   padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
-  border-bottom:solid $inuit-global-spacing-unit #2f2d35;
+  //border-bottom:solid $inuit-global-spacing-unit #2f2d35;
 }
 .masthead{
   &__navigation{
