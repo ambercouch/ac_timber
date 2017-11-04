@@ -1,5 +1,5 @@
 <!doctype html>
-<html {{ site.language_attributes }}>
+<html {{ site.language_attributes }} data-env-{{environment}}={{environment}}>
 <head>
   {% block before_head %}
   {% endblock %}
@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="{{ body_class }}">
+<body class="{{ body_class }}" >
 <div class="defs" style="display: none">
 {% include 'inc/defs.svg' ignore missing %}
 </div>
