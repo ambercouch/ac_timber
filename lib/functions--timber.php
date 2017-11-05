@@ -27,6 +27,8 @@ class StarterSite extends TimberSite {
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 
+        add_filter('widget_text','do_shortcode');
+
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
 
