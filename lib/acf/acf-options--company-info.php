@@ -11,7 +11,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Company Name',
                 'name' => 'company_name',
                 'type' => 'text',
-                'instructions' => '',
+                'instructions' => 'shortcode : [act_theme_settings key="company_name"]',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -32,7 +32,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Street Address',
                 'name' => 'street_address',
                 'type' => 'text',
-                'instructions' => '',
+                'instructions' => 'shortcode : [act_theme_settings key="street_address"]',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -53,7 +53,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Address Locality',
                 'name' => 'address_locality',
                 'type' => 'text',
-                'instructions' => '',
+                'instructions' => 'shortcode : [act_theme_settings key="address_locality"]',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -72,9 +72,9 @@ if( function_exists('acf_add_local_field_group') ):
             array (
                 'key' => 'field_5807527a486e0',
                 'label' => 'City',
-                'name' => 'cit',
+                'name' => 'city',
                 'type' => 'text',
-                'instructions' => '',
+                'instructions' => 'shortcode : [act_theme_settings key="city"] ',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -95,7 +95,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Postcode',
                 'name' => 'postcode',
                 'type' => 'text',
-                'instructions' => '',
+                'instructions' => 'short code : [act_theme_settings key="postcode"]',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
