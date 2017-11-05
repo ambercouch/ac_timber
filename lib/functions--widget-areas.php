@@ -12,7 +12,7 @@ function _act_widgets_init() {
             'description' => '',
             'before_widget' => '<aside id="%1$s" class="'.strtolower($sidebar).'__widget %2$s"><div  class="widget widget--'.strtolower($sidebar).'">',
             'after_widget' => '</div></aside>',
-            'before_title' => '<h3 class="widget--'.strtolower($sidebar).'__title">',
+            'before_title' => '<h3 class="widget__title--'.strtolower($sidebar). '" >',
             'after_title' => '</h3>'
         ));
     }
