@@ -3646,7 +3646,8 @@ p {
   background: #c2d1d4; }
   @media (min-width: 52.5em) {
     .footer__content {
-      display: flex; } }
+      display: flex;
+      flex-wrap: wrap; } }
 
 .footer__company-logo {
   display: block;
@@ -3672,6 +3673,10 @@ p {
       padding-left: 35px; } }
   .footer__widget:first-child {
     padding-left: 0; }
+  @media (min-width: 52.5em) and (max-width: 68.74em) {
+    .footer__widget:last-child {
+      padding-left: 0;
+      width: 100% !important; } }
 
 .widget_act_company_address {
   max-width: 300px;
@@ -3881,3 +3886,47 @@ p {
 
 .image-menu-item__content-link {
   text-decoration: none; }
+
+/*
+  BEM BLOCK .contact-form
+ */
+.contact-form, [class*=contact-form--], .wpcf7 {
+  display: block;
+  background: rgba(0, 120, 138, 0.1);
+  padding: 9px !important;
+  width: 400px;
+  max-width: 100%; }
+
+/*
+  BEM BLOCK MODIFIER .contact-form--
+ */
+.contact-form--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .contact-form__
+ */
+.contact-form__header, [class*=contact-form__header--] {
+  display: block; }
+
+.contact-form__input-wrapper, [class*=contact-form__input-wrapper--], .wpcf7-form-control-wrap {
+  display: block;
+  margin-bottom: 9px; }
+
+.contact-form__input, .wpcf7-text, .wpcf7-textarea, .wpcf7-submit {
+  display: block;
+  width: 100%;
+  border: none;
+  padding: 9px; }
+
+.contact-form__content {
+  display: block; }
+
+.contact-form__footer {
+  display: block; }
+
+.contact-form__input-wrapper--submit {
+  padding-top: 18px; }
+
+.wpcf7-submit {
+  padding: 9px; }
