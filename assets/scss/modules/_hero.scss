@@ -1,5 +1,5 @@
 .hero{
-  @include colour-cast($color: #00788a, $opacity : 0.3);
+  //@include colour-cast($color: $brand-col-2, $opacity : 0.3);
   height: 100vh;
   position: relative;
   background-position: center 0;
