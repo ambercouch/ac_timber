@@ -5,7 +5,8 @@ define('SIDEBARS', serialize(
         'Primary',
         'Subsidiary',
         'Footer',
-        'Masthead',
+        'MastheadAfter',
+        'MastheadBefore',
         'Beforefooter')
 ));
 
