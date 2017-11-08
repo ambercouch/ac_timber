@@ -1,11 +1,11 @@
 <div class="navigation--primary">
-  <ul class="navigation--primary__list">
+  <ul class="navigation__list">
     {% for item in menuPrimary.get_items %}
-      <li class="navigation--primary__item {{item.classes | join(' ')}}"><a class="navigation--primary__link" href="{{item.get_link}}">{{item.title}}</a>
+      <li class="navigation__item {{item.classes | join(' ')}}"><a class="navigation--primary__link" href="{{item.get_link}}">{{item.title}}</a>
         {% if item.get_children %}
-          <ul class="navigation--primary__sub-list">
+          <ul class="navigation__sub-list">
             {% for child in item.get_children %}
-              <li class="navigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+              <li class="navigation__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
             {% endfor %}
           </ul>
         {% endif %}
