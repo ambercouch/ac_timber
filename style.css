@@ -694,13 +694,13 @@ table {
  */
 /* stylelint-disable */
 /* stylelint-enable */
-.o-wrapper, .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .masthead__widget-area, .masthead__branding {
+.o-wrapper, .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
   padding-right: 35px;
   padding-left: 35px;
   margin-right: auto;
   margin-left: auto;
   max-width: 1600px; }
-  .o-wrapper:after, .o-site-wrapper:after, .o-site-wrapper--responsive:after, .main:after, .footer__content:after, .subsidiary:after, [class*=subsidiary--]:after, .masthead__widget-area:after, .masthead__branding:after {
+  .o-wrapper:after, .o-site-wrapper:after, .o-site-wrapper--responsive:after, .main:after, .footer__content:after, .subsidiary:after, [class*=subsidiary--]:after {
     content: "" !important;
     display: block !important;
     clear: both !important; }
@@ -1129,7 +1129,7 @@ table {
  * Note: Declaring the item-class might not be necessary everywhere but
  * is for example in <dl> lists for the <dd> childs.
  */
-.o-list-bare, .navigation__list, [class*=navigation__list--] {
+.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list {
   list-style: none;
   margin-left: 0; }
 
@@ -1142,11 +1142,11 @@ table {
 /**
  * The list-inline object simply displays a list of items in one line.
  */
-.o-list-inline {
+.o-list-inline, .nav-menu__list {
   margin-left: 0;
   list-style: none; }
 
-.o-list-inline__item {
+.o-list-inline__item, .o-list-inline > *, .nav-menu__list > * {
   display: inline-block; }
 
 /* ==========================================================================
@@ -3068,14 +3068,13 @@ html {
       /* [1] */ } }
 
 body {
-  background: #e5e5e5;
   height: 100%; }
 
 a, a:focus {
-  color: #00788a; }
+  color: #c3922e; }
 
 a:hover, a:focus {
-  color: #001f24; }
+  color: #70541b; }
 
 /*
   This variable sets the width of the site used as max width in 
@@ -3106,7 +3105,7 @@ p {
   height: 100%;
   width: 400px;
   width: 20rem;
-  background: #00788a;
+  background: #c3922e;
   transition: right 0.4s cubic-bezier(0.6, 0.72, 0.38, 1.08);
   z-index: 9999; }
   [data-state=on].masthead__navigation {
@@ -3117,21 +3116,21 @@ p {
   display: block !important;
   clear: both !important; }
 
-.o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .masthead__widget-area, .masthead__branding {
-  background: white;
-  padding: 140px; }
+.o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+  background: transparent;
+  padding: 35px; }
 
 .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
-  padding: 17.5px; }
+  padding: 4.375px; }
   @media (min-width: 27.5em) and (max-width: 52.49em) {
     .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
-      padding: 35px; } }
+      padding: 8.75px; } }
   @media (min-width: 52.5em) and (max-width: 68.74em) {
     .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
-      padding: 70px; } }
+      padding: 17.5px; } }
   @media (min-width: 68.75em) {
     .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
-      padding: 140px; } }
+      padding: 35px; } }
 
 .o-btn, .o-btn--tiny, .image-menu-item__content-link, .comment-respond__submit, .comment-respond__input--submit {
   transition: background 0.3s ease;
@@ -3143,17 +3142,41 @@ p {
   font-size: 18.16066px;
   font-size: 0.82548rem;
   line-height: 1;
-  background: #00788a;
+  background: #c3922e;
   color: #fff; }
 
 .o-btn:hover, .o-btn--tiny:hover, .image-menu-item__content-link:hover, .comment-respond__submit:hover, .comment-respond__input--submit:hover {
-  background: #004c57; }
+  background: #9a7324; }
 
 .o-btn--tiny, .image-menu-item__content-link {
   padding: 9px 9px;
   font-size: 14px;
   font-size: 0.63636rem;
   line-height: 1; }
+
+/* ==========================================================================
+   #LIST-INLINE
+   ========================================================================== */
+/**
+ * The list-inline object simply displays a list of items in one line.
+ */
+.o-list-inline, .nav-menu__list {
+  margin-left: 0;
+  list-style: none; }
+
+/* ==========================================================================
+   #LIST-BARE
+   ========================================================================== */
+/**
+ * Strip list-like appearance from lists by removing their bullets, and any
+ * indentation.
+ *
+ * Note: Declaring the item-class might not be necessary everywhere but
+ * is for example in <dl> lists for the <dd> childs.
+ */
+.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list {
+  list-style: none;
+  margin: 0; }
 
 .page {
   min-height: 100vh; }
@@ -3164,6 +3187,9 @@ p {
   @media (min-width: 68.75em) {
     .main {
       padding-top: 70px; } }
+
+.site__masthead {
+  background: #40444D; }
 
 .site__hero {
   height: 100vh; }
@@ -3184,7 +3210,7 @@ p {
       width: 50%; } }
 
 .feature-cat__title {
-  background: #00788a;
+  background: #c3922e;
   color: #fff;
   padding: 0.5em 1em;
   font-size: 14.99134px;
@@ -3195,9 +3221,8 @@ p {
 
 .site-title, [class*=site-title--] {
   display: block;
-  margin: 18px 0;
-  width: 340px;
-  height: 20px;
+  margin: 0;
+  width: 300px;
   max-width: 100%; }
 
 .site-title__link {
@@ -3218,7 +3243,7 @@ p {
   height: 3.2em;
   z-index: 99999;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-  background: rgba(0, 120, 138, 0.2); }
+  background: rgba(195, 146, 46, 0.2); }
   .btn--menu[data-state=on] {
     transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     right: 14rem; }
@@ -3268,37 +3293,28 @@ p {
     transform: rotate(45deg) translate(-0.3em, 0); }
 
 .masthead {
-  border-bottom: none;
-  background: transparent;
-  position: absolute;
-  z-index: 9999;
-  width: 100%; }
+  padding: 9px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  @media (min-width: 68.75em) {
+    .masthead {
+      flex-direction: row;
+      align-items: flex-start; } }
 
-.masthead__widget-area {
-  display: none;
-  width: 100%;
-  margin: 0 auto;
-  height: 35px;
-  background: #2f2d35; }
+@media (min-width: 68.75em) {
+  .masthead__masthead-after-widgets {
+    margin-left: auto; } }
 
 .masthead__branding {
   background: transparent;
-  padding: 35px 35px; }
+  max-width: 100%; }
 
 .hero {
   height: 100vh;
   position: relative;
   background-position: center 0;
   background-size: cover; }
-  .hero:before {
-    transition: opacity 0.5s ease;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #00788a;
-    opacity: 0.3;
-    z-index: 1; }
   @media (min-width: 68.75em) {
     .hero {
       background-position: center 25%; } }
@@ -3643,7 +3659,7 @@ p {
 
 .footer__content {
   margin: 0 auto;
-  background: #c2d1d4; }
+  background: #40444D; }
   @media (min-width: 52.5em) {
     .footer__content {
       display: flex;
@@ -3868,7 +3884,7 @@ p {
     content: '';
     width: calc(100% - 10px);
     height: calc(100% - 10px);
-    border: solid 1px #c2d1d4;
+    border: solid 1px #40444D;
     position: absolute;
     left: 5px;
     top: 5px;
@@ -3877,11 +3893,11 @@ p {
 .image-menu-item__content-title {
   margin: 0;
   line-height: 1.3;
-  color: #0E2326; }
+  color: #eed688; }
 
 .image-menu-item__content-hr {
   margin: 18px;
-  border-bottom: solid 1px #c2d1d4;
+  border-bottom: solid 1px #40444D;
   border-top: none; }
 
 .image-menu-item__content-link {
@@ -3892,7 +3908,7 @@ p {
  */
 .contact-form, [class*=contact-form--], .wpcf7 {
   display: block;
-  background: rgba(0, 120, 138, 0.1);
+  background: rgba(195, 146, 46, 0.1);
   padding: 9px !important;
   width: 400px;
   max-width: 100%; }
@@ -3930,3 +3946,81 @@ p {
 
 .wpcf7-submit {
   padding: 9px; }
+
+/*
+  BEM BLOCK .nav-menu
+ */
+.nav-menu, [class*=nav-menu--] {
+  display: block; }
+
+/*
+  BEM BLOCK MODIFIER .nav-menu--
+ */
+.nav-menu--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .nav-menu__
+ */
+.nav-menu__header, [class*=nav-menu__header--] {
+  display: block; }
+
+.nav-menu__list {
+  text-align: center; }
+  @media (min-width: 68.75em) {
+    .nav-menu__list {
+      text-align: right; } }
+
+.nav-menu__item {
+  margin-left: 9px;
+  margin-right: 9px; }
+  @media (min-width: 68.75em) {
+    .nav-menu__item {
+      margin-right: 0; } }
+  @media (min-width: 68.75em) {
+    .nav-menu__item:first-child {
+      margin-left: 0; } }
+  @media (min-width: 68.75em) {
+    .nav-menu__item:last-child {
+      margin-right: 0; } }
+
+.nav-menu__link {
+  transition: color 0.3s ease;
+  padding: 9px;
+  text-decoration: none; }
+  .nav-menu__link:hover {
+    color: #d3a546; }
+
+/*
+  BEM BLOCK .masthead-after-widgets
+ */
+.masthead-after-widgets, [class*=masthead-after-widgets--] {
+  margin-top: 9px;
+  display: block; }
+
+/*
+  BEM BLOCK MODIFIER .masthead-after-widgets--
+ */
+.masthead-after-widgets--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .masthead-after-widgets__
+ */
+.masthead-after-widgets__header, [class*=masthead-after-widgets__header--] {
+  display: block; }
+
+.masthead-after-widgets__heading {
+  display: block; }
+
+.masthead-after-widgets__title {
+  display: inline; }
+
+.masthead-after-widgets__link {
+  display: inline; }
+
+.masthead-after-widgets__content {
+  display: block; }
+
+.masthead-after-widgets__footer {
+  display: block; }

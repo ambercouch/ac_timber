@@ -1,27 +1,25 @@
 .masthead{
-
-
-  border-bottom:none;
-  background: transparent;
-  position: absolute;
-  z-index: 9999;
-  width: 100%;
+  padding: $inuit-global-spacing-unit-tiny;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mq($from: desktop){
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 .masthead__{
   &navigation{
     @extend %off-page--curtain;
   }
-  &widget-area{
-    @extend .o-site-wrapper;
-    display: none;
-    width: 100%;
-    margin: 0 auto;
-    height: $inuit-global-spacing-unit;
-    background: #2f2d35;
+  &masthead-after-widgets{
+
+    @include mq($from: desktop){
+      margin-left: auto;
+    }
   }
   &branding{
-    @extend .o-site-wrapper;
     background: transparent;
-    padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
+    max-width: 100%;
   }
 }
