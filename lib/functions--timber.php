@@ -116,4 +116,5 @@ function myfoo( $text ) {
     return $text;
 }
 
+require_once get_template_directory() . '/lib/wp-timber/timber--nav-menu.php';
 
