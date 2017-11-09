@@ -3315,6 +3315,16 @@ p {
   position: relative;
   background-position: center 0;
   background-size: cover; }
+  .hero:before {
+    transition: opacity 0.5s ease;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #c3922e;
+    opacity: 0.4;
+    z-index: 1;
+    mix-blend-mode: multiply; }
   @media (min-width: 68.75em) {
     .hero {
       background-position: center 25%; } }
@@ -3336,13 +3346,16 @@ p {
   margin-bottom: 0;
   font-size: 57.39558px;
   font-size: 2.60889rem;
-  line-height: 1.22658; }
+  line-height: 1.22658;
+  color: white; }
 
 .hero__content {
   font-size: 26.65102px;
   font-size: 1.21141rem;
   line-height: 1.32077;
-  font-weight: bold; }
+  font-weight: bold;
+  color: white;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1); }
 
 .hero__logo {
   width: 500px;
@@ -3803,7 +3816,8 @@ p {
     height: 100%;
     background: #00788a;
     opacity: 0.1;
-    z-index: 1; }
+    z-index: 1;
+    mix-blend-mode: multiply; }
   .image-menu-item:hover:before, [class*=image-menu-item--]:hover:before {
     transition: opacity 0.5s ease;
     content: '';
@@ -3812,7 +3826,8 @@ p {
     height: 100%;
     background: #00788a;
     opacity: 0;
-    z-index: 1; }
+    z-index: 1;
+    mix-blend-mode: multiply; }
 
 /*
   BEM BLOCK MODIFIER .image-menu-item--
