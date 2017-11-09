@@ -1129,7 +1129,7 @@ table {
  * Note: Declaring the item-class might not be necessary everywhere but
  * is for example in <dl> lists for the <dd> childs.
  */
-.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list {
+.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list, .call-to-action-menu__list {
   list-style: none;
   margin-left: 0; }
 
@@ -1142,11 +1142,11 @@ table {
 /**
  * The list-inline object simply displays a list of items in one line.
  */
-.o-list-inline, .nav-menu__list {
+.o-list-inline, .nav-menu__list, .call-to-action-menu__list {
   margin-left: 0;
   list-style: none; }
 
-.o-list-inline__item, .o-list-inline > *, .nav-menu__list > * {
+.o-list-inline__item, .o-list-inline > *, .nav-menu__list > *, .call-to-action-menu__list > *, .call-to-action-menu__item, [class*=call-to-action-menu__item--] {
   display: inline-block; }
 
 /* ==========================================================================
@@ -1570,7 +1570,7 @@ table {
   left: auto !important;
   /* [1] */ }
 
-.u-1-2, .hero__content {
+.u-1-2 {
   width: 50% !important; }
 
 /**
@@ -2298,7 +2298,7 @@ table {
     right: 100% !important;
     left: auto !important;
     /* [1] */ }
-  .u-1-2--desktop, .hero__header {
+  .u-1-2--desktop, .hero__header, .hero__content {
     width: 50% !important; }
   /**
          * 1. Reset any leftover or conflicting `left`/`right` values.
@@ -3132,7 +3132,7 @@ p {
     .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
       padding: 35px; } }
 
-.o-btn, .o-btn--tiny, .image-menu-item__content-link, .comment-respond__submit, .comment-respond__input--submit {
+.o-btn, [class*=o-btn--], .o-btn--tiny, .image-menu-item__content-link, .o-btn--primary, .o-btn--secondary, .call-to-action-menu__link--find-out-more, .comment-respond__submit, .comment-respond__input--submit, .call-to-action-menu__link, [class*=call-to-action-menu__link--] {
   transition: background 0.3s ease;
   display: inline-block;
   line-height: 1;
@@ -3143,10 +3143,11 @@ p {
   font-size: 0.82548rem;
   line-height: 1;
   background: #c3922e;
-  color: #fff; }
-
-.o-btn:hover, .o-btn--tiny:hover, .image-menu-item__content-link:hover, .comment-respond__submit:hover, .comment-respond__input--submit:hover {
-  background: #9a7324; }
+  color: white;
+  text-decoration: none; }
+  .o-btn:hover, [class*=o-btn--]:hover, .o-btn--tiny:hover, .image-menu-item__content-link:hover, .o-btn--primary:hover, .o-btn--secondary:hover, .call-to-action-menu__link--find-out-more:hover, .comment-respond__submit:hover, .comment-respond__input--submit:hover, .call-to-action-menu__link:hover, [class*=call-to-action-menu__link--]:hover {
+    background: #9a7324;
+    color: white; }
 
 .o-btn--tiny, .image-menu-item__content-link {
   padding: 9px 9px;
@@ -3154,13 +3155,25 @@ p {
   font-size: 0.63636rem;
   line-height: 1; }
 
+.o-btn--primary {
+  background: #c3922e; }
+  .o-btn--primary:hover {
+    background: #9a7324;
+    color: white; }
+
+.o-btn--secondary, .call-to-action-menu__link--find-out-more {
+  background: #40444D; }
+  .o-btn--secondary:hover, .call-to-action-menu__link--find-out-more:hover {
+    background: #292b31;
+    color: white; }
+
 /* ==========================================================================
    #LIST-INLINE
    ========================================================================== */
 /**
  * The list-inline object simply displays a list of items in one line.
  */
-.o-list-inline, .nav-menu__list {
+.o-list-inline, .nav-menu__list, .call-to-action-menu__list {
   margin-left: 0;
   list-style: none; }
 
@@ -3174,7 +3187,7 @@ p {
  * Note: Declaring the item-class might not be necessary everywhere but
  * is for example in <dl> lists for the <dd> childs.
  */
-.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list {
+.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list, .call-to-action-menu__list {
   list-style: none;
   margin: 0; }
 
@@ -3189,7 +3202,10 @@ p {
       padding-top: 70px; } }
 
 .site__masthead {
-  background: #40444D; }
+  background: #40444D;
+  z-index: 9999;
+  width: 100%;
+  position: fixed; }
 
 .site__hero {
   height: 100vh; }
@@ -3331,7 +3347,7 @@ p {
 
 .hero__container {
   position: absolute;
-  top: 50%;
+  top: 45%;
   transform: translate(0, -50%);
   width: 100%;
   z-index: 1; }
@@ -4057,4 +4073,31 @@ p {
   display: block; }
 
 .masthead-after-widgets__footer {
+  display: block; }
+
+/*
+  BEM BLOCK .call-to-action-menu
+ */
+.call-to-action-menu, [class*=call-to-action-menu--] {
+  display: block; }
+
+/*
+  BEM BLOCK MODIFIER .call-to-action-menu--
+ */
+.call-to-action-menu--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .call-to-action-menu__
+ */
+.call-to-action-menu__header, [class*=call-to-action-menu__header--] {
+  display: block; }
+
+.call-to-action-menu__title {
+  display: inline; }
+
+.call-to-action-menu__content {
+  display: block; }
+
+.call-to-action-menu__footer {
   display: block; }
