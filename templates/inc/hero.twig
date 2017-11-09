@@ -1,9 +1,17 @@
 {% set bannerImg = fn('get_field','banner_image','options') %}
 {% set bannerContent = fn('get_field','banner_content','options') %}
 {% set bannerLogo = fn('get_field','banner_logo','options') %}
+{% set bannerTitle = fn('get_field','banner_title','options') %}
 <div class="hero" style="background-image: url('{{ bannerImg.url }}');">
   <div class="hero__container">
     <div class="hero__body">
+      {% if bannerTitle != '' %}
+        <header class="hero__header">
+          <h1 class="hero__heading">
+            <div class="hero__title">{{ bannerTitle }}</div>
+          </h1>
+        </header>
+      {% endif %}
 
       {% if bannerLogo.url != '' %}
         <div class="hero__logo">

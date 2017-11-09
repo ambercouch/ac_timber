@@ -7,6 +7,26 @@ if( function_exists('acf_add_local_field_group') ):
         'title' => 'Banner Content',
         'fields' => array (
             array (
+                'key' => 'field_5a03eda320215',
+                'label' => 'Banner Title',
+                'name' => 'banner_title',
+                'type' => 'text',
+                'value' => NULL,
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array (
                 'key' => 'field_57e27caadeec0',
                 'label' => 'Banner Content',
                 'name' => 'banner_content',

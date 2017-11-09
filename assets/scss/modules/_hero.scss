@@ -21,6 +21,19 @@
   &body{
     padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
   }
+  &header{
+    @extend .u-1-2--desktop;
+    margin-bottom: $inuit-global-spacing-unit-small;
+  }
+  &heading{
+    margin-bottom: 0;
+    @include inuit-font-size($font-size-mega);
+  }
+  &content{
+    @extend .u-1-2;
+    @include inuit-font-size($inuit-font-size-h3);
+    font-weight: bold;
+  }
   &logo{
     width: 500px;
     max-width: 100%;
