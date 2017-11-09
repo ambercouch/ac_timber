@@ -1570,7 +1570,7 @@ table {
   left: auto !important;
   /* [1] */ }
 
-.u-1-2 {
+.u-1-2, .hero__content {
   width: 50% !important; }
 
 /**
@@ -2298,7 +2298,7 @@ table {
     right: 100% !important;
     left: auto !important;
     /* [1] */ }
-  .u-1-2--desktop {
+  .u-1-2--desktop, .hero__header {
     width: 50% !important; }
   /**
          * 1. Reset any leftover or conflicting `left`/`right` values.
@@ -3329,6 +3329,21 @@ p {
 .hero__body {
   padding: 35px 70px; }
 
+.hero__header {
+  margin-bottom: 18px; }
+
+.hero__heading {
+  margin-bottom: 0;
+  font-size: 57.39558px;
+  font-size: 2.60889rem;
+  line-height: 1.22658; }
+
+.hero__content {
+  font-size: 26.65102px;
+  font-size: 1.21141rem;
+  line-height: 1.32077;
+  font-weight: bold; }
+
 .hero__logo {
   width: 500px;
   max-width: 100%;
@@ -3989,6 +4004,10 @@ p {
   padding: 9px;
   text-decoration: none; }
   .nav-menu__link:hover {
+    color: #d3a546; }
+  .nav-menu__link:focus {
+    color: #d3a546; }
+  .current-menu-item .nav-menu__link {
     color: #d3a546; }
 
 /*
