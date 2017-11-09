@@ -9,6 +9,11 @@ ACTIMBER = {
             'use strict';
             //uncomment to debug
             console.log('common');
+            console.log(window.innerHeight);
+
+            var mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
+            ACTIMBER.fn.setMastheadDimension(mhHeight);
+            ACTIMBER.fn.cssEl();
 
             //add js class
             jQuery('body').addClass('js');
@@ -78,6 +83,47 @@ ACTIMBER = {
         init: function () {
             //uncomment to debug
             //console.log('posts');
+        }
+    },
+    fn: {
+        actElDimensions: function (selector) {
+            if (selector == undefined){
+                selector = 'html'
+            }
+
+            return {
+                width : $(selector).outerWidth(),
+                height : $(selector).outerHeight(),
+            }
+        },
+        setMastheadDimension: function (height, width) {
+
+            if (height){
+                ACTIMBER.settings.actMasthead.height = height;
+            }
+            if (width){
+                ACTIMBER.settings.actMasthead.height = width;
+            }
+        },
+        cssEl : function (selector, css) {
+
+            if(selector == undefined){
+                selector = '.hero'
+            }
+            if(css == undefined){
+                css = {
+                    'position' : 'relative',
+                    'top' : ACTIMBER.settings.actMasthead.height,
+                    'height' : window.innerHeight - ACTIMBER.settings.actMasthead.height
+                }
+            }
+            $(selector).css(css);
+        }
+    },
+    settings: {
+        actScrolling: false,
+        actMasthead:{
+            'height' : false
         }
     }
 };
