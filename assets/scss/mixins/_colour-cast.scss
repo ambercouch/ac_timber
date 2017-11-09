@@ -1,4 +1,4 @@
-@mixin colour-cast($color : $brand-col-1, $opacity : 0.2, $darken : 0){
+@mixin colour-cast($color : $brand-col-1, $opacity : 0.2, $darken : 0, $mode : multiply){
   &:before{
     transition: opacity 0.5s ease;
     content: '';
@@ -8,5 +8,6 @@
     background: darken($color, $darken);
     opacity: $opacity;
     z-index: 1;
+    mix-blend-mode: $mode;
   }
 }
