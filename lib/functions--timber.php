@@ -52,17 +52,19 @@ class StarterSite extends TimberSite {
         //AC Template settings
         $context['acSettings'] = acSettings();
 
-        //Primary Menu
-        $context['menuPrimary'] = new TimberMenu('primary');
-
-        //Hero Menu
-        $context['menuHero'] = new TimberMenu('hero');
-
-        //Primary Menu
-        $context['menuServices'] = new TimberMenu('services');
-
+        foreach (unserialize(ACT_MENUS) as $menu){
+            //Menus
+            if($menu == 'Primary'){
+                //Alway make the primary menu will fallback to page menu
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }elseif (is_nav_menu($menu)){
+                //Only create the timber menus if they exist as we don't want fallback
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }
+        }
+        
         //Set up sidebars defined functions--ac-sidebars.php
-        foreach( unserialize(SIDEBARS) as $sidebar ) {
+        foreach( unserialize(ACT_SIDEBARS) as $sidebar ) {
             $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
         }
 

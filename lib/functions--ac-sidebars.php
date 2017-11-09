@@ -1,6 +1,6 @@
 <?php
 //Define your sidebars here
-define('SIDEBARS', serialize(
+define('ACT_SIDEBARS', serialize(
     array(
         'Primary',
         'Subsidiary',

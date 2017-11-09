@@ -5,7 +5,7 @@
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function _act_widgets_init() {
-    foreach( unserialize(SIDEBARS) as $sidebar ) {
+    foreach( unserialize(ACT_SIDEBARS) as $sidebar ) {
         register_sidebar(array(
             'name' => __($sidebar , '_s'),
             'id' => 'aside-'.strtolower($sidebar),
