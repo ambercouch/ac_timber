@@ -31,9 +31,9 @@
 
             <ul class="call-to-action-menu__list">
               {% for item in menuHero.get_items %}
-                <li class="call-to-action-menu__item {{ item.classes | join(' ') }}">
-                  <a class="call-to-action-menu__link " href="{{ item.get_link }}">
-                    <span class="call-to-action-menu__text">{{ item.title }}</span>
+                <li class="call-to-action-menu__item--{{ item.slug }} {{ item.classes | join(' ') }}">
+                  <a class="call-to-action-menu__link--{{ item.slug }} " href="{{ item.get_link }}">
+                    <span class="call-to-action-menu__text--{{ item.slug }}">{{ item.title }}</span>
                   </a>
                 </li>
               {% endfor %}
