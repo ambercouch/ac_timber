@@ -23,7 +23,7 @@ $inuit-font-size-h4:   $inuit-global-font-size;
 $inuit-font-size-h5:   $inuit-global-font-size / $scale;
 $inuit-font-size-h6:   $inuit-global-font-size / pow($scale, 2 );
 
-$inuit-small-print:   $inuit-global-font-size / pow($scale, 4 );;
+$inuit-small-print:   $inuit-global-font-size / pow($scale, 4 );
 
 //$inuit-font-size-h1--lap:   $inuit-global-font-size-h-lap * ($scale--lap  * $scale--lap * $scale--lap);
 //$inuit-font-size-h2--lap:   $inuit-global-font-size-h-lap * ($scale--lap  * $scale--lap);
