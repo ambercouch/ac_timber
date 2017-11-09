@@ -5,6 +5,9 @@
 .site__{
   &masthead{
     background: $brand-col-2;
+    z-index: 9999;
+    width: 100%;
+    position: fixed;
   }
   &hero{
     height: 100vh;
