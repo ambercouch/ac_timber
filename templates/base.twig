@@ -77,34 +77,8 @@
 
 {% include 'inc/footer_scripts.twig' %}
 
-<link rel="stylesheet" href="{{ site.theme.link }}/style.css">
 
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
-<script src="{{site.theme.link}}/dist/js/main.js?v=20160315"></script>
-
-<script>
-
-  var showButton, container;
-
-  showButton = document.getElementById('menuButton');
-  container = document.getElementById('primaryNavigation');
-
-  console.log(showButton);
-  showButton.onclick = function () {
-    console.log(showButton.dataset.state);
-    if ('off' === showButton.dataset.state) {
-      showButton.dataset.state = 'on';
-      container.dataset.state = 'on';
-    } else {
-      showButton.dataset.state = 'off';
-      container.dataset.state = 'off';
-    }
-    console.log(showButton.dataset.state);
-  }
-
-</script>
 </body>
 
 </html>
