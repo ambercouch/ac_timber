@@ -1,14 +1,15 @@
 <div class="navigation--service">
   <ul class="navigation__list--service">
-    {% for item in menuServices.get_items %}
+    {% for item in menuService.get_items %}
+      {% set thumbSize = 'feature500' %}
       {% set objectId = item._menu_item_object_id  %}
       {#{% set thumb = fn('get_the_post_thumbnail', objectId) %}#}
       {% set thumbId = fn('get_post_thumbnail_id', objectId ) %}
       {% set defautImgId = 10 %}
       {% set itemImageId =  (thumbId == '') ?   defautImgId : thumbId %}
-      {% set thumbSrc = fn('wp_get_attachment_image_url', itemImageId , 'serviceMenuLarge') %}
-      {% set thumbSrcset = fn('wp_get_attachment_image_srcset', itemImageId, 'serviceMenuLarge') %}
-      {% set thumbSizes = fn('wp_get_attachment_image_sizes' , itemImageId, 'serviceMenuLarge') %}
+      {% set thumbSrc = fn('wp_get_attachment_image_url', itemImageId , thumbSize) %}
+      {% set thumbSrcset = fn('wp_get_attachment_image_srcset', itemImageId, thumbSize) %}
+      {% set thumbSizes = fn('wp_get_attachment_image_sizes' , itemImageId, thumbSize) %}
       {% set theExcerpt = fn('get_post_field', 'post_excerpt', objectId) %}
       {% set theContent = fn('get_post_field', 'post_content', objectId) %}
       {% set itemContent = (theExcerpt != '' )? theExcerpt:  theContent %}
