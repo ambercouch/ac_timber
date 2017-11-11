@@ -13,6 +13,7 @@ require_once get_template_directory() . '/lib/functions--widgets.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-options.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-video-settings.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-page-settings.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-page-content.php';
 require_once get_template_directory() . '/lib/functions--template-tags.php';
 require_once get_template_directory() . '/lib/functions--cpt.php';
 

@@ -8,6 +8,21 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
+{% block before_main %}
+  {% if (posts[0].before_content_title != '') or (posts[0].before_content_text != '')%}
+  <section class="site__before-main">
+    <div class="before-main">
+      <div class="before-main__content">
+        <h2 class="before-main__heading" >{{ posts[0].before_content_title }}</h2>
+        <div class="before-main__body">
+        <p>{{   posts[0].before_content_text }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}

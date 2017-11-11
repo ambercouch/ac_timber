@@ -1,0 +1,64 @@
+/*
+  BEM BLOCK .before-main
+ */
+
+.before-main {
+  display: block;
+  @extend .o-site-wrapper--responsive;
+}
+
+/*
+  BEM BLOCK MODIFIER .before-main--
+ */
+
+.before-main-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .before-main--
+
+[class*=before-main--] {
+  @extend .before-main;
+}
+
+/*
+  BEM ELEMENTS .before-main__
+ */
+
+.before-main__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block;
+    @include inuit-font-size($inuit-font-size-h1, 1.25);
+    margin-bottom: $inuit-global-spacing-unit-small;
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block;
+    text-align: center;
+
+    padding: $inuit-global-spacing-unit;
+  }
+  &body{
+    @include inuit-font-size($inuit-font-size-h3, 1.25);
+    font-weight: bold;
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .before-main--
+
+[class*=before-main__header--] {
+  @extend .before-main__header;
+}
