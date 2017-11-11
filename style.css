@@ -1158,15 +1158,15 @@ table {
  *
  * 1. So we can apply the `.o-box` class to naturally-inline elements.
  */
-.o-box {
+.o-box, .before-main__content, .before-main__body {
   display: block;
   /* [1] */
   padding: 35px; }
-  .o-box:after {
+  .o-box:after, .before-main__content:after, .before-main__body:after {
     content: "" !important;
     display: block !important;
     clear: both !important; }
-  .o-box > :last-child {
+  .o-box > :last-child, .before-main__content > :last-child, .before-main__body > :last-child {
     margin-bottom: 0; }
 
 /* Size variants.
@@ -4141,14 +4141,14 @@ p {
 
 .before-main__content {
   display: block;
-  text-align: center;
-  padding: 35px; }
+  text-align: center; }
 
 .before-main__body {
   font-size: 26.65102px;
   font-size: 1.21141rem;
   line-height: 1.25;
-  font-weight: bold; }
+  font-weight: bold;
+  padding: 0; }
 
 .before-main__footer {
   display: block; }

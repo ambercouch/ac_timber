@@ -45,12 +45,13 @@
   &content {
     display: block;
     text-align: center;
-
-    padding: $inuit-global-spacing-unit;
+    @extend .o-box;
   }
   &body{
     @include inuit-font-size($inuit-font-size-h3, 1.25);
     font-weight: bold;
+    @extend .o-box;
+    padding: 0;
   }
   &footer {
     display: block
