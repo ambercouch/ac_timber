@@ -12,6 +12,10 @@
   &hero{
     height: 100vh;
   }
+  &before-main{
+    background:$brand-col-4;
+    color: white;
+  }
   &main{
     //background: white;
 

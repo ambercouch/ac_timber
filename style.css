@@ -694,13 +694,13 @@ table {
  */
 /* stylelint-disable */
 /* stylelint-enable */
-.o-wrapper, .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+.o-wrapper, .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .before-main, [class*=before-main--], .hero__body {
   padding-right: 35px;
   padding-left: 35px;
   margin-right: auto;
   margin-left: auto;
   max-width: 1600px; }
-  .o-wrapper:after, .o-site-wrapper:after, .o-site-wrapper--responsive:after, .main:after, .footer__content:after, .subsidiary:after, [class*=subsidiary--]:after {
+  .o-wrapper:after, .o-site-wrapper:after, .o-site-wrapper--responsive:after, .main:after, .footer__content:after, .subsidiary:after, [class*=subsidiary--]:after, .before-main:after, [class*=before-main--]:after, .hero__body:after {
     content: "" !important;
     display: block !important;
     clear: both !important; }
@@ -2525,7 +2525,7 @@ table {
     right: 100% !important;
     left: auto !important;
     /* [1] */ }
-  .u-1-2--wide {
+  .u-1-2--wide, .hero__header, .hero__content {
     width: 50% !important; }
   /**
          * 1. Reset any leftover or conflicting `left`/`right` values.
@@ -3116,20 +3116,20 @@ p {
   display: block !important;
   clear: both !important; }
 
-.o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+.o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .before-main, [class*=before-main--], .hero__body {
   background: transparent;
   padding: 35px; }
 
-.o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+.o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .before-main, [class*=before-main--] {
   padding: 4.375px; }
   @media (min-width: 27.5em) and (max-width: 52.49em) {
-    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .before-main, [class*=before-main--] {
       padding: 8.75px; } }
   @media (min-width: 52.5em) and (max-width: 68.74em) {
-    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .before-main, [class*=before-main--] {
       padding: 17.5px; } }
   @media (min-width: 68.75em) {
-    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--] {
+    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .before-main, [class*=before-main--] {
       padding: 35px; } }
 
 .o-btn, [class*=o-btn--], .o-btn--tiny, .image-menu-item__content-link, .o-btn--primary, .o-btn--secondary, .call-to-action-menu__link--find-out-more, .comment-respond__submit, .comment-respond__input--submit, .call-to-action-menu__link, [class*=call-to-action-menu__link--] {
@@ -3209,6 +3209,10 @@ p {
 
 .site__hero {
   height: 100vh; }
+
+.site__before-main {
+  background: #353D4E;
+  color: white; }
 
 .site__footer {
   background: #ccc; }
@@ -3352,18 +3356,20 @@ p {
   width: 100%;
   z-index: 1; }
 
-.hero__body {
-  padding: 35px 70px; }
-
 .hero__header {
   margin-bottom: 18px; }
 
 .hero__heading {
   margin-bottom: 0;
-  font-size: 57.39558px;
-  font-size: 2.60889rem;
-  line-height: 1.22658;
+  font-size: 39.11075px;
+  font-size: 1.77776rem;
+  line-height: 1.25;
   color: white; }
+  @media (min-width: 81.25em) {
+    .hero__heading {
+      font-size: 47.37915px;
+      font-size: 2.1536rem;
+      line-height: 1.25; } }
 
 .hero__content {
   font-size: 26.65102px;
@@ -4100,4 +4106,49 @@ p {
   display: block; }
 
 .call-to-action-menu__footer {
+  display: block; }
+
+/*
+  BEM BLOCK .before-main
+ */
+.before-main, [class*=before-main--] {
+  display: block; }
+
+/*
+  BEM BLOCK MODIFIER .before-main--
+ */
+.before-main--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .before-main__
+ */
+.before-main__header, [class*=before-main__header--] {
+  display: block; }
+
+.before-main__heading {
+  display: block;
+  font-size: 39.11075px;
+  font-size: 1.77776rem;
+  line-height: 1.25;
+  margin-bottom: 18px; }
+
+.before-main__title {
+  display: inline; }
+
+.before-main__link {
+  display: inline; }
+
+.before-main__content {
+  display: block;
+  text-align: center;
+  padding: 35px; }
+
+.before-main__body {
+  font-size: 26.65102px;
+  font-size: 1.21141rem;
+  line-height: 1.25;
+  font-weight: bold; }
+
+.before-main__footer {
   display: block; }
