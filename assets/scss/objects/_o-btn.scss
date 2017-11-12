@@ -1,11 +1,12 @@
 .o-btn{
   transition: background 0.3s ease;
   display: inline-block;
+  text-align: center;
   line-height:1;
   width: auto;
   border: none;
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
-  @include inuit-font-size($inuit-font-size-h5, 1);
+  @include inuit-font-size($inuit-font-size-h4, 1);
   background: $brand-col-1;
   color: white;
   text-decoration: none;
