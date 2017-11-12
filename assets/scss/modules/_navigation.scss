@@ -12,7 +12,13 @@
 
 .navigation-- {
   &service {
-    display: block
+    display: block;
+    margin-bottom: $inuit-global-spacing-unit ;
+    @include mq($from : desktop){
+      margin-bottom: $inuit-global-spacing-unit-large ;
+
+    }
+
   }
 }
 
@@ -33,6 +39,9 @@
   &item{
     display: block;
     padding: 0 $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
+  }
+  &image-menu-item{
+    height: 100%;
   }
 }
 
@@ -63,7 +72,23 @@
     @extend .u-1-3--wide;
     @extend .u-1-3--desktop;
     @extend .u-1-3--tablet;
-    @extend .u-1-2--mobile;
+    @extend .u-1-1--mobile;
+    padding: 0 $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit;
+    @include mq($from :   tablet){
+      padding: 0 $inuit-global-spacing-unit-tiny;
+    }
+    &:first-child{
+      @include mq($from : tablet){
+        padding-left: 0;
+        padding-right:$inuit-global-spacing-unit-small;
+      }
+    }
+    &:last-child{
+      @include mq($from : tablet){
+        padding-right: 0;
+        padding-left: $inuit-global-spacing-unit-small  ;
+      }
+    }
   }
 }
 
