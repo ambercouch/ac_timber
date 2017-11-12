@@ -17,22 +17,19 @@
       <li class="navigation__item--service">
         <div class="navigation__image-menu-item" >
           <div class="image-menu-item">
-            <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
-            <div class="image-menu-item__wrapper">
             <div class="image-menu-item__header">
-            <h3 class="image-menu-item__heading">
-              <span class="image-menu-item__title" >{{ item.title }}</span>
-            </h3>
+              <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
+              <h3 class="image-menu-item__heading">
+                <span class="image-menu-item__title" >{{ item.title }}</span>
+              </h3>
             </div>
-              <div class="body">
+            <div class="image-menu-item__wrapper">
                 <div class="image-menu-item__content">
                   <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
-                  {{ itemContent }}
+                  <div class="image-menu-item__content-text">{{ itemContent }}</div>
                   <hr class="image-menu-item__content-hr">
-                  <a href="#custom_html-4" class="image-menu-item__content-link" title="Contact us to find out more">Find Out More</a>
+                  <a href="{{ item.url }}" class="image-menu-item__content-link" title="Contact us to find out more">Find Out More</a>
                 </div>
-              </div>
-
             </div>
           </div>
         </div>
