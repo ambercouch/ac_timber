@@ -13,6 +13,7 @@ html{
       padding: 6px;
       color: white;
       opacity: 0.5;
+      z-index: 99999;
     }
 
     &[data-env-local]:before {
@@ -27,7 +28,7 @@ html{
       padding: 6px;
       color: white;
       opacity: 0.5;
-      z-index: 9999;
+      z-index: 99999;
       @include mq($until: mobile) {
         content: 'tiny';
       }
