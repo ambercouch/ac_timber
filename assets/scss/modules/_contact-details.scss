@@ -1,0 +1,54 @@
+/*
+  BEM BLOCK .contact-details
+ */
+
+.contact-details {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .contact-details--
+ */
+
+.contact-details-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .contact-details--
+
+[class*=contact-details--] {
+  @extend .contact-details;
+}
+
+/*
+  BEM ELEMENTS .contact-details__
+ */
+
+.contact-details__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    @include simple-link($brand-col-3, lighten);
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .contact-details--
+
+[class*=contact-details__header--] {
+  @extend .contact-details__header;
+}

@@ -1,7 +1,8 @@
 .masthead{
-  padding: $inuit-global-spacing-unit-tiny;
+  padding: $inuit-global-spacing-unit-small;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   @include mq($from: desktop){
     flex-direction: row;
@@ -18,6 +19,12 @@
       margin-left: auto;
     }
   }
+  &masthead-before-widgets{
+    width: 100%;
+    color: $brand-col-3;
+    padding: $inuit-global-spacing-unit-tiny 0 $inuit-global-spacing-unit;
+    @include inuit-font-size($inuit-font-size-h5, 1);
+   }
   &branding{
     background: transparent;
     max-width: 100%;
