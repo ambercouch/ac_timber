@@ -6,3 +6,9 @@
     padding-top: $inuit-global-spacing-unit-large;
   }
 }
+
+.main{
+  .single-service &{
+    padding-top: $inuit-global-spacing-unit-huge;
+  }
+}
