@@ -3203,6 +3203,9 @@ p {
     .main {
       padding-top: 70px; } }
 
+.single-service .main {
+  padding-top: 140px; }
+
 .site__masthead {
   background: #40444D;
   z-index: 9999;
@@ -3217,7 +3220,7 @@ p {
   color: white; }
 
 .site__footer {
-  background: #ccc; }
+  background: #353D4E; }
 
 @media (min-width: 68.75em) {
   .content--feature-cats {
@@ -3711,7 +3714,7 @@ p {
 
 .footer__content {
   margin: 0 auto;
-  background: #40444D; }
+  background: #353D4E; }
   @media (min-width: 52.5em) {
     .footer__content {
       display: flex;
@@ -3732,19 +3735,22 @@ p {
   color: white; }
 
 .footer__widget {
-  font-size: 14.99134px;
-  font-size: 0.68142rem;
-  line-height: 23.46667px;
-  margin-bottom: 35px; }
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 35.2px;
+  margin-bottom: 35px;
+  color: white; }
   @media (min-width: 52.5em) {
     .footer__widget {
       padding-left: 35px; } }
   .footer__widget:first-child {
     padding-left: 0; }
-  @media (min-width: 52.5em) and (max-width: 68.74em) {
-    .footer__widget:last-child {
-      padding-left: 0;
-      width: 100% !important; } }
+  .footer__widget:last-child {
+    margin-left: auto; }
+    @media (min-width: 52.5em) and (max-width: 68.74em) {
+      .footer__widget:last-child {
+        padding-left: 0;
+        width: 100% !important; } }
 
 .widget_act_company_address {
   max-width: 300px;
@@ -4263,3 +4269,52 @@ p {
   background: #c3922e;
   color: white;
   padding: 9px; }
+
+/*
+  BEM BLOCK .partner-logos
+ */
+.partner-logos, [class*=partner-logos--] {
+  display: flex;
+  flex-wrap: wrap; }
+
+/*
+  BEM BLOCK MODIFIER .partner-logos--
+ */
+.partner-logos--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .partner-logos__
+ */
+.partner-logos__header, [class*=partner-logos__header--] {
+  display: block; }
+
+.partner-logos__heading {
+  display: block; }
+
+.partner-logos__title {
+  display: inline; }
+
+.partner-logos__link {
+  display: inline; }
+
+.partner-logos__content {
+  display: block; }
+
+.partner-logos__footer {
+  display: block; }
+
+.partner-logos__item {
+  width: 400px;
+  height: 100px;
+  max-width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 35px;
+  padding-top: 0;
+  padding-left: 0; }
+
+.partner-logos__img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%; }

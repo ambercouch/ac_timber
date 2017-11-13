@@ -1,0 +1,71 @@
+/*
+  BEM BLOCK .partner-logos
+ */
+
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;;
+}
+
+
+/*
+  BEM BLOCK MODIFIER .partner-logos--
+ */
+
+.partner-logos-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .partner-logos--
+
+[class*=partner-logos--] {
+  @extend .partner-logos;
+}
+
+/*
+  BEM ELEMENTS .partner-logos__
+ */
+
+.partner-logos__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &item{
+    width: 400px;
+    height: 100px;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: $inuit-global-spacing-unit;
+    padding-top:0;
+    padding-left: 0;
+  }
+  &img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .partner-logos--
+
+[class*=partner-logos__header--] {
+  @extend .partner-logos__header;
+}
