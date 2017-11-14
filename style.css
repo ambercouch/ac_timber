@@ -1129,7 +1129,7 @@ table {
  * Note: Declaring the item-class might not be necessary everywhere but
  * is for example in <dl> lists for the <dd> childs.
  */
-.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list, .call-to-action-menu__list {
+.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list, .call-to-action-menu__list, .social-menu__list {
   list-style: none;
   margin-left: 0; }
 
@@ -1142,11 +1142,11 @@ table {
 /**
  * The list-inline object simply displays a list of items in one line.
  */
-.o-list-inline, .nav-menu__list, .call-to-action-menu__list {
+.o-list-inline, .nav-menu__list, .call-to-action-menu__list, .social-menu__list {
   margin-left: 0;
   list-style: none; }
 
-.o-list-inline__item, .o-list-inline > *, .nav-menu__list > *, .call-to-action-menu__list > *, .call-to-action-menu__item, [class*=call-to-action-menu__item--] {
+.o-list-inline__item, .o-list-inline > *, .nav-menu__list > *, .call-to-action-menu__list > *, .social-menu__list > *, .call-to-action-menu__item, [class*=call-to-action-menu__item--] {
   display: inline-block; }
 
 /* ==========================================================================
@@ -3176,7 +3176,7 @@ p {
 /**
  * The list-inline object simply displays a list of items in one line.
  */
-.o-list-inline, .nav-menu__list, .call-to-action-menu__list {
+.o-list-inline, .nav-menu__list, .call-to-action-menu__list, .social-menu__list {
   margin-left: 0;
   list-style: none; }
 
@@ -3190,7 +3190,7 @@ p {
  * Note: Declaring the item-class might not be necessary everywhere but
  * is for example in <dl> lists for the <dd> childs.
  */
-.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list, .call-to-action-menu__list {
+.o-list-bare, .navigation__list, [class*=navigation__list--], .nav-menu__list, .call-to-action-menu__list, .social-menu__list {
   list-style: none;
   margin: 0; }
 
@@ -3342,7 +3342,7 @@ p {
 .masthead__masthead-before-widgets {
   width: 100%;
   color: #eed688;
-  padding-bottom: 18px;
+  padding-bottom: 9px;
   font-size: 18.16066px;
   font-size: 0.82548rem;
   line-height: 1;
@@ -4422,3 +4422,109 @@ p {
       .footer-widgets__widget:last-child {
         padding-left: 0;
         width: 100% !important; } }
+
+/*
+  BEM BLOCK .masthead-before-widgets
+ */
+.masthead-before-widgets, [class*=masthead-before-widgets--] {
+  display: flex;
+  align-items: center; }
+
+/*
+  BEM BLOCK MODIFIER .masthead-before-widgets--
+ */
+.masthead-before-widgets--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .masthead-before-widgets__
+ */
+.masthead-before-widgets__header, [class*=masthead-before-widgets__header--] {
+  display: block; }
+
+.masthead-before-widgets__heading {
+  display: block; }
+
+.masthead-before-widgets__title {
+  display: inline; }
+
+.masthead-before-widgets__link {
+  display: inline; }
+
+.masthead-before-widgets__content {
+  display: block; }
+
+.masthead-before-widgets__widget:last-child {
+  margin-left: auto; }
+
+/*
+  BEM BLOCK .svg-icon
+ */
+.svg-icon, [class*=svg-icon--] {
+  display: block;
+  width: 35px;
+  height: 35px; }
+
+/*
+  BEM BLOCK MODIFIER .svg-icon--
+ */
+.svg-icon--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .svg-icon__
+ */
+.svg-icon__header, [class*=svg-icon__header--] {
+  display: block; }
+
+.svg-icon__heading {
+  display: block; }
+
+.svg-icon__title {
+  display: inline; }
+
+.svg-icon__link {
+  display: inline; }
+
+.svg-icon__content {
+  display: block; }
+
+.svg-icon__svg {
+  fill: white;
+  max-width: 100%;
+  max-height: 100%; }
+
+/*
+  BEM BLOCK .social-menu
+ */
+.social-menu, [class*=social-menu--] {
+  display: block; }
+
+/*
+  BEM BLOCK MODIFIER .social-menu--
+ */
+.social-menu--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .social-menu__
+ */
+.social-menu__header, [class*=social-menu__header--] {
+  display: block; }
+
+.social-menu__heading {
+  display: block; }
+
+.social-menu__list {
+  margin-bottom: 0;
+  line-height: 0; }
+
+.social-menu__item {
+  margin: 0 4.5px; }
+
+.social-menu__link {
+  display: block;
+  padding: 0 4.5px; }
+
+.social-menu__svg-icon {
+  display: block; }
