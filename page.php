@@ -27,4 +27,8 @@ $context['post'] = $post;
 
 $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['footer_widgets'] = Timber::get_widgets('Footer');
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+$templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
+if ( is_front_page() ) {
+    array_unshift( $templates, 'front-page.twig' );
+}
+Timber::render( $templates, $context );

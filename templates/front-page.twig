@@ -3,12 +3,9 @@
 {% set templateSlug = template ?  '-'~template  : '' %}
 
 {% block before_head %}
-  <!-- page.twig -->
+  <!-- front-page.twig -->
   <!-- template - {{ template }} -->
   <!-- {{ hidePageTitle }} -->
-{% endblock %}
-
-{% block hero %}
 {% endblock %}
 
 {% block before_main %}
@@ -18,7 +15,7 @@
       <div class="before-main__content">
         <h2 class="before-main__heading" >{{ posts[0].before_content_title }}</h2>
         <div class="before-main__body">
-        <p>{{ posts[0].before_content_text }}</p>
+        <p>{{   posts[0].before_content_text }}</p>
         </div>
       </div>
     </div>
@@ -39,6 +36,7 @@
     <section id="subsidiary" class="site__subsidiary">
       <div class="subsidiary">
       {% include 'inc/navigation-service.twig' %}
+        {{ subsidiary_widgets }}
       </div>
     </section>
 {% endblock %}
