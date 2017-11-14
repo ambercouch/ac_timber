@@ -1,0 +1,57 @@
+/*
+  BEM BLOCK .svg-icon
+ */
+
+.svg-icon {
+  display: block;
+  @include size($inuit-global-spacing-unit);
+}
+
+/*
+  BEM BLOCK MODIFIER .svg-icon--
+ */
+
+.svg-icon-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .svg-icon--
+
+[class*=svg-icon--] {
+  @extend .svg-icon;
+}
+
+/*
+  BEM ELEMENTS .svg-icon__
+ */
+
+.svg-icon__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &svg {
+    fill: white;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .svg-icon--
+
+[class*=svg-icon__header--] {
+  @extend .svg-icon__header;
+}
