@@ -8,7 +8,10 @@
 }
 
 .main{
-  .single-service &{
+  .no-js.single-service &{
+    padding-top: $inuit-global-spacing-unit-huge;
+  }
+  .no-js[data-post-type=page] &{
     padding-top: $inuit-global-spacing-unit-huge;
   }
 }

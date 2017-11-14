@@ -3,6 +3,12 @@
   margin: 0;
   width: 300px;
   max-width:100%;
+  @media
+  (-webkit-min-device-pixel-ratio: 1.5),
+  (min-resolution: 144dpi){
+    width: 225px;
+
+  }
 }
 
 .site-title__{

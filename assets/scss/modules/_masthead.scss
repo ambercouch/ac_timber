@@ -22,11 +22,21 @@
   &masthead-before-widgets{
     width: 100%;
     color: $brand-col-3;
-    padding: $inuit-global-spacing-unit-tiny 0 $inuit-global-spacing-unit;
+    padding-bottom:$inuit-global-spacing-unit-small;
     @include inuit-font-size($inuit-font-size-h5, 1);
+    /* 1.5 dpr */
+    @media
+    (-webkit-min-device-pixel-ratio: 1.5),
+    (min-resolution: 144dpi){
+      padding-bottom:$inuit-global-spacing-unit-tiny;
+    }
    }
   &branding{
     background: transparent;
     max-width: 100%;
+    margin-bottom:$inuit-global-spacing-unit-small;
+    @include mq($from: tablet){
+      margin-bottom:0;
+    }
   }
 }

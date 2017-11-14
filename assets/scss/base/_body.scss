@@ -1,8 +1,8 @@
 html{
   min-height: 100%;
+  font-weight: 300;
   @include mq($until: tablet ){
     font-size: ($inuit-global-font-size-mobile / 16px) * 1em; /* [1] */
-
   }
 }
 body{
