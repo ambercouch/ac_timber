@@ -9,16 +9,67 @@ ACTIMBER = {
             'use strict';
             //uncomment to debug
             console.log('common');
+            //add js class
+            jQuery('body').removeClass('no-js');
+            jQuery('body').addClass('js');
+
             console.log(window.innerHeight);
 
             var mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
-            ACTIMBER.fn.setMastheadDimension(mhHeight);
-            ACTIMBER.fn.cssEl();
+            var firstElSelector ='.hero';
+            var firstElcss = {};
 
-            //add js class
-            jQuery('body').addClass('js');
+            ACTIMBER.fn.setMastheadDimension(mhHeight);
+
+            ACTIMBER.fn.actScrollTo(mhHeight);
+            ACTIMBER.event.resized();
+
+            if ($(firstElSelector).length == 0){
+                firstElSelector = '.main'
+                firstElcss = {
+                    'padding-top' : parseInt($(firstElSelector).css('padding-top').replace('px', '')) + ACTIMBER.settings.actMasthead.height,
+                }
+            }else {
+                firstElcss = {
+                    'position' : 'relative',
+                    'top' : ACTIMBER.settings.actMasthead.height,
+                    'height' : window.innerHeight - ACTIMBER.settings.actMasthead.height
+                }
+            }
+
+            ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
+
+            $(window).on('resized',function () {
+
+                mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
+                ACTIMBER.fn.setMastheadDimension(mhHeight);
+
+                if ($(firstElSelector) == '.main'){
+                    firstElcss = {
+                        'padding-top' : parseInt($(firstElSelector).css('padding-top').replace('px', '')) + ACTIMBER.settings.actMasthead.height,
+                    }
+                }else {
+                    firstElcss = {
+                        'position' : 'relative',
+                        'top' : ACTIMBER.settings.actMasthead.height,
+                        'height' : window.innerHeight - ACTIMBER.settings.actMasthead.height
+                    }
+                }
+
+                ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
+                console.log('on resized');
+                console.log(firstElcss);
+                console.log(firstElSelector);
+
+            });
+
+
 
             $("[data-fitvid]").fitVids();
+
+
+
+
 
             
             /**
@@ -85,6 +136,18 @@ ACTIMBER = {
             //console.log('posts');
         }
     },
+    event:{
+      resized: function () {
+          var event = new Event('resized');
+          $(window).resize(function() {
+              clearTimeout(window.resizedFinished);
+              window.resizedFinished = setTimeout(function(){
+                  console.log('Resized finished.');
+                  window.dispatchEvent(event);
+              }, 250);
+          });
+      }
+    },
     fn: {
         actElDimensions: function (selector) {
             if (selector == undefined){
@@ -106,7 +169,7 @@ ACTIMBER = {
             }
         },
         cssEl : function (selector, css) {
-
+            console.log('cssEl');
             if(selector == undefined){
                 selector = '.hero'
             }
@@ -118,6 +181,26 @@ ACTIMBER = {
                 }
             }
             $(selector).css(css);
+        },
+        actScrollTo : function (offSet) {
+
+            if(offSet == undefined){
+                offSet = 0;
+            }
+
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - offSet
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+
         }
     },
     settings: {
