@@ -36,7 +36,11 @@
     <section id="subsidiary" class="site__subsidiary">
       <div class="subsidiary">
       {% include 'inc/navigation-service.twig' %}
-        {{ subsidiary_widgets }}
+        <div class="subsidiary__subsidiary-widgets">
+          <div class="subsidiary-widgets">
+          {{ subsidiary_widgets }}
+          </div>
+        </div>
       </div>
     </section>
 {% endblock %}

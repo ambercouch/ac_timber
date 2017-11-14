@@ -3877,7 +3877,7 @@ p {
 .subsidiary__footer {
   display: block; }
 
-.subsidiary__widget {
+.subsidiary__subsidiary-widgets {
   margin-bottom: 35px;
   width: 900px;
   margin-left: auto;
