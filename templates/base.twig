@@ -17,7 +17,7 @@
 
 </head>
 
-<body class="{{ body_class }}" >
+<body class="{{ body_class }} no-js"  {{ fn('_act_body_data') }}>
 <div class="defs" style="display: none">
 {% include 'inc/defs.svg' ignore missing %}
 </div>
