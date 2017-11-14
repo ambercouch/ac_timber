@@ -1,4 +1,6 @@
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
+  max-height: 100%;
+  max-width: 100%;
 }
