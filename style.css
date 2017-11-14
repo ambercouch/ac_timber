@@ -4463,7 +4463,9 @@ p {
 .svg-icon, [class*=svg-icon--] {
   display: block;
   width: 35px;
-  height: 35px; }
+  height: 35px;
+  max-height: 100%;
+  max-width: 100%; }
 
 /*
   BEM BLOCK MODIFIER .svg-icon--
@@ -4498,7 +4500,10 @@ p {
   BEM BLOCK .social-menu
  */
 .social-menu, [class*=social-menu--] {
-  display: block; }
+  display: none; }
+  @media (min-width: 27.5em) {
+    .social-menu, [class*=social-menu--] {
+      display: block; } }
 
 /*
   BEM BLOCK MODIFIER .social-menu--
@@ -4524,7 +4529,20 @@ p {
 
 .social-menu__link {
   display: block;
-  padding: 0 4.5px; }
+  padding: 0; }
+  @media (min-width: 52.5em) {
+    .social-menu__link {
+      padding: 0 4.5px; } }
 
 .social-menu__svg-icon {
-  display: block; }
+  display: block;
+  width: 18px;
+  height: 18px;
+  max-height: 100%;
+  max-width: 100%; }
+  @media (min-width: 52.5em) {
+    .social-menu__svg-icon {
+      width: auto;
+      height: auto;
+      max-height: 100%;
+      max-width: 100%; } }

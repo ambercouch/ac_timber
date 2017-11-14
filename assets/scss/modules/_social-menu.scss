@@ -3,7 +3,10 @@
  */
 
 .social-menu {
-  display: block;
+  display: none;
+  @include mq($from : mobile){
+    display: block;
+  }
 }
 
 /*
@@ -45,10 +48,19 @@
   }
   &link {
     display: block;
-    padding: 0 $inuit-global-spacing-unit-tiny / 2;
+    padding: 0;
+
+    @include mq($from: tablet){
+      padding: 0 $inuit-global-spacing-unit-tiny / 2;
+
+    }
   }
   &svg-icon {
     display: block;
+    @include size($inuit-global-spacing-unit-small);
+    @include mq($from : tablet){
+      @include size(auto);
+    }
   }
 }
 
