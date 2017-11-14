@@ -62,10 +62,10 @@ class StarterSite extends TimberSite {
                 $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
             }
         }
-        
+
         //Set up sidebars defined functions--ac-sidebars.php
         foreach( unserialize(ACT_SIDEBARS) as $sidebar ) {
-            $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
+            $context[strtolower(str_replace(' ','',$sidebar)).'_widgets'] = Timber::get_widgets('aside-' . strtolower(str_replace(' ','-',$sidebar) ));
         }
 
         /*

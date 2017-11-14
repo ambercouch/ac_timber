@@ -8,7 +8,7 @@ function _act_widgets_init() {
     foreach( unserialize(ACT_SIDEBARS) as $sidebar ) {
         register_sidebar(array(
             'name' => __($sidebar , '_s'),
-            'id' => 'aside-'.strtolower($sidebar),
+            'id' => 'aside-'.str_replace(' ', '-', strtolower($sidebar)),
             'description' => '',
             'before_widget' => '<aside id="%1$s" class="'.strtolower($sidebar).'__widget %2$s"><div  class="widget widget--'.strtolower($sidebar).'">',
             'after_widget' => '</div></aside>',

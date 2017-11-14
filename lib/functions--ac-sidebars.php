@@ -6,7 +6,7 @@ define('ACT_SIDEBARS', serialize(
         'Subsidiary',
         'Footer',
         'MastheadAfter',
-        'MastheadBefore',
+        'Masthead Before',
         'Beforefooter')
 ));
 
