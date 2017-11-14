@@ -3,8 +3,7 @@
 function _act_get_body_data() {
     global $post;
     $body_data =array();
-//  echo 'pid';
-//
+
     $post_type = get_post_type(get_the_ID());
 
     if (is_archive()){
