@@ -694,13 +694,13 @@ table {
  */
 /* stylelint-disable */
 /* stylelint-enable */
-.o-wrapper, .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--], .hero__body {
+.o-wrapper, .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__footer-widgets, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--], .hero__body {
   padding-right: 35px;
   padding-left: 35px;
   margin-right: auto;
   margin-left: auto;
   max-width: 1600px; }
-  .o-wrapper:after, .o-site-wrapper:after, .o-site-wrapper--responsive:after, .main:after, .footer__content:after, .subsidiary:after, [class*=subsidiary--]:after, .subsidiary__cta-widget:after, .before-main:after, [class*=before-main--]:after, .hero__body:after {
+  .o-wrapper:after, .o-site-wrapper:after, .o-site-wrapper--responsive:after, .main:after, .footer__footer-widgets:after, .subsidiary:after, [class*=subsidiary--]:after, .subsidiary__cta-widget:after, .before-main:after, [class*=before-main--]:after, .hero__body:after {
     content: "" !important;
     display: block !important;
     clear: both !important; }
@@ -2101,7 +2101,7 @@ table {
     right: 100% !important;
     left: auto !important;
     /* [1] */ }
-  .u-1-3--tablet, .footer__widget, .navigation__item--service {
+  .u-1-3--tablet, .navigation__item--service, .footer-widgets__widget {
     width: 33.33333% !important; }
   /**
          * 1. Reset any leftover or conflicting `left`/`right` values.
@@ -3118,20 +3118,20 @@ p {
   display: block !important;
   clear: both !important; }
 
-.o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--], .hero__body {
+.o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__footer-widgets, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--], .hero__body {
   background: transparent;
   padding: 35px; }
 
-.o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
+.o-site-wrapper--responsive, .main, .footer__footer-widgets, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
   padding: 4.375px; }
   @media (min-width: 27.5em) and (max-width: 52.49em) {
-    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
+    .o-site-wrapper--responsive, .main, .footer__footer-widgets, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
       padding: 8.75px; } }
   @media (min-width: 52.5em) and (max-width: 68.74em) {
-    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
+    .o-site-wrapper--responsive, .main, .footer__footer-widgets, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
       padding: 17.5px; } }
   @media (min-width: 68.75em) {
-    .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
+    .o-site-wrapper--responsive, .main, .footer__footer-widgets, .subsidiary, [class*=subsidiary--], .subsidiary__cta-widget, .before-main, [class*=before-main--] {
       padding: 35px; } }
 
 .o-btn, [class*=o-btn--], .o-btn--tiny, .o-btn--primary, .wpcf7-submit, .o-btn--secondary, .call-to-action-menu__link--find-out-more, .comment-respond__submit, .comment-respond__input--submit, .image-menu-item__content-link, .call-to-action-menu__link, [class*=call-to-action-menu__link--] {
@@ -3736,13 +3736,9 @@ p {
 .footer {
   display: block; }
 
-.footer__content {
+.footer__footer-widgets {
   margin: 0 auto;
   background: #353D4E; }
-  @media (min-width: 52.5em) {
-    .footer__content {
-      display: flex;
-      flex-wrap: wrap; } }
 
 .footer__company-logo {
   display: block;
@@ -3757,24 +3753,6 @@ p {
   padding: 35px;
   background: black;
   color: white; }
-
-.footer__widget {
-  font-size: 18.16066px;
-  font-size: 0.82548rem;
-  line-height: 35.2px;
-  margin-bottom: 35px;
-  color: white; }
-  @media (min-width: 52.5em) {
-    .footer__widget {
-      padding-left: 35px; } }
-  .footer__widget:first-child {
-    padding-left: 0; }
-  .footer__widget:last-child {
-    margin-left: auto; }
-    @media (min-width: 52.5em) and (max-width: 68.74em) {
-      .footer__widget:last-child {
-        padding-left: 0;
-        width: 100% !important; } }
 
 .widget_act_company_address {
   max-width: 300px;
@@ -4389,3 +4367,58 @@ p {
 
 .contact-details__footer {
   display: block; }
+
+/*
+  BEM BLOCK .footer-widgets
+ */
+.footer-widgets, [class*=footer-widgets--] {
+  display: block; }
+  @media (min-width: 52.5em) {
+    .footer-widgets, [class*=footer-widgets--] {
+      display: flex;
+      flex-wrap: wrap; } }
+
+/*
+  BEM BLOCK MODIFIER .footer-widgets--
+ */
+.footer-widgets--type {
+  display: block; }
+
+/*
+  BEM ELEMENTS .footer-widgets__
+ */
+.footer-widgets__header, [class*=footer-widgets__header--] {
+  display: block; }
+
+.footer-widgets__heading {
+  display: block; }
+
+.footer-widgets__title {
+  display: inline; }
+
+.footer-widgets__link {
+  display: inline; }
+
+.footer-widgets__content {
+  display: block; }
+
+.footer-widgets__footer {
+  display: block; }
+
+.footer-widgets__widget {
+  font-size: 18.16066px;
+  font-size: 0.82548rem;
+  line-height: 35.2px;
+  margin-bottom: 35px;
+  color: white; }
+  @media (min-width: 52.5em) {
+    .footer-widgets__widget {
+      padding-left: 35px; } }
+  .footer-widgets__widget:first-child {
+    padding-left: 0; }
+  .footer-widgets__widget:last-child {
+    margin-left: auto; }
+    @media (min-width: 52.5em) and (max-width: 68.74em) {
+      .footer-widgets__widget:last-child {
+        padding-left: 0;
+        width: 100% !important; } }

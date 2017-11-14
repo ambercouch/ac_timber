@@ -1,0 +1,77 @@
+/*
+  BEM BLOCK .footer-widgets
+ */
+
+.footer-widgets {
+  display: block;
+  @include mq($from : tablet){
+    display: flex;
+    flex-wrap:wrap ;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .footer-widgets--
+ */
+
+.footer-widgets-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .footer-widgets--
+
+[class*=footer-widgets--] {
+  @extend .footer-widgets;
+}
+
+/*
+  BEM ELEMENTS .footer-widgets__
+ */
+
+.footer-widgets__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &widget{
+    @include inuit-font-size($inuit-font-size-h5, $inuit-global-line-height );
+    margin-bottom:$inuit-global-spacing-unit;
+    color: white;
+    @extend .u-1-3--tablet;
+    @include mq($from: tablet){
+      padding-left:$inuit-global-spacing-unit ;
+    }
+    &:first-child{
+      padding-left:0 ;
+    }
+    &:last-child{
+      margin-left: auto;
+      @include mq($from : tablet, $until: desktop){
+        padding-left:0 ;
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .footer-widgets--
+
+[class*=footer-widgets__header--] {
+  @extend .footer-widgets__header;
+}
