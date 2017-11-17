@@ -17,6 +17,7 @@ ACTIMBER = {
 
             var mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
             var firstElSelector ='.hero';
+            var firstElPadding;
             var firstElcss = {};
 
             ACTIMBER.fn.setMastheadDimension(mhHeight);
@@ -26,8 +27,10 @@ ACTIMBER = {
 
             if ($(firstElSelector).length == 0){
                 firstElSelector = '.main'
+                firstElPadding = (firstElPadding == undefined) ?
+                    parseInt($(firstElSelector).css('padding-top').replace('px', '')) : firstElPadding;
                 firstElcss = {
-                    'padding-top' : parseInt($(firstElSelector).css('padding-top').replace('px', '')) + ACTIMBER.settings.actMasthead.height,
+                    'padding-top' : firstElPadding + ACTIMBER.settings.actMasthead.height,
                 }
             }else {
                 firstElcss = {
@@ -44,9 +47,13 @@ ACTIMBER = {
                 mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
                 ACTIMBER.fn.setMastheadDimension(mhHeight);
 
-                if ($(firstElSelector) == '.main'){
+                if (firstElSelector == '.main'){
+
+                    firstElPadding = (firstElPadding == undefined) ?
+                        parseInt($(firstElSelector).css('padding-top').replace('px', '')) : firstElPadding;
+
                     firstElcss = {
-                        'padding-top' : parseInt($(firstElSelector).css('padding-top').replace('px', '')) + ACTIMBER.settings.actMasthead.height,
+                        'padding-top' : firstElPadding + ACTIMBER.settings.actMasthead.height,
                     }
                 }else {
                     firstElcss = {
@@ -58,7 +65,8 @@ ACTIMBER = {
 
                 ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
                 console.log('on resized');
-                console.log(firstElcss);
+                console.log('firstElPadding');
+                console.log(firstElPadding);
                 console.log(firstElSelector);
 
             });
