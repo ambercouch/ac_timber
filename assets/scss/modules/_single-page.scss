@@ -8,10 +8,12 @@
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    padding: 0 $inuit-global-spacing-unit;
   }
 
   &heading{
     margin-bottom: 0;
+    color: $brand-col-1;
     &:after{
 
     }
@@ -23,6 +25,8 @@
 
   &body{
     display: block;
+    padding: 0 $inuit-global-spacing-unit;
+
   }
 
   &footer{
