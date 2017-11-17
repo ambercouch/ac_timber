@@ -35,6 +35,7 @@
     margin-bottom:0;
     @include inuit-font-size($inuit-font-size-h1);
     display: inline-block;
+    color: $brand-col-2;
   }
   &title {
     display: inline;
@@ -46,19 +47,19 @@
     list-style-position: inside;
     padding-bottom: $inuit-global-spacing-unit;
     margin-bottom: $inuit-global-spacing-unit;
-    border-bottom: solid 1px;
+    border-bottom: solid 1px $brand-col-1;
+    color: $brand-col-1;
   }
   &link {
     display: inline
   }
-  &content {
-    display: block
-  }
+
   &body {
     display: block;
     @include inuit-font-size($inuit-font-size-h4);
     @extend .o-box;
     padding: 0;
+    color: $brand-col-2;
   }
   &footer {
     display: block
