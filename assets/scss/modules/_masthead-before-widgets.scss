@@ -5,6 +5,10 @@
 .masthead-before-widgets {
   display: flex;
   align-items: center;
+  @include mq($until : mobile){
+    flex-direction: column;
+    margin-bottom:$inuit-global-spacing-unit-tiny;
+  }
 }
 
 /*
@@ -47,6 +51,7 @@
     &:last-child{
       margin-left: auto;
     }
+
   }
 }
 

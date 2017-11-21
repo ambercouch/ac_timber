@@ -19,7 +19,7 @@
     //background: rgba(#fff, 0.8 );
   }
   &body{
-    @extend .o-site-wrapper;
+    @extend .o-site-wrapper--responsive;
   }
   &header{
     @extend .u-1-2--desktop;

@@ -1,5 +1,5 @@
 .masthead{
-  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit;
+  @extend .o-site-wrapper--responsive;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

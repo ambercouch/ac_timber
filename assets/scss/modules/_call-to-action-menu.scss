@@ -4,6 +4,9 @@
 
 .call-to-action-menu {
   display: block;
+  @include mq($until : mobile){
+    text-align: center;
+  }
 }
 
 /*

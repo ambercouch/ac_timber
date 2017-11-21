@@ -37,6 +37,9 @@
     @include mq($from : desktop){
       text-align: right;
     }
+    @include mq($until : mobile){
+      display: flex;
+    }
 
 
   }
@@ -51,6 +54,15 @@
     &:first-child{
       @include mq($from: desktop){
         margin-left: 0;
+      }
+      @include mq($until : mobile){
+        display: none;
+      }
+    }
+    &:nth-child(2){
+
+      @include mq($until : mobile){
+       margin-left: 0;
       }
     }
     &:last-child{
@@ -72,6 +84,9 @@
     }
     .current-menu-item &{
       color: lighten($brand-col-1, 8%);
+    }
+    @include mq($until : mobile){
+      padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-tiny /2;
     }
   }
 }
