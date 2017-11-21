@@ -39,5 +39,8 @@
     @include mq($from: tablet){
       margin-bottom:0;
     }
+    @include mq($until: mobile ){
+      margin-bottom:0;
+    }
   }
 }
