@@ -8,22 +8,28 @@ ACTIMBER = {
         init: function () {
             'use strict';
             //uncomment to debug
-            console.log('common');
+            //console.log('common');
+
             //add js class
             jQuery('body').removeClass('no-js');
             jQuery('body').addClass('js');
 
-            console.log(window.innerHeight);
+            //console.log(window.innerHeight);
 
             var mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
             var firstElSelector ='.hero';
             var firstElPadding;
             var firstElcss = {};
 
+            //set the masthead dimentions
             ACTIMBER.fn.setMastheadDimension(mhHeight);
 
+            //create scroll to effect for hash links
             ACTIMBER.fn.actScrollTo(mhHeight);
+
+            //create a resized event that fires when resized
             ACTIMBER.event.resized();
+
 
             if ($(firstElSelector).length == 0){
                 firstElSelector = '.main'
@@ -34,15 +40,34 @@ ACTIMBER = {
                 }
             }else {
                 firstElcss = {
-                    'position' : 'relative',
                     'top' : ACTIMBER.settings.actMasthead.height,
                     'height' : window.innerHeight - ACTIMBER.settings.actMasthead.height
                 }
             }
 
-            ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
+            // media query event handler
+            // if (matchMedia) {
+            //
+            //     mq.addListener(WidthChange);
+            //     WidthChange(mq);
+            // }
+
+
+            const mq = window.matchMedia("(min-width: 840px)");
+            if (mq.matches) {
+                //set the css on an element
+                ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
+            } else {
+                console.log('less than 840');
+            }
+
+
+
 
             $(window).on('resized',function () {
+
+                const mq = window.matchMedia("(min-width: 840px)");
+
 
                 mhHeight = ACTIMBER.fn.actElDimensions('#masthead').height;
                 ACTIMBER.fn.setMastheadDimension(mhHeight);
@@ -57,17 +82,25 @@ ACTIMBER = {
                     }
                 }else {
                     firstElcss = {
-                        'position' : 'relative',
                         'top' : ACTIMBER.settings.actMasthead.height,
                         'height' : window.innerHeight - ACTIMBER.settings.actMasthead.height
                     }
                 }
+                if (mq.matches) {
+                    ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
+                } else {
 
-                ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
-                console.log('on resized');
-                console.log('firstElPadding');
-                console.log(firstElPadding);
-                console.log(firstElSelector);
+                    firstElcss = {
+                        'top' : '',
+                        'height' : '',
+                        'padding-top' : '',
+                    }
+
+                    ACTIMBER.fn.cssEl(firstElSelector, firstElcss);
+                    console.log('less than 840');
+                }
+
+
 
             });
 

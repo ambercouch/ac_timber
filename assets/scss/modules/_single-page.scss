@@ -14,6 +14,9 @@
   &heading{
     margin-bottom: 0;
     color: $brand-col-1;
+    @include mq($until : mobile){
+      line-height:1.25;
+    }
     &:after{
 
     }

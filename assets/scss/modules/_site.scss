@@ -7,10 +7,17 @@
     background: $brand-col-2;
     z-index: 9999;
     width: 100%;
-    position: fixed;
+
+    @include mq($from : tablet){
+      position: fixed;
+    }
   }
   &hero{
-    height: 100vh;
+
+    @include mq($from : tablet){
+      position: relative;
+      height: 100vh;
+    }
   }
   &before-main{
     background:$brand-col-4;

@@ -39,6 +39,8 @@
     }
     @include mq($until : mobile){
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
 
@@ -56,13 +58,13 @@
         margin-left: 0;
       }
       @include mq($until : mobile){
-        display: none;
+        //display: none;
       }
     }
     &:nth-child(2){
 
       @include mq($until : mobile){
-       margin-left: 0;
+      // margin-left: 0;
       }
     }
     &:last-child{

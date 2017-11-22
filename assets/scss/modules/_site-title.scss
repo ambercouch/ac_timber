@@ -3,6 +3,9 @@
   margin: 0;
   width: 300px;
   max-width:100%;
+  @include mq($until : mobile){
+    width: 200px;
+  }
   @media
   (-webkit-min-device-pixel-ratio: 1.5),
   (min-resolution: 144dpi){

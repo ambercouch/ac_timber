@@ -1,9 +1,11 @@
 .masthead{
   @extend .o-site-wrapper--responsive;
-  display: flex;
+  padding-top: $inuit-global-spacing-unit-tiny;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  display: flex;
+  justify-content: center;
   @include mq($from: desktop){
     flex-direction: row;
     align-items: flex-start;

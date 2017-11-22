@@ -36,9 +36,20 @@
   &list{
     @extend .o-list-bare;
     @extend .o-list-inline;
+
+    @include mq($until : mobile){
+      text-align: center;
+      white-space: nowrap;
+    }
+    @include mq($until : tablet){
+      //display: flex;
+    }
   }
   &item{
     @extend .o-list-inline__item;
+    @include mq($until : tablet){
+      //margin-right:$inuit-global-spacing-unit-tiny;
+    }
   }
   &title {
     display: inline;
