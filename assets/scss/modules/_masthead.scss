@@ -1,7 +1,7 @@
 .masthead{
   @extend .site-container;
-  padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
-  border-bottom:solid $inuit-global-spacing-unit #2f2d35;
+  padding: $inuit-base-spacing-unit $inuit-base-spacing-unit;
+  border-bottom:solid $inuit-base-spacing-unit #2f2d35;
 }
 .masthead{
   &__navigation{
@@ -12,7 +12,7 @@
     width: 100%;
     margin: 0 auto;
     max-width: $site-container-width;
-    height: $inuit-global-spacing-unit;
+    height: $inuit-base-spacing-unit;
     background: #2f2d35;
   }
 }

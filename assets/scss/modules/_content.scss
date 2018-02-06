@@ -5,7 +5,7 @@
 .content{
   &--feature-cats{
 
-    @include mq($from:desktop){
+    @include media-query(lap-and-up){
       display: flex;
     }
 

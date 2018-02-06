@@ -1,23 +1,23 @@
 .footer{
-  padding-top:$inuit-global-spacing-unit-large;
+  padding-top:$inuit-base-spacing-unit--large;
 }
 
 .footer{
   &__content{
     max-width: $site-container-width;
     margin: 0 auto;
-    padding: $inuit-global-spacing-unit-large 0 $inuit-global-spacing-unit-large;
+    padding: $inuit-base-spacing-unit--large 0 $inuit-base-spacing-unit--large;
     border-top:solid 3px white;
   }
   &__company-logo{
     display: block;
     max-width: 200px;
-    margin: 0 auto $inuit-global-spacing-unit;
+    margin: 0 auto $inuit-base-spacing-unit;
   }
   &__site-info{
     @include inuit-font-size($inuit-heading-size-6, 1)
     text-align: center;
-    padding: $inuit-global-spacing-unit;
+    padding: $inuit-base-spacing-unit;
     background: black;
     color: white;
   }
