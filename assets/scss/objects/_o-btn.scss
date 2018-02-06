@@ -8,11 +8,13 @@
   @include inuit-font-size($inuit-font-size-h5, 1);
   background: $brand-col-1;
   color: #fff;
+  text-decoration: none;
 }
 
 .o-btn{
-  &:hover{
-    background: darken($brand-col-1, 10%);
+  &:hover,&:focus{
+    background: darken($brand-col-1, 5%);
+    color: #fff;
   }
 }
 

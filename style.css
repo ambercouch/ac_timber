@@ -3144,10 +3144,12 @@ p {
   font-size: 0.82548rem;
   line-height: 1;
   background: #00788a;
-  color: #fff; }
+  color: #fff;
+  text-decoration: none; }
 
-.o-btn:hover, .o-btn--tiny:hover, .image-menu-item__content-link:hover, .comment-respond__submit:hover, .comment-respond__input--submit:hover {
-  background: #004c57; }
+.o-btn:hover, .o-btn--tiny:hover, .image-menu-item__content-link:hover, .comment-respond__submit:hover, .comment-respond__input--submit:hover, .o-btn:focus, .o-btn--tiny:focus, .image-menu-item__content-link:focus, .comment-respond__submit:focus, .comment-respond__input--submit:focus {
+  background: #006271;
+  color: #fff; }
 
 .o-btn--tiny, .image-menu-item__content-link {
   padding: 11px 11px;
