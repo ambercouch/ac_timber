@@ -1,6 +1,6 @@
 .footer{
   display: block;
-
+  font-family: $alt-font-family;
 }
 
 .footer__{
@@ -22,8 +22,11 @@
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: center;
     padding: $inuit-global-spacing-unit;
-    background: black;
+    background: $brand-col-1;
     color: white;
+    a{
+      color: white;
+    }
   }
   &widget{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );

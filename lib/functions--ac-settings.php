@@ -5,7 +5,7 @@
     {
         $settings['svgLogo'] = null;
         $settings['defaultImage'] = null;
-        $settings['typeKitId'] = 'hej7ovh';
+        $settings['typeKitId'] = 'yxr0vbi';
         $settings['sidebars'] = unserialize(SIDEBARS);
         return $settings;
     }

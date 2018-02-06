@@ -1,8 +1,20 @@
 //.post Block
 .post {
-  border-bottom: solid 1px;
+  border-bottom: solid 1px $brand-col-1;
   padding-bottom: $inuit-global-spacing-unit;
   margin-bottom: $inuit-global-spacing-unit-large;
+  position: relative;
+  &:after{
+    content: '';
+    @include size(0.5em);
+    background: $brand-col-1;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%)
+                rotateZ(45deg);
+  }
 }
 
 //.post Elements
