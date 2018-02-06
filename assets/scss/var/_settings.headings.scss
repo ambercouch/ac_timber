@@ -13,29 +13,29 @@ $scale--desk : 1.21141;
 
 
 // Predefine the variables below in order to alter and enable specific features.
-$inuit-heading-size-1:  $inuit-base-font-size * ($scale * $scale * $scale );
-$inuit-heading-size-2:  $inuit-base-font-size * ($scale * $scale);
-$inuit-heading-size-3:  $inuit-base-font-size * $scale;
-$inuit-heading-size-4:  $inuit-base-font-size;
-$inuit-heading-size-5:  $inuit-base-font-size / $scale;
-$inuit-heading-size-6:  $inuit-base-font-size / ($scale * $scale);
+$inuit-heading-size-1:  $inuit-global-font-size * ($scale * $scale * $scale );
+$inuit-heading-size-2:  $inuit-global-font-size * ($scale * $scale);
+$inuit-heading-size-3:  $inuit-global-font-size * $scale;
+$inuit-heading-size-4:  $inuit-global-font-size;
+$inuit-heading-size-5:  $inuit-global-font-size / $scale;
+$inuit-heading-size-6:  $inuit-global-font-size / ($scale * $scale);
 
-$inuit-small-print:  $inuit-base-font-size / ($scale * $scale * $scale);
+$inuit-small-print:  $inuit-global-font-size / ($scale * $scale * $scale);
 
-//$inuit-heading-size-1--lap:  $inuit-base-font-size--lap * ($scale--lap  * $scale--lap * $scale--lap);
-//$inuit-heading-size-2--lap:  $inuit-base-font-size--lap * ($scale--lap  * $scale--lap);
-//$inuit-heading-size-3--lap:  $inuit-base-font-size--lap * $scale--lap ;
-//$inuit-heading-size-4--lap:  $inuit-base-font-size--lap;
-//$inuit-heading-size-5--lap:  $inuit-base-font-size--lap / $scale--lap ;
-//$inuit-heading-size-6--lap:  $inuit-base-font-size--lap / ($scale--lap  * $scale--lap);
+//$inuit-heading-size-1--lap:  $inuit-global-font-size--lap * ($scale--lap  * $scale--lap * $scale--lap);
+//$inuit-heading-size-2--lap:  $inuit-global-font-size--lap * ($scale--lap  * $scale--lap);
+//$inuit-heading-size-3--lap:  $inuit-global-font-size--lap * $scale--lap ;
+//$inuit-heading-size-4--lap:  $inuit-global-font-size--lap;
+//$inuit-heading-size-5--lap:  $inuit-global-font-size--lap / $scale--lap ;
+//$inuit-heading-size-6--lap:  $inuit-global-font-size--lap / ($scale--lap  * $scale--lap);
 //
-//$inuit-small-print--lap:  $inuit-base-font-size--lap / ($scale--lap * $scale--lap * $scale--lap);
+//$inuit-small-print--lap:  $inuit-global-font-size--lap / ($scale--lap * $scale--lap * $scale--lap);
 //
-//$inuit-heading-size-1--desk:  $inuit-base-font-size--desk * ($scale--desk  * $scale--desk * $scale--desk);
-//$inuit-heading-size-2--desk:  $inuit-base-font-size--desk * ($scale--desk  * $scale--desk);
-//$inuit-heading-size-3--desk:  $inuit-base-font-size--desk * $scale--desk ;
-//$inuit-heading-size-4--desk:  $inuit-base-font-size--desk;
-//$inuit-heading-size-5--desk:  $inuit-base-font-size--desk / $scale--desk ;
-//$inuit-heading-size-6--desk:  $inuit-base-font-size--desk / ($scale--desk  * $scale--desk);
+//$inuit-heading-size-1--desk:  $inuit-global-font-size--desk * ($scale--desk  * $scale--desk * $scale--desk);
+//$inuit-heading-size-2--desk:  $inuit-global-font-size--desk * ($scale--desk  * $scale--desk);
+//$inuit-heading-size-3--desk:  $inuit-global-font-size--desk * $scale--desk ;
+//$inuit-heading-size-4--desk:  $inuit-global-font-size--desk;
+//$inuit-heading-size-5--desk:  $inuit-global-font-size--desk / $scale--desk ;
+//$inuit-heading-size-6--desk:  $inuit-global-font-size--desk / ($scale--desk  * $scale--desk);
 //
-//$inuit-small-print--desk:  $inuit-base-font-size--desk / ($scale--desk * $scale--desk * $scale--desk);
+//$inuit-small-print--desk:  $inuit-global-font-size--desk / ($scale--desk * $scale--desk * $scale--desk);

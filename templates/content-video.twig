@@ -3,7 +3,7 @@
 
   <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
   {% if post.get_field('video_id') %}
-    <div class="post{{ postFormatClass }}__feature-image">
+    <div class="post__feature-image{{ postFormatClass }}">
       <div class="feature-image">
         <a href="{{ post.link }}">
         <img src="http://img.youtube.com/vi/{{ post.get_field('video_id') }}/maxresdefault.jpg" class="feature-image__img" alt="{{ post.title }}"/>
@@ -17,11 +17,11 @@
     </div>
   {%  endif %}
 
-    <header class="entry-header post{{ postFormatClass }}__header ">
-      <h2 class="entry-title post{{ postFormatClass }}__title">
-        <a class="entry-header post{{ postFormatClass }}__title-link " post{{ postFormatClass }}__header href="{{ post.link }}">{{ post.title }}</a>
+    <header class="entry-header post__header{{ postFormatClass }} ">
+      <h2 class="entry-title post__heading{{ postFormatClass }}">
+        <a class="entry-header post__heading-link{{ postFormatClass }}"  href="{{ post.link }}">{{ post.title }}</a>
       </h2>
-      <div class="entry-meta post{{ postFormatClass }}__post-meta">
+      <div class="entry-meta post__post-meta{{ postFormatClass }}">
         <div class="post-meta">
           <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none" >
             <title>{{ postFormatRead }}</title>
@@ -36,20 +36,20 @@
     </header>
 
     {% if  post.post_excerpt != '' %}
-      <div class="entry-content post{{ postFormatClass }}__body">
+      <div class="entry-content post__body{{ postFormatClass }}">
         {{ post.post_excerpt }}
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <a href="{{ post.link }}" class="post__read-more{{ postFormatClass }}">Read More</a>
       </div>
 
     {% else %}
-      <div class="entry-content post{{ postFormatClass }}__body">
+      <div class="entry-content post__body{{ postFormatClass }}">
         <p>{{ post.content | striptags | truncate(20) }}</p>
         {#<a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>#}
       </div>
 
     {% endif %}
-    <footer class="post{{ postFormatClass }}__footer">
-      <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
+    <footer class="post__footer{{ postFormatClass }}">
+      <a class="post__comment-link{{ postFormatClass }}" href="{{ post.link }}#comments">
         <span>{{ post.comment_count }} Comments </span>
       </a>
 
