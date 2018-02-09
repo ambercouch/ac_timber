@@ -24,12 +24,6 @@ if( function_exists('acf_add_options_page') )
         'parent_slug' => 'theme-general-settings',
     ));
 
-//    acf_add_options_sub_page(array(
-//        'page_title' 	=> 'Theme Footer Settings',
-//        'menu_title'	=> 'Footer',
-//        'parent_slug'	=> 'theme-general-settings',
-//    ));
-
 }
 
 require_once get_template_directory() . '/lib/acf/acf-options--branding.php';
@@ -37,3 +31,4 @@ require_once get_template_directory() . '/lib/acf/acf-options--contact.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-image.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-content.php';
 require_once get_template_directory() . '/lib/acf/acf-options--footer-info.php';
+require_once get_template_directory() . '/lib/acf/acf-options--company-info.php';

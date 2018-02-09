@@ -11,7 +11,7 @@
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? fn('get_post_format', post) : '' %}
-    {% include 'content-single-'~postFormat~'.twig' %}
+    {% include  postFormat == '' ? 'content-single.twig' : 'content-single-'~postFormat~'.twig' %}
   {% endfor %}
   {{ fn('the_posts_navigation') }}
 

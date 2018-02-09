@@ -26,7 +26,7 @@
 
   {% block hero %}
     <section class="site__hero">
-      {% include 'inc/hero.twig' %}
+      {% include 'inc/hero.twig' ignore missing %}
     </section>
   {% endblock %}
 
@@ -36,8 +36,12 @@
         {% block before_content %}
         {% endblock %}
         <div class="content{{ content_mod }}">
+          {% block contentHeader %}
+          {% endblock %}
           {% block content %}
             <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+          {% endblock %}
+          {% block contentFooter %}
           {% endblock %}
         </div>
         {% block belowContent %}
