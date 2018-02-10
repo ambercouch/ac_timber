@@ -1,3 +1,6 @@
+var siteLocalUrl = 'angharadbridal.local';
+var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Google Chrome'];
+
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
@@ -13,36 +16,38 @@ var pixrem = require('pixrem');
 var browserSync = require('browser-sync').create();
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
+var critical = require('critical');
+var stripDebug = require('gulp-strip-debug');
 
 /*
  SOURCE FILES
  */
 var jsScripts;
-var jsPath = 'assets/js/'
-var jsVendorPath = 'assets/vendor/'
+var jsPath = 'assets/js/';
+var jsNpmPath = 'node_modules/';
 var jsCustomScripts = [
     'ac_timber.js',
     // 'custom.js',
 ];
-var jsVendorScripts = [
+
+var jsNpmScripts = [
     //All ready deprecated with browserify
-    // 'jquery/dist/jquery.slim.js',
-    'fitvids/jquery.fitvids.js',
-    //'flickity/dist/flickity.pkgd.js',
+    'fitvids/dist/fitvids.js',
+    'remodal/dist/remodal.js',
+    'flickity/dist/flickity.pkgd.js'
 ];
 
-for (var i = 0; i < jsVendorScripts.length; i++) {
-    //Add the vendor path
-    jsVendorScripts[i] = jsVendorPath + jsVendorScripts[i];
-}
 for (var i = 0; i < jsCustomScripts.length; i++) {
     //Add the default path
     jsCustomScripts[i] = jsPath + jsCustomScripts[i];
 }
+for (var i = 0; i < jsNpmScripts.length; i++) {
+    //Add the default path
+    jsNpmScripts[i] = jsNpmPath + jsNpmScripts[i];
+}
 
 //Concat the vendor scripts with the custom scripts
-jsScripts = jsVendorScripts.concat(jsCustomScripts);
-
+jsScripts = jsVendorScripts.concat(jsNpmScripts, jsCustomScripts);
 
 
 /*
