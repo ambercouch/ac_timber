@@ -3,9 +3,13 @@ BEM BLOCK .c-single-service
  */
 .c-single-service {
   max-width: $article-max-width;
-  margin: 0 auto $inuit-global-spacing-unit-large;
-  border-bottom: solid 1px;
-  padding-bottom: $inuit-global-spacing-unit;
+  margin: 0 auto;
+
+  @include mq($from : tablet){
+    display: grid;
+    grid-template-columns: [left] 50% [right] 50%;
+    grid-template-rows: [head] $inuit-global-spacing-unit-huge [body] 1fr;
+  }
 }
 
 /*
@@ -13,16 +17,30 @@ BEM BLOCK ELEMENTS .c-single-service__
  */
 
 .c-single-service__{
+
   &feature-image{
-    margin-bottom: $inuit-global-spacing-unit;
+    background-color: $brand-col-2;
+    grid-column-start: left;
+    grid-row-start: head;
+    grid-row-end: 3;
+    margin-bottom: $inuit-global-spacing-unit-small;
+    @include mq($from : tablet){
+      margin-bottom:0;
+    }
   }
+
   &header{
-    margin-bottom: $inuit-global-spacing-unit;
-    position: relative;
+    text-align: center;
+    grid-row-start: 1;
+    grid-column-start: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &heading{
     margin-bottom: 0;
+    @include inuit-font-size($inuit-font-size-h1);
   }
 
   &title{
@@ -33,8 +51,13 @@ BEM BLOCK ELEMENTS .c-single-service__
     padding: 0;
   }
   
-  &body{
+  &content{
+    @extend .o-site-wrapper;
+    @extend .o-island;
     display: block;
+    padding: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;
+    grid-column-start: right;
+    grid-row-start: body;
   }
   
   &footer{

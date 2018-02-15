@@ -1,13 +1,31 @@
-.masthead{
-
-
+/*
+BEM BLOCK .c-masthead
+ */
+.c-masthead{
   border-bottom:none;
-  background: transparent;
-  position: absolute;
-  z-index: 9999;
   width: 100%;
+  background-color: $brand-col-3
 }
-.masthead__{
+
+/*
+BEM BLOCK MODIFIERS .c-masthead--
+ */
+[class*="c-masthead--"]{
+  @extend .c-masthead;
+}
+
+.c-masthead--{
+  &front-page{
+    background: transparent;
+    position: absolute;
+    z-index: 9999;
+  }
+}
+
+/*
+BEM ELEMENTS .c-masthead__
+ */
+.c-masthead__{
   &navigation{
     @extend %off-page--curtain;
   }

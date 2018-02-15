@@ -38,11 +38,11 @@
   {% endblock %}
 
   <section id="primary" class="site__main">
-    <div class="main{{ main_mod }}">
-      <main class="main__content">
-        {% block before_content %}
+    <div class="c-main{{ modBaseClass }}">
+      <main class="c-main__content">
+        {% block beforeContent %}
         {% endblock %}
-        <div class="content{{ content_mod }}">
+        <div class="content{{ modBaseClass }}">
           {% block contentHeader %}
           {% endblock %}
           {% block content %}
@@ -51,7 +51,7 @@
           {% block contentFooter %}
           {% endblock %}
         </div>
-        {% block belowContent %}
+        {% block afterContent %}
           {% if (fn('comments_open')) %}
             {% include 'inc/comments.twig' %}
           {% endif %}

@@ -12,8 +12,9 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
-$context['postFormat'] = get_post_format($post);
+$context['template'] = $post->post_type;
 $context['postType'] = $post->post_type;
+
 
 require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';
 

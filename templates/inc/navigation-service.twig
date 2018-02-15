@@ -28,9 +28,16 @@
                   <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
                   {{ itemContent }}
                   <hr class="image-menu-item__content-hr">
-                  <a href="{{item.url}}" class="image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
-
+                  {% if fn('get_field','hide_service_content_link', objectId) == 1  or fn('get_post_field','post_content', objectId ) == '' %}
+                    <!-- content link removed -->
+                    <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
+                  {% else %}
+                    <!-- content link  -->
+                    <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
+                    <a href="{{item.url}}" class="image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
+                  {% endif %}
                   <a href="#custom_html-4" class="image-menu-item__content-link" title="Contact us to find out more">Contact Us</a>
+
                 </div>
               </div>
 
