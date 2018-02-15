@@ -1,0 +1,33 @@
+{% block content %}
+  <article id="post-{{ post.id }}" class="c-single-service{{ postFormatClass }} {{ post.class }}">
+
+  {% if post.thumbnail %}
+    <div class="c-single-service__feature-image{{ postFormatClass }}">
+      <div class="feature-image">
+        <img src="{{ post.thumbnail.src('feature16-4') }}" class="feature-image__img" alt="{{ post.title }}"/>
+      </div>
+    </div>
+  {%  endif %}
+
+    <header class="entry-header c-single-service__header{{ postFormatClass }} ">
+
+      <h2 class="entry-title c-single-service__heading{{ postFormatClass }}">
+        <span class="c-single-service__title{{ postFormatClass }}">{{ post.title }}</span>
+      </h2>
+
+    </header>
+
+      <div class="entry-content c-single-service__body{{ postFormatClass }}">
+
+        <div class="c-single-service__content{{ postFormatClass }}">
+          {{ post.content }}
+        </div>
+
+      </div>
+
+    <footer class="c-single-service__footer{{ postFormatClass }}">
+
+    </footer>
+
+  </article>
+{% endblock %}
