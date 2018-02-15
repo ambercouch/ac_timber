@@ -5,12 +5,15 @@ define('ACT_SIDEBARS', serialize(
         'Primary',
         'Subsidiary',
         'Footer',
-        'Masthead After',
-        'Masthead Before',
-        'Before Main',
-        'Before Footer',
         'Sidebar',
-        'Mobile Nav'
+        'Mobile Nav',
+        'Masthead Before',
+        'Masthead After',
+        'Main Before',
+        'Main After',
+        'Footer Before',
+        'Footer After'
+
     )
 ));
 
