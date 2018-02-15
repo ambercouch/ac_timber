@@ -1,4 +1,20 @@
+/*
+BEM BLOCK .main
+ */
 .main{
-  @extend .site-container;
-  padding-top: $inuit-base-spacing-unit--large;
+  @include act-site-wrapper();
+}
+
+/*
+BEM BLOCK MODIFIER .main--
+ */
+
+[class*="main--"]{
+  @extend .main;
+}
+
+.main--{
+  &front-page{
+    //text-align: center;
+  }
 }

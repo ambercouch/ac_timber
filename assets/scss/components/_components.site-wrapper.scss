@@ -1,0 +1,31 @@
+$site-wrapper-color : white;
+$site-wrapper-padding : $inuit-global-spacing-unit-huge;
+
+.c-site-wrapper{
+  @extend .o-wrapper;
+  background: $site-wrapper-color;
+  padding: $site-wrapper-padding;
+}
+
+.c-site-wrapper--{
+  &responsive{
+    @extend .c-site-wrapper;
+    padding: $site-wrapper-padding / 8;
+    @include mq($from : mobile, $until : tablet){
+
+      padding: $site-wrapper-padding / 4 ;
+    }
+    @include mq($from : tablet, $until : desktop){
+      padding: $site-wrapper-padding / 2;
+    }
+    @include mq($from : desktop){
+      padding: $site-wrapper-padding;
+    }
+  }
+}
+
+@mixin act-site-wrapper($bg-colour : transparent, $padding : $site-wrapper-padding, $responsive : true, $factor : 2 ){
+  @extend .o-wrapper;
+  background: $bg-colour;
+  padding: $padding;
+}

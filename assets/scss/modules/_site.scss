@@ -1,20 +1,21 @@
+/*
+BEM BLOCK .site
+ */
 .site{
 
 }
 
-.site{
-  &__masthead{
-    //background: $brand-col-1;
+/*
+BEM ELEMENTS .site__
+ */
+.site__{
+  &masthead{
+    background: white;
   }
-  &__main{
-    //background: white;
+  &main{
 
-    //body.home &{
-    //  background: $brand-col-1;
-    //  margin-bottom:$inuit-base-spacing-unit;
-    //}
   }
-  &__footer{
+  &footer{
     background: #ccc;
   }
 }

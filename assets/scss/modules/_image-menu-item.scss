@@ -1,0 +1,142 @@
+/*
+  BEM BLOCK .image-menu-item
+ */
+
+.image-menu-item {
+  display: block;
+  @include colour-cast($color: #00788a, $opacity : 0.1);
+  position: relative;
+  &:hover{
+
+    @include colour-cast($color: #00788a, $opacity : 0);
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .image-menu-item--
+ */
+
+.image-menu-item-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .image-menu-item--
+
+[class*=image-menu-item--] {
+  @extend .image-menu-item;
+}
+
+/*
+  BEM ELEMENTS .image-menu-item__
+ */
+
+.image-menu-item__ {
+  &img {
+    transition: filter 0.5s ease;
+    display: block;
+    max-width: 100%;
+    max-height:100%;
+    width: 600px;
+    height: auto;
+    filter: brightness(0.7);
+    .image-menu-item:hover &{
+      filter:brightness(0.9);
+    }
+  }
+  &header{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width:100%;
+    padding: $inuit-global-spacing-unit-tiny 0;
+    text-align: center;
+    z-index: 2;
+    transform: translate(0,-50%);
+    .image-menu-item:hover &{
+      opacity: 0;
+    }
+  }
+  &heading{
+    font-weight: 500;
+    margin: 0;
+  }
+  &title{
+    color: white;
+    @include inuit-font-size($inuit-font-size-h3 ,1);
+  }
+  &wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    padding: $inuit-global-spacing-unit-tiny;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include mq($from : tablet){
+      padding: $inuit-global-spacing-unit-small;
+    }
+  }
+  &content{
+    @include inuit-font-size($inuit-font-size-h5,1.3);
+    font-family: $alt-font-family;
+    text-align: center;
+    @include mq($from : tablet){
+      font-size: 1.4vw;
+    }
+    @include mq($from : desktop){
+       font-size: 1.4vw;
+     }
+    @include mq($from : wide){
+      @include inuit-font-size($inuit-font-size-h5,1.3);
+    }
+    z-index: 2;
+    transition: opacity 0.5s ease;
+    bottom: 0;
+    padding: $inuit-global-spacing-unit-small;
+    background: rgba(#fff, 0.8);
+    position: relative;
+    opacity: 0;
+    .image-menu-item:hover &{
+      opacity: 1;
+    }
+    &:before{
+      content: '';
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      border: solid 1px $brand-col-2;
+      position: absolute;
+      left: 5px;
+      top: 5px;
+      pointer-events: none;
+    }
+  }
+  &content-title{
+    margin: 0;
+    margin-bottom: $inuit-global-spacing-unit-tiny / 2;
+
+    line-height: 1.3;
+    color: $brand-col-3;
+  }
+
+  &content-hr{
+    margin: $inuit-global-spacing-unit-small;
+    border-bottom: solid 1px $brand-col-2;
+    border-top:none;
+  }
+
+  &content-link{
+    @extend .o-btn--tiny;
+    text-decoration: none;
+  }
+
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .image-menu-item--
+
+[class*=image-menu-item__img--] {
+  @extend .image-menu-item__img;
+}

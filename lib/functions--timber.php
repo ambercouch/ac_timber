@@ -15,6 +15,14 @@ class StarterSite extends TimberSite {
         add_theme_support( 'post-formats' );
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
+
+        add_image_size ( 'feature500', 500, 500, true );
+        add_image_size ( 'feature16-9', 1600, 900, true );
+        add_image_size ( 'feature16-4', 1600, 400, true );
+        add_image_size ( 'serviceMenuLarge', 600, 900, true );
+        add_image_size ( 'serviceMenuMedium', 400, 600, true );
+        add_image_size ( 'serviceMenuSmall', 200, 300, true );
+
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
         add_action( 'init', array( $this, 'register_post_types' ) );
@@ -32,30 +40,54 @@ class StarterSite extends TimberSite {
 
     function add_to_context( $context ) {
 
-        remove_filter ('acf_the_content', 'wpautop');
-        $context['site_info'] = get_field('site_info', 'options');
-
-        $context['company_logo'] = get_field('company_logo', 'options');
-
-        //site vars
+        //Site vars
         $context['site'] = $this;
+        $context['environment'] = ENVIRONMENT;
 
-        //Template settings
+        //AC Template settings
         $context['acSettings'] = acSettings();
 
-        //Primary Menu
-        $context['menuPrimary'] = new TimberMenu('primary');
-
-        $context['menuHero'] = new TimberMenu('hero');
-
-        foreach( unserialize(SIDEBARS) as $sidebar ) {
-            $context[strtolower($sidebar).'_widgets'] = Timber::get_widgets($sidebar);
+        foreach (unserialize(ACT_MENUS) as $menu){
+            //Menus
+            if($menu == 'Primary'){
+                //Alway make the primary menu will fallback to page menu
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }elseif (is_nav_menu($menu)){
+                //Only create the timber menus if they exist as we don't want fallback
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }
         }
 
-//        $context['primary_widgets'] = Timber::get_widgets('Primary');
-//        $context['subsidiary_widgets'] = Timber::get_widgets('Subsidiary');
+        //Set up sidebars defined functions--ac-sidebars.php
+        foreach( unserialize(ACT_SIDEBARS) as $sidebar ) {
+            $context[strtolower(str_replace(' ','',$sidebar)).'_widgets'] = Timber::get_widgets('aside-' . strtolower(str_replace(' ','-',$sidebar) ));
+        }
 
+        /*
+         * ACF Settings Setup
+         */
+        global $post_id;
+
+        //ACF page setup
+        $context['hidePageTitle'] = get_field('hide_title', $post_id);
+        $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
+
+        //ACF options
+        //Remove the auto p from afc
+        remove_filter ('acf_the_content', 'wpautop');
+
+        $context['site_info'] = get_field('site_info', 'options');
+        $context['company_logo'] = get_field('company_logo', 'options');
+
+        //Add the auto p from afc
+        add_filter ('acf_the_content', 'wpautop');
+
+        $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
+        $context['postEditUrl'] =  get_edit_post_link($post_id);
+
+//      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
         return $context;
+
     }
 
     function add_to_twig( $twig ) {

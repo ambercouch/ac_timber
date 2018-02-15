@@ -1,0 +1,25 @@
+.o-btn{
+  transition: background 0.3s ease;
+  display: inline-block;
+  line-height:1;
+  width: auto;
+  border: none;
+  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
+  @include inuit-font-size($inuit-font-size-h5, 1);
+  background: $brand-col-1;
+  color: #fff;
+  text-decoration: none;
+}
+
+.o-btn{
+  &:hover,&:focus{
+    background: darken($brand-col-1, 5%);
+    color: #fff;
+  }
+}
+
+.o-btn--tiny{
+  @extend .o-btn;
+  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
+  @include inuit-font-size($milli-size, 1);
+}

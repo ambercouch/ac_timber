@@ -8,32 +8,32 @@
   //overflow: hidden;
   //box-shadow: $z1-shadow;
   border-bottom:solid 1px;
-  padding-bottom:$inuit-base-spacing-unit;
-  margin-bottom:$inuit-base-spacing-unit--large;
+  padding-bottom:$inuit-global-spacing-unit;
+  margin-bottom:$inuit-global-spacing-unit-large;
 
   &__feature-image{
-    margin-bottom: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-global-spacing-unit;
   }
   &__header{
-    margin-bottom: $inuit-base-spacing-unit--small /2;
+    margin-bottom: $inuit-global-spacing-unit-small /2;
     //display: flex;
     //flex-direction: column-reverse;
     //width: 50%;
     //overflow: hidden;
-    //padding: $inuit-base-spacing-unit--large;
+    //padding: $inuit-global-spacing-unit-large;
     //padding-bottom: 0;
 
   }
   &__post-meta{
-    padding: $inuit-base-spacing-unit--small /2 0 ;
+    padding: $inuit-global-spacing-unit-small /2 0 ;
   }
   &__body{
     //width: 50%;
-    //padding: 0 $inuit-base-spacing-unit--large;
+    //padding: 0 $inuit-global-spacing-unit-large;
   }
   &__footer{
     //width: 50%;
-    //padding: 0 $inuit-base-spacing-unit--large;
+    //padding: 0 $inuit-global-spacing-unit-large;
     //align-self: flex-end;
     //flex-grow: 1;
     //position: relative;
@@ -42,7 +42,7 @@
   &__comment-link{
     @include inuit-font-size($inuit-small-print, 1);
     //position: absolute;
-    //padding: $inuit-base-spacing-unit;
+    //padding: $inuit-global-spacing-unit;
     //bottom: 0;
     //right: 0;
   }

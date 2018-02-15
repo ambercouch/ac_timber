@@ -1,0 +1,20 @@
+
+@mixin simple-link($color : $brand-col-1, $darken : darken ){
+  display: inline-block;
+  text-decoration: none;
+  color: $color;
+  background-color: transparent;
+  &:visited{
+    color: $color;
+  }
+  &:hover,
+  &:focus{
+    @if $darken == darken {
+      color: darken($color, 20%);
+    }
+    @if $darken == lighten {
+      color: lighten($color, 20%);
+    }
+
+  }
+}

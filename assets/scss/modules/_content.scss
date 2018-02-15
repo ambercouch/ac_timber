@@ -5,9 +5,9 @@
 .content{
   &--feature-cats{
 
-    @include media-query(lap-and-up){
+    @include mq($from : tablet){
       display: flex;
     }
-
   }
+
 }

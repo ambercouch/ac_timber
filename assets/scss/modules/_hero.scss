@@ -1,12 +1,18 @@
+/*
+BEM BLOCK .hero
+ */
 .hero{
- background-repeat: no-repeat;
- background-size: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 640px;
 }
 
-.hero{
-
- &__menu{
-  @extend .list-inline;
+/*
+BEM ELEMENTS .hero__
+ */
+.hero__{
+ &menu{
+  @extend .o-list-inline;
   text-align: center;
  }
 

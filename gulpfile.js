@@ -1,4 +1,4 @@
-var siteLocalUrl = 'angharadbridal.local';
+var siteLocalUrl = 'fleetserviceplans.local';
 var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Google Chrome'];
 
 var gulp = require('gulp');
@@ -47,7 +47,7 @@ for (var i = 0; i < jsNpmScripts.length; i++) {
 }
 
 //Concat the vendor scripts with the custom scripts
-jsScripts = jsVendorScripts.concat(jsNpmScripts, jsCustomScripts);
+var jsScripts = jsNpmScripts.concat( jsCustomScripts);
 
 
 /*
@@ -61,12 +61,12 @@ gulp.task('log', function () {
 });
 
 //TASK: scripts - Concat and uglify all the vendor and custom javascript
-gulp.task('scripts', function (cb) {
+gulp.task('js', function (cb) {
     pump([
             gulp.src(jsScripts),
             concat('main.js'),
             // browserify(),
-            // uglify(),
+            uglify(),
             gulp.dest('dist/js/')
         ],
         cb
@@ -77,10 +77,10 @@ gulp.task('scripts', function (cb) {
 gulp.task('sass', function (cb) {
 
     return gulp.src('assets/scss/main.scss')
-        //.pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
-        //.pipe(postcss([ autoprefixer(), cssnano(), pixrem() ]))
-        //.pipe(sourcemaps.write('.'))
+        .pipe(postcss([ autoprefixer(), cssnano(), pixrem() ]))
+        .pipe(sourcemaps.write('.'))
         .pipe(concat('style.css'))
         .pipe(gulp.dest(''))
         .pipe(browserSync.stream());
@@ -89,27 +89,25 @@ gulp.task('sass', function (cb) {
 
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function () {
+gulp.task('serve', ['sass','js','svgstore'], function () {
 
     browserSync.init({
-        proxy: "shopifythemegallery.local"
+        proxy: siteLocalUrl,
+        browser: defaultBrowser
     });
 
     gulp.watch("assets/scss/**/*.scss", ['sass']);
-    // gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
-    // gulp.watch("craft/templates/**/*.html").on('change', browserSync.reload);
-    gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
+    gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
+    gulp.watch("assets/js/**/*.js",['js']).on('change', browserSync.reload);
 });
 
 gulp.task('svgstore', function () {
     return gulp
         .src('assets/images/svg/**/*.svg')
         .pipe(svgmin(function (file) {
-            //var prefix = path.basename(file.relative, path.extname(file.relative));
             return {
                 plugins: [{
                     cleanupIDs: {
-                        //prefix: prefix + '-',
                         minify: true
                     }
                 }]

@@ -1,9 +1,12 @@
 {% extends "base.twig" %}
 
-  {% block hero %}
-  {% endblock %}
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
 
-{% block feature %}
+{% block before_head %}
+  <!-- page.twig -->
+  <!-- template - {{ template }} -->
+  <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
 
@@ -11,7 +14,7 @@
 
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include 'content-single-page.twig' %}
+    {% include 'content/content-single-page.twig' %}
   {% endfor %}
 
 {% endblock %}
