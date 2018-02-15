@@ -3117,6 +3117,9 @@ p {
   display: block !important;
   clear: both !important; }
 
+/*
+  OBJECTS
+*/
 .o-site-wrapper, .o-site-wrapper--responsive, .main, .footer__content, .subsidiary, [class*=subsidiary--], .masthead__widget-area, .masthead__branding {
   background: white;
   padding: 168px; }
@@ -3155,6 +3158,53 @@ p {
   padding: 11px 11px;
   font-size: 14px;
   font-size: 0.53846rem;
+  line-height: 1; }
+
+/*
+  COMPONENTS
+*/
+/*
+BEM BLOCK .c-single-service
+ */
+.c-single-service {
+  max-width: 100%;
+  margin: 0 auto 84px;
+  border-bottom: solid 1px;
+  padding-bottom: 42px; }
+
+/*
+BEM BLOCK ELEMENTS .c-single-service__
+ */
+.c-single-service__feature-image {
+  margin-bottom: 42px; }
+
+.c-single-service__header {
+  margin-bottom: 42px;
+  position: relative; }
+
+.c-single-service__heading {
+  margin-bottom: 0; }
+
+.c-single-service__title {
+  display: inline; }
+
+.c-single-service__post-meta {
+  font-size: 38.15537px;
+  font-size: 1.46751rem;
+  line-height: 1.09028;
+  padding: 0; }
+
+.c-single-service__body {
+  display: block; }
+
+.c-single-service__footer {
+  font-size: 17.71703px;
+  font-size: 0.68142rem;
+  line-height: 1; }
+
+.c-single-service__comment-link {
+  font-size: 17.71703px;
+  font-size: 0.68142rem;
   line-height: 1; }
 
 .page {
