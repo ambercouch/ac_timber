@@ -1,5 +1,5 @@
 var siteLocalUrl = 'angharadbridal.local';
-var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Google Chrome'];
+var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -47,7 +47,7 @@ for (var i = 0; i < jsNpmScripts.length; i++) {
 }
 
 //Concat the vendor scripts with the custom scripts
-jsScripts = jsVendorScripts.concat(jsNpmScripts, jsCustomScripts);
+jsScripts = jsNpmScripts.concat(jsCustomScripts);
 
 
 /*
@@ -89,15 +89,16 @@ gulp.task('sass', function (cb) {
 
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function () {
+gulp.task('serve', ['sass','scripts','svgstore'], function () {
 
     browserSync.init({
-        proxy: "angharadbridal.local"
+        proxy: siteLocalUrl,
+        browser: defaultBrowser
     });
 
     gulp.watch("assets/scss/**/*.scss", ['sass']);
-    // gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
-    // gulp.watch("craft/templates/**/*.html").on('change', browserSync.reload);
+    gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
+    gulp.watch("templates/**/*.twig").on('change', browserSync.reload);
     gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
 });
 
