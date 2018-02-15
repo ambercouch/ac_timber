@@ -13,7 +13,6 @@ define('ACT_SIDEBARS', serialize(
         'Main After',
         'Footer Before',
         'Footer After'
-
     )
 ));
 

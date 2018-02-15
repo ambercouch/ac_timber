@@ -1,36 +1,35 @@
-<div class="masthead__widget-area">
-</div>
-  <div class="masthead">
+<div class="masthead">
 
-    <div class="masthead__branding">
-      <div class="masthead__site-title">
-
-        {% if fn('get_field', 'company_logo', 'option') != false %}
-          {%  include 'inc/site-title-upload.twig' %}
-        {%  elseif acSettings.svgLogo   %}
-          {%  include 'inc/site-title-svg.twig' %}
-        {% else %}
-          {% include 'inc/site-title-text.twig' %}
-        {% endif %}
-
+  {% if mastheadbefore_widgets == '' %}
+    <!-- Add some widgets to the mastheadbefore-->
+  {% else %}
+    <div class="masthead__masthead-before-widgets">
+      <div class="masthead-before-widgets" >
+        {{mastheadbefore_widgets}}
       </div>
     </div>
+  {% endif %}
 
-    <nav class="masthead__navigation" role="navigation">
-      <div class="naigavigation--primary">
-        <ul class="naigavigation--primary__list">
-          {% for item in menuPrimary.get_items %}
-            <li class="naigavigation--primary__item {{item.classes | join(' ')}}"><a class="nav-main-link" href="{{item.get_link}}">{{item.title}}</a>
-              {% if item.get_children %}
-                <ul class="naigavigation--primary__sub-list">
-                  {% for child in item.get_children %}
-                    <li class="naigavigation--primary__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
-                  {% endfor %}
-                </ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
+  <div class="masthead__branding">
+    <div class="masthead__site-title">
+      {% if fn('get_field', 'company_logo', 'option') != false %}
+        {%  include 'inc/site-title-upload.twig' %}
+      {%  elseif acSettings.svgLogo   %}
+        {%  include 'inc/site-title-svg.twig' %}
+      {% else %}
+        {% include 'inc/site-title-text.twig' %}
+      {% endif %}
+    </div>
+  </div>
+
+  {% if mastheadafter_widgets == '' %}
+    <!-- Add some widgets to the mastheadafter -->
+  {% else %}
+    <div class="masthead__masthead-after-widgets">
+      <div class="masthead-after-widgets" >
+        {{mastheadafter_widgets}}
       </div>
-    </nav>
+    </div>
+  {% endif %}
+
   </div>
