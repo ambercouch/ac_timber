@@ -42,9 +42,16 @@
 @import "placeholders/off-page";
 @import "placeholders/cf";
 
-//OBJECTS
+/*
+  OBJECTS
+*/
 @import "objects/o-site-wrapper";
 @import "objects/o-btn";
+
+/*
+  COMPONENTS
+*/
+@import "components";
 
 
 @import "modules/page";

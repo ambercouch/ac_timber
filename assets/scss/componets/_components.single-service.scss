@@ -1,0 +1,48 @@
+/*
+BEM BLOCK .c-single-service
+ */
+.c-single-service {
+  max-width: $article-max-width;
+  margin: 0 auto $inuit-global-spacing-unit-large;
+  border-bottom: solid 1px;
+  padding-bottom: $inuit-global-spacing-unit;
+}
+
+/*
+BEM BLOCK ELEMENTS .c-single-service__
+ */
+
+.c-single-service__{
+  &feature-image{
+    margin-bottom: $inuit-global-spacing-unit;
+  }
+  &header{
+    margin-bottom: $inuit-global-spacing-unit;
+    position: relative;
+  }
+
+  &heading{
+    margin-bottom: 0;
+  }
+
+  &title{
+    display: inline;
+  }
+
+  &post-meta{
+    @include inuit-font-size($inuit-font-size-h);
+    padding: 0;
+  }
+  
+  &body{
+    display: block;
+  }
+  
+  &footer{
+    @include inuit-font-size($inuit-font-size-h6, 1);
+  }
+  
+  &comment-link{
+    @include inuit-font-size($inuit-font-size-h6, 1);
+  }
+}
