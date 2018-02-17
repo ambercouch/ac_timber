@@ -1,5 +1,5 @@
 var siteLocalUrl = 'fleetserviceplans.local';
-var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Google Chrome'];
+var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe'];
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
