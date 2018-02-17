@@ -1,0 +1,45 @@
+/*
+  BEM BLOCK .c-widget
+ */
+
+.c-widget {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-widget--
+ */
+
+.c-widget-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-widget--
+
+[class*=c-widget--] {
+  @extend .c-widget;
+}
+
+/*
+  BEM ELEMENTS .c-widget__
+ */
+
+.c-widget__ {
+ &container{
+display: block;
+ }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-widget--
+
+[class*=c-widget__container--] {
+  @extend .c-widget__container;
+}
+
+.c-widget__container--{
+  &menu-primary{
+    background-color: #ccc;
+  }
+}
