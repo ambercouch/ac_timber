@@ -1,17 +1,17 @@
-<div class="masthead">
+<div class="c-masthead{{ templateClass }}">
 
   {% if mastheadbefore_widgets == '' %}
     <!-- Add some widgets to the mastheadbefore-->
   {% else %}
-    <div class="masthead__masthead-before-widgets">
+    <div class="c-masthead__masthead-before-widgets">
       <div class="masthead-before-widgets" >
         {{mastheadbefore_widgets}}
       </div>
     </div>
   {% endif %}
 
-  <div class="masthead__branding">
-    <div class="masthead__site-title">
+  <div class="c-masthead__branding">
+    <div class="c-masthead__site-title">
       {% if fn('get_field', 'company_logo', 'option') != false %}
         {%  include 'inc/site-title-upload.twig' %}
       {%  elseif acSettings.svgLogo   %}
@@ -25,11 +25,12 @@
   {% if mastheadafter_widgets == '' %}
     <!-- Add some widgets to the mastheadafter -->
   {% else %}
-    <div class="masthead__masthead-after-widgets">
+    <div class="c-masthead__masthead-after-widgets">
       <div class="masthead-after-widgets" >
         {{mastheadafter_widgets}}
       </div>
     </div>
   {% endif %}
 
-  </div>
+</div>
+

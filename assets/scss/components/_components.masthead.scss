@@ -1,0 +1,45 @@
+/*
+BEM BLOCK .c-masthead
+ */
+.c-masthead{
+  border-bottom:none;
+  width: 100%;
+  background-color: $brand-col-3
+}
+
+/*
+BEM BLOCK MODIFIERS .c-masthead--
+ */
+[class*="c-masthead--"]{
+  @extend .c-masthead;
+}
+
+.c-masthead--{
+  &front-page{
+    background: transparent;
+    position: absolute;
+    z-index: 9999;
+  }
+}
+
+/*
+BEM ELEMENTS .c-masthead__
+ */
+.c-masthead__{
+  &navigation{
+    @extend %off-page--curtain;
+  }
+  &widget-area{
+    @extend .o-site-wrapper;
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    height: $inuit-global-spacing-unit;
+    background: #2f2d35;
+  }
+  &branding{
+    @extend .o-site-wrapper;
+    background: transparent;
+    padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
+  }
+}

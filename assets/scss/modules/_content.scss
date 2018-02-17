@@ -5,7 +5,7 @@
 .content{
   &--feature-cats{
 
-    @include mq($from : tablet){
+    @include mq($from:desktop){
       display: flex;
     }
   }

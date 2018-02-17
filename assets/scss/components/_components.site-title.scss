@@ -1,0 +1,44 @@
+/*
+BEM BLOCK .c-site-title
+ */
+
+.c-site-title{
+  display: block;
+  margin: $inuit-global-spacing-unit-small 0;
+  width: 340px;
+  height: 20px;
+  max-width:100%;
+}
+
+/*
+BEM BLOCK MODIFIERS .c-site-title
+ */
+
+[class*="site-title--"]{
+  @extend .c-site-title;
+}
+
+.c-site-title--{
+  &page{
+    margin-left: auto;
+    margin-right: auto;
+    @include mq($from: tablet){
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+/*
+BEM ELEMENTS .c-site-title
+ */
+
+.c-site-title__{
+  &link{
+    display: block;
+  }
+  &img{
+    display: block;
+  }
+}
+

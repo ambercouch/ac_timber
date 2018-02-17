@@ -1,0 +1,29 @@
+<li class="comments__item{{ replyForm == false ? '--child' : '' }}">
+<div class="response" id="blog-comment-{{ comment.ID }}">
+  <header class="response__header">
+    <h5 class="response__author">{{ comment.author.name }} says</h5>
+  </header>
+  <div class="response__content">
+    {{ comment.comment_content|wpautop }}
+  </div>
+  {% if  replyForm != false %}
+  <div class="response__reply-form">
+    <!-- comment form -->
+    {{ comment_form }}
+  </div>
+  {% endif %}
+  <section class="response__replys">
+    <!-- child comments -->
+    {% if comment.children %}
+      <h4 class="response__replys-title" > replies </h4>
+      <div class="replys">
+        <ol class="comment__list--child">
+        {% for cmt in comment.children %}
+          {% include "inc/response.twig" with {comment:cmt, replyForm:false} %}
+        {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+  </section>
+</div>
+</li>

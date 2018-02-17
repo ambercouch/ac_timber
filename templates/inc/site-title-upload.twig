@@ -1,19 +1,13 @@
 {% if fn('is_front_page') %}
-  <h1 class="site-title">
+  <h1 class="c-site-title--upload c-site-title--front-page">
     <a class="site-title__link" href="{{ site.url }} " rel="home">
-      <img class="site-title__logo--img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
+      <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
     </a>
   </h1>
 {% else %}
-  <span class="site-title">
-               <a class="site-title__link" href="{{ site.url }} " rel="home">
-                 {#<svg class="icon site-title__icon" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none" >#}
-                   {#<title>{{ site.title }}</title>#}
-                   {#<desc>{{ site.description }}</desc>#}
-                   {#<use xlink:href="#icon-logo" />#}
-                 {#</svg>#}
-                 <img class="site-title__logo--img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
-
-               </a>
-            </span>
+  <span class="c-site-title--upload c-site-title--page">
+    <a class="sc-ite-title__link" href="{{ site.url }} " rel="home">
+       <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
+    </a>
+  </span>
 {% endif %}

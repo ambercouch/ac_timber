@@ -1,7 +1,0 @@
-{% set responseClass = (comment.comment_type == '') ? 'response' : 'response--'~comment.comment_type %}
-<div class="{{ responseClass }}" id="blog-comment-{{ comment.ID }}">
-  <header class="{{ responseClass }}__header">
-    <h5 class="{{ responseClass }}__author">{{ comment.author.name }} says</h5>
-  </header>
-  <div class="{{ responseClass }}__content">{{ comment.comment_content|wpautop }}</div>
-</div>

@@ -9,12 +9,10 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
-
 {% block content %}
 
   {% for post in posts %}
-    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include 'content/content-single-page.twig' %}
+    {% include 'content/content-single-page'~template_slug~'.twig' %}
   {% endfor %}
 
 {% endblock %}

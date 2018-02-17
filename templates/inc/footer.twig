@@ -1,5 +1,5 @@
 <div class="footer{{ not footer_widgets ? '--empty' : ''}}">
-  {% if footer_widget == '' %}
+  {% if footer_widgets == '' %}
     <!-- Add some widgets to the footer -->
   {% else %}
   <div class="footer__content">
@@ -7,6 +7,8 @@
   </div>
   {% endif %}
   <div class="footer__site-info">
+    <div class="site-info">
     {{ site_info }}
+    </div>
   </div>
 </div>

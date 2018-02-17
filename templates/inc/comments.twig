@@ -1,0 +1,20 @@
+<section id="comments" class="comments">
+  <div class="comments__wrapper--responses">
+    <h3 class="comments__heading--responses">Comments</h3>
+    <div class="comments__responses">
+      {%   if post.get_comments() %}
+        <ol class="comments__list">
+          {{ comment_list }}
+        </ol>
+      {%  else %}
+        <p>No one has left a comment yet - Why not be the first!</p>
+      {% endif %}
+    </div>
+  </div>
+  <div class="comments__wrapper--comment-respond">
+    <h3 class="comments__heading--comment-respond">Submit a Comment</h3>
+    <div class="comments__comment-respond">
+      {{ post.comment_form(comment_form_args) }}
+    </div>
+  </div>
+</section>

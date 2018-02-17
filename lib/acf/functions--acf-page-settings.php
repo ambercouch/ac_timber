@@ -21,6 +21,24 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => 'Hide',
                 'default_value' => 0,
             ),
+            array (
+                'key' => 'field_57e28e51c2cd7',
+                'label' => 'Hide Masthead',
+                'name' => 'hide_site_masthead',
+                'type' => 'true_false',
+                'instructions' => 'This option will hide the masthead (logo nav etc) from this page',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Hide',
+                'default_value' => 0,
+            ),
+
+
         ),
         'location' => array (
             array (

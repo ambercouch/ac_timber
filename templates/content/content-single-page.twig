@@ -1,8 +1,7 @@
-{%  set hideTitle = fn('get_field','hide_title')   %}
-<article id="post-{{ post.id }}" class="single-page">
+<article id="post-{{ post.id }}" class="single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
   {% if(post.thumbnail or acSettings.defaultImage) %}
-    <div class="single-page__feature-image ">
+    <div class="single-page__feature-image{{ templateClass }} ">
       <div class="feature-image--single-page">
         {% if(post.thumbnail.src()) %}
           <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
@@ -13,27 +12,19 @@
     </div>
   {% endif %}
 
-{% if hideTitle != true %}
-    <header class="entry-header single-page__header ">
-      <h1 class="entry-title single-page__title ">
+    <header class="entry-header single-page__header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+      {% if not hidePageTitle %}
+      <h1 class="entry-title single-page_heading{{ templateClass }} ">
         <span>{{ post.title }}</span>
       </h1>
-      <div class="entry-meta single-page__post-meta ">
-        {% include 'inc/post-meta--page.twig' %}
-      </div>
+      {% endif %}
     </header>
-  {% endif %}
 
-
-
-    <div class="entry-content single-page__body ">
+    <div class="entry-content single-page__body{{ templateClass }} ">
       {{ post.content }}
     </div>
 
-
-
-    <footer class="single-page__footer ">
+    <footer class="single-page__footer{{ templateClass }} ">
     </footer>
-
 
 </article>

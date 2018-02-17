@@ -48,7 +48,7 @@
   }
   &__title{
     //border-bottom: solid 1px;
-    @include inuit-font-size($inuit-heading-size-4);
+    @include inuit-font-size($inuit-font-size-h4);
     margin-bottom: 0;
     a{
       text-decoration: none;;
@@ -102,7 +102,7 @@
       @extend .post__title;
     }
     &__body{
-      @include inuit-font-size($inuit-heading-size-5);
+      @include inuit-font-size($inuit-font-size-h5);
     }
     &__feature-image{
       @extend .post__feature-image;

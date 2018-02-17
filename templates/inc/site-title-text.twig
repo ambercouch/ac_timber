@@ -1,9 +1,13 @@
 {% if fn('is_front_page') %}
-  <h1 class="site-title">
-    <a href="{{ site.url }} " rel="home">{{ site.title }}</title> </a>
+  <h1 class="site-title--text">
+    <a class="site-title__link " href="{{ site.url }} " rel="home">
+      {{ site.title }}
+    </a>
   </h1>
 {% else %}
-  <span class="site-title">
-               <a href="{{ site.url }} " rel="home">{{ site.title }}</title> </a>
-            </span>
+  <span class="site-title--text">
+    <a class="site-title__link " href="{{ site.url }} " rel="home">
+      {{ site.title }}
+    </a>
+  </span>
 {% endif %}

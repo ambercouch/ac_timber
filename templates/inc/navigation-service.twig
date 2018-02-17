@@ -1,0 +1,50 @@
+<div class="navigation--service">
+  <ul class="navigation__list--service">
+    {% for item in menuServices.get_items %}
+      {% set objectId = item._menu_item_object_id  %}
+      {#{% set thumb = fn('get_the_post_thumbnail', objectId) %}#}
+      {% set thumbId = fn('get_post_thumbnail_id', objectId ) %}
+      {% set defautImgId = 10 %}
+      {% set itemImageId =  (thumbId == '') ?   defautImgId : thumbId %}
+      {% set thumbSrc = fn('wp_get_attachment_image_url', itemImageId , 'serviceMenuLarge') %}
+      {% set thumbSrcset = fn('wp_get_attachment_image_srcset', itemImageId, 'serviceMenuLarge') %}
+      {% set thumbSizes = fn('wp_get_attachment_image_sizes' , itemImageId, 'serviceMenuLarge') %}
+      {% set theExcerpt = fn('get_post_field', 'post_excerpt', objectId) %}
+      {% set theContent = fn('get_post_field', 'post_content', objectId) %}
+      {% set itemContent = (theExcerpt != '' )? theExcerpt:  theContent %}
+
+      <li class="navigation__item--service">
+        <div class="navigation__image-menu-item" >
+          <div class="image-menu-item">
+            <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
+            <div class="image-menu-item__wrapper">
+            <div class="image-menu-item__header">
+            <h3 class="image-menu-item__heading">
+              <span class="image-menu-item__title" >{{ item.title }}</span>
+            </h3>
+            </div>
+              <div class="body">
+                <div class="image-menu-item__content">
+                  <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
+                  {{ itemContent }}
+                  <hr class="image-menu-item__content-hr">
+                  {% if fn('get_field','hide_service_content_link', objectId) == 1  or fn('get_post_field','post_content', objectId ) == '' %}
+                    <!-- content link removed -->
+                    <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
+                  {% else %}
+                    <!-- content link  -->
+                    <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
+                    <a href="{{item.url}}" class="image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
+                  {% endif %}
+                  <a href="#custom_html-4" class="image-menu-item__content-link" title="Contact us to find out more">Contact Us</a>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
