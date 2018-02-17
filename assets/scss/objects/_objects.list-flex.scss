@@ -1,0 +1,21 @@
+.o-list-flex{
+  display: flex;
+
+  > *{
+    margin: 0 $inuit-global-spacing-unit-small;
+
+    &:first-child{
+      margin-left: 0;
+    }
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+  }
+}
+
+.o-list-flex--center{
+  @extend .o-list-flex;
+  justify-content: center;
+}
