@@ -11,9 +11,9 @@ function _act_widgets_init() {
             'name' => __($sidebar , '_act'),
             'id' => 'aside-'.$sidebar_slug,
             'description' => '',
-            'before_widget' => '<aside id="%1$s" class="'.$sidebar_slug.'-widgets__widget %2$s"><div  class="widget widget--'.$sidebar_slug.'">',
+            'before_widget' => '<aside id="%1$s" class="'.$sidebar_slug.'-widgets__widget %2$s"><div  class="widget c-widget--'.$sidebar_slug.'">',
             'after_widget' => '</div></aside>',
-            'before_title' => '<h3 class="widget__title--'.strtolower($sidebar). '" >',
+            'before_title' => '<h3 class="c-widget__title--'.$sidebar_slug. '" >',
             'after_title' => '</h3>'
         ));
     }
