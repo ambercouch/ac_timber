@@ -3,7 +3,7 @@ BEM BLOCK .c-main
  */
 
 .c-main{
-  @extend .o-site-wrapper--responsive;
+  @extend .c-site-wrapper--responsive;
   padding-top: $inuit-global-spacing-unit ;
   padding-bottom: $inuit-global-spacing-unit;
   @include mq($from : desktop){

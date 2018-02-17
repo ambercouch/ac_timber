@@ -31,7 +31,7 @@ BEM ELEMENTS .c-masthead__
     @extend %off-page--curtain;
   }
   &widget-area{
-    @extend .o-site-wrapper;
+    @extend .c-site-wrapper;
     display: none;
     width: 100%;
     margin: 0 auto;
