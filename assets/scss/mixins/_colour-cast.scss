@@ -8,5 +8,6 @@
     background: darken($color, $darken);
     opacity: $opacity;
     mix-blend-mode: $mode;
+    z-index: 1;
   }
 }

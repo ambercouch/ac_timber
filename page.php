@@ -35,6 +35,9 @@ $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['footer_widgets'] = Timber::get_widgets('Footer');
 $context['main_mod'] = is_front_page() ? '--front-page' : '--page';
 $templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
+if ( is_front_page() ) {
+    array_unshift( $templates, 'front-page.twig' );
+}
 
 //get childlist
 $children = false;
@@ -84,7 +87,5 @@ if( is_page() && $post->post_parent > 0 ) {
 }
 
 
-if ( is_front_page() ) {
-    array_unshift( $templates, 'front-page.twig' );
-}
+
 Timber::render( $templates, $context );

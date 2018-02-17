@@ -9,7 +9,7 @@ function  act_cpt() {
         'edit_item' => __('Edit Service'),
         'new_item' => __('New Service'),
         'all_items' => __('All Services'),
-        'view_item' => __('View Servicee'),
+        'view_item' => __('View Service'),
         'search_items' => __('Search Services'),
         'not_found' => __('No Services found'),
         'not_found_in_trash' => __('No Services found in the trash'),
@@ -18,7 +18,7 @@ function  act_cpt() {
     );
     $args = array(
         'labels' => $labels,
-        'menu_icon' => 'dashicons-hammer',
+        'menu_icon' => 'dashicons-store',
         'description' => 'Services offered',
         'public' => true,
         'menu_position' => 20,

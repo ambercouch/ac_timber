@@ -6,25 +6,25 @@
     <div class="hero__body">
 
       {% if bannerLogo.url != '' %}
-        <div class="hero__logo">
+      <div class="hero__logo">
           <img class="hero__logo-img" src=" {{  bannerLogo.url  }}" alt="{{ bannerLogo.alt }}">
-        </div>
+      </div>
       {% endif %}
 
       {% if  bannerContent != '' %}
-        <div class="hero__content">
-          {{  bannerContent  }}
-        </div>
+      <div class="hero__content">
+        {{  bannerContent  }}
+      </div>
       {% endif %}
 
       {% if not hideBannerMenu %}
-        <div class="hero__call-to-action">
-          <ul class="hero__menu">
-            {% for item in menuHero.get_items %}
-              <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
+      <div class="hero__call-to-action">
+        <ul class="hero__menu">
+          {% for item in menuHero.get_items %}
+          <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
       {% endif %}
     </div>
   </div>

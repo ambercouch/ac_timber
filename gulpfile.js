@@ -98,12 +98,13 @@ gulp.task('serve', ['sass','js','svgstore'], function () {
 
     gulp.watch("assets/scss/**/*.scss", ['sass']);
     gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
-    gulp.watch("assets/js/**/*.js",['js']).on('change', browserSync.reload);
+    gulp.watch("templates/**/*.twig").on('change', browserSync.reload);
+    gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
 });
 
 gulp.task('svgstore', function () {
     return gulp
-        .src('assets/images/svg/**/*.svg')
+        .src('assets/images/svg/*.svg')
         .pipe(svgmin(function (file) {
             return {
                 plugins: [{
@@ -114,5 +115,5 @@ gulp.task('svgstore', function () {
             }
         }))
         .pipe(svgstore())
-        .pipe(gulp.dest('assets/images'));
+        .pipe(gulp.dest('templates/inc'));
 });

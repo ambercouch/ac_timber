@@ -1,0 +1,22 @@
+.post-type{
+  visibility: visible;
+  display: block;
+}
+
+.post-type__{
+  &icon{
+    @include inuit-font-size($inuit-font-size-h2);
+    display: block;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.05em;
+  }
+}
+
+[class*=post-type--]{
+  @extend .post-type;
+}
+
+[class*=post-type__icon--]{
+  @extend .post-type__icon;
+}

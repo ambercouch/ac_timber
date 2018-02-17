@@ -26,10 +26,6 @@
 @import "inuit";
 
 
-/*
- INUIT FRAME WORK
- */
-@import "tools";
 
 
 /*
@@ -44,27 +40,30 @@
 @import "typography";
 @import "accessibility";
 @import "placeholders/off-page";
+@import "placeholders/cf";
 
-
-//OBJECTS
+/*
+  OBJECTS
+*/
+@import "objects";
+@import "objects/o-site-wrapper";
 @import "objects/o-btn";
 
+/*
+  COMPONENTS
+*/
+@import "components";
 
-//COMPONENTS
-@import "components/components.site-wrapper";
 
 @import "modules/page";
-@import "modules/main";
 @import "modules/site";
 @import "modules/content";
 @import "modules/feature-cat";
-@import "modules/site-title";
 @import "modules/btn";
-@import "modules/masthead";
 @import "modules/hero";
 @import "modules/post";
 @import "modules/post-meta";
-@import "modules/feature-image";
+@import "modules/post-type";
 @import "modules/single-article";
 @import "modules/single-page";
 @import "modules/video-embed";
@@ -78,6 +77,7 @@
 @import "modules/image-menu-item";
 @import "modules/contact-form";
 @import "modules/widget";
+
 
 @import "var/settings.widths";
 

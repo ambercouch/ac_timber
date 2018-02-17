@@ -1,0 +1,26 @@
+/*
+BEM BLOCK .c-main
+ */
+
+.c-main{
+  @extend .o-site-wrapper--responsive;
+  padding-top: $inuit-global-spacing-unit ;
+  padding-bottom: $inuit-global-spacing-unit;
+  @include mq($from : desktop){
+    padding-top: $inuit-global-spacing-unit-large;
+  }
+}
+
+/*
+BEM BLOCK MODIFIERS .c-main--
+ */
+
+[class*="c-main--"]{
+  @extend .c-main;
+}
+
+.c-main--{
+  &service{
+    padding: 0 !important;
+  }
+}

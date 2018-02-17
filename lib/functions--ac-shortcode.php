@@ -16,3 +16,12 @@ function act_bloginfo( $atts ) {
     return get_bloginfo($key);
 }
 add_shortcode('act_bloginfo', 'act_bloginfo');
+
+function act_theme_settings( $atts ) {
+    extract(shortcode_atts(array(
+        'key' => '',
+    ), $atts));
+    return get_field($key, 'options');
+}
+
+add_shortcode('act_theme_settings', 'act_theme_settings');

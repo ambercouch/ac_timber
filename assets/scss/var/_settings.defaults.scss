@@ -2,13 +2,19 @@
  *
  */
 // High-level base settings.
-$inuit-base-font-size:          24px;
-$inuit-base-line-height:        28.8px;
+$inuit-global-font-size:   26px;
+$inuit-global-font-size-mobile:   18px;
+$inuit-global-line-height: $inuit-global-font-size * 1.6;
 $inuit-base-text-color:         $brand-col-1;
 $inuit-base-background-color:   #fff;
 
-$milli-size: 18px;
+$inuit-wrapper-width: 1600px;
 
+$milli-size: 14px;
 
-//$site-container-width : 1200;
-$inuit-wrapper-width: 1200px
+$inuit-enable-btn-large:   true;
+$inuit-enable-btn-large:   true;
+$inuit-enable-btn--full:    true;
+
+$inuit-widths-delimiter: '-';
+

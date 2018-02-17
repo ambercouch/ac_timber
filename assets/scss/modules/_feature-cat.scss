@@ -2,7 +2,7 @@
   width: 100%;
   padding: 0 $inuit-global-spacing-unit;
   margin-bottom:$inuit-global-spacing-unit;
-  @include mq($from : tablet){
+  @include mq($from:desktop){
     width: 50%;
   }
 }
@@ -12,7 +12,7 @@
     background: $brand-col-1;
     color: #fff;
     padding: 0.5em 1em;
-    @include inuit-font-size($inuit-heading-size-6);
+    @include inuit-font-size($inuit-font-size-h6);
     font-weight:500;
     text-transform: uppercase;
   }

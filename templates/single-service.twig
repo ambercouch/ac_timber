@@ -1,0 +1,38 @@
+{% extends "base.twig" %}
+{% set modContentClass = '' %}
+{% set modBaseClass = '--'~template  %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+
+
+  {% block before_head %}
+    <!-- single-service.twig -->
+    <!-- postFormat {{postFormat}} -->
+
+  {% endblock %}
+
+ {% block hero %}
+ {% endblock %}
+
+  {% block feature %}
+  {% endblock %}
+
+
+  {% block content %}
+    {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+    {% for post in posts %}
+    {% include  ['content/content-single'~templateSlug~'.twig', 'content/content-single.twig'] %}
+  {% endfor %}
+  {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+
+{% endblock %}
+
+{% block afterContent %}
+  {%  endblock %}
+
+
+
+
+
+{% block  subsidiary %}
+  <!-- subsidiary removed -->
+{% endblock %}

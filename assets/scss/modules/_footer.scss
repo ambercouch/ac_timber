@@ -1,23 +1,48 @@
 .footer{
-  padding-top:$inuit-global-spacing-unit-large;
+  display: block;
+  font-family: $alt-font-family;
 }
 
-.footer{
-  &__content{
+.footer__{
+  &content{
+    @extend .o-site-wrapper--responsive;
     margin: 0 auto;
-    padding: $inuit-global-spacing-unit-large 0 $inuit-global-spacing-unit-large;
-    border-top:solid 3px white;
+    background: $brand-col-2;
+    @include mq($from : tablet){
+      display: flex;
+      flex-wrap:wrap ;
+    }
   }
-  &__company-logo{
+  &company-logo{
     display: block;
     max-width: 200px;
     margin: 0 auto $inuit-global-spacing-unit;
   }
-  &__site-info{
-    @include inuit-font-size($inuit-heading-size-6, 1);
+  &site-info{
+    @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: center;
     padding: $inuit-global-spacing-unit;
-    background: black;
+    background: $brand-col-1;
     color: white;
+    a{
+      color: white;
+    }
+  }
+  &widget{
+    @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
+    margin-bottom:$inuit-global-spacing-unit;
+    @extend .u-1-3--tablet;
+    @include mq($from: tablet){
+      padding-left:$inuit-global-spacing-unit ;
+    }
+    &:first-child{
+      padding-left:0 ;
+    }
+    &:last-child{
+      @include mq($from : tablet, $until: desktop){
+        padding-left:0 ;
+        width: 100% !important;
+      }
+    }
   }
 }
