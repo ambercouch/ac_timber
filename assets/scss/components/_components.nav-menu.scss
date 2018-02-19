@@ -32,8 +32,10 @@
    margin-bottom: 0;
  }
   &link{
+    transition: background 0.3s ease;
     text-decoration: none;
-  }
+    @include act-font-size($inuit-font-size-h5, 1);
+    }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__list--
@@ -68,11 +70,12 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit-t;
+    padding:$act-unit-s;
     display: block;
     color: white;
     &:hover{
-      color: ;
+      color: white;
+      background-color: darken($brand-col-1, 15%);
     }
   }
 }
