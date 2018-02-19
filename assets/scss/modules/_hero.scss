@@ -5,6 +5,8 @@ BEM BLOCK .hero
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 640px;
+  @include colour-cast($opacity : 1);
+;
 }
 
 /*
