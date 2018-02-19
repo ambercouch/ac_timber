@@ -24,6 +24,7 @@
  INUIT FRAME WORK
  */
 @import "inuit";
+@import "tools/tools.aliases";
 
 
 
@@ -46,7 +47,6 @@
   OBJECTS
 */
 @import "objects";
-@import "objects/o-site-wrapper";
 @import "objects/o-btn";
 
 /*
@@ -76,7 +76,6 @@
 @import "modules/subsidiary";
 @import "modules/image-menu-item";
 @import "modules/contact-form";
-@import "modules/widget";
 
 
 @import "var/settings.widths";

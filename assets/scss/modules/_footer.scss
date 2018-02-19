@@ -5,7 +5,7 @@
 
 .footer__{
   &content{
-    @extend .o-site-wrapper--responsive;
+    @extend .c-site-wrapper--responsive;
     margin: 0 auto;
     background: $brand-col-2;
     @include mq($from : tablet){

@@ -1,0 +1,78 @@
+/*
+  BEM BLOCK .c-nav-menu
+ */
+
+.c-nav-menu {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-nav-menu--
+ */
+
+.c-nav-menu-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-nav-menu--
+
+[class*=c-nav-menu--] {
+  @extend .c-nav-menu;
+}
+
+/*
+  BEM ELEMENTS .c-nav-menu__
+ */
+
+.c-nav-menu__ {
+ &list{
+   @extend .o-list-bare;
+   margin-bottom: 0;
+ }
+  &link{
+    text-decoration: none;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__list--
+
+[class*=c-nav-menu__list--] {
+  @extend .c-nav-menu__list;
+}
+
+.c-nav-menu__list--{
+  &primary{
+  @extend .o-list-flex--center;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
+
+[class*=c-nav-menu__item--] {
+  @extend .c-nav-menu__item !optional;
+}
+
+.c-nav-menu__item--{
+  &primary{
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
+
+[class*=c-nav-menu__link--] {
+  @extend .c-nav-menu__link !optional;
+}
+
+.c-nav-menu__link--{
+  &primary{
+    padding:$act-unit-t;
+    display: block;
+    color: white;
+    &:hover{
+      color: ;
+    }
+  }
+}

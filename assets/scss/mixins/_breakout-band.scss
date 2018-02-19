@@ -1,9 +1,9 @@
-@mixin breakout-band(){
-  background: $brand-col-1--xlight;
+@mixin breakout-band($bgc : #ccc, $padding : 0){
+  background: $bgc ;
   position: relative;
   z-index: 1;
-  padding-top:$inuit-base-spacing-unit--large;
-  padding-bottom:$inuit-base-spacing-unit--large;
+  padding-top: $padding;
+  padding-bottom: $padding;
   &:after{
     position: absolute;
     content: '';
@@ -12,7 +12,7 @@
     top: 0;
     height: 100%;
     display: block;
-    background: $brand-col-1--xlight;
+    background: $bgc;
     z-index: -1;
     transform: translate( 50%, 0 );
   }

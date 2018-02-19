@@ -52,7 +52,7 @@ BEM BLOCK ELEMENTS .c-single-service__
   }
   
   &content{
-    @extend .o-site-wrapper;
+    @extend .c-site-wrapper;
     @extend .o-island;
     display: block;
     padding: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;

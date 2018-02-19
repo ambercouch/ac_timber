@@ -4,7 +4,9 @@ BEM BLOCK .c-masthead
 .c-masthead{
   border-bottom:none;
   width: 100%;
-  background-color: $brand-col-3
+  @extend .o-wrapper;
+  padding: $act-unit;
+  padding-bottom: 0;
 }
 
 /*
@@ -30,7 +32,7 @@ BEM ELEMENTS .c-masthead__
     @extend %off-page--curtain;
   }
   &widget-area{
-    @extend .o-site-wrapper;
+    @extend .c-site-wrapper;
     display: none;
     width: 100%;
     margin: 0 auto;
@@ -38,8 +40,7 @@ BEM ELEMENTS .c-masthead__
     background: #2f2d35;
   }
   &branding{
-    @extend .o-site-wrapper;
     background: transparent;
-    padding: $inuit-global-spacing-unit $inuit-global-spacing-unit;
+    margin-bottom: $act-unit;
   }
 }
