@@ -28,8 +28,14 @@
 
 .c-widget__ {
  &container{
-display: block;
+   @include breakout-band($bgc : darken($brand-col-1, 10%));
+    display: block;
+
  }
+
+  &title{
+    display: none;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-widget--
@@ -42,4 +48,8 @@ display: block;
   &menu-primary{
     background-color: #ccc;
   }
+}
+
+[class*=c-widget__title--]{
+  @extend .c-widget__title !optional;
 }
