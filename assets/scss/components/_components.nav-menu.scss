@@ -68,6 +68,11 @@
 
 .c-nav-menu__link--{
   &primary{
-
+    padding:$act-unit-t;
+    display: block;
+    color: white;
+    &:hover{
+      color: ;
+    }
   }
 }
