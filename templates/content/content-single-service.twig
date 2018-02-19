@@ -4,7 +4,13 @@
   {% if post.thumbnail %}
     <div class="c-single-service__feature-image{{ templateClass }}">
       <div class="c-feature-image--service">
-        <img src="{{ post.thumbnail.src('serviceMenuLarge') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+        {% if (post.get_field('service_image_internal')) %}
+          <img src="{{ post.get_field('service_image_internal')['sizes']['serviceMenuLarge'] }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+
+        {% else %}
+            <img src="{{ post.thumbnail.src('serviceMenuLarge') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+
+        {% endif %}
       </div>
     </div>
   {%  endif %}
