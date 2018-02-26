@@ -26,6 +26,11 @@
 @import "inuit";
 @import "tools/tools.aliases";
 
+/*
+  MIXINS
+*/
+
+@import "mixins";
 
 /*
   UTILITIES
@@ -36,7 +41,6 @@
   UTILITIES OLD
 */
 
-@import "mixins";
 @import "helpers";
 @import "base";
 @import "var/settings.article";
