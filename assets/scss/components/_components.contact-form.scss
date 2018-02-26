@@ -1,0 +1,144 @@
+/*
+  BEM BLOCK .c-contact-form
+ */
+
+.c-contact-form {
+  display: block;
+  background: rgba($brand-col-1, 0.1);
+  padding: $inuit-global-spacing-unit-tiny !important;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-contact-form--
+ */
+
+.c-contact-form-- {
+  &type {
+    display: block
+
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-contact-form--
+
+[class*=contact-form--] {
+  @extend .c-contact-form;
+}
+
+/*
+  BEM ELEMENTS .c-contact-form__
+ */
+
+.c-contact-form__ {
+  &header{
+    display: block;
+  }
+  &fieldset{
+    background: rgba($brand-col-1, 0.1);
+    padding: $inuit-global-spacing-unit-tiny !important;
+  }
+  &input-wrapper{
+    display: block;
+    margin-bottom: 0;
+  }
+  &radio-wrapper{
+    @extend .c-contact-form__label;
+    padding-bottom:$act-unit-t;
+    border-bottom:solid 2px white;
+  }
+  &input{
+    display: block;
+    width: 100%;
+    border: none;
+    padding:$inuit-global-spacing-unit-tiny;
+  }
+  &label{
+    display: block;
+    margin-bottom: $act-unit-t;
+  }
+  &label-text{
+    @include act-font-size($inuit-font-size-h6, 1);
+  }
+  &label-text-radio{
+    @include act-font-size($inuit-font-size-h5, 1);
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+
+//BEM ELEMENT MODIFIER  .c-contact-form__ELEMENT--
+
+[class*=contact-form__header--] {
+  @extend .c-contact-form__header;
+}
+
+[class*=contact-form__input-wrapper--] {
+  @extend .c-contact-form__input-wrapper;
+}
+
+.c-contact-form__input-wrapper--{
+  &submit{
+    padding-top:$inuit-global-spacing-unit-small;
+  }
+}
+
+/*
+ CONTACT FORM 7 CLASSES .wpcf7
+ */
+.wpcf7{
+  //@extend .c-contact-form;
+}
+.wpcf7-text{
+   @extend .c-contact-form__input;
+}
+.wpcf7-date{
+  @extend .c-contact-form__input;
+}
+.wpcf7-select{
+  @extend .c-contact-form__input;
+  appearance: none;
+  background-image:
+          linear-gradient(45deg, transparent 50%, gray 50%),
+          linear-gradient(135deg, gray 50%, transparent 50%),
+          linear-gradient(to right, #ccc, #ccc);
+  background-position:
+          calc(100% - 20px) calc(1em + 0px),
+          calc(100% - 15px) calc(1em + 0px),
+          calc(100% - 1.5em) 0.3em;
+  background-size:
+          5px 5px,
+          5px 5px,
+          1px 1.5em;
+  background-repeat: no-repeat;
+
+}
+.wpcf7-textarea{
+   @extend .c-contact-form__input;
+ }
+.wpcf7-list-item-label{
+  @extend .c-contact-form__label-text;
+}
+
+.wpcf7-submit{
+  transition: background 0.3s ease;
+  @extend .c-contact-form__input;
+  padding:$inuit-global-spacing-unit-tiny;
+  background: $brand-col-1;
+  color: white;
+  cursor: pointer;
+  &:hover{
+    background: darken($brand-col-1, 5%);
+  }
+}
+
+.wpcf7-form-control-wrap{
+  @extend .c-contact-form__input-wrapper;
+}
