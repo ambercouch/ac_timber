@@ -99,7 +99,7 @@ gulp.task('serve', ['sass','js','svgstore'], function () {
     gulp.watch("assets/scss/**/*.scss", ['sass']);
     gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
     gulp.watch("templates/**/*.twig").on('change', browserSync.reload);
-    gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
+    gulp.watch("assets/js/**/*.js",['js']).on('change', browserSync.reload);
 });
 
 gulp.task('svgstore', function () {
