@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .c-google-map
+ */
+
+.c-google-map {
+  display: block;
+  //display: none;
+  @include inuit-clearfix();
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: $act-unit;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-google-map--
+ */
+
+.c-google-map-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-google-map--
+
+[class*=c-google-map--] {
+  @extend .c-google-map;
+}
+
+/*
+  BEM ELEMENTS .c-google-map__
+ */
+
+.c-google-map__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-google-map--
+
+[class*=c-google-map__header--] {
+  @extend .c-google-map__header;
+}
