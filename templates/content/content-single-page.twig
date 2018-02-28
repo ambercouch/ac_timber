@@ -4,7 +4,7 @@
     <div class="single-page__feature-image{{ templateClass }} ">
       <div class="feature-image--single-page">
         {% if(post.thumbnail.src()) %}
-          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+          <img src="{{ post.thumbnail.src('feature16-4') }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
         {% else %}
           <img src="{{acSettings.defaultImage}}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
         {% endif %}
@@ -14,8 +14,8 @@
 
     <header class="entry-header single-page__header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
       {% if not hidePageTitle %}
-      <h1 class="entry-title single-page_heading{{ templateClass }} ">
-        <span>{{ post.title }}</span>
+      <h1 class="entry-title single-page__heading{{ templateClass }} ">
+        <span class="entry-title single-page__title{{ templateClass }}" >{{ post.title }}</span>
       </h1>
       {% endif %}
     </header>
