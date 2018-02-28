@@ -8,7 +8,7 @@
   padding: $inuit-global-spacing-unit-tiny !important;
   width: 1200px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0 auto $act-unit-s;
 }
 
 /*
@@ -16,9 +16,28 @@
  */
 
 .c-contact-form-- {
-  &type {
-    display: block
+  &request {
+    .c-contact-form__content{
+      @include mq($from : tablet){
+        display: flex;
+        align-items: flex-end;
+      }
 
+      > *{
+        margin-right:$act-unit-t;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+    .c-contact-form__input-wrapper--submit{
+      padding: 0;
+      margin-bottom: $act-unit-t;
+    }
+
+    .ajax-loader{
+      display: none !important;
+    }
   }
 }
 

@@ -28,9 +28,8 @@
 
 .c-widget__ {
  &container{
-   @include breakout-band($bgc : darken($brand-col-1, 10%));
-    display: block;
 
+    display: block;
  }
 
   &title{
@@ -46,7 +45,20 @@
 
 .c-widget__container--{
   &menu-primary{
+    display: none;
     background-color: #ccc;
+    @include breakout-band($bgc : darken($brand-col-1, 10%));
+    @include mq($from : desktop){
+      display: block;
+    }
+  }
+  &menu-mobile{
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding: 0 $act-unit-s;
   }
 }
 
