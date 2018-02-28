@@ -41,6 +41,9 @@
   {% endblock %}
 
   {% block mobile_nav %}
+    {% if mobilenav_widgets == '' %}
+      <!-- Add some widgets to the mobilenav -->
+    {% else %}
     <button id="menuButton" class="btn--menu" data-state="off">
       <div class="btn--menu__bar--tl"></div>
       <div class="btn--menu__bar--tr"></div>
@@ -48,14 +51,13 @@
       <div class="btn--menu__bar--br"></div>
       <div class="btn--menu__bar--bl"></div>
     </button>
-    {% if mastheadbefore_widgets == '' %}
-      <!-- Add some widgets to the mastheadbefore-->
-    {% else %}
-      <div id="primaryNavigation" class="site__mobile-nav-widgets site__navigation--off-page" data-state="off">
+
+      <div id="mobileNavigation" class="site__mobile-nav-widgets site__navigation--off-page" data-state="off">
         <div class="mobile-nav-widgets" >
           {{mobilenav_widgets}}
         </div>
       </div>
+
     {% endif %}
   {% endblock %}
 
