@@ -29,7 +29,6 @@
 /*
   MIXINS
 */
-
 @import "mixins";
 
 /*
@@ -38,11 +37,16 @@
 @import "utilities";
 
 /*
+  ELEMENTS
+*/
+@import "elements";
+
+
+/*
   UTILITIES OLD
 */
 
 @import "helpers";
-@import "base";
 @import "var/settings.article";
 @import "var/settings.fonts";
 @import "typography";
