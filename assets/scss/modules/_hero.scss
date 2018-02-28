@@ -4,9 +4,13 @@ BEM BLOCK .hero
 .hero{
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 640px;
+  background-position: center top;
+  max-height: 50Vh;
+  height: 640px;
   @include colour-cast($opacity : 0.2);
-;
+  @include mq($from : desktop){
+    max-height: 75vh;
+  }
 }
 
 /*
