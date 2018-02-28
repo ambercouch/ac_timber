@@ -9,6 +9,14 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
+{% block hero %}
+  {% if pageBannerImage == '' %}
+    <!-- add a page banner -->
+  {% else %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}

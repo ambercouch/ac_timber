@@ -1,4 +1,4 @@
-{%  set bannerImg = fn('get_field','banner_image','options')   %}
+{%  set bannerImg = (pageBannerImage == '' ) ?  siteBannerImage : pageBannerImage %}
 {%  set bannerContent = fn('get_field','banner_content','options')   %}
 {%  set bannerLogo = fn('get_field','banner_logo','options')   %}
 <div class="hero" style="background-image: url('{{  bannerImg.url }}');">
