@@ -1,0 +1,6 @@
+[data-state=off]:not([data-control]){
+  height:0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
