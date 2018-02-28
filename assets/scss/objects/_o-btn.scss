@@ -9,6 +9,7 @@
   background: $brand-col-1;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .o-btn{
@@ -18,8 +19,16 @@
   }
 }
 
-.o-btn--tiny{
+.o-btn--small, .o-btn--s{
   @extend .o-btn;
   padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
+  @include inuit-font-size($inuit-font-size-h6, 1);
+
+}
+
+.o-btn--tiny, .o-btn--t{
+  @extend .o-btn;
+  padding: $inuit-global-spacing-unit-tiny / 1.5 $inuit-global-spacing-unit-tiny / 2;
   @include inuit-font-size($milli-size, 1);
+
 }
