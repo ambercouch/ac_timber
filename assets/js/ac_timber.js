@@ -13,7 +13,12 @@ ACTIMBER = {
             //add js class
             jQuery('body').addClass('js');
 
-            $("[data-fitvid]").fitVids();
+            var showButton = $('[data-control=requestForm]');
+            var container = $('[data-container=requestForm]');
+            ACTIMBER.fn.open(container, showButton);
+
+
+            //$("[data-fitvid]").fitVids();
 
             
             /**
@@ -78,6 +83,289 @@ ACTIMBER = {
         init: function () {
             //uncomment to debug
             //console.log('posts');
+        }
+    },
+    fn: {
+        actSliderLayout : function () {
+            $('[data-slider]').each(function (i) {
+                var $slider = $(this);
+                var $slides = $slider.find('[data-slider-item]');
+                var sliderHeight = $slider.find('[data-slider-item]').outerHeight();
+                var sliderWidth = $slider.outerWidth();
+                var sliderWindow = $slider.find('[data-slider-window]');
+                var sliderWindowWidth = sliderWindow.outerWidth();
+                var $sliderList = $slider.find('[data-slider-list]');
+                var currentItem = parseInt( $('[data-slider-active]', this).attr('data-slider-active'));
+                var posTop = sliderHeight - (sliderHeight * currentItem);
+                var posLeft = sliderWidth - (sliderWidth * currentItem);
+                var newItem = currentItem - 1;
+                var slideDirection = 'vert';
+
+                if($slider.hasClass('is-horizontal'))
+                {
+                    $slides.css('width', sliderWindowWidth);
+                    console.log('slider win width' + sliderWindowWidth);
+                    console.log('is-horizontal');
+                    slideDirection = 'horiz';
+
+                }else{
+                    console.log('not-horizontal')
+                }
+
+                if (slideDirection === 'horiz'){
+                    //console.log('direction horiz');
+
+                    var listWidth = sliderWindowWidth * $slides.length;
+                    $sliderList.css('width',  listWidth);
+                    $sliderList.css('left' , posLeft);
+
+                }else {
+                    console.log('direction vert');
+                    $sliderList.css('top' , posTop);
+                }
+
+                console.log('$slides.length');
+                console.log($slides.length);
+
+                $slides.first().attr('data-active', 'on');
+
+                console.log('sliderHeight');
+                console.log(sliderHeight);
+
+
+
+                //prev control
+                $(document).on('click', '.slider-scroll__btn--prev, .slider-nav__btn--nav-prev', function () {
+                    console.log('click prev');
+
+                    newItem = currentItem - 1;
+
+                    if (newItem > 0){
+
+                        $('[data-active=on]').attr('data-active', 'off');
+                        $('[data-slider-active]').attr('data-slider-active', newItem);
+                        $('[data-slider-item='+newItem+']').attr('data-active', 'on');
+                        $('[data-slide-nav='+newItem+']').attr('data-active', 'on');
+
+                        //set the active slide slide ID on the slide list
+                        $sliderList.attr('data-slider-active',newItem);
+
+                        // Set the matching slide item to active
+                        $sliderList.find('[data-slider-active='+newItem+']').attr('data-active', 'on')
+
+                        //reposition the slider list
+                        posTop = sliderHeight - (sliderHeight * newItem);
+                        posLeft = sliderWindowWidth - (sliderWindowWidth * newItem);
+                        if(slideDirection === 'vert'){
+                            $sliderList.css('top' , posTop);
+
+                        }else {
+                            $sliderList.css('left' , posLeft);
+                        }
+                        currentItem = newItem;
+                    }
+                });
+
+                //next control
+                $(document).on('click', '.slider-scroll__btn--next, .slider-nav__btn--nav-next', function () {
+                    console.log('click next');
+
+                    newItem = currentItem + 1;
+
+                    if (newItem <= $slides.length){
+
+                        $('[data-active=on]').attr('data-active', 'off');
+                        $('[data-slider-active]').attr('data-slider-active', newItem);
+                        $('[data-slider-item='+newItem+']').attr('data-active', 'on');
+                        $('[data-slide-nav='+newItem+']').attr('data-active', 'on');
+
+                        //set the active slide slide ID on the slide list
+                        $sliderList.attr('data-slider-active',newItem);
+
+                        // Set the matching slide item to active
+                        $sliderList.find('[data-slider-active='+newItem+']').attr('data-active', 'on')
+
+                        //reposition the slider list
+                        posTop = sliderHeight - (sliderHeight * newItem);
+                        posLeft = sliderWindowWidth - (sliderWindowWidth * newItem);
+                        if(slideDirection === 'vert'){
+                            $sliderList.css('top' , posTop);
+
+                        }else {
+                            $sliderList.css('left' , posLeft);
+                        }
+                        currentItem = newItem;
+                    }
+                });
+
+                $(document).on('click', '[data-slide-nav]', function () {
+
+                    //set current active slide to off
+                    $('[data-active=on]').attr('data-active', 'off');
+
+                    $(this).attr('data-active','on');
+
+                    //Get the ID of the click nav link
+                    currentItem = $(this).attr('data-slide-nav');
+
+                    //set the active slide slide ID on the slide list
+                    $sliderList.attr('data-slider-active',currentItem);
+
+                    // Set the matching slide item to active
+                    $sliderList.find('[data-slider-item='+currentItem+']').attr('data-active', 'on')
+
+                    //reposition the slider list
+                    posTop = sliderHeight - (sliderHeight * currentItem);
+                    posLeft = sliderWindowWidth - (sliderWindowWidth * currentItem);
+                    if(slideDirection === 'vert'){
+                        $sliderList.css('top' , posTop);
+
+                    }else {
+                        $sliderList.css('left' , posLeft);
+                    }
+
+                    $('[data-slider-active]').attr('data-slider-active', currentItem);
+
+                })
+
+            })
+
+        },
+        actElDimensions: function (selector) {
+            if (selector == undefined){
+                selector = 'html'
+            }
+
+            return {
+                width : $(selector).outerWidth(),
+                height : $(selector).outerHeight(),
+            }
+        },
+        actParallax: function (layers) {
+
+            var top = window.pageYOffset;
+
+            var layers = (layers == undefined)? document.querySelectorAll('[data-parallax]') : layers;
+
+            var layer, speed, yPos;
+            for (var i = 0; i < layers.length; i++) {
+                layer = layers[i];
+                speed = layer.getAttribute('data-speed');
+                yPos = -(top * speed / 100);
+                layer.setAttribute('style', 'transform: translate3d(0px, ' + yPos + 'px, 0px)');
+
+            }
+        },
+        setMastheadDimension: function (height, width) {
+
+            if (height){
+                ACTIMBER.settings.actMasthead.height = height;
+            }
+            if (width){
+                ACTIMBER.settings.actMasthead.height = width;
+            }
+        },
+        cssEl : function (selector, css) {
+            console.log('cssEl');
+            if(selector == undefined){
+                selector = '.hero'
+            }
+            if(css == undefined){
+                css = {
+                    'position' : 'relative',
+                    'top' : ACTIMBER.settings.actMasthead.height,
+                    'height' : window.innerHeight - ACTIMBER.settings.actMasthead.height
+                }
+            }
+            $(selector).css(css);
+        },
+        actScrollTo : function (offSet) {
+
+            if(offSet == undefined){
+                offSet = 0;
+            }
+
+            $('a[href*="#"]:not([href="#"])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - offSet
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+
+        },
+        open: function (container, showButton, parent, listParent) {
+            var elState = showButton.attr('data-state');
+            var eventActOpen = new Event('actOpen');
+            var eventActClose = new Event('actClose');
+            console.log('container');
+            console.log(container);
+            showButton.on('click', function(e){
+                e.preventDefault();
+                console.log('clicker');
+                elState = showButton.attr('data-state');
+                if ('off' === elState ) {
+                    showButton.attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('ac-on');
+                    document.body.className += ' ' + 'container-is-open';
+                    window.dispatchEvent(eventActOpen)
+
+                } else {
+                    console.log(document.body.className)
+                    $(showButton).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('ac-on');
+                    document.querySelector('body').classList.remove('container-is-open');
+
+                    window.dispatchEvent(eventActClose);
+                }
+            });
+        },
+        actDefer: function(successMethod, failMethod, testMethod, pause, attempts) {
+            var defTest = function () {
+
+                if (typeof jQuery !== 'undefined') {
+                    return true
+                }
+                return false;
+
+            };
+            //What to do if test is false
+            var  defFail = function () {
+                console.log('The deftest failed');
+            }
+            //What to do if test is true
+            var  defSuccess = function () {
+                console.log('The deftest passed');
+            }
+            attempts = (attempts === undefined)? false : attempts;
+            pause = (pause === undefined)? 50 : pause;
+            testMethod = (testMethod === undefined)? defTest : testMethod;
+            failMethod = (failMethod === undefined)? defFail : failMethod;
+            successMethod = (successMethod === undefined)? defSuccess : successMethod;
+
+
+            if (testMethod()) {
+                console.log('the testmethod')
+                successMethod();
+            } else {
+                console.log('the failmethod')
+                failMethod();
+                if(attempts === false || attempts > 0) {
+                    setTimeout(function () {
+                        attempts = (attempts === false )? attempts : attempts - 1;
+                        ACTIMBER.fn.actDefer(successMethod, failMethod, testMethod, pause, attempts)
+                    }, pause);
+                }
+            }
         }
     }
 };
