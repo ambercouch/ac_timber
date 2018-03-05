@@ -6,7 +6,7 @@ BEM BLOCK .hero
   background-size: cover;
   background-position: center top;
   max-height: 50Vh;
-  height: 640px;
+  height: 540px;
   @include colour-cast($opacity : 0.2);
   @include mq($from : desktop){
     max-height: 75vh;
