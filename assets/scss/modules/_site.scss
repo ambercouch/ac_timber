@@ -15,6 +15,28 @@ BEM ELEMENTS .site__
   &main{
 
   }
+  &mobile-nav-widgets{
+    transition: opacity 0.3s ease-in-out;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: darken($brand-col-3, 10%);
+    z-index: 1000;
+    opacity: 0;
+    padding-top: $act-unit-h;
+    &[data-state=off]{
+      opacity: 0 !important;
+      @include inuit-hidden-visually();
+    }
+    &[data-state=on]{
+      opacity: 1;
+    }
+    @include mq($from : desktop){
+      display: none !important;
+    }
+  }
+
   &footer{
     background: #ccc;
   }

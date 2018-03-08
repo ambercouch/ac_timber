@@ -6,6 +6,9 @@ BEM BLOCK .c-masthead
   width: 100%;
   @extend .o-wrapper;
   padding: $act-unit;
+  padding-bottom: $act-unit;
+  @include inuit-clearfix();
+ 
 }
 
 /*
@@ -30,14 +33,19 @@ BEM ELEMENTS .c-masthead__
   &navigation{
     @extend %off-page--curtain;
   }
-  &widget-area{
-    @extend .c-site-wrapper;
-    display: none;
-    width: 100%;
-    margin: 0 auto;
-    height: $inuit-global-spacing-unit;
-    background: #2f2d35;
+&masthead-before-widgets{
+
+  text-align: center;
+  margin-bottom:$act-unit-s;
+  @include mq($from : tablet){
+    padding-right:$act-unit-l;
+    float: right;
+    height: 0;
   }
+  @include mq($from : desktop){
+    padding-right:0;
+  }
+}
   &branding{
     background: transparent;
     margin-bottom: 0;
