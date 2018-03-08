@@ -6,7 +6,6 @@ BEM BLOCK .c-masthead
   width: 100%;
   @extend .o-wrapper;
   padding: $act-unit;
-  padding-bottom: 0;
 }
 
 /*
@@ -41,6 +40,6 @@ BEM ELEMENTS .c-masthead__
   }
   &branding{
     background: transparent;
-    margin-bottom: $act-unit;
+    margin-bottom: 0;
   }
 }
