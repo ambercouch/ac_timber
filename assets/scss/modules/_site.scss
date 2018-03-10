@@ -36,7 +36,11 @@ BEM ELEMENTS .site__
       display: none !important;
     }
   }
-
+  &before-main{
+    text-align: center;
+    background: $brand-col-1;
+    color: white;
+  }
   &footer{
     background: #ccc;
   }
