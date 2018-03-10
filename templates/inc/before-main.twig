@@ -9,7 +9,7 @@
     {% endif %}
     {% if (posts[0].before_main_content != '') %}
     <div class="c-before-main__body">
-      {{posts[0].before_main_content }}
+      {{ fn('apply_filters','the_content', posts[0].before_main_content) }}
     </div>
     {% endif %}
   </div>
