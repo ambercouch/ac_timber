@@ -8,12 +8,18 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
-{% block content %}
+{% block before_main %}
+  {% if (posts[0].before_main_title != '') or (posts[0].before_main_content != '')%}
+    <section class="site__before-main">
+      {% include 'inc/before-main.twig' %}
+    </section>
+  {% endif %}
+{% endblock %}
 
+{% block content %}
   {% for post in posts %}
     {% include ['content/content-'~templateSlug~'.twig','content/content-single-page.twig',] %}
   {% endfor %}
-
 {% endblock %}
 
 

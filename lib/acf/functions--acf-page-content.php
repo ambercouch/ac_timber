@@ -31,8 +31,8 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array (
                 'key' => 'field_5a06a14d88987',
-                'label' => 'Title Before Content',
-                'name' => 'before_content_title',
+                'label' => 'Before Main Content - Title',
+                'name' => 'before_main_title',
                 'type' => 'text',
                 'value' => NULL,
                 'instructions' => '',
@@ -51,9 +51,9 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array (
                 'key' => 'field_5a06a18988988',
-                'label' => 'Text Before Content',
-                'name' => 'before_content_text',
-                'type' => 'text',
+                'label' => 'Before Main Content - Content',
+                'name' => 'before_main_content',
+                'type' => 'wysiwyg',
                 'value' => NULL,
                 'instructions' => '',
                 'required' => 0,
@@ -64,10 +64,10 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'maxlength' => '',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+                'delay' => 1,
             ),
         ),
         'location' => array (
@@ -84,9 +84,9 @@ if( function_exists('acf_add_local_field_group') ):
         'style' => 'default',
         'label_placement' => 'top',
         'instruction_placement' => 'label',
-        'hide_on_screen' => '',
+        'hide_on_screen' => 0,
         'active' => 1,
-        'description' => 'A title and/or a line of text placed in a band before the main content',
+        'description' => 'A title and/or content placed in a band before the main content',
     ));
 
 endif;
