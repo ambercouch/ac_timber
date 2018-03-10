@@ -27,6 +27,9 @@ BEM BLOCK MODIFIERS .c-site-title
       margin-right: 0;
     }
   }
+  &front-page{
+    @extend .c-site-title--page;
+  }
 }
 
 /*

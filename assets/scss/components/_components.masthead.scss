@@ -8,7 +8,10 @@ BEM BLOCK .c-masthead
   padding: $act-unit;
   padding-bottom: $act-unit;
   @include inuit-clearfix();
+  display: flex;
+  flex-direction: column-reverse;
   @include mq($from : desktop){
+    display: block;
     padding-bottom: 0;
   }
 }
@@ -36,16 +39,21 @@ BEM ELEMENTS .c-masthead__
     @extend %off-page--curtain;
   }
 &masthead-before-widgets{
-
+  @include act-font-size($inuit-font-size-h4);
   text-align: center;
-  margin-bottom:$act-unit-s;
+  margin-bottom:0;
+  margin-top:$act-unit-s;
+  @include mq($from : mobile){
+    @include act-font-size($inuit-font-size-h2);
+  }
   @include mq($from : tablet){
     padding-right:$act-unit-l;
-    float: right;
-    height: 0;
   }
   @include mq($from : desktop){
+    @include act-font-size($inuit-font-size-h4);
     padding-right:0;
+    float: right;
+    margin-top:0;
   }
 }
   &branding{
