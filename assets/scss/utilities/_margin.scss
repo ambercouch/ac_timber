@@ -1,3 +1,4 @@
+//margin
 .u-mt{
   margin: $inuit-global-spacing-unit-tiny;
 }
@@ -14,6 +15,7 @@
   margin: $inuit-global-spacing-unit-huge;
 }
 
+//margin-left
 .u-mlt{
   margin-left: $inuit-global-spacing-unit-tiny;
 }
@@ -30,6 +32,7 @@
   margin-left: $inuit-global-spacing-unit-huge;
 }
 
+//margin-right
 .u-mrt{
   margin-right: $inuit-global-spacing-unit-tiny;
 }
@@ -46,6 +49,7 @@
   margin-right: $inuit-global-spacing-unit-huge;
 }
 
+//margin-top
 .u-mtt{
   margin-top: $inuit-global-spacing-unit-tiny;
 }
@@ -62,20 +66,22 @@
   margin-top: $inuit-global-spacing-unit-huge;
 }
 
+
+//margin-bottom
 .u-mbt{
-  margin-left: $inuit-global-spacing-unit-tiny;
+  margin-bottom: $inuit-global-spacing-unit-tiny;
 }
 .u-mbs{
-  margin-left: $inuit-global-spacing-unit-small;
+  margin-bottom: $inuit-global-spacing-unit-small;
 }
 .u-mbm{
-  margin-left: $inuit-global-spacing-unit;
+  margin-bottom: $inuit-global-spacing-unit;
 }
 .u-mbl{
-  margin-left: $inuit-global-spacing-unit-large;
+  margin-bottom: $inuit-global-spacing-unit-large;
 }
 .u-mbh{
-  margin-left: $inuit-global-spacing-unit-huge;
+  margin-bottom: $inuit-global-spacing-unit-huge;
 }
 
 .u-m0a{

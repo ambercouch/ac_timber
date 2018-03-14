@@ -1,0 +1,18 @@
+.u-fs1{
+  @include act-font-size($inuit-font-size-h1);
+}
+.u-fs2{
+  @include act-font-size($inuit-font-size-h2);
+}
+.u-fs3{
+  @include act-font-size($inuit-font-size-h3);
+}
+.u-fs4{
+  @include act-font-size($inuit-font-size-h4);
+}
+.u-fs5{
+  @include act-font-size($inuit-font-size-h5);
+}
+.u-fs6{
+  @include act-font-size($inuit-font-size-h6);
+}
