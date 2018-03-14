@@ -1,0 +1,25 @@
+
+.u-bgc1 {
+  background-color: $brand-col-1 !important;
+  color: white; //default
+}
+
+.u-bgc2 {
+  background-color: $brand-col-2 !important;
+  color: $brand-col-1; //default
+}
+
+.u-bgc3 {
+  background-color: $brand-col-3 !important;
+  color: white; //default
+}
+
+.u-bgc4{
+  background-color: $brand-col-4 !important;
+  color: white;
+  .nav-menu__link *{
+    color: white;
+  }
+
+
+}
