@@ -7,8 +7,14 @@ BEM BLOCK .c-masthead
   @extend .o-wrapper;
   padding: $act-unit;
   padding-bottom: $act-unit;
-  @include inuit-clearfix();
- 
+  padding-top: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &:after{
+    width: 100%;
+  }
 }
 
 /*
@@ -34,16 +40,21 @@ BEM ELEMENTS .c-masthead__
     @extend %off-page--curtain;
   }
 &masthead-before-widgets{
-
-  text-align: center;
+  @include breakout-band($bgc : $brand-col-2);
+  text-align: right;
   margin-bottom:$act-unit-s;
+  background: $brand-col-2;
+  color: white;
+  padding: $act-unit-t !important;
+  @include act-font-size($milli-size, 1);
+
   @include mq($from : tablet){
-    padding-right:$act-unit-l;
-    float: right;
-    height: 0;
+
+    width: 100%;
+
   }
   @include mq($from : desktop){
-    padding-right:0;
+
   }
 }
   &branding{
