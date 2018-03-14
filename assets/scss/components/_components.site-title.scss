@@ -45,7 +45,7 @@ BEM ELEMENTS .c-site-title
     display: block;
     color: white;
     text-decoration: none;
-    &:hover{
+    &:hover,&:focus{
       color: white;
     }
   }
