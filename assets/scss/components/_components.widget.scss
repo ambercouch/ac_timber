@@ -14,6 +14,10 @@
   &type {
     display: block
   }
+  &footer {
+    color: white;
+    @include act-font-size($inuit-font-size-h5, 1.5)
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-widget--
@@ -57,5 +61,7 @@
 .c-widget__title--{
   &footer{
     display: block;
+    margin-bottom:$act-unit-t;
+    color: white;
   }
 }
