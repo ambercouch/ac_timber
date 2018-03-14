@@ -41,6 +41,9 @@ BEM ELEMENTS .c-site-title
  */
 
 .c-site-title__{
+  &heading{
+    line-height:1;
+  }
   &link{
     display: block;
     color: white;
