@@ -1,6 +1,6 @@
 <div class="navigation--service">
   <ul class="navigation__list--service">
-    {% for item in menuServices.get_items %}
+    {% for item in menuService.get_items %}
       {% set objectId = item._menu_item_object_id  %}
       {#{% set thumb = fn('get_the_post_thumbnail', objectId) %}#}
       {% set thumbId = fn('get_post_thumbnail_id', objectId ) %}
