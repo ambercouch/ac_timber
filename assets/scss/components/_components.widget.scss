@@ -53,3 +53,9 @@
 [class*=c-widget__title--]{
   @extend .c-widget__title !optional;
 }
+
+.c-widget__title--{
+  &footer{
+    display: block;
+  }
+}

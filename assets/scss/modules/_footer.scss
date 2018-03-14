@@ -6,8 +6,9 @@
 .footer__{
   &content{
     @extend .c-site-wrapper--responsive;
+    padding: $act-unit;
     margin: 0 auto;
-    background: $brand-col-2;
+    background: transparent;
     @include mq($from : tablet){
       display: flex;
       flex-wrap:wrap ;
@@ -22,7 +23,7 @@
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: center;
     padding: $inuit-global-spacing-unit;
-    background: $brand-col-1;
+    background: $brand-col-2;
     color: white;
     a{
       color: white;
