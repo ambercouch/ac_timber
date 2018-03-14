@@ -27,10 +27,6 @@
 @import "tools/tools.aliases";
 
 
-/*
-  UTILITIES
-*/
-@import "utilities";
 
 /*
   UTILITIES OLD
@@ -45,6 +41,12 @@
 @import "accessibility";
 @import "placeholders/off-page";
 @import "placeholders/cf";
+
+/*
+  UTILITIES
+*/
+@import "utilities";
+
 
 /*
   OBJECTS
