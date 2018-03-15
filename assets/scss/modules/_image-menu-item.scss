@@ -4,11 +4,11 @@
 
 .image-menu-item {
   display: block;
-  @include colour-cast($color: #00788a, $opacity : 0.1);
+  @include colour-cast($color: $brand-col-3, $opacity : 0.1);
   position: relative;
   &:hover{
 
-    @include colour-cast($color: #00788a, $opacity : 0);
+    @include colour-cast($color:$brand-col-3, $opacity : 0);
   }
 }
 
@@ -40,31 +40,38 @@
     max-height:100%;
     width: 600px;
     height: auto;
-    filter: brightness(0.7);
+    filter: saturate(20%);
     .image-menu-item:hover &{
-      filter:brightness(0.9);
+      filter:saturate(50%);
     }
   }
   &header{
     position: absolute;
-    top: 50%;
+    top: 0%;
     left: 0%;
     width:100%;
-    padding: $inuit-global-spacing-unit-tiny 0;
+    padding:  0;
     text-align: center;
     z-index: 2;
-    transform: translate(0,-50%);
+    transform: translate(0,0%);
     .image-menu-item:hover &{
-      opacity: 0;
+
     }
   }
   &heading{
     font-weight: 500;
     margin: 0;
+    display: block;
+    background: rgba($brand-col-2, 1);
+    padding: $act-unit-t $act-unit-t;
+    text-transform: uppercase;
+    text-align: center;
+    @include act-font-size($inuit-font-size-h5,1)
   }
   &title{
     color: white;
-    @include inuit-font-size($inuit-font-size-h3 ,1);
+    @include inuit-font-size($inuit-font-size-h5 ,1);
+    letter-spacing: 0.1;
   }
   &wrapper{
     position: absolute;
