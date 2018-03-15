@@ -14,8 +14,8 @@
 
     <header class="entry-header single-page__header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
       {% if not hidePageTitle %}
-      <h1 class="entry-title single-page_heading{{ templateClass }} ">
-        <span>{{ post.title }}</span>
+      <h1 class="entry-title single-page__heading{{ templateClass }} ">
+        <span class="entry-title single-page__title{{ templateClass }} ">{{ post.title }}</span>
       </h1>
       {% endif %}
     </header>

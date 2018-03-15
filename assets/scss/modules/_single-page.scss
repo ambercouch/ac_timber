@@ -12,9 +12,15 @@
 
   &heading{
     margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1;
     &:after{
 
     }
+  }
+  &title{
+    line-height: 1;
+    display: block;
   }
 
   &feature-image{
