@@ -24,6 +24,12 @@ if( function_exists('acf_add_options_page') )
         'parent_slug' => 'theme-general-settings',
     ));
 
+    acf_add_options_sub_page(array(
+        'page_title' => 'Service Settings',
+        'menu_title' => 'Service Settings',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
 }
 
 require_once get_template_directory() . '/lib/acf/acf-options--branding.php';
@@ -33,3 +39,4 @@ require_once get_template_directory() . '/lib/acf/acf-options--banner-content.ph
 require_once get_template_directory() . '/lib/acf/acf-options--banner-menu.php';
 require_once get_template_directory() . '/lib/acf/acf-options--footer-info.php';
 require_once get_template_directory() . '/lib/acf/acf-options--company-info.php';
+require_once get_template_directory() . '/lib/acf/acf-options--service-menu.php';
