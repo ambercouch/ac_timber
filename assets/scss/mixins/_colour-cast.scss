@@ -1,5 +1,6 @@
 @mixin colour-cast($color : $brand-col-1, $opacity : 0.2, $darken : 0, $mode : multiply){
   &:before{
+    pointer-events: none;
     transition: opacity 0.5s ease;
     content: '';
     position: absolute;
