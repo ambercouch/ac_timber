@@ -16,13 +16,16 @@
       <li class="navigation__item--service">
         <div class="navigation__image-menu-item" >
           <div class="image-menu-item">
-            <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
-            <div class="image-menu-item__wrapper">
+            <a class="image-menu-item__image-link" href="{{item.url}}">
+              <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
+
+              <div class="image-menu-item__wrapper">
             <div class="image-menu-item__header">
             <h3 class="image-menu-item__heading">
               <span class="image-menu-item__title" >{{ item.title }}</span>
             </h3>
             </div>
+              {% if serviceMenuShowExcerpt  == 1 %}
               <div class="body">
                 <div class="image-menu-item__content">
                   <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
@@ -40,8 +43,9 @@
 
                 </div>
               </div>
-
+              {% endif %}
             </div>
+            </a>
           </div>
         </div>
       </li>

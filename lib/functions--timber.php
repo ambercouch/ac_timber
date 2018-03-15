@@ -90,6 +90,8 @@ class StarterSite extends TimberSite {
         $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
         $context['postEditUrl'] =  get_edit_post_link($post_id);
 
+        $context['serviceMenuShowExcerpt'] = get_field('show_service_excerpt', 'options');
+
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
         return $context;
 
