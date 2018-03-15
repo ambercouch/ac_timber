@@ -2,11 +2,11 @@
  *
  */
 html{
-  font-family: $base-font-family;
+  font-family: $act-font-family-sans;
 }
 
 @include headings(1,6){
-  font-family: $heading-font-family;
+  font-family: $act-font-family-headings;
   margin-top: 0;
 }
 
