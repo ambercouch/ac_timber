@@ -19,9 +19,9 @@ class StarterSite extends TimberSite {
         add_image_size ( 'feature500', 500, 500, true );
         add_image_size ( 'feature16-9', 1600, 900, true );
         add_image_size ( 'feature16-4', 1600, 400, true );
-        add_image_size ( 'serviceMenuLarge', 600, 900, true );
-        add_image_size ( 'serviceMenuMedium', 400, 600, true );
-        add_image_size ( 'serviceMenuSmall', 200, 300, true );
+        add_image_size ( 'serviceMenuLarge', 600,750, true );
+        add_image_size ( 'serviceMenuMedium', 400, 500, true );
+        add_image_size ( 'serviceMenuSmall', 200, 250, true );
 
 
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );

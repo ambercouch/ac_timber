@@ -10,7 +10,7 @@ define('SIDEBARS', serialize(array('Primary','Subsidiary','Footer')));
     {
         $settings['svgLogo'] = null;
         $settings['defaultImage'] = null;
-        $settings['typeKitId'] = 'hej7ovh';
+        $settings['typeKitId'] = 'fez6iab';
         $settings['sidebars'] = unserialize(ACT_SIDEBARS);
         return $settings;
     }

@@ -10,7 +10,20 @@ and open the template in the editor.
 
 $col-act-gray-xxlight : #e5e5e5;
 
-$brand-col-1 : #414042;
-$brand-col-2 : #0b556d;
-$brand-col-3 : #0b556d;
+$phx-black : #151D1D;
+$phx-slate : #343C3C;
+$phx-burnt : #312222;
+$phx-burnt-mushroom : #3D3737;
+$phx-red: #D60707;
+$phx-blue: #0B64A8;
+
+$brand-col-1 : lighten($phx-slate, 70%);
+$brand-col-2 : $phx-black;
+$brand-col-3 : $phx-burnt;
+$brand-col-4 : $phx-burnt-mushroom;
+$brand-col-5 : $phx-slate;
+$brand-col-6 : $phx-blue;
+$brand-col-7 : $phx-red;
+$brand-col-8 : $phx-blue;
+$brand-col-9 : $phx-blue;
 
