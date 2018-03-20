@@ -9,12 +9,20 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
+{% block hero %}
+
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}
     {% include 'content/content-single-page'~template_slug~'.twig' %}
   {% endfor %}
 
+{% endblock %}
+
+{% block belowContent %}
+  <!-- removed comments -->
 {% endblock %}
 
 
