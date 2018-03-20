@@ -32,12 +32,13 @@ BEM BLOCK ELEMENTS .c-single-service__
   &header{
     display: block;
     padding: 0 $inuit-global-spacing-unit;
+    margin-bottom:$act-unit;
 
   }
 
   &heading{
     margin-bottom: 0;
-    @include inuit-font-size($inuit-font-size-h1);
+    @include inuit-font-size($inuit-font-size-h1, 1);
     font-weight: 500;
   }
 
