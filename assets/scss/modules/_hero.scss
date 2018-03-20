@@ -30,7 +30,7 @@ BEM ELEMENTS .hero__
     color: white;
   }
   &content{
-    background: rgba(white, 0.7);
+    background: rgba($brand-col-3, 0.7);
     display: inline-block;
     padding: $act-unit-s;
     position: absolute;
