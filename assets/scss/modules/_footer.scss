@@ -1,6 +1,7 @@
 .footer{
   display: block;
-  font-family: $act-font-family-alt;
+  //font-family: $act-font-family-alt;
+  //@include act-font-size($inuit-font-size-h6);
 }
 
 .footer__{
