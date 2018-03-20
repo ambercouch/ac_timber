@@ -21,7 +21,7 @@ if( function_exists('acf_add_local_field_group') ):
                 ),
                 'default_value' => '<p>© [act_bloginfo key=\'name\' ] [act_date]
 <span class="sep"> | </span>
-<a title="Website Design Cardiff" href="http://ambercouch.co.uk/"> AmberCouch - Website designer Cardiff</a></p>',
+<a title="Website Design Cardiff" href="http://ambercouch.co.uk/"> AmberCouch - Website Designer Cardiff</a></p>',
                 'tabs' => 'all',
                 'toolbar' => 'full',
                 'media_upload' => 1,
