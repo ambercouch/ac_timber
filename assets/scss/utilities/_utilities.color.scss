@@ -1,0 +1,48 @@
+
+.u-col1 {
+  color: $brand-col-1 !important;
+  color: white; //default
+}
+
+.u-col2 {
+  color: $brand-col-2 !important;
+  color: $brand-col-1; //default
+}
+
+.u-col3 {
+  color: $brand-col-3 !important;
+  color: white; //default
+}
+
+.u-col4{
+  color: $brand-col-4 !important;
+  color: white;
+  .nav-menu__link *{
+    color: white;
+  }
+}
+
+.u-col5 {
+  color: $brand-col-5 !important;
+  color: white; //default
+}
+
+.u-col6 {
+  color: $brand-col-6 !important;
+  color: white; //default
+}
+
+.u-col7 {
+  color: $brand-col-7 !important;
+  color: white; //default
+}
+
+.u-col8 {
+  color: $brand-col-8 !important;
+  color: white; //default
+}
+
+.u-col9 {
+  color: $brand-col-9 !important;
+  color: white; //default
+}
