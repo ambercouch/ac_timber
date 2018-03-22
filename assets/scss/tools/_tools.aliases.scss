@@ -1,0 +1,13 @@
+// Reassign `$inuit-global-spacing-unit` to `$ac-unit`.
+$act-unit: $inuit-global-spacing-unit;
+$act-unit-t: $inuit-global-spacing-unit-tiny;
+$act-unit-s: $inuit-global-spacing-unit-small;
+$act-unit-l: $inuit-global-spacing-unit-large;
+$act-unit-h: $inuit-global-spacing-unit-huge;
+
+
+
+// Reassign lengthy font-size mixin to `act-font-size()`.
+@mixin act-font-size($args...) {
+  @include inuit-font-size($args...);
+}

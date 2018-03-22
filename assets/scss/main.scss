@@ -24,9 +24,12 @@
  INUIT FRAME WORK
  */
 @import "inuit";
+@import "tools/tools.aliases";
 
-
-
+/*
+  UTILITIES
+*/
+@import "utilities";
 
 /*
   UTILITIES
@@ -80,6 +83,13 @@
 
 
 @import "var/settings.widths";
+
+
+/*
+  SHAME
+*/
+@import "shame";
+
 
 
 
