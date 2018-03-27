@@ -6,14 +6,14 @@
   border: none;
   padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
   @include inuit-font-size($inuit-font-size-h5, 1);
-  background: $brand-col-1;
+  background-color: $brand-col-1;
   color: #fff;
   text-decoration: none;
 }
 
 .o-btn{
   &:hover,&:focus{
-    background: darken($brand-col-1, 5%);
+    background-color: darken($brand-col-1, 5%);
     color: #fff;
   }
 }
@@ -22,4 +22,66 @@
   @extend .o-btn;
   padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
   @include inuit-font-size($milli-size, 1);
+}
+
+.o-btn--bc1{
+  @extend .o-btn;
+  background: $brand-col-1;
+  color: white;
+}
+.o-btn--bc2{
+  @extend .o-btn;
+  background: $brand-col-2;
+  color: white;
+}
+.o-btn--bc3{
+  @extend .o-btn;
+  background: $brand-col-3;
+  color: white;
+}
+.o-btn--bc4{
+  @extend .o-btn;
+  background: $brand-col-4;
+  color: white;
+}
+.o-btn--bc5{
+  @extend .o-btn;
+  background: $brand-col-5;
+  color: white;
+}
+.o-btn--bc6{
+   @extend .o-btn;
+   background: $brand-col-6;
+   color: white;
+ }
+.o-btn--bc7{
+  @extend .o-btn;
+  background: $brand-col-7;
+  color: white;
+}
+.o-btn--bc8{
+  @extend .o-btn;
+  background: $brand-col-8;
+  color: white;
+}
+.o-btn--bc9{
+  @extend .o-btn;
+  background: $brand-col-9;
+  color: white;
+}
+.o-btn--white{
+  @extend .o-btn;
+  background-color: white !important;
+  color: black;
+  &:hover,&:focus{
+    background-color: darken(white, 10%) !important;
+    color: black;
+  }
+}
+
+.o-btn--black{
+  @extend .o-btn;
+  background: black;
+  color: white;
+
 }
