@@ -8,6 +8,7 @@ var pump = require('pump');
 var concat = require('gulp-concat');
 // var browserify = require('gulp-browserify');
 var sass = require('gulp-sass');
+var merge = require('merge-stream');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
@@ -37,6 +38,13 @@ var jsNpmScripts = [
     'flickity/dist/flickity.pkgd.js'
 ];
 
+var cssNpmScripts = [
+    //Add any vendor css scripts here that you want to include
+    //'flickity/dist/flickity.css'
+    'remodal/dist/remodal.css',
+    'remodal/dist/remodal-default-theme.css',
+];
+
 for (var i = 0; i < jsCustomScripts.length; i++) {
     //Add the default path
     jsCustomScripts[i] = jsPath + jsCustomScripts[i];
@@ -44,6 +52,11 @@ for (var i = 0; i < jsCustomScripts.length; i++) {
 for (var i = 0; i < jsNpmScripts.length; i++) {
     //Add the default path
     jsNpmScripts[i] = jsNpmPath + jsNpmScripts[i];
+}
+
+for (var i = 0; i < cssNpmScripts.length; i++) {
+    //Add the default path
+    cssNpmScripts[i] = jsNpmPath + cssNpmScripts[i];
 }
 
 //Concat the vendor scripts with the custom scripts
@@ -76,12 +89,17 @@ gulp.task('scripts', function (cb) {
 //TASK: sass - Concat and uglify all the vendor and custom javascript
 gulp.task('sass', function (cb) {
 
-    return gulp.src('assets/scss/main.scss')
-        //.pipe(sourcemaps.init())
+    var sassStream,
+        cssStream;
+
+    sassStream =  gulp.src('assets/scss/main.scss')
         .pipe(sass().on('error', sass.logError))
-        //.pipe(postcss([ autoprefixer(), cssnano(), pixrem() ]))
-        //.pipe(sourcemaps.write('.'))
+
+    cssStream = gulp.src(cssNpmScripts)
+
+    return merge(sassStream, cssStream)
         .pipe(concat('style.css'))
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(gulp.dest(''))
         .pipe(browserSync.stream());
 
