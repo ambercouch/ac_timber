@@ -32,6 +32,10 @@ class StarterSite extends TimberSite {
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
 
+
+
+
+
         parent::__construct();
     }
 
@@ -44,6 +48,20 @@ class StarterSite extends TimberSite {
     }
 
     function add_to_context( $context ) {
+
+        $template_dir = get_template_directory();
+        $favicon_folder = '/favicon/';
+        $favicon_path = $template_dir.$favicon_folder;
+        $favicon_uri = get_stylesheet_directory_uri().$favicon_folder;
+        $favicon_filename = 'favicon.ico';
+
+        if (file_exists($favicon_path.$favicon_filename)){
+
+            $context['faviconUri'] = $favicon_uri;
+        }else{
+
+            $context['faviconUri'] = '/';
+        }
 
         //Site vars
         $context['site'] = $this;
