@@ -1,0 +1,285 @@
+<div class="form__admin form__admin--timesheet">
+
+  <p>Please record the time you leave home to travel to work as your start time and the time you leave site as your
+    finish time. Please also record time taken for lunch.</p>
+
+  <p><span class="underline">All entries must be accurate.</span></p>
+
+  <p><b>Please submit this form no later than Monday of the following week.</b></p>
+
+  <div class="cf">
+  <!--  [hidden monday-total-hrs default:0 id:monday class:monday class:day-total]
+    [hidden tuesday-total-hrs default:0 id:tuesday class:tuesday class:day-total]
+    [hidden wednesday-total-hrs default:0 id:wednesday class:wednesday class:day-total]
+    [hidden thursday-total-hrs default:0 id:thursday class:thursday class:day-total]
+    [hidden friday-total-hrs default:0 id:friday class:friday class:day-total]
+    [hidden saturday-total-hrs default:0 id:saturday class:saturday class:day-total]
+    [hidden sunday-total-hrs default:0 id:sunday class:sunday class:day-total] -->
+    <fieldset>
+      <label>Name</label>
+      [text* employee-name]
+
+      <label>Week Ending Friday</label>
+      [date* week-ending]
+    </fieldset>
+    <fieldset>
+      <legend>Saturday</legend>
+
+      <!-- Start repeating row -->
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+        <span class="form__field form__field--full">
+          <label>Customer</label>
+          [text saturday-customer size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text saturday-job-start-time size:25]
+    </span>
+
+    <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text saturday-job-finish-time size:25]
+    </span>
+        
+      </div>
+      <!-- End repeating row -->
+      
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text saturday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text saturday-lunch-end size:25]
+        </span>
+      </div>
+
+      
+    </fieldset>
+    <fieldset>
+      <legend>Sunday</legend>
+
+      <!-- Start repeating row -->
+
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+    <span class="form__field form__field--full">
+      <label>Customer</label>
+      [text sunday-customer size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text sunday-job-start-time size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text sunday-job-finish-time size:25]
+    </span>
+        
+      </div>
+
+      <!-- End repeating row -->
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text sunday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text sunday-lunch-end size:25]
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Monday</legend>
+
+      <!-- Start repeating row -->
+
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+    <span class="form__field form__field--full">
+      <label>Customer</label>
+      [text monday-customer size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text monday-job-start-time size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text monday-job-finish-time size:25]
+    </span>
+      </div>
+
+      <!-- End repeating row -->
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text monday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text monday-lunch-end size:25]
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Tuesday</legend>
+
+      <!-- Start repeating row -->
+
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+    <span class="form__field form__field--full">
+      <label>Customer</label>
+      [text tuesday-customer size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text tuesday-job-start-time size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text tuesday-job-finish-time size:25]
+    </span>
+        
+      </div>
+
+      <!-- End repeating row -->
+
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text tuesday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text tuesday-lunch-end size:25]
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Wednesday</legend>
+
+      <!-- Start repeating row -->
+
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+    <span class="form__field form__field--full">
+      <label>Customer</label>
+      [text wednesday-customer size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text wednesday-job-start-time size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text wednesday-job-finish-time size:25]
+    </span>
+
+     
+      </div>
+
+      <!-- End repeating row -->
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text wednesday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text wednesday-lunch-end size:25]
+        </span>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Thursday</legend>
+
+      <!-- Start repeating row -->
+
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+    <span class="form__field form__field--full">
+      <label>Customer</label>
+      [text thursday-customer size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text thursday-job-start-time size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text thursday-job-finish-time size:25]
+    </span>
+        
+      </div>
+
+      <!-- End repeating row -->
+      
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text thursday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text thursday-lunch-end size:25]
+        </span>
+      </div>
+      
+    </fieldset>
+    <fieldset>
+      <legend>Friday</legend>
+
+      <!-- Start repeating row -->
+
+      <div class="form__row--repeater form__compact" data-ac-repeater>
+    <span class="form__field form__field--full">
+      <label>Customer</label>
+      [text friday-customer size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Start Time</label>
+      [text friday-job-start-time size:25]
+    </span>
+
+        <span class="form__field form__field--half">
+      <label>Finish Time</label>
+      [text friday-job-finish-time size:25]
+    </span>
+        
+      </div>
+
+      <div class="form__compact">
+        <span class="form__field form__field--half">
+            <label>Lunch Start Time </label>
+            [text friday-lunch-start size:25]
+        </span>
+
+        <span class="form__field form__field--half">
+          <label>Lunch End Time </label>
+          [text friday-lunch-end size:25]
+        </span>
+      </div>
+      
+    </fieldset>
+
+    <!-- End repeating row -->
+    <span class="cf__input">[submit "Submit Time Sheet"]</span>
+  </div>
+</div>
