@@ -29,6 +29,7 @@ function fl_map_meta_cap($meta_caps){
         'flamingo_edit_contact' => 'delete_pages',
         'flamingo_delete_contact' => 'delete_pages',
         'flamingo_edit_inbound_messages' => 'delete_pages',
+        'flamingo_edit_inbound_message' => 'delete_pages',
         'flamingo_delete_inbound_message' => 'delete_pages',
         'flamingo_delete_inbound_messages' => 'delete_pages',
         'flamingo_spam_inbound_message' => 'delete_pages',
