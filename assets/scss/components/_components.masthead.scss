@@ -47,7 +47,7 @@ BEM ELEMENTS .c-masthead__
   color: white;
   padding: $act-unit-t !important;
   @include act-font-size($milli-size, 1);
-
+  width: 100%;
   @include mq($from : tablet){
 
     width: 100%;
