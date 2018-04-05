@@ -1,5 +1,5 @@
-var siteLocalUrl = 'fleetserviceplans.local';
-var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe'];
+var siteLocalUrl = 'nowasteliving.local';
+var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -8,6 +8,7 @@ var pump = require('pump');
 var concat = require('gulp-concat');
 // var browserify = require('gulp-browserify');
 var sass = require('gulp-sass');
+var merge = require('merge-stream');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
@@ -37,6 +38,13 @@ var jsNpmScripts = [
     'flickity/dist/flickity.pkgd.js'
 ];
 
+var cssNpmScripts = [
+    //Add any vendor css scripts here that you want to include
+    //'flickity/dist/flickity.css'
+    'remodal/dist/remodal.css',
+    'remodal/dist/remodal-default-theme.css',
+];
+
 for (var i = 0; i < jsCustomScripts.length; i++) {
     //Add the default path
     jsCustomScripts[i] = jsPath + jsCustomScripts[i];
@@ -46,8 +54,13 @@ for (var i = 0; i < jsNpmScripts.length; i++) {
     jsNpmScripts[i] = jsNpmPath + jsNpmScripts[i];
 }
 
+for (var i = 0; i < cssNpmScripts.length; i++) {
+    //Add the default path
+    cssNpmScripts[i] = jsNpmPath + cssNpmScripts[i];
+}
+
 //Concat the vendor scripts with the custom scripts
-var jsScripts = jsNpmScripts.concat( jsCustomScripts);
+jsScripts = jsNpmScripts.concat(jsCustomScripts);
 
 
 /*
@@ -61,12 +74,12 @@ gulp.task('log', function () {
 });
 
 //TASK: scripts - Concat and uglify all the vendor and custom javascript
-gulp.task('js', function (cb) {
+gulp.task('scripts', function (cb) {
     pump([
             gulp.src(jsScripts),
             concat('main.js'),
             // browserify(),
-            uglify(),
+            // uglify(),
             gulp.dest('dist/js/')
         ],
         cb
@@ -76,12 +89,17 @@ gulp.task('js', function (cb) {
 //TASK: sass - Concat and uglify all the vendor and custom javascript
 gulp.task('sass', function (cb) {
 
-    return gulp.src('assets/scss/main.scss')
-        .pipe(sourcemaps.init())
+    var sassStream,
+        cssStream;
+
+    sassStream =  gulp.src('assets/scss/main.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([ autoprefixer(), cssnano(), pixrem() ]))
-        .pipe(sourcemaps.write('.'))
+
+    cssStream = gulp.src(cssNpmScripts)
+
+    return merge(sassStream, cssStream)
         .pipe(concat('style.css'))
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(gulp.dest(''))
         .pipe(browserSync.stream());
 
@@ -89,7 +107,7 @@ gulp.task('sass', function (cb) {
 
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass','js','svgstore'], function () {
+gulp.task('serve', ['sass','scripts','svgstore'], function () {
 
     browserSync.init({
         proxy: siteLocalUrl,
@@ -106,9 +124,12 @@ gulp.task('svgstore', function () {
     return gulp
         .src('assets/images/svg/*.svg')
         .pipe(svgmin(function (file) {
+            //var prefix = path.basename(file.relative, path.extname(file.relative));
+            var prefix = 'tester';
             return {
                 plugins: [{
                     cleanupIDs: {
+                        prefix: prefix + '-',
                         minify: true
                     }
                 }]
