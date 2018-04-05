@@ -4,7 +4,7 @@
 
 .c-contact-form {
   display: block;
-  background: rgba($brand-col-1, 0.1);
+  background: rgba($brand-col-1, 1);
   padding: $inuit-global-spacing-unit-tiny;
   width: 1200px;
   max-width: 100%;
@@ -43,7 +43,7 @@
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
 
-[class*=contact-form--] {
+[class*=c-contact-form--] {
   @extend .c-contact-form;
 }
 
@@ -161,11 +161,11 @@
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
   padding:$inuit-global-spacing-unit-tiny;
-  background: $brand-col-1;
+  background: $brand-col-6;
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-1, 5%);
+    background: darken($brand-col-6, 10%);
   }
 }
 
