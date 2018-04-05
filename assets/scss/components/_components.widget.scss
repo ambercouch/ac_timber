@@ -32,9 +32,8 @@
 
 .c-widget__ {
  &container{
-   @include breakout-band($bgc : darken($brand-col-1, 10%));
+   //@include breakout-band($bgc : darken($brand-col-1, 10%));
     display: block;
-
  }
 
   &title{
@@ -50,7 +49,19 @@
 
 .c-widget__container--{
   &menu-primary{
-    background-color: #ccc;
+    display: none;
+
+    @include mq($from : tablet){
+      display: block;
+    }
+  }
+  &menu-mobile{
+    width: 400px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding: 0 $act-unit-s;
   }
 }
 

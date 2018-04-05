@@ -1,11 +1,20 @@
 a{
-  color: $brand-col-1;
+  color: $brand-col-6;
+  .footer__content &{
+    color: $brand-col-1;
+  }
+  .c-masthead__masthead-before-widgets &{
+    color: $brand-col-1;
+  }
 }
 a:focus{
   @extend a;
 }
 a:hover{
-  color: darken($brand-col-1, 20%);
+  color: darken($brand-col-2, 20%);
+  .c-masthead__masthead-before-widgets &{
+    color: $brand-col-1;
+  }
 }
 a:focus{
   @extend a:hover;

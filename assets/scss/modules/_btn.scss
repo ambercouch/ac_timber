@@ -1,6 +1,6 @@
 .btn--menu{
   position: fixed;
-  top: 1em;
+  top: 2em;
   border: 0;
   right: 1em;
   background: none;
@@ -15,7 +15,7 @@
     //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     //right: 14rem;
   }
-  @include mq($from : desktop){
+  @include mq($from : tablet){
     display: none;
   }
 }
