@@ -1,9 +1,10 @@
-{%  set bannerImg = fn('get_field','banner_image','options')   %}
-{%  set bannerContent = fn('get_field','banner_content','options')   %}
-{%  set bannerLogo = fn('get_field','banner_logo','options')   %}
 <div class="hero" >
   <div class="hero__container">
-    <div class="hero__background"><img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img"></div>
+
+    <div class="hero__background">
+      <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
+    </div>
+
 
     <div class="hero__body">
 

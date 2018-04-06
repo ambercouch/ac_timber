@@ -52,6 +52,7 @@ class StarterSite extends TimberSite {
         //AC Template settings
         $context['acSettings'] = acSettings();
 
+        //Set up Menus defined functions--ac-menus.php
         foreach (unserialize(ACT_MENUS) as $menu){
             //Menus
             if($menu == 'Primary'){
@@ -87,10 +88,16 @@ class StarterSite extends TimberSite {
         //Add the auto p from afc
         add_filter ('acf_the_content', 'wpautop');
 
-        $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
+
         $context['postEditUrl'] =  get_edit_post_link($post_id);
 
         $context['serviceMenuShowExcerpt'] = get_field('show_service_excerpt', 'options');
+
+        $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
+        $context['bannerImg'] = (get_field('banner_image', 'options') == '') ?  acSettings()['bannerImg'] : get_field('banner_image', 'options');
+        $context['bannerContent'] = get_field('banner_content', 'options');
+        $context['bannerLogo'] = get_field('banner_logo', 'options');
+
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
         return $context;
