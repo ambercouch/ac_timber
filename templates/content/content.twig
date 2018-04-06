@@ -1,6 +1,6 @@
 {% set postFormatClass = postFormat ? '-'~postFormat : '' %}
 {% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
-
+<!-- content.twig -->
 {% block content %}
   <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }}">
   {% if post.thumbnail %}
@@ -11,21 +11,14 @@
     </div>
   {%  endif %}
 
-    <header class="entry-header post{{ postFormatClass }}__header ">
-      <h2 class="entry-title post{{ postFormatClass }}__title">
-        <a href="{{ post.link }}">{{ post.title }}</a>
+    <header class="entry-header post__header{{ postFormatClass }} ">
+      <h2 class="entry-title post__heading{{ postFormatClass }}">
+        <span class="post__title{{ postFormatClass }}">
+          <a class="post__title-link{{ postFormatClass }}" href="{{ post.link }}">{{ post.title }}</a>
+        </span>
       </h2>
-      <div class="entry-meta post{{ postFormatClass }}__post-meta">
-        <div class="post-meta">
-
-          <svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none" >
-            <title>{{ postFormatRead }}</title>
-            <desc>Post type {{ postFormatRead }}</desc>
-            <use xlink:href="#icon-post{{ postFormat }}" />
-          </svg>
-
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
+      <div class="entry-meta post__post-meta{{ postFormatClass }}">
+        {% include 'inc/post-meta.twig' %}
       </div>
     </header>
 
