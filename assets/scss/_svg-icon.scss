@@ -1,0 +1,89 @@
+/*
+  BEM BLOCK .svg-icon
+ */
+
+.svg-icon {
+  display: block;
+  @include size($inuit-global-spacing-unit);
+  position: relative;
+}
+
+
+
+/*
+  BEM BLOCK MODIFIER .svg-icon--
+ */
+
+.svg-icon-- {
+  &type {
+    display: block
+  }
+}
+
+.svg-icon--envelope{
+  //border: none !important;
+  display: flex;
+  .svg-icon__svg{
+
+  }
+}
+
+
+//BEM BLOCK MODIFIER FALLBACK .svg-icon--
+
+[class*=svg-icon--] {
+  @extend .svg-icon;
+}
+
+/*
+  BEM ELEMENTS .svg-icon__
+ */
+
+.svg-icon__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &svg {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    max-width: 100%;
+    max-height: 100%;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .svg-icon--
+
+[class*=svg-icon__header--] {
+  @extend .svg-icon__header;
+}
+
+.svg-icon--envelope{
+  .nav-menu--header &{
+    width: 1em;
+    margin: 0 0.5em;
+    @include mq($from : tablet){
+      margin: 0 0.25em;
+    }
+  }
+}
