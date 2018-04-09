@@ -1,0 +1,27 @@
+.archive-control{
+  &__link{
+    @include inuit-font-size($inuit-heading-size-6--desk, 1);
+    display: inline-block;
+    padding: $inuit-base-spacing-unit--small /2;
+    background: #eee;
+    text-decoration: none;
+  }
+}
+.archive-control{
+    &--bottom{
+       margin-top: $inuit-base-spacing-unit;
+     }
+  &--top{
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+}
+.archive-control{
+  &__link{
+    &--top{
+      @extend .archive-control__link;
+    }
+    &--bottom{
+      @extend .archive-control__link;
+    }
+  }
+}
