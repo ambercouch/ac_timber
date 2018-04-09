@@ -51,6 +51,8 @@ $context['template_class'] = '--archive-tile';
 $context['tags'] = '--archive-tile';
 $context['tile_filters'] = $fillterItems;
 $context['archive_empty'] = (is_user_logged_in())? 'has-posts' : 'is-empty';
+$context['tile_list_image'] = (is_array(get_field('list_image', $post->id )))?
+    get_field('list_image', $post->id )['sizes']['feature500x600'] : get_field('in_situ_image', $post->id )['sizes']['feature500x600'];
 $templates = array( 'archive-tile-range.twig' , 'index.twig');
 
 

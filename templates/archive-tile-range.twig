@@ -28,7 +28,7 @@
 {% else %}
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include 'content-tile.twig' %}
+    {% include 'content-tile-range.twig' %}
   {% endfor %}
 {% endif %}
 
