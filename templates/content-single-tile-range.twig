@@ -1,27 +1,27 @@
-<article id="post-{{ post.id }}" class="single-tile-range">
-  <header class="entry-header single-tile-range__header ">
-    <h1 class="entry-title single-tile-range__heading ">
-      <span class="single-tile-range__title ">{{ post.title }}</span>
+<article id="post-{{ post.id }}" class="c-single-tile-range">
+  <header class="entry-header c-single-tile-range__header ">
+    <h1 class="entry-title c-single-tile-range__heading ">
+      <span class="c-single-tile-range__title ">{{ post.title }}</span>
     </h1>
   </header>
 
 
-  <div class="single-tile-range__wrapper">
-  <div class="single-tile-range__description">
+  <div class="c-single-tile-range__wrapper">
+  <div class="c-single-tile-range__description">
     {{ post.get_field('tile_description') }}
   </div>
 
   {% for group in  tile_groups %}
-    <div class="single-tile-range__tile-group">
-      <div class="tile-group">
-        <div class="tile-group__header">
-          <h5 class="tile-group__title">
-            <span class="tile-group__title">{{group.tile_group_title}}</span>
+    <div class="c-single-tile-range__tile-group">
+      <div class="c-tile-group">
+        <div class="c-tile-group__header">
+          <h5 class="c-tile-group__heading">
+            <span class="c-tile-group__title">{{group.tile_group_title}}</span>
           </h5>
         </div>
-        <div class="tile-group__content">
+        <div class="c-tile-group__content">
           {% for tile in group.tiles %}
-          <div class="tile-group__tile">
+          <div class="c-tile-group__tile">
             <div class="c-tile">
               <div class="c-tile__image">
                 <img class="c-tile__img" src="{{ tile.image_tile.sizes.large}}" alt="{{ tile.post_title }}" />
@@ -40,7 +40,7 @@
   </div>
 
 
-  <footer class="single-tile-range__footer ">
+  <footer class="c-single-tile-range__footer ">
 
   </footer>
 

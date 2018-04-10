@@ -81,6 +81,12 @@
 @import "modules/wp-menu";
 @import "modules/archive-control";
 
+/*
+  COMPONENTS
+ */
+@import "components";
+
+
 @import "var/settings.widths";
 @import "../vendor/inuit-widths/trumps.widths";
 @import "../vendor/inuit-widths-responsive/trumps.widths-responsive";

@@ -1,0 +1,64 @@
+/*
+  BEM BLOCK .c-tile-group
+ */
+
+.c-tile-group {
+  display:block;
+  border-bottom: solid 1px $brand-col-1--light;
+  margin-bottom: $inuit-base-spacing-unit--large;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-tile-group--
+ */
+
+.c-tile-group-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-tile-group--
+
+[class*=c-tile-group--] {
+  @extend .c-tile-group;
+}
+
+/*
+  BEM ELEMENTS .c-tile-group__
+ */
+
+.c-tile-group__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block;
+    font-family: $base-font-family;
+    font-weight: 300;
+    @include inuit-font-size($inuit-heading-size-3--desk, 1);
+    color: $brand-col-1--light;
+  }
+  &title {
+    display: inline;
+  }
+  &description{
+    padding-bottom: $inuit-base-spacing-unit--large;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &tile{
+    padding: 0 $inuit-base-spacing-unit--small / 2;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-tile-group--
+
+[class*=c-tile-group__header--] {
+  @extend .c-tile-group__header;
+}

@@ -1,0 +1,14 @@
+{%  set bannerImg = fn('get_field','in_situ_image')   %}
+<div class="hero--single-tile-range" style="background-image: url('{{  bannerImg.sizes['feature16-9']}}');">
+  <div class="hero__container">
+
+
+    <div class="hero__content--single-tile-range">
+      <div class="hero__header">
+        <h1 class="hero__heading">
+          <span class="hero__title ">{{ posts[0].title }}</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>

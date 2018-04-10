@@ -1,0 +1,55 @@
+/*
+  BEM BLOCK .c-single-tile-range
+ */
+
+.c-single-tile-range {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-single-tile-range--
+ */
+
+.c-single-tile-range-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-single-tile-range--
+
+[class*=c-single-tile-range--] {
+  @extend .c-single-tile-range;
+}
+
+/*
+  BEM ELEMENTS .c-single-tile-range__
+ */
+
+.c-single-tile-range__ {
+  &header {
+    display: block
+  }
+  &heading {
+    @include brand-title();
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &description {
+    padding-bottom: $inuit-base-spacing-unit--large;
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-single-tile-range--
+
+[class*=c-single-tile-range__header--] {
+  @extend .c-single-tile-range__header;
+}

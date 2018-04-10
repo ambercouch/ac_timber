@@ -2,6 +2,11 @@
 <html {{ site.language_attributes }}>
 <head>
 
+  <!-- base.twig -->
+  {% block before_head %}
+    <!-- beforehead block -->
+  {% endblock %}
+
   <meta charset="{{ site.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,6 +30,9 @@
   {% endif %}
 
   {{ fn('wp_head') }}
+
+  {% block after_head %}
+  {% endblock %}
 
 </head>
 

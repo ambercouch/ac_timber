@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .c-tile
+ */
+
+.c-tile {
+  display: block;
+
+}
+
+/*
+  BEM BLOCK MODIFIER .c-tile--
+ */
+
+.c-tile-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-tile--
+
+[class*=c-tile--] {
+  @extend .c-tile;
+}
+
+/*
+  BEM ELEMENTS .c-tile__
+ */
+
+.c-tile__ {
+  &header {
+    display: block;
+
+
+  }
+  &heading {
+    display: block;
+
+    font-family: $base-font-family;
+    font-weight: 300;
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-tile--
+
+[class*=c-tile__header--] {
+  @extend .c-tile__header;
+}
