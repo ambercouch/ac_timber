@@ -1,0 +1,19 @@
+{% extends "base.twig" %}
+
+  {% block hero %}
+  {% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+ {% block sidebar %}
+  {% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include 'content-single-tile-range.twig' %}
+  {% endfor %}
+
+{% endblock %}

@@ -59,6 +59,7 @@
  &--tile{
    @extend .main;
  }
+
   &--contact{
     @extend .main;
   }
@@ -99,6 +100,9 @@
   }
   &--tile{
     @extend .main__content;
+  }
+  &--tile-range{
+    @extend .main__content--full-width;
   }
 
 }
