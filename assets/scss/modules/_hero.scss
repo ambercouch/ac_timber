@@ -10,11 +10,18 @@
   }
   &__container{
     width: 100%;
+    bottom:50%;
+    position: absolute;
   }
   &__header{
     text-align: center;
     color: white;
 
+  }
+  &__heading{
+    margin-bottom:0;
+    @include inuit-font-size($inuit-heading-size-1--desk * 2);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
   }
   &__content{
     position: absolute;
