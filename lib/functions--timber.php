@@ -1,4 +1,4 @@
-    <?php
+<?php
 
 if ( ! class_exists( 'Timber' ) ) {
     add_action( 'admin_notices', function() {
@@ -82,5 +82,3 @@ function myfoo( $text ) {
     $text .= ' bar!';
     return $text;
 }
-
-
