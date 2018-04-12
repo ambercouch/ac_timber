@@ -8,11 +8,7 @@
   @include media-query(narrow){
     height: calc(100vh - 82px);
   }
-  &__container{
-    width: 100%;
-    bottom:50%;
-    position: absolute;
-  }
+
   &__header{
     text-align: center;
     color: white;
@@ -96,5 +92,13 @@
     @extend .hero;
     height: calc(75vh - 82px);
     background-position: 50% 50%;
+  }
+}
+
+.hero__container--{
+  &single-tile-range {
+    width: 100%;
+    bottom: 50%;
+    position: absolute;
   }
 }
