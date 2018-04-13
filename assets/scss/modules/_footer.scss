@@ -9,7 +9,7 @@
     @extend .c-site-wrapper--responsive;
     padding: $act-unit;
     margin: 0 auto;
-    background: transparent;
+    background: transparent;;
     @include mq($from : tablet){
       display: flex;
       flex-wrap:wrap ;

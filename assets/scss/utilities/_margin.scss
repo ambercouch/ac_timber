@@ -16,6 +16,9 @@
 }
 
 //margin-left
+.u-ml0{
+  margin-left: 0;
+}
 .u-mlt{
   margin-left: $inuit-global-spacing-unit-tiny;
 }
@@ -33,6 +36,9 @@
 }
 
 //margin-right
+.u-mr0{
+  margin-right: 0;
+}
 .u-mrt{
   margin-right: $inuit-global-spacing-unit-tiny;
 }
@@ -50,6 +56,9 @@
 }
 
 //margin-top
+.u-mt0{
+  margin-top: 0;
+}
 .u-mtt{
   margin-top: $inuit-global-spacing-unit-tiny;
 }
@@ -68,6 +77,10 @@
 
 
 //margin-bottom
+
+.u-mb0{
+  margin-bottom: 0;
+}
 .u-mbt{
   margin-bottom: $inuit-global-spacing-unit-tiny;
 }

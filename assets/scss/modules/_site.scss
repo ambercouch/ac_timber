@@ -12,6 +12,10 @@ BEM ELEMENTS .site__
   &masthead{
     background: $brand-col-1;
   }
+  &hero{
+    position: relative;
+    max-height: 100vh;
+  }
   &main{
 
   }

@@ -5,6 +5,7 @@
 .subsidiary {
   @extend .c-site-wrapper--responsive;
   padding-top: 0;
+  padding-bottom: $act-unit;
 }
 
 /*

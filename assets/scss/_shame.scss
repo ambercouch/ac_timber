@@ -20,7 +20,7 @@
   margin-bottom: 0;
   max-width: 50%;
   @include mq($from : tablet){
-    max-width: 20%;
+    max-width: 12%;
   }
 }
 
@@ -28,5 +28,12 @@ img[height], img[width] {
 
   max-width: 100%;
   height: auto;
+
+}
+
+.gallery-logo{
+  @include breakout-band($bgc : #fff );
+  border-top: solid 2px $brand-col-4;
+  border-bottom: solid 2px $brand-col-4;
 
 }
