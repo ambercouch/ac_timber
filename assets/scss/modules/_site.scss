@@ -14,7 +14,8 @@ BEM ELEMENTS .site__
   }
   &hero{
     position: relative;
-    max-height: 100vh;
+    max-height: 80vh;
+    overflow: hidden;
   }
   &main{
 
