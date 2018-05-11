@@ -1,4 +1,4 @@
-var siteLocalUrl = 'nowasteliving.local';
+var siteLocalUrl = 'acwordpress.qaa';
 var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
