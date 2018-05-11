@@ -27,5 +27,8 @@
     "pump": "^1.0.2",
     "remodal": "^1.1.1",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "webslides": "^1.4.2"
   }
 }
