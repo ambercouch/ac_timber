@@ -1,0 +1,54 @@
+<section id="primary" class="site__main">
+  <div class="c-main{{ main_mod }}">
+    <main class="main__content{{ main_mod }}">
+
+      {#BLOCK BEFORECONTENT#}
+      {% if beforeContent is empty %}
+      {% else %}
+        {{ beforeContent }}
+      {% endif %}
+
+      <div class="content{{ content_mod }}">
+
+        {#BLOCK CONTENTHEAD#}
+        {% if contentHeader is empty %}
+        {% else %}
+        {{ contentHeader }}
+        {% endif %}
+
+        {#BLOCK CONTENT#}
+        {% if content is empty %}
+          This is templates/inc/base-primary.twig add a block content to your template
+        {% else %}
+          {{ content }}
+        {% endif %}
+
+        {#BLOCK CONTENTFOOTER#}
+        {% if contentFooter is empty %}
+          CONTENT FOOTER EMPTY
+        {% else %}
+          {{ contentFooter }}
+        {% endif %}
+
+      </div>
+
+
+      {#BLOCK AFTERCONTENT#}
+      {% if afterContent is empty %}
+        {% if (fn('comments_open')) %}
+          {% include 'inc/comments.twig' %}
+        {% endif %}
+      {% else %}
+        {{ afterContent }}
+      {% endif %}
+
+    </main>
+
+    {% if sidebar is empty %}
+    {% else %}
+      {{ sidebar }}
+    {% endif %}
+
+  </div>
+
+</section>
