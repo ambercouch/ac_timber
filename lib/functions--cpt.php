@@ -73,7 +73,7 @@ function  act_cpt() {
         'description' => 'Services offered',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'supports' => array('title','editor','author','thumbnail','excerpt','custom-fields','revisions','page-attributes'),
         'has_archive' => 'service'
     );
     register_post_type('service', $args);
@@ -124,22 +124,23 @@ function  act_cpt() {
         'description' => 'Slides offered',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
-        'has_archive' => 'slide'
+        'supports' => array('title','editor','author','revisions','page-attributes'),
+
+        'has_archive' => 'slides'
     );
     register_post_type('slide', $args);
 
 //Slide Categories
     $labels = array(
-        'name'              => _x( 'Slide Categories', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Slide Category', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Slide Categories' ),
-        'all_items'         => __( 'All Slide Categories' ),
-        'edit_item'         => __( 'Edit Slide Category' ),
-        'update_item'       => __( 'Update Slide Category' ),
-        'add_new_item'      => __( 'Add New Slide Category' ),
-        'new_item_name'     => __( 'New Tile Slide Category' ),
-        'menu_name'         => __( 'Slide Categories' ),
+        'name'              => _x( 'Slide Groups', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Slide Group', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Slide Groups' ),
+        'all_items'         => __( 'All Slide Groups' ),
+        'edit_item'         => __( 'Edit Slide Group' ),
+        'update_item'       => __( 'Update Slide Group' ),
+        'add_new_item'      => __( 'Add New Slide Group' ),
+        'new_item_name'     => __( 'New Tile Slide Group' ),
+        'menu_name'         => __( 'Slide Groups' ),
     );
 
     $args = array(
@@ -148,7 +149,7 @@ function  act_cpt() {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'slide-category' ),
+        'rewrite'           => array( 'slug' => 'slide-group' ),
     );
 
     register_taxonomy( 'slide_category', array( 'slide' ), $args );
@@ -156,3 +157,12 @@ function  act_cpt() {
 }
 
 add_action('init', 'act_cpt');
+
+add_action( 'init', 'remove_custom_post_comment' );
+
+function remove_custom_post_comment() {
+//   remove_post_type_support( 'slide', 'title' );
+//    remove_post_type_support( 'slide', 'editor' );
+    remove_post_type_support( 'slide', 'comments' );
+    remove_post_type_support( 'slide', 'discussion' );
+}

@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+{% set primary_mod =  archiveSlug %}
+
+{% block hero %}
+{% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+{% block sidebar %}
+{% endblock %}
+
+{% block before_content %}
+  <h1 class="main__title--tile"><span>{{ archive.label }}</span></h1>
+{% endblock %}
+
+{% block content %}
+{% if posts is empty %}
+  <p>There are currently no tiles on our website. <a href="/contact">Contact us</a> for more information about our range of tiles.</p>
+
+{% else %}
+  {% for post in posts %}
+    {% include ['content/content-'~archiveSlug~'.twig', 'content/content.twig'] %}
+  {% endfor %}
+{% endif %}
+
+{% endblock %}
+
+{% block belowContent %}
+{% endblock %}

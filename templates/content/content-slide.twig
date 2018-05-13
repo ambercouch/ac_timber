@@ -1,0 +1,27 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+
+{%   set slideBackgroundColour = post.get_field('slide_background_colour') ? post.get_field('slide_background_colour')  : 'transparent' %}
+{%   set slideTextColourStyle = post.get_field('slide_text_colour_style') ? post.get_field('slide_text_colour_style')  : 'bg-transparent' %}
+<!-- content-slide.twig -->
+{% block content %}
+
+
+    {% if  post.post_excerpt != '' %}
+
+      <section style="background-color: {{slideBackgroundColour}}"  class="{{slideTextColourStyle}}">
+        {{ post.post_excerpt }}
+      </section>
+
+    {% else %}
+
+      <section style="background-color: {{slideBackgroundColour}}" class="{{slideTextColourStyle}}">
+
+        {{ post.content }}
+      </section>
+
+    {% endif %}
+
+
+
+{% endblock %}

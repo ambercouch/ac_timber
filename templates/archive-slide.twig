@@ -1,0 +1,72 @@
+{% extends "base.twig" %}
+{% set primary_mod =  'archive-'~archiveSlug %}
+{% set main_mod =  'archive-'~archiveSlug %}
+
+{% block pageHtmlOpen %}
+{% endblock %}
+{% block pageHtmlClose %}
+{% endblock %}
+{% block defs %}
+{% endblock %}
+
+
+{% block accessibility %}
+{% endblock %}
+
+ {% block header %}
+ {% endblock %}
+
+ {% block mobile_nav %}
+{% endblock %}
+
+{% block hero %}
+{% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+{% block beforeContent %}
+  {#<h1 class="main__title--tile"><span>{{ archive.label }}</span></h1>#}
+{% endblock %}
+
+{% block contentHeader %}
+<!-- block contentHeader -->
+{% endblock %}
+
+{% block content %}
+
+{% if posts is empty %}
+
+  <p>There are currently no slides on our website.</p>
+
+{% else %}
+
+  {% for post in posts %}
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include ['content/content-'~archiveSlug~'.twig', 'content/content.twig'] %}
+  {% endfor %}
+
+{% endif %}
+
+{% endblock %}
+
+{% block contentFooter %}
+  <!-- block contentFooter -->
+{% endblock %}
+
+{% block afterContent %}
+  <!-- block afterContent -->
+{% endblock %}
+
+{% block sidebar %}
+<!-- block sidebar -->
+{% endblock %}
+
+{% block subsidiary %}
+<!-- block subsidiary -->
+{% endblock %}
+
+{% block footer %}
+  <!-- block footer -->
+{% endblock %}
+
