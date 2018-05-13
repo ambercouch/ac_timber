@@ -13,7 +13,7 @@ ACTIMBER = {
             //add js class
             jQuery('body').addClass('js');
 
-            $("[data-fitvid]").fitVids();
+            //$("[data-fitvid]").fitVids();
 
             
             /**

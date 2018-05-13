@@ -2,7 +2,7 @@
 {% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
 <!-- content.twig -->
 {% block content %}
-  <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }}">
+  <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
   {% if post.thumbnail %}
     <div class="post{{ postFormatClass }}__feature-image">
       <div class="feature-image">
