@@ -12,7 +12,7 @@
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post) %}
     {% set postFormatClass = '--'~postFormat %}
-    {% include ['content'~postFormat~'.twig', 'content.twig'] %}<br>
+    {% include ['content/content'~postFormat~'.twig', 'content.twig'] %}<br>
   {% endfor %}
 
 {% endblock %}
