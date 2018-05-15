@@ -13,11 +13,7 @@ ACTIMBER = {
             //add js class
             jQuery('body').addClass('js');
 
-           // $("[data-fitvid]").fitVids();
-
-            var showButton = $('[data-control=requestForm]');
-            var container = $('[data-container=requestForm]');
-            ACTIMBER.fn.open(container, showButton);
+            $("[data-fitvid]").fitVids();
 
             
             /**
@@ -82,76 +78,6 @@ ACTIMBER = {
         init: function () {
             //uncomment to debug
             //console.log('posts');
-        }
-    },
-    fn:{
-        open: function (container, showButton, parent, listParent) {
-            var elState = showButton.attr('data-state');
-            var eventActOpen = new Event('actOpen');
-            var eventActClose = new Event('actClose');
-            console.log('container');
-            console.log(container);
-            showButton.on('click', function(e){
-                e.preventDefault();
-                console.log('clicker');
-                elState = showButton.attr('data-state');
-                if ('off' === elState ) {
-                    showButton.attr('data-state', 'on');
-                    $(container).attr('data-state', 'on');
-                    $(parent).attr('data-state', 'on');
-                    $(container).addClass('ac-on');
-                    document.body.className += ' ' + 'container-is-open';
-                    window.dispatchEvent(eventActOpen)
-
-                } else {
-                    console.log(document.body.className)
-                    $(showButton).attr('data-state', 'off');
-                    $(container).attr('data-state', 'off');
-                    $(parent).attr('data-state', 'off');
-                    $(container).removeClass('ac-on');
-                    document.querySelector('body').classList.remove('container-is-open');
-
-                    window.dispatchEvent(eventActClose);
-                }
-            });
-        },
-        actDefer: function(successMethod, failMethod, testMethod, pause, attempts) {
-            var defTest = function () {
-
-                if (typeof jQuery !== 'undefined') {
-                    return true
-                }
-                return false;
-
-            };
-            //What to do if test is false
-            var  defFail = function () {
-                console.log('The deftest failed');
-            }
-            //What to do if test is true
-            var  defSuccess = function () {
-                console.log('The deftest passed');
-            }
-            attempts = (attempts === undefined)? false : attempts;
-            pause = (pause === undefined)? 50 : pause;
-            testMethod = (testMethod === undefined)? defTest : testMethod;
-            failMethod = (failMethod === undefined)? defFail : failMethod;
-            successMethod = (successMethod === undefined)? defSuccess : successMethod;
-
-
-            if (testMethod()) {
-                console.log('the testmethod')
-                successMethod();
-            } else {
-                console.log('the failmethod')
-                failMethod();
-                if(attempts === false || attempts > 0) {
-                    setTimeout(function () {
-                        attempts = (attempts === false )? attempts : attempts - 1;
-                        ACTIMBER.fn.actDefer(successMethod, failMethod, testMethod, pause, attempts)
-                    }, pause);
-                }
-            }
         }
     }
 };
