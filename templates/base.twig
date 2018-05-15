@@ -1,7 +1,9 @@
 <!doctype html>
 <html {{ site.language_attributes }} data-env-{{environment}}={{environment}}>
 <head>
-  {% block before_head %}
+  <!-- base.twig -->
+  {% block prependHead %}
+    <!-- prependhead block -->
   {% endblock %}
 
   <meta charset="{{ site.charset }}">
@@ -12,56 +14,85 @@
 
   {% include 'inc/favicon.twig' %}
 
-  {% block after_head %}
-  {% endblock %}
+  <style>
+    {% include 'critical.css' ignore missing %}
+  </style>
 
   {{ fn('wp_head') }}
 
+  {% block appendHead %}
+    <!-- prependhead block -->
+  {% endblock %}
+
 </head>
 
-<body class="{{ body_class }}" >
-<div class="defs" style="display: none">
-{% include 'inc/defs.svg' ignore missing %}
-</div>
-<div id="page" class="site remodal-bg">
+<body id="siteBody" class="{{ body_class }} no-js"  data-mobile="off" data-window-top="true" {{ fn('_act_body_data') }}>
 
-  {% include 'site-accessibility.twig' %}
+{% block defs %}
+  <div class="defs" style="display: none">
+    {% include 'inc/defs.svg' ignore missing %}
+  </div>
+{% endblock %}
+
+{% block pageHtmlOpen %}
+<div id="page" class="site remodal-bg">
+  {% endblock %}
+
+  {% block accessibility %}
+    {% include 'site-accessibility.twig' %}
+  {% endblock %}
 
   {% block header %}
-  <header id="masthead" class="site__masthead {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
-    {% include 'inc/masthead.twig' %}
-  </header>
+    <header id="masthead" class="site__masthead {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
+      {% include 'inc/masthead.twig' %}
+    </header>
+  {% endblock %}
+
+  {% block mobile_nav %}
+    {% if mobilenav_widgets == '' %}
+      <!-- Add some widgets to the mobilenav -->
+    {% else %}
+      <button id="menuButton" class="btn--menu" data-state="off">
+        <div class="btn--menu__bar--tl"></div>
+        <div class="btn--menu__bar--tr"></div>
+        <div class="btn--menu__bar--m"></div>
+        <div class="btn--menu__bar--br"></div>
+        <div class="btn--menu__bar--bl"></div>
+      </button>
+
+      <div id="mobileNavigation" class="site__mobile-nav-widgets site__navigation--off-page" data-state="off">
+        <div class="mobile-nav-widgets" >
+          {{mobilenav_widgets}}
+        </div>
+      </div>
+
+    {% endif %}
   {% endblock %}
 
   {% block hero %}
-    <section class="site__hero">
+    <section id="siteHero" class="site__hero">
       {% include 'inc/hero.twig' ignore missing %}
     </section>
   {% endblock %}
 
-  <section id="primary" class="site__main">
-    <div class="c-main{{ modBaseClass }}">
-      <main class="c-main__content">
-        {% block beforeContent %}
-        {% endblock %}
-        <div class="content{{ modBaseClass }}">
-          {% block contentHeader %}
-          {% endblock %}
-          {% block content %}
-            <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
-          {% endblock %}
-          {% block contentFooter %}
-          {% endblock %}
-        </div>
-        {% block afterContent %}
-          {% if (fn('comments_open')) %}
-            {% include 'inc/comments.twig' %}
-          {% endif %}
-        {% endblock %}
-      </main>
-      <!-- Sidebar should go here when needed -->
-    </div>
-  </section>
+  {% block beforeMain %}
+  {% endblock %}
+
+  {% set baseBlocks =      {
+  beforeContent : block('beforeContent'),
+  contentHeader : block('contentHeader'),
+  content : block('content'),
+  contentFooter : block('contentFooter'),
+  afterContent : block('afterContent'),
+  sidebar : block('sidebar')
+  }
+
+  %}
+
+  {% include ['inc/base-primary-'~primary_mod~'.twig', 'inc/base-primary.twig'] with baseBlocks %}
+
+  {% block afterMain %}
+  {% endblock %}
 
   {% block subsidiary %}
     <section id="subsidiary" class="site__subsidiary">
@@ -69,7 +100,9 @@
     </section>
   {% endblock %}
 
+  {% block pageHtmlClose %}
 </div>{# /#page #}
+{% endblock %}
 
 {% block footer %}
   <footer class="site__footer" role="contentinfo">
@@ -77,36 +110,10 @@
   </footer>
 {% endblock %}
 
-{% include 'inc/footer_scripts.twig' %}
+{% block footerScripts %}
+  {% include 'inc/footer_scripts.twig' %}
+{% endblock %}
 
-<link rel="stylesheet" href="{{ site.theme.link }}/style.css">
-
-<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-
-<script src="{{site.theme.link}}/dist/js/main.js?v=20160315"></script>
-
-<script>
-
-  var showButton, container;
-
-  showButton = document.getElementById('menuButton');
-  container = document.getElementById('primaryNavigation');
-
-  console.log(showButton);
-  showButton.onclick = function () {
-    console.log(showButton.dataset.state);
-    if ('off' === showButton.dataset.state) {
-      showButton.dataset.state = 'on';
-      container.dataset.state = 'on';
-    } else {
-      showButton.dataset.state = 'off';
-      container.dataset.state = 'off';
-    }
-    console.log(showButton.dataset.state);
-  }
-
-</script>
 </body>
 
 </html>
