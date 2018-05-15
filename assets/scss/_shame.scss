@@ -30,3 +30,32 @@ img[height], img[width] {
   height: auto;
 
 }
+
+
+.mobile-nav-widgets{
+  .menu{
+    @extend .o-list-bare;
+  }
+  .menu-item a{
+    color: white;
+    text-decoration: none;
+    padding: $act-unit-t $act-unit-s ;
+    margin: $act-unit-t / 2;
+
+    display: block;
+    &:hover{
+       background: rgba(#000, 0.03);
+     }
+    &:active{
+      background: rgba(#000, 0.1);
+    }
+  }
+  .current-menu-item a{
+    background: rgba(#fff, 0.2);
+    color: $brand-col-3;
+    &:hover{
+      background: rgba(#fff, 0.2);
+      color: $brand-col-3;
+    }
+  }
+}

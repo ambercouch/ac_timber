@@ -1,8 +1,8 @@
 .btn--menu{
   position: fixed;
-  top: 2em;
+  top: 1em;
   border: 0;
-  right: 2em;
+  right: 1em;
   background: none;
   font-size: 14px;
   font-size: 0.875rem;
@@ -12,15 +12,18 @@
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
   background: rgba($brand-col-1, 0.2);
   &[data-state=on]{
-    transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-    right: 14rem;
+    //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
+    //right: 14rem;
+  }
+  @include mq($from : desktop){
+    //display: none;
   }
 }
 .btn--menu__bar {
   transition: transform 0.1s linear;
   position: absolute;
   width: 1.1em;
-  height: 0.2em;
+  height: 4px;
   background-color: #fff;
 }
 .btn--menu__bar--tl{
