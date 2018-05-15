@@ -2,8 +2,8 @@
 <html {{ site.language_attributes }} data-env-{{environment}}={{environment}}>
 <head>
   <!-- base.twig -->
-  {% block prependHead %}
-    <!-- prependhead block -->
+  {% block headPrepend %}
+    <!-- headPrepend block -->
   {% endblock %}
 
   <meta charset="{{ site.charset }}">
@@ -20,8 +20,8 @@
 
   {{ fn('wp_head') }}
 
-  {% block appendHead %}
-    <!-- prependhead block -->
+  {% block headAppend %}
+    <!-- headAppend block -->
   {% endblock %}
 
 </head>
@@ -75,7 +75,7 @@
     </section>
   {% endblock %}
 
-  {% block beforeMain %}
+  {% block mainBefore %}
   {% endblock %}
 
   {% set baseBlocks =      {
@@ -91,7 +91,7 @@
 
   {% include ['inc/base-primary-'~primary_mod~'.twig', 'inc/base-primary.twig'] with baseBlocks %}
 
-  {% block afterMain %}
+  {% block mainAfter %}
   {% endblock %}
 
   {% block subsidiary %}
