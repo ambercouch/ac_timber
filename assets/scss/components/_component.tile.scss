@@ -51,6 +51,9 @@
   &footer {
     display: block
   }
+  &img{
+    border:solid 1px $brand-col-1;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-tile--
