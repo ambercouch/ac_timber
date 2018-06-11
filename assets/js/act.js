@@ -81,7 +81,7 @@ ACT = {
         init:function () {
 
         },
-        tile : function () {
+        tile_range : function () {
             console.log('tile');
             var grid = '.content--archive-tile:not(.is-empty)';
             var item = '.tile';
