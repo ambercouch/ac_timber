@@ -19,18 +19,23 @@
 {% endblock %}
 
 {% block content %}
-{% if not user %}
-  <p style="text-align:center" >
-    <img style="max-width:100%" src="http://www.thomasvaughanltd.co.uk/wp-content/uploads/2016/10/tvb-tile-gallery.jpg" alt="Thomas Vaughan Floor and Wall Tiles"/>
-  </p>
+{#{% if not user %}#}
+  {#<p style="text-align:center" >#}
+    {#<img style="max-width:100%" src="http://www.thomasvaughanltd.co.uk/wp-content/uploads/2016/10/tvb-tile-gallery.jpg" alt="Thomas Vaughan Floor and Wall Tiles"/>#}
+  {#</p>#}
 
-  <p style="text-align:center">There are currently no tiles on our website. <a href="/contact">Contact us</a> for more information about our range of tiles.</p>
-{% else %}
+  {#<p style="text-align:center">There are currently no tiles on our website. <a href="/contact">Contact us</a> for more information about our range of tiles.</p>#}
+{#{% else %}#}
+  {#{% for post in posts %}#}
+    {#{% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}#}
+    {#{% include 'content-tile-range.twig' %}#}
+  {#{% endfor %}#}
+{#{% endif %}#}
+
   {% for post in posts %}
-    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include 'content-tile-range.twig' %}
+  {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+  {% include 'content-tile-range.twig' %}
   {% endfor %}
-{% endif %}
 
 {% endblock %}
 

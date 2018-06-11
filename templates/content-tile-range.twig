@@ -1,14 +1,19 @@
 {% set postFormatClass = postFormat ? '-'~postFormat : '' %}
 {% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
 
+
+{% set titleListImage = fn('is_array' , post.get_field('list_image')) ? post.get_field('list_image') : post.get_field('in_situ_image') %}
+
+
 {% block content %}
+  <!-- list image {{ titleListImage }} -->
   <article id="post-{{ post.id }}" class="tile {{ post.class }} tile_type-{{ post.get_field('tile_type') }}">
 
     <div class="tile__feature-image">
       <div class="feature-image">
 
         <a class="tile__link--image" href="{{ post.link }}">
-          <img class="feature-image__img"  src="{{tile_list_image}}" alt="{{ post.title }}" >
+          <img class="feature-image__img"  src="{{ titleListImage.sizes.feature500x600 }}" alt="{{ post.title }}" >
         </a>
       </div>
     </div>
