@@ -1,5 +1,5 @@
 var siteLocalUrl = 'nowasteliving.local';
-var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe', 'Chrome'];
+var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
