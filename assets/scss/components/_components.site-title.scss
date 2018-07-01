@@ -30,6 +30,10 @@ BEM BLOCK MODIFIERS .c-site-title
    }
   &text{
     @include size(auto);
+    font-family: $act-font-family-serif;
+    font-weight: 600;
+    display: block;
+    @include act-font-size($inuit-font-size-h1,1);
     @include mq($from: tablet){
       @include size(auto);
     }
@@ -45,6 +49,7 @@ BEM ELEMENTS .c-site-title
     line-height:1;
   }
   &link{
+    @include act-font-size($inuit-font-size-h1,1);
     display: block;
     color: white;
     text-decoration: none;

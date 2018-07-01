@@ -7,7 +7,7 @@ BEM BLOCK .c-masthead
   @extend .o-wrapper;
   padding: $act-unit;
   padding-bottom: $act-unit;
-  padding-top: 0;
+  //padding-top: 0;
 
   display: flex;
   flex-wrap: wrap;
@@ -36,6 +36,9 @@ BEM BLOCK MODIFIERS .c-masthead--
 BEM ELEMENTS .c-masthead__
  */
 .c-masthead__{
+  &site-title{
+    line-height: 1;
+  }
   &navigation{
     @extend %off-page--curtain;
   }
