@@ -1,5 +1,5 @@
 .post-meta{
-  @include inuit-font-size($inuit-font-size-h5);
+  @include inuit-font-size($inuit-font-size-h5, 1);
 }
 
 .post-meta__{
@@ -12,7 +12,7 @@
   }
 
   &post-date{
-    @include inuit-font-size($inuit-font-size-h5, 1.5);
+    @include inuit-font-size($inuit-font-size-h5, 1);
     display: block;
     visibility: inherit;
   }

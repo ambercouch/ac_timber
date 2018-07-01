@@ -11,25 +11,24 @@
   {%  endif %}
 
     <header class="entry-header single-article__header ">
-      <h1 class="entry-title single-article__title">
-        {{ post.title }}
+      <h1 class="entry-title single-article__heading">
+        <span class="single-article__title">
+          {{ post.title }}
+        </span>
       </h1>
-    </header>
-
-      <div class="entry-content single-article__body">
-
-        <div class="entry-meta single-article__post-meta">
-          <div class="post-meta">
-
-            {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
+      <div class="entry-meta single-article__post-meta">
+        <div class="post-meta">
+          {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
             {#<title>{{ postFormat }}</title>#}
             {#<desc>Post type {{ postFormat }}</desc>#}
             {#<use xlink:href="#icon-post{{ postFormat }}" />#}
-            {#</svg>#}
-
-            {#<span class="post-meta__date">{{ post.date }}</span>#}
-          </div>
+          {#</svg>#}
+          <span class="post-meta__date">{{ post.date }}</span>
         </div>
+      </div>
+    </header>
+
+      <div class="entry-content single-article__body">
 
         <div class="single-article__content">
           {{ post.content }}
