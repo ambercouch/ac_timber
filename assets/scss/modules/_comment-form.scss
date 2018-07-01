@@ -18,19 +18,19 @@
   textarea{
     border: solid 5px rgba(#000, 0.2);
     padding: $inuit-global-spacing-unit-small /2 $inuit-global-spacing-unit-small;
-    @include inuit-font-size($inuit-small-print);
+    @include inuit-font-size($inuit-font-size-small-print);
     width: 100%;
   }
   input:not([type=submit]){
     border: solid 5px rgba(#000, 0.2);
     padding: $inuit-global-spacing-unit-small /2 $inuit-global-spacing-unit-small;
-    @include inuit-font-size($inuit-small-print);
+    @include inuit-font-size($inuit-font-size-small-print);
     width: 100%;
   }
 
   label{
     display: block;
-    @include inuit-font-size($inuit-small-print);
+    @include inuit-font-size($inuit-font-size-small-print);
   }
   p{
     margin-bottom: $inuit-global-spacing-unit-small;

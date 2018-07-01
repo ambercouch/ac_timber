@@ -48,10 +48,10 @@
     //align-self: flex-end;
     //flex-grow: 1;
     //position: relative;
-    @include inuit-font-size($inuit-small-print, 1);
+    @include inuit-font-size($inuit-font-size-small-print, 1);
   }
   &__comment-link{
-    @include inuit-font-size($inuit-small-print, 1);
+    @include inuit-font-size($inuit-font-size-small-print, 1);
     //position: absolute;
     //padding: $inuit-global-spacing-unit;
     //bottom: 0;
