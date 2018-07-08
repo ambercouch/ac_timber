@@ -19,6 +19,16 @@
   </style>
 
 
+<style>
+
+  {% if cssBannerImageSaturation %}
+  .hero__background-img {
+    -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
+    filter: saturate({{ cssBannerImageSaturation }}%) !important;
+  }
+  {% endif %}
+
+</style>
   {{ fn('wp_head') }}
 
   {% block after_head %}

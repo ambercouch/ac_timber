@@ -97,6 +97,7 @@ class StarterSite extends TimberSite {
         $context['bannerImg'] = (get_field('banner_image', 'options') == '') ?  acSettings()['bannerImg'] : get_field('banner_image', 'options');
         $context['bannerContent'] = get_field('banner_content', 'options');
         $context['bannerLogo'] = get_field('banner_logo', 'options');
+        $context['cssBannerImageSaturation'] = get_field('banner_image_saturation', 'options');
 
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
