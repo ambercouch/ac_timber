@@ -17,6 +17,7 @@
     visibility: inherit;
   }
 
+
   &post-tags{
     visibility: inherit;
   }
@@ -30,8 +31,11 @@
   }
 
   &post-edit{
-    @include inuit-font-size($inuit-font-size-h5, 1.5);
-    display: block;
+    @include inuit-font-size($inuit-font-size-h6, 1);
+    display: inline-block;
+  }
+  &post-edit-link{
+   @extend .c-btn;
   }
 }
 

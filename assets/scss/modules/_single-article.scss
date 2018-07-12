@@ -1,4 +1,4 @@
-.single-article{
+.single-article {
   //background: #fff;
   //display: flex;
   //flex-wrap: wrap;
@@ -9,53 +9,62 @@
   //box-shadow: $z1-shadow;
   max-width: $article-max-width;
   margin: 0 auto $inuit-global-spacing-unit-large;
-  border-bottom:solid 1px;
-  padding-bottom:$inuit-global-spacing-unit;
+  border-bottom: solid 1px;
+  padding-bottom: $inuit-global-spacing-unit;
+}
 
-  &__feature-image{
+.single-article__{
+
+  &feature-image {
     margin-bottom: $inuit-global-spacing-unit;
   }
-  &__header{
+  &header {
     margin-bottom: $inuit-global-spacing-unit;
 
   }
-  &__heading{
+  &heading {
     @include inuit-font-size($inuit-font-size-h1, 1);
   }
-  &__title{
+  &title {
     //border-bottom: solid 1px;
     display: block;
     @include inuit-font-size($inuit-font-size-h1, 1);
     margin-bottom: 0;
   }
-  &__title-link{
+  &title-link {
     display: block;
     text-decoration: none;
     @include inuit-font-size($inuit-font-size-h1, 1);
   }
-  &__post-meta{
+  &post-meta {
     display: block;
     //padding: $inuit-global-spacing-unit-small /2 0 ;
   }
-  &__body{
+  &body {
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
   }
-  &__footer{
+  &footer {
+    display: block;
+
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
     //align-self: flex-end;
     //flex-grow: 1;
     //position: relative;
-    @include inuit-font-size($inuit-font-size-small-print, 1);
+   // @include inuit-font-size($inuit-font-size-small-print, 1);
   }
-  &__comment-link{
-    @include inuit-font-size($inuit-font-size-small-print, 1);
+
+  &comment-link {
+    display: block;
+   // @include inuit-font-size($inuit-font-size-small-print, 1);
     //position: absolute;
     //padding: $inuit-global-spacing-unit;
     //bottom: 0;
     //right: 0;
   }
+}
+.single-article{
   &--aside__feature-image{
      //@extend .single-article__feature-image;
    }
