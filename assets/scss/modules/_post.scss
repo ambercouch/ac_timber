@@ -57,6 +57,8 @@
   &read-more{
     @extend .c-btn;
     @extend .c-btn--n;
+    @extend .c-btn--col-2;
+    
     margin-bottom: $act-unit-s;
   }
   &comment-link {
