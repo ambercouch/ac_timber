@@ -32,8 +32,32 @@
   &n{
     @extend .c-btn;
     padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
-    @include act-font-size($act-fs-4, 1)
+    @include act-font-size($act-fs-4, 1);
     text-transform: none;
+  }
+  &col-1{
+    background: $brand-col-1;
+    color: white;
+    &:hover, &:focus{
+      color: white;
+      background: darken($brand-col-1,10%);
+    }
+    &:active{
+      color: white;
+      background: darken($brand-col-1,20%);
+    }
+  }
+  &col-2{
+    background: $brand-col-2;
+    color: white;
+    &:hover, &:focus{
+      color: white;
+      background: darken($brand-col-2,10%);
+    }
+    &:active{
+      color: white;
+      background: darken($brand-col-2,20%);
+    }
   }
 }
 
