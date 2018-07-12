@@ -1,4 +1,4 @@
-.post{
+.post {
   //background: #fff;
   //display: flex;
   //flex-wrap: wrap;
@@ -7,57 +7,68 @@
   //height: 500px;
   //overflow: hidden;
   //box-shadow: $z1-shadow;
-  border-bottom:solid 1px;
-  padding-bottom:$inuit-global-spacing-unit;
-  margin-bottom:$inuit-global-spacing-unit-large;
+  border-bottom: solid 1px;
+  padding-bottom: $inuit-global-spacing-unit;
+  margin-bottom: $inuit-global-spacing-unit-large;
+}
+.post__{
 
-  &__feature-image{
+  &feature-image {
     margin-bottom: $inuit-global-spacing-unit;
   }
-  &__header{
+  &header {
     margin-bottom: $inuit-global-spacing-unit;
 
   }
-  &__heading{
+  &heading {
     @include inuit-font-size($inuit-font-size-h2, 1);
+    display: n;
   }
-  &__title{
+  &title {
     //border-bottom: solid 1px;
     display: block;
     @include inuit-font-size($inuit-font-size-h2, 1);
     margin-bottom: 0;
   }
-  &__title-link{
+  &title-link {
     display: block;
     text-decoration: none;
     @include inuit-font-size($inuit-font-size-h2, 1);
   }
 
-  &__post-meta{
+  &post-meta {
     display: block;
     @include inuit-font-size($inuit-font-size-h6, 1);
     //padding: $inuit-global-spacing-unit-small /2 0 ;
   }
-  &__body{
+  &body {
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
   }
-  &__footer{
+  &footer {
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
     //align-self: flex-end;
     //flex-grow: 1;
     //position: relative;
-    @include inuit-font-size($inuit-font-size-small-print, 1);
+    display: block;
+    //@include inuit-font-size($inuit-font-size-small, 1);
   }
-  &__comment-link{
-    @include inuit-font-size($inuit-font-size-small-print, 1);
+  &read-more{
+    @extend .c-btn;
+    @extend .c-btn--n;
+    margin-bottom: $act-unit-s;
+  }
+  &comment-link {
+    @include inuit-font-size($act-fs-6 , 1);
+    display: block;
     //position: absolute;
     //padding: $inuit-global-spacing-unit;
     //bottom: 0;
     //right: 0;
   }
-
+}
+.post {
   &--aside__feature-image{
      //@extend .post__feature-image;
    }
