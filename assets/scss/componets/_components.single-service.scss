@@ -58,6 +58,9 @@ BEM BLOCK ELEMENTS .c-single-service__
     padding: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;
     grid-column-start: right;
     grid-row-start: body;
+    @include mq($from : desktop){
+      padding-bottom: 0;
+    }
   }
   
   &footer{
