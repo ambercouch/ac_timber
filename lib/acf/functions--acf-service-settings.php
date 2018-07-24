@@ -44,7 +44,28 @@ if( function_exists('acf_add_local_field_group') ):
                 'max_height' => '',
                 'max_size' => '',
                 'mime_types' => '',
-            )
+            ),
+            array(
+                'key' => 'field_service_image_position_desktop',
+                'label' => 'Service Image Horizontal Position',
+                'name' => 'service_mage_horizontal_position',
+                'type' => 'number',
+                'instructions' => 'This setting will position the image horizontally from 0% (fully right) to 100% (fully left) default is 50%(centred).',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '50%',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '%',
+                'min' => 0,
+                'max' => 100,
+                'step' => 10,
+            ),
 
         ),
         'location' => array (
