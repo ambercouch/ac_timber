@@ -5,10 +5,10 @@
     <div class="c-single-service__feature-image{{ templateClass }}">
       <div class="c-feature-image--service">
         {% if (post.get_field('service_image_internal')) %}
-          <img src="{{ post.get_field('service_image_internal')['sizes']['serviceMenuXLarge'] }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+          <img src="{{ post.get_field('service_image_internal')['sizes']['serviceMenuXXLarge'] }}" class="c-feature-image__img" alt="{{ post.title }}"/>
 
         {% else %}
-            <img src="{{ post.thumbnail.src('serviceMenuXLarge') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+            <img src="{{ post.thumbnail.src('serviceMenuXXLarge') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
 
         {% endif %}
       </div>
