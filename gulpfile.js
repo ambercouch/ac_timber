@@ -33,7 +33,7 @@ var jsCustomScripts = [
 
 var jsNpmScripts = [
     //All ready deprecated with browserify
-    'fitvids/dist/fitvids.js',
+    //'fitvids/dist/fitvids.js',
     'remodal/dist/remodal.js',
     'flickity/dist/flickity.pkgd.js'
 ];
