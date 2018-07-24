@@ -78,3 +78,24 @@ require_once get_template_directory() . '/lib/functions--walkers.php';
 //}
 //// Attach callback to 'tiny_mce_before_init'
 //add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
+
+
+//PRINT SCRIPTS
+//function wpa54064_inspect_scripts() {
+//    global $wp_scripts;
+//    echo "<script>";
+//    foreach( $wp_scripts->queue as $handle ) :
+//        echo "console.log(";
+//        echo "'".$handle."'" ;
+//        echo ");";
+//    endforeach;
+//    echo "</script>";
+//}
+//add_action( 'wp_print_scripts', 'wpa54064_inspect_scripts' );
+
+add_action('wp_print_styles', 'my_deregister_styles', 100);
+
+function my_deregister_styles() {
+    wp_deregister_style('contact-form-7');
+    wp_deregister_style('bodhi-svgs-attachment');
+}
