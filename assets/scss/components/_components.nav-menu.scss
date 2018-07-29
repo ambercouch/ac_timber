@@ -99,3 +99,25 @@
     margin-bottom: $act-unit-s;
   }
 }
+
+
+.is-inline-list{
+    .c-nav-menu__list{
+      display: flex;
+    }
+  .c-nav-menu__link{
+    padding: $act-unit-s $act-unit-s;
+    margin: 0 $act-unit-t;
+    line-height: 1;
+    display: block;
+  }
+}
+
+.c-nav-menu__link--social{
+  .site__masthead &{
+    color: white;
+    &:hover{
+      background-color: darken($col-link, 5%);
+    }
+  }
+}
