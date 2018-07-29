@@ -38,6 +38,12 @@ BEM BLOCK MODIFIERS .c-site-title
       @include size(auto);
     }
   }
+  &front-page{
+
+  }
+  &upload{
+    min-height:60px;
+  }
 }
 
 /*
@@ -62,3 +68,9 @@ BEM ELEMENTS .c-site-title
   }
 }
 
+.c-site-title__img{
+  .c-site-title--front-page &{
+    display: none;
+
+  }
+}

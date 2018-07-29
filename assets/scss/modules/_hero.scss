@@ -43,5 +43,15 @@ BEM ELEMENTS .hero__
   @extend .o-list-inline;
   text-align: center;
  }
+  &logo{
+    display: block;
+    padding: 0 $act-unit;
+  }
+  &logo-img{
+    display: block;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+  }
 
 }
