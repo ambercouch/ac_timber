@@ -45,7 +45,7 @@ BEM ELEMENTS .c-masthead__
 &masthead-before-widgets{
   @include breakout-band($bgc : $brand-col-2);
   text-align: right;
-  margin-bottom:$act-unit-s;
+  margin-bottom:$act-unit;
   background: $brand-col-2;
   color: white;
   padding: $act-unit-t !important;
@@ -63,5 +63,11 @@ BEM ELEMENTS .c-masthead__
   &branding{
     background: transparent;
     margin-bottom: 0;
+  }
+}
+
+.c-masthead{
+  &.has-before-widgets{
+    padding-top: 0;
   }
 }
