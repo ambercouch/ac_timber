@@ -37,6 +37,9 @@
   &post-edit-link{
    @extend .c-btn;
   }
+  &post-edit-link{
+    color: $brand-col-3;
+  }
 }
 
 [class*=post-meta--]{

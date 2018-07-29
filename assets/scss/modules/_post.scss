@@ -45,14 +45,9 @@
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
   }
-  &footer {
-    //width: 50%;
-    //padding: 0 $inuit-global-spacing-unit-large;
-    //align-self: flex-end;
-    //flex-grow: 1;
-    //position: relative;
+  &footer{
     display: block;
-    //@include inuit-font-size($inuit-font-size-small, 1);
+    @include inuit-font-size($inuit-font-size-small-print, 1);
   }
   &read-more{
     @extend .c-btn;
