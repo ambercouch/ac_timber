@@ -76,7 +76,7 @@ function  act_cpt() {
         'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','project-formats'),
         'has_archive' => 'project'
     );
-    register_project_type('project', $args);
+    register_post_type('project', $args);
 
 //Project Categories
     $labels = array(
