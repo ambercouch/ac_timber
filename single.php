@@ -8,7 +8,7 @@
  * @subpackage  Timber
  * @since    Timber 0.1
  */
-
+//ac_dd('single.php');
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
