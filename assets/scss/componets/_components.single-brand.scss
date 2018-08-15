@@ -1,0 +1,57 @@
+/*
+  BEM BLOCK .c-single-brand
+ */
+
+.c-single-brand {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-single-brand--
+ */
+
+.c-single-brand-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-single-brand--
+
+[class*=c-single-brand--] {
+  @extend .c-single-brand;
+}
+
+/*
+  BEM ELEMENTS .c-single-brand__
+ */
+
+.c-single-brand__ {
+  &header {
+    display: block;
+    text-align: center;
+    margin-bottom:$inuit-global-spacing-unit-large;
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+    @include inuit-font-size($font-size-giga, 1);
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-single-brand--
+
+[class*=c-single-brand__header--] {
+  @extend .c-single-brand__header;
+}
