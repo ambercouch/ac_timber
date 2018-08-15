@@ -18,7 +18,7 @@
 {% block content %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
   {% for post in posts %}
-    {% include  ['content-single-'~postFormat~'.twig', 'content-single.twig'] %}
+    {% include  ['content/content-single-'~postFormat~'.twig', 'content/content-single.twig'] %}
   {% endfor %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
 
