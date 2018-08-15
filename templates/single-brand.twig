@@ -27,6 +27,31 @@
 {% endblock %}
 
 {% block afterContent %}
+  <div class="c-single-brand__after-content">
+    {%  set brandGallery = post.get_field('brand_gallery')%}
+    {% set size = 'full' %}
+    {% if brandGallery %}
+      <div class="c-after-content">
+        <div class="c-after-content__image-galley">
+          <div class="c-image-gallery">
+
+      <ul class="c-image-gallery__list">
+        <?php foreach( $images as $image ): ?>
+        {% for image in brandGallery %}
+        <li class="c-image-gallery__item" >
+          <div class="c-image-gallery__thumb">
+          <img class="c-image-gallery__img" src="{{ image.sizes.large }}" alt="{{ image.alt }}" />
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+          </div>
+        </div>
+      </div>
+      {% else %}
+      No Gallery
+    {% endif %}
+  </div>
   {%  endblock %}
 
 

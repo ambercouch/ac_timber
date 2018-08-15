@@ -10,9 +10,15 @@
   {%  endif %}
 
     <header class="entry-header c-single-brand__header{{ templateClass }} ">
+      {%  set brandLogo = post.get_field('brand_logo')%}
+
 
       <h2 class="entry-title c-single-brand__heading{{ templateClass }}">
-        <span class="c-single-brand__title{{ templateClass }}">{{ post.title }}</span>
+        {% if  brandLogo %}
+          <img class="c-single-brand__logo{{ templateClass }}" src="{{ brandLogo.url }}" alt="{{ post.title }}"/>
+        {% else %}
+          <span class="c-single-brand__title{{ templateClass }}">{{ post.title }}</span>
+        {% endif %}
       </h2>
 
 
