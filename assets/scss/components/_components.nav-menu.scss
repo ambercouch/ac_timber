@@ -99,3 +99,15 @@
     margin-bottom: $act-unit-s;
   }
 }
+
+//BEM ELEMENT ATTRIBUTES .is- .has-
+.c-nav-menu__list{
+  .is-six-item-split &{
+    display: grid;
+    grid-template-columns: auto auto auto 1fr auto auto auto;
+
+    .c-nav-menu__item--primary:nth-child(4){
+      grid-column-start: 5;
+    }
+  }
+}
