@@ -1,12 +1,4 @@
 
 .c-masthead__masthead-after-widgets{
-  width: 100%;
-}
-.c-nav-menu__list--primary{
-  display: grid;
-  grid-template-columns: auto auto auto 1fr auto auto auto;
 
-  .c-nav-menu__item--primary:nth-child(4){
-    grid-column-start: 5;
-  }
 }
