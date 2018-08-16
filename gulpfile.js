@@ -1,4 +1,4 @@
-var siteLocalUrl = 'nowasteliving.local';
+var siteLocalUrl = 'evergreenelectricalandbuildingservices.local';
 var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
