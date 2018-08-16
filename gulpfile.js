@@ -93,7 +93,11 @@ gulp.task('sass', function (cb) {
         cssStream;
 
     sassStream =  gulp.src('assets/scss/main.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass().on('error', function(err) {
+            console.error(err.message);
+            browserSync.notify(err.message, 3000); // Display error in the browser
+            this.emit('end'); // Prevent gulp from catching the error and exiting the watch process
+        }))
 
     cssStream = gulp.src(cssNpmScripts)
 
