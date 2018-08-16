@@ -4,7 +4,7 @@ BEM BLOCK .c-masthead
 .c-masthead{
   border-bottom:none;
   width: 100%;
-  @extend .o-wrapper;
+  //@extend .o-wrapper;
   padding: $act-unit;
   padding-bottom: $act-unit;
   //padding-top: 0;
@@ -13,8 +13,12 @@ BEM BLOCK .c-masthead
   flex-wrap: wrap;
   justify-content: space-between;
   &:after{
-    width: 100%;
+    //width: 100%;
   }
+  @include mq($from : desktop){
+    flex-wrap: nowrap;
+  }
+
 }
 
 /*
@@ -42,7 +46,7 @@ BEM ELEMENTS .c-masthead__
   &navigation{
     @extend %off-page--curtain;
   }
-&masthead-before-widgets{
+  &masthead-before-widgets{
   @include breakout-band($bgc : $brand-col-2);
   text-align: right;
   margin-bottom:$act-unit-s;
@@ -60,6 +64,10 @@ BEM ELEMENTS .c-masthead__
 
   }
 }
+  &masthead-after-widgets{
+    //width: 100%;
+    flex-basis: 100%;
+  }
   &branding{
     background: transparent;
     margin-bottom: 0;
