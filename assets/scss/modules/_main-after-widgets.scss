@@ -1,0 +1,56 @@
+/*
+  BEM BLOCK .main-after-widgets
+ */
+
+.main-after-widgets {
+  display: block;
+  @extend .c-site-wrapper--responsive;
+  background: transparent !important;
+}
+
+/*
+  BEM BLOCK MODIFIER .main-after-widgets--
+ */
+
+.main-after-widgets-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .main-after-widgets--
+
+[class*=main-after-widgets--] {
+  @extend .main-after-widgets;
+}
+
+/*
+  BEM ELEMENTS .main-after-widgets__
+ */
+
+.main-after-widgets__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .main-after-widgets--
+
+[class*=main-after-widgets__header--] {
+  @extend .main-after-widgets__header;
+}

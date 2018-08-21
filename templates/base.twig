@@ -81,6 +81,18 @@
   {% endblock %}
 
   {% block before_main %}
+    {% if mainbefore_widgets == '' %}
+      <!-- Add some widgets to the main Before Widget area -->
+    {% else %}
+
+
+      <div id="mainBefore" class="site__main-before-widgets ">
+        <div class="main-before-widgets" >
+          {{mainbefore_widgets}}
+        </div>
+      </div>
+
+    {% endif %}
   {% endblock %}
 
   <section id="primary" class="site__main">
@@ -109,6 +121,17 @@
   </section>
 
   {% block after_main %}
+    {% if mainafter_widgets == '' %}
+      <!-- Add some widgets to the Main After Widget area -->
+    {% else %}
+
+      <div id="mainAfter" class="site__main-after-widgets ">
+        <div class="main-after-widgets" >
+          {{mainafter_widgets}}
+        </div>
+      </div>
+
+    {% endif %}
   {% endblock %}
 
   {% block subsidiary %}
