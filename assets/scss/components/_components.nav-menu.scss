@@ -13,6 +13,7 @@
 .c-nav-menu-- {
   &primary {
    @include act-font-size($inuit-font-size-h6, 1.3);
+    text-transform: uppercase;
     //justify-content: center;
   }
 }
@@ -31,10 +32,10 @@
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
-   justify-content: flex-end;
  }
   &link{
     text-decoration: none;
+    @include act-font-size($inuit-font-size-h5,1);
   }
 }
 
@@ -47,6 +48,7 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
+  justify-content: flex-end;
   }
 }
 
@@ -58,8 +60,8 @@
 
 .c-nav-menu__item--{
   &primary{
-    margin-right: $act-unit-t;
-    margin-left: $act-unit-t;
+    margin-right: $act-unit-s;
+    margin-left: $act-unit-s;
   }
 }
 
@@ -72,10 +74,13 @@
 .c-nav-menu__link--{
   &primary{
     padding:$act-unit-t / 2;
+    padding-bottom:$act-unit-s ;
     display: block;
-    color: $brand-col-2;
+    color: white;
     &:hover{
-      color: $brand-col-2;
+      color: white;
+      border-bottom: solid 1px;
+      padding-bottom: $act-unit-s - 1px;
     }
   }
   &mobile{
