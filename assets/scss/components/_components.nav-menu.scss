@@ -79,7 +79,7 @@
     color: white;
     &:hover{
       color: white;
-      border-bottom: solid 1px;
+      border-bottom: solid 1px $col-accent;
       padding-bottom: $act-unit-s - 1px;
     }
   }
