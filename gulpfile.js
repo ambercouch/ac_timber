@@ -92,16 +92,12 @@ gulp.task('sass', function (cb) {
     var sassStream,
         cssStream;
 
-    sassStream =  gulp.src('assets/scss/main.scss')
-        .pipe(sass().on('error', function(err) {
-            console.error(err.message);
-            browserSync.notify(err.message, 3000); // Display error in the browser
-            this.emit('end'); // Prevent gulp from catching the error and exiting the watch process
-        }))
+ sassStream =  gulp.src('assets/scss/main.scss')
+        .pipe(sass())
 
     cssStream = gulp.src(cssNpmScripts)
 
-    return merge(sassStream, cssStream)
+    return merge(sassStream, cssStream).on('error', swallowError )
         .pipe(concat('style.css'))
         .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(gulp.dest(''))
@@ -142,3 +138,15 @@ gulp.task('svgstore', function () {
         .pipe(svgstore())
         .pipe(gulp.dest('templates/inc'));
 });
+
+//FUNCTIONS
+
+function swallowError (error) {
+
+    // If you want details of the error in the console
+    console.log(error.toString())
+    // If you want details of the error in the browser
+    browserSync.notify(error.message, 3000);
+    // Prevent gulp from catching the error
+    this.emit('end')
+}
