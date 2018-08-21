@@ -2,9 +2,12 @@
 BEM BLOCK .hero
  */
 .hero{
+  @extend .o-wrapper;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 640px;
+  position: relative;
+  padding: 0;
 }
 
 /*

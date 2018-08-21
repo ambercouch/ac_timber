@@ -4,6 +4,7 @@ BEM BLOCK .c-main
 
 .c-main{
   @extend .c-site-wrapper--responsive;
+  background: transparent !important;
   padding-top: $inuit-global-spacing-unit !important;
 
   padding-bottom: $inuit-global-spacing-unit !important;

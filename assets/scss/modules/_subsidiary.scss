@@ -4,6 +4,7 @@
 
 .subsidiary {
   @extend .c-site-wrapper--responsive;
+  background: transparent !important;
   padding-top: 0;
 }
 
