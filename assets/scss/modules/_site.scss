@@ -21,10 +21,10 @@ BEM ELEMENTS .site__
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: darken($brand-col-3, 10%);
+    background: $brand-col-2;
     z-index: 1000;
     opacity: 0;
-    padding-top: $act-unit-h;
+    padding-top: $act-unit;
     &[data-state=off]{
       opacity: 0 !important;
       @include inuit-hidden-visually();

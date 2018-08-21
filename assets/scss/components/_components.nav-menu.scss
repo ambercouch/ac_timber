@@ -14,6 +14,10 @@
   &primary {
    @include act-font-size($inuit-font-size-h6, 1.3);
     text-transform: uppercase;
+    display: none;
+    @include mq($from : desktop){
+      display: block;
+    }
     //justify-content: center;
   }
 }
@@ -48,7 +52,7 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
-  justify-content: flex-end;
+  justify-content: center;
   }
 }
 
@@ -104,6 +108,29 @@
     margin-bottom: $act-unit-s;
   }
 }
+
+//BEM ELEMENT CONTEXT .c-nav-menu--primary
+
+.c-nav-menu--primary{
+  .mobile-nav-widgets &{
+    display: block;
+  }
+}
+.c-nav-menu__list{
+  .mobile-nav-widgets &{
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.c-nav-menu__item{
+  .mobile-nav-widgets &{
+    margin-left:0;
+    margin-right: 0;
+    margin-bottom:$inuit-global-spacing-unit;
+  }
+}
+
 
 //BEM ELEMENT ATTRIBUTES .is- .has-
 .c-nav-menu__list{

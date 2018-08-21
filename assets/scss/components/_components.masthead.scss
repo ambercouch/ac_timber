@@ -72,6 +72,8 @@ BEM ELEMENTS .c-masthead__
   }
   &branding{
     background: transparent;
+    @include mq($from: desktop){
     margin-bottom: $inuit-global-spacing-unit;
+    }
   }
 }
