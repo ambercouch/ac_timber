@@ -2,16 +2,17 @@
 BEM BLOCK .c-masthead
  */
 .c-masthead{
+  @extend .o-wrapper;
+  @extend .is-stacked;
   border-bottom:none;
   width: 100%;
-  //@extend .o-wrapper;
+
   padding: $act-unit;
   padding-bottom: $act-unit;
-  //padding-top: 0;
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   &:after{
     //width: 100%;
   }
@@ -26,6 +27,7 @@ BEM BLOCK MODIFIERS .c-masthead--
  */
 [class*="c-masthead--"]{
   @extend .c-masthead;
+
 }
 
 .c-masthead--{
