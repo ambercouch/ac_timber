@@ -72,6 +72,6 @@ BEM ELEMENTS .c-masthead__
   }
   &branding{
     background: transparent;
-    margin-bottom: 0;
+    margin-bottom: $inuit-global-spacing-unit;
   }
 }
