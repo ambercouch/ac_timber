@@ -29,6 +29,9 @@
     background: transparent;
     a{
       color: lighten($col-accent, 10%);
+      &:hover{
+        color: $col-accent;
+      }
     }
   }
   &widget{
