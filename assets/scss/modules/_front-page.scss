@@ -1,0 +1,84 @@
+/*
+BEM BLOCK .front-page
+ */
+
+.front-page {
+  display: block;
+}
+
+/*
+BEM BLOCK MODIFIERS .front-page--
+ */
+
+[class*='front-page--']{
+  @extend .post;
+}
+
+/*
+BEM ELEMENTS .front-page__
+*/
+
+.front-page__{
+
+  &header{
+    margin-bottom: $inuit-global-spacing-unit-large /2;
+    text-align: center;
+  }
+
+  &heading{
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 1;
+    &:after{
+
+    }
+  }
+  &title{
+    line-height: 1;
+    display: block;
+  }
+
+  &feature-image{
+    margin-bottom: $inuit-global-spacing-unit;
+  }
+
+  &body{
+    display: block;
+  }
+
+  &footer{
+    @include inuit-font-size($inuit-font-size-h5, 1);
+  }
+
+  &comment-link{
+    @include inuit-font-size($inuit-font-size-h5, 1);
+  }
+}
+
+
+
+[class*='front-page__header--']{
+  @extend .front-page__header;
+}
+
+[class*='front-page__heading--']{
+  @extend .front-page__heading;
+}
+
+[class*='front-page__feature-image--']{
+  @extend .front-page__feature-image;
+}
+
+[class*='front-page__body--']{
+  @extend .front-page__body
+}
+
+[class*='front-page__footer--']{
+  @extend .front-page__footer;
+}
+
+[class*='front-page__comment-link--']{
+  @extend .front-page__comment-link
+}
+
+

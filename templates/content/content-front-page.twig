@@ -1,0 +1,30 @@
+<article id="post-{{ post.id }}" class="front-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
+
+  {% if(post.thumbnail or acSettings.defaultImage) %}
+    <div class="front-page__feature-image{{ templateClass }} ">
+      <div class="feature-image--front-page">
+        {% if(post.thumbnail.src()) %}
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--front-page__img" alt="{{ post.title }}"/>
+        {% else %}
+          <img src="{{acSettings.defaultImage}}" class="feature-image--front-page__img" alt="{{ post.title }}"/>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+    <header class="entry-header front-page__header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+      {% if not hidePageTitle %}
+      <h1 class="entry-title front-page__heading{{ templateClass }} ">
+        <span class="entry-title front-page__title{{ templateClass }} ">{{ post.title }}</span>
+      </h1>
+      {% endif %}
+    </header>
+
+    <div class="entry-content front-page__body{{ templateClass }} ">
+      {{ post.content }}
+    </div>
+
+    <footer class="front-page__footer{{ templateClass }} ">
+    </footer>
+
+</article>
