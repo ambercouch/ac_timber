@@ -14,32 +14,32 @@
       {% set itemContent = (theExcerpt != '' )? theExcerpt:  theContent %}
 
       <li class="navigation__item--service">
-        <div class="navigation__image-menu-item" >
-          <div class="image-menu-item">
-            <a class="image-menu-item__image-link" href="{{item.url}}">
-              <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
+        <div class="navigation__c-image-menu-item" >
+          <div class="c-image-menu-item">
+            <a class="c-image-menu-item__image-link" href="{{item.url}}">
+              <img class="c-image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
 
-              <div class="image-menu-item__wrapper">
-            <div class="image-menu-item__header">
-            <h3 class="image-menu-item__heading">
-              <span class="image-menu-item__title" >{{ item.title }}</span>
+              <div class="c-image-menu-item__wrapper">
+            <div class="c-image-menu-item__header">
+            <h3 class="c-image-menu-item__heading">
+              <span class="c-image-menu-item__title" >{{ item.title }}</span>
             </h3>
             </div>
               {% if serviceMenuShowExcerpt  == 1 %}
               <div class="body">
-                <div class="image-menu-item__content">
-                  <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
+                <div class="c-image-menu-item__content">
+                  <h6 class="c-image-menu-item__content-title" >{{ item.title }}</h6>
                   {{ itemContent }}
-                  <hr class="image-menu-item__content-hr">
+                  <hr class="c-image-menu-item__content-hr">
                   {% if fn('get_field','hide_service_content_link', objectId) == 1  or fn('get_post_field','post_content', objectId ) == '' %}
                     <!-- content link removed -->
                     <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
                   {% else %}
                     <!-- content link  -->
                     <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
-                    <a href="{{item.url}}" class="image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
+                    <a href="{{item.url}}" class="c-image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
                   {% endif %}
-                  <a href="#custom_html-4" class="image-menu-item__content-link" title="Contact us to find out more">Contact Us</a>
+                  <a href="#custom_html-4" class="c-image-menu-item__content-link" title="Contact us to find out more">Contact Us</a>
 
                 </div>
               </div>

@@ -1,38 +1,37 @@
 /*
-  BEM BLOCK .image-menu-item
+  BEM BLOCK .c-image-menu-item
  */
 
-.image-menu-item {
+.c-image-menu-item{
   display: block;
   @include colour-cast($color: $brand-col-3, $opacity : 0.1);
   position: relative;
   &:hover{
-
     @include colour-cast($color:$brand-col-3, $opacity : 0);
   }
 }
 
 /*
-  BEM BLOCK MODIFIER .image-menu-item--
+  BEM BLOCK MODIFIER .c-image-menu-item--
  */
 
-.image-menu-item-- {
+.c-image-menu-item--{
   &type {
     display: block
   }
 }
 
-//BEM BLOCK MODIFIER FALLBACK .image-menu-item--
+//BEM BLOCK MODIFIER FALLBACK .c-image-menu-item--
 
 [class*=image-menu-item--] {
-  @extend .image-menu-item;
+  @extend .c-image-menu-item;
 }
 
 /*
-  BEM ELEMENTS .image-menu-item__
+  BEM ELEMENTS .c-image-menu-item__
  */
 
-.image-menu-item__ {
+.c-image-menu-item__{
   &img {
     transition: filter 0.5s ease;
     display: block;
@@ -41,7 +40,7 @@
     width: 600px;
     height: auto;
     filter: saturate(20%);
-    .image-menu-item:hover &{
+    .c-image-menu-item:hover &{
       filter:saturate(50%);
     }
   }
@@ -54,7 +53,7 @@
     text-align: center;
     z-index: 2;
     transform: translate(0,0%);
-    .image-menu-item:hover &{
+    .c-image-menu-item:hover &{
 
     }
   }
@@ -107,7 +106,7 @@
     background: rgba(#fff, 0.8);
     position: relative;
     opacity: 0;
-    .image-menu-item:hover &{
+    .c-image-menu-item:hover &{
       opacity: 1;
     }
     &:before{
@@ -145,8 +144,8 @@
 
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .image-menu-item--
+//BEM ELEMENT MODIFIER FALLBACK .c-image-menu-item--
 
 [class*=image-menu-item__img--] {
-  @extend .image-menu-item__img;
+  @extend .c-image-menu-item__img;
 }
