@@ -5,11 +5,11 @@ BEM BLOCK .c-main
 .c-main{
   @extend .c-site-wrapper--responsive;
   background: transparent !important;
-  padding-top: $inuit-global-spacing-unit !important;
+  padding-top: $act-unit !important;
 
   padding-bottom: $inuit-global-spacing-unit !important;
   @include mq($from : desktop){
-    padding-top: $inuit-global-spacing-unit-huge !important;
+    padding-top: $act-unit !important;
   }
 }
 
@@ -24,5 +24,8 @@ BEM BLOCK MODIFIERS .c-main--
 .c-main--{
   &service{
     padding: 0 !important;
+  }
+  &front-page{
+    //display: none;
   }
 }
