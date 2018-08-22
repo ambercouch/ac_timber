@@ -18,6 +18,18 @@
   @include act-font-size($inuit-font-size-h6);
 }
 
+.u-fs-k{
+  @include act-font-size($act-fs-k);
+}
+
+.u-fs-m{
+  @include act-font-size($act-fs-m);
+}
+
+.u-fs-g{
+  @include act-font-size($act-fs-g);
+}
+
 //Font weight
 .u-fw100 {
   font-weight: normal;
