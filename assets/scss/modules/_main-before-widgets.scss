@@ -6,6 +6,8 @@
   display: block;
   @extend .c-site-wrapper--responsive;
   background: transparent !important;
+  padding-top:$act-unit-t;
+  padding-bottom:$act-unit-t;
 }
 
 /*

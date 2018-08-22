@@ -84,14 +84,12 @@
     {% if mainbefore_widgets == '' %}
       <!-- Add some widgets to the main Before Widget area -->
     {% else %}
-
-
+      <!-- Main After Widget area -->
       <div id="mainBefore" class="site__main-before-widgets ">
         <div class="main-before-widgets" >
           {{mainbefore_widgets}}
         </div>
       </div>
-
     {% endif %}
   {% endblock %}
 
@@ -124,22 +122,25 @@
     {% if mainafter_widgets == '' %}
       <!-- Add some widgets to the Main After Widget area -->
     {% else %}
-
+      <!-- Main After Widget area -->
       <div id="mainAfter" class="site__main-after-widgets ">
         <div class="main-after-widgets" >
           {{mainafter_widgets}}
         </div>
       </div>
-
     {% endif %}
   {% endblock %}
 
   {% block subsidiary %}
+  {% if subsidiary_widgets == '' %}
+    <!-- Add some widgets to the Subsidiary Widget area -->
+  {% else %}
+    <!-- Subsidiary After Widget area -->
     <section id="subsidiary" class="site__subsidiary">
       {% include 'inc/subsidiary.twig' %}
     </section>
+  {% endif %}
   {% endblock %}
-
 </div>{# /#page #}
 
 {% block footer %}

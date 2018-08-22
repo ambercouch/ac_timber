@@ -7,7 +7,9 @@
 .footer__{
   &content{
     @extend .c-site-wrapper--responsive;
-    padding: $act-unit;
+    //padding: $act-unit;
+    padding-top: 0;
+    padding-bottom: $act-unit;
     margin: 0 auto;
     background: transparent;
     @include mq($from : tablet){
@@ -24,10 +26,9 @@
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: center;
     padding: $inuit-global-spacing-unit;
-    background: $brand-col-2;
-    color: white;
+    background: transparent;
     a{
-      color: white;
+      color: lighten($col-accent, 10%);
     }
   }
   &widget{
