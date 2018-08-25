@@ -30,6 +30,9 @@ BEM BLOCK MODIFIERS .c-masthead--
     position: absolute;
     z-index: 9999;
   }
+  &home{
+    display: none;
+  }
 }
 
 /*
