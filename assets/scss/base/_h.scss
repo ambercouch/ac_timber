@@ -1,0 +1,8 @@
+@include headings(){
+  font-weight: 900;
+
+}
+
+h1{
+  @include act-font-size($act-fs-k)
+}
