@@ -9,6 +9,7 @@ BEM BLOCK .hero
   position: relative;
   padding-top: 0;
   background: transparent;
+  padding-bottom: 0;
 }
 
 /*
@@ -17,6 +18,7 @@ BEM ELEMENTS .hero__
 .hero__{
   &container{
     position: relative;
+    height:640px;
   }
   &background{
     width:100%;
@@ -37,14 +39,14 @@ BEM ELEMENTS .hero__
     color: white;
   }
   &content{
-    background: rgba($brand-col-3, 0.7);
+    background: transparent;
     display: inline-block;
-    padding: $act-unit-s;
+    padding: 0 0 0 $act-unit-l;
     position: absolute;
-    left: 50%;
+    right: 50%;
     transform: translate(0, -50%);
-    text-align: center;
-    max-width: 40%;
+    text-align: left;
+    max-width: 50%;
   }
  &menu{
   @extend .o-list-inline;
