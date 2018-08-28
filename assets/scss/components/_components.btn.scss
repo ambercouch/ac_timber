@@ -3,11 +3,11 @@
  */
 
 .c-btn {
-  @include inuit-font-size($act-fs-sp, 1);
+  @include inuit-font-size($act-fs-4, 1);
   display: inline-block;
   background: $brand-col-1;
   color: white;
-  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
+  padding: $act-unit $act-unit;
   border-radius: 0.5em;
   text-transform: uppercase;
   text-decoration: none;
@@ -31,9 +31,36 @@
   }
   &n{
     @extend .c-btn;
-    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
-    @include act-font-size($act-fs-4, 1)
+    padding: $act-unit-t  $act-unit-s;
+    @include act-font-size($act-fs-4, 1);
     text-transform: none;
+  }
+  &s{
+    @extend .c-btn;
+    padding: $act-unit-t  $act-unit-s;
+    @include act-font-size($act-fs-6, 1);
+    text-transform: none;
+  }
+  &m{
+    @extend .c-btn;
+    padding: $act-unit-s  $act-unit;
+    @include act-font-size($act-fs-4, 1);
+    text-transform: none;
+  }
+  &l{
+     @extend .c-btn;
+     padding: $act-unit  $act-unit-l;
+     @include act-font-size($act-fs-2, 1);
+     text-transform: none;
+   }
+  &ghost{
+    @extend .c-btn;
+    border: solid 1px;
+    background-color: transparent;
+  }
+  &pill{
+    @extend .c-btn;
+    border-radius: $act-unit-h
   }
 }
 
