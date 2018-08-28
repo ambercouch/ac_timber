@@ -28,3 +28,36 @@
 .u-pos-b-n30{
   bottom:-30px;
 }
+
+.u-pos-r-0{
+  right: 0;
+}
+
+.u-pos-r-1{
+  right: 1em;
+}
+
+.u-pos-r-t{
+  right: $act-unit-t;
+}
+
+.u-pos-r-s{
+  right: $act-unit-s;
+}
+
+.u-pos-r-m{
+  right: $act-unit;
+}
+
+.u-pos-r-l{
+  right: $act-unit-l;
+}
+
+.u-pos-r-h{
+  right: $act-unit-h;
+}
+
+.u-pos-ver-mid{
+  top:50%;
+  transform: translate(0 , -50%);
+}
