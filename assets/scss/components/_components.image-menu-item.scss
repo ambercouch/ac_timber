@@ -74,6 +74,7 @@
     text-transform: uppercase;
     text-align: center;
     @include act-font-size($inuit-font-size-h2,1)
+    font-family: $act-font-family-sans;
   }
   &title{
     color: white;
