@@ -4,6 +4,11 @@ BEM BLOCK .front-page
 
 .front-page {
   display: block;
+  padding: $act-unit-l 0 $act-unit;
+  margin: $act-unit 0;
+  border-top: solid 1px;
+  border-border: solid 1px;
+  border-bottom: solid 1px;
 }
 
 /*
@@ -27,7 +32,7 @@ BEM ELEMENTS .front-page__
 
   &heading{
     margin-bottom: 0;
-    font-weight: 400;
+
     line-height: 1;
     &:after{
 
