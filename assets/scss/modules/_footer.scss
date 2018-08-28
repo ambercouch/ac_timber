@@ -13,8 +13,8 @@
     margin: 0 auto;
     background: transparent;
     @include mq($from : tablet){
-      display: flex;
-      flex-wrap:wrap ;
+      //display: flex;
+      //flex-wrap:wrap ;
     }
   }
   &company-logo{
@@ -28,6 +28,7 @@
     padding: $inuit-global-spacing-unit;
     background: transparent;
     a{
+      text-decoration: none;
       color: lighten($col-accent, 10%);
       &:hover{
         color: $col-accent;
