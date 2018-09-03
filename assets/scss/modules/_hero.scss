@@ -34,8 +34,8 @@ BEM ELEMENTS .hero__
   &body{
     position: absolute;
     width: 100%;
-    top: 50%;
-    transform: translate(0%, -50%);
+    top: 0;
+    height: 100%;
     color: white;
   }
   &content{
@@ -45,6 +45,7 @@ BEM ELEMENTS .hero__
     position: absolute;
     right: 50%;
     transform: translate(0, -50%);
+    top:50%;
     text-align: left;
     max-width: 50%;
   }
