@@ -29,6 +29,7 @@ add_shortcode('act_theme_settings', 'act_theme_settings');
 function act_contact( $atts ) {
     extract(shortcode_atts(array(
         'row' => '',
+        'type' => 'item'
     ), $atts));
     //return 'contact' . $row;
     $contact_items = get_field('contact', 'options');
@@ -54,10 +55,26 @@ function act_contact( $atts ) {
         default :
             $contact_link = $contact_value;
     }
+
     $output = '';
-    $output .= $contact_label;
-    $output .= ' : ';
-    $output .= $contact_link;
+    switch ($type){
+        case 'item' :
+            $output .= $contact_label;
+            $output .= ' : ';
+            $output .= $contact_link;
+            break;
+        case 'value':
+            $output .= $contact_value;
+            break;
+        case 'link':
+            $output .= $contact_link;
+            break;
+        default:
+            $output .= $contact_value;
+            break;
+    }
+
+
 
     return $output;
 }
