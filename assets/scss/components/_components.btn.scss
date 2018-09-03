@@ -57,10 +57,26 @@
     @extend .c-btn;
     border: solid 1px;
     background-color: transparent;
+    &:hover{
+      background: $col-accent;
+    }
+    &:focus{
+      background: $col-accent;
+    }
   }
   &pill{
     @extend .c-btn;
     border-radius: $act-unit-h
+  }
+  &accent{
+    @extend .c-btn;
+    background: $col-accent;
+    &:hover{
+      background: darken($col-accent, 10%);
+    }
+    &:focus{
+      background: darken($col-accent, 15%);
+    }
   }
 }
 
