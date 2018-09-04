@@ -3,10 +3,10 @@
  */
 
 .o-svg-icon {
-  display: block;
-  @include size($inuit-global-spacing-unit);
-  position: relative;
-}
+   display: block;
+   @include size($inuit-global-spacing-unit);
+   position: relative;
+ }
 
 
 
@@ -19,6 +19,7 @@
     display: block
   }
 }
+
 
 .o-svg-icon--envelope{
   display: flex;
@@ -65,5 +66,15 @@
     @include mq($from : tablet){
       margin: 0 0.25em;
     }
+  }
+}
+
+//BEM ELEMENT ATTRIBUTES .is- .has-
+
+.o-svg-icon {
+  .is-disc-icon &{
+    border: solid 1px;
+    @include size($act-unit-l * 1.25);
+    border-radius: 50%;
   }
 }
