@@ -26,7 +26,7 @@ function act_menu_filters($sorted_menu_objects, $args) {
             }
 
 
-            $menu_object->title = '<div class="nav-menu__svg-icon"><div class="svg-icon--'. $icon_class .'"><svg preserveAspectRatio="none" class="svg-icon__svg"><use class="svg-icon__use"  xlink:href="' . $menu_object->description . '" /></svg></div></div>'.$title_markup;
+            $menu_object->title = '<div class="nav-menu__svg-icon"><div class="o-svg-icon--'. $icon_class .'"><svg preserveAspectRatio="none" class="o-svg-icon__svg"><use class="o-svg-icon__use"  xlink:href="' . $menu_object->description . '" /></svg></div></div>'.$title_markup;
         }
 
 
