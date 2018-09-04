@@ -60,9 +60,14 @@
   }
 
   &list-submenu{
-    @extend .o-list-bare;
-    margin: 0;
-
+     @extend .o-list-bare;
+     margin: 0;
+   }
+  &item-submenu{
+    margin-bottom: $act-unit-s;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -87,10 +92,17 @@
 
 .c-nav-menu__item--{
   &primary{
-    margin-right: $act-unit-s;
-    margin-left: $act-unit-s;
+    margin-right: $act-unit;
+    margin-left: $act-unit;
   }
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
+
+[class*=c-nav-menu__item-submenu--] {
+  @extend .c-nav-menu__item-submenu !optional;
+}
+
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
 

@@ -7,14 +7,18 @@ BEM BLOCK .c-masthead
   border-bottom:none;
   width: 100%;
 
-  padding: $act-unit;
-  padding-bottom: $act-unit;
-  display: flex;
-  flex-wrap: wrap;
+  padding: $act-unit $act-unit-h / 1.5;
+  display:block;
   justify-content: space-between;
 
   &:after{
     //width: 100%;
+  }
+  @include mq($from : tablet){
+    display: flex;
+    flex-wrap: wrap;
+    padding: $act-unit;
+    padding-bottom: $act-unit;
   }
   @include mq($from : desktop){
     flex-wrap: nowrap;
@@ -69,11 +73,12 @@ BEM ELEMENTS .c-masthead__
   &masthead-after-widgets{
     //width: 100%;
     flex-basis: 100%;
+    margin-bottom: $act-unit
   }
   &branding{
     background: transparent;
     @include mq($from: desktop){
-    margin-bottom: $inuit-global-spacing-unit;
+    margin-bottom: $act-unit-l
     }
   }
 }
