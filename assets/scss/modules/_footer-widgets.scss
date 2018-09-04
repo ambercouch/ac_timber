@@ -4,7 +4,10 @@
 
 .footer-widgets {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  @include mq($from : desktop){
+    flex-wrap: nowrap;
+  }
 }
 
 /*
@@ -30,6 +33,10 @@
 .footer-widgets__ {
   &widget {
     width: 100%;
+    margin-bottom: $act-unit;
+    @include mq($from : tablet, $until : desktop){
+      width : 50%
+    }
   }
   &heading {
     display: block
