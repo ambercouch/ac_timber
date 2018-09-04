@@ -30,6 +30,10 @@ BEM ELEMENTS .hero__
     height: 100%;
     width: 100%;
     filter: saturate(10%);
+    object-position: 85%;
+    @include mq($from : desktop){
+      object-position: 85%;
+    }
   }
   &body{
     position: absolute;
@@ -37,17 +41,27 @@ BEM ELEMENTS .hero__
     top: 0;
     height: 100%;
     color: white;
+    background: rgba(#000, 0.3);
+    @include mq($from: tablet){
+      background: transparent;
+    }
   }
   &content{
     background: transparent;
     display: inline-block;
-    padding: 0 0 0 $act-unit-l;
+    padding: 0  $act-unit;
     position: absolute;
-    right: 50%;
+    right: auto;
     transform: translate(0, -50%);
     top:50%;
     text-align: left;
-    max-width: 50%;
+
+    @include mq($from: tablet){
+      max-width: 50%;
+      right: 50%;
+      padding: 0 0 0 $act-unit-l;
+
+    }
   }
  &menu{
   @extend .o-list-inline;
