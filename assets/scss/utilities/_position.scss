@@ -16,6 +16,9 @@
 .u-pos-l-0{
   left: 0;
 }
+.u-pos-l-a{
+  left: 0;
+}
 .u-pos-l-n100{
   left: -100px;
 
@@ -54,10 +57,41 @@
 }
 
 .u-pos-r-h{
-  right: $act-unit-h;
+   right: $act-unit-h;
+ }
+
+.u-pos-r-a{
+  right: auto;
 }
 
 .u-pos-ver-mid{
   top:50%;
   transform: translate(0 , -50%);
+  &-wide{
+    @include mq($from : wide){
+      top:50%;
+      transform: translate(0 , -50%);
+    }
+  }
+  &-desktop{
+    @include mq($from : desktop, $until : wide){
+      top:50%;
+      transform: translate(0 , -50%);
+    }
+  }
+  &-tablet{
+    @include mq($from :tablet, $until : desktop){
+      top:50%;
+      transform: translate(0 , -50%);
+    }
+  }
+  &-moblie{
+    @include mq($from :mobile, $until : tablet){
+      top:50%;
+      transform: translate(0 , -50%);
+    }
+  }
+
+
+
 }

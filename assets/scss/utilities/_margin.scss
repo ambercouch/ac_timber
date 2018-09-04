@@ -10,6 +10,21 @@
 }
 .u-ml{
   margin: $inuit-global-spacing-unit-large;
+  &-desktop{
+    @include mq($from : desktop, $until : wide){
+      margin: $inuit-global-spacing-unit-large;
+    }
+  }
+  &-tablet{
+    @include mq($from :tablet, $until : desktop){
+      margin: $inuit-global-spacing-unit-large;
+    }
+  }
+  &-moblie{
+    @include mq($from :mobile, $until : tablet){
+      margin: $inuit-global-spacing-unit-large;
+    }
+  }
 }
 .u-mh{
   margin: $inuit-global-spacing-unit-huge;
@@ -26,7 +41,28 @@
   margin-left: $inuit-global-spacing-unit-small;
 }
 .u-mlm{
-  margin-left: $inuit-global-spacing-unit;
+
+  margin: $inuit-global-spacing-unit;
+  &-wide{
+    @include mq($from : wide){
+      margin: $inuit-global-spacing-unit;
+    }
+  }
+  &-desktop{
+    @include mq($from : desktop, $until : wide){
+      margin: $inuit-global-spacing-unit;
+    }
+  }
+  &-tablet{
+    @include mq($from :tablet, $until : desktop){
+      margin: $inuit-global-spacing-unit;
+    }
+  }
+  &-moblie{
+    @include mq($from :mobile, $until : tablet){
+      margin: $inuit-global-spacing-unit;
+    }
+  }
 }
 .u-mll{
   margin-left: $inuit-global-spacing-unit-large;
