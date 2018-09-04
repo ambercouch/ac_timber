@@ -78,6 +78,9 @@
       background: darken($col-accent, 15%);
     }
   }
+  &icon-label{
+    display: flex;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--
@@ -85,6 +88,8 @@
 [class*=c-btn--] {
   @extend .c-btn;
 }
+
+
 
 /*
   BEM ELEMENTS .c-btn__
@@ -108,6 +113,9 @@
   }
   &footer {
     display: block
+  }
+  &svg-icon{
+    margin-right: $act-unit-s;
   }
 }
 
