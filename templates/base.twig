@@ -14,11 +14,12 @@
 
   {% include 'inc/favicon.twig' %}
 
+  <!-- Critical CSS -->
   <style>
     {% include 'critical.css' ignore missing %}
   </style>
 
-
+  <!-- ACF Hero CSS -->
 <style>
 
   {% if cssBannerImageSaturation %}
@@ -26,6 +27,16 @@
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
   }
+  {% endif %}
+
+  {% if cssBannerColourCast %}
+
+  .hero__background:before{
+    display: block !important;
+     background: {{cssBannerColourCastColour}} !important;
+     opacity: {{cssBannerColourCastOpacity}} !important;
+     mix-blend-mode: {{cssBannerColourCastMode}} !important;
+   }
   {% endif %}
 
 </style>
