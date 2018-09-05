@@ -57,10 +57,19 @@ BEM ELEMENTS .hero__
     text-align: left;
 
     @include mq($from: tablet){
-      max-width: 50%;
-      right: 50%;
+       max-width: 50%;
+       right: 50%;
+       padding: 0 0 0 $act-unit-l;
+     }
+    @include mq($from: desktop){
+      max-width: 65%;
+      right: 40%;
       padding: 0 0 0 $act-unit-l;
-
+    }
+    @include mq($from: wide){
+      max-width: 75%;
+      right: 45%;
+      padding: 0 0 0 $act-unit-l;
     }
   }
  &menu{
