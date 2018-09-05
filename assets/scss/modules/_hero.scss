@@ -24,6 +24,17 @@ BEM ELEMENTS .hero__
     width:100%;
     height: 640px;
     position: absolute;
+    //@include colour-cast($color : $brand-col-3, $opacity : 0.2, $darken : 0, $mode : normal);
+    &:before{
+      pointer-events: none;
+      transition: all 0.5s ease;
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: none;
+    }
   }
   &background-img{
     object-fit: cover;
@@ -31,6 +42,7 @@ BEM ELEMENTS .hero__
     width: 100%;
     filter: saturate(10%);
     object-position: 85%;
+
     @include mq($from : desktop){
       object-position: 85%;
     }
@@ -55,7 +67,7 @@ BEM ELEMENTS .hero__
     transform: translate(0, -50%);
     top:50%;
     text-align: left;
-
+    z-index: 100;
     @include mq($from: tablet){
        max-width: 50%;
        right: 50%;
