@@ -43,7 +43,7 @@ function act_contact( $atts ) {
         case 'email':
             $contact_link = '<a href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
             break;
-        case 'telephone':
+        case 'tel':
             $contact_link = '<a href="tel:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'website':
