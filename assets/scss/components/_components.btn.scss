@@ -59,9 +59,11 @@
     background-color: transparent;
     &:hover{
       background: $col-accent;
+      color: $brand-col-2;
     }
     &:focus{
       background: $col-accent;
+      color: $brand-col-2;
     }
   }
   &pill{
