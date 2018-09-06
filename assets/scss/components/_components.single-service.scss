@@ -4,7 +4,7 @@ BEM BLOCK .c-single-service
 .c-single-service {
   max-width: $article-max-width;
   margin: 0 auto;
-
+  background: white;
 
 }
 
@@ -25,21 +25,21 @@ BEM BLOCK ELEMENTS .c-single-service__
 .c-single-service__{
 
   &feature-image{
-    margin-bottom: $inuit-global-spacing-unit;
+    margin-bottom: 0;
 
   }
 
   &header{
     display: block;
-    padding: 0 $inuit-global-spacing-unit;
-    margin-bottom:$act-unit;
+    padding: $act-unit-h $act-unit-h *2 0;
+    margin-bottom:$act-unit-l;
 
   }
 
   &heading{
     margin-bottom: 0;
     @include inuit-font-size($inuit-font-size-h1, 1);
-    font-weight: 500;
+    font-weight: 700;
   }
 
   &title{
@@ -50,9 +50,8 @@ BEM BLOCK ELEMENTS .c-single-service__
     @extend .o-site-wrapper;
     @extend .o-island;
     display: block;
-    padding: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;
-    grid-column-start: right;
-    grid-row-start: body;
+    padding: 0 $act-unit-h * 2 $act-unit-h;
+    margin-bottom: $act-unit-l;
   }
 
   &footer{
