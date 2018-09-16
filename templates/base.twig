@@ -13,7 +13,11 @@
 </head>
 
 <body class="{{ body_class }}">
-{% include 'inc/defs.svg' ignore missing %}
+
+<div class="defs" style="display: none">
+  {% include 'inc/defs.svg' ignore missing %}
+</div>
+
 <div id="page" class="site">
 
   {% include 'site-accessibility.twig' %}
