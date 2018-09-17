@@ -72,6 +72,26 @@ if( function_exists('acf_add_local_field_group') ):
                 'toolbar' => 'full',
                 'media_upload' => 1,
             ),
+            array (
+                'key' => 'field_service_show_more_link',
+                'label' => 'Service Show More Link',
+                'name' => 'service_show_more_link',
+                'type' => 'true_false',
+                'instructions' => 'Show or hide the find out more link',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 0,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
+
         ),
         'location' => array (
             array (
