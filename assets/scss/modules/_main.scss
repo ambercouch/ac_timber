@@ -9,3 +9,7 @@
     padding-bottom:$inuit-base-spacing-unit;
   }
 }
+
+[class*="main--"]{
+  @extend .main;
+}
