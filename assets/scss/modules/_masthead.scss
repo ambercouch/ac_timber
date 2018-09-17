@@ -1,4 +1,5 @@
 .masthead{
+  min-height: 190px;
   font-size: 0 !important;
   > * {
     @include inuit-font-size($inuit-base-font-size);
@@ -8,8 +9,11 @@
   padding: 0 $inuit-base-spacing-unit;
   align-content: flex-start;
   text-align: right;
+  display: flex;
+  flex-direction: column;
   @include media-query(desk){
     position: relative;
+    display: block;
   }
 
 }
@@ -19,25 +23,49 @@
     //@extend %off-page--curtain;
     max-width: 100%;
     padding: $inuit-base-spacing-unit--small 0 $inuit-base-spacing-unit--large;
-    position: absolute;
+
     bottom: 0;
+
     @include media-query(desk){
+      position: absolute;
       padding: 0;
       padding-bottom:$inuit-base-spacing-unit--small;
       width: 40%;
     }
   }
   &__widget-area{
-    width: 60%;
-    display: inline-block;
+    order: 3;
     text-align: left;
     max-width: $site-container-width;
+    @include media-query(palm){
+      display: block;
+      margin-bottom: $act-unit;
+    }
+    @include media-query(lap){
+      display: block;
+      margin-bottom: $act-unit;
+    }
+    @include media-query(desk){
+      display: inline-block;
+      width: 60%;
+    }
   }
   &__branding{
     position: absolute;
     top: 0;
     padding-top: $inuit-base-spacing-unit--small;
-    width: 40%;
+
+    @include media-query(palm){
+      display: block;
+      position: static;
+    }
+    @include media-query(lap){
+       display: block;
+       position: static;
+     }
+    @include media-query(desk){
+      width: 40%;
+    }
   }
 }
 

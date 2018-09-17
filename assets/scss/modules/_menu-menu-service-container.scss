@@ -53,10 +53,13 @@
     text-decoration: none;
     text-transform: uppercase;
     font-weight:bold;
-    height: $inuit-base-spacing-unit--large * 2;
+
     padding: $inuit-base-spacing-unit  $inuit-base-spacing-unit--small;
     padding-right: $inuit-base-spacing-unit--large;
     border:solid 2px rgba(white, 0) ;
+    @include media-query(desk){
+      height: $inuit-base-spacing-unit--large * 2;
+    }
     &:hover{
       background: rgba(white , 0.3);
       //color: $brand-col-1--dark;
@@ -64,6 +67,7 @@
       text-shadow: 0 1px 0 rgba(black, 0.3);
 
     }
+
 
   }
 }
