@@ -156,6 +156,7 @@ class Act_Tax_Link extends WP_Widget
         $term_link = get_term_link($term->term_id, $term->taxonomy);
 
         $icon = get_field('category_icon', 'service_category_'.$term->term_id);
+        $more = get_field('category_show_more_link', 'service_category_'.$term->term_id);
 
         echo $before_widget;
 
@@ -177,8 +178,10 @@ class Act_Tax_Link extends WP_Widget
             </div>
             <div class="widget_act_tax_info__footer">
                 <ul class="widget_act_tax_info__menu">
+                  <?php if($more) : ?>
                     <li class="widget_act_tax_info__menu-item"><a class="widget_act_tax_info__menu-link--more" href="<?php echo $term_link; ?>">Find Out More</a></li>
-                    <li class="widget_act_tax_info__menu-item"><a class="widget_act_tax_info__menu-link--contact" href="/contact">Contact Us</a></li>
+                    <?php endif; ?>
+                  <li class="widget_act_tax_info__menu-item"><a class="widget_act_tax_info__menu-link--contact" href="/contact-igloo-construction">Contact Us</a></li>
                 </ul>
             </div>
         </div>
