@@ -25,15 +25,18 @@
     {% if  post.post_excerpt != '' %}
       <div class="entry-content service{{ postFormatClass }}__body">
         {{ post.post_excerpt }}
+      {% if post.get_field('service_show_more_link')%}
         <div class="service{{ postFormatClass }}__read-more">
         <a href="{{ post.link }}" class="service{{ postFormatClass }}__read-more-link">More Info</a>
         </div>
+      {% endif %}
       </div>
 
     {% else %}
       <div class="entry-content service{{ postFormatClass }}__body">
         <p>{{ post.content | striptags | truncate(20) }}</p>
         <a href="{{ post.link }}" class="service{{ postFormatClass }}__read-more">Find Out More</a>
+
       </div>
     {% endif %}
 
