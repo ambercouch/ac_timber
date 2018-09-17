@@ -42,7 +42,7 @@ function act_quote_banner( $atts ) {
     ), $atts));
 
     $has_image_class = '';
-
+    $has_image = false;
 if ($img !== false){
     $attachment = get_page_by_title($img, OBJECT, 'attachment')  ;
     $thumbnail =  wp_get_attachment_image($attachment->ID );
