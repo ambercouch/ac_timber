@@ -1,0 +1,84 @@
+/*
+BEM BLOCK .c-masthead
+ */
+.c-masthead{
+  @extend .o-wrapper;
+  @extend .is-stacked;
+  border-bottom:none;
+  width: 100%;
+
+  padding: $act-unit $act-unit-h / 1.5;
+  display:block;
+  justify-content: space-between;
+
+  &:after{
+    //width: 100%;
+  }
+  @include mq($from : tablet){
+    display: flex;
+    flex-wrap: wrap;
+    padding: $act-unit;
+    padding-bottom: $act-unit;
+  }
+  @include mq($from : desktop){
+    flex-wrap: nowrap;
+  }
+
+}
+
+/*
+BEM BLOCK MODIFIERS .c-masthead--
+ */
+[class*="c-masthead--"]{
+  @extend .c-masthead;
+
+}
+
+.c-masthead--{
+  &front-page{
+    background: transparent;
+    position: absolute;
+    z-index: 9999;
+  }
+}
+
+/*
+BEM ELEMENTS .c-masthead__
+ */
+.c-masthead__{
+  &site-title{
+    line-height: 1;
+  }
+  &navigation{
+    @extend %off-page--curtain;
+  }
+  &masthead-before-widgets{
+  @include breakout-band($bgc : $brand-col-2);
+  text-align: right;
+  margin-bottom:$act-unit-s;
+  background: $brand-col-2;
+  color: white;
+  padding: $act-unit-t !important;
+  @include act-font-size($milli-size, 1);
+
+  @include mq($from : tablet){
+
+    width: 100%;
+
+  }
+  @include mq($from : desktop){
+
+  }
+}
+  &masthead-after-widgets{
+    //width: 100%;
+    flex-basis: 100%;
+    margin-bottom: 0;
+  }
+  &branding{
+    background: transparent;
+    @include mq($from: desktop){
+    margin-bottom: $act-unit-l
+    }
+  }
+}

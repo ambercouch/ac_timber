@@ -11,6 +11,10 @@ $scale--palm : 1.1006;
 $scale--lap : 1.1447;
 $scale--desk : 1.21141;
 
+$inuit-font-size-giga: $inuit-global-font-size * pow($scale, 8 );
+$inuit-font-size-mega: $inuit-global-font-size * pow($scale, 6 );
+$inuit-font-size-kilo: $inuit-global-font-size * pow($scale, 4 );
+
 
 // Predefine the variables below in order to alter and enable specific features.
 $inuit-heading-size-1:  $inuit-base-font-size * ($scale * $scale * $scale );
@@ -21,6 +25,10 @@ $inuit-heading-size-5:  $inuit-base-font-size / $scale;
 $inuit-heading-size-6:  $inuit-base-font-size / ($scale * $scale);
 
 $inuit-small-print:  $inuit-base-font-size / ($scale * $scale * $scale);
+
+
+$inuit-font-size-small:   $inuit-global-font-size / pow($scale, 3 );
+$inuit-font-size-small-print:   $inuit-global-font-size / pow($scale, 4 );
 
 //$inuit-heading-size-1--lap:  $inuit-base-font-size--lap * ($scale--lap  * $scale--lap * $scale--lap);
 //$inuit-heading-size-2--lap:  $inuit-base-font-size--lap * ($scale--lap  * $scale--lap);

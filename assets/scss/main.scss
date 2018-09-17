@@ -1,5 +1,21 @@
 @import "style";
 
+/*
+ FUCTIONS
+ */
+@import "functions";
+
+/*
+ SETTINGS
+ */
+//@import "var/settings.article";
+//@import "var/settings.fonts";
+//@import "var/settings.colours";
+//@import "var/settings.defaults";
+//@import "var/settings.shadows";
+//@import "var/settings.headings";
+//@import "var/settings.widths";
+//@import "var/settings.responsive";
 
 @import "../vendor/inuit-defaults/settings.defaults";
 @import "var/settings.colours";
@@ -20,6 +36,14 @@
 @import "../vendor/inuit-normalize/generic.normalize";
 @import "../vendor/inuit-box-sizing/generic.box-sizing";
 @import "../vendor/inuit-shared/generic.shared";
+
+/*
+ INUIT FRAME WORK
+ */
+@import "inuit";
+@import "tools/tools.aliases";
+
+
 @import "base";
 
 @import "../vendor/inuit-page/base.page";
@@ -43,6 +67,8 @@
 @import "typography";
 @import "accessibility";
 @import "placeholders/off-page";
+
+@import "components";
 
 
 @import "modules/site";

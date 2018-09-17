@@ -1,0 +1,128 @@
+/*
+  BEM BLOCK .c-btn
+ */
+
+.c-btn {
+  @include inuit-font-size($act-fs-4, 1);
+  display: inline-block;
+  background: $brand-col-1;
+  color: white;
+  padding: $act-unit $act-unit;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  &:hover, &:focus{
+    color: white;
+    background: darken($brand-col-1,10%);
+  }
+  &:active{
+    color: white;
+    background: darken($brand-col-1,20%);
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-btn--
+ */
+
+.c-btn-- {
+  &type {
+    display: block
+  }
+  &n{
+    @extend .c-btn;
+    padding: $act-unit-t  $act-unit-s;
+    @include act-font-size($act-fs-4, 1);
+    text-transform: none;
+  }
+  &s{
+    @extend .c-btn;
+    padding: $act-unit-t  $act-unit-s;
+    @include act-font-size($act-fs-6, 1);
+    text-transform: none;
+  }
+  &m{
+    @extend .c-btn;
+    padding: $act-unit-s  $act-unit;
+    @include act-font-size($act-fs-4, 1);
+    text-transform: none;
+  }
+  &l{
+     @extend .c-btn;
+     padding: $act-unit  $act-unit-l;
+     @include act-font-size($act-fs-2, 1);
+     text-transform: none;
+   }
+  &ghost{
+    @extend .c-btn;
+    border: solid 1px;
+    background-color: transparent;
+    &:hover{
+      background: $col-accent;
+      color: $brand-col-2;
+    }
+    &:focus{
+      background: $col-accent;
+      color: $brand-col-2;
+    }
+  }
+  &pill{
+    @extend .c-btn;
+    border-radius: $act-unit-h
+  }
+  &accent{
+    @extend .c-btn;
+    background: $col-accent;
+    &:hover{
+      background: darken($col-accent, 10%);
+    }
+    &:focus{
+      background: darken($col-accent, 15%);
+    }
+  }
+  &icon-label{
+    display: inline-flex;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-btn--
+
+[class*=c-btn--] {
+  @extend .c-btn;
+}
+
+
+
+/*
+  BEM ELEMENTS .c-btn__
+ */
+
+.c-btn__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &svg-icon{
+    margin-right: $act-unit-s;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn--
+
+[class*=c-btn__header--] {
+  @extend .c-btn__header;
+}

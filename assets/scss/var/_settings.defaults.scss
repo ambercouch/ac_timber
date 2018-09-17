@@ -3,7 +3,9 @@
  */
 // High-level base settings.
 $inuit-base-font-size:          22px;
+$inuit-global-font-size: $inuit-base-font-size;
 $inuit-base-line-height:        $inuit-base-font-size * 1.4;
+$inuit-global-line-height: $inuit-base-line-height;
 $inuit-base-text-color:         $brand-col-1;
 $inuit-base-background-color:   #fff;
 
