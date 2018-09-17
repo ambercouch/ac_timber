@@ -6,9 +6,14 @@
   {% if post.thumbnail %}
     <div class="service{{ postFormatClass }}__feature-image">
       <div class="feature-image">
+        {% if post.get_field('service_show_more_link')%}
         <a href="{{ post.link }}" class="feature-image__link">
           <img src="{{ post.thumbnail.src('thumb500x250') }}" class="feature-image__img" alt="{{ post.title }}"/>
         </a>
+        {% else %}
+          <img src="{{ post.thumbnail.src('thumb500x250') }}" class="feature-image__img" alt="{{ post.title }}"/>
+
+        {% endif %}
       </div>
     </div>
   {%  endif %}
@@ -16,7 +21,12 @@
 <div class="service{{ postFormatClass }}__content">
     <header class="entry-header service{{ postFormatClass }}__header ">
       <h2 class="entry-title service{{ postFormatClass }}__title">
+        {% if post.get_field('service_show_more_link')%}
         <a href="{{ post.link }}">{{ post.title }}</a>
+          {% else %}
+            <span>{{ post.title }}</span>
+
+        {% endif %}
       </h2>
     </header>
 
