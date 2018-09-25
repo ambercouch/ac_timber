@@ -12,7 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($inuit-font-size-h6, 1.3);
+    @include act-font-size($inuit-font-size-h6, 1.3);
     text-transform: uppercase;
     display: none;
     @include mq($from : desktop){
@@ -33,12 +33,13 @@
  */
 
 .c-nav-menu__ {
- &list{
-   @extend .o-list-bare;
-   margin-bottom: 0;
- }
+  &list{
+    @extend .o-list-bare;
+    margin-bottom: 0;
+  }
   &item{
     position: relative;
+    padding-left:0;
   }
   &link{
     text-decoration: none;
@@ -60,11 +61,12 @@
   }
 
   &list-submenu{
-     @extend .o-list-bare;
-     margin: 0;
-   }
+    @extend .o-list-bare ;
+    margin: 0;
+  }
   &item-submenu{
     margin-bottom: $act-unit-s;
+    padding-left: 0 !important;
     &:last-child{
       margin-bottom: 0;
     }
@@ -79,8 +81,8 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
-  justify-content: center;
+    @extend .o-list-flex--center;
+    justify-content: center;
   }
 }
 

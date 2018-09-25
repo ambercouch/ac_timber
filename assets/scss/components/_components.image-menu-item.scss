@@ -4,7 +4,7 @@
 
 .c-image-menu-item{
   display: block;
-  @include colour-cast($color: black, $opacity : 0.4);
+  @include colour-cast($color: black, $opacity : 0.2);
   position: relative;
   &:hover{
     @include colour-cast($color:$brand-col-2, $opacity : 1,  $mode: normal);
@@ -39,7 +39,7 @@
     max-height:100%;
     width: 600px;
     height: auto;
-    filter: saturate(20%);
+    filter: saturate(80%);
     .c-image-menu-item:hover &{
       filter:saturate(100%);
     }
