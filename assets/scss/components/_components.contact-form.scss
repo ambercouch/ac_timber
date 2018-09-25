@@ -39,6 +39,10 @@
       display: none !important;
     }
   }
+  &s1{
+    background: transparent;
+
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
@@ -54,6 +58,10 @@
 .c-contact-form__ {
   &header{
     display: block;
+  }
+  &content{
+    padding: $act-unit-s;
+    background: darken($brand-col-1, 10%);
   }
   &fieldset{
     background: rgba($brand-col-1, 0.1);
@@ -77,6 +85,7 @@
   &label{
     display: block;
     margin-bottom: $act-unit-t;
+    color: white;
   }
   &label-text{
     @include act-font-size($inuit-font-size-h6, 1);
@@ -94,9 +103,6 @@
     background: darken($brand-col-1, 10%);
     padding: 0.5em 1em;
     color: white;
-  }
-  &content {
-    display: block
   }
   &footer {
     display: block
@@ -117,6 +123,21 @@
 .c-contact-form__input-wrapper--{
   &submit{
     padding-top:$inuit-global-spacing-unit-small;
+    .c-contact-form--s1 &{
+      width : 100%;
+      max-width: 100%;
+      margin-left: 0;
+      padding-top:0;
+      @include mq($from : tablet){
+        padding-top:$inuit-global-spacing-unit-small;
+        width: 200px !important;
+        max-width: 80%;
+        margin-left: 30%;
+      }
+    }
+    input{
+      border: none !important;
+    }
   }
 }
 
@@ -125,6 +146,7 @@
  */
 .wpcf7{
   //@extend .c-contact-form;
+
 }
 .wpcf7-text{
    @extend .c-contact-form__input;
@@ -160,15 +182,96 @@
 .wpcf7-submit{
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
-  padding:$inuit-global-spacing-unit-tiny;
-  background: $brand-col-1;
-  color: white;
+  padding: $act-unit-t 0 !important;
+  display: none;
+  background: $col-accent;
+  color: $col-text;
   cursor: pointer;
+  text-transform: uppercase;
+  @include act-font-size($inuit-font-size-h5,1.4);
   &:hover{
-    background: darken($brand-col-1, 5%);
+    background: darken($col-accent, 10%);
   }
 }
 
 .wpcf7-form-control-wrap{
   @extend .c-contact-form__input-wrapper;
+  width: 100% !important;
+}
+
+.c-contact-form--s1{
+
+  .c-contact-form__ {
+    &header{
+      display: block;
+    }
+    &content{
+      padding: 0;
+      background: transparent;
+    }
+    &fieldset{
+      background: rgba($brand-col-1, 0.1);
+      padding: $inuit-global-spacing-unit-tiny;
+    }
+    &input-wrapper{
+      display: block;
+      margin-bottom: 0;
+      width: 100%;
+      @include mq($from : tablet){
+        width: 70%;
+      }
+    }
+    &radio-wrapper{
+      @extend .c-contact-form__label;
+      padding-bottom:$act-unit-t;
+      border-bottom:solid 2px white;
+    }
+    &input{
+      display: block;
+      width: 100%;
+      border: none;
+      padding:$inuit-global-spacing-unit-tiny $inuit-global-spacing-unit;
+      border: solid 1px $brand-col-1;
+      border-radius: 1em;
+    }
+    &label{
+      display: flex;
+      margin-bottom: $act-unit;
+      flex-wrap: wrap;
+      color: $col-text;
+      @include mq($from : tablet){
+        margin-bottom: $act-unit;
+        flex-wrap: nowrap;
+      }
+
+
+    }
+    &label-text{
+      @include act-font-size($inuit-font-size-h6, 1);
+      width: 100%;
+      margin-bottom: $act-unit-s;
+      @include mq($from : tablet){
+        width: 30%;
+        margin-bottom: 0;
+      }
+    }
+    &label-text-radio{
+      @include act-font-size($inuit-font-size-h5, 1);
+    }
+    &legend{
+      float: left;
+      width: 100%;
+      margin-bottom:$act-unit-t;
+      text-transform: uppercase;
+      @include act-font-size($inuit-font-size-h5);
+      font-weight: bold;
+      background: darken($brand-col-1, 10%);
+      padding: 0.5em 1em;
+      color: white;
+    }
+    &footer {
+      display: block
+    }
+  }
+
 }
