@@ -1,0 +1,11 @@
+.o-flex-cols{
+  @include mq($from: tablet){
+    display: flex;
+  }
+}
+
+.o-flex-cols__{
+  &item{
+
+  }
+}
