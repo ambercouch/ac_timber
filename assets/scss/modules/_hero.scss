@@ -25,7 +25,7 @@ BEM ELEMENTS .hero__
   &body{
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 40%;
     transform: translate(0%, -50%);
     color: white;
   }
@@ -43,5 +43,14 @@ BEM ELEMENTS .hero__
   @extend .o-list-inline;
   text-align: center;
  }
+  &logo{
+    text-align: center;
+  }
+  &logo-img{
+    display: block;
+    margin: 0 auto;
+    max-height: 300px;
+    max-width: 70%;
+  }
 
 }
