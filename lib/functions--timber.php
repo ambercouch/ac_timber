@@ -102,6 +102,8 @@ class StarterSite extends TimberSite {
         $context['cssBannerColourCastColour'] = get_field('banner_image_colour_cast_colour', 'options');
         $context['cssBannerColourCastOpacity'] = get_field('banner_image_colour_cast_opacity', 'options');
         $context['cssBannerColourCastMode'] = get_field('banner_image_colour_cast_mode', 'options');
+        $context['cssBannerImageHeight'] = get_field('banner_image_height', 'options');
+        $context['cssBannerImagePositionHorizontal'] = get_field('banner_image_position_horizontal', 'options');
 
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));

@@ -14,8 +14,8 @@ if( function_exists('acf_add_local_field_group') ):
                 'instructions' => '',
                 'required' => 0,
                 'conditional_logic' => 0,
-                'wrapper' => array (
-                    'width' => '',
+                'wrapper' => array(
+                    'width' => '25',
                     'class' => '',
                     'id' => '',
                 ),
@@ -30,6 +30,56 @@ if( function_exists('acf_add_local_field_group') ):
                 'max_size' => '',
                 'mime_types' => '',
             ),
+            array (
+                'key' => 'field_banner_image_height',
+                'label' => 'Banner Image Height',
+                'name' => 'banner_image_height',
+                'type' => 'text',
+                'instructions' => 'Set the height of the banner image 100px 100% or 100vh will all work',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '25',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+                'readonly' => 0,
+                'disabled' => 0,
+            ),
+            array(
+                'key' => 'field_banner_image_position_horizontal',
+                'label' => 'Position',
+                'name' => 'banner_image_position_horizontal',
+                'type' => 'select',
+                'instructions' => 'Set the horizontal position of the banner image',
+                'required' => 0,
+                'wrapper' => array(
+                    'width' => '25',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'centre' => 'Centre',
+                    'bottom' => 'Bottom',
+                    'top' => 'Top'
+                ),
+                'default_value' => array(
+                    0 => 'centre',
+                    1 => 'bottom',
+                    2 => 'top'
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
             array(
                 'key' => 'field_banner_image_saturation',
                 'label' => 'Image Saturation',
@@ -39,7 +89,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '',
+                    'width' => '25',
                     'class' => '',
                     'id' => '',
                 ),
