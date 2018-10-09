@@ -33,6 +33,13 @@
     background: {{cssBannerColourCastColour}} !important;
     opacity: {{cssBannerColourCastOpacity}} !important;
     mix-blend-mode: {{cssBannerColourCastMode}} !important;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transition: all .5s ease;
   }
   {% else %}
   /* NO cssBannerColourCast */
