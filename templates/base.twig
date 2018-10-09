@@ -18,49 +18,8 @@
   <style>
     {% include 'critical.css' ignore missing %}
   </style>
+  {% include 'inc/dynamic-styles.twig' %}
 
-  <!-- ACF Hero CSS -->
-<style>
-
-  {% if cssBannerImageHeight %}
-  .hero{
-    height: {{ cssBannerImageHeight }} !important;
-    min-height: unset !important;
-  }
-  {% else %}
-  /* NO cssBannerImageHeight */
-  {% endif %}
-
-  {% if cssBannerImagePositionHorizontal %}
-  .hero__background-img{
-    object-position: {{ cssBannerImagePositionHorizontal }} ;
-  }
-  {% else %}
-  /* NO cssBannerImagePositionHorizontal */
-  {% endif %}
-  {% if cssBannerImageSaturation %}
-  .hero__background-img {
-    -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
-    filter: saturate({{ cssBannerImageSaturation }}%) !important;
-  }
-  {% else %}
-  /* NO cssBannerImageSaturation */
-  {% endif %}
-
-  {% if cssBannerColourCast %}
-
-  .hero__background:before{
-    display: block !important;
-     background: {{cssBannerColourCastColour}} !important;
-     opacity: {{cssBannerColourCastOpacity}} !important;
-     mix-blend-mode: {{cssBannerColourCastMode}} !important;
-   }
-  {% else %}
-  /* NO cssBannerColourCast */
-  {% endif %}
-
-
-</style>
   {{ fn('wp_head') }}
 
   {% block after_head %}

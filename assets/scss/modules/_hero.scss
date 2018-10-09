@@ -5,15 +5,20 @@ BEM BLOCK .hero
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 640px;
+  height: 100vh;
+  position: relative;
 }
 
 /*
 BEM ELEMENTS .hero__
  */
 .hero__{
+  &container{
+    height: 100%;
+  }
   &background{
     width:100%;
-    height: 640px;
+    height: 100%;
     position: absolute;
   }
   &background-img{
@@ -25,9 +30,11 @@ BEM ELEMENTS .hero__
   &body{
     position: absolute;
     width: 100%;
-    top: 40%;
+    top: 50%;
     transform: translate(0%, -50%);
     color: white;
+    max-height:100%;
+    height:100%;
   }
   &content{
     background: rgba($brand-col-3, 0.7);
@@ -45,12 +52,15 @@ BEM ELEMENTS .hero__
  }
   &logo{
     text-align: center;
+    max-height:100%;
+    height: 100%;
+    padding: $act-unit;
   }
   &logo-img{
     display: block;
     margin: 0 auto;
-    max-height: 60vh;
-    max-width: 70%;
+    max-height:100%;
+
   }
 
 }
