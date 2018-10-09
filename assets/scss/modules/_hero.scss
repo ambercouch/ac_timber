@@ -36,6 +36,7 @@ BEM ELEMENTS .hero__
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
   }
   &content{
     background: rgba($brand-col-3, 0.7);
@@ -56,7 +57,7 @@ BEM ELEMENTS .hero__
     max-height:100%;
     height: 100%;
     padding: $act-unit;
-    //height: 400px;
+    height: 400px;
   }
   &logo-img{
     display: block;
