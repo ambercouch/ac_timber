@@ -1,4 +1,5 @@
 var siteLocalUrl = 'mysite.local';
+var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
 var gutil = require('gulp-util');
@@ -7,6 +8,7 @@ var pump = require('pump');
 var concat = require('gulp-concat');
 // var browserify = require('gulp-browserify');
 var sass = require('gulp-sass');
+var merge = require('merge-stream');
 var postcss = require('gulp-postcss');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
@@ -15,36 +17,50 @@ var pixrem = require('pixrem');
 var browserSync = require('browser-sync').create();
 var svgstore = require('gulp-svgstore');
 var svgmin = require('gulp-svgmin');
+var critical = require('critical');
+var stripDebug = require('gulp-strip-debug');
 
 /*
  SOURCE FILES
  */
 var jsScripts;
-var jsPath = 'assets/js/'
-var jsVendorPath = 'assets/vendor/'
+var jsPath = 'assets/js/';
+var jsNpmPath = 'node_modules/';
 var jsCustomScripts = [
     'ac_timber.js',
     // 'custom.js',
 ];
-var jsVendorScripts = [
+
+var jsNpmScripts = [
     //All ready deprecated with browserify
-    // 'jquery/dist/jquery.slim.js',
-    'fitvids/jquery.fitvids.js',
-    //'flickity/dist/flickity.pkgd.js',
+    'fitvids/dist/fitvids.js',
+    'remodal/dist/remodal.js',
+    'flickity/dist/flickity.pkgd.js'
 ];
 
-for (var i = 0; i < jsVendorScripts.length; i++) {
-    //Add the vendor path
-    jsVendorScripts[i] = jsVendorPath + jsVendorScripts[i];
-}
+var cssNpmScripts = [
+    //Add any vendor css scripts here that you want to include
+    //'flickity/dist/flickity.css'
+    'remodal/dist/remodal.css',
+    'remodal/dist/remodal-default-theme.css',
+];
+
 for (var i = 0; i < jsCustomScripts.length; i++) {
     //Add the default path
     jsCustomScripts[i] = jsPath + jsCustomScripts[i];
 }
+for (var i = 0; i < jsNpmScripts.length; i++) {
+    //Add the default path
+    jsNpmScripts[i] = jsNpmPath + jsNpmScripts[i];
+}
+
+for (var i = 0; i < cssNpmScripts.length; i++) {
+    //Add the default path
+    cssNpmScripts[i] = jsNpmPath + cssNpmScripts[i];
+}
 
 //Concat the vendor scripts with the custom scripts
-jsScripts = jsVendorScripts.concat(jsCustomScripts);
-
+jsScripts = jsNpmScripts.concat(jsCustomScripts);
 
 
 /*
@@ -70,15 +86,20 @@ gulp.task('scripts', function (cb) {
     );
 });
 
-//TASK: sass - Concat and uglify all the vendor and custom javascript
+///TASK: sass - build all the css
 gulp.task('sass', function (cb) {
 
-    return gulp.src('assets/scss/main.scss')
-        //.pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        //.pipe(postcss([ autoprefixer(), cssnano(), pixrem() ]))
-        //.pipe(sourcemaps.write('.'))
+    var sassStream,
+        cssStream;
+
+    sassStream =  gulp.src('assets/scss/main.scss')
+        .pipe(sass())
+
+    cssStream = gulp.src(cssNpmScripts)
+
+    return merge(sassStream, cssStream).on('error', swallowError )
         .pipe(concat('style.css'))
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(gulp.dest(''))
         .pipe(browserSync.stream());
 
@@ -86,15 +107,16 @@ gulp.task('sass', function (cb) {
 
 
 // Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function () {
+gulp.task('serve', ['sass','scripts','svgstore'], function () {
 
     browserSync.init({
-        proxy: siteLocalUrl
+        proxy: siteLocalUrl,
+        browser: defaultBrowser
     });
 
     gulp.watch("assets/scss/**/*.scss", ['sass']);
-    // gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
-    // gulp.watch("craft/templates/**/*.html").on('change', browserSync.reload);
+    gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
+    gulp.watch("templates/**/*.twig").on('change', browserSync.reload);
     gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
 });
 
@@ -116,3 +138,15 @@ gulp.task('svgstore', function () {
         .pipe(svgstore())
         .pipe(gulp.dest('templates/inc'));
 });
+
+//FUNCTIONS
+
+function swallowError (error) {
+
+    // If you want details of the error in the console
+    console.log(error.toString())
+    // If you want details of the error in the browser
+    browserSync.notify(error.message, 3000);
+    // Prevent gulp from catching the error
+    this.emit('end')
+}
