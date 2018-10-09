@@ -27,23 +27,24 @@
     height: {{ cssBannerImageHeight }} !important;
     min-height: unset !important;
   }
-  {% endif %}
-  {% if cssBannerImageHeight %}
-  .hero__background{
-    height: {{ cssBannerImageHeight }} !important;
-  }
+  {% else %}
+  /* NO cssBannerImageHeight */
   {% endif %}
 
   {% if cssBannerImagePositionHorizontal %}
   .hero__background-img{
     object-position: {{ cssBannerImagePositionHorizontal }} ;
   }
+  {% else %}
+  /* NO cssBannerImagePositionHorizontal */
   {% endif %}
   {% if cssBannerImageSaturation %}
   .hero__background-img {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
   }
+  {% else %}
+  /* NO cssBannerImageSaturation */
   {% endif %}
 
   {% if cssBannerColourCast %}
@@ -54,7 +55,10 @@
      opacity: {{cssBannerColourCastOpacity}} !important;
      mix-blend-mode: {{cssBannerColourCastMode}} !important;
    }
+  {% else %}
+  /* NO cssBannerColourCast */
   {% endif %}
+
 
 </style>
   {{ fn('wp_head') }}
