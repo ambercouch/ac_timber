@@ -37,6 +37,7 @@ BEM ELEMENTS .hero__
     align-items: center;
     justify-content: center;
     z-index: 2;
+    flex-direction: column;
   }
   &content{
     background: rgba($brand-col-3, 0.7);
@@ -51,6 +52,7 @@ BEM ELEMENTS .hero__
  &menu{
   @extend .o-list-inline;
   text-align: center;
+   display: flex;
  }
   &logo{
     text-align: center;
