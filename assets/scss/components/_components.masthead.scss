@@ -38,15 +38,16 @@ BEM ELEMENTS .c-masthead__
 .c-masthead__{
   &site-title{
     line-height: 1;
+    display: none;
   }
   &navigation{
     @extend %off-page--curtain;
   }
 &masthead-before-widgets{
-  @include breakout-band($bgc : $brand-col-2);
+  //@include breakout-band($bgc : $brand-col-2);
   text-align: right;
   margin-bottom:$act-unit-s;
-  background: $brand-col-2;
+  //background: $brand-col-2;
   color: white;
   padding: $act-unit-t !important;
   @include act-font-size($milli-size, 1);
