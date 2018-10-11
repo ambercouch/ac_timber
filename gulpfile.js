@@ -1,4 +1,4 @@
-var siteLocalUrl = 'nowasteliving.local';
+var siteLocalUrl = 'jazzct.local';
 var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 var gulp = require('gulp');
@@ -86,18 +86,18 @@ gulp.task('scripts', function (cb) {
     );
 });
 
-//TASK: sass - Concat and uglify all the vendor and custom javascript
+///TASK: sass - build all the css
 gulp.task('sass', function (cb) {
 
     var sassStream,
         cssStream;
 
     sassStream =  gulp.src('assets/scss/main.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass())
 
     cssStream = gulp.src(cssNpmScripts)
 
-    return merge(sassStream, cssStream)
+    return merge(sassStream, cssStream).on('error', swallowError )
         .pipe(concat('style.css'))
         .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(gulp.dest(''))
@@ -138,3 +138,15 @@ gulp.task('svgstore', function () {
         .pipe(svgstore())
         .pipe(gulp.dest('templates/inc'));
 });
+
+//FUNCTIONS
+
+function swallowError (error) {
+
+    // If you want details of the error in the console
+    console.log(error.toString())
+    // If you want details of the error in the browser
+    browserSync.notify(error.message, 3000);
+    // Prevent gulp from catching the error
+    this.emit('end')
+}
