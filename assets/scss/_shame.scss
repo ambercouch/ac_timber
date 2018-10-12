@@ -1,0 +1,26 @@
+.gallery{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  @include mq($from : tablet){
+    flex-wrap: nowrap;
+  }
+}
+
+.gallery-item{
+  padding:1%;
+  margin-bottom: 0;
+  max-width: 30%;
+  @include mq($from : mobile){
+    max-width: 30%;
+  }
+}
+
+img[height], img[width] {
+
+  max-width: 100%;
+  height: auto;
+
+}
