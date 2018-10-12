@@ -15,25 +15,27 @@ $meta_text = ($meta_price != '' && $meta_duration != '') ? $meta_duration.'<span
   <li class="c-service-menu__item">
     <article id="post-<?php the_ID(); ?>" <?php post_class('c-service-menu__service-thumb'); ?>>
       <div class="c-service-thumb">
-          <?php if ( '' !== get_the_post_thumbnail() ) : ?>
-            <div class="c-service-menu-post-thumb__feature-image">
-              <a href="" class="c-service-thumb__feature-image-link" >
-                  <?php the_post_thumbnail( 'serviceMenuMedium', array('class' => 'c-service-thumb__img')); ?>
-              </a>
-            </div><!-- .post-thumbnail -->
-          <?php endif; ?>
+
         <header  class="entry-header c-service-thumb__header">
+            <?php if ( '' !== get_the_post_thumbnail() ) : ?>
+              <div class="c-service-menu-post-thumb__feature-image">
+                <a href="" class="c-service-thumb__feature-image-link" >
+                    <?php the_post_thumbnail( 'serviceMenuMedium', array('class' => 'c-service-thumb__img')); ?>
+                </a>
+              </div><!-- .post-thumbnail -->
+            <?php endif; ?>
           <h2 class="entry-title c-service-thumb__heading">
             <a href="<?php esc_url( get_permalink() ) ?>" class="c-service-thumb__link" rel="bookmark">
               <span class="c-service-thumb__link-title"><?php the_title() ?></span>
             </a>
           </h2>
+            <?php if ($meta_text != '') : ?>
+              <div class="c-service-thumb__meta">
+                  <?php echo $meta_text ?>
+              </div>
+            <?php endif; ?>
         </header>
-        <?php if ($meta_text != '') : ?>
-        <div class="c-service-thumb__meta">
-          <?php echo $meta_text ?>
-        </div>
-        <?php endif; ?>
+
         <div class="c-service-thumb__content">
           <?php the_excerpt() ?>
         </div>

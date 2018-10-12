@@ -4,7 +4,9 @@
 
 .c-service-thumb {
   display: block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
 }
 
 /*
@@ -30,16 +32,28 @@
 .c-service-thumb__ {
   &header {
     display: block;
+    position: relative;
+
+  }
+  &meta{
     position: absolute;
-    top: 0;
+    right: 0;
+    bottom: $act-unit-l;
     background: $brand-col-1;
+    color: white;
     padding: $act-unit-s;
-  ;
+    padding-right: $act-unit-l;
   }
   &heading {
     display: block;
     @include act-font-size($inuit-font-size-h6,1.2);
     margin:0;
+    position: absolute;
+    top: $act-unit-l; 
+    background: $brand-col-1;
+    padding: $act-unit-s;
+    padding-left: $act-unit-l;
+    max-width: 90%;
   }
   &title {
     display: inline;
@@ -48,7 +62,14 @@
     display: inline
   }
   &content {
-    display: block
+    display: block;
+    padding: $act-unit;
+    background: $brand-col-1;
+    flex: 1 0 auto;
+    p{
+      @include act-font-size($inuit-font-size-h5, 1.3)
+    }
+
   }
   &footer {
     display: block
