@@ -1,11 +1,11 @@
 a{
-  color: $brand-col-1;
+  color: $col-link;
 }
 a:focus{
   @extend a;
 }
 a:hover{
-  color: darken($brand-col-1, 20%);
+  color: darken($col-link, 20%);
 }
 a:focus{
   @extend a:hover;
