@@ -1,0 +1,85 @@
+/*
+  BEM BLOCK .footer-widgets
+ */
+
+.footer-widgets {
+  display: flex;
+  flex-wrap: wrap;
+  @include mq($from : desktop){
+    flex-wrap: nowrap;
+  }
+
+}
+
+/*
+  BEM BLOCK MODIFIER .footer-widgets--
+ */
+
+.footer-widgets-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .footer-widgets--
+
+[class*=footer-widgets--] {
+  @extend .footer-widgets;
+}
+
+/*
+  BEM ELEMENTS .footer-widgets__
+ */
+
+.footer-widgets__ {
+  &widget {
+    width: 100%;
+    margin-bottom: $act-unit;
+
+    @include mq($from : tablet, $until : desktop){
+      width : 50%;
+      padding-right: $act-unit;
+    }
+    @include mq($from : desktop){
+      width : 25%;
+      padding-right: $act-unit;
+    }
+    a{
+      color: white;
+    }
+    &:nth-child(2){
+      @include mq($until : desktop){
+        padding-right: 0;
+      }
+      @include mq($from: desktop){
+        width: 50%;
+      }
+    }
+    &:last-child{
+      margin-left: auto;
+      padding-right: 0;
+    }
+
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .footer-widgets--
+
+[class*=footer-widgets__header--] {
+  //@extend .footer-widgets__header;
+}

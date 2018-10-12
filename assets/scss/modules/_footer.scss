@@ -2,17 +2,20 @@
   display: block;
   //font-family: $act-font-family-alt;
   //@include act-font-size($inuit-font-size-h6);
+  padding-top: $act-unit-l;
 }
 
 .footer__{
   &content{
     @extend .c-site-wrapper--responsive;
-    padding: $act-unit;
+    //padding: $act-unit;
+    padding-top: 0;
+    padding-bottom: $act-unit;
     margin: 0 auto;
     background: transparent;
     @include mq($from : tablet){
-      display: flex;
-      flex-wrap:wrap ;
+      //display: flex;
+      //flex-wrap:wrap ;
     }
   }
   &company-logo{
@@ -24,10 +27,13 @@
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: center;
     padding: $inuit-global-spacing-unit;
-    background: $brand-col-2;
-    color: white;
+    background: transparent;
     a{
-      color: white;
+      text-decoration: none;
+      color: lighten($col-accent, 10%);
+      &:hover{
+        color: $col-accent;
+      }
     }
   }
   &widget{
