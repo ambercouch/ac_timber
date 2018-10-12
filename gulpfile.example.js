@@ -136,6 +136,7 @@ gulp.task('svgstore', function () {
             }
         }))
         .pipe(svgstore())
+        .pipe(concat('defs.svg'))
         .pipe(gulp.dest('templates/inc'));
 });
 
