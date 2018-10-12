@@ -1,0 +1,69 @@
+/*
+  BEM BLOCK .hero-menu
+ */
+
+.hero-menu {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .hero-menu--
+ */
+
+.hero-menu-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .hero-menu--
+
+[class*=hero-menu--] {
+  @extend .hero-menu;
+}
+
+/*
+  BEM ELEMENTS .hero-menu__
+ */
+
+.hero-menu__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &list{
+    @extend .o-list-bare;
+    //text-align: center;
+    display: flex;
+  }
+  &item{
+    margin-left: $act-unit;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  &link{
+    @extend .o-btn;
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .hero-menu--
+
+[class*=hero-menu__header--] {
+  @extend .hero-menu__header;
+}

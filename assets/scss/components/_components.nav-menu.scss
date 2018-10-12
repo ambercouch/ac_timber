@@ -13,7 +13,6 @@
 .c-nav-menu-- {
   &primary {
    @include act-font-size($inuit-font-size-h6, 1.3);
-
   }
 }
 
@@ -31,10 +30,13 @@
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
-   justify-content: flex-end;
  }
   &link{
     text-decoration: none;
+    display: flex;
+  }
+  &icon-title{
+    margin-left: $act-unit-t;
   }
 }
 
@@ -46,7 +48,10 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+  @extend .o-list-flex--right;
+  }
+  &social{
+    @extend .o-list-flex--left;
   }
 }
 
