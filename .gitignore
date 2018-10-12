@@ -2,3 +2,5 @@
 /dist/
 /style.css
 /gulpfile.js
+
+templates/inc/defs\.svg
