@@ -52,6 +52,15 @@
   @extend .o-list-flex;
   justify-content: center;
 }
+.o-list-flex--left{
+  @extend .o-list-flex;
+  justify-content: flex-start;
+}
+.o-list-flex--right{
+  @extend .o-list-flex;
+  justify-content: flex-end;
+}
+
 
 .o-list-flex--1-1{
   @extend .o-list-flex;
