@@ -22,11 +22,11 @@ function act_menu_filters($sorted_menu_objects, $args) {
             $title_markup = false;
             if ($menu_object->attr_title != ""){
                 $attr_title = str_replace('#', '', $menu_object->attr_title);
-                $title_markup = '<div class="nav-menu__icon-title">'.$attr_title.'</div>';
+                $title_markup = '<div class="c-nav-menu__icon-title">'.$attr_title.'</div>';
             }
 
 
-            $menu_object->title = '<div class="nav-menu__svg-icon"><div class="svg-icon--'. $icon_class .'"><svg preserveAspectRatio="none" class="svg-icon__svg"><use class="svg-icon__use"  xlink:href="' . $menu_object->description . '" /></svg></div></div>'.$title_markup;
+            $menu_object->title = '<div class="c-nav-menu__svg-icon"><div class="o-svg-icon--'. $icon_class .'"><svg preserveAspectRatio="none" class="o-svg-icon__svg"><use class="o-svg-icon__use"  xlink:href="' . $menu_object->description . '" /></svg></div></div>'.$title_markup;
         }
 
 
