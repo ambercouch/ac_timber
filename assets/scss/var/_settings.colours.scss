@@ -24,7 +24,7 @@ $jct-red : #e20813;
 
 $brand-col-1 : $jct-purple;
 $brand-col-2 : $jct-deep-blue;
-$brand-col-3 : $act-grey-dark;
+$brand-col-3 : $jct-orange;
 $brand-col-4 : $act-grey;
 $brand-col-5 : $act-grey-light;
 $brand-col-6 : $act-grey-dark;
@@ -36,4 +36,4 @@ $col-text : $brand-col-8;
 $col-heading : $brand-col-2;
 $col-link : $brand-col-2;
 $col-accent : $brand-col-3;
-$col-bg-tint : desaturate(darken($jct-deep-blue,15%),20%);;
+$col-bg-tint : desaturate(lighten($jct-purple,25%),20%);;

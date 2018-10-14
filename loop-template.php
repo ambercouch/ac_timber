@@ -18,16 +18,16 @@ $meta_text = ($meta_price != '' && $meta_duration != '') ? $meta_duration.'<span
 
         <header  class="entry-header c-service-thumb__header">
             <?php if ( '' !== get_the_post_thumbnail() ) : ?>
-              <div class="c-service-menu-post-thumb__feature-image">
-                <a href="" class="c-service-thumb__feature-image-link" >
+              <div class="c-service-thumb__feature-image">
+
                     <?php the_post_thumbnail( 'serviceMenuMedium', array('class' => 'c-service-thumb__img')); ?>
-                </a>
+
               </div><!-- .post-thumbnail -->
             <?php endif; ?>
           <h2 class="entry-title c-service-thumb__heading">
-            <a href="<?php esc_url( get_permalink() ) ?>" class="c-service-thumb__link" rel="bookmark">
-              <span class="c-service-thumb__link-title"><?php the_title() ?></span>
-            </a>
+
+              <span class="c-service-thumb__title"><?php the_title() ?></span>
+
           </h2>
             <?php if ($meta_text != '') : ?>
               <div class="c-service-thumb__meta">
