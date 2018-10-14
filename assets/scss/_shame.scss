@@ -24,3 +24,9 @@ img[height], img[width] {
   height: auto;
 
 }
+.wp-caption-text{
+  @include act-font-size($inuit-font-size-h6,1.2);
+  padding: $act-unit-t $act-unit-s;
+  background: $col-accent;
+  color: white;
+}
