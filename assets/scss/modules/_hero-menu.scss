@@ -57,7 +57,8 @@
     }
   }
   &link{
-    @extend .o-btn;
+    @extend .c-btn;
+    @extend .c-btn--bc1;
 
   }
 }

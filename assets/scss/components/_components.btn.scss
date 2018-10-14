@@ -1,75 +1,146 @@
-/*
-  BEM BLOCK .c-btn
- */
-
-.c-btn {
-  @include inuit-font-size($act-fs-sp, 1);
+.c-btn{
+  vertical-align: middle;
+  font: inherit;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
   display: inline-block;
-  background: $brand-col-1;
-  color: white;
-  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  border-radius: 0.5em;
-  text-transform: uppercase;
+  line-height:1;
+  width: auto;
+  background: $act-grey-light;
+  color: #fff;
   text-decoration: none;
-  &:hover, &:focus{
-    color: white;
-    background: darken($brand-col-1,10%);
+  padding: $act-unit-s $act-unit;
+  border-radius: 3px;
+  &:hover,&:focus{
+    background: darken($act-grey-light, 10%);
+    color: #fff;
   }
-  &:active{
-    color: white;
-    background: darken($brand-col-1,20%);
-  }
+
 }
 
-/*
-  BEM BLOCK MODIFIER .c-btn--
- */
-
-.c-btn-- {
-  &type {
-    display: block
-  }
-  &n{
-    @extend .c-btn;
-    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
-    @include act-font-size($act-fs-4, 1)
-    text-transform: none;
-  }
-}
-
-//BEM BLOCK MODIFIER FALLBACK .c-btn--
-
-[class*=c-btn--] {
+.c-btn--n{
   @extend .c-btn;
+  @include inuit-font-size($inuit-font-size-h4, 1);
+};
+
+.c-btn--s{
+  @extend .c-btn;
+  padding: $act-unit-s / 2 $act-unit/ 2;
+  @include inuit-font-size($inuit-font-size-h5, 1);
 }
 
-/*
-  BEM ELEMENTS .c-btn__
- */
+.c-btn--t{
+  @extend .c-btn;
+  padding: $act-unit-s / 4 $act-unit/ 4;
+  @include inuit-font-size($inuit-font-size-h6, 1);
+}
 
-.c-btn__ {
-  &header {
-    display: block
+.c-btn--transparent{
+  background: transparent;
+}
+[class*=c-btn--]{
+@extend .c-btn;
+}
+.c-btn--{
+  &bc1{
+    background: $brand-col-1;
+    &:hover,&:focus{
+      background: darken($brand-col-1, 10%);
+      color: #fff;
+    }
   }
-  &heading {
-    display: block
+  &bc2{
+    background: $brand-col-2;
+    &:hover,&:focus{
+      background: darken($brand-col-2, 10%);
+      color: #fff;
+    }
   }
-  &title {
-    display: inline;
-  }
-  &link {
-    display: inline
-  }
-  &content {
-    display: block
-  }
-  &footer {
-    display: block
+  &accent{
+     background: $col-accent;
+     &:hover,&:focus{
+       background: darken($col-accent, 10%);
+       color: #fff;
+     }
+   }
+  &ghost {
+    @extend .c-btn;
+    border: solid 1px;
+    background-color: transparent;
+    &:hover {
+      background: $col-accent;
+
+    }
+    &:focus {
+      background: $col-accent;
+
+    }
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .c-btn--
 
-[class*=c-btn__header--] {
-  @extend .c-btn__header;
+.c-btn--pill{
+  @extend .c-btn;
+  border-radius: 1em;
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+  }
+  &:before{
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+  }
 }
+
+.c-btn--icon{
+  .svg-icon {
+
+    color: $brand-col-4;
+    @include size(45px);
+
+  }
+  a:hover &{
+    transition: color 0.3s ease;
+    color: darken($brand-col-4, 20%);
+  }
+}
+
+.c-btn--icon-border{
+  .svg-icon {
+    border: solid 1px;
+  }
+}
+
+.c-btn--icon-disc{
+  .svg-icon {
+    border: solid 1px;
+    border-radius: 50%;
+  }
+  .svg-icon__svg{
+    @include size(1em);
+  }
+}
+
+.c-btn--icon-inv{
+  .svg-icon {
+    color: $brand-col-2 !important;
+    background: $brand-col-4;
+  }
+}
+
+.c-btn--primary{
+  background: #ccc;
+  border-radius: 30px;
+  padding: 0 $inuit-global-spacing-unit-tiny;
+  line-height: 0;
+  @include mq($from : desktop){
+    padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-small;
+  }
+
+}
+
+

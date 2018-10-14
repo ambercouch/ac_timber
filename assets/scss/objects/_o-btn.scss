@@ -1,25 +1,106 @@
-.o-btn{
+.c-btn{
   transition: background 0.3s ease;
   display: inline-block;
   line-height:1;
   width: auto;
-  border: none;
-  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
-  @include inuit-font-size($inuit-font-size-h5, 1);
-  background: $brand-col-1;
+  background: $act-grey-light;
   color: #fff;
   text-decoration: none;
+  padding: $act-unit-s $act-unit;
+
+  &:hover,&:focus{
+    background: darken($act-grey-light, 10%);
+    color: #fff;
+  }
+
 }
 
-.o-btn{
+
+
+.c-btn--s{
+  @extend .c-btn;
+  padding: $act-unit-s / 2 $act-unit/ 2;
+  @include inuit-font-size($inuit-font-size-h5, 1);
+}
+
+.c-btn--t{
+  @extend .c-btn;
+  padding: $act-unit-s / 4 $act-unit/ 4;
+  @include inuit-font-size($inuit-font-size-h6, 1);
+}
+
+.c-btn--transparent{
+  background: transparent;
+}
+
+.c-btn--bc1{
+  background: $brand-col-1;
   &:hover,&:focus{
-    background: darken($brand-col-1, 5%);
+    background: darken($brand-col-1, 10%);
     color: #fff;
   }
 }
 
-.o-btn--tiny{
-  @extend .o-btn;
-  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
-  @include inuit-font-size($milli-size, 1);
+.c-btn--pill{
+  @extend .c-btn;
+  border-radius: 1em;
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+  }
+  &:before{
+    content: '';
+    display: inline-block;
+    width: 0.5em;
+  }
 }
+
+.c-btn--icon{
+  .svg-icon {
+
+    color: $brand-col-4;
+    @include size(45px);
+
+  }
+  a:hover &{
+    transition: color 0.3s ease;
+    color: darken($brand-col-4, 20%);
+  }
+}
+
+.c-btn--icon-border{
+  .svg-icon {
+    border: solid 1px;
+  }
+}
+
+.c-btn--icon-disc{
+  .svg-icon {
+    border: solid 1px;
+    border-radius: 50%;
+  }
+  .svg-icon__svg{
+    @include size(1em);
+  }
+}
+
+.c-btn--icon-inv{
+  .svg-icon {
+    color: $brand-col-2 !important;
+    background: $brand-col-4;
+  }
+}
+
+.c-btn--primary{
+  background: #ccc;
+  border-radius: 30px;
+  padding: 0 $inuit-global-spacing-unit-tiny;
+  line-height: 0;
+  @include mq($from : desktop){
+    padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-small;
+  }
+
+}
+
+

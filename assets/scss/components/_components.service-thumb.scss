@@ -45,7 +45,7 @@
     color: white;
     padding: $act-unit-s;
     padding-right: $act-unit-l;
-    @include act-font-size($inuit-font-size-h6,1)
+    @include act-font-size($inuit-font-size-h6,1);
     z-index: 10;
   }
   &heading {

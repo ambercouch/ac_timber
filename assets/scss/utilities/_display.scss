@@ -12,6 +12,9 @@
 
 .u-df{
   display: flex;
+  @include mq($until : tablet){
+    flex-direction: column;
+  }
 }
 
 .u-fw{

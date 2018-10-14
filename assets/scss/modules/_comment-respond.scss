@@ -23,7 +23,7 @@
     display: block;
   }
   &submit{
-    @extend .o-btn;
+    @extend .c-btn;
   }
   &label{
     display: none;
@@ -56,7 +56,7 @@
 
   }
   &submit{
-    @extend .o-btn;
+    @extend .c-btn;
   }
 
 }

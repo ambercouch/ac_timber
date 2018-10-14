@@ -76,17 +76,21 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit-t / 2;
-    display: block;
-    color: $brand-col-2;
+    @extend .c-btn--t;
+    @extend .c-btn--transparent;
+    @extend .c-btn--pill;
+
     &:hover{
-      color: $brand-col-2;
+      background: $brand-col-2;
+      color: white;
+      @extend .c-btn--bc2;
     }
   }
   &mobile{
     padding:$act-unit-s;
     display: block;
     color: white;
+    margin-bottom: $act-unit-s;
     background-color: darken($brand-col-3, 15%);
     &:hover{
       color: white;
@@ -96,11 +100,5 @@
       color: white;
       background-color: darken($brand-col-3, 20%);
     }
-  }
-}
-
-.c-nav-menu__link--{
-  &mobile{
-    margin-bottom: $act-unit-s;
   }
 }
