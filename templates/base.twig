@@ -75,8 +75,8 @@
   {% endblock %}
 
   <section id="primary" class="site__main">
-    <div class="c-main{{ main_mod }}">
-      <main class="main__content{{ main_mod }}">
+    <div class="c-main{{ main_mod }} {% if hasSideBar == true %}has-side-bar{% else %}has-no-side-bar{% endif %}">
+      <main class="c-main__content{{ main_mod }}">
         {% block before_content %}
         {% endblock %}
         <div class="content{{ content_mod }}">
@@ -95,12 +95,6 @@
         {% endblock %}
       </main>
       {% block sidebar %}
-        <div id="sidebar" class="site__sidebar">
-          <div class="c-sidebar-widgets">
-            {{ sidebar_widgets }}
-          </div>
-
-        </div>
       {% endblock %}
     </div>
   </section>

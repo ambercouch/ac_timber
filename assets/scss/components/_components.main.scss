@@ -10,6 +10,30 @@ BEM BLOCK .c-main
   @include mq($from : desktop){
     padding-top: $inuit-global-spacing-unit-huge !important;
   }
+  &.has-side-bar{
+    @include mq($from: tablet) {
+      display: flex !important;
+    }
+  }
+}
+
+.c-main__{
+  &sidebar{
+
+    background: $brand-col-5;
+    padding: $act-unit;
+
+    @include mq($from: tablet) {
+      width: 35%;
+    }
+    @include mq($from: desktop) {
+      width: 25%;
+    }
+  }
+  &content{
+    padding: $act-unit;
+  }
+
 }
 
 /*
@@ -23,5 +47,20 @@ BEM BLOCK MODIFIERS .c-main--
 .c-main--{
   &service{
     padding: 0 !important;
+  }
+}
+
+.c-main__content{
+  .has-side-bar &{
+
+    @include mq($from: tablet) {
+      width: 65%;
+      padding-right: $act-unit-l;
+    }
+
+    @include mq($from: desktop) {
+      width: 75%;
+      padding-right: $act-unit-h * 2;
+    }
   }
 }
