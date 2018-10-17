@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .post-date
+ */
+
+.post-date {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .post-date--
+ */
+
+.post-date-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .post-date--
+
+[class*=post-date--] {
+  @extend .post-date;
+}
+
+/*
+  BEM ELEMENTS .post-date__
+ */
+
+.post-date__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &list{
+    @extend .post-meta__list;
+  }
+  &item{
+    @extend .post-meta__item;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .post-date--
+
+[class*=post-date__header--] {
+  @extend .post-date__header;
+}

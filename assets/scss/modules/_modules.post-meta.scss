@@ -4,11 +4,32 @@
 
 .post-meta__{
 
-  &post-type{
-    visibility: inherit;
-    position: absolute;
-    top:0;
-    left: 0;
+  &section{
+   margin-bottom: $act-unit-s;
+    @include act-font-size($inuit-font-size-h6,1)
+  }
+
+  &list{
+    @extend .o-list-bare;
+    @extend .o-list-inline;
+    margin-bottom: 0 !important;
+
+  }
+
+  &item{
+    @extend .o-list-bare__item;
+    @extend .o-list-inline__item;
+    &:after{
+      content: ',';
+    }
+    &:last-child:after{
+      content: '';
+    }
+  }
+
+  &label{
+    margin-bottom: $act-unit-t;
+    display: block;
   }
 
   &post-date{
@@ -19,7 +40,7 @@
 
 
   &post-tags{
-    visibility: inherit;
+    margin-bottom: $act-unit-t;
   }
 
   &post-cats{
@@ -34,6 +55,7 @@
     @include inuit-font-size($inuit-font-size-h6, 1);
     display: inline-block;
   }
+
   &post-edit-link{
    @extend .c-btn;
   }
@@ -43,8 +65,8 @@
   @extend .post-meta;
 }
 
-[class*=post-meta__post-type--]{
-  @extend .post-meta__post-type;
+[class*=post-meta__section--]{
+  @extend .post-meta__section;
 }
 
 [class*=post-meta__post-date--]{
