@@ -22,9 +22,7 @@
       <span class="post-cats__label">Categories</span>
       <ul class="post-cats__list">
         {% for term in post.terms('category') %}
-        <li class="post-cats__item" >
-         <a href="post-cats__link" ><span  class="post-cats__link-label"  >{{ term }}</span></a>
-        </li>
+        <li class="post-cats__item" ><a href="post-cats__link" ><span  class="post-cats__link-label"  >{{ term }}</span></a></li>
         {% endfor %}
       </ul>
     </div>
@@ -37,9 +35,7 @@
         <span class="post-tags__label">Tags</span>
         <ul class="post-tags__list">
           {% for term in post.terms('tag') %}
-            <li class="post-tags__item" >
-              <a class="post-tags__link" href="{{ term.link }}"><span class="post-tags__link-label">{{ term }}</span></a>
-            </li>
+            <li class="post-tags__item" ><a class="post-tags__link" href="{{ term.link }}"><span class="post-tags__link-label">{{ term }}</span></a></li>
           {% endfor %}
         </ul>
       </div>
@@ -48,7 +44,7 @@
 
   <div class="post-meta__section--post-date">
     <div class="post-date">
-      <span class="post-date__date-published">{{ post.date }}</span>
+      <span class="post-date__label" >Posted on</span> <span class="post-date__date-published">{{ post.date }}</span>
     </div>
   </div>
 
