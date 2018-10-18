@@ -53,10 +53,19 @@
   @extend .c-widget-area__widget;
 }
 
-.c-widget-area__widget--masthead-before-widgets{
-  @include breakout-band($bgc : $brand-col-3);
-  padding-right: $act-unit-h;
-  @include mq($from : desktop){
-    padding-right: 0;
+.c-widget-area__widget--{
+  &masthead-before-widgets{
+    @include breakout-band($bgc : $brand-col-3);
+    padding-right: $act-unit-h;
+    @include mq($from : desktop){
+      padding-right: 0;
+    }
   }
+  &sidebar-widgets{
+    margin-bottom: $act-unit;
+    padding-bottom: $act-unit;
+    border-bottom: solid 1px;
+  }
+
+
 }
