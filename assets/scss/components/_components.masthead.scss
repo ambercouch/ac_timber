@@ -7,13 +7,16 @@ BEM BLOCK .c-masthead
   @extend .o-wrapper;
   padding: $act-unit;
   padding-bottom: $act-unit;
-  padding-top: 0;
+
 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   &:after{
     width: 100%;
+  }
+  &.has-before-widgets{
+    padding-top: 0;
   }
 }
 

@@ -1,4 +1,4 @@
-<div class="c-masthead{{ templateClass }}">
+<div class="c-masthead{{ templateClass }} {{ (mastheadbefore_widgets) ? 'has-before-widgets' : 'no-before-widgets' }}">
 
   {% if mastheadbefore_widgets == '' %}
     <!-- Add some widgets to the mastheadbefore-->
