@@ -1,8 +1,8 @@
 .btn--menu{
   position: fixed;
-  top: 1em;
+  top: $act-unit-l;
   border: 0;
-  right: 1em;
+  right:  $act-unit;
   background: none;
   font-size: 14px;
   font-size: 0.875rem;
@@ -10,7 +10,7 @@
   height: 3.2em;
   z-index: 99999;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-  background: rgba($brand-col-1, 0.2);
+  background: rgba($brand-col-3, 0.7);
   &[data-state=on]{
     //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     //right: 14rem;

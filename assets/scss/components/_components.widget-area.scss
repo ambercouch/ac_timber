@@ -1,0 +1,58 @@
+/*
+  BEM BLOCK .c-widget-area
+ */
+
+.c-widget-area {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-widget-area--
+ */
+
+.c-widget-area-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-widget-area--
+
+[class*=c-widget-area--] {
+  @extend .c-widget-area;
+}
+
+/*
+  BEM ELEMENTS .c-widget-area__
+ */
+
+.c-widget-area__ {
+  &widget {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-widget-area--
+
+[class*=c-widget-area__widget--] {
+  @extend .c-widget-area__widget;
+}
+
+.c-widget-area__widget--masthead-before-widgets{
+  @include breakout-band($bgc : $brand-col-3);
+}

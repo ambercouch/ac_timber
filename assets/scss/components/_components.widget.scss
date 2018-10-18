@@ -25,6 +25,13 @@
       margin-bottom: 0;
     }
   }
+  &masthead-before{
+    color: white;
+    text-align: right;
+    @include act-font-size($milli-size, 1.5);
+    padding: $act-unit-t 0;
+    margin-bottom: $act-unit-t;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-widget--
