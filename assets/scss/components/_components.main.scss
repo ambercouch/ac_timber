@@ -19,7 +19,6 @@ BEM BLOCK .c-main
 
 .c-main__{
   &sidebar{
-
     background: $brand-col-5;
     padding: $act-unit;
 
@@ -31,7 +30,7 @@ BEM BLOCK .c-main
     }
   }
   &content{
-    padding: $act-unit;
+    padding: 0;
   }
 
 }
@@ -55,12 +54,12 @@ BEM BLOCK MODIFIERS .c-main--
 
     @include mq($from: tablet) {
       width: 65%;
-      padding-right: $act-unit-l;
+      padding-right: $act-unit;
     }
 
     @include mq($from: desktop) {
       width: 75%;
-      padding-right: $act-unit-h * 2;
+      padding-right: $act-unit-l;
     }
   }
 }
