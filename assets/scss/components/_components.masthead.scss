@@ -68,7 +68,7 @@ BEM ELEMENTS .c-masthead__
 }
   &branding{
     background: transparent;
-    margin-bottom: 0;
+    margin-bottom: $act-unit;
   }
 }
 [class*=c-masthead__widget-area--]{

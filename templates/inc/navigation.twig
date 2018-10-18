@@ -1,13 +1,19 @@
 
+{% set menuName = (menuName) ? menuName : 'primary' %}
 {% set menu = _context['menu' ~ menuName | capitalize ] %}
-<div class="navigation--{{ menuName }}">
-  <ul class="navigation--{{ menuName }}__list">
+<div class="c-nav-menu--{{ menuName }}">
+  <ul class="c-nav-menu__list--{{ menuName }}">
     {% for item in  menu.get_items %}
-      <li class="navigation--{{ menuName }}__item {{item.classes | join(' ')}}"><a class="navigation--primary__link" href="{{item.get_link}}">{{item.title}}</a>
+      <li class="c-nav-menu__item--{{ menuName }} {{item.classes | join(' ')}}">
+        <a class="c-nav-menu__link--{{ menuName }}" href="{{item.get_link}}">
+          <span class="c-nav-menu__link-label--{{ menuName }}">{{item.title}}</span>
+        </a>
         {% if item.get_children %}
-          <ul class="navigation--{{ menuName }}__sub-list">
+          <ul class="c-nav-menu__sub-menu--{{ menuName }}">
             {% for child in item.get_children %}
-              <li class="navigation--{{ menuName }}__sub--item"><a href="{{child.get_link}}">{{child.title}}</a></li>
+              <li class="c-nav-menu__item-sub-menu--{{ menuName }}">
+                <a href="{{child.get_link}}">{{child.title}}</a>
+              </li>
             {% endfor %}
           </ul>
         {% endif %}
