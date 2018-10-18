@@ -32,6 +32,14 @@ class StarterSite extends TimberSite {
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
 
+        // Register all the menu locations.
+        foreach (unserialize(ACT_MENUS) as $menu)
+        {
+            register_nav_menus(array(
+                strtolower($menu) => esc_html__(ucfirst($menu), '_act'),
+            ));
+        }
+
         parent::__construct();
     }
 
@@ -58,9 +66,11 @@ class StarterSite extends TimberSite {
             if($menu == 'Primary'){
                 //Alway make the primary menu will fallback to page menu
                 $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
-            }elseif (is_nav_menu($menu)){
+            }elseif (has_nav_menu( strtolower($menu) )){
                 //Only create the timber menus if they exist as we don't want fallback
                 $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }else{
+                //$context['menu'.ucfirst($menu)] = 'no menu - '.strtolower($menu);
             }
         }
 
