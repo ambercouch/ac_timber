@@ -2,16 +2,15 @@
 //Define your sidebars here
 define('ACT_SIDEBARS', serialize(
     array(
-        'Primary',
-        'Subsidiary',
-        'Footer',
         'Sidebar',
-        'Mobile Nav',
+        'Mobile Nav Before',
+        'Mobile Nav After',
         'Masthead Before',
         'Masthead After',
         'Main Before',
         'Main After',
         'Footer Before',
+        'Footer',
         'Footer After'
     )
 ));

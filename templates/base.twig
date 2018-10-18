@@ -58,14 +58,28 @@
     </button>
 
 
-      <div id="mobileNavigation" class="site__mobile-nav-widgets site__navigation--off-page" data-state="off">
-        <div class="mobile-nav-menu">
-          {%  set menuName =  'mobile'%}
-          {% include 'inc/navigation.twig' %}
+      <div id="mobileNavigation" class="site__mobile-off-page" data-state="off">
+        <div class="mobile-off-page__navigation">
+
+          <div class="mobile-off-page__widget-area">
+            <div class="c-widget-area--mobile-nav-before-widgets" >
+              {{mobilenavbefore_widgets}}
+            </div>
+          </div>
+
+          <div class="mobile-nav-menu">
+            {%  set menuName =  'mobile'%}
+            {% include 'inc/navigation.twig' %}
+          </div>
+
         </div>
-        <div class="mobile-nav-widgets" >
-          {{mobilenav_widgets}}
+
+        <div class="mobile-off-page__widget-area">
+          <div class="c-widget-area--mobile-nav-after-widgets" >
+            {{mobilenavafter_widgets}}
+          </div>
         </div>
+
       </div>
 
     {% endif %}
