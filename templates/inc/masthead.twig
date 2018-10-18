@@ -13,15 +13,15 @@
   <div class="c-masthead__branding">
     <div class="c-masthead__site-title">
       {% if fn('get_field', 'company_logo', 'option') != false %}
-        {%  include 'inc/site-title-upload.twig' %}
+        {% include 'inc/site-title-upload.twig' %}
       {%  elseif acSettings.svgLogo   %}
-        {%  include 'inc/site-title-svg.twig' %}
+        {% include 'inc/site-title-svg.twig' %}
       {% else %}
         {% include 'inc/site-title-text.twig' %}
       {% endif %}
     </div>
   </div>
-
+  {% include 'inc/navigation-primary.twig' %}
   {% if mastheadafter_widgets == '' %}
     <!-- Add some widgets to the mastheadafter -->
   {% else %}
