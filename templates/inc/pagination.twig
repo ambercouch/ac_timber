@@ -1,0 +1,39 @@
+
+<div class="pagination">
+  <div class="pagination__nav-menu">
+<nav class="c-nav-menu--pagination">
+        <ul class="c-nav-menu__list--pagination">
+
+            {% if pagination.prev %}
+                <li class="c-nav-menu__item--pagination c-nav-menu__item--prev">
+                    <a class="c-nav-menu__link--pagination" href="{{ pagination.prev.link }}">
+                      <span class="c-nav-menu__link-label--pagination">
+                         Previous
+                      </span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="c-nav-menu__item--pagination c-nav-menu__item--prev is-disabled">
+                  <span class="c-nav-menu__link-label-disabled--pagination" >Previous</span>
+                </li>
+            {% endif %}
+
+          {% if pagination.next %}
+            <li class="c-nav-menu__item--pagination c-nav-menu__item--next">
+              <a class="c-nav-menu__link--pagination" href="{{ pagination.next.link }}">
+                      <span class="c-nav-menu__link-label--pagination">
+                         Next
+                      </span>
+              </a>
+            </li>
+          {% else %}
+            <li class="c-nav-menu__item--pagination c-nav-menu__item--next is-disabled">
+              <span class="c-nav-menu__link-label-disabled--pagination" >Next</span>
+            </li>
+          {% endif %}
+          
+        </ul>
+    </nav>
+</div>   
+</div>   
+
