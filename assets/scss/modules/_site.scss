@@ -1,8 +1,10 @@
 /*
-BEM BLOCK .site
+  BEM BLOCK .site
+  #1 Fixes the horizontal scroll issue with width: 100vw when vertical scroll bars present
  */
-.site{
 
+.site{
+  overflow: hidden; /* #1 */
 }
 
 /*
