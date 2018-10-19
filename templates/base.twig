@@ -128,15 +128,15 @@
     </section>
   {% endblock %}
 
+  {% block footer %}
+    <footer class="site__footer" role="contentinfo">
+      {% include 'inc/footer.twig' %}
+    </footer>
+  {% endblock %}
+
+  {% include 'inc/footer_scripts.twig' %}
+
 </div>{# /#page #}
-
-{% block footer %}
-  <footer class="site__footer" role="contentinfo">
-    {% include 'inc/footer.twig' %}
-  </footer>
-{% endblock %}
-
-{% include 'inc/footer_scripts.twig' %}
 
 </body>
 
