@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #FLEX-SPLIT
+   ========================================================================== */
+
+/**
+ * Splits the first or last flex item fully left or fully right.
+ */
+
+.o-flex-split{
+  display: flex;
+  width: 100%;
+}
+
+.o-flex-split--{
+  &first{
+    @extend .o-flex-split;
+    justify-content: flex-end;
+    >:first-child{
+      margin-right: auto;
+    }
+  }
+  &last{
+    @extend .o-flex-split;
+    justify-content: flex-end;
+    >:last-child{
+      margin-left: auto;
+    }
+  }
+}
