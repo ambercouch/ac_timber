@@ -1,12 +1,4 @@
 .post {
-  //background: #fff;
-  //display: flex;
-  //flex-wrap: wrap;
-  //flex-direction: column;
-  //width: 1000px;
-  //height: 500px;
-  //overflow: hidden;
-  //box-shadow: $z1-shadow;
   border-bottom: solid 1px;
   padding-bottom: $inuit-global-spacing-unit;
   margin-bottom: $inuit-global-spacing-unit-large;
@@ -15,6 +7,7 @@
     padding: $act-unit;
   }
 }
+
 .post__{
 
   &feature-image {
@@ -43,20 +36,12 @@
   &post-meta {
     display: block;
     @include inuit-font-size($inuit-font-size-h6, 1);
-    //padding: $inuit-global-spacing-unit-small /2 0 ;
   }
   &body {
-    //width: 50%;
-    //padding: 0 $inuit-global-spacing-unit-large;
+
   }
   &footer {
-    //width: 50%;
-    //padding: 0 $inuit-global-spacing-unit-large;
-    //align-self: flex-end;
-    //flex-grow: 1;
-    //position: relative;
     display: block;
-    //@include inuit-font-size($inuit-font-size-small, 1);
   }
   &read-more{
     @extend .c-btn;
@@ -66,69 +51,5 @@
   &comment-link {
     @include inuit-font-size($act-fs-6 , 1);
     display: block;
-    //position: absolute;
-    //padding: $inuit-global-spacing-unit;
-    //bottom: 0;
-    //right: 0;
-  }
-}
-.post {
-  &--aside__feature-image{
-     //@extend .post__feature-image;
-   }
-  &--aside__header{
-    //@extend .post__header;
-  }
-  &--aside__body{
-    //@extend .post__body;
-  }
-  &--aside__footer{
-    //@extend .post__footer;
-  }
-  &--aside__comment-link{
-    //@extend .post__comment-link;
-  }
-
-  &--quote__feature-image{
-    //@extend .post__feature-image;
-  }
-  &--quote__header{
-    //@extend .post__header;
-  }
-  &--quote__body{
-    //@extend .post__body;
-  }
-  &--quote__footer{
-    //@extend .post__footer;
-  }
-  &--quote__comment-link{
-    //@extend .post__comment-link;
-  }
-}
-
-.post{
-  &--video{
-    &__header{
-      @extend .post__header;
-    }
-    &__title{
-      @extend .post__title;
-    }
-    &__body{
-      @include inuit-font-size($inuit-font-size-h5);
-    }
-    &__feature-image{
-      @extend .post__feature-image;
-    }
-    &__footer{
-      @extend .post__footer;
-    }
-    &__post-meta{
-      @extend .post__post-meta;
-    }
-    &__comment-link{
-      @extend .post__comment-link;
-    }
-
   }
 }
