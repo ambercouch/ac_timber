@@ -15,11 +15,11 @@ BEM BLOCK .c-site-title
 BEM BLOCK MODIFIERS .c-site-title
  */
 
-[class*="site-title--"]{
+[class*="c-site-title--"]{
   @extend .c-site-title;
 }
 
-.c-site-title--{
+.c-site-title__heading--{
   &page{
      margin-left: auto;
      margin-right: auto;
@@ -33,6 +33,7 @@ BEM BLOCK MODIFIERS .c-site-title
     font-family: $act-font-family-serif;
     font-weight: 600;
     display: block;
+    margin-bottom: 0;
     @include act-font-size($inuit-font-size-h1,1);
     @include mq($from: tablet){
       @include size(auto);
@@ -59,6 +60,13 @@ BEM ELEMENTS .c-site-title
   }
   &img{
     display: block;
+  }
+  &description-heading{
+    margin-bottom: 0;
+    color: white;
+    font-family: $act-font-family-sans;
+    font-weight: 500;
+    @include act-font-size($inuit-font-size-h4,1);
   }
 }
 

@@ -51,7 +51,7 @@ BEM ELEMENTS .c-masthead__
   &widget-area{
     width: 100%;
   }
-&masthead-before-widgets{
+  &masthead-before-widgets{
   @include breakout-band($bgc : $brand-col-3);
   text-align: right;
   margin-bottom:$act-unit-s;
@@ -72,8 +72,14 @@ BEM ELEMENTS .c-masthead__
   &branding{
     background: transparent;
     margin-bottom: $act-unit;
+    width: auto;
+
+    @include mq($from : desktop){
+      max-width: 350px;
+    }
   }
 }
+
 [class*=c-masthead__widget-area--]{
   @extend .c-masthead__widget-area
 }
