@@ -13,14 +13,20 @@ if( function_exists('acf_add_options_page') )
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' => 'General Settings',
-        'menu_title' => 'General Settings',
+        'page_title' => 'Masthead Settings',
+        'menu_title' => 'Masthead',
         'parent_slug' => 'theme-general-settings',
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' => 'Banner Settings',
-        'menu_title' => 'Banner Settings',
+        'page_title' => 'General Settings',
+        'menu_title' => 'General',
+        'parent_slug' => 'theme-general-settings',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Hero Banner Settings',
+        'menu_title' => 'Hero Banner',
         'parent_slug' => 'theme-general-settings',
     ));
 
@@ -32,8 +38,10 @@ if( function_exists('acf_add_options_page') )
 
 }
 
+require_once get_template_directory() . '/lib/acf/acf-options--masthead.php';
 require_once get_template_directory() . '/lib/acf/acf-options--branding.php';
 require_once get_template_directory() . '/lib/acf/acf-options--contact.php';
+require_once get_template_directory() . '/lib/acf/acf-options--banner-hero.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-image.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-content.php';
 require_once get_template_directory() . '/lib/acf/acf-options--banner-menu.php';

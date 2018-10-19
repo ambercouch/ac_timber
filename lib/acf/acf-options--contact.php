@@ -187,7 +187,7 @@
                     array (
                         'param' => 'options_page',
                         'operator' => '==',
-                        'value' => 'acf-options-general-settings',
+                        'value' => 'acf-options-general',
                     ),
                 ),
             ),

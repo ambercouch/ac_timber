@@ -98,6 +98,9 @@ class StarterSite extends TimberSite {
         //Add the auto p from afc
         add_filter ('acf_the_content', 'wpautop');
 
+        $context['removeHero'] = get_field('remove_hero_banner', 'options');
+        $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || (! is_home() && ! is_front_page()) )? 'has-no-hero' : 'has-hero';
+        $context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
 
         $context['postEditUrl'] =  get_edit_post_link($post_id);
 

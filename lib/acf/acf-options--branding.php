@@ -82,8 +82,15 @@
                     array (
                         'param' => 'options_page',
                         'operator' => '==',
-                        'value' => 'acf-options-general-settings',
-                    ),
+                        'value' => 'acf-options-masthead',
+                    )
+                ),
+                array (
+                    array (
+                        'param' => 'options_page',
+                        'operator' => '==',
+                        'value' => 'acf-options-general',
+                    )
                 ),
             ),
             'menu_order' => 0,

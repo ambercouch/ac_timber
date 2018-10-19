@@ -54,11 +54,11 @@ if( function_exists('acf_add_local_field_group') ):
                 array (
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'acf-options-banner-settings',
+                    'value' => 'acf-options-hero-banner',
                 ),
             ),
         ),
-        'menu_order' => 0,
+        'menu_order' => 2,
         'position' => 'normal',
         'style' => 'default',
         'label_placement' => 'top',
