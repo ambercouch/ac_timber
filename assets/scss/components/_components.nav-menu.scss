@@ -61,6 +61,9 @@
   &primary{
   @extend .o-list-flex--center;
   }
+  &pagination{
+    @extend .o-flex-split--last;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
