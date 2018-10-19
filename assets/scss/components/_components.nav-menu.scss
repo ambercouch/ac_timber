@@ -32,6 +32,9 @@
    margin-bottom: 0;
    justify-content: flex-end;
  }
+  &item{
+    position: relative;
+  }
   &link{
     text-decoration: none;
   }
@@ -47,6 +50,17 @@
     .menu-item-has-children:hover &{
       left: 0;
       display: block;
+    }
+  }
+  &sub-menu-list{
+    @extend .o-list-bare ;
+    margin: 0;
+  }
+  &sub-menu-item{
+    margin-bottom: $act-unit-s;
+    padding-left: 0 !important;
+    &:last-child{
+      margin-bottom: 0;
     }
   }
 }
@@ -122,5 +136,13 @@
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
 
 [class*=c-nav-menu__sub-menu--] {
-  @extend .c-nav-menu__sub-menu !optional;
+   @extend .c-nav-menu__sub-menu !optional;
+ }
+
+[class*=c-nav-menu__sub-menu-list--] {
+  @extend .c-nav-menu__sub-menu-list !optional;
+}
+
+[class*=c-nav-menu__sub-menu-item--] {
+  @extend .c-nav-menu__sub-menu-item !optional;
 }
