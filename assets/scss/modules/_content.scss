@@ -11,3 +11,12 @@
   }
 
 }
+
+.content__{
+  &below{
+    margin-bottom: $act-unit;
+    @include mq($from : tablet){
+      margin-bottom: 0;
+    }
+  }
+}
