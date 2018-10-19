@@ -1,13 +1,21 @@
-{% if fn('is_front_page') %}
-  <h1 class="c-site-title--text">
-    <a class="c-site-title__link " href="{{ site.url }} " rel="home">
-      {{ site.title }}
-    </a>
-  </h1>
-{% else %}
-  <span class="c-site-title--text">
-    <a class="c-site-title__link " href="{{ site.url }} " rel="home">
-      {{ site.title }}
-    </a>
-  </span>
-{% endif %}
+<div class="site-title--text">
+  {% if fn('is_front_page') %}
+      <h1 class="c-site-title__heading--text">
+        <a class="c-site-title__link " href="{{ site.url }} " rel="home">
+          <span class="c-site-title__link-label" >{{ site.title }}</span>
+        </a>
+      </h1>
+      <h2 class="c-site-title__description-heading" >
+        <span class="c-site-title__description-text" >{{ site.description }}</span>
+      </h2>
+  {% else %}
+    <span class="c-site-title__heading--text">
+      <a class="c-site-title__link " href="{{ site.url }} " rel="home">
+        {{ site.title }}
+      </a>
+    </span>
+    <h2 class="c-site-title__description-heading" >
+      <span class="c-site-title__description-text" >{{ site.description }}</span>
+    </h2>
+  {% endif %}
+</div>

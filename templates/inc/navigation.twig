@@ -9,13 +9,15 @@
           <span class="c-nav-menu__link-label--{{ menuName }}">{{item.title}}</span>
         </a>
         {% if item.get_children %}
-          <ul class="c-nav-menu__sub-menu--{{ menuName }}">
-            {% for child in item.get_children %}
-              <li class="c-nav-menu__item-sub-menu--{{ menuName }}">
-                <a href="{{child.get_link}}">{{child.title}}</a>
-              </li>
-            {% endfor %}
-          </ul>
+          <div class="c-nav-menu__sub-menu--{{ menuName }}">
+            <ul class="c-nav-menu__sub-menu-list--{{ menuName }}">
+              {% for child in item.get_children %}
+                <li class="c-nav-menu__item-sub-menu-item--{{ menuName }}">
+                  <a href="{{child.get_link}}">{{child.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
         {% endif %}
       </li>
     {% endfor %}
