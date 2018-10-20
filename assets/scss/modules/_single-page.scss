@@ -1,6 +1,7 @@
 //.post Block
 .single-page {
   display: block;
+  @include inuit-clearfix();
 }
 
 //.post Elements
