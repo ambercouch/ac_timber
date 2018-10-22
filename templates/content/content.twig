@@ -24,13 +24,17 @@
 
     {% if  post.post_excerpt != '' %}
       <div class="entry-content post{{ postFormatClass }}__body">
-        {{ post.post_excerpt }}
+        <div class="post__text--excerpt">
+          <p>{{ post.post_excerpt }}</p>
+        </div>
         <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
 
     {% else %}
       <div class="entry-content post{{ postFormatClass }}__body">
-        <p>{{ post.content | striptags | truncate(20) }}</p>
+        <div class="post__text--truncated">
+          <p>{{ post.content | striptags | truncate(20) }}</p>
+        </div>
         <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
 
