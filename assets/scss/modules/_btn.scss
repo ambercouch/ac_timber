@@ -16,7 +16,7 @@
     //right: 14rem;
   }
   @include mq($from : desktop){
-    display: none;
+    display: block;
   }
 }
 .btn--menu__bar {
