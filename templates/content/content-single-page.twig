@@ -18,6 +18,9 @@
         <span class="entry-title single-page__title{{ templateClass }} ">{{ post.title }}</span>
       </h1>
       {% endif %}
+      <div class="entry-meta post__post-meta{{ postFormatClass }}">
+        {% include 'inc/post-meta.twig' with { 'hideAuthor' : 'true', 'hideDate' : 'true' } %}
+      </div>
     </header>
 
     <div class="entry-content single-page__body{{ templateClass }} ">
