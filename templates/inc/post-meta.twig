@@ -1,27 +1,61 @@
 <div class="post-meta">
 
-  <div class="post-meta__post-type">
-    <div class="post-type">
-      <svg class="icon post-type__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none">
-        <title>{{ postFormat }}</title>
-        <desc>Post type {{ postFormat }}</desc>
-        <use xlink:href="#post-{{ postFormat }}"/>
-      </svg>
+  {#<div class="post-meta__section--post-type">#}
+  {#<div class="post-type">#}
+  {#<svg class="icon post-type__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none">#}
+  {#<title>{{ postFormat }}</title>#}
+  {#<desc>Post type {{ postFormat }}</desc>#}
+  {#<use xlink:href="#post-{{ postFormat }}"/>#}
+  {#</svg>#}
+  {#</div>#}
+  {#</div>#}
+
+  <div class="post-meta__section--post-author">
+    <div class="post-author">
+      <span class="post-author__label">Posted by</span> <span class="post-author__author-name"><span href="{{ post.author.link }}">{{ post.author }}</span></span>
     </div>
   </div>
 
-
-  <div class="post-meta__tagged">
-    <div class="tagged">
-      {{ fn('_act_entry_footer') }}
+  <div class="post-meta__section--post-date">
+    <div class="post-date">
+      <span class="post-date__label" >Posted on</span> <span class="post-date__date-published">{{ post.date }}</span>
     </div>
   </div>
 
-  <span class="post-meta__post-date">{{ post.date }}</span>
-{% if postEditUrl != '' %}
-  <span class="post-meta__post-edit">
-  <a  class="post-meta__post-edit-link" href="{{ postEditUrl }}" title="Edit {{ post.title }}">Edit</a>
-  </span>
-{% endif %}
+  {% if post.terms('category') %}
+    <div class="post-meta__section--post-cats">
+      <div class="post-cats">
+        <span class="post-cats__label">Categories</span>
+        <ul class="post-cats__list">
+          {% for term in post.terms('category') %}
+            <li class="post-cats__item" ><span href="post-cats__link" ><span  class="post-cats__link-label"  >{{ term }}</span></a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if post.terms('tag') %}
+    <div class="post-meta__section--post-tags">
+      <div class="post-tags">
+        <span class="post-tags__label">Tags</span>
+        <ul class="post-tags__list">
+          {% for term in post.terms('tag') %}
+            <li class="post-tags__item" ><a class="post-tags__link" href="{{ term.link }}"><span class="post-tags__link-label">{{ term }}</span></a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+
+
+
+  {% if postEditUrl != '' %}
+    <div class="post-meta__section--post-admin">
+      <div class="post-admin">
+        <span class="post-admin__post-links"><a  class="post-admin__post-edit-link" href="{{ postEditUrl }}" title="Edit {{ post.title }}">Edit</a></span>
+      </div>
+    </div>
+  {% endif %}
 
 </div>
