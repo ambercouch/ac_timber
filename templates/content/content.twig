@@ -30,7 +30,7 @@
 
     {% else %}
       <div class="entry-content post{{ postFormatClass }}__body">
-        <p>{{ post.content | striptags | truncate(20) }}</p>
+        <p>{{ post.content | striptags | truncate(60) }}</p>
         <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
 
