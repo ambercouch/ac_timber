@@ -10,19 +10,23 @@
   {#</div>#}
   {#</div>#}
 
+  {% if not hideAuthor %}
   <div class="post-meta__section--post-author">
     <div class="post-author">
       <span class="post-author__label">Posted by</span> <span class="post-author__author-name"><span href="{{ post.author.link }}">{{ post.author }}</span></span>
     </div>
   </div>
+  {% endif %}
 
+  {% if not hideDate %}
   <div class="post-meta__section--post-date">
     <div class="post-date">
       <span class="post-date__label" >Posted on</span> <span class="post-date__date-published">{{ post.date }}</span>
     </div>
   </div>
+  {% endif %}
 
-  {% if post.terms('category') %}
+  {% if post.terms('category') and not hideCats %}
     <div class="post-meta__section--post-cats">
       <div class="post-cats">
         <span class="post-cats__label">Categories</span>
@@ -35,7 +39,7 @@
     </div>
   {% endif %}
 
-  {% if post.terms('tag') %}
+  {% if post.terms('tag') and not hideTags %}
     <div class="post-meta__section--post-tags">
       <div class="post-tags">
         <span class="post-tags__label">Tags</span>
