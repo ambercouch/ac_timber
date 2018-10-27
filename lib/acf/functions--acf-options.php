@@ -13,14 +13,14 @@ if( function_exists('acf_add_options_page') )
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' => 'Masthead Settings',
-        'menu_title' => 'Masthead',
+        'page_title' => 'Global Settings',
+        'menu_title' => 'Global',
         'parent_slug' => 'theme-general-settings',
     ));
 
     acf_add_options_sub_page(array(
-        'page_title' => 'General Settings',
-        'menu_title' => 'General',
+        'page_title' => 'Masthead Settings',
+        'menu_title' => 'Masthead',
         'parent_slug' => 'theme-general-settings',
     ));
 
@@ -30,14 +30,34 @@ if( function_exists('acf_add_options_page') )
         'parent_slug' => 'theme-general-settings',
     ));
 
+//    acf_add_options_sub_page(array(
+//        'page_title' => 'Page Settings',
+//        'menu_title' => 'Page',
+//        'parent_slug' => 'theme-general-settings',
+//    ));
+
     acf_add_options_sub_page(array(
         'page_title' => 'Service Settings',
-        'menu_title' => 'Service Settings',
+        'menu_title' => 'Service',
         'parent_slug' => 'theme-general-settings',
     ));
 
-}
+    acf_add_options_page(array(
+        'page_title' => 'Company Settings',
+        'menu_title' => 'Company Settings',
+        'menu_slug' => 'company-settings',
+        'capability' => 'edit_posts',
+        'redirect' => true
+    ));
 
+    acf_add_options_sub_page(array(
+        'page_title' => 'Company Settings',
+        'menu_title' => 'General',
+        'parent_slug' => 'company-settings',
+    ));
+
+}
+require_once get_template_directory() . '/lib/acf/acf-options--global-page.php';
 require_once get_template_directory() . '/lib/acf/acf-options--masthead.php';
 require_once get_template_directory() . '/lib/acf/acf-options--branding.php';
 require_once get_template_directory() . '/lib/acf/acf-options--contact.php';

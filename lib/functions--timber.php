@@ -102,6 +102,9 @@ class StarterSite extends TimberSite {
         $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || (! is_home() && ! is_front_page()) )? 'has-no-hero' : 'has-hero';
         $context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
 
+        $context['pageGlobalSettingHideComments'] = get_field('hide_page_comments','options');
+        $context['pageSettingsShowComments'] = get_field('show_page_comments', $post_id);
+
         $context['postEditUrl'] =  get_edit_post_link($post_id);
 
         $context['serviceMenuShowExcerpt'] = get_field('show_service_excerpt', 'options');

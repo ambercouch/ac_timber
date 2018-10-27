@@ -32,7 +32,7 @@ if( function_exists('acf_add_local_field_group') ):
                 array (
                     'param' => 'options_page',
                     'operator' => '==',
-                    'value' => 'acf-options-general',
+                    'value' => 'acf-options-global',
                 ),
             ),
         ),
