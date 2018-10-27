@@ -22,7 +22,9 @@
 {% endblock %}
 
 {% block belowContent %}
-  {{ parent() }}
+  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
+    {{ parent() }}
+  {% endif %}
 {% endblock %}
 
 
