@@ -33,6 +33,19 @@
         <div class="single-article__content">
           {{ post.content }}
         </div>
+        <div class="single-article__page-links">
+          {% if post.pagination %}
+            <nav>Pages:
+              {% for page in post.pagination.pages %}
+                {% if page.current %}
+                  <span class="current">{{ page.title }}</span>{{ loop.last ? '' : ', ' }}
+                {% else %}
+                  <a href="{{ page.link }}">{{ page.title }}</a>{{ loop.last ? '' : ', ' }}
+                {% endif %}
+              {% endfor %}
+            </nav>
+          {% endif %}
+        </div>
 
       </div>
 
