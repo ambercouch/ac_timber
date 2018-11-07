@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+
+{% block prependHead %}
+  <!-- page.twig -->
+  <!-- template - {{ template }} -->
+  <!-- {{ hidePageTitle }} -->
+{% endblock %}
+
+{% block hero %}
+{% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% include 'content/content-single-page'~template_slug~'.twig' %}
+  {% endfor %}
+
+{% endblock %}
+
+
+  {% block subsidiary %}
+    <section id="subsidiary" class="site__subsidiary">
+      <div class="subsidiary">
+      {% include 'inc/navigation-service.twig' %}
+      </div>
+    </section>
+{% endblock %}
+
+
+
+
+
+
