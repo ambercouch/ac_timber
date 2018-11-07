@@ -19,7 +19,6 @@ BEM BLOCK ELEMENTS .c-single-service__
 .c-single-service__{
 
   &feature-image{
-    background-color: $brand-col-2;
     grid-column-start: left;
     grid-row-start: head;
     grid-row-end: 3;
