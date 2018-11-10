@@ -87,5 +87,8 @@ if( is_page() && $post->post_parent > 0 ) {
 }
 
 
-
-Timber::render( $templates, $context );
+if ( post_password_required( $post->ID ) ) {
+    Timber::render( 'single-password.twig', $context );
+} else {
+    Timber::render( $templates, $context );
+}
