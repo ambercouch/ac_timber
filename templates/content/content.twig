@@ -40,12 +40,9 @@
 
     {% endif %}
     <footer class="post{{ postFormatClass }}__footer">
-      {% if (fn('comments_open', post) or post.comment_count > 0 ) %}
       <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
         <span>{{ post.comment_count }} Comments </span>
       </a>
-      {% endif %}
-
 
     </footer>
 
