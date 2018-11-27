@@ -1,0 +1,24 @@
+dl{
+
+}
+
+dt{
+  font-weight: bold;
+  margin-top:$inuit-global-spacing-unit;
+  padding-bottom: $inuit-global-spacing-unit-small;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+dd{
+  border-bottom:solid 1px rgba($brand-col-1, 0.2 );
+  margin-left: 0;
+  padding-bottom: $inuit-global-spacing-unit;
+  padding-left: $inuit-global-spacing-unit;
+  padding-right: $inuit-global-spacing-unit;
+  &:last-child{
+    padding-bottom: 0;
+    border-bottom:solid 0;
+  }
+}
