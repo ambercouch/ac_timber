@@ -16,11 +16,10 @@
 
 {% endblock %}
 
+{% block subsidiary %}
 
-  {% block subsidiary %}
-    <section id="subsidiary" class="site__subsidiary">
-      {% include 'inc/subsidiary.twig' %}
-    </section>
+  {{ parent() }}
+
 {% endblock %}
 
 {% block belowContent %}
