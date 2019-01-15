@@ -1,12 +1,3 @@
 a{
-  color: $col-link;
-}
-a:focus{
-  @extend a;
-}
-a:hover{
-  color: darken($col-link, 20%);
-}
-a:focus{
-  @extend a:hover;
+  @include a($col: $col-link);
 }

@@ -1,0 +1,14 @@
+@mixin a($col : $col-link){
+
+  color: $col;
+
+  &:focus{
+    @extend a;
+  }
+  &:hover{
+    color: darken($col, 20%);
+  }
+  &:focus{
+    @extend a:hover;
+  }
+}
