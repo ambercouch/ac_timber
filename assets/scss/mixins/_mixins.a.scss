@@ -1,0 +1,18 @@
+@mixin a($col : $col-link, $col-hov : false, $hov-effect : darken, $hov-effect-amount : 20% ){
+
+  color: $col;
+
+  &:focus{
+    @extend a;
+  }
+  &:hover {
+    @if $col-hov {
+      color: $col-hov;
+    } @else {
+    color: call($hov-effect, $color: $col, $amount: $hov-effect-amount);
+  }
+  }
+  &:focus{
+    @extend a:hover;
+  }
+}

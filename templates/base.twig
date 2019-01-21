@@ -87,9 +87,11 @@
   {% endblock %}
 
   {% block subsidiary %}
-    <section id="subsidiary" class="site__subsidiary">
-      {% include 'inc/subsidiary.twig' %}
-    </section>
+    {% if subsidiary_widgets or menuService %}
+      <section id="subsidiary" class="site__subsidiary">
+          {% include 'inc/subsidiary.twig' %}
+      </section>
+    {% endif %}
   {% endblock %}
 
   {% block footer %}

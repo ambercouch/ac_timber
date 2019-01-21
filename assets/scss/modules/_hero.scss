@@ -4,7 +4,7 @@ BEM BLOCK .hero
 .hero{
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 200px;
+  min-height: 500px;
   height: 100vh;
   position: relative;
 }
@@ -40,14 +40,14 @@ BEM ELEMENTS .hero__
     flex-direction: column;
   }
   &content{
-    background: rgba($brand-col-3, 0.7);
     display: inline-block;
     padding: $act-unit-s;
-    position: absolute;
-    left: 50%;
-    transform: translate(0, -50%);
     text-align: center;
-    max-width: 40%;
+    max-width: 100%;
+    width: 1000px;
+    * {
+      color: white;
+    }
   }
  &menu{
   @extend .o-list-inline;
