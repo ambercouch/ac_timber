@@ -1,0 +1,105 @@
+/*
+  BEM BLOCK .c-options-table
+ */
+
+.c-options-table {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-options-table--
+ */
+
+.c-options-table-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-options-table--
+
+[class*=c-options-table--] {
+  @extend .c-options-table;
+}
+
+/*
+  BEM ELEMENTS .c-options-table__
+ */
+
+.c-options-table__ {
+  &header {
+    display: block;
+  }
+  &heading {
+    display: block;
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &table{
+    @extend .o-table;
+    @extend .o-table--tiny;
+    border-right: solid 1px $brand-col-1;
+    border-left:none;
+    background: $brand-col-6;
+  }
+  &th{
+    @include act-font-size($inuit-font-size-h6);
+    width: 300px;
+    color: white;
+    border-bottom: solid 1px white !important;
+    border-left: none;
+  }
+  &tr{
+    //border-bottom: solid 1px $brand-col-1;
+  }
+  &td{
+    text-align: center;
+    border-bottom: solid 1px;
+  }
+  &label{
+    text-align: center;
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &col{
+    display: table-column;
+    border-left: solid 1px;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-options-table--
+
+[class*=c-options-table__header--] {
+  @extend .c-options-table__header;
+}
+
+[class*=c-options-table__col--] {
+  @extend .c-options-table__col;
+}
+.c-options-table__col--{
+  &op2{
+    background-color: $brand-col-5;
+  }
+  &head{
+
+  }
+}
+
+[class*=c-options-table__td--] {
+  @extend .c-options-table__td;
+}
+
+.c-options-table__td--{
+  &empty{
+    background: transparent;
+    border: none;
+  }
+}
