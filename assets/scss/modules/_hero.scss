@@ -1,11 +1,17 @@
 .hero{
   @include colour-cast($color: #00788a, $opacity : 0.3);
-  height: 100vh;
+  height: 100%;
   position: relative;
-  background-position: center 0;
+  background-position: center 10%;
   background-size: cover;
-  @include mq($from : desktop){
+  @include mq($from : mobile, $until:wide){
     background-position: center 25%;
+  }
+  @include mq($from : desktop, $until:wide){
+    background-position: center 25%;
+  }
+  @include mq($from : wide){
+    background-position: center 18%;
   }
 }
 
@@ -19,7 +25,10 @@
     //background: rgba(#fff, 0.8 );
   }
   &body{
-    padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
+    @include mq($from:tablet){
+      padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
+    }
   }
   &logo{
     width: 500px;
