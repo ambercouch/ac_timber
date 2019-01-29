@@ -7,7 +7,7 @@ BEM BLOCK .c-main
   padding-top: $inuit-global-spacing-unit ;
   padding-bottom: $inuit-global-spacing-unit;
   @include mq($from : desktop){
-    padding: $inuit-global-spacing-unit-huge * 1.5 !important;
+    padding: $inuit-global-spacing-unit-huge !important;
     padding-top: $inuit-global-spacing-unit-large !important;
     padding-bottom: $inuit-global-spacing-unit-huge !important;
   }
