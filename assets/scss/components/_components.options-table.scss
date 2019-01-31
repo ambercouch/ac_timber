@@ -41,10 +41,10 @@
   }
   &table{
     @extend .o-table;
-    @extend .o-table--tiny;
-    border-right: solid 1px $brand-col-1;
+    @extend .o-table--small;
+    //border-right: solid 1px $brand-col-1;
     border-left:none;
-    background: $brand-col-6;
+    //background: $brand-col-6;
   }
   &th{
     @include act-font-size($inuit-font-size-h6);
@@ -52,6 +52,7 @@
     color: white;
     border-bottom: solid 1px white !important;
     border-left: none;
+    background:   $brand-col-2  ;
   }
   &tr{
     //border-bottom: solid 1px $brand-col-1;
@@ -59,19 +60,61 @@
   &td{
     text-align: center;
     border-bottom: solid 1px;
+    vertical-align: top;
   }
   &label{
     text-align: center;
   }
+  &label-price{
+    color: white;
+    background: $brand-col-2;
+    width: auto;
+    display: inline-block;
+    padding: 0 $act-unit-s;
+    @include act-font-size($inuit-font-size-h1);
+  }
   &content {
     display: block
+  }
+  &cross{
+    opacity: 0.25;
+  }
+  &check{
+    display: block;
+  }
+  &note{
+    @include act-font-size($inuit-font-size-small, 1);
+    display: block;
   }
   &footer {
     display: block
   }
   &col{
     display: table-column;
-    border-left: solid 1px;
+    //border-left: solid 1px;
+  }
+  &text{
+    line-height: 1;
+  }
+  &buy{
+    .woocommerce-Price-amount{
+      display: none;
+    }
+    .add_to_cart_button {
+      background: $brand-col-2 !important;
+      color: white !important;
+      margin-bottom: $act-unit-s !important;
+    }
+    .add_to_cart_inline{
+      border: none !important;
+    }
+    .added_to_cart{
+      @extend .c-btn--n;
+      background: $brand-col-4;
+      &:hover{
+        background: darken($brand-col-4, 5%);
+      }
+    }
   }
 }
 
@@ -86,10 +129,10 @@
 }
 .c-options-table__col--{
   &op2{
-    background-color: $brand-col-5;
+    //background-color: $brand-col-5;
   }
   &head{
-
+border-left: none ;
   }
 }
 
@@ -101,5 +144,25 @@
   &empty{
     background: transparent;
     border: none;
+  }
+  &op2{
+    background: $brand-col-6;
+  }
+}
+
+[class*=c-options-table__th--] {
+  @extend .c-options-table__th;
+}
+
+.c-options-table__th--{
+  &thead{
+    background: transparent;
+    border: none;
+    color: $brand-col-1;
+    @include act-font-size($inuit-font-size-h4);
+    padding-bottom: $act-unit-l !important;
+  }
+  &op2{
+    background: $brand-col-6;
   }
 }

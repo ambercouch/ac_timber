@@ -32,8 +32,8 @@ BEM BLOCK ELEMENTS .c-single-service__
   &header{
     display: block;
     padding: 0 $inuit-global-spacing-unit;
-    margin-bottom:$act-unit;
-
+    margin-bottom:$act-unit-h;
+    text-align: center;
   }
 
   &heading{
