@@ -79,7 +79,7 @@ gulp.task('scripts', function (cb) {
             gulp.src(jsScripts),
             concat('main.js'),
             // browserify(),
-            // uglify(),
+            uglify(),
             gulp.dest('dist/js/')
         ],
         cb
