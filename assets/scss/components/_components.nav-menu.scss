@@ -145,6 +145,11 @@
     margin-bottom: $act-unit-s;
   }
 }
+.c-nav-menu__list--{
+  &social{
+    justify-content: flex-end;
+  }
+}
 
 //BEM ELEMENT CONTEXT .c-nav-menu--primary
 
@@ -162,6 +167,7 @@
   .is-flex-menu &{
     display: flex;
   }
+
 }
 .c-nav-menu__item{
   .mobile-nav-widgets &{
