@@ -1,0 +1,90 @@
+/*
+  BEM BLOCK .c-testimonials
+ */
+
+.c-testimonials {
+  display: block;
+  margin-bottom: $act-unit-l;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-testimonials--
+ */
+
+.c-testimonials-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-testimonials--
+
+[class*=c-testimonials--] {
+  @extend .c-testimonials;
+}
+
+/*
+  BEM ELEMENTS .c-testimonials__
+ */
+
+.c-testimonials__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &month-title{
+    background: desaturate(lighten($brand-col-1, 30%), 60%);
+    color: white;
+    padding: 0 $act-unit-t;
+    border-bottom: solid 1px desaturate(lighten($brand-col-1, 20%), 60%);
+  }
+  &quotes-wrapper{
+    padding: $act-unit;
+    //background: desaturate(lighten($brand-col-1, 70%), 70%);
+
+  }
+  &control{
+    float: right;
+    cursor: pointer;
+  }
+  &month-wrapper{
+    margin-bottom: $act-unit-t;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-testimonials--
+
+[class*=c-testimonials__header--] {
+  @extend .c-testimonials__header;
+}
+
+[class*=c-testimonials__month-wrapper--] {
+  @extend .c-testimonials__month-wrapper;
+}
+
+.c-testimonials__control-text--{
+  &open{
+    [data-state=on] &{
+      display: none;
+    }
+  }
+  &close{
+    [data-state=off] &{
+      display: none;
+    }
+  }
+}
