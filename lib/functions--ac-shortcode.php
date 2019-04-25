@@ -48,10 +48,10 @@ function act_contact( $atts ) {
 
     switch ($contact_type){
         case 'email':
-            $contact_link = '<a data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a  data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'tel':
-            $contact_link = '<a href="tel:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'website':
             $contact_link = '<a href="'.$contact_value.'">'.$contact_value.'</a>';
