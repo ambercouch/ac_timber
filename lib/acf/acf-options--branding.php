@@ -103,9 +103,9 @@
                 array (
                     'key' => 'field_logo_full_colour',
                     'label' => 'Company Logo Full Colour',
-                    'name' => 'company_logo_full_colour',
+                    'name' => 'company_logo_colour',
                     'type' => 'image',
-                    'instructions' => 'Upload a full color logo use [ act_logo_colour ] in you content',
+                    'instructions' => 'Upload a full color logo use [ act_logo w="300" ] in you content',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array (
@@ -129,7 +129,7 @@
                     'label' => 'Company Logo light',
                     'name' => 'company_logo_light',
                     'type' => 'image',
-                    'instructions' => 'Upload a single color light logo use [ act_logo_light ] in you content',
+                    'instructions' => 'Upload a single color light logo use [ act_logo_light w="300"] in you content',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array (
@@ -153,7 +153,7 @@
                     'label' => 'Company Logo Dark',
                     'name' => 'company_logo_dark',
                     'type' => 'image',
-                    'instructions' => 'Upload a single color dark logo use [ act_logo_dark ] in you content',
+                    'instructions' => 'Upload a single color dark logo use [ act_logo_dark w="300" ] in you content',
                     'required' => 0,
                     'conditional_logic' => 0,
                     'wrapper' => array (
