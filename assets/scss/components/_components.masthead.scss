@@ -45,36 +45,18 @@ BEM ELEMENTS .c-masthead__
   &navigation{
     display: none;
     @include mq($from : desktop){
-      display: block;
+      display: flex;
+      align-items: center;
     }
   }
   &widget-area{
     width: 100%;
   }
-  &masthead-before-widgets{
-  @include breakout-band($bgc : $brand-col-3);
-  text-align: right;
-  margin-bottom:$act-unit-s;
-  background: $brand-col-2;
-  color: white;
-  padding: $act-unit-t !important;
-  @include act-font-size($milli-size, 1);
-  width: 100%;
-  @include mq($from : tablet){
-
-    width: 100%;
-
-  }
-  @include mq($from : desktop){
-
-  }
-}
   &branding{
     background: transparent;
-    margin-bottom: $act-unit;
     width: auto;
     max-width: 100%;
-
+    margin-right: auto;
     @include mq($from : desktop){
       max-width: 100%;
     }
