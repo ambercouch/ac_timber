@@ -66,9 +66,15 @@ function act_contact( $atts ) {
     $output = '';
     switch ($type){
         case 'item' :
+            $output .= '<div class="c-company-contact-item">';
+            $output .= '<span class="c-company-contact-item__label">';
             $output .= $contact_label;
-            $output .= ' : ';
+            $output .= '</span">';
+            $output .= '<span class="c-company-contact-item__sep"> : </span>';
+            $output .= '<span class="c-company-contact-item__value">';
             $output .= $contact_link;
+            $output .= '</span">';
+            $output .= '</div>';
             break;
         case 'value':
             $output .= $contact_value;
@@ -87,7 +93,17 @@ function act_contact( $atts ) {
 
 //[act_contact row='1' type='item'] prints a row from the contact info formatted as item, value or link
 add_shortcode('act_address', 'act_address_schema');
-function act_address_schema(){
+function act_address_schema($atts){
+
+    extract(shortcode_atts(array(
+        'hide' => '',
+    ), $atts));
+
+    $hidden = [];
+    if($hide != ''){
+        $hidden = explode(',', preg_replace('/\s/', '', $hide));
+    }
+
 
     $company_name = get_field('company_name', 'options');
     $street_address = get_field('street_address', 'options');
@@ -98,28 +114,66 @@ function act_address_schema(){
     $output = '';
     $output .= '<div class="c-company-details">';
     $output .= '<div class="c-company-details__company" itemscope itemtype="http://schema.org/LocalBusiness">';
-    if ($company_name != ''){
+    if ($company_name != '' && !in_array('company_name', $hidden)){
         $output .= '<h1 class="c-company-details__heading">';
         $output .= '<span class="c-company-details__name" itemprop="name">'.$company_name.'</span>';
         $output .= '</h1>';
     }
     $output .= '<div class="c-company-details__address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">';
     if ($street_address != ''){
-        $output .= '<span class="c-company-details__address-street" itemprop="streetAddress">'.$street_address.'</span>';
+        $output .= '<span class="c-company-details__address-line--street" itemprop="streetAddress">'.$street_address.'</span>';
     }
     if ($address_locality != ''){
-        $output .= '<span class="c-company-details__address-locality" itemprop="addressLocality">'.$address_locality.'</span>';
+        $output .= '<span class="c-company-details__address-line--locality" itemprop="addressLocality">'.$address_locality.'</span>';
     }
     if ($city != ''){
-        $output .= '<span class="c-company-details__address-region" itemprop="addressRegion">'.$city.'</span>';
+        $output .= '<span class="c-company-details__address-line--region" itemprop="addressRegion">'.$city.'</span>';
     }
     if ($postcode != ''){
-        $output .= '<span class="c-company-details__address-postcode" itemprop="postalCode">'.$postcode .'</span>';
+        $output .= '<span class="c-company-details__address-line--postcode" itemprop="postalCode">'.$postcode .'</span>';
     }
     $output .= ' </div><!-- itemprop="address" -->';
     $output .= '</div><!-- itemtype="http://schema.org/LocalBusiness" -->';
     $output .= '</div><!-- .c-company-address -->';
 
+
+    return $output;
+}
+
+add_shortcode('act_logo', 'act_logo');
+function act_logo($atts){
+    extract(shortcode_atts(array(
+        'w' => '300',
+    ), $atts));
+
+    $logo = get_field('company_logo_colour', 'options');
+    $output = '<img src="'.$logo['url'].'" src="'.$logo['alt'].'" width="'.$w.'">';
+
+    return $output;
+}
+
+add_shortcode('act_logo_light', 'act_logo_light');
+function act_logo_light($atts){
+
+    extract(shortcode_atts(array(
+        'w' => '300',
+    ), $atts));
+
+    $logo = get_field('company_logo_light', 'options');
+    $output = '<img src="'.$logo['url'].'" src="'.$logo['alt'].'" width="'.$w.'">';
+
+    return $output;
+}
+
+add_shortcode('act_logo_dark', 'act_logo_dark');
+function act_logo_dark($atts){
+
+    extract(shortcode_atts(array(
+        'w' => '300',
+    ), $atts));
+
+    $logo = get_field('company_logo_dark', 'options');
+    $output = '<img src="'.$logo['url'].'" src="'.$logo['alt'].'" width="'.$w.'">';
 
     return $output;
 }
