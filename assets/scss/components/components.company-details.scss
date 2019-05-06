@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .c-company-details
+ */
+
+.c-company-details {
+  display: block;
+  margin-top: $act-unit-l;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-company-details--
+ */
+
+.c-company-details-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-company-details--
+
+[class*=c-company-details--] {
+  @extend .c-company-details;
+}
+
+/*
+  BEM ELEMENTS .c-company-details__
+ */
+
+.c-company-details__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &address-line{
+    display: block;
+  }
+
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-company-details--
+
+[class*=c-company-details__header--] {
+  @extend .c-company-details__header;
+}
+
+[class*=c-company-details__address-line--] {
+  @extend .c-company-details__address-line;
+}
