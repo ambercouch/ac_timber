@@ -4,7 +4,7 @@
   line-height:1;
   width: auto;
   border: none;
-  padding: $act-unit-s;
+  padding: $act-unit-s !important;
   @include inuit-font-size($inuit-font-size-h5, 1);
   background: $brand-col-1;
   color: #fff;
@@ -16,6 +16,9 @@
     background: darken($brand-col-1, 5%);
     color: #fff;
   }
+  a{
+    text-decoration: none;
+  }
 }
 
 [class*=o-btn]{
@@ -24,8 +27,22 @@
 .o-btn--{
   &tiny {
     @extend .o-btn;
-    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny !important;
     @include inuit-font-size($milli-size, 1);
+  }
+  &ghost{
+    background: transparent !important;
+    border: solid 1px;
+    &.o-btn--brand-1{
+      &:hover{
+        background: rgba($brand-col-1, .8) !important;
+      }
+    }
+    &.o-btn--brand-2{
+      &:hover{
+        background: rgba($brand-col-2, .8) !important;
+      }
+    }
   }
   &rounded {
     @extend .o-btn;
@@ -35,15 +52,23 @@
   &brand-1{
     @extend .o-btn;
     background: $brand-col-1;
+    border-color: $brand-col-1;
     &:hover{
       background: darken($brand-col-1, 10%);
+    }
+    a:hover{
+      color: white;
     }
   }
   &brand-2{
     @extend .o-btn;
     background: $brand-col-2;
+    border-color: $brand-col-2;
     &:hover{
       background: darken($brand-col-2, 10%);
+    }
+    a:hover{
+      color: white;
     }
   }
 }
