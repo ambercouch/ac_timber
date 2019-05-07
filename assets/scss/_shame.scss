@@ -1,0 +1,21 @@
+.gallery{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.gallery-item{
+  padding: $act-unit-t;
+  padding-top: 0;
+  margin: 1%;
+  margin-top: 0;
+  &:first-child{
+    margin-left: 0;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+  .gallery-columns-3 &{
+    width: 32%;
+  }
+}
+
