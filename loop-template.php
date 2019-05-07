@@ -7,22 +7,29 @@
  */
 
 ?>
+<?php $post_icon = get_field('service_icon') ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('c-accl-post-list__post-thumb'); ?>>
-  <div class="c-accl-post-thumb">
-    <?php if ( '' !== get_the_post_thumbnail() ) : ?>
-      <div class="post-thumbnail c-accl-post-thumb__feature-image">
-        <a href="<?php the_permalink(); ?>" class="c-accl-post-thumb__feature-image-link" >
-            <?php the_post_thumbnail( 'serviceMenuMedium' ); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('l-post-thumb-list__post-thumb'); ?>>
+  <div class="c-post-thumb">
+    <?php if ( '' != $post_icon ) : ?>
+      <div class="post-thumbnail c-post-thumb__post-icon">
+        <a href="<?php the_permalink(); ?>" class="c-post-thumb__post-icon-link" >
+           <img class="c-post-thumb__post-icon-img" src="<?php echo $post_icon['sizes']['serviceMenuMedium']; ?>" alt="<?php echo ($post_icon["alt"] != "" ) ? $post_icon["alt"] : get_the_title()." Icon";  ?>" />
         </a>
       </div><!-- .post-thumbnail -->
     <?php endif; ?>
-         <header  class="entry-header c-accl-post-thumb__header">
-           <h2 class="entry-title c-accl-post-thumb__heading">
-             <a href="<?php esc_url( get_permalink() ) ?>" class="c-accl-post-thumb__link" rel="bookmark">
-               <span class="c-accl-post-thumb__link-title"><?php the_title() ?></span>
+         <header  class="entry-header c-post-thumb__header">
+           <h2 class="entry-title c-post-thumb__heading">
+             <a href="<?php the_permalink(); ?>" class="c-post-thumb__link" rel="bookmark">
+               <span class="c-post-thumb__link-title"><?php the_title() ?></span>
              </a>
            </h2>
          </header>
+    <div class="c-post-thumb__excerpt">
+      <?php the_excerpt() ?>
+    </div>
+    <div class="c-post-thumb__more">
+      <a class="c-post-thumb__more-link" href="<?php the_permalink(); ?>" >Learn More</a>
+    </div>
   </div>
 </article>
