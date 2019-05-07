@@ -1,6 +1,6 @@
 <?php
 function  act_cpt() {
-//Tiles
+//Services
     $labels = array(
         'name' => _x('Services', 'post type general name'),
         'singular_name' => _x('Service', 'post type singular name'),
