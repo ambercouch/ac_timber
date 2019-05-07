@@ -44,6 +44,10 @@
       }
     }
   }
+  &transparent{
+    @extend .o-btn;
+    background: transparent;
+  }
   &rounded {
     @extend .o-btn;
     border-radius: $act-unit;
