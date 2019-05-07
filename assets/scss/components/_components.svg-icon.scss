@@ -1,0 +1,39 @@
+/*
+  BEM BLOCK .c-svg-icon
+ */
+
+.c-svg-icon {
+  @extend .o-svg-icon;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-svg-icon--
+ */
+
+.c-svg-icon-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-svg-icon--
+
+[class*=c-svg-icon--] {
+  @extend .c-svg-icon;
+}
+
+/*
+  BEM ELEMENTS .c-svg-icon__
+ */
+
+.c-svg-icon__ {
+ &svg{
+   @extend .o-svg-icon__svg;
+ }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-svg-icon--
+
+[class*=c-svg-icon__header--] {
+
+}
