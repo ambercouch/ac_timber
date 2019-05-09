@@ -18,7 +18,7 @@ function  act_cpt() {
     );
     $args = array(
         'labels' => $labels,
-        'menu_icon' => 'dashicons-store',
+        'menu_icon' => 'dashicons-admin-plugins',
         'description' => 'Services offered',
         'public' => true,
         'menu_position' => 20,
@@ -27,7 +27,7 @@ function  act_cpt() {
     );
     register_post_type('service', $args);
 
-//Service Categories
+    //Service Categories
     $labels = array(
         'name'              => _x( 'Service Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Service Category', 'taxonomy singular name' ),
@@ -69,7 +69,7 @@ function  act_cpt() {
     );
     $args = array(
         'labels' => $labels,
-        'menu_icon' => 'dashicons-store',
+        'menu_icon' => 'dashicons-admin-home',
         'description' => 'Projects offered',
         'public' => true,
         'menu_position' => 20,
@@ -78,7 +78,7 @@ function  act_cpt() {
     );
     register_post_type('project', $args);
 
-//Project Categories
+    //Project Categories
     $labels = array(
         'name'              => _x( 'Project Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Project Category', 'taxonomy singular name' ),
@@ -101,6 +101,57 @@ function  act_cpt() {
     );
 
     register_taxonomy( 'project_category', array( 'project' ), $args );
+
+    //FAQs
+    $labels = array(
+        'name' => _x('Faqs', 'faq type general name'),
+        'singular_name' => _x('Faq', 'faq type singular name'),
+        'add_new' => _x('Add New', 'Faq'),
+        'add_new_item' => __('Add New Faq'),
+        'edit_item' => __('Edit Faq'),
+        'new_item' => __('New Faq'),
+        'all_items' => __('All Faqs'),
+        'view_item' => __('View Faq'),
+        'search_items' => __('Search Faqs'),
+        'not_found' => __('No Faqs found'),
+        'not_found_in_trash' => __('No Faqs found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Faqs'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-format-chat',
+        'description' => 'Faqs offered',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','faq-formats'),
+        'has_archive' => 'faq'
+    );
+    register_post_type('faq', $args);
+
+    //Faq Categories
+    $labels = array(
+        'name'              => _x( 'Faq Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Faq Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Faq Categories' ),
+        'all_items'         => __( 'All Faq Categories' ),
+        'edit_item'         => __( 'Edit Faq Category' ),
+        'update_item'       => __( 'Update Faq Category' ),
+        'add_new_item'      => __( 'Add New Faq Category' ),
+        'new_item_name'     => __( 'New Tile Faq Category' ),
+        'menu_name'         => __( 'Faq Categories' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'faq-category' ),
+    );
+
+    register_taxonomy( 'faq_category', array( 'faq' ), $args );
 
 }
 
