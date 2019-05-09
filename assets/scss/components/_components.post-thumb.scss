@@ -1,0 +1,125 @@
+/*
+  BEM BLOCK .c-post-thumb
+ */
+
+.c-post-thumb {
+  display: none;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-post-thumb--
+ */
+
+.c-post-thumb-- {
+  &faq {
+    display: block;
+    border-bottom: solid 1px $brand-col-1;
+    margin-bottom: $act-unit !important;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-post-thumb
+
+[class*=c-post-thumb--] {
+  @extend .c-post-thumb;
+}
+
+/*
+  BEM ELEMENTS .c-post-thumb__
+ */
+
+.c-post-thumb__ {
+  &header {
+    display: block;
+  }
+  &heading {
+    display: block;
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline;
+  }
+  &body {
+    display: block;
+    padding-bottom: $act-unit;
+    @include act-font-size($inuit-font-size-h5);
+    transition: max-height 0.3s ease-in-out,
+                padding-bottom 0.3s ease-in-out;
+  }
+  &footer {
+    display: block;
+  }
+  &question{
+    font-family: $act-font-family-sans;
+    font-weight: 500;
+    @include act-font-size($inuit-font-size-h4, 1);
+  }
+  &admin-helper{
+    @include act-font-size($inuit-font-size-h6);
+    margin-bottom: $act-unit-t !important;
+  }
+  &feature-image{
+    margin-bottom: $act-unit;
+  }
+  &feature-image-link{
+    margin-bottom: $act-unit;
+    img{
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb--
+
+[class*=c-post-thumb__header--] {
+  @extend .c-post-thumb__header;
+}
+
+.c-post-thumb__header-- {
+  &faq {
+    //border-bottom: solid 1px $brand-col-1;
+    line-height: 1;
+    //padding-bottom: $act-unit-s;
+    margin-bottom: $act-unit;
+  }
+}
+
+[class*=c-post-thumb__heading--] {
+  @extend .c-post-thumb__heading;
+}
+
+.c-post-thumb__heading-- {
+  &faq {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+[class*=c-post-thumb__feature-image--] {
+  @extend .c-post-thumb__feature-image;
+}
+
+.c-post-thumb__feature-image-- {
+  &faq {
+  }
+}
+
+
+
+.c-post-thumb__body{
+  &[data-state=off]{
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+  }
+  &[data-state=on]{
+    max-height: 50em;
+    overflow: hidden;
+    padding-bottom: $act-unit;
+  }
+}
