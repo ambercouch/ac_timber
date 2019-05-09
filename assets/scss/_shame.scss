@@ -56,3 +56,11 @@
     }
 
 }
+
+[data-state=off] .control-collaps{
+    display: none;
+}
+
+[data-state=on] .control-expand{
+    display: none;
+}
