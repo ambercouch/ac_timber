@@ -55,10 +55,14 @@
 
 .c-widget-area__widget--{
   &masthead-before-widgets{
-    @include breakout-band($bgc : $brand-col-3);
+    //@include breakout-band($bgc : $brand-col-3);
     padding-right: $act-unit-h;
+
+    margin-left: $act-unit;
+    padding-left: $act-unit;
     @include mq($from : desktop){
       padding-right: 0;
+      border-left: solid 1px $brand-col-3;
     }
   }
   &sidebar-widgets{
@@ -69,7 +73,8 @@
   &footer-widgets{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
     margin-bottom:$inuit-global-spacing-unit;
-    @extend .u-1-4--tablet;
+    @extend .u-1-2--tablet;
+    @extend .u-1-4--desktop;
     @include mq($from: tablet){
       padding-left:$inuit-global-spacing-unit ;
     }
@@ -77,11 +82,19 @@
       padding-left:0 ;
     }
     &:last-child{
+      padding-rignt:0 ;
       @include mq($from : tablet, $until: desktop){
-        padding-left:0 ;
-        width: 100% !important;
+        //width: 100% !important;
       }
     }
+    &:nth-child(3){
+      @include mq($from : tablet, $until: desktop){
+        padding-left:0 ;
+      }
+    }
+  }
+  &footer-gallery{
+    padding-top: $act-unit-l;
   }
 
 

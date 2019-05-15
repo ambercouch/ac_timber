@@ -1,8 +1,8 @@
 @include headings(){
-  font-weight: 700;
+  font-weight: 500;
   color: $col-heading;
 }
 
 h1{
-  @include act-font-size($act-fs-k)
+  //@include act-font-size($act-fs-k)
 }

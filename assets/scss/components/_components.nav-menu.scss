@@ -89,6 +89,7 @@
   &social{
     @extend .o-list-flex;
     justify-content: flex-start;
+    margin-top: $act-unit-l;
   }
 }
 

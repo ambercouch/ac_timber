@@ -29,8 +29,7 @@
     color: white;
     text-align: left;
     @include act-font-size($milli-size, 1.5);
-    padding: $act-unit-t 0;
-    margin-bottom: $act-unit;
+    padding: 0;
     @include mq($from : tablet){
       text-align: right;
     }
@@ -58,9 +57,8 @@
     display: block;
 
  }
-
   &title{
-
+    display: block;
   }
 }
 
@@ -85,5 +83,9 @@
     display: block;
     margin-bottom:$act-unit-t;
     color: white;
+    @include act-font-size($inuit-font-size-h5,1);
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-top: $act-unit-l;
   }
 }

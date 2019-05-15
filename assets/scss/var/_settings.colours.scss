@@ -14,11 +14,15 @@ $act-grey : #ccc;
 $act-grey-light : #eee;
 $act-grey-dark : #666;
 
-$brand-col-1 : $act-grey;
-$brand-col-2 : $act-grey-light;
-$brand-col-3 : $act-grey-dark;
-$brand-col-4 : $act-grey;
-$brand-col-5 : $act-grey-light;
+$lla-gold : #CBB149;
+$lla-pale-grey : #E2E2E2;
+$lla-slate-grey : #323232;
+
+$brand-col-1 : black;
+$brand-col-2 : $lla-gold;
+$brand-col-3 : $lla-pale-grey;
+$brand-col-4 : $lla-slate-grey;
+$brand-col-5 : lighten($lla-pale-grey, 5%);
 $brand-col-6 : $act-grey-dark;
 $brand-col-7 : $act-grey;
 $brand-col-8 : $act-grey-light;
