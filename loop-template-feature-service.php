@@ -25,11 +25,20 @@
       </header>
 
     <div class="c-post-thumb__excerpt--feature-list">
-      <?php echo $post_excerpt ?>
+      <?php echo wpautop($post_excerpt) ?>
     </div>
 
     <div class="c-post-thumb__more">
-      <a class="c-post-thumb__more-link" href="<?php the_permalink(); ?>" >Learn More</a>
+      <a class="c-post-thumb__more-link o-btn--icon o-btn--rounded c-btn--brand-2  c-btn--more" href="<?php the_permalink(); ?>" >
+        <span class="o-btn__label--icon c-btn__label--more">Learn More</span>
+        <span class="o-btn__icon" >
+          <span class="o-svg-icon--plus">
+            <svg class="o-svg-icon__svg--plus c-btn__svg--more">
+              <use xlink:href="#icon-plus"></use>
+            </svg>
+          </span>
+        </span>
+      </a>
     </div>
     </div>
   </div>
