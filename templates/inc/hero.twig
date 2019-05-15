@@ -1,12 +1,23 @@
+{% if not fn('is_front_page') %}
+  {%   set bannerImg = pageBannerImg %}
+  {%   set bannerLogo = pageBannerLogo %}
+  {%   set bannerContent = pageBannerContent %}
+  {%   set menuName = pageBannerMenuName %}
+  {% else %}
+    {% set menuName = "hero" %}
+{% endif %}
+
 <div class="hero" >
   <div class="hero__container">
 
     <div class="hero__background">
+      {% if bannerImg.url != '' %}
       <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
+      {% endif %}
     </div>
 
 
-    <div class="hero__body">
+    <div class="hero__body{{ templateClass }}">
 
       {% if bannerLogo.url != '' %}
       <div class="hero__logo">
@@ -20,9 +31,8 @@
       </div>
       {% endif %}
 
-      {% if not hideBannerMenu %}
+      {% if not hideBannerMenu and menuName != '' %}
       <div class="hero__call-to-action">
-        {% set menuName = "hero" %}
         {% include 'inc/navigation.twig' %}
       </div>
       {% endif %}
