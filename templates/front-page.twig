@@ -11,7 +11,7 @@
 {% block content %}
 
   {% for post in posts %}
-    {% include ['content/content-'~templateSlug~'.twig','content/content-single-page.twig',] %}
+    {% include ['content/content-'~templateSlug~'.twig','content/content-single-page.twig'] %}
   {% endfor %}
 
 {% endblock %}
