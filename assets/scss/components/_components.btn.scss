@@ -3,13 +3,10 @@
  */
 
 .c-btn {
-  @include inuit-font-size($act-fs-sp, 1);
-  display: inline-block;
+  @include inuit-font-size($act-fs-4, 1);
   background: $brand-col-1;
   color: white;
   padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  border-radius: 0.5em;
-  text-transform: uppercase;
   text-decoration: none;
   &:hover, &:focus{
     color: white;
@@ -34,6 +31,31 @@
     padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
     @include act-font-size($act-fs-4, 1);
     text-transform: none;
+  }
+  &more{
+    @include act-font-size($act-fs-5, 1);
+  }
+  &brand-1{
+    @extend .c-btn;
+    background: $brand-col-1;
+    border-color: $brand-col-1;
+    &:hover{
+      background: darken($brand-col-1, 10%);
+    }
+    a:hover{
+      color: white;
+    }
+  }
+  &brand-2{
+    @extend .c-btn;
+    background: $brand-col-2;
+    border-color: $brand-col-2;
+    &:hover{
+      background: darken($brand-col-2, 10%);
+    }
+    a:hover{
+      color: white;
+    }
   }
 }
 
@@ -66,10 +88,20 @@
   &footer {
     display: block
   }
+
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-btn--
 
 [class*=c-btn__header--] {
   @extend .c-btn__header;
+}
+
+.c-btn__svg--more{
+  @include size(1em);
+}
+
+.c-btn__label--more{
+  margin-left: $act-unit-l;
+  margin-right: $act-unit-l;
 }
