@@ -30,7 +30,10 @@
     border-radius: 0;
     padding-left: $act-unit-h;
     padding-right: 0;
+    padding-top: $act-unit-l;
+    padding-bottom: $act-unit-l;
     max-width: 1440px;
+    justify-content: center;
   }
 }
 

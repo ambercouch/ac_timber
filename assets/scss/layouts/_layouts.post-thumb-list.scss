@@ -20,6 +20,7 @@
   &feature-list{
     flex-direction: column;
     max-width: 1440px;
+
   }
 }
 
@@ -66,9 +67,17 @@
   @extend .l-post-thumb-list__header;
 }
 
+[class*=l-post-thumb-list__post-thumb--] {
+  @extend .l-post-thumb-list__post-thumb;
+}
 
-.l-post-thumb-list__post-thumb{
-  .l-post-thumb-list--grid-3 &{
 
+.l-post-thumb-list__post-thumb--{
+  &feature-list{
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    height: 550px;
+    max-height: none;
   }
 }
