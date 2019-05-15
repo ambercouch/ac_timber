@@ -4,6 +4,7 @@
 
 .c-svg-icon {
   @extend .o-svg-icon;
+  margin: 0 auto;
 }
 
 /*
@@ -11,8 +12,9 @@
  */
 
 .c-svg-icon-- {
-  &type {
-    display: block
+  &testimonial-quote {
+    @include size($act-unit-l);
+    margin: $act-unit auto;
   }
 }
 
@@ -34,6 +36,14 @@
 
 //BEM ELEMENT MODIFIER FALLBACK .c-svg-icon--
 
-[class*=c-svg-icon__header--] {
+[class*=c-svg-icon__svg--] {
+  @extend .c-svg-icon__svg;
+}
 
+.c-svg-icon__svg--{
+  &testimonial-quote{
+    fill: $brand-col-2;
+    width: auto;
+    height: auto;
+  }
 }

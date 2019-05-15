@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .l-testimonial-thumb-list
+ */
+
+.l-testimonial-thumb-list {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: $act-unit-h * 1.5;
+  //align-items: flex-start;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-testimonial-thumb-list--
+ */
+
+.l-testimonial-thumb-list-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-testimonial-thumb-list--
+
+[class*=l-testimonial-thumb-list--] {
+  @extend .l-testimonial-thumb-list;
+}
+
+/*
+  BEM ELEMENTS .l-testimonial-thumb-list__
+ */
+
+.l-testimonial-thumb-list__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &testimonial-thumb{
+    width: 400px;
+    max-width: 25%;
+    border: none;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-testimonial-thumb-list--
+
+[class*=l-testimonial-thumb-list__header--] {
+  @extend .l-testimonial-thumb-list__header;
+}

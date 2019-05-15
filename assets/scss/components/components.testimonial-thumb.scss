@@ -1,0 +1,95 @@
+/*
+  BEM BLOCK .c-testimonial-thumb
+ */
+
+.c-testimonial-thumb {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  padding: $act-unit-s;
+  text-align: center;
+  border: solid 1px $brand-col-5;
+  border-radius: $act-unit-s;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-testimonial-thumb--
+ */
+
+.c-testimonial-thumb-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-testimonial-thumb--
+
+[class*=c-testimonial-thumb--] {
+  @extend .c-testimonial-thumb;
+}
+
+/*
+  BEM ELEMENTS .c-testimonial-thumb__
+ */
+
+.c-testimonial-thumb__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block;
+    @include act-font-size($inuit-font-size-h3)
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: block;
+    &:hover{
+      text-decoration: none;
+      color: $brand-col-2 !important;
+    }
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &link-title{
+    color: black;
+  }
+  &testimonial-icon{
+    margin-bottom: $act-unit-l * 1;
+  }
+  &testimonial-icon-img{
+    height: 150px !important;
+  }
+  &excerpt{
+    @include act-font-size($inuit-font-size-h6);
+  }
+  &feature-image{
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: $act-unit;
+    @include size($act-unit-h );
+    margin: 0 auto;
+    margin-top: - $act-unit-h;
+  }
+  &cite-heading{
+    margin: 0;
+    font-weight: 700;
+  }
+  &cite-info{
+    @include act-font-size($inuit-font-size-h6,1);
+    color: $brand-col-2;
+    display: block;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-testimonial-thumb--
+
+[class*=c-testimonial-thumb__header--] {
+  @extend .c-testimonial-thumb__header;
+}

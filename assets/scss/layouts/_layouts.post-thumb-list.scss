@@ -5,6 +5,8 @@
 .l-post-thumb-list {
   display: flex;
   max-width: 1200px;
+  margin: 0 auto $act-unit-h;
+  flex-wrap: wrap;
 }
 
 /*
@@ -12,8 +14,12 @@
  */
 
 .l-post-thumb-list-- {
-  &type {
-    display: block
+  &grid-3 {
+    flex-wrap: wrap;
+  }
+  &feature-list{
+    flex-direction: column;
+    max-width: 1440px;
   }
 }
 
@@ -48,8 +54,9 @@
   }
   &post-thumb{
     width: 400px;
-    max-width: 33.333%;
-    padding: $act-unit-l;
+    max-width: 32%;
+    //padding: $act-unit-l;
+    margin: 0.66%;
   }
 }
 
@@ -57,4 +64,11 @@
 
 [class*=l-post-thumb-list__header--] {
   @extend .l-post-thumb-list__header;
+}
+
+
+.l-post-thumb-list__post-thumb{
+  .l-post-thumb-list--grid-3 &{
+
+  }
 }
