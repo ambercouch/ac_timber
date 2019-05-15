@@ -20,6 +20,8 @@ require_once get_template_directory() . '/lib/acf/functions--acf-page-settings.p
 require_once get_template_directory() . '/lib/acf/functions--acf-service-settings.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-page-content.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-menu-items.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-page-banner-image.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-testimonial-info.php';
 
 require_once get_template_directory() . '/lib/functions--template-tags.php';
 require_once get_template_directory() . '/lib/functions--ac-menu-filters.php';
