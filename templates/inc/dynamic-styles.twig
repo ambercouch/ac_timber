@@ -27,7 +27,7 @@
   /* NO cssBannerImageSaturation */
   {% endif %}
 
-  {% if cssBannerColourCast %}
+  {% if fn('is_front_page') and cssBannerColourCast %}
   .hero__background:before{
     display: block !important;
     background: {{cssBannerColourCastColour}} !important;
@@ -43,6 +43,24 @@
   }
   {% else %}
   /* NO cssBannerColourCast */
+  {% endif %}
+
+  {% if cssPageBannerColourCast %}
+  .hero__background:before{
+    display: block !important;
+    background: {{cssPageBannerColourCastColour}} !important;
+    opacity: {{cssPageBannerColourCastOpacity}} !important;
+    mix-blend-mode: {{cssPageBannerColourCastMode}} !important;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transition: all .5s ease;
+  }
+  {% else %}
+  /* NO cssPageBannerColourCast */
   {% endif %}
 
 
