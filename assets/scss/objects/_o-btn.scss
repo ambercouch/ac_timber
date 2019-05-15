@@ -21,7 +21,7 @@
   }
 }
 
-[class*=o-btn]{
+[class*=o-btn--]{
   @extend .o-btn;
 }
 .o-btn--{
@@ -43,6 +43,7 @@
         background: rgba($brand-col-2, .8) !important;
       }
     }
+
   }
   &transparent{
     @extend .o-btn;
@@ -74,5 +75,9 @@
     a:hover{
       color: white;
     }
+  }
+  &icon{
+    display:inline-flex;
+    justify-content: space-between;
   }
 }

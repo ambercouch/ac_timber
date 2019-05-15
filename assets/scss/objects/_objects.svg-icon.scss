@@ -4,7 +4,7 @@
 
 .o-svg-icon {
   display: block;
-  @include size($inuit-global-spacing-unit);
+  @include size($act-unit);
   position: relative;
 }
 
@@ -37,7 +37,7 @@
 
 .o-svg-icon__ {
   &svg {
-    display: inline-block;
+    display: block;
     width: 1.5em;
     height: 1.5em;
     max-width: 100%;
@@ -54,8 +54,11 @@
 
 //BEM ELEMENT MODIFIER FALLBACK .o-svg-icon--
 
-[class*=svg-icon__header--] {
+[class*=o-svg-icon__header--] {
 
+}
+[class*=o-svg-icon__svg--] {
+@extend .o-svg-icon__svg;
 }
 
 .o-svg-icon--envelope{
