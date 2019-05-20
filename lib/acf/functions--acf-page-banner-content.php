@@ -3,7 +3,7 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array (
-        'key' => 'group_57e27c981ec28',
+        'key' => 'group_page_banner_content',
         'title' => 'Page Banner Content',
         'fields' => array (
             array (
