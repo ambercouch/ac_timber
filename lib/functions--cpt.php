@@ -77,6 +77,32 @@ function  act_cpt() {
     );
     register_post_type('testimonial', $args);
 
+    $labels = array(
+        'name' => _x('Case Studies', 'post type general name'),
+        'singular_name' => _x('Case Study', 'post type singular name'),
+        'add_new' => _x('Add New', 'Case Study'),
+        'add_new_item' => __('Add New Case Study'),
+        'edit_item' => __('Edit Case Study'),
+        'new_item' => __('New Case Study'),
+        'all_items' => __('All Case Studies'),
+        'view_item' => __('View Case Study'),
+        'search_items' => __('Search Case Studies'),
+        'not_found' => __('No Case Studies found'),
+        'not_found_in_trash' => __('No Case Studies found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Case Studies'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-nametag',
+        'description' => 'Client case studies',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'has_archive' => 'case-study'
+    );
+    register_post_type('case-study', $args);
+
 }
 
 add_action('init', 'act_cpt');
