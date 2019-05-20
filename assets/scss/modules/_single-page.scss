@@ -45,6 +45,13 @@
   @extend .post;
 }
 
+.single-page--{
+  &image-list-page{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
 [class*='single-page__header--']{
   @extend .single-page__header;
 }
