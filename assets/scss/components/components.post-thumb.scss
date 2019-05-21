@@ -122,4 +122,25 @@
   &feature-list{
     @include act-font-size($inuit-font-size-h5);
   }
+  &case-study{
+    @include act-font-size($inuit-font-size-h6);
+    p{
+      margin-bottom: $act-unit-s;
+    }
+  }
+}
+
+[class*=c-post-thumb__more-link--] {
+  @extend .c-post-thumb__more-link;
+}
+
+.c-post-thumb__more-link--{
+  &case-study{
+    color: $brand-col-2;
+    text-decoration: none;
+    @include act-font-size($inuit-font-size-h6, 1);
+    &:hover{
+      color: $brand-col-1;
+    }
+  }
 }
