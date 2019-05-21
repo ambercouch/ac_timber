@@ -58,7 +58,63 @@ if( function_exists('acf_add_local_field_group') ):
         'style' => 'default',
         'label_placement' => 'top',
         'instruction_placement' => 'label',
-        'hide_on_screen' => '',
+        'hide_on_screen' => array(
+            0 => 'the_content',
+            1 => 'discussion',
+            2 => 'comments',
+        ),
+        'active' => 1,
+        'description' => '',
+    ));
+
+    acf_add_local_field_group(array(
+        'key' => 'group_background',
+        'title' => 'Quote Background',
+        'fields' => array(
+            array(
+                'key' => 'field_background_image',
+                'label' => 'Quote Background Image',
+                'name' => 'quote_background_image',
+                'type' => 'image',
+                'instructions' => 'Add an image that will be use on a page as the background for a the quote excerpt.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'array',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+                'min_width' => '',
+                'min_height' => '',
+                'min_size' => '',
+                'max_width' => '',
+                'max_height' => '',
+                'max_size' => '',
+                'mime_types' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'testimonial',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => array(
+            0 => 'the_content',
+            1 => 'discussion',
+            2 => 'comments',
+        ),
         'active' => 1,
         'description' => '',
     ));
