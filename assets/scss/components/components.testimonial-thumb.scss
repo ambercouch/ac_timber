@@ -75,7 +75,7 @@
     margin-bottom: $act-unit;
     @include size($act-unit-h );
     margin: 0 auto;
-    margin-top: - $act-unit-h;
+    margin-top: - $act-unit-l * 1.5;
   }
   &cite-heading{
     margin: 0;
