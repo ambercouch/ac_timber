@@ -1,0 +1,57 @@
+{% extends "base.twig" %}
+
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+
+{% block before_head %}
+  <!-- page-faq-page.twig -->
+  <!-- template - {{ template }} -->
+  <!-- get_page_template_slug() {{ fn('get_page_template_slug', post.id) }} -->
+  <!-- {{ hidePageTitle }} -->
+{% endblock %}
+
+{% block hero %}
+  {% if pageBannerImg != '' or cssPageBannerColourCast != '' or  cssPageBannerColourCastColour != ''%}
+  <section id="siteHero" class="site__hero{{ templateClass }}">
+    {% include 'inc/hero.twig' ignore missing %}
+  </section>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% include 'content/content-single-page'~template_slug~'.twig' %}
+  {% endfor %}
+
+{% endblock %}
+
+{% block belowContent %}
+  <div class="c-main__faq-list">
+    <div class="c-faq-list">
+      <dl class="c-faq-list__list">
+      {% for question in  post.meta('frequently_asked_questions_list') %}
+        <div class="c-faq-list__item">
+          <dt class="c-faq-list__question" data-control="faq"  data-state="off" >
+            <span class="c-faq-list__question-text">{{question.faq_question}}</span>
+            <span class="c-faq-list__control--expand">+</span>
+            <span class="c-faq-list__control--collaps">-</span>
+          </dt>
+          <dd class="c-faq-list__answer" data-container="faq" data-state="off">
+            <span class="c-faq-list__answer-text">{{question.faq_answer}}</span>
+          </dd>
+        </div>
+      {% endfor %}
+      </dl>
+    </div>
+  </div>
+  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}
+
+
+
+
+
+

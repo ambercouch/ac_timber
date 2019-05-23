@@ -1,0 +1,113 @@
+/*
+  BEM BLOCK .c-faq-list
+ */
+
+.c-faq-list {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-faq-list--
+ */
+
+.c-faq-list-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-faq-list--
+
+[class*=c-faq-list--] {
+  @extend .c-faq-list;
+}
+
+/*
+  BEM ELEMENTS .c-faq-list__
+ */
+
+.c-faq-list__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &answer{
+    overflow: hidden;
+    margin: 0;
+    padding: $act-unit-s 0;
+    transition: max-height 0.3s ease-in-out,
+                padding 0.3s ease-in-out;
+  }
+  &question{
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &list{
+    border-bottom: solid 1px $brand-col-2;
+  }
+  &item{
+    padding: $act-unit-s $act-unit;
+    border: solid 1px $brand-col-2;
+    border-bottom: none;
+  }
+  &control{
+    color: $brand-col-2;
+    @include act-font-size($act-fs-1,1);
+    font-weight: 300;
+    cursor: pointer;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-faq-list--
+
+[class*=c-faq-list__header--] {
+  @extend .c-faq-list__header;
+}
+
+.c-faq-list__answer{
+  &[data-state=off]{
+    max-height: 0;
+    padding: 0 !important;
+  }
+  &[data-state=on]{
+    max-height: 8em;
+  }
+}
+
+[class*=c-faq-list__control--] {
+  @extend .c-faq-list__control;
+}
+
+.c-faq-list__control--{
+  &expand{
+    [data-state=on] &{
+      display: none;
+    }
+  }
+  &collaps{
+    [data-state=off] &{
+      display: none;
+    }
+  }
+
+}

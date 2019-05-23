@@ -20,7 +20,7 @@ $context['postType'] = 'page';
 $context['primary_widgets'] = Timber::get_widgets('Primary');
 $context['footer_widgets'] = Timber::get_widgets('Footer');
 $context['main_mod'] = '--faq-page';
-$templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
+$templates = array( 'page-' . $post->post_name . '.twig', 'page-' . $context['template'] . '.twig', 'page.twig' );
 if ( is_front_page() ) {
     array_unshift( $templates, 'front-page.twig' );
 }

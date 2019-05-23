@@ -63,6 +63,18 @@ BEM BLOCK MODIFIERS .c-main--
   }
 }
 
+[class*="c-main__content--"]{
+  @extend .c-main__content;
+}
+
+.c-main__content--{
+  &faq-page{
+    width: $act-unit-h * 9;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .c-main__content{
   .has-side-bar &{
 
