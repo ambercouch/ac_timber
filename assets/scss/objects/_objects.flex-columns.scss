@@ -1,0 +1,66 @@
+/*
+  BEM BLOCK .o-flex-columns
+ */
+
+.o-flex-columns {
+  display: flex;
+}
+
+/*
+  BEM BLOCK MODIFIER .o-flex-columns--
+ */
+
+.o-flex-columns-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .o-flex-columns--
+
+[class*=o-flex-columns--] {
+  @extend .o-flex-columns;
+}
+.o-flex-columns--{
+  &5050{
+    > *{
+      width: 50%;
+    }
+  }
+}
+
+/*
+  BEM ELEMENTS .o-flex-columns__
+ */
+
+.o-flex-columns__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .o-flex-columns--
+
+[class*=o-flex-columns__header--] {
+  @extend .o-flex-columns__header;
+}
