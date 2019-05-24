@@ -65,7 +65,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'placeholder' => '',
                 'maxlength' => '',
                 'rows' => 4,
-                'new_lines' => '',
+                'new_lines' => 'wpautop',
             ),
             array(
                 'key' => 'field_case_study_background',
@@ -84,7 +84,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'placeholder' => '',
                 'maxlength' => '',
                 'rows' => 6,
-                'new_lines' => '',
+                'new_lines' => 'wpautop',
             ),
             array(
                 'key' => 'field_case_study_approach',
