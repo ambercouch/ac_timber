@@ -1,0 +1,66 @@
+/*
+  BEM BLOCK .c-case-study-section
+ */
+
+.c-case-study-section {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-case-study-section--
+ */
+
+.c-case-study-section-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-case-study-section--
+
+[class*=c-case-study-section--] {
+  @extend .c-case-study-section;
+}
+
+/*
+  BEM ELEMENTS .c-case-study-section__
+ */
+
+.c-case-study-section__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-case-study-section--
+
+[class*=c-case-study-section__header--] {
+  @extend .c-case-study-section__header;
+}
+
+.c-case-study-section__body--{
+  &intro{
+    @include act-font-size($inuit-font-size-h3)
+    font-weight: 500;
+  }
+}

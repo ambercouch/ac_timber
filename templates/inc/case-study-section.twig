@@ -1,0 +1,24 @@
+<section class="l-case-study__section">
+  <div class="c-case-study-section">
+    <div class="c-case-study-section__content--{{ caseSection }}">
+      <h3 class="c-case-study-section__heading">
+        <span class="c-case-study-section__title">{{ caseSection | capitalize }}</span>
+      </h3>
+      <div class="c-case-study-section__body--{{ caseSection  }}">
+        <div class="c-case-study-section__icon-list">
+          <div class="c-icon-list--cs-approach c-icon-list--small">
+            <ul class="c-icon-list__list">
+              {% for item in post.meta('case_study_'~ caseSection) %}
+                <li class="c-icon-list__item">
+                  {% set icon = 'check' %}
+                  <span class="c-icon-list__icon--left">{% include 'inc/svg-icon.twig' %}</span>
+                  <span class="c-icon-list__item__title">{{ item[caseSection~'_item'] }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

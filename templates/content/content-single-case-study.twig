@@ -1,0 +1,66 @@
+<article id="post-{{ post.id }}" class="single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
+
+
+
+  <header class="entry-header single-page__header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+    {% if not hidePageTitle %}
+      <h1 class="entry-title single-page__heading{{ templateClass }} ">
+        <span class="entry-title single-page__title{{ templateClass }} ">{{ post.title }}</span>
+      </h1>
+    {% endif %}
+  </header>
+
+  {% if(post.company_logo) %}
+    <div class="single-page__feature-image{{ templateClass }} ">
+      <div class="feature-image{{ templateClass }}">
+        <img src="{{ Image(post.meta('company_logo')).src }}" />
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="entry-content single-page__body{{ templateClass }} ">
+    <div class="l-case-study">
+      <section class="l-case-study__section">
+        <div class="c-case-study-section">
+          <div class="c-case-study-section__content--intro">
+            <h3 class="c-case-study-section__heading">
+              <span class="c-case-study-section__title">The Challenge</span>
+            </h3>
+            <div class="c-case-study-section__body--intro">
+              {{ fn( 'wpautop', post.case_study_challenge) }}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="l-case-study__section">
+        <div class="c-case-study-section">
+          <div class="c-case-study-section__content--background">
+            <h3 class="c-case-study-section__heading">
+              <span class="c-case-study-section__title">Background</span>
+            </h3>
+            <div class="c-case-study-section__body--background">
+              {{ fn( 'wpautop', post.case_study_background) }}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {% set caseSection = 'approach'  %}
+      {% include 'inc/case-study-section.twig' %}
+
+      {% set caseSection = 'outcome'  %}
+      {% include 'inc/case-study-section.twig' %}
+
+      {% set caseSection = 'benefit'  %}
+      {% include 'inc/case-study-section.twig' %}
+
+      <section class="l-case-study__section"></section>
+      <section class="l-case-study__section"></section>
+    </div>
+  </div>
+
+  <footer class="single-page__footer{{ templateClass }} ">
+  </footer>
+
+</article>

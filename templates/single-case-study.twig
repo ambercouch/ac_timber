@@ -1,0 +1,51 @@
+{% extends "base.twig" %}
+
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+{% set hasSideBar = true %}
+
+{% block before_head %}
+  <!-- single-case-study.twig -->
+  <!-- template - {{ template }} -->
+  <!-- {{ hidePageTitle }} -->
+{% endblock %}
+
+{% block hero %}
+  {% if pageBannerImg != '' or cssPageBannerColourCast != '' or  cssPageBannerColourCastColour != ''%}
+    <section id="siteHero" class="site__hero{{ templateClass }}">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% include 'content/content-single'~templateSlug~'.twig' %}
+  {% endfor %}
+
+{% endblock %}
+
+{% block belowContent %}
+  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}
+
+ {% block subsidiary %}
+   {% if post.page_testimonial %}
+   <section id="subsidiary" class="site__subsidiary">
+     {% include 'inc/subsidiary-image-quote.twig' %}
+   </section>
+   {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+  <h6>All Case Studies</h6>
+{% endblock %}
+
+
+
+
+
+
