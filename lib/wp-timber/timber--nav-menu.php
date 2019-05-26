@@ -10,6 +10,7 @@ function act_nav_menu_walker( $args ) {
     elseif (is_string($args['menu'])){
         $slug = strtolower($args['menu']);
     }
+
     return array_merge( $args, array(
         'walker' => new Ac_Walker_Nav_Menu(),
         'menu_class' => 'c-nav-menu__list--'.$slug,
