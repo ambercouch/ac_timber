@@ -1,0 +1,82 @@
+/*
+  BEM BLOCK .c-image-quote
+ */
+
+.c-image-quote {
+  display: block;
+  position: relative;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-image-quote--
+ */
+
+.c-image-quote-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-image-quote--
+
+[class*=c-image-quote--] {
+  @extend .c-image-quote;
+}
+
+/*
+  BEM ELEMENTS .c-image-quote__
+ */
+
+.c-image-quote__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: $act-unit-h;
+    transform: translate(0, -50%);
+    width: 600px  ;
+  }
+  &text{
+    @include act-font-size($act-fs-1);
+    font-weight: 700;
+    color: white;
+    margin-bottom: $act-unit;
+  }
+  &name{
+    color: white;
+    font-style: normal;
+  }
+  &cite{
+    font-style: normal;
+    font-weight: 500;
+    @include act-font-size($act-fs-4)
+  }
+  &role{
+    color: white;
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-image-quote--
+
+[class*=c-image-quote__header--] {
+  @extend .c-image-quote__header;
+}

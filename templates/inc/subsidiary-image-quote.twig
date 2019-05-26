@@ -1,0 +1,25 @@
+<div class="l-subsidiary--image-quote">
+  <div class="l-subsidiary__image-quote">
+    <div class="c-image-quote">
+      <div class="c-image-quote__bg">
+        <div class="c-image-quote__image">
+          <img src="{{ pageQuote.quoteImg.sizes['feature16-9'] }}" alt="" class="c-image-quote__img" />
+        </div>
+        <div class="c-image-quote__content">
+          <div class="c-image-quote__icon">
+            {% set icon = "quote-left" %}
+            {% include 'inc/svg-icon.twig' %}
+          </div>
+          <div class="c-image-quote__quote">
+            <div class="c-image-quote__text">
+              {{ pageQuote.quoteText }}
+            </div>
+            <div class="c-image-quote__name"><cite class="c-image-quote__cite">{{ pageQuote.quoteName }}</cite></div>
+            <div class="c-image-quote__role">{{ pageQuote.quoteInfo }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
