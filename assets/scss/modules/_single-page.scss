@@ -79,4 +79,14 @@
   @extend .single-page__comment-link
 }
 
+.single-page__feature-image--{
+  &case-study{
+    margin-bottom: $act-unit-l;
+  }
+}
+.single-page__header--{
+  &case-study{
+    margin-bottom: $act-unit-l;
+  }
+}
 

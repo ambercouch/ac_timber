@@ -1,4 +1,4 @@
-/*
+ /*
 BEM BLOCK .c-feature-image
  */
 .c-feature-image{
@@ -15,8 +15,11 @@ BEM BLOCK .c-feature-image--
 
 .c-feature-image--{
   &service{
-
     height: 100%;
+  }
+  &case-study{
+    width: $act-unit-h * 2;
+    max-width: 100%;
   }
 }
 
