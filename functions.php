@@ -25,6 +25,7 @@ require_once get_template_directory() . '/lib/acf/functions--acf-page-banner-con
 require_once get_template_directory() . '/lib/acf/functions--acf-page-quote.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-testimonial-info.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-case-study.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-faq.php';
 
 require_once get_template_directory() . '/lib/functions--template-tags.php';
 require_once get_template_directory() . '/lib/functions--ac-menu-filters.php';
