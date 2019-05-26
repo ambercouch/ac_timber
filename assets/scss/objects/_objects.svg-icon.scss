@@ -6,6 +6,7 @@
   display: block;
   @include size($act-unit);
   position: relative;
+  max-width: 100%;
 }
 
 
