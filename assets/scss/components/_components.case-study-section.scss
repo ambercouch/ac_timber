@@ -60,7 +60,7 @@
 
 .c-case-study-section__body--{
   &intro{
-    @include act-font-size($inuit-font-size-h3)
+    @include act-font-size($inuit-font-size-h3);
     font-weight: 500;
   }
 }
