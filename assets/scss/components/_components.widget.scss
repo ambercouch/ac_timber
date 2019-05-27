@@ -91,4 +91,8 @@
   &subsidiary{
     color: $brand-col-1;
   }
+  &sidebar{
+    color: $brand-col-1;
+    @include act-font-size($act-fs-4);
+  }
 }

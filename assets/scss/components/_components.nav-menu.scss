@@ -161,6 +161,16 @@
   &hero{
     color: white;
   }
+  &case-studies{
+    display: block;
+    color: $brand-col-4;
+    padding: $act-unit-s $act-unit-s;
+    font-weight: 700;
+    .current-menu-item &{
+      background: $brand-col-2;
+      color: white;
+    }
+  }
 }
 
 

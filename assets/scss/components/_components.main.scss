@@ -19,8 +19,9 @@ BEM BLOCK .c-main
 
 .c-main__{
   &sidebar{
-    background: $brand-col-5;
+    background: transparent;
     padding: $act-unit;
+    padding-top: 0;
 
     @include mq($from: tablet) {
       width: 35%;

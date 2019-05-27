@@ -67,8 +67,7 @@
   }
   &sidebar-widgets{
     margin-bottom: $act-unit;
-    padding-bottom: $act-unit;
-    border-bottom: solid 1px;
+    padding-bottom: none;
   }
   &footer-widgets{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
