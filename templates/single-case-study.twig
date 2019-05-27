@@ -41,7 +41,18 @@
 {% endblock %}
 
 {% block sidebar %}
-  <h6>All Case Studies</h6>
+  <div class="c-main__sidebar">
+    <div class="c-sidebar">
+      <div class="c-sidebar__widgets">
+        {{ sidebar_widgets }}
+      </div>
+      {% if post.page_sidebar_custom_code != '' %}
+        <div class="c-sidebar__page-sidebar">
+          {{ fn('do_shortcode', post.page_sidebar_custom_code) }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 {% endblock %}
 
 
