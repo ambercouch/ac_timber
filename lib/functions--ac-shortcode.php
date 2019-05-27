@@ -177,3 +177,10 @@ function act_logo_dark($atts){
 
     return $output;
 }
+
+add_shortcode('act_menu', 'act_shortcode_wp_nav_menu');
+function act_shortcode_wp_nav_menu($atts, $content = null) {
+    extract(shortcode_atts(array('name' => null), $atts));
+    $name = isset($name)? $name : $atts[0];
+    return wp_nav_menu(array('menu' => $name, 'echo' => false));
+}
