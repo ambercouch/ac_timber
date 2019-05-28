@@ -4,6 +4,14 @@
 
 .o-flex-columns {
   display: flex;
+  @include mq($until : tablet){
+    display: block;
+  }
+  > *{
+    @include mq($until : tablet){
+      width: 100%;
+    }
+  }
 }
 
 /*
@@ -21,6 +29,7 @@
 [class*=o-flex-columns--] {
   @extend .o-flex-columns;
 }
+
 .o-flex-columns--{
   &5050{
     > *{
