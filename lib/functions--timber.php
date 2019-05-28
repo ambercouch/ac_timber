@@ -115,6 +115,7 @@ class StarterSite extends TimberSite {
         $context['bannerImg'] = (get_field('banner_image', 'options') == '') ?  acSettings()['bannerImg'] : get_field('banner_image', 'options');
         $context['bannerContent'] = get_field('banner_content', 'options');
         $context['bannerLogo'] = get_field('banner_logo', 'options');
+
         $context['cssBannerImageSaturation'] = get_field('banner_image_saturation', 'options');
         $context['cssBannerColourCast'] = get_field('banner_image_colour_cast', 'options');
         $context['cssBannerColourCastColour'] = get_field('banner_image_colour_cast_colour', 'options');
@@ -126,8 +127,14 @@ class StarterSite extends TimberSite {
         $context['pageBannerImg'] = get_field('page_banner_image');
         $context['pageBannerContent'] = get_field('page_banner_content');
         $context['pageBannerLogo'] = get_field('page_banner_logo');
+
+        $context['cssPageBannerImageSaturation'] = get_field('page_banner_image_saturation');
         $context['cssPageBannerColourCast'] = get_field('page_banner_image_colour_cast');
         $context['cssPageBannerColourCastColour'] = get_field('page_banner_image_colour_cast_colour');
+        $context['cssPageBannerColourCastOpacity'] = get_field('page_banner_image_colour_cast_opacity');
+        $context['cssPageBannerColourCastMode'] = get_field('page_banner_image_colour_cast_mode');
+        $context['cssPageBannerImageHeight'] = get_field('page_banner_image_height');
+        $context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal');
 
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
