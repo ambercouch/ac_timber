@@ -18,10 +18,19 @@
   /* NO cssBannerImagePositionHorizontal */
   {% endif %}
 
-  {% if cssBannerImageSaturation %}
+  {% if fn('is_front_page') and cssBannerImageSaturation %}
   .hero__background-img {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
+  }
+  {% else %}
+  /* NO cssBannerImageSaturation */
+  {% endif %}
+
+  {% if  cssPageBannerImageSaturation %}
+  .hero__background-img {
+    -webkit-filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
+    filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
   }
   {% else %}
   /* NO cssBannerImageSaturation */
