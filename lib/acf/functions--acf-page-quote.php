@@ -43,6 +43,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'value' => 'page',
                 ),
             ),
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'service',
+                ),
+            ),
         ),
         'menu_order' => 0,
         'position' => 'side',

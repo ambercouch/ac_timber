@@ -46,6 +46,12 @@
   &footer {
     display: block
   }
+  &image-quote{
+    margin-bottom: $act-unit-l ;
+  }
+  &widgets{
+    margin-bottom: $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-subsidiary--
