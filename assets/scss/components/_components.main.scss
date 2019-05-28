@@ -20,8 +20,7 @@ BEM BLOCK .c-main
 .c-main__{
   &sidebar{
     background: transparent;
-    padding: $act-unit;
-    padding-top: 0;
+    padding: 0 0 0 $act-unit ;
 
     @include mq($from: tablet) {
       width: 35%;

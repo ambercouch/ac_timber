@@ -163,13 +163,16 @@
   }
   &case-studies{
     display: block;
-    color: $brand-col-4;
+    color: $brand-col-6;
     padding: $act-unit-s $act-unit-s;
     font-weight: 700;
     .current-menu-item &{
       background: $brand-col-2;
       color: white;
     }
+  }
+  &services{
+    @extend .c-nav-menu__link--case-studies;
   }
 }
 
