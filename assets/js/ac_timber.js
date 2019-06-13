@@ -8,7 +8,7 @@ ACTIMBER = {
         init: function () {
             'use strict';
             //uncomment to debug
-            console.log('common 1234');
+            console.log('common 1234 6');
 
             //add js class
             jQuery('body').addClass('js');
@@ -19,9 +19,18 @@ ACTIMBER = {
             var container = $('[data-container=requestForm]');
             ACTIMBER.fn.open(container, showButton);
 
+            var showButton = $('[data-control=testMay19]');
+            var container = $('[data-container=testMay19]');
+            ACTIMBER.fn.open(container, showButton);
+
+            var showButton = $('[data-control=testApril19]');
+            var container = $('[data-container=testApril19]');
+            ACTIMBER.fn.open(container, showButton);
+
             var showButton = $('[data-control=testMarch19]');
             var container = $('[data-container=testMarch19]');
             ACTIMBER.fn.open(container, showButton);
+
 
             var showButton = $('[data-control=testFeb19]');
             var container = $('[data-container=testFeb19]');
