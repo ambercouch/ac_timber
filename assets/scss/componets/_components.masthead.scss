@@ -40,10 +40,10 @@ BEM ELEMENTS .c-masthead__
   &branding{
     @extend .o-site-wrapper;
     background: transparent;
-    padding: $inuit-global-spacing-unit-small;
+    padding: $inuit-global-spacing-unit-small ;
     padding-right: $inuit-global-spacing-unit-large;
     @include mq($from:tablet){
-      padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-large;
+        padding: $inuit-global-spacing-unit $inuit-global-spacing-unit-huge;
     }
   }
 }
