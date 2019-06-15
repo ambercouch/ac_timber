@@ -4,8 +4,11 @@
 
 .single-page{
  &__body{
-  width: 75%;
-  max-width: 800px;
-  margin: 0 auto;
+
+  @include mq($from:tablet){
+   width: 75%;
+   max-width: 800px;
+   margin: 0 auto;
+  }
  }
 }
