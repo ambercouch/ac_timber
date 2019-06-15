@@ -1,12 +1,12 @@
 .main{
   max-width: $site-container-width;
   margin: 0 auto;
-  padding:$inuit-base-spacing-unit;
+  padding:$inuit-global-spacing-unit;
   padding-bottom:0;
 
   body.home &{
     color: #fff;
-    padding-bottom:$inuit-base-spacing-unit;
+    padding-bottom:$inuit-global-spacing-unit;
   }
 }
 

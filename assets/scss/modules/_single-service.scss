@@ -5,7 +5,7 @@
 
 .single-service{
   &__header{
-    margin-bottom:$inuit-base-spacing-unit--large;
+    margin-bottom:$inuit-global-spacing-unit-large;
   }
   &__title{
     @include brand-title();
@@ -23,16 +23,16 @@
   }
   &__body{
     display: flex;
-    margin-bottom: $inuit-base-spacing-unit--large;
+    margin-bottom: $inuit-global-spacing-unit-large;
   }
   &__content{
     width: 100%;
-    @include media-query(lap-and-up){
+    @include mq($from:tablet){
       width: 50%;
-      padding-right:$inuit-base-spacing-unit--large;
+      padding-right:$inuit-global-spacing-unit-large;
     }
     .has-no-content-image &{
-      @include media-query(lap-and-up){
+      @include mq($from:tablet){
         width: 75%;
         padding-right:0;
         text-align: center;
@@ -42,9 +42,9 @@
   }
   &__content-image{
     width: 100%;
-    @include media-query(lap-and-up) {
+    @include mq($from:tablet) {
       width: 50%;
-      padding-left: $inuit-base-spacing-unit--large;
+      padding-left: $inuit-global-spacing-unit-large;
     }
   }
 

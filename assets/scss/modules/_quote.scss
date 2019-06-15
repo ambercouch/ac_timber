@@ -2,7 +2,7 @@
   display: flex;
   @include inuit-font-size($inuit-heading-size-5, 1.3);
   margin: 0;
-  margin-bottom: $inuit-base-spacing-unit--large;
+  margin-bottom: $inuit-global-spacing-unit-large;
   color: $brand-col-1;
   text-align: center;
   &:last-child{
@@ -17,7 +17,7 @@
 
     width: 200px;
     overflow: hidden;
-    margin-right:$inuit-base-spacing-unit;
+    margin-right:$inuit-global-spacing-unit;
     img{
       display: block;
       border-radius: 50%;
@@ -44,7 +44,7 @@
 
   &__footer{
     text-align: right;
-    margin-top:$inuit-base-spacing-unit--tiny;
+    margin-top:$inuit-global-spacing-unit-tiny;
   }
 
 }

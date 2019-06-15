@@ -2,8 +2,8 @@
   background: $brand-col-1--xlight;
   position: relative;
   z-index: 1;
-  padding-top:$inuit-base-spacing-unit--large;
-  padding-bottom:$inuit-base-spacing-unit--large;
+  padding-top:$inuit-global-spacing-unit-large;
+  padding-bottom:$inuit-global-spacing-unit-large;
   &:after{
     position: absolute;
     content: '';

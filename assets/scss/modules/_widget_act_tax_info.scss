@@ -1,10 +1,10 @@
 .widget_act_tax_info{
 
-  padding: 0 $inuit-base-spacing-unit;
-  //margin-bottom:$inuit-base-spacing-unit;
-  margin: 0 auto $inuit-base-spacing-unit;
+  padding: 0 $inuit-global-spacing-unit;
+  //margin-bottom:$inuit-global-spacing-unit;
+  margin: 0 auto $inuit-global-spacing-unit;
   max-width: 100%;
-  @include media-query(desk){
+  @include mq($from:desktop){
     width: 50%;
   }
 }
@@ -22,7 +22,7 @@
     height: 100%;
   }
   &__term{
-    padding: $inuit-base-spacing-unit 0;
+    padding: $inuit-global-spacing-unit 0;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
   }
   &__image{
     width: 140px;
-    margin: 0 auto $inuit-base-spacing-unit;
+    margin: 0 auto $inuit-global-spacing-unit;
   }
   &__title{
     width: 100%;
@@ -50,14 +50,14 @@
 
   }
   &__menu{
-    @extend .list-inline;
+    @extend .o-list-inline;
     display: flex;
     justify-content:space-around;
     max-width: 350px;
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
-    @include media-query(lap-and-up){
+    @include mq($from:tablet){
       flex-wrap: nowrap;
     };
 
@@ -66,16 +66,16 @@
     //display: block !important;
     width: 100%;
     &:first-child {
-      margin-bottom: $inuit-base-spacing-unit;
-      @include media-query(lap-and-up) {
+      margin-bottom: $inuit-global-spacing-unit;
+      @include mq($from:tablet) {
         margin-bottom: 0;
       }
     }
 
   }
   &__menu-link{
-    @extend .btn;
-    @extend .btn--small;
+    @extend .c-btn;
+    @extend .c-btn--s;;
     width: 100%;
     @include inuit-font-size($inuit-heading-size-6);
     text-transform: uppercase;

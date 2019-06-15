@@ -16,7 +16,7 @@
   width: 100%;
   top: 50%;
   transform: translate(0, -50%);
-  @include media-query(lap-and-up){
+  @include mq($from:tablet){
    top: 35%;
   }
  }
@@ -25,7 +25,7 @@
  }
 
  &__menu{
-  @extend .list-inline;
+  @extend .o-list-inline;
 
   text-align: center;
   max-width: 350px;
@@ -34,9 +34,9 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
-  padding: 0 $inuit-base-spacing-unit;
+  padding: 0 $inuit-global-spacing-unit;
 
-  @include media-query(lap-and-up){
+  @include mq($from:tablet){
    flex-direction: row;
    padding: 0;
   }
@@ -46,17 +46,17 @@
  }
  &__logo{
   max-width: 300px;
-  margin: 0 auto $inuit-base-spacing-unit;
+  margin: 0 auto $inuit-global-spacing-unit;
  }
 
  &__logo-img{
   filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.2));
  }
  &__link {
-  @extend .btn;
+  @extend .c-btn;
   font-size: $inuit-heading-size-6;
   width: 100%;
-  @include media-query(lap-and-up){
+  @include mq($from:tablet){
    width:auto;
   }
   .hero__menu-item:last-child &{
@@ -64,8 +64,8 @@
   }
   .hero__menu-item:first-child &{
    @include btn-ghost;
-   margin-bottom: $inuit-base-spacing-unit;
-   @include media-query(lap-and-up){
+   margin-bottom: $inuit-global-spacing-unit;
+   @include mq($from:tablet){
     margin-bottom:0;
    }
   }

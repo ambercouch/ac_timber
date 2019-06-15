@@ -6,12 +6,12 @@
   }
   max-width: $site-container-width;
   margin: 0 auto;
-  padding: 0 $inuit-base-spacing-unit;
+  padding: 0 $inuit-global-spacing-unit;
   align-content: flex-start;
   text-align: right;
   display: flex;
   flex-direction: column;
-  @include media-query(desk){
+  @include mq($from:desktop){
     position: relative;
     display: block;
   }
@@ -22,14 +22,14 @@
 
     //@extend %off-page--curtain;
     max-width: 100%;
-    padding: $inuit-base-spacing-unit--small 0 $inuit-base-spacing-unit--large;
+    padding: $inuit-global-spacing-unit-small 0 $inuit-global-spacing-unit-large;
 
     bottom: 0;
 
-    @include media-query(desk){
+    @include mq($from:desktop){
       position: absolute;
       padding: 0;
-      padding-bottom:$inuit-base-spacing-unit--small;
+      padding-bottom:$inuit-global-spacing-unit-small;
       width: 40%;
     }
   }
@@ -37,15 +37,15 @@
     order: 3;
     text-align: left;
     max-width: $site-container-width;
-    @include media-query(palm){
+    @include mq($from:mobile, $until:tablet){
       display: block;
       margin-bottom: $act-unit;
     }
-    @include media-query(lap){
+    @include mq($from:tablet, $until:desktop){
       display: block;
       margin-bottom: $act-unit;
     }
-    @include media-query(desk){
+    @include mq($from:desktop){
       display: inline-block;
       width: 60%;
     }
@@ -53,17 +53,17 @@
   &__branding{
     position: absolute;
     top: 0;
-    padding-top: $inuit-base-spacing-unit--small;
+    padding-top: $inuit-global-spacing-unit-small;
 
-    @include media-query(palm){
+    @include mq($from:mobile, $until:tablet){
       display: block;
       position: static;
     }
-    @include media-query(lap){
+    @include mq($from:tablet, $until:desktop){
        display: block;
        position: static;
      }
-    @include media-query(desk){
+    @include mq($from:desktop){
       width: 40%;
     }
   }
@@ -73,7 +73,7 @@
 
 
 .grid .masthead{
-  @include media-query(desk){
+  @include mq($from:desktop){
     display: grid;
     display: -ms-grid;
     grid-template-columns: 40% 60%;

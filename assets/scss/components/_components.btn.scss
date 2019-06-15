@@ -8,7 +8,7 @@
   background: $brand-col-1;
   color: white;
   padding: $act-unit $act-unit;
-  border-radius: 0.5em;
+  border-radius: 0em;
   text-transform: uppercase;
   text-decoration: none;
   &:hover, &:focus{
@@ -35,7 +35,7 @@
     @include act-font-size($act-fs-4, 1);
     text-transform: none;
   }
-  &s{
+  &s, &small{
     @extend .c-btn;
     padding: $act-unit-t  $act-unit-s;
     @include act-font-size($act-fs-6, 1);

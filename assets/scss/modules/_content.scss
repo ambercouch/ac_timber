@@ -15,14 +15,14 @@
 .content{
   &--feature-cats{
 
-    @include media-query(lap-and-up){
+    @include mq($from:tablet){
       display: flex;
     }
 
   }
   &--archive{
 
-    @include media-query(desk){
+    @include mq($from:desktop){
       width: 75%;
       margin: 0 auto;
       max-width: 800px;

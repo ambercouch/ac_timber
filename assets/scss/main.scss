@@ -17,25 +17,25 @@
 //@import "var/settings.widths";
 //@import "var/settings.responsive";
 
-@import "../vendor/inuit-defaults/settings.defaults";
+//@import "../vendor/inuit-defaults/settings.defaults";
 @import "var/settings.colours";
 @import "var/settings.defaults";
 @import "var/settings.shadows";
 @import "var/settings.headings";
 
-@import "../vendor/inuit-responsive-settings/settings.responsive";
+//@import "../vendor/inuit-responsive-settings/settings.responsive";
 @import "var/settings.responsive";
 
-@import "../vendor/inuit-functions/tools.functions";
-@import "../vendor/inuit-mixins/tools.mixins";
-@import "../vendor/inuit-tools-widths/tools.widths";
-@import "../vendor/inuit-responsive-settings/settings.responsive";
-@import "../vendor/inuit-responsive-tools/tools.responsive";
+//@import "../vendor/inuit-functions/tools.functions";
+//@import "../vendor/inuit-mixins/tools.mixins";
+//@import "../vendor/inuit-tools-widths/tools.widths";
+//@import "../vendor/inuit-responsive-settings/settings.responsive";
+//@import "../vendor/inuit-responsive-tools/tools.responsive";
 //@import "tools.aliases";
 //
-@import "../vendor/inuit-normalize/generic.normalize";
-@import "../vendor/inuit-box-sizing/generic.box-sizing";
-@import "../vendor/inuit-shared/generic.shared";
+//@import "../vendor/inuit-normalize/generic.normalize";
+//@import "../vendor/inuit-box-sizing/generic.box-sizing";
+//@import "../vendor/inuit-shared/generic.shared";
 
 /*
  INUIT FRAME WORK
@@ -46,18 +46,18 @@
 
 @import "base";
 
-@import "../vendor/inuit-page/base.page";
-@import "../vendor/inuit-headings/base.headings";
+//@import "../vendor/inuit-page/base.page";
+//@import "../vendor/inuit-headings/base.headings";
 
 
 ////@import "base.links";
 ////@import "base.quotes";
 //
-@import "../vendor/inuit-buttons/objects.buttons";
+//@import "../vendor/inuit-buttons/objects.buttons";
 //@import "../vendor/inuit-layout/objects.layout";
 //@import "../vendor/inuit-media/objects.media";
-@import "../vendor/inuit-list-inline/objects.list-inline";
-@import "../vendor/inuit-list-bare/objects.list-bare";
+//@import "../vendor/inuit-list-inline/objects.o-list-inline";
+//@import "../vendor/inuit-list-bare/objects.list-bare";
 
 @import "mixins";
 @import "helpers";
@@ -100,10 +100,10 @@
 @import "modules/footer";
 
 @import "var/settings.widths";
-@import "../vendor/inuit-widths/trumps.widths";
-@import "../vendor/inuit-widths-responsive/trumps.widths-responsive";
-@import "../vendor/inuit-spacing/trumps.spacing";
-@import "../vendor/inuit-clearfix/trumps.clearfix";
+//@import "../vendor/inuit-widths/trumps.widths";
+//@import "../vendor/inuit-widths-responsive/trumps.widths-responsive";
+//@import "../vendor/inuit-spacing/trumps.spacing";
+//@import "../vendor/inuit-clearfix/trumps.clearfix";
 
 
 

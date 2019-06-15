@@ -4,17 +4,17 @@
 
 .navigation--primary{
   &__list{
-    @extend .list-inline;
+    @extend .o-list-inline;
     text-align: center;
   }
   &__item{
-    padding:0 $inuit-base-spacing-unit--tiny;
+    padding:0 $inuit-global-spacing-unit-tiny;
   }
   &__link{
     transition: background 0.3s ease;
     color: white;
     text-decoration: none;
-    padding: $inuit-base-spacing-unit--tiny;
+    padding: $inuit-global-spacing-unit-tiny;
     @include inuit-font-size($inuit-heading-size-6);
     font-weight:100;
     background: rgba($brand-col-1--dark, 0);

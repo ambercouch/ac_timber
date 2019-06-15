@@ -1,5 +1,5 @@
 .before-content{
-  margin-bottom: $inuit-base-spacing-unit--large;
+  margin-bottom: $inuit-global-spacing-unit-large;
 }
 .before-content{
  &--archive{
@@ -8,7 +8,7 @@
 }
 .before-content--archive{
   &__header{
-    margin-bottom:$inuit-base-spacing-unit;
+    margin-bottom:$inuit-global-spacing-unit;
   }
   &__title{
     @include brand-title();
@@ -16,7 +16,7 @@
   &__body{
     text-align: center;
     font-weight: 100;
-    @include media-query(desk){
+    @include mq($from:desktop){
       width: 75%;
       max-width: 800px;
       margin: 0 auto;

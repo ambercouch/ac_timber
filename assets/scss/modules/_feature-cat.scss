@@ -1,8 +1,8 @@
 .feature-cat{
   width: 100%;
-  padding: 0 $inuit-base-spacing-unit;
-  margin-bottom:$inuit-base-spacing-unit;
-  @include media-query(lap-and-up){
+  padding: 0 $inuit-global-spacing-unit;
+  margin-bottom:$inuit-global-spacing-unit;
+  @include mq($from:tablet){
     width: 50%;
   }
 }
