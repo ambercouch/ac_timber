@@ -7,8 +7,8 @@
       {% set defautImgId = 10 %}
       {% set itemImageId =  (thumbId == '') ?   defautImgId : thumbId %}
       {% set thumbSrc = fn('wp_get_attachment_image_url', itemImageId , 'serviceMenuLarge') %}
-      {% set thumbSrcset = fn('wp_get_attachment_image_srcset', itemImageId, 'serviceMenuLarge') %}
-      {% set thumbSizes = fn('wp_get_attachment_image_sizes' , itemImageId, 'serviceMenuLarge') %}
+      {% set thumbSrcset = fn('wp_get_attachment_image_srcset', itemImageId, 'feature500') %}
+      {% set thumbSizes = fn('wp_get_attachment_image_sizes' , itemImageId, 'feature500') %}
       {% set theExcerpt = fn('get_post_field', 'post_excerpt', objectId) %}
       {% set theContent = fn('get_post_field', 'post_content', objectId) %}
       {% set itemContent = (theExcerpt != '' )? theExcerpt:  theContent %}

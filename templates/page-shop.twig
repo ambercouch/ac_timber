@@ -4,7 +4,7 @@
 {% set templateSlug = template ?  '-'~template  : '' %}
 
 {% block before_head %}
-  <!-- page.twig -->
+  <!-- page-shop.twig -->
   <!-- template - {{ template }} -->
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
@@ -28,8 +28,7 @@
 {% endblock %}
 
 {% block subsidiary %}
-
-
+  {{ parent() }}
 {% endblock %}
 
 
