@@ -34,10 +34,8 @@ add_shortcode('act_contact', 'act_contact');
 function act_contact( $atts ) {
     extract(shortcode_atts(array(
         'row' => '',
-        'type' => 'item',
-        'event_label' => 'acContact'
+        'type' => 'item'
     ), $atts));
-
     //return 'contact' . $row;
     $contact_items = get_field('contact', 'options');
     $contact_item = $contact_items[$row - 1];
@@ -48,10 +46,10 @@ function act_contact( $atts ) {
 
     switch ($contact_type){
         case 'email':
-            $contact_link = '<a  data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'tel':
-            $contact_link = '<a data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a href="tel:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'website':
             $contact_link = '<a href="'.$contact_value.'">'.$contact_value.'</a>';
