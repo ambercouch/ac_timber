@@ -7,8 +7,8 @@
   display: inline-block;
   background: $brand-col-1;
   color: white;
-  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  border-radius: 0.5em;
+  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny !important;
+  border-radius: 2px;
   text-transform: uppercase;
   text-decoration: none;
   &:hover, &:focus{
@@ -31,7 +31,7 @@
   }
   &n{
     @extend .c-btn;
-    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
+    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small !important;
     @include act-font-size($act-fs-4, 1)
     text-transform: none;
   }

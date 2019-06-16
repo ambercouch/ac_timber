@@ -14,18 +14,27 @@ $act-grey : #ccc;
 $act-grey-light : #eee;
 $act-grey-dark : #666;
 
-$brand-col-1 : $act-grey;
-$brand-col-2 : $act-grey-light;
-$brand-col-3 : $act-grey-dark;
-$brand-col-4 : $act-grey;
-$brand-col-5 : $act-grey-light;
-$brand-col-6 : $act-grey-dark;
-$brand-col-7 : $act-grey;
-$brand-col-8 : $act-grey-light;
-$brand-col-9 : $act-grey-dark;
+$spo-amber : #ec8302;
+$spo-blue : #0a6296;
+$spo-light-blue-tint : desaturate(lighten($spo-blue, 65%), 50%);
+$spo-light-blue : desaturate(lighten($spo-blue, 60%), 30%);
+$spo-grey : #405968;
+$spo-dark-grey : #26333a;
+$spo-black : #0d1214;
+
+$brand-col-1 : $spo-dark-grey;
+$brand-col-2 : $spo-amber;
+$brand-col-3 : $spo-grey;
+$brand-col-4 : $spo-blue;
+$brand-col-5 : $spo-light-blue-tint;
+$brand-col-6 : $spo-light-blue;
+$brand-col-7 : $act-grey-dark;
+$brand-col-8 : $act-grey;
+$brand-col-9 : $act-grey-light;
+$brand-col-910 : $act-grey-dark;
 
 $col-text : $brand-col-1;
 $col-heading : $brand-col-2;
-$col-link : $brand-col-2;
-$col-accent : $brand-col-3;
+$col-link : $brand-col-3;
+$col-accent : $brand-col-4;
 

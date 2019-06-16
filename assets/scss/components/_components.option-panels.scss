@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .c-option-panels
+ */
+
+.c-option-panels {
+  display:flex;
+  @include act-font-size($inuit-font-size-small);
+  justify-content: center;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-option-panels--
+ */
+
+.c-option-panels-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-option-panels--
+
+[class*=c-option-panels--] {
+  @extend .c-option-panels;
+}
+
+/*
+  BEM ELEMENTS .c-option-panels__
+ */
+
+.c-option-panels__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &info-panel{
+    width: 25%;
+    padding: $act-unit-s;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-option-panels--
+
+[class*=c-option-panels__header--] {
+  @extend .c-option-panels__header;
+}
