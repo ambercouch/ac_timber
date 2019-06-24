@@ -19,14 +19,14 @@ ACTIMBER = {
             // ACTIMBER.fn.actStateToggle(container, showButton);
 
 
-             $('[data-control]').each(function () {
-                var dataValue = $(this).attr('data-control');
-                var showButton = $(this);
-                var container = $(this).next('[data-container='+dataValue+']');
-             ACTIMBER.fn.actStateToggle(container, showButton);
-                 console.log(container);
-            });
-            
+                 $('[data-control]').each(function () {
+                    var dataValue = $(this).attr('data-control');
+                    var showButton = $(this);
+                    var container = $(this).next('[data-container='+dataValue+']');
+                 ACTIMBER.fn.actStateToggle(container, showButton);
+                     console.log(container);
+                });
+
             /**
              * navigation.js
              *
