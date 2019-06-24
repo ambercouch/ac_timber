@@ -1,4 +1,6 @@
+
 <div class="l-subsidiary--image-quote">
+  {% if post.page_testimonial %}
   <div class="l-subsidiary__image-quote">
     <div class="c-image-quote">
       <div class="c-image-quote__bg">
@@ -21,6 +23,7 @@
       </div>
     </div>
   </div>
+  {% endif %}
 
   {% if subsidiary_widgets %}
     <div class="l-subsidiary__widgets">

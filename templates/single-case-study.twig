@@ -33,7 +33,7 @@
 {% endblock %}
 
  {% block subsidiary %}
-   {% if post.page_testimonial %}
+   {% if post.page_testimonial or subsidiary_widgets %}
    <section id="subsidiary" class="site__subsidiary">
      {% include 'inc/subsidiary-image-quote.twig' %}
    </section>
