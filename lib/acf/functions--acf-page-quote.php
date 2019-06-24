@@ -22,7 +22,7 @@ if( function_exists('acf_add_local_field_group') ):
                     0 => 'testimonial',
                 ),
                 'taxonomy' => '',
-                'allow_null' => 0,
+                'allow_null' => 1,
                 'multiple' => 0,
                 'return_format' => 'object',
                 'ui' => 1,
