@@ -50,7 +50,7 @@ function  act_cpt() {
     );
 
     register_taxonomy( 'service_category', array( 'service' ), $args );
-    
+
     //BRANDS
 
     $labels = array(
@@ -102,6 +102,111 @@ function  act_cpt() {
     );
 
     register_taxonomy( 'brand_category', array( 'brand' ), $args );
+
+
+    //STAFF
+
+    $labels = array(
+        'name' => _x('Staff', 'post type general name'),
+        'singular_name' => _x('Staff', 'post type singular name'),
+        'add_new' => _x('Add New', 'Staff'),
+        'add_new_item' => __('Add New Staff'),
+        'edit_item' => __('Edit Staff'),
+        'new_item' => __('New Staff'),
+        'all_items' => __('All Staff'),
+        'view_item' => __('View Staff'),
+        'search_items' => __('Search Staff'),
+        'not_found' => __('No Staff found'),
+        'not_found_in_trash' => __('No Staff found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Staff'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-groups',
+        'description' => 'Staff members',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'has_archive' => 'staff'
+    );
+    register_post_type('staff', $args);
+
+//Staff Categories
+    $labels = array(
+        'name'              => _x( 'Staff Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Staff Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Staff Categories' ),
+        'all_items'         => __( 'All Staff Categories' ),
+        'edit_item'         => __( 'Edit Staff Category' ),
+        'update_item'       => __( 'Update Staff Category' ),
+        'add_new_item'      => __( 'Add New Staff Category' ),
+        'new_item_name'     => __( 'New Tile Staff Category' ),
+        'menu_name'         => __( 'Staff Categories' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'staff-category' ),
+    );
+
+    register_taxonomy( 'staff_category', array( 'staff' ), $args );
+
+    //CASE STUDIES
+
+    $labels = array(
+        'name' => _x('Case Studies', 'post type general name'),
+        'singular_name' => _x('Case Study', 'post type singular name'),
+        'add_new' => _x('Add New', 'Case Study'),
+        'add_new_item' => __('Add New Case Study'),
+        'edit_item' => __('Edit Case Study'),
+        'new_item' => __('New Case Study'),
+        'all_items' => __('All Case Study'),
+        'view_item' => __('View Case Study'),
+        'search_items' => __('Search Case Study'),
+        'not_found' => __('No Case Studys found'),
+        'not_found_in_trash' => __('No Case Studys found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Case Studys'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-heart',
+        'description' => 'Case Study members',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'has_archive' => 'case-study'
+    );
+    register_post_type('case-study', $args);
+
+//Case Study Categories
+    $labels = array(
+        'name'              => _x( 'Case Study Categories', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Case Study Category', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Case Study Categories' ),
+        'all_items'         => __( 'All Case Study Categories' ),
+        'edit_item'         => __( 'Edit Case Study Category' ),
+        'update_item'       => __( 'Update Case Study Category' ),
+        'add_new_item'      => __( 'Add New Case Study Category' ),
+        'new_item_name'     => __( 'New Tile Case Study Category' ),
+        'menu_name'         => __( 'Case Study Categories' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'case-study-category' ),
+    );
+
+    register_taxonomy( 'case-study_category', array( 'case-study' ), $args );
 
 }
 
