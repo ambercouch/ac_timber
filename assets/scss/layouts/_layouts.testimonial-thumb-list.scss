@@ -3,11 +3,14 @@
  */
 
 .l-testimonial-thumb-list {
-  display: flex;
+
   max-width: 1200px;
   margin: 0 auto;
   margin-top: $act-unit-h * 1.5;
   //align-items: flex-start;
+  @include mq($from: tablet){
+    display: flex;
+  }
 }
 
 /*
@@ -50,9 +53,18 @@
     display: block
   }
   &testimonial-thumb{
-    width: 400px;
-    max-width: 25%;
-    border: none;
+        border: none;
+    width: 100%;
+    margin-bottom: $act-unit-h;
+    margin-left: 0;
+    padding-left: 0;
+    @include mq($from: tablet){
+      width: 400px;
+      max-width: 25%;
+      margin-bottom: 0;
+      margin: 0 $act-unit-t;
+
+    }
   }
 }
 

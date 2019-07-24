@@ -25,15 +25,23 @@ BEM ELEMENTS .site__
   &main{
 
   }
+  &hero{
+    margin-bottom: $act-unit-l;
+    @include mq($from : tablet){
+      margin-bottom: 0;
+    }
+  }
   &mobile-off-page{
     transition: opacity 0.3s ease-in-out;
     top: 0;
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: darken($brand-col-3, 10%);
+    background: white;
     z-index: 1000;
     opacity: 0;
+
+    padding : $act-unit ;
     padding-top: $act-unit-h;
     &[data-state=off]{
       opacity: 0 !important;

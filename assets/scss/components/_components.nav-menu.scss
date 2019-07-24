@@ -107,6 +107,9 @@
   &hero{
     margin-right: $act-unit;
   }
+  &mobile{
+    border-bottom: solid 1px $brand-col-3;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
@@ -144,22 +147,25 @@
     font-weight: 500;
   }
   &mobile{
-    padding:$act-unit-s;
+    padding:$act-unit-t;
     display: block;
-    color: white;
-    background-color: darken($brand-col-3, 15%);
-    margin-bottom: $act-unit-s;
+    color: black;
+    font-weight: 700;
+    background-color:white;
+    margin-bottom: 0;
     &:hover{
       color: white;
-      background-color: darken($brand-col-3, 20%);
+      background-color: white;
     }
     &:focus{
-      color: white;
-      background-color: darken($brand-col-3, 20%);
+        background-color: $brand-col-3, 20%;
     }
   }
   &hero{
-    color: white;
+    color: black;
+    @include mq($from : tablet){
+      color: white;
+    }
   }
   &case-studies{
     display: block;

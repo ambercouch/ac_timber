@@ -69,9 +69,14 @@ BEM ELEMENTS .c-masthead__
 
 .c-masthead__widget-area--{
   &masthead-before-widgets{
-    width: auto;
-    order: 4;
-    display: flex;
-    align-items: center;
+    display: none;
+
+    @include mq($from: tablet){
+      display: block;
+      width: auto;
+      order: 4;
+      display: flex;
+      align-items: center;
+    }
   }
 }

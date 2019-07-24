@@ -2,7 +2,7 @@
   position: fixed;
   top: $act-unit-s;
   border: 0;
-  right:  $act-unit;
+  left:  $act-unit-s;
   background: none;
   font-size: 14px;
   font-size: 0.875rem;
@@ -10,7 +10,7 @@
   height: 3.2em;
   z-index: 99999;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-  background: rgba($brand-col-3, 0.7);
+  background: rgba(white, 0.7);
   &[data-state=on]{
     //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     //right: 14rem;
@@ -24,7 +24,7 @@
   position: absolute;
   width: 1.1em;
   height: 0.2em;
-  background-color: #fff;
+  background-color: black;
 }
 .btn--menu__bar--tl{
   @extend .btn--menu__bar;

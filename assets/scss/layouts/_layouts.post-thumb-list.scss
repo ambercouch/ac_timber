@@ -3,11 +3,14 @@
  */
 
 .l-post-thumb-list {
-  display: flex;
+
   max-width: 1248px;
   margin: 0 auto $act-unit-h;
   flex-wrap: wrap;
   justify-content: centre;
+  @include mq($from: tablet){
+    display: flex;
+  }
 }
 
 /*
@@ -57,10 +60,14 @@
     display: block
   }
   &post-thumb{
-    width: 400px;
-    max-width: 32%;
+    width: 100%;
     //padding: $act-unit-l;
-    margin: 0.66%;
+    margin-bottom: $act-unit;
+    @include mq($from: tablet){
+      width: 400px;
+      max-width: 32%;
+      margin: 0.66%;
+    }
   }
 }
 

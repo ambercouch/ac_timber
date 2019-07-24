@@ -3,7 +3,10 @@
  */
 
 .o-flex-columns {
-  display: flex;
+  display: block;
+  @include mq($from: tablet){
+    display: flex;
+  }
 }
 
 /*
@@ -24,7 +27,10 @@
 .o-flex-columns--{
   &5050{
     > *{
-      width: 50%;
+      width: 100%;
+      @include mq($from : tablet){
+        width: 50%;
+      }
     }
   }
 }
