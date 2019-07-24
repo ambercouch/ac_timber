@@ -5,7 +5,7 @@ $site-wrapper-padding-tiny : $site-wrapper-padding-small / 2;
 
 .o-site-wrapper{
   @extend .o-wrapper;
-  background: $site-wrapper-color;
+ // background: $site-wrapper-color;
   padding: $site-wrapper-padding;
 }
 

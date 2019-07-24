@@ -28,8 +28,8 @@ BEM ELEMENTS .hero__
     filter: saturate(10%);
   }
   &body{
-    @extend .o-wrapper;
-    padding: $act-unit-h;
+    @extend .o-site-wrapper--responsive;
+    //padding: $act-unit-h;
     padding-bottom: $act-unit-t;
     padding-top: $act-unit-t !important;
     position: relative;
