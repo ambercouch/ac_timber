@@ -14,18 +14,19 @@
 {% block content %}
 
   {% for post in posts %}
-    {% include 'content/content-single-page'~template_slug~'.twig' %}
+    {% include ['content/content-single-page'~templateSlug~'.twig', 'content/content-single-page.twig'] %}
   {% endfor %}
 
 {% endblock %}
 
 
   {% block subsidiary %}
-    <section id="subsidiary" class="site__subsidiary">
-      <div class="subsidiary">
-      {% include 'inc/navigation-service.twig' %}
-      </div>
-    </section>
+
+{#    <section id="subsidiary" class="site__subsidiary">#}
+{#      <div class="subsidiary">#}
+{#      {% include 'inc/navigation-service.twig' %}#}
+{#      </div>#}
+{#    </section>#}
 {% endblock %}
 
 

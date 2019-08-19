@@ -39,7 +39,9 @@
       {% if afterContent is empty %}
         <!-- BLOCK afterContent DEFAULT -->
         {% if (fn('comments_open')) %}
-          {% include 'inc/comments.twig' %}
+{#          {% include 'inc/comments.twig' %}#}
+          {% else %}
+          <!-- comments Closed -->
         {% endif %}
       {% else %}
         {{ afterContent }}
