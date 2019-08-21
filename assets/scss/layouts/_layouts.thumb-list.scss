@@ -63,8 +63,20 @@
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .l-thumb-list--
+//BEM ELEMENT MODIFIER FALLBACK .l-thumb-list__header--
 
-[class*=c-thumb-list__header--] {
+[class*=l-thumb-list__header--] {
   @extend .l-thumb-list__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-thumb-list__list--
+
+[class*=l-thumb-list__list--] {
+  @extend .l-thumb-list__list;
+}
+
+.l-thumb-list__list--{
+  &case-studies{
+    justify-content: center;
+  }
 }
