@@ -66,6 +66,8 @@ BEM ELEMENTS .c-masthead__
   &branding{
     background: transparent;
     margin-bottom: 0;
+    max-width: 100%;
+    padding-right: $act-unit-l;
   }
 }
 

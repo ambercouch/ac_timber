@@ -1,0 +1,39 @@
+{% extends "base.twig" %}
+
+{% block hero %}
+{% endblock %}
+
+{% block content %}
+
+  {% do action('woocommerce_before_single_product') %}
+
+  <div itemscope itemtype="http://schema.org/Product" class="c-product{{ templateClass }} {{ post.class }}">
+
+    <div class="c-product__feature-image{{ templateClass }}">
+{#      {% do action('woocommerce_before_single_product_summary') %}#}
+      <div class="c-feature-image--single-page">
+        <img src="{{ post.thumbnail.src('shop_single') }}" />
+      </div>
+    </div>
+
+    <div class="c-product__summary">
+{#      <header class="c-product__header">#}
+{#        <h1 class="c-product__heading">{{ post.title }}</h1>#}
+{#      </header>#}
+      {% do action('woocommerce_single_product_summary') %}
+    </div>
+
+    {% do action('woocommerce_after_single_product_summary') %}
+
+    <meta itemprop="url" content="{{ post.link }}" />
+
+  </div>
+
+{#  {% include ["inc/tease-product.twig"] with { products: related_products } %}#}
+
+{#  {% do action('woocommerce_after_single_product') %}#}
+
+{% endblock  %}
+
+{% block belowContent %}
+{% endblock %}

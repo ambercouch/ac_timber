@@ -1,0 +1,86 @@
+/*
+  BEM BLOCK .c-product
+ */
+
+.c-product {
+  display: block;
+  @include mq($from: tablet){
+    display:grid;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-product--
+ */
+
+.c-product-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-product--
+
+[class*=c-product--] {
+  @extend .c-product;
+}
+
+/*
+  BEM ELEMENTS .c-product__
+ */
+
+.c-product__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block;
+  }
+  &summary{
+    margin-bottom: $act-unit-l;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product--
+
+[class*=c-product__header--] {
+  @extend .c-product__header;
+}
+
+/*Shame*/
+.product_title{
+  text-align: center;
+  @include mq($from : tablet){
+    text-align: left;
+  }
+}
+
+.c-product__feature-image img{
+  display: block;
+  margin: 0 auto;
+}
+.woocommerce div.product form.cart .button {
+  vertical-align: middle;
+  float: none;
+  width: 100%;
+  @include mq($from : tablet){
+    width: auto;
+  }
+}

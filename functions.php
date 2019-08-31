@@ -35,6 +35,18 @@ function theme_add_woocommerce_support() {
 
 add_action( 'after_setup_theme', 'theme_add_woocommerce_support' );
 
+function timber_set_product( $post )
+{
+    global $product;
+
+    if (is_woocommerce())
+    {
+        $product = wc_get_product($post->ID);
+    }
+}
+
+//remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
+
 //function comment_layout($comment, $args, $depth) {
 //    $GLOBALS['comment'] = $comment;
 //return 'commenters';
