@@ -29,6 +29,11 @@ require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
 require_once get_template_directory() . '/lib/functions--walkers.php';
 
+function theme_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+add_action( 'after_setup_theme', 'theme_add_woocommerce_support' );
 
 //function comment_layout($comment, $args, $depth) {
 //    $GLOBALS['comment'] = $comment;
