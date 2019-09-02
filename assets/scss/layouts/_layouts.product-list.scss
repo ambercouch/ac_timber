@@ -1,0 +1,98 @@
+/*
+  BEM BLOCK .l-product-list
+ */
+
+.l-product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  & > * {
+    padding: $act-unit;
+    @include mq($from : tablet){
+      width: 33.33%;
+    }
+    @include mq($from : desktop){
+      width: 25%;
+    }
+  }
+
+  .media-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .entry-title{
+    @include act-font-size($inuit-font-size-h4);
+    margin-bottom: $act-unit-t;
+    a{
+      text-decoration: none;
+    }
+  }
+  .price{
+    display: block;
+    margin-bottom: $act-unit-t;
+  }
+  .add_to_cart_button{
+    width: 100%;
+    background-color: $brand-col-3 !important;
+    text-align: center;
+    color: white !important;
+    cursor: pointer;
+    &:hover{
+      background-color: darken($brand-col-3, 10%) !important;
+    }
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .l-product-list--
+ */
+
+.l-product-list-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-product-list--
+
+[class*=l-product-list--] {
+  @extend .l-product-list;
+}
+
+/*
+  BEM ELEMENTS .l-product-list__
+ */
+
+.l-product-list__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-product-list--
+
+[class*=l-product-list__header--] {
+  @extend .l-product-list__header;
+}

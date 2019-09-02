@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .c-before-product-list
+ */
+
+.c-before-product-list {
+  display: block;
+ @include inuit-clearfix();
+}
+
+/*
+  BEM BLOCK MODIFIER .c-before-product-list--
+ */
+
+.c-before-product-list-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-before-product-list--
+
+[class*=c-before-product-list--] {
+  @extend .c-before-product-list;
+}
+
+/*
+  BEM ELEMENTS .c-before-product-list__
+ */
+
+.c-before-product-list__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-before-product-list--
+
+[class*=c-before-product-list__header--] {
+  @extend .c-before-product-list__header;
+}

@@ -5,7 +5,16 @@
 .c-product {
   display: block;
   @include mq($from: tablet){
-    display:grid;
+    display:grid !important;
+    grid-template-columns: 50% 50%;
+  }
+  .wc-tabs-wrapper{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .related{
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
 
