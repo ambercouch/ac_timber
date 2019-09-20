@@ -57,3 +57,13 @@ BEM ELEMENTS .hero__
   }
 
 }
+
+[class*=hero__body--]{
+  @extend .hero__body;
+}
+
+.hero__body--{
+  &home{
+
+  }
+}
