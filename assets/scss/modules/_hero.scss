@@ -14,7 +14,7 @@ BEM ELEMENTS .hero__
 .hero__{
   &background{
     width:100%;
-    height: 640px;
+    height: 100%;
     position: absolute;
   }
   &background-img{
@@ -27,18 +27,19 @@ BEM ELEMENTS .hero__
     position: absolute;
     width: 100%;
     top: 50%;
-    transform: translate(0%, -50%);
+    transform: translate(0, -50%);
     color: white;
+    z-index: 2;
   }
   &content{
-    background: rgba($brand-col-3, 0.7);
     display: inline-block;
     padding: $act-unit-s;
     position: absolute;
     left: 50%;
-    transform: translate(0, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
-    max-width: 40%;
+    max-width: 100%;
+    width: 1200px;
   }
  &menu{
   @extend .o-list-inline;

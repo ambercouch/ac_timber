@@ -1,0 +1,93 @@
+<!-- ACF Hero CSS -->
+<style>
+
+  {% if cssBannerImageHeight %}
+  .hero{
+    height: {{ cssBannerImageHeight }} !important;
+    min-height: unset !important;
+  }
+  {% else %}
+  /* NO cssBannerImageHeight */
+  {% endif %}
+
+  {% if cssBannerImagePositionHorizontal %}
+  .hero__background-img{
+    object-position: {{ cssBannerImagePositionHorizontal }} ;
+  }
+  {% else %}
+  /* NO cssBannerImagePositionHorizontal */
+  {% endif %}
+
+  {% if fn('is_front_page') and cssBannerImageSaturation %}
+  .hero__background-img {
+    -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
+    filter: saturate({{ cssBannerImageSaturation }}%) !important;
+  }
+  {% else %}
+  /* NO cssBannerImageSaturation */
+  {% endif %}
+
+  {% if  cssPageBannerImageSaturation %}
+  .hero__background-img {
+    -webkit-filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
+    filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
+  }
+  {% else %}
+  /* NO cssBannerImageSaturation */
+  {% endif %}
+
+  {% if fn('is_front_page') and cssBannerColourCast %}
+  .hero__background:before{
+    display: block !important;
+    background: {{cssBannerColourCastColour}} !important;
+    opacity: {{cssBannerColourCastOpacity}} !important;
+    mix-blend-mode: {{cssBannerColourCastMode}} !important;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transition: all .5s ease;
+  }
+  {% else %}
+  /* NO cssBannerColourCast */
+  {% endif %}
+
+  {% if cssPageBannerColourCast %}
+  .hero__background:before{
+    display: block !important;
+    background: {{cssPageBannerColourCastColour}} !important;
+    opacity: {{cssPageBannerColourCastOpacity}} !important;
+    mix-blend-mode: {{cssPageBannerColourCastMode}} !important;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transition: all .5s ease;
+  }
+  {% else %}
+  /* NO cssPageBannerColourCast */
+  {% endif %}
+
+  {% if cssPageBannerImageHeight %}
+  .hero{
+    height: {{ cssPageBannerImageHeight }} !important;
+    min-height: unset !important;
+  }
+  {% else %}
+  /* NO cssPageBannerImageHeight */
+  {% endif %}
+
+  {% if cssPageBannerImagePositionHorizontal %}
+  .hero__background-img{
+    object-position: {{ cssPageBannerImagePositionHorizontal }} ;
+  }
+  {% else %}
+  /* NO cssPageBannerImagePositionHorizontal */
+  {% endif %}
+
+
+</style>
