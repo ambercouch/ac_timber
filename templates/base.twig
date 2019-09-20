@@ -14,21 +14,14 @@
 
   {% include 'inc/favicon.twig' %}
 
+  <!-- Critical CSS -->
   <style>
     {% include 'critical.css' ignore missing %}
   </style>
 
+  <!-- Dynamic CSS -->
+  {% include 'inc/dynamic-styles.twig' %}
 
-<style>
-
-  {% if cssBannerImageSaturation %}
-  .hero__background-img {
-    -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
-    filter: saturate({{ cssBannerImageSaturation }}%) !important;
-  }
-  {% endif %}
-
-</style>
   {{ fn('wp_head') }}
 
   {% block after_head %}

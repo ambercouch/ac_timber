@@ -1,33 +1,40 @@
+{% if not fn('is_front_page') %}
+  {%   set bannerImg = pageBannerImg %}
+  {%   set bannerLogo = pageBannerLogo %}
+  {%   set bannerContent = pageBannerContent %}
+  {%   set menuName = pageBannerMenuName %}
+{% else %}
+  {% set menuName = "hero" %}
+{% endif %}
+
 <div class="hero" >
   <div class="hero__container">
 
     <div class="hero__background">
-      <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
+      {% if bannerImg.url != '' %}
+        <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
+      {% endif %}
     </div>
 
 
-    <div class="hero__body">
+    <div class="hero__body{{ templateClass }}">
 
       {% if bannerLogo.url != '' %}
-      <div class="hero__logo">
+        <div class="hero__logo">
           <img class="hero__logo-img" src=" {{  bannerLogo.url  }}" alt="{{ bannerLogo.alt }}">
-      </div>
+        </div>
       {% endif %}
 
       {% if  bannerContent != '' %}
-      <div class="hero__content">
-        {{  bannerContent  }}
-      </div>
+        <div class="hero__content">
+          {{  bannerContent  }}
+        </div>
       {% endif %}
 
-      {% if not hideBannerMenu %}
-      <div class="hero__call-to-action">
-        <ul class="hero__menu">
-          {% for item in menuHero.get_items %}
-          <li class="hero__menu__item {{item.classes | join(' ')}}"><a class="hero__link " href="{{item.get_link}}" >{{item.title}}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
+      {% if not hideBannerMenu and menuName != '' %}
+        <div class="hero__call-to-action">
+          {% include 'inc/navigation.twig' %}
+        </div>
       {% endif %}
     </div>
   </div>

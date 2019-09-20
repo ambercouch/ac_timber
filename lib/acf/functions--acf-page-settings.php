@@ -37,17 +37,26 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => 'Hide',
                 'default_value' => 0,
             ),
+            array (
+                'key' => 'field_show_page_comments',
+                'label' => 'Show Page Comments',
+                'name' => 'show_page_comments',
+                'type' => 'true_false',
+                'instructions' => 'This option will show the page comment even if they are hidden globally',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Show Comments',
+                'default_value' => 0,
+            ),
 
 
         ),
         'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'post',
-                ),
-            ),
             array (
                 array (
                     'param' => 'post_type',
@@ -57,7 +66,7 @@ if( function_exists('acf_add_local_field_group') ):
             ),
         ),
         'menu_order' => 0,
-        'position' => 'normal',
+        'position' => 'side',
         'style' => 'default',
         'label_placement' => 'top',
         'instruction_placement' => 'label',
