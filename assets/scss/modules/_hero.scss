@@ -48,6 +48,7 @@ BEM ELEMENTS .hero__
   &logo{
     display: block;
     padding: 0 $act-unit;
+    margin-bottom: $act-unit-l;
   }
   &logo-img{
     display: block;

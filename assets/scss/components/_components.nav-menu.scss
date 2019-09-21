@@ -13,7 +13,6 @@
 .c-nav-menu-- {
   &primary {
    @include act-font-size($inuit-font-size-h6, 1.3);
-
   }
 }
 
@@ -32,6 +31,8 @@
    @extend .o-list-bare;
    margin-bottom: 0;
    justify-content: flex-end;
+   display: flex;
+
  }
   &link{
     text-decoration: none;
@@ -47,6 +48,12 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
+  }
+  &social{
+    flex-direction: column;
+  }
+  &hero{
+    @extend .o-list-flex--center;
   }
 }
 
@@ -78,9 +85,26 @@
       color: $brand-col-2;
     }
   }
+  &hero{
+    color: white;
+    @extend .o-btn--ghost;
+    @extend .o-btn;
+    @extend .o-btn--s;
+    width: 100px;
+    max-width: 25vw;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    &:hover{
+      color: $brand-col-4 !important;
+      //background: rgba(255,255,255, .1) !important;
+
+    }
+  }
   &mobile{
     padding:$act-unit-s;
     display: block;
+
     color: white;
     background-color: darken($brand-col-3, 15%);
     &:hover{
@@ -91,6 +115,7 @@
       color: white;
       background-color: darken($brand-col-3, 20%);
     }
+
   }
 }
 

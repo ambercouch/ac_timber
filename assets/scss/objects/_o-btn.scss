@@ -1,11 +1,10 @@
 .o-btn{
   transition: background 0.3s ease;
   display: inline-block;
-  line-height:1;
   width: auto;
   border: none;
-  padding: $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
-  @include inuit-font-size($inuit-font-size-h5, 1);
+  padding: $act-unit;
+  @include inuit-font-size($act-fs-4, 1);
   background: $brand-col-1;
   color: #fff;
   text-decoration: none;
@@ -16,10 +15,73 @@
     background: darken($brand-col-1, 5%);
     color: #fff;
   }
+  a{
+    text-decoration: none;
+  }
 }
 
-.o-btn--tiny{
+[class*=o-btn--]{
   @extend .o-btn;
-  padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny;
-  @include inuit-font-size($milli-size, 1);
+}
+.o-btn--{
+  &s{
+    @extend .o-btn;
+    padding: $act-unit-s !important;
+    @include act-font-size($act-fs-5);
+  }
+  &t {
+    @extend .o-btn;
+    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny !important;
+    @include inuit-font-size($milli-size, 1);
+  }
+  &ghost{
+    background: transparent !important;
+    border: solid 1px;
+    &.o-btn--brand-1{
+      &:hover{
+        background: rgba($brand-col-1, .8) !important;
+      }
+    }
+    &.o-btn--brand-2{
+      &:hover{
+        background: rgba($brand-col-2, .8) !important;
+      }
+    }
+
+  }
+  &transparent{
+    @extend .o-btn;
+    background: transparent;
+  }
+  &rounded {
+    @extend .o-btn;
+    border-radius: $act-unit;
+    padding: $act-unit-s $act-unit;
+  }
+  &brand-1{
+    @extend .o-btn;
+    background: $brand-col-1;
+    border-color: $brand-col-1;
+    &:hover{
+      background: darken($brand-col-1, 10%);
+    }
+    a:hover{
+      color: white;
+    }
+  }
+  &brand-2{
+    @extend .o-btn;
+    background: $brand-col-2;
+    border-color: $brand-col-2;
+    &:hover{
+      background: darken($brand-col-2, 10%);
+    }
+    a:hover{
+      color: white;
+    }
+  }
+  &icon{
+    display:inline-flex;
+    justify-content: space-between;
+  }
 }

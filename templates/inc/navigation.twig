@@ -1,0 +1,25 @@
+
+{% set menuName = (menuName) ? menuName : 'primary' %}
+{% set menu = _context['menu' ~ menuName | capitalize ] %}
+<div class="c-nav-menu--{{ menuName }}">
+  <ul class="c-nav-menu__list--{{ menuName }}">
+    {% for item in  menu.get_items %}
+      <li class="c-nav-menu__item--{{ menuName }} {{item.classes | join(' ')}}">
+        <a class="c-nav-menu__link--{{ menuName }}" href="{{item.get_link}}">
+          <span class="c-nav-menu__link-label--{{ menuName }}">{{item.title}}</span>
+        </a>
+        {% if item.get_children %}
+          <div class="c-nav-menu__sub-menu--{{ menuName }}">
+            <ul class="c-nav-menu__sub-menu-list--{{ menuName }}">
+              {% for child in item.get_children %}
+                <li class="c-nav-menu__item-sub-menu-item--{{ menuName }}">
+                  <a href="{{child.get_link}}">{{child.title}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
