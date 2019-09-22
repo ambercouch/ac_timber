@@ -108,3 +108,14 @@ function timber_set_product( $post )
 //}
 //// Attach callback to 'tiny_mce_before_init'
 //add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
+
+
+add_filter('woocommerce_thankyou_order_received_text', 'woo_change_order_received_text', 10, 2 );
+function woo_change_order_received_text( $str, $order ) {
+    $output = '';
+        $output .= '<b>'.esc_html( 'Thank you for shopping with No Waste Living.', 'act' ).'</b><br>';
+        $output .= 'We have sent you and email to confirm your order details.<br>';
+        $output .= 'For information on shipping and collections please see our <a href="/shipping" title="Shipping and Collections">shipping page</a>.<br>';
+        $output .= 'Once your order is complete and your goods have been dispatch or are ready for collection we will email you with any further information.<br>';
+    return $output;
+}
