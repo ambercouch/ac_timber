@@ -136,7 +136,7 @@
   }
 
   &content-link{
-    @extend .o-btn--tiny;
+    @extend .o-btn--t;
     text-decoration: none;
     @include mq($from : tablet){
       margin-bottom:$inuit-global-spacing-unit-tiny;

@@ -1,11 +1,10 @@
 .o-btn{
   transition: background 0.3s ease;
   display: inline-block;
-  line-height:1;
   width: auto;
   border: none;
-  padding: $act-unit-s !important;
-  @include inuit-font-size($inuit-font-size-h5, 1);
+  padding: $act-unit;
+  @include inuit-font-size($act-fs-4, 1);
   background: $brand-col-1;
   color: #fff;
   text-decoration: none;
@@ -21,11 +20,16 @@
   }
 }
 
-[class*=o-btn]{
+[class*=o-btn--]{
   @extend .o-btn;
 }
 .o-btn--{
-  &tiny {
+  &s{
+    @extend .o-btn;
+    padding: $act-unit-s !important;
+    @include act-font-size($act-fs-5);
+  }
+  &t {
     @extend .o-btn;
     padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny !important;
     @include inuit-font-size($milli-size, 1);
@@ -43,6 +47,7 @@
         background: rgba($brand-col-2, .8) !important;
       }
     }
+
   }
   &transparent{
     @extend .o-btn;
@@ -74,5 +79,9 @@
     a:hover{
       color: white;
     }
+  }
+  &icon{
+    display:inline-flex;
+    justify-content: space-between;
   }
 }

@@ -55,11 +55,8 @@ BEM ELEMENTS .hero__
    display: flex;
  }
   &logo{
-    text-align: center;
-    max-height:100%;
-    height: 100%;
-    padding: $act-unit;
-    height: 400px;
+    display: block;
+    padding: 0 $act-unit;
   }
   &logo-img{
     display: block;

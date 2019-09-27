@@ -12,7 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($inuit-font-size-h5, 1.3);
+   @include act-font-size($inuit-font-size-h6, 1.3);
   }
   &secondary {
     @include act-font-size($inuit-font-size-h5, 1.3);
@@ -37,6 +37,8 @@
    @extend .o-list-bare;
    margin-bottom: 0;
    justify-content: flex-end;
+   display: flex;
+
  }
   &item{
     position: relative;
@@ -89,6 +91,9 @@
   &social{
     @extend .o-list-flex;
     justify-content: flex-start;
+  }
+  &hero{
+    @extend .o-list-flex--center;
   }
 }
 
@@ -145,6 +150,7 @@
   &mobile{
     padding:$act-unit-s;
     display: block;
+
     color: white;
     background-color: darken($brand-col-3, 15%);
     margin-bottom: $act-unit-s;
@@ -156,6 +162,7 @@
       color: white;
       background-color: darken($brand-col-3, 20%);
     }
+
   }
 }
 
@@ -175,4 +182,8 @@
 }
 
 
-
+.c-nav-menu__item--social{
+  .mobile-nav-widgets &{
+    margin-bottom: $act-unit;
+  }
+}
