@@ -11,9 +11,9 @@
 
 {% block hero %}
   {% if pageBannerImg != '' or cssPageBannerColourCast != '' or  cssPageBannerColourCastColour != ''%}
-  <section id="siteHero" class="site__hero{{ templateClass }}">
-    {% include 'inc/hero.twig' ignore missing %}
-  </section>
+    <section id="siteHero" class="site__hero{{ templateClass }}">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
   {% endif %}
 {% endblock %}
 

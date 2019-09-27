@@ -17,6 +17,15 @@
 .u-fs6{
   @include act-font-size($inuit-font-size-h6);
 }
+.u-fsk{
+  @include act-font-size($act-fs-k);
+}
+.u-fsm{
+  @include act-font-size($act-fs-m);
+}
+.u-fsg{
+   @include act-font-size($act-fs-g);
+ }
 
 //Font weight
 .u-fw100 {

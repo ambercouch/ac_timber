@@ -4,7 +4,7 @@
   {% if cssBannerImageHeight %}
   .hero{
     height: {{ cssBannerImageHeight }} !important;
-    //min-height: unset !important;
+    min-height: unset !important;
   }
   {% else %}
   /* NO cssBannerImageHeight */
@@ -18,10 +18,19 @@
   /* NO cssBannerImagePositionHorizontal */
   {% endif %}
 
-  {% if cssBannerImageSaturation %}
+  {% if fn('is_front_page') and cssBannerImageSaturation %}
   .hero__background-img {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
+  }
+  {% else %}
+  /* NO cssBannerImageSaturation */
+  {% endif %}
+
+  {% if  cssPageBannerImageSaturation %}
+  .hero__background-img {
+    -webkit-filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
+    filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
   }
   {% else %}
   /* NO cssBannerImageSaturation */
@@ -61,6 +70,23 @@
   }
   {% else %}
   /* NO cssPageBannerColourCast */
+  {% endif %}
+
+  {% if cssPageBannerImageHeight %}
+  .hero{
+    height: {{ cssPageBannerImageHeight }} !important;
+    min-height: unset !important;
+  }
+  {% else %}
+  /* NO cssPageBannerImageHeight */
+  {% endif %}
+
+  {% if cssPageBannerImagePositionHorizontal %}
+  .hero__background-img{
+    object-position: {{ cssPageBannerImagePositionHorizontal }} ;
+  }
+  {% else %}
+  /* NO cssPageBannerImagePositionHorizontal */
   {% endif %}
 
 

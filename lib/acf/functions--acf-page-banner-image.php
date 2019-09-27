@@ -83,7 +83,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_page_banner_image_saturation',
                 'label' => 'Image Saturation',
-                'name' => 'banner_page_image_saturation',
+                'name' => 'page_banner_image_saturation',
                 'type' => 'number',
                 'instructions' => 'Adjust the image saturation',
                 'required' => 0,
@@ -218,6 +218,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'page',
+                ),
+            ),
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'service',
                 ),
             ),
         ),
