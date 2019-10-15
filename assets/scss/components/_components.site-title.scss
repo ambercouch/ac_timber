@@ -8,6 +8,7 @@ BEM BLOCK .c-site-title
   width: 300px;
   height: 60px;
   max-width:100%;
+  margin-bottom: $act-unit-s !important;
 
 }
 
@@ -33,7 +34,7 @@ BEM BLOCK MODIFIERS .c-site-title
     font-family: $act-font-family-serif;
     font-weight: 600;
     display: block;
-    margin-bottom: 0;
+    margin-bottom: $act-unit-s;
     @include act-font-size($inuit-font-size-h1,1);
     @include mq($from: tablet){
       @include size(auto);
@@ -48,6 +49,7 @@ BEM ELEMENTS .c-site-title
 .c-site-title__{
   &heading{
     line-height:1;
+    margin-bottom: $act-unit-s;
   }
   &link{
     @include act-font-size($inuit-font-size-h1,1);

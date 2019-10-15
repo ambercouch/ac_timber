@@ -1,5 +1,5 @@
-<div class="navigation--service">
-  <ul class="navigation__list--service">
+<div class="c-nav-menu--service">
+  <ul class="c-nav-menu__list--service">
     {% for item in menuService.get_items %}
       {% set objectId = item._menu_item_object_id  %}
       {#{% set thumb = fn('get_the_post_thumbnail', objectId) %}#}
@@ -13,34 +13,33 @@
       {% set theContent = fn('get_post_field', 'post_content', objectId) %}
       {% set itemContent = (theExcerpt != '' )? theExcerpt:  theContent %}
 
-      <li class="navigation__item--service">
-        <div class="navigation__image-menu-item" >
-          <div class="image-menu-item">
-            <a class="image-menu-item__image-link" href="{{item.url}}">
-              <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
+      <li class="c-nav-menu__item--service">
+        <div class="c-nav-menu__post-thumb" >
+          <div class="c-post-thumb--image-menu">
+            <a class="c-post-thumb__image-link--image-menu" href="{{item.url}}">
+              <img class="c-post-thumb__img--image-menu" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
 
-              <div class="image-menu-item__wrapper">
-            <div class="image-menu-item__header">
-            <h3 class="image-menu-item__heading">
-              <span class="image-menu-item__title" >{{ item.title }}</span>
+              <div class="c-post-thumb__wrapper--image-menu">
+            <div class="c-post-thumb__header--image-menu">
+            <h3 class="c-post-thumb__heading--image-menu">
+              <span class="c-post-thumb__title--image-menu" >{{ item.title }}</span>
             </h3>
             </div>
               {% if serviceMenuShowExcerpt  == 1 %}
-              <div class="body">
-                <div class="image-menu-item__content">
-                  <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
+              <div class="c-post-thumb__body--image-menu">
+                <div class="c-post-thumb__content--image-menu">
+                  <h6 class="c-post-thumb__content-heading--image-menu" >{{ item.title }}</h6>
                   {{ itemContent }}
-                  <hr class="image-menu-item__content-hr">
+                  <hr class="c-post-thumb__sep--image-menu">
                   {% if fn('get_field','hide_service_content_link', objectId) == 1  or fn('get_post_field','post_content', objectId ) == '' %}
                     <!-- content link removed -->
                     <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
                   {% else %}
                     <!-- content link  -->
                     <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
-                    <a href="{{item.url}}" class="image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
+                    <a href="{{item.url}}" class="c-post-thumb__content-link--image-menu" title="{{ item.title }}">Find Out More</a>
                   {% endif %}
-                  <a href="#custom_html-4" class="image-menu-item__content-link" title="Contact us to find out more">Contact Us</a>
-
+                  <a href="#custom_html-4" class="c-post-thumb__content-link--image-menu" title="Contact us to find out more">Contact Us</a>
                 </div>
               </div>
               {% endif %}

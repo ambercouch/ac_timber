@@ -12,7 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($inuit-font-size-h6, 1.3);
+   @include act-font-size($inuit-font-size-h5, 1.3);
   }
   &secondary {
     @include act-font-size($inuit-font-size-h5, 1.3);
@@ -95,6 +95,10 @@
   &hero{
     @extend .o-list-flex--center;
   }
+  &service{
+    @extend .o-list-flex--center;
+    flex-wrap: wrap;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
@@ -111,6 +115,14 @@
   &hero{
     margin-right: $act-unit;
   }
+  &service{
+    @extend .u-1-3--wide;
+    @extend .u-1-3--desktop;
+    @extend .u-1-3--tablet;
+    @extend .u-1-2--mobile;
+    margin: 0;
+    padding: $act-unit-t;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
@@ -123,20 +135,21 @@
   &primary{
     padding:$act-unit-t / 2 $act-unit-t;
     display: block;
-    color: black;
     background: transparent;
-    text-transform: uppercase;
     font-weight: 500;
-    &:hover{
-      color: darken($brand-col-2, 10%);
-      background: transparent;
-    }
+
     .c-nav-menu__item:last-child &{
       padding-right: 0;
     }
     .current-menu-item &{
-      color: darken($brand-col-2, 5%);
+      color: lighten($col-link-hover, 5%);
       font-weight: 700;
+      &:after{
+        content:'';
+        border-bottom: solid 1px;
+        display: block;
+        width: 100%;
+      }
     }
 
   }
@@ -166,6 +179,16 @@
   }
 }
 
+[class*=c-nav-menu__link-label--] {
+  @extend .c-nav-menu__link-label !optional;
+}
+
+.c-nav-menu__link-label--{
+  &primary{
+    display: block;
+    padding-bottom: $act-unit-s;
+  }
+}
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
 

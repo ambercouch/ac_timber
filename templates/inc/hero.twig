@@ -3,11 +3,12 @@
   {%   set bannerLogo = pageBannerLogo %}
   {%   set bannerContent = pageBannerContent %}
   {%   set menuName = pageBannerMenuName %}
+  {%  set classMod = '--page' %}
 {% else %}
   {% set menuName = "hero" %}
 {% endif %}
 
-<div class="hero" >
+<div class="hero{{ classMod }}" >
   <div class="hero__container">
 
     <div class="hero__background">

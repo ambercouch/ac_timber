@@ -8,6 +8,9 @@ BEM BLOCK .hero
   height: 100vh;
   position: relative;
 }
+[class*=hero--]{
+  @extend .hero;
+}
 
 /*
 BEM ELEMENTS .hero__

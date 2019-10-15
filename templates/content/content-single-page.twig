@@ -1,6 +1,6 @@
 <article id="post-{{ post.id }}" class="single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
-  {% if(post.thumbnail or acSettings.defaultImage) %}
+  {% if((post.thumbnail or acSettings.defaultImage) and pageSettingsHideFeatureImage == false) %}
     <div class="single-page__feature-image{{ templateClass }} ">
       <div class="feature-image--single-page">
         {% if(post.thumbnail.src()) %}

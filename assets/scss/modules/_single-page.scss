@@ -9,6 +9,7 @@
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    text-align: center !important;
   }
 
   &heading{
@@ -22,6 +23,7 @@
   &title{
     line-height: 1;
     display: block;
+    font-weight: bold;
   }
 
   &feature-image{
