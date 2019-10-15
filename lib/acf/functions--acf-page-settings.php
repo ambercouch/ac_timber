@@ -38,6 +38,22 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => 0,
             ),
             array (
+                'key' => 'field_hide_feature_image',
+                'label' => 'Hide Feature Image',
+                'name' => 'hide_feature_image',
+                'type' => 'true_false',
+                'instructions' => 'This option will hide the the feature image from the page so it is only shown in menus and list',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Hide',
+                'default_value' => 0,
+            ),
+            array (
                 'key' => 'field_show_page_comments',
                 'label' => 'Show Page Comments',
                 'name' => 'show_page_comments',
