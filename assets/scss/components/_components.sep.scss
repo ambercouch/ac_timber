@@ -1,0 +1,68 @@
+/*
+  BEM BLOCK .c-sep
+ */
+
+.c-sep {
+  display: block;
+  color: $brand-col-2;
+  border:none;
+  border-bottom:solid 1px;
+  padding-top: $act-unit;
+  margin: 0 $act-unit $act-unit-l;
+  @include mq($from : desktop){
+    max-width: 50%;
+    margin: 0 auto $act-unit-l;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-sep--
+ */
+
+.c-sep-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-sep--
+
+[class*=c-sep--] {
+  @extend .c-sep;
+}
+
+/*
+  BEM ELEMENTS .c-sep__
+ */
+
+.c-sep__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-sep--
+
+[class*=c-sep__header--] {
+  @extend .c-sep__header;
+}
