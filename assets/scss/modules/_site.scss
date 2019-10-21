@@ -25,6 +25,14 @@ BEM ELEMENTS .site__
   &main{
 
   }
+  &subsidiary{
+    display: none;
+    background: desaturate(lighten($brand-col-2, 55%),50%);
+    padding-top: $act-unit-l;
+    .home &{
+      display: block;
+    }
+  }
   &mobile-off-page{
     transition: opacity 0.3s ease-in-out;
     top: 0;
