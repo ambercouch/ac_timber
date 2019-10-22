@@ -1,0 +1,32 @@
+
+.o-constant-ratio {
+  width: 100%;
+  display: block;
+}
+
+.o-constant-ratio::before {
+  content: '';
+  padding-top: 100%;
+  float: left;
+}
+.o-constant-ratio::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.o-constant-ratio-- {
+  &aligned-content{
+    @extend .o-constant-ratio;
+    position: relative;
+  }
+}
+
+.o-constant-ratio--aligned-content{
+  & > *{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

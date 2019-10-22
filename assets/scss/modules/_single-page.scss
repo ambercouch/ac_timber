@@ -12,3 +12,14 @@
   }
  }
 }
+
+[class*=single-page__body--]{
+ @extend .single-page__body;
+}
+
+.single-page__body--{
+ &full-width{
+  width: 100%;
+  max-width:none;
+ }
+}

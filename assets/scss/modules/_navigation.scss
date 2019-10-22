@@ -1,5 +1,6 @@
 .navigation--primary{
 //  display: none;
+
 }
 
 .navigation--primary{
@@ -9,6 +10,7 @@
   }
   &__item{
     padding:0 $inuit-global-spacing-unit-tiny;
+    @extend .o-list-inline__item;
   }
   &__link{
     transition: background 0.3s ease;
