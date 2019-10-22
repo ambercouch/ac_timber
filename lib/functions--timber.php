@@ -19,6 +19,15 @@ class StarterSite extends TimberSite {
         add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
+
+        // Register all the menu locations.
+        foreach (unserialize(ACT_MENUS) as $menu)
+        {
+            register_nav_menus(array(
+                strtolower($menu) => esc_html__(ucfirst($menu), '_act'),
+            ));
+        }
+
         parent::__construct();
     }
 
@@ -43,10 +52,26 @@ class StarterSite extends TimberSite {
         //Template settings
         $context['acSettings'] = acSettings();
 
+        //Set up Menus defined functions--ac-menus.php
+        foreach (unserialize(ACT_MENUS) as $menu){
+            //Menus
+            if($menu == 'Primary'){
+                //Alway make the primary menu will fallback to page menu
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }elseif (has_nav_menu( strtolower($menu) )){
+                //Only create the timber menus if they exist as we don't want fallback
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }else{
+                //$context['menu'.ucfirst($menu)] = 'no menu - '.strtolower($menu);
+            }
+        }
+
         //Primary Menu
         $context['menuPrimary'] = new TimberMenu('primary');
 
-        $context['menuHero'] = new TimberMenu('hero');
+       // $context['menuTest'] = new TimberMenu('menutest');
+
+        //$context['menuHero'] = new TimberMenu('hero');
 
         $context['bannerImage'] = get_field('banner_image', 'options');
 

@@ -34,6 +34,10 @@ BEM BLOCK ELEMENTS .c-single-page__
     padding: $act-unit $act-unit-l 0;
     margin-bottom:$act-unit-l;
 
+    .home &{
+      display:none;
+    }
+
     @include mq($from : tablet){
       padding: $act-unit $act-unit-h  0;
     }

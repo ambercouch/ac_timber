@@ -31,6 +31,10 @@
   </header>
   {% endblock %}
 
+  {% block mobile_nav %}
+    {% include 'inc/mobile-nav.twig' %}
+  {% endblock %}
+
   {% block hero %}
     <section class="site__hero">
       {% include 'inc/hero.twig' %}
@@ -94,27 +98,8 @@
 
 
 
-<script>
 
-  var showButton, container;
 
-  showButton = document.getElementById('menuButton');
-  container = document.getElementById('primaryNavigation');
-
-  console.log(showButton);
-  showButton.onclick = function () {
-    console.log(showButton.dataset.state);
-    if ('off' === showButton.dataset.state) {
-      showButton.dataset.state = 'on';
-      container.dataset.state = 'on';
-    } else {
-      showButton.dataset.state = 'off';
-      container.dataset.state = 'off';
-    }
-    console.log(showButton.dataset.state);
-  }
-
-</script>
 </body>
 
 </html>

@@ -88,6 +88,7 @@
   &--more{
     @extend .widget_act_tax_info__menu-link;
     @include btn-ghost($brand-col-1, $brand-col-1, false, 3px, $brand-col-1, 0.05 );
+    white-space: nowrap;
   }
   &--contact{
     @extend .widget_act_tax_info__menu-link;

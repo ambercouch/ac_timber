@@ -2,11 +2,43 @@
 
 }
 
-.site{
-  &__masthead{
+.site__{
+  &masthead{
     background: $brand-col-1;
   }
-  &__main{
+  &mobile-off-page{
+    @include mq($from: desktop){
+      display: none;
+    }
+    .home &{
+      display: block;
+    }
+
+    transition: opacity 0.3s ease-in-out;
+    top: 0;
+    right: 0;
+    width: auto;
+    max-width: 100%;
+    height: 100vh;
+    position: fixed;
+    background: white;
+    z-index: 1000;
+    opacity: 0;
+
+    padding : $act-unit ;
+    padding-top: $act-unit-h * 1.5;
+    &[data-state=off]{
+      opacity: 0 !important;
+      @include inuit-hidden-visually();
+    }
+    &[data-state=on]{
+      opacity: 1;
+    }
+    @include mq($from : desktop){
+      //display: none !important;
+    }
+  }
+  &main{
     background: white;
 
     body.home &{
@@ -14,7 +46,9 @@
       margin-bottom:$inuit-global-spacing-unit;
     }
   }
-  &__footer{
+  &footer{
     background: $igloo-blue--xdark;
   }
 }
+
+

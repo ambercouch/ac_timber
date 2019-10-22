@@ -2,13 +2,18 @@
  padding:$inuit-global-spacing-unit-large 0;
 }
 
-.single-page{
- &__body{
+.single-page__{
+ &body{
 
   @include mq($from:tablet){
    width: 75%;
    max-width: 800px;
    margin: 0 auto;
+  }
+ }
+ &header{
+  .home &{
+   display:none;
   }
  }
 }

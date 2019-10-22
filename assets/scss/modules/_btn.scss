@@ -1,4 +1,10 @@
 .btn--menu{
+  @include  mq($from : desktop){
+    display: none;
+  }
+   .home &{
+     display: block;
+  }
   position: fixed;
   top: 2em;
   border: 0;
@@ -13,7 +19,7 @@
   background: rgba($brand-col-1, 0.2);
   &[data-state=on]{
     transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-    right: 14rem;
+
   }
 }
 .btn--menu__bar {

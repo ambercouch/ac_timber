@@ -38,11 +38,11 @@
     text-align: left;
     max-width: $site-container-width;
     @include mq($from:mobile, $until:tablet){
-      display: block;
+      display: none;
       margin-bottom: $act-unit;
     }
     @include mq($from:tablet, $until:desktop){
-      display: block;
+      display: none;
       margin-bottom: $act-unit;
     }
     @include mq($from:desktop){

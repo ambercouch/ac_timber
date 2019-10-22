@@ -9,3 +9,29 @@
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 <script src="{{site.theme.link}}/dist/js/main.js?v=20160315"></script>
+
+<script>
+
+    var showButton, container, acBody;
+
+    showButton = document.getElementById('menuButton');
+    container = document.getElementById('mobileNavigation');
+    acBody = document.getElementById('siteBody');
+
+    if (showButton) {
+        showButton.onclick = function () {
+            console.log(showButton.dataset.state);
+            if ('off' === showButton.dataset.state) {
+                showButton.dataset.state = 'on';
+                container.dataset.state = 'on';
+                acBody.dataset.mobile = 'on';
+            } else {
+                showButton.dataset.state = 'off';
+                container.dataset.state = 'off';
+                acBody.dataset.mobile = 'off';
+            }
+            console.log(showButton.dataset.state);
+        }
+    }
+
+</script>
