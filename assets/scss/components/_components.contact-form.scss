@@ -5,7 +5,7 @@
 .c-contact-form {
   display: block;
   background: rgba($brand-col-1, 0.1);
-  padding: $inuit-global-spacing-unit-tiny;
+  padding: $act-unit;
   width: 1200px;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
@@ -76,10 +76,12 @@
   }
   &label{
     display: block;
-    margin-bottom: $act-unit-t;
+    margin-bottom: $act-unit;
   }
   &label-text{
-    @include act-font-size($inuit-font-size-h6, 1);
+    @include act-font-size($inuit-font-size-h5, 1);
+    margin-bottom: $act-unit-s;
+    display: block;
   }
   &label-text-radio{
     @include act-font-size($inuit-font-size-h5, 1);
