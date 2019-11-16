@@ -8,14 +8,7 @@
     display:grid !important;
     grid-template-columns: 50% 50%;
   }
-  .wc-tabs-wrapper{
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
-  .related{
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
+
 }
 
 /*
@@ -64,6 +57,11 @@
   }
   &summary{
     margin-bottom: $act-unit-l;
+  }
+  &summary-after{
+    margin-top: $act-unit-l;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
 }
 

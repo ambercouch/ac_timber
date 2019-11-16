@@ -12,7 +12,7 @@
     <div class="c-product__feature-image{{ templateClass }}">
 {#      {% do action('woocommerce_before_single_product_summary') %}#}
       <div class="c-feature-image--single-page">
-        <img src="{{ post.thumbnail.src('shop_single') }}" />
+        <img lass="c-feature-image__image--single-page" src="{{ post.thumbnail.src('shop_single') }}" />
       </div>
     </div>
 
@@ -22,10 +22,11 @@
 {#      </header>#}
       {% do action('woocommerce_single_product_summary') %}
     </div>
-
+    <div class="c-product__summary-after">
     {% do action('woocommerce_after_single_product_summary') %}
 
     <meta itemprop="url" content="{{ post.link }}" />
+    </div>
 
   </div>
 

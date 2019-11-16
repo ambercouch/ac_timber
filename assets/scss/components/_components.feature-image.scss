@@ -39,3 +39,11 @@ BEM ELEMENTS.c-feature-image__
 
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-feature-image__img--
+
+[class*=c-feature-image__img--] {
+  @extend .c-feature-image__img;
+}
+
+
+
