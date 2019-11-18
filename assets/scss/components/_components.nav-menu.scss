@@ -99,6 +99,10 @@
     @extend .o-list-flex--center;
     flex-wrap: wrap;
   }
+  &mobile{
+    flex-direction: column;
+
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--

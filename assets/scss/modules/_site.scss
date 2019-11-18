@@ -42,7 +42,7 @@ BEM ELEMENTS .site__
     background: darken($brand-col-3, 10%);
     z-index: 1000;
     opacity: 0;
-    padding-top: $act-unit-h;
+    padding: $act-unit-h $act-unit $act-unit;
     &[data-state=off]{
       opacity: 0 !important;
       @include inuit-hidden-visually();
