@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 
 {% set templateClass =  template ? '--'~template  : '' %}
+{% set typeClass =  postType ? '--'~postType  : '' %}
 {% set templateSlug = template ?  '-'~template  : '' %}
 
 {% block before_head %}
@@ -11,7 +12,7 @@
 
 {% block hero %}
   {% if pageBannerImg != '' or cssPageBannerColourCast != '' or  cssPageBannerColourCastColour != ''%}
-    <section id="siteHero" class="site__hero{{ templateClass }}">
+    <section id="siteHero" class="site__hero{{ templateClass }}  site__hero{{ typeClass }}">
       {% include 'inc/hero.twig' ignore missing %}
     </section>
   {% endif %}
