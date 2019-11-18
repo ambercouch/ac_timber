@@ -27,12 +27,23 @@
   &s{
     @extend .o-btn;
     padding: $act-unit-s !important;
-    @include act-font-size($act-fs-5);
+    @include act-font-size($act-fs-5, $modifier: -1, $important: true);
+    //font-size: 4em !important;
   }
   &t {
     @extend .o-btn;
     padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny !important;
     @include inuit-font-size($milli-size, 1);
+  }
+  &m {
+     @extend .o-btn;
+     padding: $inuit-global-spacing-unit $inuit-global-spacing-unit !important;
+     @include act-font-size($act-fs-4, 1);
+   }
+  &l {
+    @extend .o-btn;
+    padding: $act-unit-l $act-unit-l !important;
+    @include inuit-font-size($act-fs-3, 1);
   }
   &ghost{
     background: transparent !important;
@@ -60,8 +71,8 @@
   }
   &brand-1{
     @extend .o-btn;
-    background: $brand-col-1;
-    border-color: $brand-col-1;
+    background: $brand-col-1 !important;
+    border-color: $brand-col-1 !important;
     &:hover{
       background: darken($brand-col-1, 10%);
     }
@@ -71,10 +82,21 @@
   }
   &brand-2{
     @extend .o-btn;
-    background: $brand-col-2;
-    border-color: $brand-col-2;
+    background: $brand-col-2 !important;
+    border-color: $brand-col-2 !important;
     &:hover{
       background: darken($brand-col-2, 10%);
+    }
+    a:hover{
+      color: white;
+    }
+  }
+  &brand-3{
+    @extend .o-btn;
+    background: $brand-col-3 !important;
+    border-color: $brand-col-3 !important;
+    &:hover{
+      background: darken($brand-col-3, 10%);
     }
     a:hover{
       color: white;

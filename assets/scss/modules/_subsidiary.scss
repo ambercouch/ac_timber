@@ -47,6 +47,9 @@
   &footer {
     display: block
   }
+  &navigation{
+    padding-top: $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .subsidiary--

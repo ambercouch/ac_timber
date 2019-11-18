@@ -19,7 +19,7 @@
   }
   &heading {
     @include inuit-font-size($inuit-font-size-h2, 1);
-    display: n;
+    display: block;
   }
   &title {
     //border-bottom: solid 1px;

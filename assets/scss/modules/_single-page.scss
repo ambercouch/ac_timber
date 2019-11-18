@@ -2,14 +2,18 @@
 .single-page {
   display: block;
   @include inuit-clearfix();
+  border-bottom: none ;
 }
 
 //.post Elements
 .single-page__{
 
   &header{
-    margin-bottom: $inuit-global-spacing-unit-large /2;
+    margin-bottom: $act-unit-h;
+    padding-bottom: $act-unit-l;
+    border-bottom: solid 1px $brand-col-2;
     text-align: center !important;
+    line-height: 1;
   }
 
   &heading{
@@ -44,7 +48,7 @@
 }
 
 [class*='single-page--']{
-  @extend .post;
+  @extend .single-page;
 }
 
 [class*='single-page__header--']{
@@ -53,6 +57,10 @@
 
 [class*='single-page__heading--']{
   @extend .single-page__heading;
+}
+
+[class*='single-page__title--']{
+  @extend .single-page__title;
 }
 
 [class*='single-page__feature-image--']{

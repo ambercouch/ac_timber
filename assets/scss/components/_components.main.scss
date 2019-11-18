@@ -33,6 +33,7 @@ BEM BLOCK .c-main
     padding: 0;
   }
 
+
 }
 
 /*
@@ -46,6 +47,9 @@ BEM BLOCK MODIFIERS .c-main--
 .c-main--{
   &service{
     padding: 0 !important;
+  }
+  &single-col-narrow{
+    max-width: 1200px;
   }
 }
 

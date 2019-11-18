@@ -19,3 +19,23 @@
   }
 }
 
+.wp-block-file__button{
+ @extend .o-btn--brand-3;
+  @extend .o-btn--s;
+
+  &:after{
+    display: inline-block;
+    content: '';
+    width: $act-unit-s;
+  }
+  &:before{
+    display: inline-block;
+    content: '';
+    width: $act-unit-s;
+  }
+}
+
+
+#wpgmza_map{
+  float: none !important;
+}

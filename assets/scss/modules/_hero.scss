@@ -8,7 +8,7 @@ BEM BLOCK .hero
   height: 100vh;
   position: relative;
 }
-[class*=hero--]{
+[class*=hero--]:not([class*=__hero]){
   @extend .hero;
 }
 

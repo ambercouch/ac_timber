@@ -36,7 +36,7 @@
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
-   justify-content: flex-end;
+   justify-content: flex-start;
    display: flex;
 
  }
@@ -89,8 +89,8 @@
     @extend .o-flex-split--last;
   }
   &social{
-    @extend .o-list-flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: $act-unit;
   }
   &hero{
     @extend .o-list-flex--center;
@@ -121,7 +121,16 @@
     @extend .u-1-3--tablet;
     @extend .u-1-2--mobile;
     margin: 0;
-    padding: $act-unit-t;
+    padding: $act-unit-t $act-unit;
+  }
+  &social{
+    margin-bottom: $act-unit-t;
+  }
+  &svg-icon-left{
+    .c-nav-menu__link{
+      display: flex;
+    }
+
   }
 }
 
@@ -187,6 +196,9 @@
   &primary{
     display: block;
     padding-bottom: $act-unit-s;
+  }
+  &svg-icon-left{
+    margin-left: $act-unit-s;
   }
 }
 
