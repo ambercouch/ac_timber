@@ -8,10 +8,11 @@ ACTIMBER = {
         init: function () {
             'use strict';
             //uncomment to debug
-            console.log('common 123');
+            fitvids()
+            console.log('common 123 fitvids');
 
             //add js class
-            jQuery('body').addClass('js');
+            //jQuery('body').addClass('js');
             //$("[data-fitvid]").fitVids();
 
             // var showButton = $('[data-control=faq]');

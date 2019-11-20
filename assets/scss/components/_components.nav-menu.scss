@@ -97,6 +97,9 @@
     margin-right: $act-unit-t;
     margin-left: $act-unit-t;
   }
+  &hero{
+    margin-right: $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
@@ -145,6 +148,9 @@
     @extend .o-btn--rounded;
     text-transform: uppercase;
     font-weight: 500;
+  }
+  &hero{
+    color: white;
   }
 }
 
