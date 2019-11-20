@@ -152,6 +152,18 @@
   &hero{
     color: white;
   }
+  &services{
+    color: $brand-col-4;
+    font-weight: 500;
+    @extend .o-btn--transparent;
+    margin-bottom: $act-unit-s;
+    &:hover{
+      @extend .o-btn--brand-2;
+    }
+    .current-menu-item &{
+      @extend .o-btn--brand-2;
+    }
+  }
 }
 
 .c-nav-menu__link--{
