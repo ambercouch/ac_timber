@@ -12,7 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($inuit-font-size-h6, 1.3);
+   @include act-font-size($inuit-font-size-h5, 1.3);
     text-transform: uppercase;
     display: none;
     @include mq($from : desktop){
@@ -94,8 +94,8 @@
 
 .c-nav-menu__item--{
   &primary{
-    margin-right: $act-unit;
-    margin-left: $act-unit;
+    margin-right: $act-unit-t;
+    margin-left: $act-unit-t;
   }
 }
 
@@ -115,13 +115,15 @@
 .c-nav-menu__link--{
   &primary{
     padding:$act-unit-t / 2;
-    padding-bottom:$act-unit-s ;
     display: block;
-    color: white;
+    color: $brand-col-1;
+    font-weight: 500;
     &:hover{
-      color: white;
-      border-bottom: solid 1px $col-accent;
-      padding-bottom: $act-unit-s - 1px;
+      color: $brand-col-2;
+      text-decoration: none;
+    }
+    .current-menu-item &{
+      color: $brand-col-2;
     }
   }
   &mobile{
@@ -137,6 +139,12 @@
       color: white;
       background-color: darken($brand-col-3, 20%);
     }
+  }
+  &secondary{
+    @extend .o-btn--brand-2;
+    @extend .o-btn--rounded;
+    text-transform: uppercase;
+    font-weight: 500;
   }
 }
 
