@@ -1,10 +1,11 @@
 <article {{ fn('post_class', ['$classes', 'entry'] ) }}>
-
   {{ fn('timber_set_product', post) }}
-
   <div class="media">
 
-    {% if showthumb %}
+    <div class="media-content">
+
+{#      {% do  action('woocommerce_before_shop_loop_item_title') %}#}
+
       <div class="media-figure {% if not post.thumbnail %}placeholder{% endif %}">
         <a href="{{ post.link }}">
           {% if post.thumbnail %}
@@ -14,11 +15,6 @@
           {% endif %}
         </a>
       </div>
-    {% endif %}
-
-    <div class="media-content">
-
-      {% do action('woocommerce_before_shop_loop_item_title') %}
 
       {% if post.title %}
         <h3 class="entry-title"><a href="{{ post.link }}">{{ post.title }}</a></h3>

@@ -11,9 +11,13 @@
   </div>
 
   <div class="l-product-list">
+    <ul class="l-product-list__list">
     {% for post in products %}
-      {% include ["inc/tease-product.twig"] %}
+      <li class="l-product-list__item">
+        {% include ["inc/tease-product.twig"] %}
+      </li>
     {% endfor %}
+    </ul>
   </div>
 
   {% do action('woocommerce_after_shop_loop') %}
