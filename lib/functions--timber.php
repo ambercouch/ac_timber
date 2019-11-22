@@ -127,6 +127,11 @@ class StarterSite extends TimberSite {
         $context['cssPageBannerImageHeight'] = get_field('page_banner_image_height');
         $context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal');
 
+        $context['beforeContentType'] = get_field('before_content_type', 'options');
+        $context['beforeContentTitle'] = get_field('before_content_title', 'options');
+        $context['beforeContentText'] = get_field('before_content_text', 'options');
+        $context['beforeContentAdvanced'] = get_field('before_content_advanced', 'options');
+
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
         return $context;
 
