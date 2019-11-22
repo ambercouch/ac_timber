@@ -41,7 +41,7 @@
   {% include 'site-accessibility.twig' %}
 
   {% block header %}
-    <header id="masthead" class="site__masthead {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
+    <header id="masthead" class="l-site__masthead {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
       {% include 'inc/masthead.twig' %}
     </header>
   {% endblock %}
@@ -58,7 +58,7 @@
       <div class="btn--menu__bar--bl"></div>
     </button>
 
-      <div id="mobileNavigation" class="site__mobile-nav-widgets site__navigation--off-page" data-state="off">
+      <div id="mobileNavigation" class="l-site__mobile-nav-widgets l-site__navigation--off-page" data-state="off">
         <div class="mobile-nav-widgets" >
           {{mobilenav_widgets}}
         </div>
@@ -68,7 +68,7 @@
   {% endblock %}
 
   {% block hero %}
-    <section id="siteHero" class="site__hero">
+    <section id="siteHero" class="l-site__hero">
       {% include 'inc/hero.twig' ignore missing %}
     </section>
   {% endblock %}
@@ -76,7 +76,7 @@
   {% block before_main %}
   {% endblock %}
 
-  <section id="primary" class="site__main">
+  <section id="primary" class="l-site__main">
     <div class="c-main{{ main_mod }}">
       <main class="main__content{{ main_mod }}">
         {% block before_content %}
@@ -105,7 +105,7 @@
   {% endblock %}
 
   {% block subsidiary %}
-    <section id="subsidiary" class="site__subsidiary">
+    <section id="subsidiary" class="l-site__subsidiary">
       {% include 'inc/subsidiary.twig' %}
     </section>
   {% endblock %}
@@ -113,7 +113,7 @@
 </div>{# /#page #}
 
 {% block footer %}
-  <footer class="site__footer" role="contentinfo">
+  <footer class="l-site__footer" role="contentinfo">
     {% include 'inc/footer.twig' %}
   </footer>
 {% endblock %}
