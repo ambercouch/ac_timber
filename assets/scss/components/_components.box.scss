@@ -64,8 +64,10 @@
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .c-box--
+//BEM ELEMENT MODIFIER FALLBACK .c-box__header--
 
 [class*=c-box__header--] {
   @extend .c-box__header;
 }
+
+
