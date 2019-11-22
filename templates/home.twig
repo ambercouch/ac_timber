@@ -5,6 +5,24 @@
   <!-- home.twig -->
 {% endblock %}
 
+ {% block before_main %}
+   {% if beforeContentType == 'simple' %}
+     <div class="l-site__info-banner--blog-simple">
+       <div class="c-info-banner--blog-simple">
+         <header class="c-info-banner__header">
+           <h3 class="c-info-banner__heading">
+             <span class="c-info-banner__title">{{ beforeContentTitle}}</span>
+           </h3>
+         </header>
+         <div class="c-info-banner__content--blog-simple">
+           <p>{{ beforeContentText }}</p>
+         </div>
+       </div>
+     </div>
+
+   {% endif %}
+ {% endblock %}
+
 {% block content %}
 
   {% for post in posts %}
