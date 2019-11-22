@@ -3,19 +3,9 @@
  */
 
 .l-product-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: block;
 
-  & > * {
-    padding: $act-unit;
-    @include mq($from : tablet){
-      width: 33.33%;
-    }
-    @include mq($from : desktop){
-      width: 25%;
-    }
-  }
+
 
   .media-content{
     display: flex;
@@ -88,6 +78,21 @@
 
   &footer {
     display: block
+  }
+  &list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @extend .o-list-bare;
+  }
+  &item {
+    padding: $act-unit;
+    @include mq($from : tablet){
+      width: 33.33%;
+    }
+    @include mq($from : desktop){
+      width: 25%;
+    }
   }
 }
 

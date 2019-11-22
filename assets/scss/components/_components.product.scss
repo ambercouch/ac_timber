@@ -6,7 +6,8 @@
   display: block;
   @include mq($from: tablet){
     display:grid !important;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: $act-unit-l;
   }
 
 }
@@ -79,10 +80,7 @@
   }
 }
 
-.c-product__feature-image img{
-  display: block;
-  margin: 0 auto;
-}
+
 .woocommerce div.product form.cart .button {
   vertical-align: middle;
   float: none;
