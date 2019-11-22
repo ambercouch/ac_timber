@@ -1,0 +1,21 @@
+.woocommerce-product-gallery{
+  width: 100% !important;
+}
+
+//.woocommerce-product-gallery__trigger{
+//  position: absolute !important;
+//  top: 1em;
+//  left: 1em;
+//  z-index: 99;
+//}
+
+.flex-control-thumbs{
+  padding: $act-unit-s 0 !important;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.flex-control-thumbs li{
+  padding: $act-unit-t;
+}
