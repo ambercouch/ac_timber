@@ -10,10 +10,10 @@
   <div itemscope itemtype="http://schema.org/Product" class="c-product{{ templateClass }} {{ post.class }}">
 
     <div class="c-product__feature-image{{ templateClass }}">
-{#      {% do action('woocommerce_before_single_product_summary') %}#}
-      <div class="c-feature-image--single-page">
-        <img lass="c-feature-image__image--single-page" src="{{ post.thumbnail.src('shop_single') }}" />
-      </div>
+      {% do action('woocommerce_before_single_product_summary') %}
+{#      <div class="c-feature-image--single-page">#}
+{#        <img class="c-feature-image__img--single-page" src="{{ post.thumbnail.src('shop_single') }}" />#}
+{#      </div>#}
     </div>
 
     <div class="c-product__summary">
