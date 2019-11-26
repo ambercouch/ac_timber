@@ -84,6 +84,7 @@
     flex-wrap: wrap;
     justify-content: center;
     @extend .o-list-bare;
+    width: 100%;
   }
   &item {
     padding: $act-unit;
