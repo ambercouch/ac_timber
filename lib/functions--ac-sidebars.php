@@ -10,6 +10,8 @@ define('ACT_SIDEBARS', serialize(
         'Masthead Before',
         'Masthead After',
         'Main Before',
+        'Content Before',
+        'Content After',
         'Main After',
         'Footer Before',
         'Footer After'

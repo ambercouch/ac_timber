@@ -131,3 +131,25 @@ function woo_change_order_received_text( $str, $order ) {
         $output .= 'Once your order is complete and your goods have been dispatch or are ready for collection we will email you with any further information.<br>';
     return $output;
 }
+
+
+function act_woocommerce_result_count(){
+    ob_start();
+    woocommerce_result_count();
+    ob_end_flush();
+    $output = ob_get_contents();
+    ob_end_clean();
+    return $output;
+}
+add_shortcode( 'act_woo_result_count', 'act_woocommerce_result_count' );
+
+function act_woocommerce_catalog_ordering(){
+    ob_start();
+    woocommerce_catalog_ordering();
+    $output = ob_get_contents();
+    ob_end_clean();
+
+    return $output;
+}
+add_shortcode( 'act_woo_ordering', 'act_woocommerce_catalog_ordering' );
+

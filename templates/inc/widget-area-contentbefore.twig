@@ -1,0 +1,9 @@
+{% if contentbefore_widgets == '' %}
+  <!-- Add some widgets to the contentbefore-->
+{% else %}
+  <div class="l-content__widget-area--content-before-widgets">
+    <div class="l-widget-area--content-before-widgets" >
+      {{contentbefore_widgets}}
+    </div>
+  </div>
+{% endif %}

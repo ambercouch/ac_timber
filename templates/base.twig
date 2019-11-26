@@ -74,12 +74,14 @@
   {% endblock %}
 
   {% block before_main %}
+    {% include 'inc/widget-area-mainbefore.twig' with {'widgetArea' : 'mainbefore'}%}
   {% endblock %}
 
   <section id="primary" class="l-site__main">
     <div class="c-main{{ main_mod }}">
       <main class="main__content{{ main_mod }}">
-        {% block before_content %}
+        {% block contentBefore %}
+          {% include 'inc/widget-area-contentbefore.twig' with {'widgetArea' : 'contentbefore'}%}
         {% endblock %}
         <div class="content{{ content_mod }}">
           {% block contentHeader %}
