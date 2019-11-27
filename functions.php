@@ -136,7 +136,6 @@ function woo_change_order_received_text( $str, $order ) {
 function act_woocommerce_result_count(){
     ob_start();
     woocommerce_result_count();
-    ob_end_flush();
     $output = ob_get_contents();
     ob_end_clean();
     return $output;
