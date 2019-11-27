@@ -1,32 +1,32 @@
-<article {{ fn('post_class', ['$classes', 'entry'] ) }}>
-  {{ fn('timber_set_product', post) }}
-  <div class="media">
 
-    <div class="media-content">
+  {{ fn('timber_set_product', post) }}
+  <div class="c-post-thumb--product">
+
+    <div class="c-post-thumb__content">
 
 {#      {% do  action('woocommerce_before_shop_loop_item_title') %}#}
 
-      <div class="media-figure {% if not post.thumbnail %}placeholder{% endif %}">
-        <a href="{{ post.link }}">
+      <div class="c-post-thumb__feature-image {% if not post.thumbnail %}placeholder{% endif %}">
+        <a class="c-post-thumb__image-link " href="{{ post.link }}">
           {% if post.thumbnail %}
-            <img src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
+            <img class="c-post-thumb__img" src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
           {% else %}
-            <span class="thumb-placeholder"><i class="icon-camera"></i></span>
+            <span class="c-post-thumb__placeholder thumb-placeholder"><i class="icon-camera"></i></span>
           {% endif %}
         </a>
       </div>
-
+<div class="c-post-thumb__meta">
       {% if post.title %}
-        <h3 class="entry-title"><a href="{{ post.link }}">{{ post.title }}</a></h3>
+        <h3 class="entry-title c-post-thumb__heading"><a href="{{ post.link }}">{{ post.title }}</a></h3>
       {% else %}
-        <h3 class="entry-title"><a href="{{ post.link }}">{{ fn('the_title') }}</a></h3>
+        <h3 class="entry-title c-post-thumb__heading"><a href="{{ post.link }}">{{ fn('the_title') }}</a></h3>
       {% endif %}
 
-      {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
-      {% do action( 'woocommerce_after_shop_loop_item' ) %}
-
+      <div class="c-post-thumb__price">{{ product.get_price_html }}</div>
+      <div class="c-post-thumb__add-btn">{% do action( 'woocommerce_after_shop_loop_item' ) %}</div>
+</div>
     </div>
 
   </div>
 
-</article>
+

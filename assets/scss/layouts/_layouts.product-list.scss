@@ -5,8 +5,6 @@
 .l-product-list {
   display: block;
 
-
-
   .media-content{
     display: flex;
     flex-direction: column;
@@ -95,10 +93,20 @@
       width: 25%;
     }
   }
+  &post-thumb{
+    display: block;
+    height: 100%;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-product-list--
 
 [class*=l-product-list__header--] {
   @extend .l-product-list__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-product-list__product-thumb--
+
+[class*=l-product-list__post-thumb--] {
+  @extend .l-product-list__post-thumb;
 }
