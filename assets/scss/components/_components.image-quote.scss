@@ -5,6 +5,10 @@
 .c-image-quote {
   display: block;
   position: relative;
+  padding: $act-unit;
+  @include mq($from:tablet){
+    padding: $act-unit-h;
+  }
 }
 
 /*
@@ -46,11 +50,19 @@
 
   &content {
     display: block;
-    position: absolute;
-    top: 50%;
-    left: $act-unit-h;
-    transform: translate(0, -50%);
-    width: 600px  ;
+
+    //top: 50%;
+    //left: $act-unit-h;
+    //transform: translate(0, -50%);
+
+    @include mq($from : tablet){
+      //padding: $act-unit-h;
+    }
+
+    @include mq($from : desktop){
+      //position: absolute;
+      width: 600px;
+    }
   }
   &text{
     @include act-font-size($act-fs-1);
@@ -72,6 +84,9 @@
   }
   &footer {
     display: block
+  }
+  &image{
+    display: none;
   }
 }
 

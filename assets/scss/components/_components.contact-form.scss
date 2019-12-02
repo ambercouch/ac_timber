@@ -79,8 +79,12 @@
     display: block;
     margin-bottom: $act-unit-t;
     padding: $act-unit-s;
-    padding-left: 0;
-    padding-right: $act-unit;
+
+
+    @include mq($from : tablet){
+      padding-right: $act-unit;
+      padding-left: 0;
+    }
   }
   &label-text{
     @include act-font-size($inuit-font-size-h5, 1);
@@ -106,8 +110,11 @@
     color: white;
   }
   &content {
-    display: grid;
-    grid-template-columns: 50% 50%;
+    @include mq($from : tablet){
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+
   }
   &footer {
     display: block

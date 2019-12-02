@@ -4,6 +4,8 @@
 
 .l-subsidiary {
   @extend .c-site-wrapper--responsive;
+  padding-left: 0;
+  padding-right: 0;
   background: transparent;
 }
 
@@ -52,8 +54,12 @@
     @include breakout-band($bgc : $brand-col-2)
   }
   &widgets{
-      padding: $act-unit-l $act-unit-h 0;
     margin-bottom: $act-unit-l;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
+    @include mq($from : tablet){
+      padding: $act-unit-l $act-unit-h 0;
+    }
   }
 }
 
