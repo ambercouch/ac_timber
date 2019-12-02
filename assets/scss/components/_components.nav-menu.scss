@@ -140,10 +140,12 @@
     &:hover{
       color: $brand-col-1;
       background-color: transparent;
+      border-bottom: solid 1px $brand-col-1;
     }
     &:focus{
-      color: white;
-      background-color: darken($brand-col-3, 20%);
+      color: $brand-col-1;
+      background-color: transparent;
+      border-bottom: solid 1px $brand-col-1;
     }
   }
   &secondary{
