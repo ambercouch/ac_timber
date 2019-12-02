@@ -130,13 +130,16 @@
     }
   }
   &mobile{
-    padding:$act-unit-s;
+    padding:$act-unit-t 0 $act-unit-s;
     display: block;
-    color: white;
-    background-color: darken($brand-col-3, 15%);
+    color: $brand-col-1;
+    background-color: transparent;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-bottom: solid 1px $brand-col-3;
     &:hover{
-      color: white;
-      background-color: darken($brand-col-3, 20%);
+      color: $brand-col-1;
+      background-color: transparent;
     }
     &:focus{
       color: white;
