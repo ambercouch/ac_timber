@@ -87,7 +87,10 @@
     width: 100%;
     max-width: none;
     margin: 0;
-    height: 550px;
+
     max-height: none;
+    @include mq($from : tablet){
+      height: 550px;
+    }
   }
 }

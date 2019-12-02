@@ -28,12 +28,21 @@
     border: none;
     background-color: #eee;
     border-radius: 0;
-    padding-left: $act-unit-h;
-    padding-right: 0;
-    padding-top: $act-unit-l;
-    padding-bottom: $act-unit-l;
     max-width: 1440px;
     justify-content: center;
+    background-size:150%;
+    background-position: right top;
+    background-repeat: no-repeat;
+    padding-top: 65%;
+    padding-bottom: $act-unit-l;
+    @include mq($from : tablet){
+      padding-left: $act-unit-h;
+      padding-right: 0;
+      padding-top: $act-unit-l;
+      padding-bottom: $act-unit-l;
+      background-size:cover;
+
+    }
   }
 }
 

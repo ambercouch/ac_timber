@@ -13,7 +13,7 @@
 <?php $post_excerpt = (get_field('service_intro_content') != "")? get_field('service_intro_content') : get_the_excerpt(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('l-post-thumb-list__post-thumb--feature-list'); ?>>
-  <div class="c-post-thumb--feature-service" style="background: url('<?php echo $post_image['url'] ?>') no-repeat; background-size:cover;">
+  <div class="c-post-thumb--feature-service" style="background-image: url('<?php echo $post_image['url'] ?>') ;">
     <div class="c-post-thumb__wrapper--feature-list">
 
       <header  class="entry-header c-post-thumb__header--feature-list">
