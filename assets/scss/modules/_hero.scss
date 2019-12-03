@@ -5,7 +5,7 @@ BEM BLOCK .hero
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 600px;
-  height: 100vh;
+  height: auto;
   position: relative;
   @include mq($from : tablet){
     min-height: 400px;
@@ -20,7 +20,6 @@ BEM ELEMENTS .hero__
     height: 100%;
   }
   &background{
-
     @include mq($from : tablet){
       width:100%;
       height: 100%;
@@ -36,7 +35,7 @@ BEM ELEMENTS .hero__
   &body{
     @extend .o-site-wrapper--responsive;
     //padding: $act-unit-h;
-    padding-bottom: $act-unit-t;
+
 
     position: relative;
     width: 100%;
@@ -47,10 +46,11 @@ BEM ELEMENTS .hero__
     align-items: center;
     z-index: 2;
     flex-direction: column;
-    margin-top: $act-unit;
-    padding-top: $act-unit-h !important;
+    padding-top: $act-unit-l;
+    padding-bottom: $act-unit-l;
     @include mq($from : tablet){
       padding-top: $act-unit-t !important;
+      padding-bottom: $act-unit-t;
       max-height:100%;
       height:100%;
       align-items: flex-start;

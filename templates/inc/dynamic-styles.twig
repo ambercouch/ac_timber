@@ -2,10 +2,14 @@
 <style>
 
   {% if cssBannerImageHeight %}
-  .hero{
-    height: {{ cssBannerImageHeight }} !important;
-    //min-height: unset !important;
+  @media (min-width: 840px){
+    .hero{
+
+      height: {{ cssBannerImageHeight }} !important;
+      min-height: unset !important;
+    }
   }
+
   {% else %}
   /* NO cssBannerImageHeight */
   {% endif %}
