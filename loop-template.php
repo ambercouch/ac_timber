@@ -14,13 +14,13 @@ if (! wp_script_is( $handle, $list )) {
     wp_enqueue_style( 'ac_wp_custom_loop_styles' );
 }
 ?>
-<li class="c-events-list__item">
+
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-accl-post-list__post-thumb'); ?>>
   <div class="c-accl-post-thumb">
     <?php if ( '' !== get_the_post_thumbnail() ) : ?>
       <div class="post-thumbnail c-accl-post-thumb__feature-image">
         <a href="<?php the_permalink(); ?>" class="c-accl-post-thumb__feature-image-link" >
-            <?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+            <?php the_post_thumbnail('post-thumbnail'); ?>
         </a>
       </div><!-- .post-thumbnail -->
     <?php endif; ?>
@@ -38,4 +38,3 @@ if (! wp_script_is( $handle, $list )) {
     <?php endif; ?>
   </div>
 </article>
-</li>

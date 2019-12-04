@@ -1,0 +1,9 @@
+<div class="l-product-list woocommerce">
+  <ul class="l-product-list__list">
+    {% for post in posts %}
+      <li class="l-product-list__item">
+        {% include ["inc/tease-product.twig"] %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
