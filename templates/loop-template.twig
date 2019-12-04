@@ -1,8 +1,11 @@
 <div class="l-product-list woocommerce">
   <ul class="l-product-list__list">
     {% for post in posts %}
+      {% set product = fn('wc_get_product' , post.ID ) %}
       <li class="l-product-list__item">
+        <article {{ fn('post_class', ['entry', 'l-product-list__post-thumb'] ) }}>
         {% include ["inc/tease-product.twig"] %}
+        </article>
       </li>
     {% endfor %}
   </ul>
