@@ -16,7 +16,7 @@ if (! wp_script_is( $handle, $list )) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('c-accl-post-list__post-thumb'); ?>>
-  <div class="c-accl-post-thumb">
+  <div class="c-accl-post-thumb loop-template">
     <?php if ( '' !== get_the_post_thumbnail() ) : ?>
       <div class="post-thumbnail c-accl-post-thumb__feature-image">
         <a href="<?php the_permalink(); ?>" class="c-accl-post-thumb__feature-image-link" >
