@@ -81,8 +81,12 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
-  justify-content: center;
+    @extend .o-list-flex--center;
+    justify-content: center;
+  }
+  &social{
+    @extend .o-list-flex--center;
+    justify-content: start;
   }
 }
 
