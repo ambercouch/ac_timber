@@ -33,7 +33,7 @@ function act_theme_settings( $atts ) {
 add_shortcode('act_contact', 'act_contact');
 function act_contact( $atts ) {
     extract(shortcode_atts(array(
-        'row' => '',
+        'row' => 1,
         'type' => 'item',
         'event_label' => 'acContact'
     ), $atts));
