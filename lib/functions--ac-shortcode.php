@@ -177,3 +177,25 @@ function act_logo_dark($atts){
 
     return $output;
 }
+
+add_shortcode('act_menu', 'act_shortcode_wp_nav_menu');
+function act_shortcode_wp_nav_menu($atts, $content = null) {
+    extract(shortcode_atts(array('name' => null), $atts));
+    $name = isset($name)? $name : $atts[0];
+    return wp_nav_menu(array('menu' => $name, 'echo' => false));
+}
+
+add_shortcode('act_svg_icon', 'act_shortcode_svg_icon');
+function act_shortcode_svg_icon($atts, $content = null) {
+    extract(shortcode_atts(array('icon' => null), $atts));
+    $icon = isset($icon)? $icon : $atts[0];
+    $output = '';
+    $output .= '<span class="o-svg-icon--'.$icon.'">';
+    $output .= '<svg class="o-svg-icon__svg--'.$icon.'">';
+    $output .= '<use xlink:href="#icon-'.$icon.'"></use>';
+    $output .= '</svg>';
+    $output .= '</span>';
+    return $output;
+}
+
+
