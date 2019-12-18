@@ -10,10 +10,12 @@
     "cssnano": "^3.10.0",
     "fitvids": "^2.0.0",
     "flickity": "^2.0.10",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.1",
     "gulp-strip-debug": "^2.0.0",
@@ -25,6 +27,7 @@
     "merge-stream": "^1.0.1",
     "pixrem": "^3.0.2",
     "pump": "^1.0.2",
+    "readable-stream": "^3.4.0",
     "remodal": "^1.1.1",
     "webpack": "^2.2.1"
   }
