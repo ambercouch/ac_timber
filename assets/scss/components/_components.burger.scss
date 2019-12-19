@@ -1,4 +1,5 @@
-.btn--menu{
+
+.c-burger{
   position: fixed;
   top: $act-unit-s;
   border: 0;
@@ -19,15 +20,15 @@
     display: none;
   }
 }
-.btn--menu__bar {
+.c-burger__bar {
   transition: transform 0.1s linear;
   position: absolute;
   width: 1.1em;
   height: 0.2em;
   background-color: #fff;
 }
-.btn--menu__bar--tl{
-  @extend .btn--menu__bar;
+.c-burger__bar--tl{
+  @extend .c-burger__bar;
   transform-origin: 0.4em 0.1em;
   top: 0.8em;
   left: 0.5em;
@@ -35,8 +36,8 @@
     transform: rotate(45deg) translate(0.3em, 0);
   }
 }
-.btn--menu__bar--tr{
-  @extend .btn--menu__bar;
+.c-burger__bar--tr{
+  @extend .c-burger__bar;
   transform-origin: 0.7em 0.1em;
   top: 0.8em;
   right: 0.5em;
@@ -44,8 +45,8 @@
     transform: rotate(-45deg) translate(-0.3em, 0);
   }
 }
-.btn--menu__bar--m{
-  @extend .btn--menu__bar;
+.c-burger__bar--m{
+  @extend .c-burger__bar;
   transform-origin: 1.1em 0.1em;
   top: 50%;
   left: 0.5em;
@@ -55,8 +56,8 @@
     transform: scale(0, 1);
   }
 }
-.btn--menu__bar--bl{
-  @extend .btn--menu__bar;
+.c-burger__bar--bl{
+  @extend .c-burger__bar;
   transform-origin: 0.4em 0.1em;
   bottom: 0.8em;
   left: 0.5em;
@@ -64,8 +65,8 @@
     transform: rotate(-45deg) translate(0.3em, 0);
   }
 }
-.btn--menu__bar--br{
-  @extend .btn--menu__bar;
+.c-burger__bar--br{
+  @extend .c-burger__bar;
   transform-origin: 0.7em 0.1em;
   bottom: 0.8em;
   right: 0.5em;
