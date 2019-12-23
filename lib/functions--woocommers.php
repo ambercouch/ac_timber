@@ -426,4 +426,16 @@ function ac_email_order_meta_fields( $fields, $sent_to_admin, $order ) {
     return $fields;
 }
 
+/**
+ * Auto Complete all WooCommerce orders.
+ */
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+function custom_woocommerce_auto_complete_order( $order_id ) {
+    if ( ! $order_id ) {
+        return;
+    }
+
+    $order = wc_get_order( $order_id );
+    $order->update_status( 'completed' );
+}
 
