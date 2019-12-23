@@ -28,6 +28,8 @@ require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
 require_once get_template_directory() . '/lib/functions--walkers.php';
 
+require_once get_template_directory() . '/lib/functions--woocommers.php';
+
 
 //function comment_layout($comment, $args, $depth) {
 //    $GLOBALS['comment'] = $comment;
@@ -92,3 +94,7 @@ function my_admin_theme_style() {
 }
 add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 add_action('login_enqueue_scripts', 'my_admin_theme_style');
+
+
+
+
