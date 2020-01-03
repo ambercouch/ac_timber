@@ -104,3 +104,13 @@ add_action( 'wp_print_styles', 'wps_deregister_styles', 100 );
 function wps_deregister_styles() {
     wp_dequeue_style( 'wp-block-library' );
 }
+
+function conditionally_load_plugin_js_css()
+{
+    if (is_front_page())
+    { # Only load CSS and JS on needed Pages
+        wp_dequeue_script('contact-form-7'); # Restrict scripts.
+        wp_dequeue_script('google-recaptcha');
+        wp_dequeue_style('contact-form-7'); # Restrict css.
+    }
+} add_action( 'wp_enqueue_scripts', 'conditionally_load_plugin_js_css' );
