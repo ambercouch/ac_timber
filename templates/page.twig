@@ -10,7 +10,12 @@
 {% endblock %}
 
 {% block hero %}
-  {% if pageBannerImg != '' or cssPageBannerColourCast != '' or  cssPageBannerColourCastColour != ''%}
+  {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or  cssPageBannerColourCastColour != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+  %}
   <section id="siteHero" class="site__hero{{ templateClass }}">
     {% include 'inc/hero.twig' ignore missing %}
   </section>
