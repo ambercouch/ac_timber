@@ -46,7 +46,7 @@ BEM ELEMENTS .c-masthead__
     display: none;
     @include mq($from : desktop){
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
   }
   &widget-area{
