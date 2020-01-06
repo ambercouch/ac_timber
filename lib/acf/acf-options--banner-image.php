@@ -64,12 +64,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'id' => '',
                 ),
                 'choices' => array(
-                    'centre' => 'Centre',
+                    '' => '',
+                    'center' => 'Centre',
                     'bottom' => 'Bottom',
                     'top' => 'Top'
                 ),
                 'default_value' => array(
-                    0 => 'centre',
+                    0 => 'center',
                     1 => 'bottom',
                     2 => 'top'
                 ),

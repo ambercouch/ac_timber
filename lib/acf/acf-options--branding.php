@@ -1,14 +1,10 @@
 <?php
 
-
-
-
-
     if( function_exists('acf_add_local_field_group') ):
 
         acf_add_local_field_group(array (
             'key' => 'group_577ce9869001d',
-            'title' => 'Branding',
+            'title' => 'Branding Desktop',
             'fields' => array (
                 array (
                     'key' => 'field_577ce9999d0cb',
@@ -59,6 +55,96 @@
                     'key' => 'field_5a7e180566123',
                     'label' => 'Logo height',
                     'name' => 'logo_height',
+                    'type' => 'number',
+                    'instructions' => 'Set the height of your logo in pixels. If blank the css default of 60px will be used.',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '30',
+                        'class' => 'acf-branding-lgw',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => 'px',
+                    'min' => '',
+                    'max' => '',
+                    'step' => '',
+                ),
+            ),
+            'location' => array (
+                array (
+                    array (
+                        'param' => 'options_page',
+                        'operator' => '==',
+                        'value' => 'acf-options-masthead',
+                    )
+                )
+            ),
+            'menu_order' => 0,
+            'position' => 'normal',
+            'style' => 'default',
+            'label_placement' => 'top',
+            'instruction_placement' => 'label',
+            'hide_on_screen' => '',
+            'active' => 1,
+            'description' => '',
+        ));
+
+        acf_add_local_field_group(array (
+            'key' => 'group_Branding_mobile',
+            'title' => 'Branding Mobile',
+            'fields' => array (
+                array (
+                    'key' => 'field_company_logo_mobile',
+                    'label' => 'Company Logo Mobile',
+                    'name' => 'company_logo_mobile',
+                    'type' => 'image',
+                    'instructions' => 'The desktop logo will be used by default',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array (
+                        'width' => '40',
+                        'class' => '',
+                        'id' => '',
+                    ),
+                    'return_format' => 'array',
+                    'preview_size' => 'thumbnail',
+                    'library' => 'all',
+                    'min_width' => '',
+                    'min_height' => '',
+                    'min_size' => '',
+                    'max_width' => '',
+                    'max_height' => '',
+                    'max_size' => '',
+                    'mime_types' => '',
+                ),
+                array(
+                    'key' => 'field_logo_width_mobile',
+                    'label' => 'Logo Width Mobile',
+                    'name' => 'logo_width_mobile',
+                    'type' => 'number',
+                    'instructions' => 'Set the width of your logo in pixels. If blank the css default of 300px will be used.',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'wrapper' => array(
+                        'width' => '30',
+                        'class' => 'acf-branding-lgw',
+                        'id' => '',
+                    ),
+                    'default_value' => '',
+                    'placeholder' => '',
+                    'prepend' => '',
+                    'append' => 'px',
+                    'min' => '',
+                    'max' => '',
+                    'step' => '',
+                ),
+                array(
+                    'key' => 'field_height_mobile',
+                    'label' => 'Logo Height Mobile',
+                    'name' => 'logo_height_mobile',
                     'type' => 'number',
                     'instructions' => 'Set the height of your logo in pixels. If blank the css default of 60px will be used.',
                     'required' => 0,

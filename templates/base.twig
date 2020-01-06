@@ -18,7 +18,7 @@
   <style>
     {% include 'critical.css' ignore missing %}
   </style>
-
+  {% include 'inc/dynamic-styles-site-title.twig' %}
   {% include 'inc/dynamic-styles.twig' %}
 
   {{ fn('wp_head') }}
@@ -50,9 +50,16 @@
   {% endblock %}
 
   {% block hero %}
+    {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or  cssPageBannerColourCastColour != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+    %}
     <section id="siteHero" class="site__hero">
       {% include 'inc/hero.twig' ignore missing %}
     </section>
+    {% endif %}
   {% endblock %}
 
   {% block before_main %}

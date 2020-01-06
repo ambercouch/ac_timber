@@ -1,18 +1,4 @@
-{%  set logoWidth = fn('get_field','logo_width','options')   %}
-{%  set logoHeight = fn('get_field','logo_height','options')   %}
-{% if logoWidth != ''  or logoHeight != ''%}
-  <style>
-    .c-site-title--upload{
-    {% if logoWidth != '' %}
-      width: {{ logoWidth }}px !important;
-      height: auto !important;
-    {% endif %}
-    {% if logoHeight != '' %}
-      height: {{ logoHeight }}px !important;
-    {% endif %}
-    }
-  </style>
-{% endif %}
+
 {% if fn('is_front_page') %}
   <h1 class="c-site-title--upload c-site-title--front-page" >
     <a class="site-title__link" href="{{ site.url }} " rel="home">

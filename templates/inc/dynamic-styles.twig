@@ -2,23 +2,26 @@
 <style>
 
   {% if cssBannerImageHeight %}
+  /* cssBannerImageHeight */
   .hero{
     height: {{ cssBannerImageHeight }} !important;
-    //min-height: unset !important;
+    min-height: unset !important;
   }
   {% else %}
   /* NO cssBannerImageHeight */
   {% endif %}
 
   {% if cssBannerImagePositionHorizontal %}
+  /* cssBannerImagePositionHorizontal */
   .hero__background-img{
     object-position: {{ cssBannerImagePositionHorizontal }} ;
   }
   {% else %}
-  /* NO cssBannerImagePositionHorizontal */
+    /* NO cssBannerImagePositionHorizontal */
   {% endif %}
 
   {% if fn('is_front_page') and cssBannerImageSaturation %}
+  /*  cssBannerImageSaturation */
   .hero__background-img {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
@@ -28,12 +31,13 @@
   {% endif %}
 
   {% if  cssPageBannerImageSaturation %}
+  /* cssPageBannerImageSaturation */
   .hero__background-img {
     -webkit-filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
     filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
   }
   {% else %}
-  /* NO cssBannerImageSaturation */
+  /* NO cssPageBannerImageSaturation */
   {% endif %}
 
   {% if fn('is_front_page') and cssBannerColourCast %}
@@ -55,6 +59,7 @@
   {% endif %}
 
   {% if cssPageBannerColourCast %}
+  /* cssPageBannerColourCast */
   .hero__background:before{
     display: block !important;
     background: {{cssPageBannerColourCastColour}} !important;
@@ -70,6 +75,25 @@
   }
   {% else %}
   /* NO cssPageBannerColourCast */
+  {% endif %}
+
+  {% if cssPageBannerImageHeight %}
+  /* cssPageBannerImageHeight */
+  .hero--page{
+    height: {{ cssPageBannerImageHeight }} !important;
+    min-height: unset !important;
+  }
+  {% else %}
+  /* NO cssPageBannerImageHeight */
+  {% endif %}
+
+  {% if cssPageBannerImagePositionHorizontal %}
+  /* cssPageBannerImagePositionHorizontal */
+  .hero__background-img{
+    object-position: {{ cssPageBannerImagePositionHorizontal }} ;
+  }
+  {% else %}
+  /* NO cssPageBannerImagePositionHorizontal */
   {% endif %}
 
 
