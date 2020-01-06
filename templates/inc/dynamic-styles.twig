@@ -1,10 +1,21 @@
 <!-- ACF Hero CSS -->
 <style>
 
-  {% if cssBannerImageHeight %}
+  {% if (fn('is_front_page') and cssBannerImageHeight) or
+   (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
   /* cssBannerImageHeight */
   .hero{
     height: {{ cssBannerImageHeight }} !important;
+    min-height: unset !important;
+  }
+  {% else %}
+  /* NO cssBannerImageHeight */
+  {% endif %}
+
+  {% if not fn('is_front_page') and cssPageBannerImageHeight and pageSettingsShowSiteHero == false %}
+  /* cssPageBannerImageHeight */
+  .hero{
+    height: {{ cssPageBannerImageHeight }} !important;
     min-height: unset !important;
   }
   {% else %}
@@ -20,7 +31,7 @@
     /* NO cssBannerImagePositionHorizontal */
   {% endif %}
 
-  {% if fn('is_front_page') and cssBannerImageSaturation %}
+  {% if (fn('is_front_page') and cssBannerImageSaturation ) or (not fn('is_front_page') and pageSettingsShowSiteHero == true  and cssBannerImageSaturation) %}
   /*  cssBannerImageSaturation */
   .hero__background-img {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
@@ -40,7 +51,8 @@
   /* NO cssPageBannerImageSaturation */
   {% endif %}
 
-  {% if fn('is_front_page') and cssBannerColourCast %}
+  {% if (fn('is_front_page') and cssBannerColourCast) or
+  (not fn('is_front_page') and cssBannerColourCast and pageSettingsShowSiteHero == true )%}
   .hero__background:before{
     display: block !important;
     background: {{cssBannerColourCastColour}} !important;
@@ -58,7 +70,7 @@
   /* NO cssBannerColourCast */
   {% endif %}
 
-  {% if cssPageBannerColourCast %}
+  {% if cssPageBannerColourCast and pageSettingsShowSiteHero == false %}
   /* cssPageBannerColourCast */
   .hero__background:before{
     display: block !important;

@@ -59,8 +59,8 @@ BEM ELEMENTS .site__
   @extend .site__masthead;
 }
 
-.site__masthead--overlay-hero{
-  .has-hero &{
+.site__masthead{
+  &.is-overlay-hero{
     position: relative;
     z-index: 999;
     height: 0;

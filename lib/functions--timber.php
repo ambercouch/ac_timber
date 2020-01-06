@@ -107,8 +107,9 @@ class StarterSite extends TimberSite {
         $context['logoHeightMobile'] = get_field('logo_height_mobile','options');
 
         $context['removeHero'] = get_field('remove_hero_banner', 'options');
-        $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || (! is_home() && ! is_front_page()) )? 'has-no-hero' : 'has-hero';
-        $context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
+        $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || ( get_field('banner_image', 'options') != '' or get_field('banner_image_colour_cast', 'options') != '' ) )? 'has-hero' : 'has-no-hero';
+        //$context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
+        $context['siteMastheadOverlayClass'] = ( (is_front_page() or is_home()) or (get_field('show_site_hero')) and get_field('overlay_hero_banner', 'options'))? 'is-overlay-hero' : 'is-not-overlay-hero';
 
         $context['pageGlobalSettingHideComments'] = get_field('hide_page_comments','options');
         $context['pageSettingsShowComments'] = get_field('show_page_comments', $post_id);
