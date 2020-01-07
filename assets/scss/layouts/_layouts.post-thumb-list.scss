@@ -4,9 +4,9 @@
 
 .l-post-thumb-list {
   display: flex;
-  max-width: 1200px;
   margin: 0 auto $act-unit-h;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 
 /*
@@ -53,10 +53,8 @@
     display: block
   }
   &post-thumb{
-    width: 400px;
-    max-width: 32%;
+  margin: 0 $act-unit
     //padding: $act-unit-l;
-    margin: 0.66%;
   }
 }
 
