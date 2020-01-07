@@ -122,10 +122,11 @@
     background: transparent;
     text-transform: uppercase;
     font-weight: 500;
-    &:hover{
-      color: darken($brand-col-2, 10%);
-      background: transparent;
-    }
+    @include a($col : white );
+    //&:hover{
+    //  color: darken($brand-col-2, 10%);
+    //  background: transparent;
+    //}
     .c-nav-menu__item:last-child &{
       padding-right: 0;
     }
