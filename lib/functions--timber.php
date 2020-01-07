@@ -84,6 +84,8 @@ class StarterSite extends TimberSite {
          */
         global $post_id;
 
+        //var_dump( get_field('page_banner_image')); die();
+
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
@@ -109,7 +111,7 @@ class StarterSite extends TimberSite {
         $context['removeHero'] = get_field('remove_hero_banner', 'options');
         $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || ( get_field('banner_image', 'options') != '' or get_field('banner_image_colour_cast', 'options') != '' ) )? 'has-hero' : 'has-no-hero';
         //$context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
-        $context['siteMastheadOverlayClass'] = ( (is_front_page() or is_home()) or (get_field('show_site_hero')) and get_field('overlay_hero_banner', 'options'))? 'is-overlay-hero' : 'is-not-overlay-hero';
+        $context['siteMastheadOverlayClass'] = ((get_field('overlay_hero_banner', 'options') and get_field('page_force_show_masthead', $post_id) != true ) and (get_field('page_banner_image') or get_field('show_site_hero') or is_front_page() ) )  ? 'is-overlay-hero' : 'is-not-overlay-hero';
 
         $context['pageGlobalSettingHideComments'] = get_field('hide_page_comments','options');
         $context['pageSettingsShowComments'] = get_field('show_page_comments', $post_id);
@@ -132,7 +134,6 @@ class StarterSite extends TimberSite {
         $context['cssBannerColourCastMode'] = get_field('banner_image_colour_cast_mode', 'options');
         $context['cssBannerImageHeight'] = get_field('banner_image_height', 'options');
         $context['cssBannerImagePositionHorizontal'] = get_field('banner_image_position_horizontal', 'options');
-
         $context['pageBannerImg'] = get_field('page_banner_image');
         $context['pageBannerContent'] = get_field('page_banner_content');
         $context['pageBannerLogo'] = get_field('page_banner_logo');

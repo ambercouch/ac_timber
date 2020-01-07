@@ -22,6 +22,22 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => 0,
             ),
             array (
+                'key' => 'field_page_force_show_masthead',
+                'label' => 'Show the masthead above the hero',
+                'name' => 'page_force_show_masthead',
+                'type' => 'true_false',
+                'instructions' => 'This option will show the masthead above the hero even if the global option is to overlay it.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Don\'t Overlay Masthead',
+                'default_value' => 0,
+            ),
+            array (
                 'key' => 'field_57e28e51c2cd7',
                 'label' => 'Hide Masthead',
                 'name' => 'hide_site_masthead',
