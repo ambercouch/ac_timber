@@ -1,5 +1,4 @@
 @mixin breakout-band($bgc : #ccc, $padding : 0){
-  background: $bgc ;
   position: relative;
   z-index: 1;
   padding-top: $padding;
