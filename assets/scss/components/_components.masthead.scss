@@ -7,11 +7,10 @@ BEM BLOCK .c-masthead
   @extend .o-wrapper;
   padding: $act-unit;
   padding-bottom: $act-unit;
-
-
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
   &:after{
     width: 100%;
   }
@@ -25,6 +24,9 @@ BEM BLOCK MODIFIERS .c-masthead--
  */
 [class*="c-masthead--"]{
   @extend .c-masthead;
+  .is-overlay-hero &{
+    @include breakout-band($bgc : linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 80%) );
+  }
 }
 
 .c-masthead--{
