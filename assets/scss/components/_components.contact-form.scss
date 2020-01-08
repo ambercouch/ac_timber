@@ -4,8 +4,8 @@
 
 .c-contact-form {
   display: block;
-  background: rgba($brand-col-1, 0.1);
-  padding: $inuit-global-spacing-unit-tiny;
+  background: lighten($brand-col-3, 70%);
+  padding: $act-unit-s $act-unit;
   width: 1200px;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
@@ -56,8 +56,8 @@
     display: block;
   }
   &fieldset{
-    background: rgba($brand-col-1, 0.1);
-    padding: $inuit-global-spacing-unit-tiny;
+    background: $col-text;
+    padding: $act-unit-t;
   }
   &input-wrapper{
     display: block;
@@ -72,26 +72,26 @@
     display: block;
     width: 100%;
     border: none;
-    padding:$inuit-global-spacing-unit-tiny;
+    padding:$act-unit-t;
   }
   &label{
     display: block;
     margin-bottom: $act-unit-t;
   }
   &label-text{
-    @include act-font-size($inuit-font-size-h6, 1);
+    @include act-font-size($act-fs-5, 1);
   }
   &label-text-radio{
-    @include act-font-size($inuit-font-size-h5, 1);
+    @include act-font-size($act-fs-5, 1);
   }
   &legend{
     float: left;
     width: 100%;
     margin-bottom:$act-unit-t;
     text-transform: uppercase;
-    @include act-font-size($inuit-font-size-h5);
+    @include act-font-size($act-fs-5);
     font-weight: bold;
-    background: darken($brand-col-1, 10%);
+    background: $col-text;
     padding: 0.5em 1em;
     color: white;
   }
@@ -160,12 +160,12 @@
 .wpcf7-submit{
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
-  padding:$inuit-global-spacing-unit-tiny;
-  background: $brand-col-1;
+  padding:$act-unit-t;
+  background: $brand-col-3;
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-1, 5%);
+    background: darken($brand-col-3, 5%);
   }
 }
 

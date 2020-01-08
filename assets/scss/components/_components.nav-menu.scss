@@ -122,17 +122,23 @@
     background: transparent;
     text-transform: uppercase;
     font-weight: 500;
-    @include a($col : white );
+    //@include a($col : $col-link );
     //&:hover{
     //  color: darken($brand-col-2, 10%);
     //  background: transparent;
     //}
+    .is-overlay-hero &{
+      color:white;
+    }
     .c-nav-menu__item:last-child &{
       padding-right: 0;
     }
     .current-menu-item &{
-      color: darken($brand-col-2, 5%);
+      color: darken($col-link, 5%);
       font-weight: 700;
+      .is-overlay-hero &{
+        color: darken(white, 5%);
+      }
     }
 
   }
