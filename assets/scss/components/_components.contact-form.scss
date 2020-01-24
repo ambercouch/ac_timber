@@ -4,7 +4,7 @@
 
 .c-contact-form {
   display: block;
-  background: lighten($brand-col-3, 70%);
+  background: lighten($brand-col-4, 0%);
   padding: $act-unit-s $act-unit;
   width: 1200px;
   max-width: 100%;
@@ -77,6 +77,7 @@
   &label{
     display: block;
     margin-bottom: $act-unit-t;
+    color: white;
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
@@ -116,7 +117,7 @@
 
 .c-contact-form__input-wrapper--{
   &submit{
-    padding-top:$inuit-global-spacing-unit-small;
+    padding-top:$act-unit-s;
   }
 }
 
@@ -161,11 +162,11 @@
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
   padding:$act-unit-t;
-  background: $brand-col-3;
+  background: $brand-col-6;
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-3, 5%);
+    background: darken($brand-col-6, 10%);
   }
 }
 

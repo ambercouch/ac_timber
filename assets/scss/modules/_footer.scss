@@ -32,11 +32,14 @@
   }
   &site-info{
     @extend .c-site-wrapper--responsive;
-    @include inuit-font-size($inuit-font-size-h6, 1);
+    @include inuit-font-size($inuit-font-size-h6, 1.7);
     text-align: left;
     padding: $inuit-global-spacing-unit;
-    padding-left: $act-unit-h;
-    padding-right: $act-unit-h;
+
+    @include mq($from: desktop){
+      padding-left: $act-unit-h;
+      padding-right: $act-unit-h;
+    }
     background: transparent;
     color: white;
     a{
@@ -44,7 +47,7 @@
     }
   }
   &widgets{
-    border-bottom: solid 1px white;
+    border-bottom: solid 1px $brand-col-1;
     padding-bottom: $act-unit-l;
     width: 100%;
     @include mq($from : tablet){
@@ -59,7 +62,7 @@
 
 .footer{
   a{
-    color: $brand-col-2;
+    color: $brand-col-6;
     text-decoration: none;
     &:hover{
       color: white;

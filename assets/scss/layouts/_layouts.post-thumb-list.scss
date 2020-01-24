@@ -7,6 +7,13 @@
   margin: 0 auto $act-unit-h;
   flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  @include mq($from:tablet){
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 }
 
 /*

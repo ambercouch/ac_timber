@@ -8,12 +8,12 @@
 .single-page__{
 
   &header{
-    margin-bottom: $inuit-global-spacing-unit-large /2;
+    margin-bottom: $act-unit-l;
   }
 
   &heading{
     margin-bottom: 0;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1;
     &:after{
 
@@ -42,7 +42,7 @@
 }
 
 [class*='single-page--']{
-  @extend .post;
+  //@extend .post;
 }
 
 [class*='single-page__header--']{

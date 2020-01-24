@@ -1,48 +1,109 @@
 
 .u-col1 {
   color: $brand-col-1 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-1, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-1 !important;
+  }
 }
 
 .u-col2 {
   color: $brand-col-2 !important;
-  color: $brand-col-1; //default
+  &:hover{
+    color: darken($brand-col-2, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-2 !important;
+  }
 }
 
 .u-col3 {
   color: $brand-col-3 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-3, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-3 !important;
+  }
 }
 
 .u-col4{
   color: $brand-col-4 !important;
-  color: white;
-  .nav-menu__link *{
-    color: white;
+  &:hover{
+    color: darken($brand-col-4, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-4 !important;
   }
 }
 
 .u-col5 {
   color: $brand-col-5 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-5, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-5 !important;
+  }
 }
 
 .u-col6 {
   color: $brand-col-6 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-6, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-6 !important;
+  }
 }
 
 .u-col7 {
   color: $brand-col-7 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-7, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-7 !important;
+  }
 }
 
 .u-col8 {
   color: $brand-col-8 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-8, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-8 !important;
+  }
 }
 
 .u-col9 {
   color: $brand-col-9 !important;
-  color: white; //default
+  &:hover{
+    color: darken($brand-col-9, 20%) !important;
+  }
+  &-hov:hover{
+    color: $brand-col-9 !important;
+  }
+}
+
+.u-col-white{
+  color: white !important;
+  &:hover{
+    color: darken($brand-col-9, 20%) !important;
+  }
+  &-hov:hover{
+    color: white !important;
+  }
+}
+.u-col-blacks{
+  color: black !important;
+  &:hover{
+    color: darken($brand-col-9, 20%) !important;
+  }
+  &-hov:hover{
+    color: black !important;
+  }
 }

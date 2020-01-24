@@ -8,6 +8,7 @@
   justify-content: flex-end;
   height: 100%;
   text-align: center;
+
 }
 
 /*
@@ -65,7 +66,9 @@
     display: block
   }
   &link-title{
-    color: black;
+    color: $brand-col-5;
+    @include act-font-size($act-fs-4)
+    //display: none;
   }
   &post-icon{
     margin-bottom: $act-unit-l * 1;
@@ -119,4 +122,8 @@
   &feature-list{
     @include act-font-size($inuit-font-size-h5);
   }
+}
+
+[class*=c-post-thumb__link-title--] {
+  @extend .c-post-thumb__link-title;
 }

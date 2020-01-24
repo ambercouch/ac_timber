@@ -1,5 +1,5 @@
-var siteLocalUrl = 'mysite.local';
-var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
+let siteLocalUrl = 'mysite.local';
+let defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
@@ -18,38 +18,38 @@ const rename = require('gulp-rename');
 /*
  SOURCE FILES
  */
-var jsScripts;
-var jsPath = 'assets/js/';
-var jsNpmPath = 'node_modules/';
-var jsCustomScripts = [
+let jsScripts;
+let jsPath = 'assets/js/';
+let jsNpmPath = 'node_modules/';
+let jsCustomScripts = [
     'ac_timber.js',
     // 'custom.js',
 ];
 
-var jsNpmScripts = [
+let jsNpmScripts = [
     //All ready deprecated with browserify
     'fitvids/dist/fitvids.js',
     'remodal/dist/remodal.js',
     'flickity/dist/flickity.pkgd.js'
 ];
 
-var cssNpmScripts = [
+let cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
     //'flickity/dist/flickity.css'
     'remodal/dist/remodal.css',
     'remodal/dist/remodal-default-theme.css',
 ];
 
-for (var i = 0; i < jsCustomScripts.length; i++) {
+for (let i = 0; i < jsCustomScripts.length; i++) {
     //Add the default path
     jsCustomScripts[i] = jsPath + jsCustomScripts[i];
 }
-for (var i = 0; i < jsNpmScripts.length; i++) {
+for (let i = 0; i < jsNpmScripts.length; i++) {
     //Add the default path
     jsNpmScripts[i] = jsNpmPath + jsNpmScripts[i];
 }
 
-for (var i = 0; i < cssNpmScripts.length; i++) {
+for (let i = 0; i < cssNpmScripts.length; i++) {
     //Add the default path
     cssNpmScripts[i] = jsNpmPath + cssNpmScripts[i];
 }
