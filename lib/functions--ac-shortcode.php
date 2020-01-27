@@ -198,4 +198,43 @@ function act_shortcode_svg_icon($atts, $content = null) {
     return $output;
 }
 
+add_shortcode('act_cta', 'act_shortcode_call_to_action');
+function act_shortcode_call_to_action($atts, $content = null) {
+    extract(shortcode_atts(array(
+        'title' => 'We Would Love to Hear From You!',
+        'linktext' => 'Contact Us',
+        'linkid' => null
+        ), $atts));
+
+    $htmlLink = '';
+    if ($linkid){
+        $htmlLink .= '<div class="c-cta__btn">';
+        $htmlLink .= '<a class="c-btn--cta" href="'.get_permalink($linkid).'" >';
+        $htmlLink .= $linktext;
+        $htmlLink .= '</a>';
+        $htmlLink .= '</div>';
+    }
+
+    $output = '';
+    $output .= '<div class="c-cta">';
+    $output .= '<header class="c-cta__header">';
+    $output .= '<h3 class="c-cta__heading">';
+    $output .= '<span class="c-cta__title">';
+    $output .= $title;
+    $output .= '</span>';
+    $output .= '</h3>';
+    $output .= '</header>';
+    $output .= '<div class="c-cta__body">';
+
+    $output .= '<div class="c-cta__content" >';
+    $output .= wpautop($content);
+    $output .= '</div>';
+
+    $output .= $htmlLink;
+    
+    $output .= '</div>';
+    $output .= '</div>';
+    return $output;
+}
+
 
