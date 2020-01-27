@@ -81,9 +81,9 @@
     @include act-font-size($inuit-font-size-h5);
   }
   &more-link{
-    color: $brand-col-2;
+    color: white;
     text-decoration: none;
-    @extend .o-btn--transparent;
+    @extend .o-btn;
     @extend .o-btn--rounded;
     &:hover{
       @extend .o-btn;

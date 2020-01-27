@@ -35,7 +35,7 @@
            </h2>
          </header>
     <div class="c-post-thumb__excerpt--service">
-      <?php the_excerpt() ?>
+      <?php //the_excerpt() ?>
     </div>
       <?php if ( $hide_content_link != true ) : ?>
     <div class="c-post-thumb__more">
