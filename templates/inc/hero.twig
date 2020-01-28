@@ -1,4 +1,4 @@
-{% if not fn('is_front_page') and pageSettingsShowSiteHero != true %}
+{% if pageBannerImg and pageSettingsShowSiteHero != true %}
   {%   set bannerImg = pageBannerImg %}
   {%   set bannerLogo = pageBannerLogo %}
   {%   set bannerContent = pageBannerContent %}
@@ -13,6 +13,16 @@
     <div class="hero__background">
       {% if bannerImg.url != '' %}
       <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
+      {% elseif bannerGallery %}
+        <div class="hero__gallery-slider">
+          <div class="c-gallery-slider">
+        {% for image in bannerGallery %}
+          <div class="c-gallery-slider__cell">
+            <img src="{{  image.url }}" alt="{{  image.alt }}" class="c-gallery-slider__img">
+          </div>
+        {% endfor %}
+        </div>
+        </div>
       {% endif %}
     </div>
 

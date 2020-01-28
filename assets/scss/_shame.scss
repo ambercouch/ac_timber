@@ -23,3 +23,15 @@
   max-width: 100%;
 }
 
+.flickity-button {
+  z-index: 9999;
+  [data-mobile=on] &{
+    display: none;
+  }
+}
+
+.flickity-page-dots .dot {
+  width: 1em !important;
+  height: 1em !important;
+}
+

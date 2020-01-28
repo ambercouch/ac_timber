@@ -123,7 +123,16 @@ class StarterSite extends TimberSite {
         $context['serviceMenuShowExcerpt'] = get_field('show_service_excerpt', 'options');
 
         $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
+
         $context['bannerImg'] = (get_field('banner_image', 'options') == '') ?  acSettings()['bannerImg'] : get_field('banner_image', 'options');
+
+        //Remove the bannerImg and default image if slider selected
+        $context['bannerImg'] = (get_field('banner_slider', 'options')) ? null : $context['bannerImg'];
+
+        $context['bannerSlider'] = (get_field('banner_slider', 'options'));
+        $context['bannerGallery'] = (get_field('banner_slider_gallery', 'options')) ?  get_field('banner_slider_gallery', 'options') : true;
+
+
         $context['bannerContent'] = get_field('banner_content', 'options');
         $context['bannerLogo'] = get_field('banner_logo', 'options');
 

@@ -7,6 +7,7 @@ BEM BLOCK .hero
   min-height: 500px;
   height: 100vh;
   position: relative;
+
 }
 
 /*
@@ -26,6 +27,10 @@ BEM ELEMENTS .hero__
     height: 100%;
     width: 100%;
     filter: saturate(10%);
+  }
+  &gallery-slider{
+   // display: none !important;
+    height: 100%;
   }
   &body{
     position: relative;

@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('flickity imagesloaded');
 ACTIMBER = {
     common: {
         init: function () {
@@ -10,11 +10,21 @@ ACTIMBER = {
             //uncomment to debug
             console.log('common');
 
+            var elem = document.querySelector('.c-gallery-slider');
+            var flkty = new Flickity( elem, {
+                // options
+                cellAlign: 'left',
+                contain: true,
+                imagesLoaded: true,
+                pageDots: false,
+                autoPlay: 4000
+            });
+
             //add js class
             jQuery('body').addClass('js');
             //$("[data-fitvid]").fitVids();
 
-            
+
             /**
              * navigation.js
              *
