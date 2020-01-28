@@ -30,12 +30,13 @@ let jsNpmScripts = [
     //All ready deprecated with browserify
     'fitvids/dist/fitvids.js',
     'remodal/dist/remodal.js',
-    'flickity/dist/flickity.pkgd.js'
+    'flickity/dist/flickity.pkgd.js',
+    'flickity-imagesloaded/flickity-imagesloaded.js'
 ];
 
 let cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
-    //'flickity/dist/flickity.css'
+    'flickity/dist/flickity.css',
     'remodal/dist/remodal.css',
     'remodal/dist/remodal-default-theme.css',
 ];
@@ -71,6 +72,14 @@ function scripts() {
         uglify(),
         gulp.dest('dist/js/')
     );
+}
+
+//TASK: vendorStyles - Concat the vendor styles
+function vendorStyles(){
+    return gulp.src(cssNpmScripts)
+        .pipe(concat('_vendor.scss'))
+        .pipe(gulp.dest('assets/scss/'));
+
 }
 
 

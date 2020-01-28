@@ -10,6 +10,7 @@
     "cssnano": "^3.10.0",
     "fitvids": "^2.0.0",
     "flickity": "^2.0.10",
+    "flickity-imagesloaded": "^2.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-browserify": "^0.5.1",
