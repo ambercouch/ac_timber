@@ -14,6 +14,14 @@
   &type {
     display: block
   }
+  &masthead-before-widgets{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: $act-unit;
+    @include breakout-band($bgc : $brand-col-3)
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-widget-area--
@@ -55,16 +63,31 @@
 
 .c-widget-area__widget--{
   &masthead-before-widgets{
-    @include breakout-band($bgc : $brand-col-3);
-    padding-right: $act-unit-h;
+    //@include breakout-band($bgc : $brand-col-3);
+    display: inline-block;
+    //padding-right: $act-unit-l;
     @include mq($from : desktop){
       padding-right: 0;
+    }
+  }
+  &masthead-after-widgets{
+    display: inline-block;
+    @include mq($from : 860px, $until : desktop){
+
     }
   }
   &sidebar-widgets{
     margin-bottom: $act-unit;
     padding-bottom: $act-unit;
     border-bottom: solid 1px;
+  }
+  &footer-widgets{
+    padding-right: $act-unit-l;
+    @include mq($from : desktop){
+    &:last-child{
+      margin-left: auto;
+    }
+    }
   }
 
 

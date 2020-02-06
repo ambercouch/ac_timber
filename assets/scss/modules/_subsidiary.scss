@@ -46,6 +46,11 @@
   &footer {
     display: block
   }
+  &navigation{
+    margin-bottom: $act-unit-l;
+    border-bottom: solid 1px $brand-col-3;
+    padding-bottom: $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .subsidiary--

@@ -4,7 +4,7 @@
 
 .image-menu-item {
   display: block;
-  @include colour-cast($color: $brand-col-3, $opacity : 0.1);
+  @include colour-cast($color: $brand-col-3, $opacity : 0.3);
   position: relative;
   &:hover{
 
@@ -40,9 +40,9 @@
     max-height:100%;
     width: 600px;
     height: auto;
-    filter: saturate(20%);
+    //filter: saturate(20%);
     .image-menu-item:hover &{
-      filter:saturate(50%);
+      //filter:saturate(50%);
     }
   }
   &header{
@@ -62,7 +62,7 @@
     font-weight: 500;
     margin: 0;
     display: block;
-    background: rgba($brand-col-2, 1);
+    background: rgba($brand-col-1, 1);
     padding: $act-unit-t $act-unit-t;
     text-transform: uppercase;
     text-align: center;

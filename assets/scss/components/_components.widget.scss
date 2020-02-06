@@ -24,15 +24,24 @@
       @extend .o-list-bare;
       margin-bottom: 0;
     }
+
+  }
+  &shop-menu{
+    //display: none !important;
+    float: right;
   }
   &masthead-before {
     color: white;
     text-align: left;
     @include act-font-size($milli-size, 1.5);
     padding: $act-unit-t 0;
-    margin-bottom: $act-unit;
+    margin-bottom: $act-unit-t;
     @include mq($from : tablet){
       text-align: right;
+    }
+    :first-child > &{
+
+      margin-bottom: 0;
     }
 
   }

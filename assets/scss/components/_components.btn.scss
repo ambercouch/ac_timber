@@ -32,7 +32,13 @@
   &n{
     @extend .c-btn;
     padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small !important;
-    @include act-font-size($act-fs-4, 1)
+    @include act-font-size($act-fs-4, 1);
+    text-transform: none;
+  }
+  &l{
+    @extend .c-btn;
+    padding: $inuit-global-spacing-unit  $inuit-global-spacing-unit !important;
+    @include act-font-size($act-fs-5, 1);
     text-transform: none;
   }
 }

@@ -69,4 +69,10 @@
   @extend .single-page__comment-link
 }
 
+.single-page__title{
+  .home &{
+    text-align: center;
+  }
+}
+
 

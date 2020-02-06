@@ -18,6 +18,7 @@ BEM BLOCK .c-masthead
   &.has-before-widgets{
     padding-top: 0;
   }
+
 }
 
 /*
@@ -51,34 +52,19 @@ BEM ELEMENTS .c-masthead__
   &widget-area{
     width: 100%;
   }
-  &masthead-before-widgets{
-  @include breakout-band($bgc : $brand-col-3);
-  text-align: right;
-  margin-bottom:$act-unit-s;
-  background: $brand-col-2;
-  color: white;
-  padding: $act-unit-t !important;
-  @include act-font-size($milli-size, 1);
-  width: 100%;
-  @include mq($from : tablet){
 
-    width: 100%;
-
-  }
-  @include mq($from : desktop){
-
-  }
-}
   &branding{
     background: transparent;
-    margin-bottom: $act-unit;
+    margin-bottom: 0;
     width: auto;
     max-width: 100%;
+
 
     @include mq($from : desktop){
       max-width: 100%;
     }
   }
+
 }
 
 [class*=c-masthead__widget-area--]{

@@ -38,6 +38,12 @@ BEM ELEMENTS .hero__
     justify-content: center;
     z-index: 2;
     flex-direction: column;
+    top: $act-unit;
+    @media (max-width: 859px) and (max-height : 700px) {
+      justify-content: flex-end;
+      bottom: $act-unit;
+      top: auto
+    }
   }
   &content{
     display: inline-block;

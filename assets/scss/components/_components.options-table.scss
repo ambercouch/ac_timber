@@ -92,14 +92,12 @@
   &col{
     display: table-column;
     //border-left: solid 1px;
+    width: 25%;
   }
   &text{
     line-height: 1;
   }
   &buy{
-    .woocommerce-Price-amount{
-      display: none;
-    }
     .add_to_cart_button {
       background: $brand-col-2 !important;
       color: white !important;
@@ -114,6 +112,15 @@
       &:hover{
         background: darken($brand-col-4, 5%);
       }
+    }
+  }
+  &select-bundle-link{
+    @extend .c-btn--l;
+    background: $brand-col-1;
+    font-weight: 700;
+    color: $brand-col-2;
+    &:hover{
+      background: green !important;
     }
   }
 }
@@ -160,9 +167,24 @@ border-left: none ;
     border: none;
     color: $brand-col-1;
     @include act-font-size($inuit-font-size-h4);
-    padding-bottom: $act-unit-l !important;
+    //padding-bottom: $act-unit-l !important;
   }
   &op2{
     background: $brand-col-6;
   }
 }
+
+[class*=c-options-table__note--] {
+  @extend .c-options-table__note;
+}
+
+.c-options-table__note--{
+  &select-bundle{
+    color: $brand-col-1 !important;
+    padding: $act-unit-s $act-unit-t;
+    a{
+      color: $brand-col-1 !important;
+    }
+  }
+}
+

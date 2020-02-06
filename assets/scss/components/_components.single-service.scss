@@ -25,14 +25,14 @@ BEM BLOCK ELEMENTS .c-single-service__
 .c-single-service__{
 
   &feature-image{
-    margin-bottom: $inuit-global-spacing-unit;
+    margin-bottom: $act-unit-l;
 
   }
 
   &header{
     display: block;
     padding: 0 $inuit-global-spacing-unit;
-    margin-bottom:$act-unit-h;
+    margin-bottom:$act-unit-l;
     text-align: center;
   }
 

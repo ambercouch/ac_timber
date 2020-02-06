@@ -1,3 +1,6 @@
+ul{
+
+}
 dt{
   font-weight: bold;
 }
@@ -5,5 +8,8 @@ dd{
   margin-bottom: $act-unit;
 }
 li{
-  padding-left: 1em;
+  margin-left: $act-unit;
+  @include act-font-size($inuit-font-size-h5);
+  font-weight: 700;
+  margin-bottom: $act-unit-s;
 }

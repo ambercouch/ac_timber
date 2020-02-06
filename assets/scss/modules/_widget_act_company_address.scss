@@ -1,8 +1,9 @@
 .widget_act_company_address{
-  max-width: 300px;
-  width: 100%;
-  margin:0 auto $inuit-global-spacing-unit;
-  text-align: center;
+  //max-width: 300px;
+  //width: 100%;
+  //display: none !important;
+
+
   color: white;
   font-weight:100;
   @include inuit-font-size($inuit-font-size-h5, 1.3)
