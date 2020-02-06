@@ -12,9 +12,14 @@ ACTIMBER = {
 
             //add js class
             jQuery('body').addClass('js');
+
             //$("[data-fitvid]").fitVids();
 
-            
+            var $first_renewal  = $(".first-payment-date small");
+            var $first_renewal_text = $first_renewal.text();
+            $first_renewal.text($first_renewal_text.replace('First renewal', 'Next payment date'))
+
+
             /**
              * navigation.js
              *
