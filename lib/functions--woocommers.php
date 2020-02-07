@@ -439,3 +439,43 @@ function custom_woocommerce_auto_complete_order( $order_id ) {
     $order->update_status( 'completed' );
 }
 
+
+
+/**
+ * Do not allow any subscriptions to be changed to a new payment method.
+ */
+//add_filter('woocommerce_can_subscription_be_updated_to_new-payment-method', '__return_false', 100);
+
+/**
+ * Do not allow a customer to resubscribe to an expired or cancelled subscription.
+ */
+//add_filter( 'wcs_can_user_resubscribe_to_subscription', '__return_false', 100 );
+
+/**
+ * Do not allow any subscriptions to switched to a different subscription, regardless of settings (more: http://docs.woothemes.com/document/subscriptions/switching-guide/).
+ */
+//add_filter( 'woocommerce_subscriptions_can_item_be_switched_by_user', '__return_false', 100 );
+// OR
+//add_filter( 'woocommerce_subscriptions_can_item_be_switched', '__return_false', 100 );
+
+
+/**
+ * Subscriptions Status Changes
+ **/
+
+/**
+ * Do not allow any subscriptions to be activated or reactivated (not a good idea).
+ */
+//add_filter( 'woocommerce_can_subscription_be_updated_to_active', '__return_false', 100 );
+
+/**
+ * Do not allow any subscription to be cancelled, either by the store manager or customer (not a good idea).
+ */
+
+//add_filter( 'woocommerce_can_subscription_be_updated_to_cancelled', '__return_false', 100 );
+
+/**
+ * Do not allow any subscription to be suspended, either by the store manager or customer (not a good idea).
+ */
+//add_filter( 'woocommerce_can_subscription_be_updated_to_on-hold', '__return_false', 100 );
+
