@@ -3,6 +3,11 @@
   color: $col-heading;
 }
 
+@include headings(1,6){
+  font-family: $act-font-family-headings;
+  margin-top: 0;
+}
+
 h1{
-  @include act-font-size($act-fs-k)
+  //@include act-font-size($act-fs-k)
 }

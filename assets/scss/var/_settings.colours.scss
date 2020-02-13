@@ -15,24 +15,28 @@ $act-grey-light : #eee;
 $act-grey-dark : #666;
 
 $hep-black : #0b0724;
+$hep-unwhiten : #eeecf6;
 $hep-burnt-red : #480027;
 $hep-pink : #B63E7F;
 $hep-indigo-blue : #241773;
 $hep-violet : #4E429C;
 $hep-pinkish : lighten($hep-pink, 30%);
+$hep-sea-green : #00a38c;
+$hep-sea-greenish : lighten($hep-sea-green, 30%);
 
-$brand-col-1 : $hep-pink;
+$brand-col-1 : $hep-sea-green;
 $brand-col-2 : $hep-black;
 $brand-col-3 : $hep-burnt-red;
 $brand-col-4 : $hep-indigo-blue;
 $brand-col-5 : $hep-violet;
-$brand-col-6 : $hep-pinkish;
-$brand-col-7 : $act-grey;
-$brand-col-8 : $act-grey-light;
+$brand-col-6 : $hep-sea-greenish;
+$brand-col-7 : $hep-pinkish;
+$brand-col-8 : $hep-unwhiten;
 $brand-col-9 : $act-grey-dark;
 
 $col-text : $brand-col-2;
 $col-heading : $brand-col-2;
 $col-link : $brand-col-2;
 $col-accent : $brand-col-3;
+$col-site-bg: $hep-unwhiten;
 

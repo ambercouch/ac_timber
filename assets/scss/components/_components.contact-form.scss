@@ -163,7 +163,7 @@
   @extend .c-contact-form__input;
   padding:$act-unit-t;
   background: $brand-col-6;
-  color: white;
+  color: $brand-col-2;
   cursor: pointer;
   &:hover{
     background: darken($brand-col-6, 10%);
