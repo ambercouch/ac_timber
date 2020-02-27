@@ -74,6 +74,15 @@ function scripts() {
 }
 
 
+function vendorStyles(){
+    return gulp.src(cssNpmScripts)
+        .pipe(concat('_vendor.scss'))
+        .pipe(gulp.dest('assets/scss/'));
+
+    //console.log("testing vendorStyles")
+
+}
+
 //compile scss into css
 function styles() {
     return gulp.src('assets/scss/main.scss')
@@ -113,3 +122,4 @@ exports.serve = serve;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.svgdefs = svgdefs;
+exports.vendorStyles = vendorStyles;
