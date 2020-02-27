@@ -1,0 +1,93 @@
+/*
+  BEM BLOCK .c-schedule-table
+ */
+
+.c-schedule-table {
+  display: block;
+  @include act-font-size($inuit-font-size-h6);
+}
+
+/*
+  BEM BLOCK MODIFIER .c-schedule-table--
+ */
+
+.c-schedule-table-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-schedule-table--
+
+[class*=c-schedule-table--] {
+  @extend .c-schedule-table;
+}
+
+/*
+  BEM ELEMENTS .c-schedule-table__
+ */
+
+.c-schedule-table__ {
+  &header {
+    display: block
+  }
+  &heading {
+    display: block;
+    text-align: center;
+    background: $brand-col-1;
+    padding: $inuit-global-spacing-unit-tiny;
+    margin-bottom: 0;
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+  &td{
+    vertical-align: top;
+    padding: $inuit-global-spacing-unit-small;
+    p{
+      margin-bottom: 0;
+    }
+    .subscription-details{
+      @include act-font-size($inuit-font-size-small, 1);
+      text-align: center;
+    }
+    .add_to_cart_inline{
+      text-align: center;
+    }
+    .woocommerce-Price-amount{
+      @include act-font-size($inuit-font-size-small, 1);
+      font-weight: bold;
+    }
+    .add_to_cart_button{
+      display: block !important;
+      margin: $act-unit-s 0 !important;
+      margin-bottom: 0 !important;
+      @extend .c-btn--n;
+      padding: $act-unit-s!important;
+      @include act-font-size($inuit-font-size-h5);
+      background: $brand-col-2 !important;
+      color: white !important;
+      &:hover{
+        background: green !important;
+      }
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-schedule-table--
+
+[class*=c-schedule-table__header--] {
+   @extend .c-schedule-table__header;
+ }
+[class*=c-schedule-table__td--] {
+  @extend .c-schedule-table__td;
+}
