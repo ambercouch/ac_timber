@@ -38,7 +38,6 @@
     @extend .o-list-bare__item;
     margin: 0;
     padding: 0;
-    font-weight: 300;
 
     &:last-child{
       padding-right: 0;
@@ -93,13 +92,6 @@
   }
   &social{
     justify-content: flex-start;
-  }
-  &mobile{
-    flex-direction: column;
-
-  }
-  &terms{
-    display: block;
   }
 }
 
@@ -180,8 +172,6 @@
 [class*=c-nav-menu__sub-menu-list--] {
   @extend .c-nav-menu__sub-menu-list !optional;
 }
-
-
 
 [class*=c-nav-menu__sub-menu-item--] {
   @extend .c-nav-menu__sub-menu-item !optional;

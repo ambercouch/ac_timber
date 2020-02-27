@@ -1,217 +1,206 @@
-  .gallery{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 100%;
-    flex-wrap: wrap;
-    @include mq($from : tablet){
-      flex-wrap: nowrap;
-    }
+.gallery{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  flex-wrap: wrap;
+  @include mq($from : tablet){
+    flex-wrap: nowrap;
   }
+}
+.gallery-item{
+  padding: $act-unit-t;
+  margin-bottom: 0;
+  max-width: 50%;
+  @include mq($from : tablet){
+    max-width: 20%;
+  }
+}
+
+img[height], img[width] {
+
+  max-width: 100%;
+  height: auto;
+
+}
+
+#gallery-1{
+  justify-content: flex-start !important;
   .gallery-item{
-    padding: $act-unit-t;
-    margin-bottom: 0;
-    max-width: 50%;
-    @include mq($from : tablet){
-      max-width: 20%;
-    }
+    width: 200px;
+    max-width: 40%;
+    margin-right: $act-unit-s;
   }
+}
 
-  img[height], img[width] {
-
-    max-width: 100%;
-    height: auto;
-
+.c-cmw-box{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 250px;
+  z-index: 999;
+  .home &{
+    display: block;
   }
+}
 
-  #gallery-1{
-    justify-content: flex-start !important;
-    .gallery-item{
-      width: 200px;
-      max-width: 40%;
-      margin-right: $act-unit-s;
-    }
+.woocommerce-message{
+  background: lighten(#8fae1b, 40%);
+}
+
+.woocommerce-message{
+  .wc-forward{
+    display:none !important;
   }
+}
 
-  .c-cmw-box{
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 250px;
-    z-index: 999;
-    .home &{
-      display: block;
-    }
+.shop_table{
+  @include act-font-size($inuit-font-size-h5);
+  a{
+    text-decoration: none;
   }
+}
 
-  .woocommerce-message{
-    background: lighten(#8fae1b, 40%);
+.checkout-button{
+  background: green !important;
+  &:hover{
+    background: darken(green, 10%) !important;
   }
+}
 
-  .woocommerce-message{
-    .wc-forward{
-      display:none !important;
-    }
+.wcppec-checkout-buttons__button {
+  content: url("https://www.paypalobjects.com/webstatic/i/buttons/checkout-logo-medium.png");
+  padding-top:0;
+}
+
+.woocommerce-billing-fields__field-wrapper{
+  padding: $act-unit;
+  padding-bottom: $act-unit-l;
+  background: lighten($brand-col-1, 10%);
+  color: $brand-col-2;
+  margin-bottom: $act-unit-l;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+  padding: $act-unit-t $act-unit-t;
+  @include act-font-size($inuit-font-size-h6);
+
+}
+
+.woocommerce form .form-row label {
+
+  line-height: 1;
+  margin-bottom: $act-unit-t;
+  @include act-font-size($inuit-font-size-h6, 1)
+
+}
+
+.woocommerce form .form-row {
+
+  padding-bottom: $act-unit;
+  margin: 0 0 6px;
+
+}
+
+.woocommerce form .form-row label .optional  {
+  @include act-font-size($inuit-font-size-small-print,1);
+  display: none;
+
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered {
+  @include act-font-size($inuit-font-size-h6)
+
+}
+
+#billing_company_field{
+  display: none;
+}
+.select2-search--dropdown {
+  border-bottom: 1px solid #aaa;
+  padding: $act-unit-s;
+
+}
+.wc_payment_methods{
+  //display: none!important;
+}
+.woocommerce-terms-and-conditions-wrapper{
+  @include act-font-size($inuit-font-size-h6)
+}
+.place-order{
+  @include mq($from: tablet){
+    display: flex;
   }
-
-  .shop_table{
-    @include act-font-size($inuit-font-size-h5);
-    a{
-      text-decoration: none;
-    }
+  & > *{
+    width: 50%;
   }
+}
 
-  .checkout-button{
-    background: green !important;
-    &:hover{
-      background: darken(green, 10%) !important;
-    }
+.woocommerce-terms-and-conditions-wrapper{
+  padding-right: $act-unit;
+}
+
+#place_order{
+  background: green ;
+  &:hover{
+    background: darken(green, 5%);
   }
+}
 
-  .wcppec-checkout-buttons__button {
-    content: url("https://www.paypalobjects.com/webstatic/i/buttons/checkout-logo-medium.png");
-    padding-top:0;
+form.woocommerce-checkout{
+  padding-bottom: $act-unit-h;
+  margin-bottom: $act-unit-h;
+  border-bottom: solid 1px $brand-col-1;
+}
+
+.single-article__feature-image{display: none}
+
+#add_payment_method table.cart .product-thumbnail,
+.woocommerce-cart table.cart .product-thumbnail,
+.woocommerce-checkout table.cart .product-thumbnail{
+  //display: none;
+}
+
+.woocommerce-checkout-review-order-table{
+  background: lighten($brand-col-1, 70%);
+}
+
+.woocommerce-checkout-payment{
+  background: lighten($brand-col-1, 70%) !important;
+}
+.woocommerce-cart-form{
+  background: lighten($brand-col-1, 70%) !important;
+}
+.shop_table{
+  background: lighten($brand-col-1, 70%) !important;
+}
+
+.woocommerce ul.order_details {
+  padding: 1em;
+  background: #eee;
+}
+
+.woocommerce-MyAccount-navigation{
+  ul {
+    margin: 0;
+    margin-bottom: $act-unit;
+    list-style-type: none;
   }
-
-  .woocommerce-billing-fields__field-wrapper{
-    padding: $act-unit;
-    padding-bottom: $act-unit-l;
-    background: lighten($brand-col-1, 10%);
-    color: $brand-col-2;
-    margin-bottom: $act-unit-l;
-  }
-
-  .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
-    padding: $act-unit-t $act-unit-t;
-    @include act-font-size($inuit-font-size-h6);
-
-  }
-
-  .woocommerce form .form-row label {
-
+  li{
+    margin: 0;
     line-height: 1;
-    margin-bottom: $act-unit-t;
-    @include act-font-size($inuit-font-size-h6, 1)
-
   }
-
-  .woocommerce form .form-row {
-
-    padding-bottom: $act-unit;
-    margin: 0 0 6px;
-
-  }
-
-  .woocommerce form .form-row label .optional  {
-    @include act-font-size($inuit-font-size-small-print,1);
-    display: none;
-
-  }
-
-  .select2-container .select2-selection--single .select2-selection__rendered {
-    @include act-font-size($inuit-font-size-h6)
-
-  }
-
-  #billing_company_field{
-    display: none;
-  }
-  .select2-search--dropdown {
-    border-bottom: 1px solid #aaa;
+  a{
+    text-decoration: none;
+    font-weight: 100;
+    color: white;
+    background: $brand-col-2;
+    line-height: 1;
+    display: block;
     padding: $act-unit-s;
-
-  }
-  .wc_payment_methods{
-    //display: none!important;
-  }
-  .woocommerce-terms-and-conditions-wrapper{
-    @include act-font-size($inuit-font-size-h6)
-  }
-  .place-order{
-    @include mq($from: tablet){
-      display: flex;
-    }
-    & > *{
-      width: 50%;
-    }
-  }
-
-  .woocommerce-terms-and-conditions-wrapper{
-    padding-right: $act-unit;
-  }
-
-  #place_order{
-    background: green ;
+    border-bottom: solid 1px darken($brand-col-2, 5%);
     &:hover{
-      background: darken(green, 5%);
+      background: darken($brand-col-2, 5%);
     }
   }
-
-  form.woocommerce-checkout{
-    padding-bottom: $act-unit-h;
-    margin-bottom: $act-unit-h;
-    border-bottom: solid 1px $brand-col-1;
-  }
-
-  .single-article__feature-image{display: none}
-
-  #add_payment_method table.cart .product-thumbnail,
-  .woocommerce-cart table.cart .product-thumbnail,
-  .woocommerce-checkout table.cart .product-thumbnail{
-    //display: none;
-  }
-
-  .woocommerce-checkout-review-order-table{
-    background: lighten($brand-col-1, 70%);
-  }
-
-  .woocommerce-checkout-payment{
-    background: lighten($brand-col-1, 70%) !important;
-  }
-  .woocommerce-cart-form{
-    background: lighten($brand-col-1, 70%) !important;
-  }
-  .shop_table{
-    background: lighten($brand-col-1, 70%) !important;
-  }
-
-  .woocommerce ul.order_details {
-    padding: 1em;
-    background: #eee;
-  }
-
-  .woocommerce-MyAccount-navigation{
-    ul {
-      margin: 0;
-      margin-bottom: $act-unit;
-      list-style-type: none;
-    }
-    li{
-      margin: 0;
-      line-height: 1;
-    }
-    a{
-      text-decoration: none;
-      font-weight: 100;
-      color: white;
-      background: $brand-col-2;
-      line-height: 1;
-      display: block;
-      padding: $act-unit-s;
-      border-bottom: solid 1px darken($brand-col-2, 5%);
-      &:hover{
-        background: darken($brand-col-2, 5%);
-      }
-    }
-  }
-
-  .woocommerce form .form-row.ac-field-class .woocommerce-input-wrapper .description{
-    padding: $inuit-global-spacing-unit-tiny;
-    @include act-font-size($inuit-font-size-h6,1.1);
-    width: 100% ;
-    text-align: center;
-  }
-
-  td .button.cancel{
-    display: none;
-  }
+}
