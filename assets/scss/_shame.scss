@@ -204,3 +204,25 @@ form.woocommerce-checkout{
     }
   }
 }
+
+.woocommerce-button.view.button{
+  background: $brand-col-2;
+  color: white;
+
+
+}
+.woocommerce-MyAccount-content{
+  .button{
+    background: $brand-col-2 !important;
+    color: white !important;
+
+  }
+}
+
+.woocommerce-EditAccountForm{
+  .woocommerce-Button.button{
+    background: $brand-col-2 !important;
+    color: white !important;
+  }
+}
+

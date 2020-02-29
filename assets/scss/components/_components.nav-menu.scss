@@ -12,7 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($inuit-font-size-h6, 1.3);
+    @include act-font-size($inuit-font-size-h6, 1.3);
   }
 }
 
@@ -27,17 +27,18 @@
  */
 
 .c-nav-menu__ {
- &list{
-   @extend .o-list-bare;
-   margin-bottom: 0;
-   display: flex;
-   justify-content: flex-end;
- }
+  &list{
+    @extend .o-list-bare;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-end;
+  }
   &item{
     position: relative;
     @extend .o-list-bare__item;
     margin: 0;
     padding: 0;
+    font-weight: 300;
 
     &:last-child{
       padding-right: 0;
@@ -85,13 +86,20 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+    @extend .o-list-flex--center;
   }
   &pagination{
     @extend .o-flex-split--last;
   }
   &social{
     justify-content: flex-start;
+  }
+  &mobile{
+    flex-direction: column;
+
+  }
+  &terms{
+    display: block;
   }
 }
 
@@ -166,12 +174,14 @@
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
 
 [class*=c-nav-menu__sub-menu--] {
-   @extend .c-nav-menu__sub-menu !optional;
- }
+  @extend .c-nav-menu__sub-menu !optional;
+}
 
 [class*=c-nav-menu__sub-menu-list--] {
   @extend .c-nav-menu__sub-menu-list !optional;
 }
+
+
 
 [class*=c-nav-menu__sub-menu-item--] {
   @extend .c-nav-menu__sub-menu-item !optional;
