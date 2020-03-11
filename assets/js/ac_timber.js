@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('ACTIMBER data state');
 ACTIMBER = {
     common: {
         init: function () {
@@ -19,6 +19,46 @@ ACTIMBER = {
             var $first_renewal_text = $first_renewal.text();
             $first_renewal.text($first_renewal_text.replace('First renewal', 'Next payment date'))
 
+            $('[data-control]').each(function() {
+
+                const containerId = $(this).attr('data-control');
+
+                const controlSelector = (containerId != '' )? '[data-control='+ containerId + ']' : this;
+
+                const control = $(this);
+
+                const controlGroupId = control.first().attr('data-state-group');
+
+                const containerSelector = (containerId != '' )? '[data-container='+ containerId + ']' : '[data-container]';
+
+                const container = $(containerSelector);
+
+                control.off('click');
+
+                control.on('click',  function (e) {
+                    console.log('clickered');
+                    const state = control.attr('data-state');
+                    e.preventDefault();
+
+
+                    if (controlGroupId){
+                        console.log('clickered group');
+                        if (state == 'off') {
+                            ACTIMBER.fn.actStateToggleSelect(control, state);
+                            ACTIMBER.fn.actStateToggleGroup(control, container, controlGroupId, state);
+                            ACTIMBER.fn.actStateToggleSelect(container, state);
+                            //ACTIMBER.fn.actStateToggleGroup(container, controlGroupId);
+                        }
+
+                    }else{
+                        console.log('clickered not group');
+                        // ACTIMBER.fn.actStateToggle(container, control);
+                        ACTIMBER.fn.actStateToggleSelect(control, state);
+                        ACTIMBER.fn.actStateToggleSelect(container, state);
+                    }
+                });
+
+            });
 
             /**
              * navigation.js
@@ -82,6 +122,90 @@ ACTIMBER = {
         init: function () {
             //uncomment to debug
             //console.log('posts');
+        }
+    },
+    fn: {
+        actStateToggleGroup : function (control, container, stateGroupId, state){
+            console.log('group toggle');
+            $('[data-state-group='+stateGroupId+']').not(control).not(container).attr('data-state', 'off')
+            // $('[data-state-group='+stateGroupId+']').not(control).not(container).each(function(){
+            //     if ('off' === $(this).attr('data-state') ) {
+            //         $(this).attr('data-state', 'on');
+            //     } else if ('on' === $(this).attr('data-state') ) {
+            //         $(this).attr('data-state', 'off');
+            //     } else{
+            //         console.log('compfail');
+            //         console.log($(this).attr('data-state'));
+            //     }
+            // })
+
+        },
+        actStateToggleSelect : function (element, state) {
+            if('off' === state ){
+                element.attr('data-state', 'on');
+            }
+            if('on' === state){
+                element.attr('data-state', 'off');
+            }
+        },
+        actStateToggle: function (container, showButton, parent, listParent) {
+            var elState = showButton.attr('data-state');
+            var eventActOpen = new Event('actOpen');
+            var eventActClose = new Event('actClose');
+            showButton.on('click', function(e){
+                e.preventDefault();
+                elState = $(this).attr('data-state');
+                console.log('elState');
+                console.log(this);
+
+                console.log(elState);
+
+                if ('off' === elState ) {
+                    console.log('click on');
+                    $(this).attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('ac-on');
+                    document.body.className += ' ' + 'container-is-open';
+                    window.dispatchEvent(eventActOpen);
+
+                } else {
+                    console.log('click off');
+                    $(this).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('ac-on');
+                    document.querySelector('body').classList.remove('container-is-open');
+
+                    window.dispatchEvent(eventActClose);
+                }
+            });
+        },
+        actStateClose: function (container, showButton, closeButton) {
+            var elState = closeButton.attr('data-state');
+
+            var eventActClose = new Event('actClose');
+
+            // var eventActOpen = document.createEvent('Event');
+            // eventActOpen.initEvent('actOpen', true, true);
+            // var eventActClose = document.createEvent('Event');
+            // eventActClose.initEvent('actClose', true, true);
+
+
+            closeButton.on('click', function(e){
+                e.preventDefault();
+                elState = $(this).attr('data-state');
+
+                console.log('click off');
+                showButton.attr('data-state', 'off');
+                closeButton.attr('data-state', 'off');
+                $(container).attr('data-state', 'off');
+                $(container).removeClass('ac-on');
+                document.querySelector('body').classList.remove('container-is-open');
+
+                window.dispatchEvent(eventActClose);
+
+            });
         }
     }
 };

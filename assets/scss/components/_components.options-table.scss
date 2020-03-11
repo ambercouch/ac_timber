@@ -48,14 +48,31 @@
   }
   &th{
     @include act-font-size($inuit-font-size-h6);
-    width: 300px;
+
     color: white;
     border-bottom: solid 1px white !important;
     border-left: none;
     background:   $brand-col-2  ;
+    width: 50%;
+    @include mq($from : tablet){
+      width: 300px;
+      max-width: 300px;
+    }
   }
   &tr{
     //border-bottom: solid 1px $brand-col-1;
+    > *{
+      display: none;
+      @include mq($from: tablet){
+        display: table-cell;
+      }
+    }
+     > *:nth-child(1){
+        display: table-cell;
+      }
+    > [data-state=on]{
+      display: table-cell;
+    }
   }
   &td{
     text-align: center;
@@ -92,7 +109,10 @@
   &col{
     display: table-column;
     //border-left: solid 1px;
-    width: 25%;
+    width: 50%;
+    @include mq($from: tablet){
+      width: 25%;
+    }
   }
   &text{
     line-height: 1;
@@ -122,6 +142,22 @@
     &:hover{
       background: green !important;
     }
+  }
+  &control{
+    text-align: center;
+    @extend .o-box--tiny;
+    background: #fafafa;
+    @include mq($from: tablet){
+      display: none;
+    }
+  }
+  &control-btn{
+    background: #eee;
+    padding: $act-unit-s;
+    cursor: pointer;
+  &:hover, &:focus, &[data-state=on]{
+    background: #ddd;
+  }
   }
 }
 
@@ -153,7 +189,10 @@ border-left: none ;
     border: none;
   }
   &op2{
-    background: $brand-col-6;
+    @include mq($from : tablet){
+      background: $brand-col-6;
+    }
+
   }
 }
 
