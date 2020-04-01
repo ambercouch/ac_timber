@@ -5,6 +5,7 @@
 .c-post-thumb {
   display: block;
   height: 100%;
+  position: relative;
 }
 
 /*
@@ -66,6 +67,12 @@
     font-weight: 300;
     color: darken($brand-col-1, 20%);
     margin-bottom: $act_unit;
+  }
+  &footer{
+    margin-top: auto;
+  }
+  &feature-image{
+    margin-bottom: $act-unit-s;
   }
 
 }
