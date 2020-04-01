@@ -50,9 +50,17 @@ product list items
     width: 100%;
     text-align: center;
     margin-top: auto;
+    position: relative;
   }
   .media-figure{
     margin-bottom: $act-unit-s;
+  }
+  .added_to_cart{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    transform: translate(0px,100%);
   }
 
 }
