@@ -23,7 +23,7 @@
       {% endif %}
 
       <div class="c-post-thumb__price">{{ product.get_price_html }}</div>
-      <div class="c-post-thumb__add-btn">{% do action( 'woocommerce_after_shop_loop_item' ) %}</div>
+      <div class="c-post-thumb__add-btn"><a href="{{ product.add_to_cart_url }}" data-product_id="{{ product.get_id }}" data-product_sku="{{ product.get_sku }}" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart">{{ product.add_to_cart_text }}</a></div>
 </div>
     </div>
 
