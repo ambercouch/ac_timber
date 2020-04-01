@@ -19,3 +19,40 @@
 .flex-control-thumbs li{
   padding: $act-unit-t;
 }
+
+/*
+product list items
+ */
+.l-product-list__item{
+
+  .entry{
+    height: 100%;
+  }
+  .media{
+    height: 100%;
+  }
+  .media-content{
+    height: 100%;
+    position: relative;
+  }
+  .add_to_cart_button{
+    margin-top:auto !important;
+  }
+  .entry-title{
+    text-align: center;
+    margin: $act-unit-s 0;
+    margin-top: auto;
+  }
+  .price{
+    margin: $act-unit-s 0;
+  }
+  .media-footer{
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+  }
+  .media-figure{
+    margin-bottom: $act-unit-s;
+  }
+
+}
