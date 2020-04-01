@@ -43,6 +43,9 @@ BEM ELEMENTS .l-site__
   &info-banner{
     display: block;
   }
+  &subsidiary{
+    background: $brand-col-2;
+  }
 }
 
 .l-site__info-banner--{

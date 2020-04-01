@@ -3,8 +3,15 @@
  */
 
 .subsidiary {
+  padding-top: $act-unit-l !important;
+  padding-bottom: $act-unit-l !important;
   @extend .c-site-wrapper--responsive;
+  background-color: transparent;
   padding-top: 0;
+  color: white;
+  a{
+    color: white;
+  }
 }
 
 /*
