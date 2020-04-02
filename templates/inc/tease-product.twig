@@ -7,7 +7,7 @@
 {#      {% do  action('woocommerce_before_shop_loop_item_title') %}#}
 
       <div class="c-post-thumb__feature-image {% if not post.thumbnail %}placeholder{% endif %}">
-        <a class="c-post-thumb__image-link " href="{{ post.link }}">
+        <a class="c-post-thumb__image-link " title="Click to find out more" href="{{ post.link }}">
           {% if post.thumbnail %}
             <img class="c-post-thumb__img" src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
           {% else %}
