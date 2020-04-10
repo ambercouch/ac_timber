@@ -86,6 +86,7 @@
   }
   &item {
     padding: $act-unit;
+    padding-bottom: $act-unit-l;
     @include mq($from : tablet){
       width: 33.33%;
     }
