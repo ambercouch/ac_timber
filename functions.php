@@ -155,6 +155,6 @@ add_shortcode( 'act_woo_ordering', 'act_woocommerce_catalog_ordering' );
 add_filter( 'woocommerce_shipping_estimate_html', 'ac_shipping_text' );
 function ac_shipping_text( $output ){
     // filter...
-    $output = "Postal delivery is not possible for SESI refill products. We are providing free doorstep delivery for some postcodes in the Talbot Green area. Select <strong>Doorstep Delivery</strong> at checkout once you have entered your address." ;
+    $output = "Postal delivery is <b>not</b> possible for <b>SESI refill products</b>. We are providing free doorstep delivery for some postcodes in the Talbot Green area. Select <strong>Doorstep Delivery</strong> at checkout once you have entered your address." ;
     return $output;
 }
