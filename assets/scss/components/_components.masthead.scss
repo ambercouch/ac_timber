@@ -6,11 +6,12 @@ BEM BLOCK .c-masthead
   width: 100%;
   @extend .o-wrapper;
   padding: $act-unit;
-  padding-bottom: $act-unit;
+  padding-top: 0;
+  padding-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
+  background: $brand-col-2;
   &:after{
     width: 100%;
   }
@@ -43,10 +44,16 @@ BEM ELEMENTS .c-masthead__
 .c-masthead__{
   &site-title{
     line-height: 1;
+    margin-top: $act-unit-s;
+    @include mq($from:desktop){
+      margin-top: $act-unit;
+      margin-bottom: $act-unit;
+    }
   }
   &navigation{
     display: none;
     @include mq($from : desktop){
+      width: 100%;
       display: flex;
       align-items: flex-start;
     }
@@ -59,6 +66,8 @@ BEM ELEMENTS .c-masthead__
     width: auto;
     max-width: 100%;
     margin-right: auto;
+    margin-bottom: 0;
+    @include breakout-band($bgc : white);
     @include mq($from : desktop){
       max-width: 100%;
     }

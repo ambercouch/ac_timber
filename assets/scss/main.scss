@@ -9,14 +9,14 @@
 /*
  SETTINGS
  */
-//@import "var/settings.article";
-@import "var/settings.fonts";
-@import "var/settings.colours";
-@import "var/settings.defaults";
-@import "var/settings.shadows";
-@import "var/settings.headings";
-@import "var/settings.widths";
-@import "var/settings.responsive";
+//@import "settings/settings.article";
+@import "settings/settings.fonts";
+@import "settings/settings.colours";
+@import "settings/settings.defaults";
+@import "settings/settings.shadows";
+@import "settings/settings.headings";
+@import "settings/settings.widths";
+@import "settings/settings.responsive";
 
 
 
@@ -35,8 +35,8 @@
 @import "mixins";
 @import "helpers";
 @import "base";
-@import "var/settings.article";
-@import "var/settings.fonts";
+@import "settings/settings.article";
+@import "settings/settings.fonts";
 @import "typography";
 @import "accessibility";
 @import "placeholders/off-page";
@@ -90,7 +90,7 @@
 @import "modules/image-menu-item";
 
 
-@import "var/settings.widths";
+@import "settings/settings.widths";
 
 
 /*

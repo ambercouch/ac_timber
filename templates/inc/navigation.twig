@@ -13,7 +13,7 @@
             <ul class="c-nav-menu__sub-menu-list--{{ menuName }}">
               {% for child in item.get_children %}
                 <li class="c-nav-menu__item-sub-menu-item--{{ menuName }}">
-                  <a href="{{child.get_link}}">{{child.title}}</a>
+                  <a class="c-nav-menu__item-sub-menu-item--{{ menuName }}" href="{{child.get_link}}">{{child.title}}</a>
                 </li>
               {% endfor %}
             </ul>

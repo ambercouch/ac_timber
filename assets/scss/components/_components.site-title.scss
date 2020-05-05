@@ -5,9 +5,12 @@ BEM BLOCK .c-site-title
 .c-site-title{
   display: block;
   margin: 0;
-  width: 300px;
-  height: 60px;
+  width: 200px;
+  min-height: 60px;
   max-width:100%;
+  @include mq($from:tablet){
+    width: 300px;
+  }
 
 }
 
@@ -52,10 +55,10 @@ BEM ELEMENTS .c-site-title
   &link{
     @include act-font-size($inuit-font-size-h1, $modifier: 1);
     display: block;
-    color: white;
+    color: $col-text;
     text-decoration: none;
     &:hover,&:focus{
-      color: white;
+      color: $col-text;
     }
   }
   &img{
@@ -63,7 +66,7 @@ BEM ELEMENTS .c-site-title
   }
   &description-heading{
     margin-bottom: 0;
-    color: white;
+    color: $col-text;
     font-family: $act-font-family-sans;
     font-weight: 500;
     @include act-font-size($inuit-font-size-h4, $modifier: 1);
