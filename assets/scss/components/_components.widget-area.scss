@@ -4,6 +4,7 @@
 
 .c-widget-area {
   display: block;
+  position: relative;
 }
 
 /*
@@ -55,7 +56,6 @@
 
 .c-widget-area__widget--{
   &masthead-before-widgets{
-    @include breakout-band($bgc : $brand-col-3);
     padding-right: $act-unit-h;
     @include mq($from : desktop){
       padding-right: 0;

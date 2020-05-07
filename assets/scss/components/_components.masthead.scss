@@ -11,7 +11,7 @@ BEM BLOCK .c-masthead
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: $brand-col-2;
+  background: white;
   &:after{
     width: 100%;
   }
@@ -52,10 +52,12 @@ BEM ELEMENTS .c-masthead__
   }
   &navigation{
     display: none;
+
     @include mq($from : desktop){
       width: 100%;
       display: flex;
       align-items: flex-start;
+      @include breakout-band($brand-col-2);
     }
   }
   &widget-area{

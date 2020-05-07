@@ -32,7 +32,12 @@
     padding: $act-unit-t 0;
     margin-bottom: $act-unit;
     @include mq($from : tablet){
-      text-align: right;
+      text-align: left;
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      right: 0;
+      z-index: 10;
     }
 
   }
