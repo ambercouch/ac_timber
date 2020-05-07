@@ -21,6 +21,8 @@ BEM ELEMENTS .site__
 .site__{
   &masthead{
     background: white;
+    position: relative;
+    z-index: 10;
   }
   &main{
 
