@@ -25,3 +25,17 @@
   text-transform: capitalize;
 }
 
+.u-tdn{
+  text-decoration: none;
+
+  *{
+    text-decoration: none;
+  }
+}
+.u-tdu{
+  text-decoration: underline;
+  a{
+    text-decoration: underline;
+  }
+}
+
