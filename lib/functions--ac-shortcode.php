@@ -69,7 +69,7 @@ function act_contact( $atts ) {
             $output .= '<div class="c-company-contact-item">';
             $output .= '<span class="c-company-contact-item__label">';
             $output .= $contact_label;
-            $output .= '</span">';
+            $output .= '</span>';
             $output .= '<span class="c-company-contact-item__sep"> : </span>';
             $output .= '<span class="c-company-contact-item__value">';
             $output .= $contact_link;
@@ -78,6 +78,9 @@ function act_contact( $atts ) {
             break;
         case 'value':
             $output .= $contact_value;
+            break;
+        case 'label':
+            $output .= $contact_label;
             break;
         case 'link':
             $output .= $contact_link;
