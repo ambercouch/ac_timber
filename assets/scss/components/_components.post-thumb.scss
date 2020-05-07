@@ -48,9 +48,13 @@
   }
 
   &content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: block;
+    @include mq($from:desktop){
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
   }
 
   &footer {

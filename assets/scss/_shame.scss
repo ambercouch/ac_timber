@@ -64,3 +64,15 @@ product list items
   }
 
 }
+
+.woocommerce-ordering{
+  @include mq($until:desktop){
+    float:none !important;
+  }
+}
+
+.woocommerce-result-count{
+  @include mq($until:desktop){
+    float:none !important;
+  }
+}

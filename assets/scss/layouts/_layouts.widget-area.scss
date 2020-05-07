@@ -12,12 +12,17 @@
 
 .l-widget-area-- {
   &content-before-widgets {
+
     @include act-font-size($act-fs-5, 1);
-    display: flex;
-    justify-content: flex-end;
-    > *:first-child{
-      margin-right: auto;
+
+    @include mq($from:desktop){
+      display: flex;
+      justify-content: flex-end;
+      > *:first-child{
+        margin-right: auto;
+      }
     }
+
   }
 }
 
@@ -56,8 +61,13 @@
     display: block
   }
   &widget{
+
     display:block;
     padding: 0 $act-unit-s;
+    margin-bottom: $act-unit;
+    @include mq($from:desktop){
+      margin-bottom: 0;
+    }
   }
 }
 

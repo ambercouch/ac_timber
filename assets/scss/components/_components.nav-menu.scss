@@ -50,6 +50,7 @@
   @extend .o-list-flex--center;
   }
   &social{
+    display: block;
     flex-direction: column;
   }
   &hero{
