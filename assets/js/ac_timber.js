@@ -14,7 +14,9 @@ ACTIMBER = {
             jQuery('body').addClass('js');
             //$("[data-fitvid]").fitVids();
 
-            
+            fitvids();
+
+
             /**
              * navigation.js
              *
