@@ -73,10 +73,23 @@
     margin: 0;
   }
   &sub-menu-item{
-    margin-bottom: $act-unit-s;
+    color: white;
+    margin-bottom:0;
     padding-left: 0 !important;
     &:last-child{
       margin-bottom: 0;
+    }
+  }
+  &sub-menu-link{
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: $act-unit-s;
+    &:hover{
+      @extend .c-nav-menu__sub-menu-link;
+      color: white;
+      background: darken($brand-col-2, 10%);
     }
   }
 }
@@ -108,8 +121,8 @@
 
 .c-nav-menu__item--{
   &primary{
-    margin-right: $act-unit-t;
-    margin-left: $act-unit-t;
+    margin-right: 0;
+    margin-left: 0;
   }
   &hero{
     margin-right: $act-unit;
@@ -124,25 +137,25 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit-t / 2 $act-unit-t;
+    padding:$act-unit $act-unit-s;
     display: block;
     color: white;
     background: transparent;
     text-transform: uppercase;
     font-weight: 500;
     //@include a($col : $col-link );
-    //&:hover{
-    //  color: darken($brand-col-2, 10%);
-    //  background: transparent;
-    //}
+    &:hover{
+      color: white;
+      background: darken($brand-col-2, 10%);;
+    }
     .is-overlay-hero &{
       color:white;
     }
     .c-nav-menu__item:last-child &{
-      padding-right: 0;
     }
     .current-menu-item &{
-      color: darken($col-link, 15%);
+      color: white;
+      background: darken($brand-col-2, 10%);
       font-weight: 500;
       .is-overlay-hero &{
         color: darken(white, 5%);
@@ -189,5 +202,9 @@
   @extend .c-nav-menu__sub-menu-item !optional;
 }
 
+
+[class*=c-nav-menu__sub-menu-link--] {
+  @extend .c-nav-menu__sub-menu-link !optional;
+}
 
 
