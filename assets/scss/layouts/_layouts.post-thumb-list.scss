@@ -3,10 +3,16 @@
  */
 
 .l-post-thumb-list {
-  display: flex;
-  margin: 0 auto $act-unit-h;
-  flex-wrap: nowrap;
-  justify-content: center;
+
+  margin: 0 auto $act-unit-l;
+
+  @include mq($from:desktop){
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin: 0 auto $act-unit-h;
+  }
+
 }
 
 /*
@@ -56,6 +62,15 @@
   margin: 0 $act-unit
     //padding: $act-unit-l;
   }
+  &item{
+    margin-bottom: $act-unit-l;
+    @include mq($from:desktop){
+    width: 33.333%;
+    padding: 0 $act-unit-s;
+
+  }
+
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list--
@@ -69,4 +84,11 @@
   .l-post-thumb-list--grid-3 &{
 
   }
+}
+
+
+//BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list--
+
+[class*=l-post-thumb-list__item--] {
+  @extend .l-post-thumb-list__item;
 }

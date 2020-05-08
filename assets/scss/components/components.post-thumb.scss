@@ -5,9 +5,9 @@
 .c-post-thumb {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   height: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 /*
@@ -41,7 +41,8 @@
 
 .c-post-thumb__ {
   &header {
-    display: block
+    display: block;
+    text-align: left;
   }
   &heading {
     display: block;
@@ -64,9 +65,6 @@
   &footer {
     display: block
   }
-  &link-title{
-    color: black;
-  }
   &post-icon{
     margin-bottom: $act-unit-l * 1;
   }
@@ -74,8 +72,11 @@
     height: 150px !important;
   }
   &excerpt{
-    margin-top: auto;
+    //margin-top: auto;
     @include act-font-size($inuit-font-size-h5);
+    @include mq($from:desktop){
+      @include act-font-size($inuit-font-size-h6);
+    }
   }
   &more-link{
     color: $brand-col-2;
@@ -88,6 +89,14 @@
   }
   &wrapper{
     display: block;
+  }
+  &feature-image{
+    @include size(100%,120px);
+    margin-bottom: $act-unit-s;
+    img{
+      @include size(100%,120px, true);
+      object-fit: cover;
+    }
   }
 }
 
@@ -118,5 +127,23 @@
 .c-post-thumb__excerpt--{
   &feature-list{
     @include act-font-size($inuit-font-size-h5);
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__link--
+
+[class*=c-post-thumb__link--] {
+  @extend .c-post-thumb__link;
+}
+
+.c-post-thumb__link--{
+  &title{
+    &:after{
+      content : '\02771';
+      display: block;
+      float: right;
+      margin-right: $act-unit;
+    }
+
   }
 }
