@@ -5,6 +5,25 @@ if( function_exists('acf_add_local_field_group') ):
         'key' => 'group_5a06a13ca9b87',
         'title' => 'Before Content',
         'fields' => array (
+            array(
+                'key' => 'field_page_intro',
+                'label' => 'Page intro',
+                'name' => 'page_intro',
+                'type' => 'textarea',
+                'instructions' => 'Use when the page is output as a thumbnail. Similar to a post excerpt',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => '',
+                'new_lines' => '',
+            ),
             array (
                 'key' => 'field_5a06a14d88987',
                 'label' => 'Title Before Content',
