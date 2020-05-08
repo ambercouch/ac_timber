@@ -1,33 +1,33 @@
 /*
-  BEM BLOCK .subsidiary
+  BEM BLOCK .l-subsidiary
  */
 
-.subsidiary {
+.l-subsidiary {
   @extend .c-site-wrapper--responsive;
   padding-top: 0;
 }
 
 /*
-  BEM BLOCK MODIFIER .subsidiary--
+  BEM BLOCK MODIFIER .l-subsidiary--
  */
 
-.subsidiary-- {
+.l-subsidiary-- {
   &type {
     display: block
   }
 }
 
-//BEM BLOCK MODIFIER FALLBACK .subsidiary--
+//BEM BLOCK MODIFIER FALLBACK .l-subsidiary--
 
 [class*=subsidiary--] {
-  @extend .subsidiary;
+  @extend .l-subsidiary;
 }
 
 /*
-  BEM ELEMENTS .subsidiary__
+  BEM ELEMENTS .l-subsidiary__
  */
 
-.subsidiary__ {
+.l-subsidiary__ {
   &header {
     display: block
   }
@@ -48,8 +48,8 @@
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .subsidiary--
+//BEM ELEMENT MODIFIER FALLBACK .l-subsidiary--
 
 [class*=subsidiary__header--] {
-  @extend .subsidiary__header;
+  @extend .l-subsidiary__header;
 }
