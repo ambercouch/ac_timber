@@ -4,9 +4,6 @@
 
 .c-contact-form {
   display: block;
-  background: lighten($brand-col-3, 70%);
-  padding: $act-unit-s $act-unit;
-  width: 1200px;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
 }
@@ -39,11 +36,14 @@
       display: none !important;
     }
   }
+  &next-step{
+    @extend .c-contact-form--placeholder-blocks;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
 
-[class*=contact-form--] {
+[class*=c-contact-form--] {
   @extend .c-contact-form;
 }
 
@@ -96,7 +96,8 @@
     color: white;
   }
   &content {
-    display: block
+    display: block;
+    //@extend .c-contact-form__content--placeholder-blocks;
   }
   &footer {
     display: block
@@ -119,6 +120,96 @@
     padding-top:$inuit-global-spacing-unit-small;
   }
 }
+
+[class*=contact-form__input-content--] {
+  @extend .c-contact-form__content;
+}
+/*
+ * c-contact-form--placeholder-block
+ */
+.c-contact-form--placeholder-blocks {
+
+  .c-contact-form__ {
+    &content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &label {
+      width: 49%;
+      margin-bottom: $act-unit;
+    }
+    &label--{
+      &textarea{
+        width: 100%;
+        margin-bottom: $act-unit;
+
+      }
+    }
+    &label-text {
+      display: none;
+    }
+    &input-wrapper {
+      padding: $act-unit-s;
+      background: $brand-col-4;
+    }
+    &input-wrapper-- {
+      &textarea{
+        background: #eee !important;
+      }
+      &submit{
+        background: transparent;
+        width: 100%;
+        padding: 0;
+        input{
+          width: 100%;
+          background: $brand-col-3;
+          @include act-font-size($act-fs-3);
+          padding: $act-unit;
+          &:hover{
+            background: darken($brand-col-3, 10%);
+          }
+        }
+      }
+    }
+  }
+  input {
+    width: 100%;
+    color: #fff;
+    background: transparent;
+    &::placeholder{
+      color: #fff;
+      opacity: 1;
+    }
+  }
+  select {
+    width: 100%;
+    color: #fff !important;
+    background: transparent !important;
+  }
+  textarea{
+    background: transparent;
+    color: white;
+    &::placeholder{
+      color: $brand-col-1;
+      opacity: 1;
+    }
+  }
+}
+
+
+
+
+
+
+
+[class*=contact-form__input-label--] {
+  @extend .c-contact-form__label;
+}
+
+
+
+
 
 /*
  CONTACT FORM 7 CLASSES .wpcf7
@@ -170,5 +261,5 @@
 }
 
 .wpcf7-form-control-wrap{
-  @extend .c-contact-form__input-wrapper;
+  //@extend .c-contact-form__input-wrapper;
 }
