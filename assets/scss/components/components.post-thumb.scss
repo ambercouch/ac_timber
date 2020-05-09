@@ -122,6 +122,9 @@
     font-weight: 700;
     @include act-font-size($inuit-font-size-h1);
   }
+  &home-post{
+    @include act-font-size($inuit-font-size-h2);
+  }
 }
 
 .c-post-thumb__excerpt--{
@@ -138,10 +141,13 @@
 
 .c-post-thumb__link--{
   &title{
+    position: relative;
     &:after{
       content : '\02771';
       display: block;
-      float: right;
+      position: absolute;
+      right: 0;
+      top: 0;
       margin-right: $act-unit;
     }
 

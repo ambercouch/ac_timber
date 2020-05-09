@@ -27,6 +27,9 @@
     flex-direction: column;
     max-width: 1440px;
   }
+  &home-posts{
+    display: block;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-post-thumb-list--
@@ -91,4 +94,11 @@
 
 [class*=l-post-thumb-list__item--] {
   @extend .l-post-thumb-list__item;
+}
+
+
+.l-post-thumb-list__item--{
+  &home-post{
+    width: 100%;
+  }
 }

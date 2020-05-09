@@ -46,10 +46,24 @@
   &footer {
     display: block
   }
+  &widget-area{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-template-rows: auto auto;
+    grid-column-gap: 10%;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-subsidiary--
 
 [class*=subsidiary__header--] {
   @extend .l-subsidiary__header;
+}
+
+
+.l-subsidiary__widget-area{
+  > *:first-child{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
