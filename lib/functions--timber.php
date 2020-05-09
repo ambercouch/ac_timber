@@ -32,6 +32,8 @@ class StarterSite extends TimberSite {
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
 
+        add_filter('excerpt_more', array( $this,'act_excertp_more')); // Add 'View Article' button instead of [...] for Excerpts
+
         // Register all the menu locations.
         foreach (unserialize(ACT_MENUS) as $menu)
         {
@@ -157,6 +159,14 @@ class StarterSite extends TimberSite {
         $twig->addExtension( new Twig_Extension_StringLoader() );
         $twig->addFilter( 'ac_dd', new Twig_Filter_Function( 'ac_dd' ) );
         return $twig;
+    }
+
+
+// Custom View Article link to Post
+    function act_excertp_more ($more)
+    {
+        global $post;
+        return '... <a class="c-post-thumb__link-more" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
     }
 
 }
