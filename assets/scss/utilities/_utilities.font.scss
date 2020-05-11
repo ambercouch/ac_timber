@@ -1,20 +1,20 @@
 //Font size
-.u-fs1{
+.u-fs1, .u-fs-1 {
   @include act-font-size($inuit-font-size-h1);
 }
-.u-fs2{
+.u-fs2, .u-fs-2{
   @include act-font-size($inuit-font-size-h2);
 }
-.u-fs3{
+.u-fs3, .u-fs-3{
   @include act-font-size($inuit-font-size-h3);
 }
-.u-fs4{
+.u-fs4, .u-fs-4{
   @include act-font-size($inuit-font-size-h4);
 }
-.u-fs5{
+.u-fs5, .u-fs-5{
   @include act-font-size($inuit-font-size-h5);
 }
-.u-fs6{
+.u-fs6, .u-fs-6{
   @include act-font-size($inuit-font-size-h6);
 }
 
@@ -63,18 +63,18 @@
 
 //Font family
 
-.u-ffs{
+.u-ff-s{
   font-family: $act-font-family-serif;
 }
-.u-ffsa{
+.u-ff-ss{
   font-family: $act-font-family-sans;
 }
-.u-ffa{
+.u-ff-a{
   font-family: $act-font-family-alt;
 }
-.u-ffm{
+.u-ff-m{
   font-family: $act-font-family-mono;
 }
-.u-ffh{
+.u-ff-h{
   font-family: $act-font-family-headings;
 }
