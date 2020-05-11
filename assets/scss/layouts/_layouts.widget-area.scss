@@ -1,33 +1,43 @@
 /*
-  BEM BLOCK .c-widget-area
+  BEM BLOCK .l-widget-area
  */
 
-.c-widget-area {
+.l-widget-area {
   display: block;
   position: relative;
 }
 
 /*
-  BEM BLOCK MODIFIER .c-widget-area--
+  BEM BLOCK MODIFIER .l-widget-area--
  */
 
-.c-widget-area-- {
+.l-widget-area-- {
   &type {
     display: block
   }
+  &subsidiary{
+    @include mq($from:desktop){
+      display: grid;
+      grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
+      grid-template-rows: auto auto;
+      grid-column-gap: $act-unit-l;
+      grid-row-gap: $act-unit-h;
+    }
+
+  }
 }
 
-//BEM BLOCK MODIFIER FALLBACK .c-widget-area--
+//BEM BLOCK MODIFIER FALLBACK .l-widget-area--
 
-[class*=c-widget-area--] {
-  @extend .c-widget-area;
+[class*=l-widget-area--] {
+  @extend .l-widget-area;
 }
 
 /*
-  BEM ELEMENTS .c-widget-area__
+  BEM ELEMENTS .l-widget-area__
  */
 
-.c-widget-area__ {
+.l-widget-area__ {
   &widget {
     display: block
   }
@@ -48,13 +58,13 @@
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .c-widget-area--
+//BEM ELEMENT MODIFIER FALLBACK .l-widget-area--
 
-[class*=c-widget-area__widget--] {
-  @extend .c-widget-area__widget;
+[class*=l-widget-area__widget--] {
+  @extend .l-widget-area__widget;
 }
 
-.c-widget-area__widget--{
+.l-widget-area__widget--{
   &masthead-before-widgets{
     padding-right: $act-unit-h;
     @include mq($from : desktop){
@@ -84,9 +94,11 @@
     }
   }
   &next-step{
-    max-width: 1200px;
-    margin: 0 auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
   }
-
-
+  &post-thumb-list{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 }
