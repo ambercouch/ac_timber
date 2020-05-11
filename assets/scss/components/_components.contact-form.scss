@@ -121,6 +121,11 @@
   &submit{
     padding-top:$inuit-global-spacing-unit-small;
   }
+  &check{
+    .wpcf7-list-item{
+      margin: 0;
+    }
+  }
 }
 
 [class*=contact-form__input-content--] {
