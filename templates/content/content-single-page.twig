@@ -1,30 +1,30 @@
-<article id="post-{{ post.id }}" class="single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
+<article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
   {% if(post.thumbnail or acSettings.defaultImage) %}
-    <div class="single-page__feature-image{{ templateClass }} ">
-      <div class="feature-image--single-page">
+    <div class="l-single-page__feature-image{{ templateClass }} ">
+      <div class="c-feature-image--single-page">
         {% if(post.thumbnail.src()) %}
-          <img src="{{ post.thumbnail.src('feature1000') }}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
         {% else %}
-          <img src="{{acSettings.defaultImage}}" class="feature-image--single-page__img" alt="{{ post.title }}"/>
+          <img src="{{acSettings.defaultImage}}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
         {% endif %}
       </div>
     </div>
   {% endif %}
-
-    <header class="entry-header single-page__header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
-      {% if not hidePageTitle %}
-      <h1 class="entry-title single-page__heading{{ templateClass }} ">
-        <span class="entry-title single-page__title{{ templateClass }} ">{{ post.title }}</span>
+  {% if not hidePageTitle %}
+    <div class="l-single-page__header">
+    <header class="entry-header c-header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+      <h1 class="entry-title c-header__heading{{ templateClass }} ">
+        <span class="entry-title c-header__title{{ templateClass }} ">{{ post.title }}</span>
       </h1>
-      {% endif %}
     </header>
-
-    <div class="entry-content single-page__body{{ templateClass }} ">
+    </div>
+  {% endif %}
+    <div class="entry-content l-single-page__body{{ templateClass }} ">
       {{ post.content }}
     </div>
 
-    <footer class="single-page__footer{{ templateClass }} ">
+    <footer class="l-single-page__footer{{ templateClass }} ">
     </footer>
 
 </article>
