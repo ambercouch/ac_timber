@@ -109,8 +109,12 @@
   }
   &social{
     @extend .o-list-flex;
-    justify-content: flex-start;
+    justify-content: center;
   }
+  &footer{
+  display: flex;
+    flex-direction: row;
+}
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
@@ -127,6 +131,13 @@
   &hero{
     margin-right: $act-unit;
   }
+  &social{
+    margin-right: $act-unit-l;
+    margin-left: 0;
+  }
+  &footer{
+    margin-left: $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
@@ -141,7 +152,7 @@
     display: block;
     color: white;
     background: transparent;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     font-weight: 500;
     //@include a($col : $col-link );
     &:hover{
