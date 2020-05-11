@@ -142,13 +142,14 @@
 .c-post-thumb__link--{
   &title{
     position: relative;
+    padding-right: $act-unit;
     &:after{
       content : '\02771';
       display: block;
       position: absolute;
       right: 0;
       top: 0;
-      margin-right: $act-unit;
+      margin-right: 0;
     }
 
   }

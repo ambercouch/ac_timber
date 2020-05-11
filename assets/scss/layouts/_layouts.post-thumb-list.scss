@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    margin: 0 auto $act-unit-h;
+    margin: 0 auto 0;
   }
 
 }
@@ -66,10 +66,13 @@
     //padding: $act-unit-l;
   }
   &item{
-    margin-bottom: $act-unit-l;
+    margin-bottom: $act-unit-l !important;
+    padding: 0 !important;
     @include mq($from:desktop){
-    width: 33.333%;
-    padding: 0 $act-unit-s;
+      width: 33.333%;
+      margin-bottom: $act-unit-l !important;
+      padding: 0 !important;
+      margin-right: $act-unit;
 
   }
 
