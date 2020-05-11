@@ -4,7 +4,6 @@
 
 .o-svg-icon {
   display: block;
-  @include size($inuit-global-spacing-unit);
   position: relative;
 }
 
@@ -38,8 +37,8 @@
 .o-svg-icon__ {
   &svg {
     display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
+    min-width: $act-unit;
+    min-height: $act-unit;
     max-width: 100%;
     max-height: 100%;
     stroke-width: 0;
