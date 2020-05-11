@@ -49,6 +49,7 @@ BEM BLOCK MODIFIERS .c-main--
   }
 }
 
+
 .c-main__content{
   .has-side-bar &{
 
@@ -61,5 +62,14 @@ BEM BLOCK MODIFIERS .c-main--
       width: 75%;
       padding-right: $act-unit-l;
     }
+  }
+}
+
+.c-main__content--{
+  &page{
+    @include mq($from: desktop){
+      padding-right: $act-unit-h;
+    }
+
   }
 }
