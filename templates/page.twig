@@ -35,6 +35,22 @@
   {% endif %}
 {% endblock %}
 
+{% set hasSideBar = true %}
+
+{% block sidebar %}
+  <div class="l-side-bar{{ not sidebar_widgets ? '--empty' : ''}}">
+    {% if sidebar_widgets == '' %}
+      <!-- Add some widgets to the footer -->
+    {% else %}
+      <div class="l-sidebar__widget-area--sidebar-widgets">
+        <div class="l-widget-area--sidebar-widgets">
+          {{sidebar_widgets}}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
+
 
 
 
