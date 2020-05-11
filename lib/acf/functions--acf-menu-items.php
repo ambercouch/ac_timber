@@ -2,11 +2,11 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
-        'key' => 'group_5cd000cc740ea',
+        'key' => 'group_menu_items',
         'title' => 'Menu Items',
         'fields' => array(
             array(
-                'key' => 'field_5cd000fe38554',
+                'key' => 'field_menu_icon',
                 'label' => 'Menu Icon',
                 'name' => 'menu_icon',
                 'type' => 'text',
@@ -25,7 +25,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'maxlength' => '',
             ),
             array(
-                'key' => 'field_5cd001fb57a5d',
+                'key' => 'field_show_label',
                 'label' => 'Show Label',
                 'name' => 'show_label',
                 'type' => 'true_false',
@@ -34,7 +34,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_5cd000fe38554',
+                            'field' => 'field_menu_icon',
                             'operator' => '!=empty',
                         ),
                     ),
@@ -51,7 +51,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'ui_off_text' => '',
             ),
             array(
-                'key' => 'field_5cd001a657a5c',
+                'key' => 'field_icon_position',
                 'label' => 'Icon Position',
                 'name' => 'icon_position',
                 'type' => 'button_group',
@@ -60,12 +60,12 @@ if( function_exists('acf_add_local_field_group') ):
                 'conditional_logic' => array(
                     array(
                         array(
-                            'field' => 'field_5cd001fb57a5d',
+                            'field' => 'field_show_label',
                             'operator' => '==',
                             'value' => '1',
                         ),
                         array(
-                            'field' => 'field_5cd000fe38554',
+                            'field' => 'field_menu_icon',
                             'operator' => '!=empty',
                         ),
                     ),
