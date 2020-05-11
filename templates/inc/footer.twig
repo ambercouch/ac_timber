@@ -19,9 +19,20 @@
     </div>
   </div>
   {% endif %}
-  <div class="footer__site-info">
-    <div class="site-info">
+  <div class="l-footer__site-info">
+    <div class="c-site-info">
     {{ site_info }}
     </div>
   </div>
+</div>
+<div class="l-footer-after{{ not footerafter_widgets ? '--empty' : ''}}">
+  {% if footerafter_widgets == '' %}
+    <!-- Add some widgets to the footer -->
+  {% else %}
+    <div class="l-footer-after__widget-area--footer-after-widgets">
+      <div class="l-widget-area--footer-after-widgets">
+        {{footerafter_widgets}}
+      </div>
+    </div>
+  {% endif %}
 </div>
