@@ -16,6 +16,12 @@
     @include size($act-unit-l);
     margin: $act-unit auto;
   }
+  &twitter{
+    @include size($act-unit-l)
+  }
+  &linkedin-in{
+    @include size($act-unit-l)
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-svg-icon--
