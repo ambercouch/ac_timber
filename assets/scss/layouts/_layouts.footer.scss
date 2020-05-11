@@ -1,0 +1,68 @@
+.l-footer{
+  display: block;
+  //font-family: $act-font-family-alt;
+  //@include act-font-size($inuit-font-size-h6);
+}
+
+.l-footer__{
+  &content{
+    @extend .c-site-wrapper--responsive;
+    padding: $act-unit;
+    padding-left: $act-unit-s;
+    padding-right: $act-unit-s;
+    margin: 0 auto;
+    background: transparent;
+    @include mq($from: tablet){
+      padding-left: $act-unit-l;
+      padding-right: $act-unit-l;
+    }
+    @include mq($from: desktop){
+      padding-left: $act-unit-h;
+      padding-right: $act-unit-h;
+    }
+    padding-bottom: 0;
+
+
+
+  }
+  &company-logo{
+    display: block;
+    max-width: 200px;
+    margin: 0 auto $inuit-global-spacing-unit;
+  }
+  &site-info{
+    @extend .c-site-wrapper--responsive;
+    @include inuit-font-size($inuit-font-size-h6, 1);
+    text-align: left;
+    padding: $inuit-global-spacing-unit;
+    padding-left: $act-unit-h;
+    padding-right: $act-unit-h;
+    background: transparent;
+    color: white;
+    a{
+      color: white;
+    }
+  }
+  &widgets{
+    border-bottom: solid 1px white;
+    padding-bottom: $act-unit-l;
+    width: 100%;
+    @include mq($from : tablet){
+      display: flex;
+      flex-wrap:wrap ;
+    }
+  }
+  &widget{
+
+  }
+}
+
+.l-footer{
+  a{
+    color: $brand-col-2;
+    text-decoration: none;
+    &:hover{
+      color: white;
+    }
+  }
+}

@@ -1,9 +1,20 @@
-<div class="footer{{ not footer_widgets ? '--empty' : ''}}">
+<div class="l-footer-before{{ not footerbefore_widgets ? '--empty' : ''}}">
+  {% if footerbefore_widgets == '' %}
+    <!-- Add some widgets to the footer -->
+  {% else %}
+    <div class="l-footer-before__widget-area--footer-before-widgets">
+      <div class="l-widget-area--footer-before-widgets">
+        {{footerbefore_widgets}}
+      </div>
+    </div>
+  {% endif %}
+</div>
+<div class="l-footer{{ not footer_widgets ? '--empty' : ''}}">
   {% if footer_widgets == '' %}
     <!-- Add some widgets to the footer -->
   {% else %}
-  <div class="footer__content">
-    <div class="footer__widgets">
+  <div class="l-footer__widget-area--footer-widgets">
+    <div class="l-widget-area--footer-widgets">
     {{footer_widgets}}
     </div>
   </div>
