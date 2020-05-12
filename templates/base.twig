@@ -66,8 +66,8 @@
   {% endblock %}
 
   <section id="primary" class="site__main">
-    <div class="l-main{{ main_mod }} {% if hasSideBar == true %}has-side-bar{% else %}has-no-side-bar{% endif %}">
-      <main class="l-main__content{{ main_mod }}">
+    <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-side-bar{% else %}has-no-side-bar{% endif %}">
+      <main class="l-main__content{{ mainMod }}">
         {% block before_content %}
         {% endblock %}
         <div class="content{{ content_mod }}">

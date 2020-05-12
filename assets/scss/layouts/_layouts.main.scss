@@ -32,6 +32,9 @@ BEM BLOCK MODIFIERS .l-main--
   &page{
     padding-top: 0;
   }
+  &front-page{
+    padding-top: $act-unit;
+  }
 }
 
 
