@@ -14,6 +14,11 @@ $context['template'] = $templateSlug;
 //require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
 $templates = array( $templateSlug.'.twig', 'page.twig' );
 
+if ( is_front_page() ) {
+    $templates =    array( $templateSlug.'.twig', 'front-page.twig', 'page.twig');
+
+}
+
 if ( post_password_required( $post->ID ) ) {
     Timber::render( 'single-password.twig', $context );
 } else {
