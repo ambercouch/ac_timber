@@ -67,6 +67,10 @@
   &title{
 
   }
+
+  &header{
+    margin-bottom: $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-widget--
@@ -99,4 +103,8 @@
       padding: $act-unit;
     }
   }
+}
+
+[class*=c-widget__header--]{
+  @extend .c-widget__header !optional;
 }

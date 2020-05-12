@@ -39,6 +39,9 @@
   &next-step{
     @extend .c-contact-form--placeholder-blocks;
   }
+  &newsletter{
+    @extend .c-contact-form--placeholder-blocks;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
@@ -75,11 +78,20 @@
     padding:$act-unit-t;
   }
   &label{
+     display: block;
+     margin-bottom: $act-unit-t;
+   }
+  &label--check{
     display: block;
-    margin-bottom: $act-unit-t;
+    margin-bottom: $act-unit;
+    width: 100%;
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
+    .c-contact-form__label--check &{
+      display: block !important;
+      margin-bottom: $act-unit-s;
+    }
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -148,11 +160,16 @@
       &textarea{
         width: 100%;
         margin-bottom: $act-unit;
-
+      }
+      &check{
+        .wpcf7-list-item-label{
+          display: block;
+        }
       }
     }
     &label-text {
       display: none;
+
     }
     &input-wrapper {
       padding: $act-unit-s;
@@ -267,4 +284,10 @@
 
 .wpcf7-form-control-wrap{
   //@extend .c-contact-form__input-wrapper;
+}
+
+.wpcf7-list-item{
+  .c-contact-form__label--check &{
+    padding: 0 $act-unit
+  }
 }

@@ -15,10 +15,18 @@
     display: block
   }
   &page{
+    @extend .c-header--blocky;
     background: $brand-col-3;
-    padding: $act-unit;
-    color: white;
-    @include breakout-band($bgc : $brand-col-3, $pos : 'left');
+    @include breakout-band($bgc : $brand-col-3);
+  }
+  &sidebar{
+    @extend .c-header--blocky;
+    background: $brand-col-5;
+    padding: $act-unit-s !important;
+  }
+  &subsidiary{
+    @extend .c-header--blocky;
+    background: $brand-col-5;
   }
 }
 
@@ -40,8 +48,6 @@
 
   &heading {
     display: block;
-    color: white;
-
   }
 
   &title {
@@ -65,4 +71,25 @@
 
 [class*=c-header__heading--] {
   @extend .c-header__heading;
+}
+
+.c-header__heading--{
+  &page{
+
+  }
+  &sidebar{
+
+  }
+}
+
+.c-header--{
+  &blocky{
+    padding: $act-unit;
+
+    .c-header__heading{
+      color: white;
+      margin-bottom: 0;
+    }
+
+  }
 }

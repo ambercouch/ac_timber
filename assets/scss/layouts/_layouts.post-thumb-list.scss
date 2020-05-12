@@ -93,6 +93,9 @@
 }
 
 
+
+
+
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list--
 
 [class*=l-post-thumb-list__item--] {
@@ -102,6 +105,9 @@
 
 .l-post-thumb-list__item--{
   &home-post{
+    width: 100%;
+  }
+  &post-thumb-sidebar{
     width: 100%;
   }
 }
