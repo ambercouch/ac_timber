@@ -35,6 +35,12 @@ BEM BLOCK MODIFIERS .l-main--
   &front-page{
     padding-top: $act-unit;
   }
+  &blog{
+    padding-top: $act-unit;
+  }
+  &single{
+    padding-top: $act-unit;
+  }
 }
 
 
@@ -57,6 +63,15 @@ BEM BLOCK MODIFIERS .l-main--
 
 }
 
+/*
+BEM BLOCK MODIFIERS .l-main--
+ */
+
+[class*="l-main__content--"]{
+  @extend .l-main__content;
+}
+
+
 
 
 .l-main__content{
@@ -73,6 +88,8 @@ BEM BLOCK MODIFIERS .l-main--
     }
   }
 }
+
+
 
 .l-main__content--{
   &page{

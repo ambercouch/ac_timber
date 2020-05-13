@@ -1,16 +1,24 @@
 {% extends "base.twig" %}
 
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+{% set mainMod = "--blog" %}
+
 {% block before_head %}
-  <!-- home.twig -->
+  <!-- home.twig act -->
 {% endblock %}
 
 {% block hero %}
-  {% if removeHero %}
-  {% else %}
+  {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+  %}
   <section id="siteHero" class="site__hero">
     {% include 'inc/hero.twig' ignore missing %}
   </section>
   {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -35,9 +43,15 @@
 {% set hasSideBar = true %}
 
 {% block sidebar %}
-  <div id="sidebar" class="c-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
+  <div class="l-side-bar--blog {{ not sidebar_widgets ? 'is-empty' : ''}}">
+    {% if sidebar_widgets == '' %}
+      <!-- Add some widgets to the footer -->
+    {% else %}
+      <div class="l-sidebar__widget-area--sidebar-widgets">
+        <div class="l-widget-area--sidebar-widgets">
+          {{sidebar_widgets}}
+        </div>
+      </div>
+    {% endif %}
   </div>
 {% endblock %}

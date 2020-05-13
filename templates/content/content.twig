@@ -5,8 +5,10 @@
   <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
   {% if post.thumbnail %}
     <div class="post{{ postFormatClass }}__feature-image">
-      <div class="feature-image">
-        <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
+      <div class="c-feature-image--blog">
+        <a href="{{ post.link }}" class="c-feature-image__link">
+        <img src="{{ post.thumbnail.src('feature500') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+        </a>
       </div>
     </div>
   {%  endif %}

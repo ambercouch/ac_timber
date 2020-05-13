@@ -62,3 +62,10 @@
 [class*=l-side-bar__header--] {
   @extend .l-side-bar__header;
 }
+
+
+.l-side-bar{
+  .has-post-thumb &{
+    padding-top: $act-unit;
+  }
+}

@@ -96,3 +96,11 @@
 
   }
 }
+
+.c-header{
+  .has-post-thumb &{
+    &:after{
+      display: none !important;
+    }
+  }
+}

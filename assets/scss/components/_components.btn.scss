@@ -3,21 +3,21 @@
  */
 
 .c-btn {
-  @include inuit-font-size($act-fs-sp, 1);
+  @include act-font-size($act-fs-5, 1);
   display: inline-block;
-  background: $brand-col-1;
+  background: $brand-col-3;
   color: white;
-  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  border-radius: 0.5em;
+  padding: $act-unit-t;
+  border-radius: 0;
   text-transform: uppercase;
   text-decoration: none;
   &:hover, &:focus{
     color: white;
-    background: darken($brand-col-1,10%);
+    background: darken($brand-col-3,10%);
   }
   &:active{
     color: white;
-    background: darken($brand-col-1,20%);
+    background: darken($brand-col-3,20%);
   }
 }
 

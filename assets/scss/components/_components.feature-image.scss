@@ -15,8 +15,13 @@ BEM BLOCK .c-feature-image--
 
 .c-feature-image--{
   &service{
-
     height: 100%;
+  }
+  &blog{
+    height: 300px;
+  }
+  &single{
+    height: 500px;
   }
 }
 
@@ -38,4 +43,8 @@ BEM ELEMENTS.c-feature-image__
   }
 
 }
+
+/*
+BEM BLOCK .c-feature-image__image--
+*/
 
