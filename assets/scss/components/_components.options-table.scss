@@ -82,6 +82,20 @@
   &label{
     text-align: center;
   }
+  &label-text{
+      color:white;
+      margin-bottom: 3px;
+      .c-options-table__th--thead:first-of-type &{
+        background: #6da705;
+      }
+    .c-options-table__th--thead:nth-of-type(2) &{
+      background: #2600f1;
+    }
+    .c-options-table__th--thead:nth-of-type(3) &{
+      background: #d10505;
+    }
+
+  }
   &label-price{
     color: white;
     background: $brand-col-2;
@@ -155,9 +169,37 @@
     background: #eee;
     padding: $act-unit-s;
     cursor: pointer;
-  &:hover, &:focus, &[data-state=on]{
+    color: white;
+    margin-bottom: $act-unit-t;
+    opacity: 0.3;
+    &[data-state=on]{
+      opacity: 1;
+      font-weight: 700;
+      border-bottom: solid 3px;
+      &:first-of-type{
+       border-color: darken(#6da705, 10%);
+      }
+      &:nth-last-of-type(2){
+         border-color: darken(#2600f1, 20%);
+       }
+      &:nth-of-type(3){
+        border-color: darken(#d10505, 10%);
+      }
+    }
+  &:hover, &:focus{
     background: #ddd;
+    opacity: 1;
+
   }
+    &:first-of-type{
+      background: #6da705;
+    }
+    &:nth-last-of-type(2){
+      background: #2600f1;
+    }
+    &:nth-of-type(3){
+      background: #d10505;
+    }
   }
 }
 
