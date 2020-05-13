@@ -38,13 +38,13 @@
 {% set hasSideBar = true %}
 
 {% block sidebar %}
-  <div class="l-side-bar{{ not sidebar_widgets ? '--empty' : ''}}">
-    {% if sidebar_widgets == '' %}
+  <div class="l-side-bar--page {{ not pagesidebar_widgets ? 'is-empty' : ''}}">
+    {% if pagesidebar_widgets == '' %}
       <!-- Add some widgets to the footer -->
     {% else %}
       <div class="l-sidebar__widget-area--sidebar-widgets">
         <div class="l-widget-area--sidebar-widgets">
-          {{sidebar_widgets}}
+          {{pagesidebar_widgets}}
         </div>
       </div>
     {% endif %}

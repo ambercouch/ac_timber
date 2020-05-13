@@ -8,11 +8,6 @@
 
 $excerpt = false;
 
-if (has_excerpt()){
-    $excerpt = get_the_excerpt();
-}elseif (get_field('page_intro')){
-  $excerpt = get_field('page_intro');
-}
 
 $handle = 'ac_wp_custom_loop_styles';
 $list = 'enqueued';
@@ -42,10 +37,10 @@ if (! wp_script_is( $handle, $list )) {
       </div><!-- .post-thumbnail -->
     <?php endif; ?>
 
-    <?php if ($excerpt) : ?>
-      <div class="c-post-thumb__excerpt"  >
-        <?php echo $excerpt ?>
+
+      <div class="c-post-thumb__excerpt--sidebar"  >
+        <?php echo get_the_excerpt() ?>
       </div>
-    <?php endif; ?>
+
   </div>
 </article>

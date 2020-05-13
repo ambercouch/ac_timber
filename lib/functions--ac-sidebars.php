@@ -3,6 +3,7 @@
 define('ACT_SIDEBARS', serialize(
     array(
         'Sidebar',
+        'Page Sidebar',
         'Mobile Nav Before',
         'Mobile Nav After',
         'Masthead Before',

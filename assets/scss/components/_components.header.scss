@@ -24,6 +24,9 @@
     background: $brand-col-5;
     padding: $act-unit-s !important;
   }
+  &page-sidebar{
+    @extend .c-header--sidebar;
+  }
   &subsidiary{
     @extend .c-header--blocky;
     background: $brand-col-5;

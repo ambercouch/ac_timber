@@ -25,6 +25,9 @@
       margin-bottom: 0;
     }
   }
+  &page-sidebar{
+   @extend .c-widget--sidebar;
+  }
   &masthead-before {
     color: white;
     text-align: left;

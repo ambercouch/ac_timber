@@ -109,5 +109,7 @@
   }
   &post-thumb-sidebar{
     width: 100%;
+    border-bottom: 0 !important;
+    margin-bottom: $act-unit !important;
   }
 }

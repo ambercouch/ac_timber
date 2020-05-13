@@ -79,6 +79,9 @@
     padding-bottom: $act-unit;
     border-bottom: solid 1px $brand-col-5;
   }
+  &page-sidebar-widgets{
+    @extend .l-widget-area__widget--sidebar-widgets
+  }
   &footer-widgets{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
     margin-bottom:$inuit-global-spacing-unit;
