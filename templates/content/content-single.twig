@@ -1,18 +1,18 @@
 {% set postFormat = postFormat? fn('get_post_format', post) : '' %}
 
 {% block content %}
-  <article id="post-{{ post.id }}" class="single-article {{ post.class }}">
+  <article id="post-{{ post.id }}" class="l-single-article {{ post.class }}">
   {% if post.thumbnail %}
-    <div class="single-article__feature-image">
-      <div class="feature-image">
-        <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
+    <div class="l-single-article__feature-image--single">
+      <div class="c-feature-image--single">
+        <img src="{{ post.thumbnail.src('feature500') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
   {%  endif %}
 
     <header class="entry-header single-article__header ">
       <h1 class="entry-title single-article__heading">
-        <span class="single-article__title">
+        <span class="l-single-article__title">
           {{ post.title }}
         </span>
       </h1>
@@ -30,10 +30,10 @@
 
       <div class="entry-content single-article__body">
 
-        <div class="single-article__content">
+        <div class="l-single-article__content">
           {{ post.content }}
         </div>
-        <div class="single-article__page-links">
+        <div class="l-single-article__page-links">
           {% if post.pagination %}
             <nav>Pages:
               {% for page in post.pagination.pages %}
@@ -50,7 +50,7 @@
       </div>
 
 
-    <footer class="single-article__footer">
+    <footer class="l-single-article__footer">
 
 
     </footer>
