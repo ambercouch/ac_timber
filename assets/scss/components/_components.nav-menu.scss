@@ -142,7 +142,7 @@
     border-radius: 2px;
     color: white;
     padding: 0 $act-unit-t !important;
-    @include act-font-size($inuit-font-size-h6, 1)
+    @include act-font-size($inuit-font-size-h6, 1);
     font-weight: 100;
     &:hover{
       background: rgba(white, 0.1);
