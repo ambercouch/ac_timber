@@ -4,6 +4,7 @@
 
 .c-options-table {
   display: block;
+
 }
 
 /*
@@ -36,7 +37,7 @@
   &title {
     display: inline;
   }
-  &link {
+  &link{
     display: inline
   }
   &table{
@@ -45,6 +46,10 @@
     //border-right: solid 1px $brand-col-1;
     border-left:none;
     //background: $brand-col-6;
+    @include mq($from: desktop){
+      table-layout: fixed;
+      min-width: 1000px;
+    }
   }
   &th{
     @include act-font-size($inuit-font-size-h6);
@@ -86,12 +91,15 @@
       color:white;
       margin-bottom: 3px;
       .c-options-table__th--thead:first-of-type &{
-        background: #6da705;
+        background: #1f5dad;
       }
     .c-options-table__th--thead:nth-of-type(2) &{
-      background: #2600f1;
+      background: #6da705;
     }
     .c-options-table__th--thead:nth-of-type(3) &{
+        background: #2600f1;
+      }
+    .c-options-table__th--thead:nth-of-type(4) &{
       background: #d10505;
     }
 
@@ -194,12 +202,20 @@
     &:first-of-type{
       background: #6da705;
     }
-    &:nth-last-of-type(2){
+    &:nth-of-type(2){
       background: #2600f1;
     }
     &:nth-of-type(3){
-      background: #d10505;
+       background: #d10505;
+     }
+    &:nth-of-type(4){
+      background: #1f5dad;
     }
+  }
+  &logo{
+    background: white;
+    display: block;
+    width: 50px;
   }
 }
 
@@ -213,9 +229,6 @@
   @extend .c-options-table__col;
 }
 .c-options-table__col--{
-  &op2{
-    //background-color: $brand-col-5;
-  }
   &head{
 border-left: none ;
   }
@@ -230,11 +243,15 @@ border-left: none ;
     background: transparent;
     border: none;
   }
-  &op2{
+  &op1{
     @include mq($from : tablet){
       background: $brand-col-6;
     }
-
+  }
+  &op3{
+    @include mq($from : tablet){
+      background: $brand-col-6;
+    }
   }
 }
 
@@ -266,6 +283,19 @@ border-left: none ;
     a{
       color: $brand-col-1 !important;
     }
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-options-table--
+
+[class*=c-options-table__select-bundle-link--] {
+  @extend .c-options-table__select-bundle-link;
+}
+
+
+.c-options-table__select-bundle-link--{
+  &nhs{
+
   }
 }
 
