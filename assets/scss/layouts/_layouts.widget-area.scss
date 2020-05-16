@@ -4,6 +4,7 @@
 
 .l-widget-area {
   display: block;
+  position: relative;
 }
 
 /*
@@ -23,6 +24,18 @@
       }
     }
 
+  }
+  &subsidiary{
+    @include mq($from:desktop){
+      display: grid;
+      grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
+      grid-template-rows: auto auto;
+      grid-column-gap: $act-unit-l;
+      grid-row-gap: $act-unit;
+    }
+    a{
+      color: $brand-col-3;
+    }
   }
 }
 
@@ -53,10 +66,6 @@
     display: inline
   }
 
-  &content {
-    display: block
-  }
-
   &footer {
     display: block
   }
@@ -70,6 +79,53 @@
     }
   }
 }
+
+
+
+
+    //BEM ELEMENT MODIFIER FALLBACK .l-widget-area--
+
+    [class*=l-widget-area__widget--] {
+      @extend .l-widget-area__widget;
+    }
+
+    .l-widget-area__widget--{
+      &masthead-before-widgets{
+        padding-right: $act-unit-h;
+        @include mq($from : desktop){
+          padding-right: 0;
+        }
+      }
+      &sidebar-widgets{
+        margin-bottom: $act-unit;
+        padding-bottom: $act-unit;
+        border-bottom: solid 1px;
+      }
+      &footer-widgets{
+        @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
+        margin-bottom:$inuit-global-spacing-unit;
+        @extend .u-1-4--tablet;
+        @include mq($from: tablet){
+          padding-left:$inuit-global-spacing-unit ;
+        }
+        &:first-child{
+          padding-left:0 ;
+        }
+        &:last-child{
+          @include mq($from : tablet, $until: desktop){
+            padding-left:0 ;
+            width: 100% !important;
+          }
+        }
+      }
+      &post-thumb-list{
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+
+
+
 
 //BEM ELEMENT MODIFIER FALLBACK .l-widget-area__widget--
 
