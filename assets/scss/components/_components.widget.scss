@@ -37,7 +37,7 @@
 
  }
 
-  &title{
+  &heading{
     display: none;
   }
 }
@@ -54,11 +54,11 @@
   }
 }
 
-[class*=c-widget__title--]{
-  @extend .c-widget__title !optional;
+[class*=c-widget__heading--]{
+  @extend .c-widget__heading !optional;
 }
 
-.c-widget__title--{
+.c-widget__heading--{
   &footer{
     display: block;
     margin-bottom:$act-unit-t;
