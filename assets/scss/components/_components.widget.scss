@@ -64,4 +64,12 @@
     margin-bottom:$act-unit-t;
     color: white;
   }
+  &subsidiary{
+    background: $brand-col-2;
+    color: white;
+    padding: $act-unit-t $act-unit-s;
+    .l-widget-area__widget--next-step &{
+      padding: $act-unit;
+    }
+  }
 }

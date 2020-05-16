@@ -1,0 +1,43 @@
+{% if mobilenavbefore_widgets == '' and mobilenavafter_widgets == '' and menuMobile.get_items == ''%}
+  <!-- Add some widgets to the mobilenav -->
+{% else %}
+  <button id="menuButton" class="c-burger" data-state="off">
+    <div class="c-burger__bar--tl"></div>
+    <div class="c-burger__bar--tr"></div>
+    <div class="c-burger__bar--m"></div>
+    <div class="c-burger__bar--br"></div>
+    <div class="c-burger__bar--bl"></div>
+  </button>
+
+
+  <div id="mobileNavigation" class="site__mobile-off-page" data-state="off">
+    <div class="mobile-off-page__navigation">
+
+      {% if mobilenavbefore_widgets %}
+        <div class="mobile-off-page__widget-area">
+          <div class="l-widget-area--mobile-nav-before-widgets" >
+            {{mobilenavbefore_widgets}}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if menuMobile.get_items %}
+        <div class="mobile-off-page__navigation">
+          {%  set menuName =  'mobile'%}
+          {% include 'inc/navigation.twig' %}
+        </div>
+      {% endif %}
+
+
+      {% if mobilenavafter_widgets %}
+        <div class="mobile-off-page__widget-area">
+          <div class="l-widget-area--mobile-nav-after-widgets" >
+            {{mobilenavafter_widgets}}
+          </div>
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+{% endif %}
