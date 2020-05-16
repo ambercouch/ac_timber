@@ -13,8 +13,8 @@ function _act_widgets_init() {
             'description' => '',
             'before_widget' => '<aside id="%1$s" class="l-widget-area__widget--'.$sidebar_slug.'-widgets %2$s"><div  class="widget c-widget--'.$sidebar_slug.'">',
             'after_widget' => '</div></aside>',
-            'before_title' => '<h3 class="c-widget__heading--'.$sidebar_slug  . '" ><span class="c-widget__title">',
-            'after_title' => '</span></h3>'
+            'before_title' => '<div class="c-widget__header--'.$sidebar_slug  . '" ><header class="c-header--'.$sidebar_slug  . '" ><h3 class="c-header__heading--'.$sidebar_slug  . '" ><span class="c-header__title">',
+            'after_title' => '</span></h3></header></div>'
         ));
     }
 }
