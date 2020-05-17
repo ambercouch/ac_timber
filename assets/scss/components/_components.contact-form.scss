@@ -36,10 +36,15 @@
       display: none !important;
     }
   }
-  &next-step{
-    @extend .c-contact-form--placeholder-blocks;
+  &in-stock-reminder{
+    @extend .c-contact-form--placeholders;
+    @extend .c-contact-form--inline;
+    width: 600px;
+    max-width: 100%;
   }
 }
+
+
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
 
@@ -131,6 +136,38 @@
 [class*=contact-form__input-content--] {
   @extend .c-contact-form__content;
 }
+
+/*
+ * c-contact-form--inline
+ */
+.c-contact-form--inline {
+  .c-contact-form__ {
+    &content {
+      display: flex;
+    }
+    &label{
+      margin-right: $act-unit;
+    }
+    &input-wrapper{
+      &--submit{
+        padding: 0;
+      }
+    }
+  }
+}
+
+/*
+ * c-contact-form--placeholders
+ */
+.c-contact-form--placeholders {
+  .c-contact-form__ {
+    &label-text {
+      display: none;
+    }
+  }
+
+}
+
 /*
  * c-contact-form--placeholder-block
  */
@@ -259,11 +296,11 @@
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
   padding:$inuit-global-spacing-unit-tiny;
-  background: $brand-col-1;
+  background: $brand-col-3;
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-1, 5%);
+    background: darken($brand-col-3, 5%);
   }
 }
 
