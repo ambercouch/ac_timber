@@ -74,7 +74,9 @@
   {% endblock %}
 
   {% block before_main %}
-    {% include 'inc/widget-area-mainbefore.twig' with {'widgetArea' : 'mainbefore'}%}
+    <section class="l-site__main-before">
+      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}
+    </section >
   {% endblock %}
 
   <section id="primary" class="l-site__main">
