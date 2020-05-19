@@ -23,7 +23,10 @@
       grid-column-gap: $act-unit-l;
       grid-row-gap: $act-unit-h;
     }
-
+  }
+  &footer-widgets{
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
@@ -79,7 +82,7 @@
   &footer-widgets{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
     margin-bottom:$inuit-global-spacing-unit;
-    @extend .u-1-4--tablet;
+    @extend .u-1-2--tablet;
     @include mq($from: tablet){
       padding-left:$inuit-global-spacing-unit ;
     }

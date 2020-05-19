@@ -1,8 +1,14 @@
 .l-footer{
   display: block;
-  //font-family: $act-font-family-alt;
-  //@include act-font-size($inuit-font-size-h6);
+  background: $brand-col-5;
 }
+
+//BEM BLOCK MODIFIER FALLBACK .l-footer--
+
+[class*=l-footer--] {
+  @extend .l-footer;
+}
+
 
 .l-footer__{
   &content{
@@ -21,9 +27,6 @@
       padding-right: $act-unit-h;
     }
     padding-bottom: 0;
-
-
-
   }
   &company-logo{
     display: block;
@@ -43,6 +46,12 @@
       color: white;
     }
   }
+  &widget-area{
+    @extend .c-site-wrapper--responsive;
+    padding-top: $act-unit-l;
+    padding-bottom: $act-unit-l;
+    background-color: transparent;
+  }
   &widgets{
     border-bottom: solid 1px white;
     padding-bottom: $act-unit-l;
@@ -55,6 +64,10 @@
   &widget{
 
   }
+  &site-info{
+    background: $brand-col-2;
+    @include breakout-band($bgc : $brand-col-2)
+  }
 }
 
 .l-footer{
@@ -66,3 +79,12 @@
     }
   }
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .l-footer__widget-area--
+
+[class*=l-footer__widget-area--] {
+  @extend .l-footer__widget-area;
+}
+
+
+
