@@ -15,10 +15,9 @@
     display: block
   }
   &page{
-    background: $brand-col-3;
-    padding: $act-unit;
-    color: white;
-    @include breakout-band($bgc : $brand-col-3, $pos : 'left');
+
+
+
   }
 }
 
@@ -40,8 +39,6 @@
 
   &heading {
     display: block;
-    color: white;
-
   }
 
   &title {
@@ -65,4 +62,15 @@
 
 [class*=c-header__heading--] {
   @extend .c-header__heading;
+}
+
+/*
+ * .c-header extendable styles
+ */
+
+.c-header--left-block{
+  @include breakout-band($bgc : $brand-col-3, $pos : 'left');
+  background: $brand-col-3;
+  color: white;
+  padding: $act-unit;
 }
