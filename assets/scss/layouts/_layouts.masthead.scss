@@ -11,9 +11,8 @@ BEM BLOCK .l-masthead
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background: $brand-col-2;
   &:after{
-    width: 100%;
+    //width: 100%;
   }
   &.has-before-widgets{
     padding-top: 0;
@@ -52,10 +51,10 @@ BEM ELEMENTS .l-masthead__
   }
   &navigation{
     display: none;
-    @include mq($from : desktop){
-      width: 100%;
-      display: flex;
-      align-items: flex-start;
+    //@extend .l-masthead__element--band-block-bottom;
+    @include mq($from: desktop){
+      display: block;
+      margin: $act-unit 0;
     }
   }
   &widget-area{
@@ -67,7 +66,6 @@ BEM ELEMENTS .l-masthead__
     max-width: 100%;
     margin-right: auto;
     margin-bottom: 0;
-    @include breakout-band($bgc : white);
     @include mq($from : desktop){
       max-width: 100%;
     }
@@ -76,4 +74,46 @@ BEM ELEMENTS .l-masthead__
 
 [class*=l-masthead__widget-area--]{
   @extend .l-masthead__widget-area
+}
+
+
+/*
+ * band-block-bottom
+ */
+.l-masthead__element--band-block-bottom{
+
+  .current-menu-item{
+    .c-nav-menu__link{
+      color: white;
+      background: darken($brand-col-2, 10%);
+      font-weight: 500;
+    }
+  }
+
+  @include mq($from : desktop){
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background: $brand-col-2;
+    @include breakout-band($bgc : $brand-col-2);
+    margin: 0;
+  }
+  .c-nav-menu{
+
+  }
+  .c-nav-menu__link{
+    color: #fff;
+    &:hover{
+      color: white;
+      background: darken($brand-col-2, 10%);;
+    }
+
+  }
+}
+
+.l-masthead__element--band-block-top{
+  @extend .l-masthead__element--band-block-bottom;
+  @include mq($from : desktop){
+    order: -1;
+  }
 }
