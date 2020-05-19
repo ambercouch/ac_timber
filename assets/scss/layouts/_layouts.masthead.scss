@@ -51,7 +51,9 @@ BEM ELEMENTS .l-masthead__
   }
   &navigation{
     display: none;
-    //@extend .l-masthead__element--band-block-bottom;
+    //@extend .element--band-block-bottom;
+    //@extend .is-split-nav;
+    @extend .element--abso-layer;
     @include mq($from: desktop){
       display: block;
       margin: $act-unit 0;
@@ -61,10 +63,10 @@ BEM ELEMENTS .l-masthead__
     width: 100%;
   }
   &branding{
+    @extend .element--items-centre;
+    //@extend .element--flush-left;
     background: transparent;
-    width: auto;
     max-width: 100%;
-    margin-right: auto;
     margin-bottom: 0;
     @include mq($from : desktop){
       max-width: 100%;
@@ -80,7 +82,7 @@ BEM ELEMENTS .l-masthead__
 /*
  * band-block-bottom
  */
-.l-masthead__element--band-block-bottom{
+.element--band-block-bottom{
 
   .current-menu-item{
     .c-nav-menu__link{
@@ -110,10 +112,49 @@ BEM ELEMENTS .l-masthead__
 
   }
 }
-
-.l-masthead__element--band-block-top{
-  @extend .l-masthead__element--band-block-bottom;
+/*
+ * band-block-top
+ */
+.element--band-block-top{
+  @extend .element--band-block-bottom;
   @include mq($from : desktop){
     order: -1;
+  }
+}
+
+/*
+ * element--items-centre
+ */
+.element--items-centre{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/*
+ * element--flush-left
+ */
+.element--flush-left{
+  width: auto;
+  margin-right: auto;
+}
+
+/*
+ * element--flush-left
+ */
+.element--abso-layer{
+  width: 100%;
+  position: absolute;
+  pointer-events: none;
+}
+
+.is-split-nav{
+  width: 100%;
+  .c-nav-menu__list{
+    width: 100%;
+    justify-content: center;
+    > :nth-child(5){
+      margin-left: auto;
+    }
   }
 }
