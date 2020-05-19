@@ -1,0 +1,104 @@
+/*
+  BEM BLOCK .l-widget-area
+ */
+
+.l-widget-area {
+  display: block;
+  position: relative;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-widget-area--
+ */
+
+.l-widget-area-- {
+  &type {
+    display: block
+  }
+  &subsidiary{
+    @include mq($from:desktop){
+      display: grid;
+      grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
+      grid-template-rows: auto auto;
+      grid-column-gap: $act-unit-l;
+      grid-row-gap: $act-unit-h;
+    }
+
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-widget-area--
+
+[class*=l-widget-area--] {
+  @extend .l-widget-area;
+}
+
+/*
+  BEM ELEMENTS .l-widget-area__
+ */
+
+.l-widget-area__ {
+  &widget {
+    display: block
+  }
+  &heading {
+    display: block
+  }
+  &title {
+    display: inline;
+  }
+  &link {
+    display: inline
+  }
+  &content {
+    display: block
+  }
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-widget-area--
+
+[class*=l-widget-area__widget--] {
+  @extend .l-widget-area__widget;
+}
+
+.l-widget-area__widget--{
+  &masthead-before-widgets{
+    padding-right: $act-unit-h;
+    @include mq($from : desktop){
+      padding-right: 0;
+    }
+  }
+  &sidebar-widgets{
+    margin-bottom: $act-unit;
+    padding-bottom: $act-unit;
+    border-bottom: solid 1px;
+  }
+  &footer-widgets{
+    @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
+    margin-bottom:$inuit-global-spacing-unit;
+    @extend .u-1-4--tablet;
+    @include mq($from: tablet){
+      padding-left:$inuit-global-spacing-unit ;
+    }
+    &:first-child{
+      padding-left:0 ;
+    }
+    &:last-child{
+      @include mq($from : tablet, $until: desktop){
+        padding-left:0 ;
+        width: 100% !important;
+      }
+    }
+  }
+  &next-step{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  &post-thumb-list{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
