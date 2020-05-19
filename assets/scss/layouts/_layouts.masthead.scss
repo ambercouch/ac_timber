@@ -1,7 +1,7 @@
 /*
-BEM BLOCK .c-masthead
+BEM BLOCK .l-masthead
  */
-.c-masthead{
+.l-masthead{
   border-bottom:none;
   width: 100%;
   @extend .o-wrapper;
@@ -21,16 +21,16 @@ BEM BLOCK .c-masthead
 }
 
 /*
-BEM BLOCK MODIFIERS .c-masthead--
+BEM BLOCK MODIFIERS .l-masthead--
  */
-[class*="c-masthead--"]{
-  @extend .c-masthead;
+[class*="l-masthead--"]{
+  @extend .l-masthead;
   .is-overlay-hero &{
     @include breakout-band($bgc : linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 80%) );
   }
 }
 
-.c-masthead--{
+.l-masthead--{
   &front-page{
     background: transparent;
     position: absolute;
@@ -39,9 +39,9 @@ BEM BLOCK MODIFIERS .c-masthead--
 }
 
 /*
-BEM ELEMENTS .c-masthead__
+BEM ELEMENTS .l-masthead__
  */
-.c-masthead__{
+.l-masthead__{
   &site-title{
     line-height: 1;
     margin-top: $act-unit-s;
@@ -74,6 +74,6 @@ BEM ELEMENTS .c-masthead__
   }
 }
 
-[class*=c-masthead__widget-area--]{
-  @extend .c-masthead__widget-area
+[class*=l-masthead__widget-area--]{
+  @extend .l-masthead__widget-area
 }
