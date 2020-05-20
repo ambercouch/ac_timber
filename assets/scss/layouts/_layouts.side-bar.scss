@@ -5,7 +5,13 @@
 .l-side-bar {
   display: block;
   padding-top: $act-unit-h * 1.5;
-  width: 25%;
+  @include mq($from:tablet){
+     width: 35%;
+   }
+  @include mq($from:desktop){
+    width: 35%;
+  }
+
 }
 
 /*

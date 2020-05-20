@@ -14,6 +14,7 @@
   &primary {
    @include act-font-size($act-fs-6, 1.3);
     background: $brand-col-2;
+    width: 100%;
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
 
@@ -103,6 +104,7 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
+    width: 100%;
   }
   &pagination{
     @extend .o-flex-split--last;

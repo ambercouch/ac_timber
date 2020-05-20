@@ -113,3 +113,11 @@
     margin-bottom: $act-unit !important;
   }
 }
+
+.l-post-thumb-list{
+  .l-post-thumb-list__item--post-thumb:nth-child(2){
+    img{
+      object-position: right;
+    }
+  }
+}

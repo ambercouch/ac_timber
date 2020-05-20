@@ -91,11 +91,14 @@
     display: block;
   }
   &feature-image{
-    @include size(100%,120px);
+    @include size(100%,200px);
     margin-bottom: $act-unit-s;
     img{
-      @include size(100%,120px, true);
+      @include size(100%,200px, true);
       object-fit: cover;
+      &:nth-child(2){
+        object-position: left;
+      }
     }
   }
 }
