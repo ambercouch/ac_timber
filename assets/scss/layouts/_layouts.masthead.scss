@@ -140,10 +140,12 @@ BEM ELEMENTS .l-masthead__
 }
 
 /*
- * element--flush-left
+ * element--abso-layer
  */
 .element--abso-layer{
-  width: 100%;
+  //width: 100%;
+  @extend .o-site-wrapper--m;
+  left: 0;
   position: absolute;
   pointer-events: none;
 }
