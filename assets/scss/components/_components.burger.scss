@@ -4,14 +4,13 @@
   top: $act-unit-s;
   border: 0;
   right:  $act-unit;
-  background: none;
   font-size: 14px;
   font-size: 0.875rem;
   width: 3.2em;
   height: 3.2em;
   z-index: 99999;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-  background: rgba($brand-col-3, 0.7);
+  background: transparent;
   &[data-state=on]{
     //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     //right: 14rem;
@@ -24,7 +23,7 @@
   transition: transform 0.1s linear;
   position: absolute;
   width: 1.1em;
-  height: 0.2em;
+  height: 2px;
   background-color: #fff;
 }
 .c-burger__bar--tl{
