@@ -30,28 +30,17 @@
     padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny !important;
     @include inuit-font-size($milli-size, 1);
   }
-  &ghost{
-    background: transparent !important;
-    border: solid 1px;
-    &.o-btn--brand-1{
-      &:hover{
-        background: rgba($brand-col-1, .8) !important;
-      }
-    }
-    &.o-btn--brand-2{
-      &:hover{
-        background: rgba($brand-col-2, .8) !important;
-      }
-    }
-  }
   &transparent{
     @extend .o-btn;
     background: transparent;
   }
+  &rounded-0{
+    @extend .o-btn;
+    border-radius: 0 !important;
+  }
   &rounded {
     @extend .o-btn;
     border-radius: $act-unit;
-    padding: $act-unit-s $act-unit;
   }
   &brand-1{
     @extend .o-btn;
