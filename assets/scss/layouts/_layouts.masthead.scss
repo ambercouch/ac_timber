@@ -78,6 +78,13 @@ BEM ELEMENTS .l-masthead__
   @extend .l-masthead__widget-area
 }
 
+.l-masthead__widget-area--{
+  &masthead-before-widgets{
+    @extend .element--abso-layer;
+    padding: $act-unit-s;
+  }
+}
+
 
 /*
  * band-block-bottom
