@@ -197,23 +197,49 @@
 }
 
 
-//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu--
 
 [class*=c-nav-menu__sub-menu--] {
    @extend .c-nav-menu__sub-menu !optional;
  }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-list--
+
 [class*=c-nav-menu__sub-menu-list--] {
   @extend .c-nav-menu__sub-menu-list !optional;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-item--
 
 [class*=c-nav-menu__sub-menu-item--] {
   @extend .c-nav-menu__sub-menu-item !optional;
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-link--
 
 [class*=c-nav-menu__sub-menu-link--] {
   @extend .c-nav-menu__sub-menu-link !optional;
+}
+
+.c-nav-menu__link{
+
+  .has-label &{
+    display: flex;
+    align-items: center;
+  }
+   > :last-child{
+     .has-label & {
+       margin-left: $act-unit-s;
+     }
+     .is-icon-pos-right &{
+       margin-left: 0;
+       margin-right: $act-unit-s;
+     }
+  }
+  .is-icon-pos-right &{
+    flex-direction: row-reverse;
+  }
+
 }
 
 
