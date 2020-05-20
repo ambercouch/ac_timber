@@ -5,9 +5,15 @@ $site-wrapper-padding-tiny : $site-wrapper-padding-small / 2;
 
 .o-site-wrapper{
   @extend .o-wrapper;
-  background: $site-wrapper-color;
+  width: $inuit-wrapper-width;
+  max-width: 100%;
   padding: $site-wrapper-padding;
 }
+
+[class*=o-site-wrapper--]{
+  @extend .o-site-wrapper;
+}
+
 
 .o-site-wrapper--{
   &responsive{
@@ -23,6 +29,22 @@ $site-wrapper-padding-tiny : $site-wrapper-padding-small / 2;
     @include mq($from : desktop){
       padding: $site-wrapper-padding;
     }
+  }
+  &s{
+    @extend .o-site-wrapper;
+    padding: $act-unit-s
+  }
+  &m{
+    @extend .o-site-wrapper;
+    padding: $act-unit
+  }
+  &l{
+    @extend .o-site-wrapper;
+    padding: $act-unit-l
+  }
+  &flush{
+    @extend .o-site-wrapper;
+    padding: 0;
   }
 }
 
