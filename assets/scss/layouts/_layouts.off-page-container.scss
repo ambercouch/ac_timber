@@ -1,0 +1,83 @@
+/*
+  BEM BLOCK .l-off-page-container
+ */
+
+
+.l-off-page-container {
+  display: block;
+  position: relative;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-off-page-container--
+ */
+
+.l-off-page-container-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-off-page-container--
+
+[class*=l-off-page-container--] {
+  @extend .l-off-page-container;
+}
+
+/*
+  BEM ELEMENTS .l-off-page-container__
+ */
+
+.l-off-page-container__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &logo-widget{
+    display: none;
+    position: absolute;
+    top: -$act-unit-h;
+    width: 100%;
+    text-align: center;
+    padding: $act-unit-s;
+    z-index: 999;
+  }
+  &nav-menu{
+    padding: $act-unit;
+  }
+  &widget-area{
+    padding: 0 $act-unit;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-off-page-container__header--
+
+[class*=l-off-page-container__header--] {
+  @extend .l-off-page-container__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-off-page-container--
+
+[class*=l-off-page-container__nav-menu--] {
+  @extend .l-off-page-container__nav-menu;
+}
+
