@@ -17,11 +17,11 @@
   </div>
 
 
-  <div id="mobileNavigation" class="site__mobile-off-page" data-state="off">
-    <div class="mobile-off-page__navigation">
+  <div id="mobileNavigation" class="l-site__off-page-container--mobile-navigation" data-state="off">
+    <div class="l-off-page-container__mobile-navigation">
 
       {% if mobilenavbefore_widgets %}
-        <div class="mobile-off-page__widget-area">
+        <div class="l-off-page-container__widget-area">
           <div class="l-widget-area--mobile-nav-before-widgets" >
             {{mobilenavbefore_widgets}}
           </div>
@@ -29,7 +29,7 @@
       {% endif %}
 
       {% if menuMobile.get_items %}
-        <div class="mobile-off-page__navigation">
+        <div class="l-off-page-container__nav-menu--mobile">
           {%  set menuName =  'mobile'%}
           {% include 'inc/navigation.twig' %}
         </div>
@@ -37,7 +37,7 @@
 
 
       {% if mobilenavafter_widgets %}
-        <div class="mobile-off-page__widget-area">
+        <div class="l-off-page-container__widget-area">
           <div class="l-widget-area--mobile-nav-after-widgets" >
             {{mobilenavafter_widgets}}
           </div>

@@ -1,10 +1,10 @@
 /*
-  BEM BLOCK .site
+  BEM BLOCK .l-site
   #1 Fixes the horizontal scroll issue with width: 100vw when vertical scroll bars present
   #2 Force the footer to the bottom of short pages
  */
 
-.site{
+.l-site{
   /* #1 */
   overflow: hidden;
 
@@ -16,9 +16,9 @@
 }
 
 /*
-BEM ELEMENTS .site__
+BEM ELEMENTS .l-site__
  */
-.site__{
+.l-site__{
   &masthead{
     background: white;
     position: relative;
@@ -27,7 +27,7 @@ BEM ELEMENTS .site__
   &main{
 
   }
-  &mobile-off-page{
+  &off-page-container{
     transition: opacity 0.3s ease-in-out;
     top: 0;
     width: 100vw;
@@ -57,14 +57,23 @@ BEM ELEMENTS .site__
   }
 }
 
-[class*=site__masthead--]{
-  @extend .site__masthead;
+[class*=l-site__masthead--]{
+  @extend .l-site__masthead;
 }
 
-.site__masthead{
+.l-site__masthead{
   &.is-overlay-hero{
     position: relative;
     z-index: 999;
     height: 0;
   }
 }
+
+[class*=l-site__off-page-container--]{
+  @extend .l-site__off-page-container;
+}
+
+.l-site__off-page-container{
+
+}
+
