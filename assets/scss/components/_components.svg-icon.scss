@@ -16,6 +16,9 @@
     @include size($act-unit-l);
     margin: $act-unit auto;
   }
+  &arrow-right{
+    @include size($act-unit-s);
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-svg-icon--

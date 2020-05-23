@@ -4,7 +4,7 @@
   line-height:1;
   width: auto;
   border: none;
-  padding: $act-unit-s !important;
+  padding: $act-unit-s;
   @include inuit-font-size($inuit-font-size-h5, 1);
   background: $brand-col-1;
   color: #fff;
@@ -25,10 +25,30 @@
   @extend .o-btn;
 }
 .o-btn--{
-  &tiny {
+  &h {
     @extend .o-btn;
-    padding: $inuit-global-spacing-unit-tiny $inuit-global-spacing-unit-tiny !important;
-    @include inuit-font-size($milli-size, 1);
+    padding: $act-unit-h !important;
+    @include act-font-size($act-fs-2, 1);
+  }
+  &l {
+    @extend .o-btn;
+    padding: $act-unit-l !important;
+    @include act-font-size($act-fs-3, 1);
+  }
+  &m {
+    @extend .o-btn;
+    padding: $act-unit !important;
+    @include act-font-size($act-fs-4, 1);
+  }
+  &s {
+    @extend .o-btn;
+    padding: $act-unit-s !important;
+    @include act-font-size($act-fs-5, 1);
+  }
+  &t {
+    @extend .o-btn;
+    padding: $act-unit-t !important;
+    @include act-font-size($act-fs-6, 1);
   }
   &transparent{
     @extend .o-btn;

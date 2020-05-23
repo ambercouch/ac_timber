@@ -37,17 +37,16 @@
 .o-svg-icon__ {
   &svg {
     display: inline-block;
-    min-width: $act-unit;
-    min-height: $act-unit;
     max-width: 100%;
     max-height: 100%;
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    @include size($act-unit);
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+    //transform: translate(-50%, -50%);
   }
 }
 

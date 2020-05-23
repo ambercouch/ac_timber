@@ -3,14 +3,7 @@
  */
 
 .c-btn {
-  @include inuit-font-size($act-fs-sp, 1);
-  display: inline-block;
-  background: $brand-col-1;
-  color: white;
-  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  border-radius: 0.5em;
-  text-transform: uppercase;
-  text-decoration: none;
+  @extend .o-btn;
   &:hover, &:focus{
     color: white;
     background: darken($brand-col-1,10%);
