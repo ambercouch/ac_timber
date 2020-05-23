@@ -1,13 +1,20 @@
 {% if mobilenavbefore_widgets == '' and mobilenavafter_widgets == '' and menuMobile.get_items == ''%}
   <!-- Add some widgets to the mobilenav -->
 {% else %}
-  <button id="menuButton" class="c-burger" data-state="off">
+  <div class="c-burger">
+  <button id="menuButton" class="c-burger__btn" data-state="off">
+    <div class="c-burger__bars">
     <div class="c-burger__bar--tl"></div>
     <div class="c-burger__bar--tr"></div>
     <div class="c-burger__bar--m"></div>
     <div class="c-burger__bar--br"></div>
     <div class="c-burger__bar--bl"></div>
+    </div>
+    <div class="c-burger__label">
+      Menu
+    </div>
   </button>
+  </div>
 
 
   <div id="mobileNavigation" class="site__mobile-off-page" data-state="off">

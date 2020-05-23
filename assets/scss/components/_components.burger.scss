@@ -1,14 +1,17 @@
 
 .c-burger{
+  cursor: pointer;
   position: fixed;
-  top: $act-unit-s;
-  border: 0;
   right:  $act-unit;
+  top: $act-unit-s;
+  z-index: 99999;
+}
+.c-burger__btn{
+  cursor: pointer;
+  border: 0;
   font-size: 14px;
   font-size: 0.875rem;
-  width: 3.2em;
-  height: 3.2em;
-  z-index: 99999;
+  padding: 0;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
   background: transparent;
   &[data-state=on]{
@@ -19,6 +22,21 @@
     display: none;
   }
 }
+
+.c-burger__label{
+  @include act-font-size($act-fs-6);
+  color: white;
+  text-transform: uppercase;
+}
+
+.c-burger__bars{
+  position: relative;
+  font-size: 14px;
+  font-size: 0.875rem;
+  width: 42px;
+  height: 36px;
+}
+
 .c-burger__bar {
   transition: transform 0.1s linear;
   position: absolute;
@@ -29,7 +47,7 @@
 .c-burger__bar--tl{
   @extend .c-burger__bar;
   transform-origin: 0.4em 0.1em;
-  top: 0.8em;
+  top: 13px;
   left: 0.5em;
   [data-state=on] &{
     transform: rotate(45deg) translate(0.3em, 0);
@@ -38,7 +56,7 @@
 .c-burger__bar--tr{
   @extend .c-burger__bar;
   transform-origin: 0.7em 0.1em;
-  top: 0.8em;
+  top: 13px;
   right: 0.5em;
   [data-state=on] &{
     transform: rotate(-45deg) translate(-0.3em, 0);
@@ -47,9 +65,9 @@
 .c-burger__bar--m{
   @extend .c-burger__bar;
   transform-origin: 1.1em 0.1em;
-  top: 50%;
+  top: 22px;
   left: 0.5em;
-  width: 2.2em !important;
+  width: 26px !important;
   margin-top: -0.1em;
   [data-state=on] &{
     transform: scale(0, 1);
@@ -58,7 +76,7 @@
 .c-burger__bar--bl{
   @extend .c-burger__bar;
   transform-origin: 0.4em 0.1em;
-  bottom: 0.8em;
+  top:27px;
   left: 0.5em;
   [data-state=on] &{
     transform: rotate(-45deg) translate(0.3em, 0);
@@ -67,7 +85,7 @@
 .c-burger__bar--br{
   @extend .c-burger__bar;
   transform-origin: 0.7em 0.1em;
-  bottom: 0.8em;
+  top:27px;
   right: 0.5em;
   [data-state=on] &{
     transform: rotate(45deg) translate(-0.3em, 0);
