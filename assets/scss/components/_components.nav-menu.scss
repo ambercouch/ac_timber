@@ -49,7 +49,6 @@
   &link{
     text-decoration: none;
     pointer-events: all !important;
-
   }
   &sub-menu{
     position: absolute;
@@ -139,6 +138,15 @@
   &footer{
     margin-left: $act-unit;
   }
+  &stacked{
+    margin-bottom: $act-unit-s;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &mobile{
+    @extend .c-nav-menu__item--stacked;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
@@ -152,9 +160,7 @@
     padding:$act-unit $act-unit-s;
     display: block;
     background: transparent;
-    //text-transform: uppercase;
     font-weight: 500;
-    //@include a($col : $col-link );
     &:hover{
       color: $brand-col-2;
     }
@@ -180,11 +186,12 @@
     font-weight: 500;
   }
   &mobile{
+    //@extend .c-nav-menu__link--blocky;
+  }
+  &blocky{
     padding:$act-unit-s;
     display: block;
-    color: white;
     background-color: darken($brand-col-3, 15%);
-    margin-bottom: $act-unit-s;
     &:hover{
       color: white;
       background-color: darken($brand-col-3, 20%);
