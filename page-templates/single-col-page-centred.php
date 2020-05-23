@@ -7,9 +7,8 @@ $templateSlug = 'single-col-page-centred';
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
-$context['primary_widgets'] = Timber::get_widgets('Primary');
-$context['footer_widgets'] = Timber::get_widgets('Footer');
 $context['template'] = $templateSlug;
+$context['mainMod'] = is_front_page() ? '--front-page' : '--'.$templateSlug;
 
 //require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
 $templates = array( $templateSlug.'.twig', 'page.twig' );

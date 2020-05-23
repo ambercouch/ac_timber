@@ -5,6 +5,8 @@ BEM BLOCK .l-main
 .l-main{
   @extend .c-site-wrapper--responsive;
   padding-top: 0;
+  padding-left: $act-unit;
+  padding-right: $act-unit;
 
   padding-bottom: $act-unit;
   @include mq($from : desktop){
@@ -33,7 +35,7 @@ BEM BLOCK MODIFIERS .l-main--
     padding-top: 0;
   }
   &front-page{
-    padding-top: $act-unit;
+    padding-top: $act-unit-l;
   }
 }
 

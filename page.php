@@ -31,10 +31,7 @@ $templateSlug = 'page';
 $post = new TimberPost();
 $context['post'] = $post;
 
-
-$context['primary_widgets'] = Timber::get_widgets('Primary');
-$context['footer_widgets'] = Timber::get_widgets('Footer');
-$context['main_mod'] = is_front_page() ? '--front-page' : '--page';
+$context['mainMod'] = is_front_page() ? '--front-page' : '--page';
 $context['template'] = $templateSlug;
 $templates = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
 if ( is_front_page() ) {

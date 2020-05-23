@@ -4,6 +4,17 @@
   @include inuit-clearfix();
 }
 
+[class*='l-single-page--']{
+  @extend .l-single-page;
+
+}
+
+.l-single-page--{
+  &single-col-page-centred{
+    text-align: center;
+  }
+}
+
 //.post Elements
 .l-single-page__{
 
