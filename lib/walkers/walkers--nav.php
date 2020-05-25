@@ -125,9 +125,16 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 		}
 		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
+        $slug = '';
+        if (is_object($args->menu)){
+            $slug = $args->menu->slug;
+        }
+        elseif (is_string($args->menu)){
+            $slug = str_replace(' ', '-', strtolower($args->menu));
+        }
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'c-nav-menu__item--'.$args->menu->slug.' menu-item-' . $item->ID;
+		$classes[] = 'c-nav-menu__item--'.$slug.' menu-item-' . $item->ID;
 
 		/**
 		 * Filters the arguments for a single nav menu item.
@@ -170,8 +177,16 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$output .= $indent . '<li' . $id . $class_names .'>';
 
+        $slug = '';
+        if (is_object($args->menu)){
+            $slug = $args->menu->slug;
+        }
+        elseif (is_string($args->menu)){
+            $slug = str_replace(' ', '-', strtolower($args->menu));
+        }
+
 		$atts = array();
-		$atts['class'] = ! empty( $item->class ) ? $item->attr_class .' c-nav-menu__link--'.$args->menu->slug.' ' : 'c-nav-menu__link--'.$args->menu->slug;
+		$atts['class'] = ! empty( $item->class ) ? $item->attr_class .' c-nav-menu__link--'.$slug.' ' : 'c-nav-menu__link--'.$slug;
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
 		$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';

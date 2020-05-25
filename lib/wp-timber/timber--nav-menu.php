@@ -8,7 +8,7 @@ function act_nav_menu_walker( $args ) {
         $slug = $args['menu']->slug;
     }
     elseif (is_string($args['menu'])){
-        $slug = strtolower($args['menu']);
+        $slug = str_replace(' ', '-', strtolower($args['menu']));
     }
     return array_merge( $args, array(
         'walker' => new Ac_Walker_Nav_Menu(),
