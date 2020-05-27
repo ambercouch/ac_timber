@@ -14,7 +14,8 @@
 {% endblock %}
 
 {% block content %}
-
+  <div class="l-content__post-loop">
+    <div class="l-post-loop">
   {% for post in posts %}
     {% if loop.index == 3 %}
       <div class="post-loop__cta o-box u-tac u-mbl u-bgc2 u-col-white">
@@ -23,8 +24,12 @@
       </div>
     {% endif %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+        <div class="l-post-loop__post">
     {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
+        </div>
   {% endfor %}
+    </div>
+  </div>
 {% endblock %}
 
 {% block belowContent %}
