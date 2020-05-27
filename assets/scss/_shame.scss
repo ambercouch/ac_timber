@@ -19,3 +19,10 @@
   }
 }
 
+
+.wp-block-file__button{
+  @extend .o-btn;
+  @extend .o-btn--rounded;
+  @extend .o-btn--brand-2;
+  margin-left: $act-unit;
+}

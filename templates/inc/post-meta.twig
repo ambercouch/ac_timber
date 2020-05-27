@@ -10,6 +10,13 @@
     {#</div>#}
   {#</div>#}
 
+  <div class="c-post-meta__section--post-date">
+    <div class="c-post-meta__post-date">
+      <span class="c-post-meta__label--post-date" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span>
+    </div>
+  </div>
+
+
   <div class="c-post-meta__section--post-author">
     <div class="c-post-meta__post-author">
         <span class="c-post-meta__label">Posted by</span> <span class="c-post-meta__author-name"><a class="c-post-meta__link" href="{{ post.author.link }}">{{ post.author }}</a></span>
@@ -32,7 +39,7 @@
   {% if post.terms('tag') %}
     <div class="c-post-meta__section--post-tags">
       <div class="c-post-meta__post-tags">
-        <span class="c-post-meta__label">Tags</span>
+        <span class="c-post-meta__label">Topics</span>
         <ul class="c-post-meta__list--tags">
           {% for term in post.terms('tag') %}
             <li class="c-post-meta__item--tags" ><a class="c-post-meta__link" href="{{ term.link }}"><span class="post-tags__link-label">{{ term }}</span></a></li>
@@ -42,11 +49,6 @@
     </div>
   {% endif %}
 
-  <div class="c-post-meta__section--post-date">
-    <div class="c-post-meta__post-date">
-      <span class="c-post-meta__label" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span>
-    </div>
-  </div>
 
   {% if postEditUrl != '' %}
     <div class="c-post-meta__section--post-admin">

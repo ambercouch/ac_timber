@@ -1,5 +1,5 @@
 .post {
-  //border-bottom: solid 1px;
+  border-bottom: solid 1px $brand-col-3;
   padding-bottom: $inuit-global-spacing-unit;
   margin-bottom: $inuit-global-spacing-unit-large;
   &.sticky{
@@ -41,7 +41,7 @@
 
   }
   &footer {
-    display: block;
+    display: none;
   }
   &read-more{
     @extend .c-btn;

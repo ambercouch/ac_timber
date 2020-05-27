@@ -33,9 +33,9 @@
     {% else %}
       <div class="entry-content post{{ postFormatClass }}__body">
         <div class="post__text--truncated">
-          <p>{{ post.content | striptags | truncate(20) }}</p>
+          <p>{{ post.content }}</p>
         </div>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+{#        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>#}
       </div>
 
     {% endif %}
