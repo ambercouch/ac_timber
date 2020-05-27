@@ -36,7 +36,7 @@
 
 </head>
 <!-- BS Deploy -->
-<body id="siteBody" class="{{ body_class }} {{ hasHeroClass }} no-js"  data-mobile="off" data-window-top="true" {{ fn('_act_body_data') }}>
+<body id="siteBody" class="{{ body_class }} {{ hasHeroClass }} {{ hasMainBeforeClass }} no-js"  data-mobile="off" data-window-top="true" {{ fn('_act_body_data') }}>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVMFJBG"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -61,7 +61,7 @@
   {% endblock %}
 
   {% block hero %}
-    <section id="siteHero" class="site__hero">
+    <section id="siteHero" class="site__hero {{ hasMainBeforeClass }}">
       {% include 'inc/hero.twig' ignore missing %}
     </section>
   {% endblock %}

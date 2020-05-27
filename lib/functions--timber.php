@@ -102,6 +102,7 @@ class StarterSite extends TimberSite {
 
         $context['removeHero'] = get_field('remove_hero_banner', 'options');
         $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || (! is_home() && ! is_front_page()) )? 'has-no-hero' : 'has-hero';
+        $context['hasMainBeforeClass'] = (is_active_sidebar( 'aside-main-before' ))? 'has-main-before-widgets' : 'has-no-main-before-widgets';
         $context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
 
         $context['pageGlobalSettingHideComments'] = get_field('hide_page_comments','options');

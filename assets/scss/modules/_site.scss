@@ -18,7 +18,18 @@
 /*
 BEM ELEMENTS .site__
  */
+.l-site__main-before{
+  background: $brand-col-4;
+  color: white;
+  padding: $act-unit;
+  .has-no-main-before-widgets &{
+    display: none;
+  }
+}
 .site__{
+  &main-before{
+    background: $brand-col-1;
+  }
   &masthead{
     background: white;
   }
@@ -29,6 +40,9 @@ BEM ELEMENTS .site__
     margin-bottom: $act-unit-l;
     @include mq($from : tablet){
       margin-bottom: 0;
+    }
+    &.has-main-before-widgets{
+      margin-bottom: 0 !important;
     }
   }
   &mobile-off-page{
@@ -64,6 +78,7 @@ BEM ELEMENTS .site__
   &subsidiary{
     background: $brand-col-3;
   }
+
 }
 
 [class*=site__masthead--]{
