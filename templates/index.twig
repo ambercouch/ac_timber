@@ -10,11 +10,9 @@
 {% block content %}
 
   {% for post in posts %}
-    {% set postFormat = fn('get_post_format', post) %}
-    {% set postFormatClass = '--'~postFormat %}
-    {% include ['content'~postFormat~'.twig', 'content.twig'] %}<br>
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
   {% endfor %}
-
 {% endblock %}
 
 {% block belowContent %}
