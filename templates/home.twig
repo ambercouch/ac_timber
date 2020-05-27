@@ -16,6 +16,12 @@
 {% block content %}
 
   {% for post in posts %}
+    {% if loop.index == 3 %}
+      <div class="post-loop__cta o-box u-tac u-mbl u-bgc2 u-col-white">
+        <p>book a free 10 min call for COVID-19 related advice</p>
+        <a class="u-">Book A Call Today</a>
+      </div>
+    {% endif %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
     {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
   {% endfor %}
