@@ -16,20 +16,38 @@
 {% block content %}
   <div class="l-content__post-loop">
     <div class="l-post-loop">
-  {% for post in posts %}
-    {% if loop.index == 3 %}
-      <div class="post-loop__cta o-box u-tac u-mbl u-bgc2 u-col-white">
-        <p>book a free 10 min call for COVID-19 related advice</p>
-        <a class="u-">Book A Call Today</a>
-      </div>
-    {% endif %}
-    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+      {% for post in posts %}
+        {% if loop.index == 3 %}
+          <div class="l-post-loop__cta o-box u-tac u-mbl u-bgc2 u-col-white">
+            <div class="c-cta">
+              <div class="c-cta__content">
+                <p>Book a free 10 min call for COVID-19 related advice.</p>
+              </div>
+              <div class="c-cta__footer">
+                <div class="c-cta__btn">
+                  <a href="#modal" class="o-btn">Book A Call Today</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="o-sep--hr">
+        {% endif %}
+        {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
         <div class="l-post-loop__post">
-    {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
+          {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
         </div>
-  {% endfor %}
+      {% endfor %}
     </div>
   </div>
+
+  <div class="remodal u-tal" data-remodal-id="modal">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <p>Fill in your detail blow and click Send. We will then contact you to arrange your free call</p>
+    <div class="c-contact-form--book-call">
+    {{ function('do_shortcode', '[contact-form-7 id="1605" title="Book Call"]') }}
+    </div>
+  </div>
+
 {% endblock %}
 
 {% block belowContent %}

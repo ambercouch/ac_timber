@@ -145,6 +145,13 @@
   &grid-span-2{
     grid-column: 1 / span 2;
   }
+  &book-call{
+    text-align: left;
+    &:nth-child(even){
+      padding-right: 0;
+    }
+
+  }
 }
 
 /*

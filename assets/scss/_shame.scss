@@ -19,10 +19,21 @@
   }
 }
 
-
+.wp-block-file{
+  @include act-font-size($act-fs-5);
+}
 .wp-block-file__button{
   @extend .o-btn;
   @extend .o-btn--rounded;
   @extend .o-btn--brand-2;
-  margin-left: $act-unit;
+  display: block;
+  text-align: center;
+  margin-top: $act-unit;
+  @include mq($from:tablet){
+    margin-left: $act-unit;
+    display: inline-block;
+    margin-top: 0;
+    width: auto;
+
+  }
 }
