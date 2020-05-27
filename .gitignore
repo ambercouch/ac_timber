@@ -6,3 +6,7 @@
 yarn-error\.log
 
 npm-debug\.log
+
+assets/scss/_vendor.scss
+
+style.css.map
