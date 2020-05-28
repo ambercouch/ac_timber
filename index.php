@@ -21,6 +21,11 @@ $context = Timber::get_context();
 $context['posts'] = new Timber\PostQuery();
 $context['foo'] = 'bar';
 
+if (is_category()){
+    $context['catTitle'] = post_type_archive_title( '', false );;
+    $context['catDescription'] = category_description();
+}
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
     array_unshift( $templates, 'home.twig' );
