@@ -7,6 +7,14 @@
 {% block hero %}
 {% endblock %}
 
+{% block before_content %}
+ {% if catDescription %}
+  <div class="l-content__before-content u-fw500">
+    {{ catDescription }}
+  </div>
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}
