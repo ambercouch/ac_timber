@@ -4,6 +4,7 @@
 
 .c-header {
   display: block;
+  text-transform: uppercase;
 }
 
 /*
@@ -39,6 +40,7 @@
 
   &heading {
     display: block;
+    @include act-font-size($act-fs-1);
   }
 
   &title {
