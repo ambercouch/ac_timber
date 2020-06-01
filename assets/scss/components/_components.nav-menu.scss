@@ -147,6 +147,9 @@
   &mobile{
     @extend .c-nav-menu__item--stacked;
   }
+  &image{
+    display: inline-block;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
