@@ -150,7 +150,7 @@ function act_logo($atts){
     ), $atts));
 
     $logo = get_field('company_logo_colour', 'options');
-    $output = '<img src="'.$logo['url'].'" src="'.$logo['alt'].'" width="'.$w.'">';
+    $output = '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'" width="'.$w.'">';
 
     return $output;
 }
@@ -163,7 +163,7 @@ function act_logo_light($atts){
     ), $atts));
 
     $logo = get_field('company_logo_light', 'options');
-    $output = '<img src="'.$logo['url'].'" src="'.$logo['alt'].'" width="'.$w.'">';
+    $output = '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'" width="'.$w.'">';
 
     return $output;
 }
@@ -176,7 +176,7 @@ function act_logo_dark($atts){
     ), $atts));
 
     $logo = get_field('company_logo_dark', 'options');
-    $output = '<img src="'.$logo['url'].'" src="'.$logo['alt'].'" width="'.$w.'">';
+    $output = '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'" width="'.$w.'">';
 
     return $output;
 }
