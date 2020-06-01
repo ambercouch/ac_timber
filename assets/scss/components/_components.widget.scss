@@ -62,6 +62,9 @@
   &title{
 
   }
+  &header{
+    display: block;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-widget--
@@ -93,5 +96,17 @@
     .l-widget-area__widget--next-step &{
       padding: $act-unit;
     }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-widget__header--
+
+[class*=c-widget__header--] {
+  @extend .c-widget__header;
+}
+
+.hide-title{
+  .c-widget__header{
+    display: none;
   }
 }

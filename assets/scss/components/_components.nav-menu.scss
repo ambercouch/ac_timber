@@ -150,6 +150,9 @@
   &image{
     display: inline-block;
   }
+  &homepage-service{
+    margin-bottom: $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
