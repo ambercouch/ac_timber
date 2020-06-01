@@ -10,8 +10,53 @@ add_filter('wp_nav_menu_objects', 'act_menu_filters', 10, 2);
 
 function act_menu_filters($sorted_menu_objects, $args) {
 
+    $menu = wp_get_nav_menu_object($args->menu);
+
+    $menu_style = get_field('menu_style', $menu);
+
+
+    //Image menu
+    foreach ($sorted_menu_objects as $menu_object) {
+        $menu_object->classes[] = "c-nav-menu__item--image";
+        $object_id = $menu_object->object_id;
+        if($menu_style == 'image'){
+            $image_el = '';
+            $link_thum_el = '';
+            $menu_image = get_field('service_background_image' , $object_id);
+            $srcSet = wp_get_attachment_image_srcset($menu_image['id'], 'serviceMenuLarge');
+            $src = wp_get_attachment_image_url($menu_image['id'], 'serviceMenuLarge');
+            $sizes = wp_get_attachment_image_sizes($menu_image['id'], 'serviceMenuLarge');
+            if($src){
+                $image_el = '<img class="c-post-thumb__img" alt="'.$menu_object->title.'" src="'.$src.'" srcset="'.$srcSet.'" sizes="'.$sizes.'"/>';
+
+                $link_thum_el .= '<div class="c-post-thumb--menu-item">';
+                    $link_thum_el .= '<div class="c-post-thumb__image">';
+                    $link_thum_el .= $image_el;
+                    $link_thum_el .= '</div>';
+                    $link_thum_el .= '<div class="c-post-thumb__overlay-wrapper">';
+                        $link_thum_el .= '<header class="c-post-thumb__header">';
+                            $link_thum_el .= '<h2 class="c-post-thumb__heading">';
+                                $link_thum_el .= '<span class="c-post-thumb__title">';
+                                $link_thum_el .= $menu_object->title;
+                                $link_thum_el .= '</span>';
+                            $link_thum_el .= '</h2>';
+                        $link_thum_el .= '</header>';
+                        $link_thum_el .= '<div class="c-post-thumb__body">';
+                        $link_thum_el .= '<div class="c-post-thumb__read-more">';
+                        $link_thum_el .= 'Find out more';
+                        $link_thum_el .= '</div>';
+                        $link_thum_el .= '</div>';
+                    $link_thum_el .= '</div>';
+                $link_thum_el .= '</div>';
+
+                $menu_object->title = $link_thum_el;
+            }
+        };
+   }
+
     //jump Links
     foreach ($sorted_menu_objects as $menu_object) {
+
         if (substr($menu_object->description, 0, 1) === "#" && substr($menu_object->description, 0, 6) != "#icon-" ) {
             $menu_object->url = $menu_object->url . $menu_object->description;
         }
@@ -58,4 +103,45 @@ function act_menu_filters($sorted_menu_objects, $args) {
     }
 
     return $sorted_menu_objects;
+}
+
+//add_filter('wp_nav_menu_items', 'my_wp_nav_menu_items', 10, 2);
+
+function my_wp_nav_menu_items( $items, $args ) {
+
+
+
+//            echo '<pre>';
+//        print_r($args);
+//        echo '</pre>';
+
+//    // get menu
+//    $menu = wp_get_nav_menu_object($args->menu);
+//
+//
+//    // modify primary only
+//    if( $args->theme_location == 'top' ) {
+//
+//        // vars
+//        $logo = get_field('logo', $menu);
+//        $color = get_field('color', $menu);
+//
+//
+//        // prepend logo
+//        $html_logo = '<li class="menu-item-logo"><a href="'.home_url().'"><img src="'.$logo['url'].'" alt="'.$logo['alt'].'" /></a></li>';
+//
+//
+//        // append style
+//        $html_color = '<style type="text/css">.navigation-top{ background: '.$color.';}</style>';
+//
+//
+//        // append html
+//        $items = $html_logo . $items . $html_color;
+//
+//    }
+
+
+    // return
+    //return $items;
+
 }
