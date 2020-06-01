@@ -1,0 +1,65 @@
+/*
+  BEM BLOCK .o-sep
+ */
+
+.o-sep {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .o-sep--
+ */
+
+.o-sep-- {
+  &type {
+    display: block
+  }
+
+  &hr{
+    border: none;
+    border-bottom: solid 1px $brand-col-3;
+    margin-bottom: $act-unit-l;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .o-sep--
+
+[class*=o-sep--] {
+  @extend .o-sep;
+}
+
+/*
+  BEM ELEMENTS .o-sep__
+ */
+
+.o-sep__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .o-sep--
+
+[class*=o-sep__header--] {
+  @extend .o-sep__header;
+}
