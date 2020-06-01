@@ -94,6 +94,9 @@
   </section>
 
   {% block after_main %}
+    <section class="l-site__main-after">
+      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-after'}%}
+    </section >
   {% endblock %}
 
   {% block subsidiary %}
