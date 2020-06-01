@@ -1,8 +1,8 @@
-.post-meta{
+.c-post-meta{
   @include inuit-font-size($inuit-font-size-h5, 1);
 }
 
-.post-meta__{
+.c-post-meta__{
 
   &section{
    margin-bottom: $act-unit-s;
@@ -12,6 +12,7 @@
   &list{
     @extend .o-list-bare;
     @extend .o-list-inline;
+    margin-left: 0;
     margin-bottom: 0 !important;
 
   }
@@ -19,6 +20,8 @@
   &item{
     @extend .o-list-bare__item;
     @extend .o-list-inline__item;
+    margin-left: 0;
+    padding-left: 0;
     &:after{
       content: ',';
     }
@@ -62,25 +65,32 @@
 }
 
 [class*=post-meta--]{
-  @extend .post-meta;
+  @extend .c-post-meta;
 }
 
 [class*=post-meta__section--]{
-  @extend .post-meta__section;
+  @extend .c-post-meta__section;
 }
 
 [class*=post-meta__post-date--]{
-  @extend .post-meta__post-date;
+  @extend .c-post-meta__post-date;
 }
 
 [class*=post-meta__post-tags--]{
-  @extend .post-meta__post-tags;
+  @extend .c-post-meta__post-tags;
 }
 
 [class*=post-meta__post-cats--]{
-  @extend .post-meta__post-cats;
+  @extend .c-post-meta__post-cats;
 }
 
 [class*=post-meta__post-author--]{
-  @extend .post-meta__post-author;
+    @extend .c-post-meta__post-author;
+  }
+
+[class*=post-meta__list--]{
+  @extend .c-post-meta__list;
+}
+[class*=post-meta__item--]{
+  @extend .c-post-meta__item;
 }
