@@ -39,8 +39,8 @@
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: left;
     padding: $inuit-global-spacing-unit;
-    padding-left: $act-unit-h;
-    padding-right: $act-unit-h;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
     background: transparent;
     color: white;
     a{

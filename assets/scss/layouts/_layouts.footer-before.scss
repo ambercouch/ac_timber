@@ -4,7 +4,7 @@
 
 .l-footer-before {
   display: block;
-  background: $brand-col-4;
+  //background: $brand-col-4;
 }
 
 /*
@@ -52,9 +52,7 @@
     display: block
   }
   &widget-area{
-    @extend .c-site-wrapper--responsive;
-    padding-top: $act-unit;
-    padding-bottom: $act-unit-l;
+
     background: transparent;
     text-align: center;
   }

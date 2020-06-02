@@ -40,6 +40,11 @@
     color: white;
     text-align: center;
   }
+  &footer-before{
+    img{
+      object-position: center;
+    }
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-widget--
