@@ -1,8 +1,9 @@
 {% if fn('is_front_page') %}
   {% if (company_logo_alt != '') %}
     {% set company_logo = company_logo_alt %}
-    {% endif %}
-  <h1 class="c-site-title--upload c-site-title--front-page" >
+    {% set altClass = 'is-alt-logo' %}
+  {% endif %}
+  <h1 class="c-site-title--upload c-site-title--front-page is-alt-logo" >
     <a class="l-site-title__link" href="{{ site.url }} " rel="home">
       <img class="c-site-title__img" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
     </a>
