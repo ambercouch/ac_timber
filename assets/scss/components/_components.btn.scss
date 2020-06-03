@@ -42,6 +42,9 @@
       }
     }
   }
+  &icon{
+    @extend .o-btn--icon;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--

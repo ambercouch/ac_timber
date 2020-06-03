@@ -84,4 +84,14 @@
       color: white;
     }
   }
+  &icon{
+    display: inline-flex;
+    align-items: center;
+    > .c-btn__icon:first-child{
+      margin-right: $act-unit-t;
+    }
+    > .c-btn__icon:last-child{
+      margin-left: $act-unit-t;
+    }
+  }
 }

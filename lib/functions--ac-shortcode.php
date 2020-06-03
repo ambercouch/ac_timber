@@ -202,3 +202,79 @@ function act_shortcode_svg_icon($atts, $content = null) {
 }
 
 
+add_shortcode('act_cta', 'act_shortcode_cta');
+function act_shortcode_cta($atts, $content = null) {
+    extract(shortcode_atts(
+        array(
+            'title' => '',
+            'sub_title' => '',
+            'url' => '',
+            'button_text' => 'Find Out More'),
+        $atts));
+
+    $title_markup = '';
+    $sub_title_markup = '';
+    $header_markup = '';
+    $sub_title_class = '';
+    $button_markup = '';
+    $icon_markup = '';
+
+
+
+    if ($title != ''){
+        $title_markup .= '<h2 class="c-header__heading--cta">';
+        $title_markup .= $title;
+        $title_markup .= '</h2>';
+    }
+
+    if ($sub_title != ''){
+        $sub_title_class = 'has-sub-heading';
+        $sub_title_markup .= '<h3 class="c-header__heading--sub-heading-cta">';
+        $sub_title_markup .= $sub_title;
+        $sub_title_markup .= '</h3>';
+    }else{
+        $sub_title_markup = '<!-- no sub title -->';
+    }
+    if ($title_markup != '' || $sub_title_markup != ''){
+        $header_markup .= '<header class="c-header--cta '.$sub_title_class.' ">';
+        $header_markup .= $title_markup;
+        $header_markup .= $sub_title_markup;
+        $header_markup .= '</header>';
+    }
+
+    if ($url != ''){
+        $icon_markup .= '<div class="c-svg-icon--arrow-right u-col-w">';
+        $icon_markup .= '<svg role="img" preserveAspectRatio="none" class="c-svg-icon__svg">';
+        $icon_markup .= '<use xlink:href="#icon-arrow-right" >';
+        $icon_markup .= '</svg>';
+        $icon_markup .= '</div>';
+
+        $button_markup .= '<footer class="c-cta__footer">';
+        $button_markup .= '<div class="c-cta__btn">';
+        $button_markup .= '<a class="o-btn c-btn--ghost c-btn--icon" href="'.$url.'">';
+        $button_markup .= '<span class="c-btn__label">';
+        $button_markup .= $button_text;
+        $button_markup .= '</span>';
+        $button_markup .= '<span class="c-btn__icon">';
+        $button_markup .= $icon_markup;
+        $button_markup .= '</span>';
+        $button_markup .= '</a>';
+        $button_markup .= '</div>';
+        $button_markup .= '</footer>';
+    }
+
+    //$title_markup = $title;
+
+    $output = '';
+    $output .= '<div class="c-cta o-box u-bgc-2 u-col-w u-tac">';
+    $output .= '<div class="c-cta__header">';
+    $output .= $header_markup;
+    $output .= '</div>';
+    $output .= '<div class="c-cta__body">';
+    $output .= wpautop($content);
+    $output .= '</div>';
+    $output .= $button_markup;
+    $output .= '</div>';
+
+    return $output;
+}

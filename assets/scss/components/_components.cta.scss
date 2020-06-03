@@ -1,0 +1,65 @@
+/*
+  BEM BLOCK .c-cta
+ */
+
+.c-cta {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-cta--
+ */
+
+.c-cta-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-cta--
+
+[class*=c-cta--] {
+  @extend .c-cta;
+}
+
+/*
+  BEM ELEMENTS .c-cta__
+ */
+
+.c-cta__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+  &body{
+    p{
+      @include inuit-font-size($act-fs-4, $modifier: -1)
+    }
+
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-cta--
+
+[class*=c-cta__header--] {
+  @extend .c-cta__header;
+}
