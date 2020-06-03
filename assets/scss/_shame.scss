@@ -26,7 +26,7 @@
 .ngg-widget{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 130px;
+  grid-template-rows: 25vw;
   grid-column-gap: $act-unit-t;
   grid-row-gap: $act-unit-t;
 }
@@ -65,7 +65,7 @@
   max-height:100%;
   img{
     width: 100%;
-    height: 130px;
+    height: 25vw;
     object-fit: cover;
     padding: 0;
     border: 0;

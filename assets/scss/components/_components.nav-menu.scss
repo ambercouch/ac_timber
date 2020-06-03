@@ -159,11 +159,24 @@
   &mobile{
     @extend .c-nav-menu__item--stacked;
   }
+  &mobile-pages{
+    @extend .c-nav-menu__item--stacked;
+  }
   &image{
     display: inline-block;
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
+    &:last-child{
+      margin-bottom: 0;
+
+    }
+  }
+  &icon{
+    .c-nav-menu__link{
+      display: inline-flex !important;
+      width: auto;
+    }
   }
 }
 
@@ -206,6 +219,9 @@
   &mobile{
     //@extend .c-nav-menu__link--blocky;
   }
+  &mobile-bookings{
+    color: #fff;
+  }
   &blocky{
     padding:$act-unit-s;
     display: block;
@@ -220,6 +236,7 @@
     }
   }
   &homepage-service{
+    color: #fff;
     &:hover{
       .c-post-thumb__image:after{
         background: rgba(#000, 0.2);

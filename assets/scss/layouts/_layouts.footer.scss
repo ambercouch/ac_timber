@@ -1,6 +1,6 @@
 .l-footer{
   display: block;
-  background: $brand-col-5;
+  background: $brand-col-2;
   text-align: center;
 }
 
@@ -42,9 +42,9 @@
     padding-left: $act-unit;
     padding-right: $act-unit;
     background: transparent;
-    color: white;
+    color: $brand-col-1;
     a{
-      color: white;
+      color:$brand-col-1;
     }
   }
   &widget-area{
@@ -70,7 +70,7 @@
 
 .l-footer{
   a{
-    color: $brand-col-2;
+    color: $brand-col-1;
     text-decoration: none;
     &:hover{
       color: white;

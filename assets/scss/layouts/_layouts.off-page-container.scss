@@ -16,6 +16,8 @@
   &type {
     display: block
   }
+  &mobile-navigation{
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-off-page-container--
@@ -65,7 +67,7 @@
     padding: $act-unit;
   }
   &widget-area{
-    padding: 0 $act-unit;
+    padding: 0 $act-unit $act-unit;
   }
 }
 
@@ -79,5 +81,17 @@
 
 [class*=l-off-page-container__nav-menu--] {
   @extend .l-off-page-container__nav-menu;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-off-page-container__widget-area--
+
+[class*=l-off-page-container__widget-area--] {
+  @extend .l-off-page-container__widget-area;
+}
+
+.l-off-page-container__widget-area--{
+  &mobile-nav-before-widgets{
+      padding-bottom: 0;
+  }
 }
 
