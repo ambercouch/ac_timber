@@ -81,7 +81,7 @@ BEM ELEMENTS .l-masthead__
 .l-masthead__widget-area--{
   &masthead-before-widgets{
     @extend .element--abso-layer;
-    padding: $act-unit;
+    padding: 0;
   }
 }
 

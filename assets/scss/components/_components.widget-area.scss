@@ -28,7 +28,8 @@
 
 .c-widget-area__ {
   &widget {
-    display: block
+    display: block;
+    padding: $act-unit;
   }
   &heading {
     display: block

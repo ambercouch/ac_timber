@@ -25,6 +25,7 @@
     }
   }
   &footer-widgets{
+    padding: $act-unit 0;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -44,7 +45,8 @@
 
 .l-widget-area__ {
   &widget {
-    display: block
+    display: block;
+    padding: $act-unit;
   }
   &heading {
     display: block
@@ -82,6 +84,7 @@
     border-bottom: solid 1px;
   }
   &footer-widgets{
+    padding: 0;
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
     margin-bottom:$inuit-global-spacing-unit;
     @extend .u-1-2--tablet;

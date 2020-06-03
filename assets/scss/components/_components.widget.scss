@@ -4,6 +4,12 @@
 
 .c-widget {
   display: block;
+  p:last-child{
+    margin-bottom: 0;
+  }
+  header:last-child{
+    margin-bottom: 0;
+      }
 }
 
 /*
