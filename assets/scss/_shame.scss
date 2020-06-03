@@ -26,7 +26,7 @@
 .ngg-widget{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 25vw;
+  grid-auto-rows: 25vw;
   grid-column-gap: $act-unit-t;
   grid-row-gap: $act-unit-t;
 }

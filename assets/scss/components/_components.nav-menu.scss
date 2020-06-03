@@ -40,6 +40,7 @@
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
+   text-align: center;
  }
   &item{
     position: relative;
@@ -106,9 +107,13 @@
   }
   &mobile{
     @extend .c-nav-menu__list--stacked;
+    text-align: left;
   }
   &mobile-pages{
     @extend .c-nav-menu__list--stacked;
+  }
+  &mobile-bookings{
+    text-align: left;
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -158,9 +163,11 @@
   }
   &mobile{
     @extend .c-nav-menu__item--stacked;
+    text-align: left;
   }
   &mobile-pages{
     @extend .c-nav-menu__item--stacked;
+    text-align: left;
   }
   &image{
     display: inline-block;
@@ -238,6 +245,7 @@
   &homepage-service{
     color: #fff;
     &:hover{
+      color: #fff;
       .c-post-thumb__image:after{
         background: rgba(#000, 0.2);
       }
