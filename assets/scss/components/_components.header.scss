@@ -5,6 +5,7 @@
 .c-header {
   display: block;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /*
@@ -66,6 +67,19 @@
   @extend .c-header__heading;
 }
 
+.c-header__heading--{
+  &menu-item{
+   color: #fff;
+    margin-bottom: 0;
+    @include act-font-size($act-fs-3);
+  }
+  &sub-heading{
+    font-family: $act-font-family-sans;
+    font-weight: 300;
+    @include act-font-size($act-fs-3);
+  }
+}
+
 /*
  * .c-header extendable styles
  */
@@ -75,4 +89,11 @@
   background: $brand-col-3;
   color: white;
   padding: $act-unit;
+}
+
+.has-sub-heading{
+  margin-bottom: $act-unit;
+  .c-header__heading{
+    margin-bottom: 0;
+  }
 }
