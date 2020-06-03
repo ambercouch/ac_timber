@@ -22,7 +22,7 @@
   }
   &footer {
     color: white;
-    @include act-font-size($inuit-font-size-h6, 1.5);
+    @include act-font-size($inuit-font-size-h5, 1.5);
   }
   &sidebar{
     @include act-font-size($inuit-font-size-h5);

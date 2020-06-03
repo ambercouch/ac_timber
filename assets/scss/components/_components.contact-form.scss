@@ -13,32 +13,8 @@
  */
 
 .c-contact-form-- {
-  &request {
-    .c-contact-form__content{
-      @include mq($from : tablet){
-        display: flex;
-        align-items: flex-end;
-      }
 
-      > *{
-        margin-right:$act-unit-t;
-        &:last-child{
-          margin-right: 0;
-        }
-      }
-    }
-    .c-contact-form__input-wrapper--submit{
-      padding: 0;
-      margin-bottom: $act-unit-t;
-    }
 
-    .ajax-loader{
-      display: none !important;
-    }
-  }
-  &next-step{
-    @extend .c-contact-form--placeholder-blocks;
-  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
@@ -62,6 +38,7 @@
   &input-wrapper{
     display: block;
     margin-bottom: 0;
+    border: solid 1px;
   }
   &radio-wrapper{
     @extend .c-contact-form__label;
@@ -118,6 +95,7 @@
 .c-contact-form__input-wrapper--{
   &submit{
     padding-top:$inuit-global-spacing-unit-small;
+    border: none;
   }
   &check{
     .wpcf7-list-item{
