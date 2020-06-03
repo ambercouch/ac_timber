@@ -1,19 +1,23 @@
 .u-db{
-  display: block;
+  display: block !important;
 }
 
 .u-dilb{
-  display: inline-block;
+  display: inline-block !important;
 }
 
 .u-dil{
-  display: inline;
+  display: inline !important;
 }
 
 .u-df{
-  display: flex;
+  display: flex !important;
+}
+
+.u-dilf{
+  display: inline-flex !important;
 }
 
 .u-fw{
-  flex-wrap: wrap;
+  flex-wrap: wrap !important;
 }
