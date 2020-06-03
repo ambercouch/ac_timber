@@ -100,6 +100,7 @@ class StarterSite extends TimberSite {
 
         $context['site_info'] = get_field('site_info', 'options');
         $context['company_logo'] = get_field('company_logo', 'options');
+        $context['company_logo_alt'] = get_field('company_logo_alt', 'options');
 
         //Add the auto p from afc
         add_filter ('acf_the_content', 'wpautop');
