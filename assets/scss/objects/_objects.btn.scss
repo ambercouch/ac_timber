@@ -1,7 +1,7 @@
 .o-btn{
   transition: background 0.3s ease;
   display: inline-block;
-  line-height:1;
+  line-height:0;
   width: auto;
   border: none;
   padding: $act-unit-s;
@@ -28,27 +28,27 @@
   &h {
     @extend .o-btn;
     padding: $act-unit-h !important;
-    @include act-font-size($act-fs-2, 1);
+    @include act-font-size($act-fs-2,0);
   }
   &l {
     @extend .o-btn;
     padding: $act-unit-l !important;
-    @include act-font-size($act-fs-3, 1);
+    @include act-font-size($act-fs-3,0);
   }
   &m {
     @extend .o-btn;
     padding: $act-unit !important;
-    @include act-font-size($act-fs-4, 1);
+    @include act-font-size($act-fs-4,0);
   }
   &s {
     @extend .o-btn;
     padding: $act-unit-s !important;
-    @include act-font-size($act-fs-5, 1);
+    @include act-font-size($act-fs-5, 0);
   }
   &t {
     @extend .o-btn;
     padding: $act-unit-t !important;
-    @include act-font-size($act-fs-6, 1);
+    @include act-font-size($act-fs-6,0);
   }
   &transparent{
     @extend .o-btn;
