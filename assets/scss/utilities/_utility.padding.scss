@@ -1,5 +1,5 @@
 .u-p0, .u-p-0{
-  padding: 0;
+  padding: 0 !important;
 }
 .u-pt, .u-p-t{
    padding: $inuit-global-spacing-unit-tiny;
@@ -56,7 +56,7 @@
 }
 
 .u-pt0, .u-pt-0{
-  padding-top: 0;
+  padding-top: 0 !important;
 }
 .u-ptt, .u-pt-t{
   padding-top: $inuit-global-spacing-unit-tiny;
