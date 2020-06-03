@@ -12,7 +12,7 @@
 
   <div class="l-masthead__branding">
     <div class="l-masthead__site-title">
-      {% if fn('get_field', 'company_logo', 'option') != false %}
+      {% if fn('get_field', 'company_logo', 'option') != false or fn('get_field', 'company_logo_alt', 'option') %}
         {% include 'inc/site-title-upload.twig' %}
       {%  elseif acSettings.svgLogo   %}
         {% include 'inc/site-title-svg.twig' %}
