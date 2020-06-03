@@ -25,8 +25,11 @@
 
 .c-burger__label{
   @include act-font-size($act-fs-6);
-  color: white;
+  color: $brand-col-1;
   text-transform: uppercase;
+  .home &{
+    color: #fff;
+  }
 }
 
 .c-burger__bars{
@@ -42,7 +45,10 @@
   position: absolute;
   width: 1.1em;
   height: 2px;
-  background-color: #fff;
+  background-color: $brand-col-1;
+  .home &{
+    background-color: #fff;
+  }
 }
 .c-burger__bar--tl{
   @extend .c-burger__bar;
