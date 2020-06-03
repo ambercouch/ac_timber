@@ -22,6 +22,7 @@ function  act_cpt() {
         'description' => 'Services offered',
         'public' => true,
         'menu_position' => 20,
+        'show_in_rest' => true,
         'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
         'has_archive' => 'service'
     );
