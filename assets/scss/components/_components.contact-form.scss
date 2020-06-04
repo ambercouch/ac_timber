@@ -38,7 +38,7 @@
   &input-wrapper{
     display: block;
     margin-bottom: 0;
-    border: solid 1px;
+    border: solid 1px $brand-col-4;
   }
   &radio-wrapper{
     @extend .c-contact-form__label;
@@ -54,9 +54,11 @@
   &label{
     display: block;
     margin-bottom: $act-unit-t;
+    font-weight: 500;
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
+    margin-left: $act-unit-s;
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -232,15 +234,10 @@
 }
 
 .wpcf7-submit{
-  transition: background 0.3s ease;
-  @extend .c-contact-form__input;
-  padding:$act-unit-t;
-  background: $brand-col-3;
-  color: white;
+@extend .c-btn--ghost;
+  color: $brand-col-2;
   cursor: pointer;
-  &:hover{
-    background: darken($brand-col-3, 5%);
-  }
+
 }
 
 .wpcf7-form-control-wrap{
