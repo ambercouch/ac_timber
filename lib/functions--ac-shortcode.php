@@ -278,3 +278,68 @@ function act_shortcode_cta($atts, $content = null) {
 
     return $output;
 }
+
+add_shortcode('act_page_sections', 'act_shortcode_page_sections');
+function act_shortcode_page_sections($atts, $content = null)
+{
+
+    $sections = get_field('page_section');
+
+
+    $output = 'Page Sections 2';
+    $output = '<div class="c-page-sections" >';
+
+    if (have_rows('page_section')):
+        while( have_rows('page_section') ): the_row();
+
+
+
+            $section_title = get_sub_field('section_title');
+            $section_title_markup = '';
+            $section_sub_title = get_sub_field('section_sub_title');
+            $section_sub_title_markup = '';
+            $section_content = get_sub_field('section_content');
+            $section_image = get_sub_field('section_image');
+            $section_image_markup = '';
+
+            if($section_sub_title != ''){
+                $section_sub_title_markup .= '<h3 class="c-header__heading--sub-heading-section">';
+                $section_sub_title_markup .=  $section_sub_title;
+                $section_sub_title_markup .= '</h3>';
+            }
+
+            if( $section_title != ''){
+                $section_title_markup .= '<header class="c-header--section">';
+                $section_title_markup .= '<h2 class="c-header__heading--section">';
+                $section_title_markup .= $section_title;
+                $section_title_markup .= '</h2>';
+                $section_title_markup .= $section_sub_title_markup;
+                $section_title_markup .= '</header>';
+            }
+
+            if( $section_image != ''){
+                $image_srcset = wp_get_attachment_image_srcset($section_image['ID']);
+                $image_src = wp_get_attachment_image_url($section_image['ID']);
+                $image_sizes = wp_get_attachment_image_sizes($section_image['ID']);
+
+
+                $section_image_markup .= '<div class="c-feature-image--section">';
+                $section_image_markup .= '<img src="'.$image_src.'"   srcset="'.$image_srcset.'" sizes="'.$image_sizes.'"  alt="'.$section_title.'">';
+                $section_image_markup .= '</div>';
+            }
+
+            $output .= '<div class="c-page-sections__section">';
+            $output .= '<div class="c-page-sections__feature-image">';
+            $output .= $section_image_markup;
+            $output .= '</div>';
+            $output .= '<div class="c-page-sections__content">';
+            $output .= $section_title_markup;
+            $output .= '</div>';
+            $output .= '</div>';
+    endWhile;
+        endif;
+
+        $output .="<div>";
+
+    return $output;
+}
