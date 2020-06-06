@@ -15,10 +15,10 @@
     display: block
   }
   &page{
-    background: $brand-col-3;
-    padding: $act-unit;
-    color: white;
-    @include breakout-band($bgc : $brand-col-3, $pos : 'left');
+    display: block;
+  }
+  &content-before{
+    display: none;
   }
 }
 
