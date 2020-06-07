@@ -158,5 +158,37 @@ function myfoo( $text ) {
     return $text;
 }
 
+function ac_has_tax_term( $tax = false, $term = false  ){
+//echo '<pre>';
+    if ($term === false){
+        return false;
+    }
+
+    global $posts;
+    $has_term = false;
+        foreach ($posts as $post){
+        $product_tags = get_the_terms($post->id, $tax);
+
+        if(! empty($product_tags)){
+            foreach ($product_tags as $tag)
+            {
+                if ($tag->slug == $term)
+                {
+                    $has_term  = true;
+                }
+            }
+
+            }
+        }
+//            var_dump($post->slug);
+//        var_dump($product_tags);
+//            var_dump($is_face_mask);
+//            echo '<hr>';
+//    }
+//
+//die();
+    return $has_term ;
+}
+
 require_once get_template_directory() . '/lib/wp-timber/timber--nav-menu.php';
 
