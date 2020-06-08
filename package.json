@@ -30,5 +30,8 @@
     "readable-stream": "^3.4.0",
     "remodal": "^1.1.1",
     "webpack": "^2.2.1"
+  },
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
   }
 }
