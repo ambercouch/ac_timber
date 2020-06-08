@@ -57,7 +57,7 @@ class StarterSite extends TimberSite {
 
         //Site vars
         $context['site'] = $this;
-        $context['environment'] = ENVIRONMENT;
+        $context['environment'] = 'local';
 
         //AC Template settings
         $context['acSettings'] = acSettings();
@@ -185,4 +185,3 @@ function myfoo( $text ) {
 }
 
 require_once get_template_directory() . '/lib/wp-timber/timber--nav-menu.php';
-
