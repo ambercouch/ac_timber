@@ -25,7 +25,13 @@ BEM ELEMENTS .l-site__
     z-index: 10;
   }
   &main{
-
+    p{
+      @include mq ($from: desktop){
+        max-width: 600px;
+        margin: auto;
+        margin-bottom: 50px;
+      }
+    }
   }
   &off-page-container{
     transition: opacity 0.3s ease-in-out;
@@ -79,4 +85,3 @@ BEM ELEMENTS .l-site__
 .l-site__off-page-container{
 
 }
-

@@ -9,7 +9,6 @@
 /*
   BEM BLOCK MODIFIER .c-nav-menu--
  */
-
 .c-nav-menu-- {
   &primary {
    @include act-font-size($act-fs-6, 1.3);
@@ -25,7 +24,6 @@
     //margin-top: $act-unit-l;
   }
 }
-
 //BEM BLOCK MODIFIER FALLBACK .c-nav-menu--
 
 [class*=c-nav-menu--] {
@@ -301,5 +299,3 @@
   }
 
 }
-
-
