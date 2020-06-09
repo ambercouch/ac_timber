@@ -24,7 +24,7 @@ BEM ELEMENTS .l-site__
     position: relative;
     z-index: 10;
   }
-  &main-after{
+  &main{
     p{
       @include mq ($from: desktop){
         max-width: 600px;
@@ -32,6 +32,8 @@ BEM ELEMENTS .l-site__
         margin-bottom: 50px;
       }
     }
+  }
+  &main-after{
     aside{
       max-width: 1400px;
       margin: auto;

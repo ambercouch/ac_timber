@@ -129,6 +129,27 @@
     display: flex;
     flex-direction: column;
   }
+  &homepage-service{
+    @include mq ($from: desktop){
+      width: 70vw;
+      max-width: 1400px;
+      margin: auto;
+      box-sizing: border-box;
+    }
+    li{
+      width: 100%;
+      @include mq ($from: desktop){
+        width: calc(50% - 2px);
+        padding: 15px;
+        margin-bottom: 10px;
+      }
+    }
+    li:first-child{
+      @include mq ($from: desktop){
+        width: 100%;
+      }
+    }
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
