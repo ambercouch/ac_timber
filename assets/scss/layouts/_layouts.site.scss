@@ -24,13 +24,17 @@ BEM ELEMENTS .l-site__
     position: relative;
     z-index: 10;
   }
-  &main{
+  &main-after{
     p{
       @include mq ($from: desktop){
         max-width: 600px;
         margin: auto;
         margin-bottom: 50px;
       }
+    }
+    aside{
+      max-width: 1400px;
+      margin: auto;
     }
   }
   &off-page-container{
