@@ -76,3 +76,16 @@ product list items
     float:none !important;
   }
 }
+
+.woocommerce #respond input#submit.alt,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt{
+  background-color: $brand-col-3;
+  width: 100% !important;
+  margin-top: $act-unit;
+  &:hover{
+    background-color: darken($brand-col-3, 10%) !important;
+  }
+}
+
