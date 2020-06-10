@@ -136,20 +136,6 @@
       margin: auto;
       box-sizing: border-box;
     }
-    li{
-      width: 100%;
-      @include mq ($from: desktop){
-        width: calc(50% - 2px);
-        padding: 15px;
-        margin-bottom: 0;
-      }
-    }
-    li:first-child{
-      @include mq ($from: desktop){
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    }
   }
 }
 
@@ -192,9 +178,22 @@
   }
   &image{
     display: inline-block;
+    @include mq ($from: desktop){
+      width: calc(50% - 2px);
+      padding: $act-unit-s; 
+      margin-bottom: 0;
+    }
+  }
+  &image:first-child{
+    @include mq ($from: desktop){
+      width: 100%;
+    }
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
+    @include mq ($from: desktop){
+      margin-bottom: 0;
+    }
     &:last-child{
       margin-bottom: 0;
 

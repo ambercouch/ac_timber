@@ -43,6 +43,9 @@
  */
 
 .c-post-thumb__ {
+  &image{
+  position:relative
+  }
   &img{
     position: relative;
     max-height: 700px;
