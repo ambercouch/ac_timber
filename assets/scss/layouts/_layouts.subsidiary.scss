@@ -5,6 +5,12 @@
 .l-subsidiary {
 
   display: block;
+
+  @include mq ($from: desktop){
+    width: 80vw;
+    max-width: 1800px;
+    margin: auto;
+  }
 }
 
 /*

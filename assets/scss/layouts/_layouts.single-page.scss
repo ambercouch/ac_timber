@@ -23,6 +23,10 @@
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    @include mq ($from: desktop){
+      margin-top: $inuit-global-spacing-unit-large;
+      margin-bottom: $inuit-global-spacing-unit-large;
+    }
   }
 
   &heading{
