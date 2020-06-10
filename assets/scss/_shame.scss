@@ -29,6 +29,11 @@
   grid-auto-rows: 25vw;
   grid-column-gap: $act-unit-t;
   grid-row-gap: $act-unit-t;
+  @include mq ($from: desktop){
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: $act-unit-l;
+    grid-row-gap: $act-unit-l;
+  }
 }
 .ngg-widget{
   .ngg-simplelightbox:nth-child(7n + 1){
@@ -40,10 +45,25 @@
      grid-column-start: 2 ;
      grid-column-end: 3;
      grid-row: auto / span 2;
+     @include mq ($from: desktop){
+       grid-row: auto / span 1;
+     }
     img{
       height: 100% !important;
     }
    }
+  .ngg-simplelightbox:nth-child(7n + 3){
+    @include mq ($from: desktop){
+      grid-column-start: 3 ;
+      grid-column-end: 4;
+    }
+  }
+  /*.ngg-simplelightbox:nth-child(7n + 5){
+    @include mq ($from: desktop){
+      grid-column-start: 2 ;
+      grid-column-end: 3;
+    }
+  }*/
   .ngg-simplelightbox:nth-child(7n + 4){
     grid-column-start: 1 ;
     grid-column-end: 2;
@@ -52,9 +72,17 @@
       height: 100% !important;
     }
   }
+  .ngg-simplelightbox:nth-child(7n + 5){
+    grid-column-start: 2 ;
+    grid-column-end: 4;
+  }
   .ngg-simplelightbox:nth-child(7n + 7){
     grid-column-start: 1 ;
-    grid-column-end: 3;
+    grid-column-end: 1;
+    @include mq ($from: desktop){
+      grid-column-start: 3 ;
+      grid-column-end: 4;
+    }
   }
 }
 
