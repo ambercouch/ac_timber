@@ -35,7 +35,11 @@ BEM ELEMENTS .l-site__
   }
   &main-after{
     aside{
-      max-width: 1400px;
+      max-width: 1800px;
+      margin: auto;
+    }
+    @include mq ($from: desktop){
+      width: 80vw;
       margin: auto;
     }
   }
