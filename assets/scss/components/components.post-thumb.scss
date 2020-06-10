@@ -44,14 +44,7 @@
 
 .c-post-thumb__ {
   &image{
-  position:relative
-  }
-  &img{
     position: relative;
-    max-height: 700px;
-    width: 100%;
-    object-fit: cover;
-  }
     &:after{
       transition: background 0.3s ease-in-out;
       content: '';
@@ -64,6 +57,13 @@
       top:0;
       left: 0;
     }
+  }
+  &img{
+    position: relative;
+    max-height: 700px;
+    width: 100%;
+    object-fit: cover;
+  }
   &header {
     display: block
   }
