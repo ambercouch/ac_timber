@@ -62,6 +62,9 @@ BEM ELEMENTS .l-site__
     }
     @include mq($from : desktop){
       display: block;
+      width: 20%;
+      right: 0;
+      padding-left: $act-unit;
     }
     a{
       color: white;
