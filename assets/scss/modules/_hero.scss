@@ -7,9 +7,6 @@ BEM BLOCK .hero
   min-height: 500px;
   height: 100vh;
   position: relative;
-  @include mq ( $from: tablet, $until: desktop ){
-    height: 60vh !important;
-  }
   @include mq ( $from: desktop ){
     height: 100vh !important;
   }
