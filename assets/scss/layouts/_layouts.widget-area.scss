@@ -47,6 +47,20 @@
   &widget {
     display: block;
     padding: $act-unit;
+    &--footer-image-desk{
+      &:first-child{
+        display: block;
+        @include mq ($from: desktop){
+          display: none;
+        }
+      }
+      &:last-child{
+        display: none;
+        @include mq ($from: desktop){
+          display: block;
+        }
+      }
+    }
   }
   &heading {
     display: block

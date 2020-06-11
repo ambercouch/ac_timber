@@ -61,7 +61,7 @@ BEM ELEMENTS .l-site__
       opacity: 1;
     }
     @include mq($from : desktop){
-      display: none !important;
+      display: block;
     }
     a{
       color: white;

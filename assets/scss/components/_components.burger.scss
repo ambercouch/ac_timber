@@ -5,6 +5,11 @@
   right:  $act-unit;
   top: $act-unit-s;
   z-index: 99999;
+  @include mq ($from: desktop){
+    position: absolute;
+    margin-right: 10%;
+    top: 37px;
+  }
 }
 .c-burger__btn{
   cursor: pointer;

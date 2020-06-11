@@ -101,7 +101,8 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+    @extend .o-list-flex--center;
+    justify-content: flex-end;
   }
   &mobile{
     @extend .c-nav-menu__list--stacked;
@@ -112,6 +113,9 @@
   }
   &mobile-bookings{
     text-align: left;
+    @include mq ($from: desktop){
+      display: none;
+    }
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -149,6 +153,12 @@
   &primary{
     margin-right: 0;
     margin-left: 0;
+    text-transform: uppercase;
+    &:last-child{
+      @include mq ($from: desktop){
+        border: solid 1px white;
+      }
+    }
   }
   &hero{
     margin-right: $act-unit;
@@ -180,7 +190,7 @@
     display: inline-block;
     @include mq ($from: desktop){
       width: calc(50% - 2px);
-      padding: $act-unit-s; 
+      padding: $act-unit-s;
       margin-bottom: 0;
     }
   }
@@ -219,6 +229,11 @@
     display: block;
     background: transparent;
     font-weight: 500;
+    color: white;
+      @include mq ($from: desktop){
+        padding:$act-unit-s $act-unit;
+      }
+    }
     &:hover{
       color: $brand-col-2;
     }
@@ -234,8 +249,6 @@
         color: darken(white, 5%);
       }
     }
-
-  }
   &secondary{
     @extend .o-btn;
     @extend .o-btn--rounded;
