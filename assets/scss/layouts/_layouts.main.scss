@@ -36,6 +36,7 @@ BEM BLOCK MODIFIERS .l-main--
   }
   &front-page{
     padding-top: $act-unit-l;
+    max-width: 1800px;
   }
 }
 
@@ -56,7 +57,6 @@ BEM BLOCK MODIFIERS .l-main--
   &content{
     padding: 0;
   }
-
 }
 
 

@@ -7,6 +7,9 @@ BEM BLOCK .hero
   min-height: 500px;
   height: 100vh;
   position: relative;
+  @include mq ( $from: desktop ){
+    height: 100vh !important;
+  }
 }
 
 /*
@@ -17,7 +20,7 @@ BEM ELEMENTS .hero__
     height: 100%;
   }
   &background{
-    width:100%;
+    width: 100%;
     height: 100%;
     position: absolute;
   }
@@ -26,6 +29,8 @@ BEM ELEMENTS .hero__
     height: 100%;
     width: 100%;
     filter: saturate(10%);
+    object-position: center !important;
+
   }
   &body{
     position: relative;
