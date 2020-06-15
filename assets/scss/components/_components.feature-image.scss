@@ -18,6 +18,12 @@ BEM BLOCK .c-feature-image--
 
     height: 100%;
   }
+  &single-page{
+    @include mq ($from: desktop){
+      height: 700px;
+      overflow: hidden;
+    }
+  }
 }
 
  /*
@@ -38,4 +44,3 @@ BEM ELEMENTS.c-feature-image__
   }
 
 }
-

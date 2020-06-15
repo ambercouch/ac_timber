@@ -89,6 +89,16 @@
     @include act-font-size($act-fs-4);
     color: #fff;
   }
+  &section{
+    @include mq ($from: desktop){
+      text-align: left;
+    }
+  }
+  &sub-heading-section{
+    @include mq ($from: desktop){
+      text-align: left;
+    }
+  }
 }
 
 /*
