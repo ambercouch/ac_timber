@@ -19,9 +19,15 @@ BEM BLOCK .c-feature-image--
     height: 100%;
   }
   &single-page{
-    @include mq ($from: desktop){
-      height: 700px;
-      overflow: hidden;
+    text-align: center;
+    &__img{
+      @include mq ($from: desktop){
+        height: 700px;
+        width: 90vw;
+        max-width: 1800px;
+        margin: auto;
+        object-fit: cover;
+      }
     }
   }
 }

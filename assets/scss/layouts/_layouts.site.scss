@@ -27,7 +27,7 @@ BEM ELEMENTS .l-site__
   &main{
     p{
       @include mq ($from: desktop){
-        width: 600px;
+        //width: 600px;
         margin: auto;
         margin-bottom: 50px;
       }
@@ -39,7 +39,7 @@ BEM ELEMENTS .l-site__
       margin: auto;
     }
     @include mq ($from: desktop){
-      width: 80vw;
+      width: 90vw;
       margin: auto;
     }
   }

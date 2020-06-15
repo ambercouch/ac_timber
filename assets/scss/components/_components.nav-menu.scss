@@ -135,7 +135,7 @@
   }
   &homepage-service{
     @include mq ($from: desktop){
-      width: 80vw;
+      width: 90vw;
       max-width: 1800px;
       margin: auto;
       box-sizing: border-box;
