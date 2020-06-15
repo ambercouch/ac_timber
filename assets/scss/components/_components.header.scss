@@ -78,7 +78,6 @@
       font-weight: 300;
       @include act-font-size($act-fs-3);
     }
-
   &cta{
     color: #fff;
     @include act-font-size($act-fs-2);
@@ -89,6 +88,13 @@
     @include act-font-size($act-fs-4);
     color: #fff;
   }
+  &sub-heading-section{
+    font-family: $act-font-family-sans;
+    font-weight: 300;
+    @include act-font-size($act-fs-3);
+  }
+
+
 }
 
 /*

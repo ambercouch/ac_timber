@@ -1,0 +1,80 @@
+/*
+  BEM BLOCK .o-column-count
+ */
+
+.o-column-count {
+  display: block;
+  > * {
+    margin-right: $act-unit;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .o-column-count--
+ */
+
+.o-column-count-- {
+  &2 {
+    @include mq($from: desktop){
+      column-count: 2;
+    }
+
+  }
+  &3 {
+    @include mq($from: desktop){
+      column-count: 3;
+    }
+  }
+  &4 {
+    @include mq($from: desktop){
+      column-count: 4;
+    }
+  }
+  &5 {
+    @include mq($from: desktop){
+      column-count: 5;
+    }
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .o-column-count--
+
+[class*=o-column-count--] {
+  @extend .o-column-count;
+}
+
+/*
+  BEM ELEMENTS .o-column-count__
+ */
+
+.o-column-count__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .o-column-count--
+
+[class*=o-column-count__header--] {
+  @extend .o-column-count__header;
+}

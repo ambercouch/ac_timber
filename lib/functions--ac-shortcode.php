@@ -287,7 +287,7 @@ function act_shortcode_page_sections($atts, $content = null)
 
 
     $output = 'Page Sections 2';
-    $output = '<div class="c-page-sections" >';
+    $output = '<div class="l-page-sections" >';
 
     if (have_rows('page_section')):
         while( have_rows('page_section') ): the_row();
@@ -309,7 +309,7 @@ function act_shortcode_page_sections($atts, $content = null)
             }
 
             if( $section_title != ''){
-                $section_title_markup .= '<header class="c-header--section">';
+                $section_title_markup .= '<header class="c-header--section has-sub-heading">';
                 $section_title_markup .= '<h2 class="c-header__heading--section">';
                 $section_title_markup .= $section_title;
                 $section_title_markup .= '</h2>';
@@ -324,16 +324,23 @@ function act_shortcode_page_sections($atts, $content = null)
 
 
                 $section_image_markup .= '<div class="c-feature-image--section">';
-                $section_image_markup .= '<img src="'.$image_src.'"   srcset="'.$image_srcset.'" sizes="'.$image_sizes.'"  alt="'.$section_title.'">';
+                $section_image_markup .= '<img src="'.$image_src.'"  class="c-feature-image__img" srcset="'.$image_srcset.'" sizes="'.$image_sizes.'"  alt="'.$section_title.'">';
                 $section_image_markup .= '</div>';
             }
 
-            $output .= '<div class="c-page-sections__section">';
-            $output .= '<div class="c-page-sections__feature-image">';
+            $output .= '<div class="l-page-sections__page-section">';
+            $output .= '<div class="c-page-section">';
+            $output .= '<div class="c-page-section__feature-image">';
             $output .= $section_image_markup;
             $output .= '</div>';
-            $output .= '<div class="c-page-sections__content">';
+            $output .= '<div class="c-page-section__content">';
             $output .= $section_title_markup;
+            $output .= '<div class="c-page-section__body">';
+
+            $output .= $section_content;
+
+            $output .= '</div>';
+            $output .= '</div>';
             $output .= '</div>';
             $output .= '</div>';
     endWhile;

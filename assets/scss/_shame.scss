@@ -29,6 +29,12 @@
   grid-auto-rows: 25vw;
   grid-column-gap: $act-unit-t;
   grid-row-gap: $act-unit-t;
+  @include mq ($from: desktop){
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: $act-unit;
+    grid-row-gap: $act-unit;
+    grid-auto-rows: 15vw;
+  }
 }
 .ngg-widget{
   .ngg-simplelightbox:nth-child(7n + 1){
@@ -40,21 +46,35 @@
      grid-column-start: 2 ;
      grid-column-end: 3;
      grid-row: auto / span 2;
-    img{
-      height: 100% !important;
-    }
+     @include mq ($from: desktop){
+       grid-row: auto / span 1;
+     }
    }
+  .ngg-simplelightbox:nth-child(7n + 3){
+    @include mq ($from: desktop){
+      grid-column-start: 3 ;
+      grid-column-end: 4;
+      grid-row: auto / span 2;
+    }
+  }
   .ngg-simplelightbox:nth-child(7n + 4){
     grid-column-start: 1 ;
     grid-column-end: 2;
     grid-row: auto / span 2;
-    img{
-      height: 100% !important;
+  }
+  .ngg-simplelightbox:nth-child(7n + 5){
+    @include mq ($from: desktop){
+      grid-column-start: 2 ;
+      grid-column-end: 3;
     }
   }
   .ngg-simplelightbox:nth-child(7n + 7){
     grid-column-start: 1 ;
     grid-column-end: 3;
+    @include mq ($from: desktop){
+      grid-column-start: 3 ;
+      grid-column-end: 4;
+    }
   }
 }
 
@@ -65,7 +85,7 @@
   max-height:100%;
   img{
     width: 100%;
-    height: 25vw;
+    height: 100%;
     object-fit: cover;
     padding: 0;
     border: 0;
