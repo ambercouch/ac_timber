@@ -4,6 +4,11 @@
 
 .c-page-section {
   display: block;
+  @include mq ($from: desktop){
+    display: flex;
+    flex-direction: row;
+    margin: $act-unit-l 0;
+  }
 }
 
 /*
@@ -44,7 +49,11 @@
   }
 
   &content {
-    display: block
+    display: block;
+    @include mq ($from: desktop){
+      width: 50%;
+      padding: 0 $act-unit-s;
+    }
   }
 
   &footer {
@@ -53,9 +62,16 @@
 
   &feature-image{
     margin-bottom: $act-unit;
+    @include mq ($from: desktop){
+      width: 50%;
+      padding: 0 $act-unit-s;
+    }
   }
   &body{
     margin-bottom: $act-unit;
+    @include mq ($from: desktop){
+      text-align: left;
+    }
   }
 }
 

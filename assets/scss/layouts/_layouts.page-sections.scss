@@ -50,6 +50,16 @@
   &footer {
     display: block
   }
+
+  &page-section{
+    max-width: 1024px;
+    margin: auto;
+    &:first-child{
+      & .c-page-section{
+        flex-direction: row-reverse;
+      }
+    }
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-page-sections--

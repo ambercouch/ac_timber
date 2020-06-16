@@ -11,6 +11,8 @@ BEM BLOCK .l-main
   padding-bottom: $act-unit;
   @include mq($from : desktop){
     padding-top: 0 ;
+    max-width: 1800px;
+    width: 90vw;
   }
   &.has-side-bar{
     @include mq($from: tablet) {
@@ -80,7 +82,7 @@ BEM BLOCK MODIFIERS .l-main--
   &page{
 
     @include mq($from: desktop){
-      padding-right: $act-unit-h;
+      //padding-right: $act-unit-h;
     }
 
   }

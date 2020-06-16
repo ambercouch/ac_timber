@@ -57,6 +57,12 @@
   &comment-link{
     @include inuit-font-size($inuit-font-size-h5, 1);
   }
+  &body--service{
+
+    //@include mq ($from: desktop){
+      text-align: center;
+  //  }
+  }
 }
 
 [class*='single-page--']{
