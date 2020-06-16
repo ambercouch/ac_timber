@@ -6,6 +6,10 @@
   display: block;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
+  @include mq ($from: desktop) {
+    max-width: 800px;
+    margin: auto;
+  }
 }
 
 /*
@@ -55,6 +59,11 @@
     display: block;
     margin-bottom: $act-unit-t;
     font-weight: 500;
+    & br {
+      @include mq ($from: desktop) {
+        display: none;
+      }
+    }
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
