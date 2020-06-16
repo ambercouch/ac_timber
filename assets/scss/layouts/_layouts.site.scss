@@ -23,6 +23,11 @@ BEM ELEMENTS .l-site__
     background: white;
     position: relative;
     z-index: 10;
+    max-width: 1800px;
+    @include mq ($from: desktop){
+      width: 90vw;
+      margin: auto;
+    }
   }
   &main{
     p{

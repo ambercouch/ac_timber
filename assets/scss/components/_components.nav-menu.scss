@@ -103,6 +103,17 @@
   &primary{
     @extend .o-list-flex--center;
     justify-content: flex-end;
+    & a {
+      color: $brand-col-1;
+    }
+    .home & {
+      a{
+        color: white;
+      }
+      .is-hidden-home{
+        display: none;
+      }
+    }
   }
   &mobile{
     @extend .c-nav-menu__list--stacked;
@@ -156,7 +167,11 @@
     text-transform: uppercase;
     &:last-child{
       @include mq ($from: desktop){
-        border: solid 1px white;
+        border: solid 1px $brand-col-1;
+        margin-right: $act-unit;
+        .home & {
+          border: solid 1px white;
+        }
       }
     }
   }
