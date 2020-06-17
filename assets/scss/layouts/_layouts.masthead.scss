@@ -51,14 +51,16 @@ BEM ELEMENTS .l-masthead__
     }
   }
   &navigation{
-    display: none;
+    display: block;
+    padding-left: 0;
+    margin: $act-unit 0;
     //@extend .element--band-block-bottom;
     //@extend .is-split-nav;
     @extend .element--abso-layer;
-    @include mq($from: desktop){
+    @include mq($from: tablet){
       display: block;
-      margin: $act-unit 0;
       width: 100%;
+      padding-left: 0;
     }
   }
   &widget-area{
@@ -138,7 +140,7 @@ BEM ELEMENTS .l-masthead__
   width: 100%;
   display: flex;
   justify-content: center;
-  @include mq ($from: desktop){
+  @include mq ($from: wide){
     width: auto;
   }
   .home & {

@@ -105,7 +105,10 @@
 .c-nav-menu__list--{
   &primary{
     @extend .o-list-flex--center;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    @include mq ($from: wide){
+      justify-content: flex-end;
+    }
     & a {
       color: $brand-col-1;
     }
@@ -127,8 +130,11 @@
   }
   &mobile-bookings{
     text-align: left;
-    @include mq ($from: desktop){
+    @include mq ($from: wide){
       display: none;
+      .l-site__off-page-container--mobile-navigation & {
+        display: block;
+      }
     }
   }
   &pagination{
@@ -168,12 +174,19 @@
     margin-right: 0;
     margin-left: 0;
     text-transform: uppercase;
+    display: none;
+    @include mq ($from: wide){
+      display: block;
+    }
     &:last-child{
-      @include mq ($from: desktop){
-        border: solid 1px $brand-col-1;
-        margin-right: $act-unit;
-        .home & {
-          border: solid 1px white;
+      display: block;
+      border: solid 1px $brand-col-1;
+      margin-right: $act-unit;
+      .home & {
+        display: none;
+        border: solid 1px white;
+        @include mq ($from: wide){
+          display: block;
         }
       }
     }
@@ -206,20 +219,20 @@
   }
   &image{
     display: inline-block;
-    @include mq ($from: desktop){
+    @include mq ($from: tablet){
       width: calc(50% - 2px);
       padding: $act-unit-s;
       margin-bottom: 0;
     }
   }
   &image:first-child{
-    @include mq ($from: desktop){
+    @include mq ($from: tablet){
       width: 100%;
     }
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
-    @include mq ($from: desktop){
+    @include mq ($from: tablet){
       margin-bottom: 0;
     }
     &:last-child{
@@ -243,7 +256,7 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    padding:$act-unit-s $act-unit;
     display: block;
     background: transparent;
     font-weight: 500;
@@ -344,10 +357,10 @@
      }
      .is-icon-pos-right &{
        margin-left: 0;
-       @include mq ($from: desktop){
+       //@include mq ($from: desktop){
          display: flex;
          flex-direction: row-reverse;
-       }
+       //}
      }
   }
   .is-icon-pos-right &{

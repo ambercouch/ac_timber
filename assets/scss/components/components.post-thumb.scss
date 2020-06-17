@@ -63,6 +63,12 @@
     max-height: 700px;
     width: 100%;
     object-fit: cover;
+    @include mq ($from: tablet, $until: wide){
+      height: 25vh !important;
+    }
+    @include mq ($from: wide){
+      height: 40vh !important;
+    }
   }
   &header {
     display: block

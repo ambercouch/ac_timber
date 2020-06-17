@@ -68,7 +68,7 @@ BEM ELEMENTS .l-site__
       width: 100%;
       right: 0;
       padding-left: $act-unit;
-      @include mq($from: desktop){
+      @include mq($from: tablet){
         width: 300px;
       }
     }
