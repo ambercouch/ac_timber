@@ -23,7 +23,7 @@ BEM BLOCK .c-feature-image--
     &__img{
       @include mq ($from: desktop){
         height: 700px;
-        width: 90vw;
+        width: 100%;
         margin: auto;
         object-fit: cover;
       }

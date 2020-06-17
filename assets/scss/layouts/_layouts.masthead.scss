@@ -11,6 +11,7 @@ BEM BLOCK .l-masthead
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 1800px;
   &:after{
     //width: 100%;
   }
@@ -57,6 +58,7 @@ BEM ELEMENTS .l-masthead__
     @include mq($from: desktop){
       display: block;
       margin: $act-unit 0;
+      width: 100%;
     }
   }
   &widget-area{
@@ -136,6 +138,12 @@ BEM ELEMENTS .l-masthead__
   width: 100%;
   display: flex;
   justify-content: center;
+  @include mq ($from: desktop){
+    width: auto;
+  }
+  .home & {
+    width: 100%;
+  }
 }
 
 /*
@@ -152,9 +160,12 @@ BEM ELEMENTS .l-masthead__
 .element--abso-layer{
   //width: 100%;
   @extend .o-site-wrapper--m;
-  left: 0;
+  left: auto;
   position: absolute;
   pointer-events: none;
+  .home & {
+    left: 0;
+  }
 }
 
 .is-split-nav{
