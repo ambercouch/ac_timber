@@ -55,13 +55,15 @@
     display: block
   }
   &logo-widget{
-    display: none;
     position: absolute;
     top: -$act-unit-h;
     width: 100%;
     text-align: center;
     padding: $act-unit-s;
     z-index: 999;
+    @include mq($from:desktop){
+      display: none !important;
+    }
   }
   &nav-menu{
     padding: $act-unit;

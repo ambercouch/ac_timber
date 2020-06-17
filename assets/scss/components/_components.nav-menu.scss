@@ -15,6 +15,9 @@
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
+    @include mq($from:desktop){
+      padding-right: $act-unit-h;
+    }
 
   }
   &secondary {

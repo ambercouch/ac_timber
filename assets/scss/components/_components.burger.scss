@@ -7,7 +7,6 @@
   z-index: 99999;
   @include mq ($from: desktop){
     position: absolute;
-    margin-right: 10%;
     top: 37px;
   }
 }
@@ -45,7 +44,7 @@
 .c-burger__bar {
   transition: transform 0.1s linear;
   position: absolute;
-  width: 1.1em;
+  width: 13px;
   height: 2px;
   background-color: $brand-col-1;
   .home &{
@@ -54,18 +53,18 @@
 }
 .c-burger__bar--tl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
+  transform-origin: 6px 0px;
   top: 13px;
-  left: 0.5em;
+  right: 21px;
   [data-state=on] &{
     transform: rotate(45deg) translate(0.3em, 0);
   }
 }
 .c-burger__bar--tr{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
+  transform-origin: 7px 0px;
   top: 13px;
-  right: 0.5em;
+  left:  21px;
   [data-state=on] &{
     transform: rotate(-45deg) translate(-0.3em, 0);
   }
@@ -74,7 +73,7 @@
   @extend .c-burger__bar;
   transform-origin: 1.1em 0.1em;
   top: 22px;
-  left: 0.5em;
+  left: 8px;
   width: 26px !important;
   margin-top: -0.1em;
   [data-state=on] &{
@@ -83,18 +82,18 @@
 }
 .c-burger__bar--bl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
+  transform-origin: 7px 3px;
   top:27px;
-  left: 0.5em;
+  right: 21px;
   [data-state=on] &{
     transform: rotate(-45deg) translate(0.3em, 0);
   }
 }
 .c-burger__bar--br{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
+  transform-origin: 6px 3px;
   top:27px;
-  right: 0.5em;
+  left: 21px;
   [data-state=on] &{
     transform: rotate(45deg) translate(-0.3em, 0);
 

@@ -59,6 +59,13 @@ BEM ELEMENTS .l-site__
     }
     &[data-state=on]{
       opacity: 1;
+      display: block;
+      width: 100%;
+      right: 0;
+      padding-left: $act-unit;
+      @include mq($from: desktop){
+        width: 300px;
+      }
     }
     @include mq($from : desktop){
       display: block;
