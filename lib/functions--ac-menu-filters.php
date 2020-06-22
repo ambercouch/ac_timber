@@ -26,11 +26,17 @@ function act_menu_filters($sorted_menu_objects, $args) {
             $image_el = '';
             $link_thum_el = '';
             $menu_image = get_field('service_background_image' , $object_id);
+            $menu_icon = get_field('service_icon' , $object_id);
+
+            $menu_icon_src =  wp_get_attachment_image_url( $menu_icon['id']);
+
             $srcSet = wp_get_attachment_image_srcset($menu_image['id'], 'serviceMenuLarge');
             $src = wp_get_attachment_image_url($menu_image['id'], 'serviceMenuLarge');
             $sizes = wp_get_attachment_image_sizes($menu_image['id'], 'serviceMenuLarge');
+
             if($src){
                 $image_el = '<img class="c-post-thumb__img" alt="'.$menu_object->title.'" src="'.$src.'" srcset="'.$srcSet.'" sizes="'.$sizes.'"/>';
+                $icon_image_el = '<img class="c-post-thumb__img-icon" src="'.$menu_icon_src.'" alt="Icon" />';
 
                 $link_thum_el .= '<div class="c-post-thumb--menu-item">';
                     $link_thum_el .= '<div class="c-post-thumb__image">';
@@ -40,6 +46,8 @@ function act_menu_filters($sorted_menu_objects, $args) {
                         $link_thum_el .= '<div class="c-post-thumb__content--menu-item">';
                             $link_thum_el .= '<div class="c-post-thumb__header--menu-item">';
                             $link_thum_el .= '<header class="c-header--menu-item">';
+                            $link_thum_el .= '<div  class="c-post-thumb__icon" >'.  $icon_image_el .'</div>';
+
                                 $link_thum_el .= '<h2 class="c-header__heading--menu-item">';
                                     $link_thum_el .= '<span class="c-header__title--menu-item">';
                                     $link_thum_el .= $menu_object->title;
