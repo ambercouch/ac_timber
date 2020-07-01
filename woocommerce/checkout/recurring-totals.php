@@ -134,5 +134,5 @@ $display_th = true;
           <?php echo date('jS F Y', strtotime('+12 months')); ?>
       </td>
     </tr>
-    --?
+    -->
 		<?php endforeach; ?>
