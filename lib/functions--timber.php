@@ -41,6 +41,10 @@ class StarterSite extends TimberSite {
                 strtolower($menu) => esc_html__(ucfirst($menu), '_act'),
             ));
         }
+        if (!defined('WPCF7_AUTOP'))
+        {
+            define('WPCF7_AUTOP', false);
+        }
 
         parent::__construct();
     }
@@ -57,6 +61,11 @@ class StarterSite extends TimberSite {
 
         //Site vars
         $context['site'] = $this;
+
+        if (!defined('ENVIRONMENT')) {
+            define('ENVIRONMENT', 'production');
+        }
+
         $context['environment'] = ENVIRONMENT;
 
         //AC Template settings
