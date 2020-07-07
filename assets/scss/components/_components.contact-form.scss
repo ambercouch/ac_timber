@@ -287,7 +287,14 @@
 }
 
 .wpcf7-list-item{
+
   .c-contact-form__label--check &{
-    padding: 0 $act-unit
+    padding: 0 $act-unit;
+
+  }
+  .wpcf7-acceptance &{
+    padding: 0 !important;
   }
 }
+
+
