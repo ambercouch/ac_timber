@@ -19,6 +19,10 @@
     background: $brand-col-3;
     @include breakout-band($bgc : $brand-col-3);
   }
+  &page-single-col{
+    @extend .c-header--blocky;
+    background: $brand-col-3;
+  }
   &sidebar{
     @extend .c-header--blocky;
     background: $brand-col-5;

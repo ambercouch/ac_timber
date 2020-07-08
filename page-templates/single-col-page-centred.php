@@ -1,9 +1,9 @@
-<?php /** Template Name: Single Col Page Centred
+<?php /** Template Name: Page Single Column
  *
  * @package WordPress
  * @subpackage ac_timber
  */
-$templateSlug = 'single-col-page-centred';
+$templateSlug = 'page-single-col';
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;

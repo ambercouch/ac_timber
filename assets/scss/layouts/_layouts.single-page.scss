@@ -51,7 +51,10 @@
 .l-single-page--{
   &page{
     border-bottom: solid 1px $brand-col-5;
-
+  }
+  &page-single-col{
+    @extend .c-site-wrapper--responsive;
+    padding-top: $act-unit !important;
   }
 }
 
