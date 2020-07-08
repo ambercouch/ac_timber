@@ -86,6 +86,15 @@ function styles() {
         .pipe(browserSync.stream());
 }
 
+function vendorStyles(){
+    return gulp.src(cssNpmScripts)
+        .pipe(concat('_vendor.scss'))
+        .pipe(gulp.dest('assets/scss/'));
+
+    //console.log("testing vendorStyles")
+
+}
+
 function svgdefs() {
     return gulp
         .src('assets/images/svg/*.svg')
@@ -113,3 +122,4 @@ exports.serve = serve;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.svgdefs = svgdefs;
+exports.vendorStyles = vendorStyles;
