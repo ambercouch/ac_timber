@@ -95,3 +95,9 @@ function my_admin_theme_style() {
 }
 add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 add_action('login_enqueue_scripts', 'my_admin_theme_style');
+
+function my_myme_types($mime_types){
+    $mime_types['xls'] = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'; //Adding excel files
+    return $mime_types;
+}
+add_filter('upload_mimes', 'my_myme_types', 1, 1);

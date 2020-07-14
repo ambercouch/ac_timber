@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('ACTIMBER CF7 redirect');
 ACTIMBER = {
     common: {
         init: function () {
@@ -15,6 +15,49 @@ ACTIMBER = {
             //$("[data-fitvid]").fitVids();
 
             fitvids();
+
+            document.addEventListener( 'wpcf7mailsent', function( event, el ) {
+
+                var cf7Id = event.detail.id;
+                var selectorRedirect = '#'+cf7Id+' input[name=redirect]';
+                var redirect = $(selectorRedirect).val();
+                if(redirect){
+                    location = redirect;
+                }
+
+                console.log(selectorRedirect);
+                console.log($(selectorRedirect).val());
+                console.log('event detail id');
+                console.log('el');
+                console.log(el);
+
+            }, false );
+
+            var act_new_visitor = (Cookies.get('_act-return') === 'is-return' ) ? false : true;
+            var hide_popup = (Cookies.get('_act-hide-popup') === 'is-hidden') ? true : false
+
+            var notice = $('[data-remodal-id=notice-covid]').remodal();
+
+            console.log('hide_popup test ')
+            console.log(hide_popup)
+            if (hide_popup === false){
+                console.log('hide_popup')
+                console.log(hide_popup)
+                notice.open();
+            }
+
+            $(document).on('cancellation', '[data-remodal-id=notice-covid]', function () {
+                console.log('Cancel button is clicked');
+                    Cookies.set('_act-hide-popup', 'is-hidden');
+            });
+
+            console.log('$act_new_vistitor');
+            console.log(act_new_visitor);
+
+            Cookies.set('_act-return', 'is-return');
+
+
+
 
 
             /**

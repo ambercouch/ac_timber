@@ -40,6 +40,9 @@
     @extend .c-contact-form--placeholder-blocks;
   }
   &newsletter{
+      @extend .c-contact-form--placeholder-blocks;
+    }
+  &wlb{
     @extend .c-contact-form--placeholder-blocks;
   }
 }
@@ -199,6 +202,9 @@
     width: 100%;
     color: #fff;
     background: transparent;
+    min-width: $act-unit;
+    min-height: $act-unit;
+    display: block;
     &::placeholder{
       color: #fff;
       opacity: 1;
