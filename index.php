@@ -22,7 +22,7 @@ $context['posts'] = new Timber\PostQuery();
 $context['foo'] = 'bar';
 
 if (is_category()){
-    $context['catTitle'] = post_type_archive_title( '', false );;
+    $context['catTitle'] = 'COVID-19 Financial Support';
     $context['catDescription'] = category_description();
 }
 

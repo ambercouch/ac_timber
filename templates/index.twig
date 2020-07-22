@@ -9,7 +9,8 @@
 
 {% block before_content %}
  {% if catDescription %}
-  <div class="l-content__before-content u-fw500">
+  <div style="max-width:100%; width:1000px; margin-left:auto; margin-right: auto" class="l-content__before-content u-fw500 u-mbh">
+    <h1>{{ catTitle }}</h1>
     {{ catDescription }}
   </div>
   {% endif %}
@@ -20,7 +21,7 @@
   <div class="l-content__post-loop">
     <div class="l-post-loop">
       {% for post in posts %}
-        {% if loop.index == 3 %}
+        {% if loop.index == 2 or loop.index % 2 == 0%}
           <div class="l-post-loop__cta o-box u-tac u-mbl u-bgc2 u-col-white">
             <div class="c-cta">
               <div class="c-cta__content">
@@ -45,7 +46,7 @@
 
   <div class="remodal u-tal" data-remodal-id="modal">
     <button data-remodal-action="close" class="remodal-close"></button>
-    <p>Fill in your detail below and click Send. We will then contact you to arrange your free consultation.</p>
+    <p>Fill in your details below and click Send. We will then contact you to arrange your free consultation.</p>
     <div class="c-contact-form--book-call">
       {{ function('do_shortcode', '[contact-form-7 id="1605" title="Book Call"]') }}
     </div>
