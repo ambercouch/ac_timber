@@ -158,3 +158,32 @@ function ac_shipping_text( $output ){
     $output = "Postal delivery is not possible for SESI refill products. We are providing free doorstep delivery for some postcodes in the Talbot Green area. Select <strong>Doorstep Delivery</strong> at checkout once you have entered your address." ;
     return $output;
 }
+
+
+
+
+add_filter( 'woocommerce_package_rates', 'act_conditional_shipping', 10, 2 );
+function act_conditional_shipping( $rates, $package ) {
+   //print_r($rates); die;
+    // examine $package for products. this could be a whitelist of specific
+    // products that you wish to be treated in a special manner...
+    $special_ids             = array( 401, 395, 394, 393, 389,  388, 386, 385, 380, 350, 349, 346, 336, 333, 324, 316, 311, 833, 829);
+    $special_product_present = false;
+    foreach ( $package['contents'] as $line_item ) {
+        if ( in_array( $line_item['product_id'], $special_ids ) ) {
+            $special_product_present = true;
+        }
+    }
+
+    $rates = array_filter( $rates, function ( $r ) use ( $special_product_present ) {
+        // do some logic here to return true (for rates that you wish to be displayed), or false.
+        // example: only allow shipping methods that start with "local"
+        if ( $special_product_present ) {
+            return preg_match( '/^doorstep/', strtolower( $r->label ) );
+        } else {
+            return true;
+        }
+    } );
+
+    return $rates;
+}
