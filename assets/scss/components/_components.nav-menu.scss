@@ -59,7 +59,6 @@
     top: 100%;
     margin-left: 0;
     z-index: 999;
-    background: $brand-col-2;
     padding: $act-unit-t;
     .menu-item-has-children:hover &{
       left: 0;
@@ -78,8 +77,13 @@
     color: white;
     margin-bottom:0;
     padding-left: 0 !important;
+    text-align: left;
+    border-bottom: solid 1px #555;
     &:last-child{
       margin-bottom: 0;
+    }
+    .home &{
+      border-bottom: solid 1px white;
     }
   }
   &sub-menu-link{

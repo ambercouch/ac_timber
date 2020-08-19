@@ -143,9 +143,6 @@ BEM ELEMENTS .l-masthead__
   @include mq ($from: wide){
     width: auto;
   }
-  .home & {
-    width: 100%;
-  }
 }
 
 /*
