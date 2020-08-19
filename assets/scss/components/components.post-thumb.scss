@@ -99,6 +99,11 @@
   }
   &post-icon{
     margin-bottom: $act-unit-l * 1;
+    &--menu-item{
+      width: 10%;
+      max-width: 75px;
+      margin: auto;
+    }
   }
   &post-icon-img{
     height: 150px !important;

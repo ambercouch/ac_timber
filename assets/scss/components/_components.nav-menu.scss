@@ -227,6 +227,9 @@
       width: calc(50% - 2px);
       padding: $act-unit-s;
       margin-bottom: 0;
+      .hide-image{
+        display: none;
+      }
     }
   }
   &image:first-child{
