@@ -21,6 +21,12 @@
 
 
   }
+  &icon--service{
+    width: 10%;
+    max-width: 125px;
+    min-width: 100px;
+    margin: auto;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-header--
