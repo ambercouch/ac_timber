@@ -67,6 +67,7 @@
   }
   &nav-menu{
     padding: $act-unit;
+    padding-bottom: $act-unit-s;
   }
   &widget-area{
     padding: 0 $act-unit $act-unit;
@@ -84,6 +85,7 @@
 [class*=l-off-page-container__nav-menu--] {
   @extend .l-off-page-container__nav-menu;
 }
+
 
 //BEM ELEMENT MODIFIER FALLBACK .l-off-page-container__widget-area--
 

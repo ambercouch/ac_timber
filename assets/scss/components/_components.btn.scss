@@ -31,10 +31,6 @@
   &ghost{
     background: transparent !important;
     border: solid 1px;
-    @include mq ($from: desktop){
-      padding: $act-unit-s $act-unit !important;
-      @include act-font-size($act-fs-5, 1);
-    }
     &.o-btn--brand-1{
       &:hover{
         background: rgba($brand-col-1, .8) !important;

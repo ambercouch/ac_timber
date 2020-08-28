@@ -4,9 +4,9 @@
     <div class="l-single-page__feature-image{{ templateClass }} ">
       <div class="c-feature-image--single-page">
         {% if(post.thumbnail.src()) %}
-          <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image__img--single-page" alt="{{ post.title }}"/>
         {% else %}
-          <img src="{{acSettings.defaultImage}}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+          <img src="{{acSettings.defaultImage}}" class="c-feature-image__img--single-page" alt="{{ post.title }}"/>
         {% endif %}
       </div>
     </div>

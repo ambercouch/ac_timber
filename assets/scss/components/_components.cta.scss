@@ -49,6 +49,7 @@
   &body{
     p{
       @include inuit-font-size($act-fs-4, $modifier: -1)
+      text-align: center !important;
     }
 
   }

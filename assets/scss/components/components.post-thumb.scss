@@ -45,6 +45,7 @@
 .c-post-thumb__ {
   &image{
     position: relative;
+    max-height: 100%;
     &:after{
       transition: background 0.3s ease-in-out;
       content: '';
@@ -60,9 +61,15 @@
   }
   &img{
     position: relative;
-    max-height: 700px;
+    max-height: 100%;
     width: 100%;
     object-fit: cover;
+    @include mq ($from: tablet, $until: wide){
+      height: 25vh !important;
+    }
+    @include mq ($from: wide){
+      height: 40vh !important;
+    }
   }
   &header {
     display: block
@@ -93,6 +100,11 @@
   }
   &post-icon{
     margin-bottom: $act-unit-l * 1;
+    &--menu-item{
+      width: 10%;
+      max-width: 75px;
+      margin: auto;
+    }
   }
   &post-icon-img{
     height: 150px !important;
@@ -167,5 +179,18 @@
     top:50%;
     width: 100%;
     transform: translate(0, -50%);
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb--
+
+[class*=c-post-thumb__post-icon--] {
+  @extend .c-post-thumb__post-icon;
+}
+
+.c-post-thumb__post-icon--{
+  &menu-item{
+    max-width: 100px;
+    margin: 0 auto;
   }
 }

@@ -42,6 +42,9 @@
   &heading {
     display: block;
     @include act-font-size($act-fs-1);
+    .has-post-icon &{
+      margin-bottom: 0;
+    }
   }
 
   &title {
@@ -58,6 +61,11 @@
 
   &footer {
     display: block
+  }
+  &icon{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
   }
 }
 
@@ -102,6 +110,20 @@
     }
   }
 
+
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__icon--
+
+[class*=c-header__icon--] {
+  @extend .c-header__icon;
+}
+
+.c-header__icon-- {
+  &service {
+    max-width: 75px;
+    color: $brand-col-2;
+  }
 
 }
 

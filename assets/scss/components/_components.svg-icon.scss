@@ -20,6 +20,7 @@
   &arrow-right{
     @include size($act-unit-s);
     margin-left: $act-unit-s;
+    height: 100%;
     @include mq ($from: desktop){
       margin-left: $act-unit-s;
       height: 100%;

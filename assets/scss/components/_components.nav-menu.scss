@@ -38,6 +38,12 @@
  */
 
 .c-nav-menu__ {
+  &icon-title{
+    line-height: $act-unit;
+  }
+  &svg-icon{
+    height: $act-unit;
+  }
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
@@ -52,15 +58,22 @@
     text-decoration: none;
     pointer-events: all !important;
   }
+  &link-label{
+    line-height: $act-unit;
+  }
   &sub-menu{
+    pointer-events: all;
     position: absolute;
     left: -99999px;
     display: none;
-    top: 100%;
+    top: 70%;
     margin-left: 0;
     z-index: 999;
-    background: $brand-col-2;
     padding: $act-unit-t;
+    background: rgba(white, 0.9);
+    .home &{
+      background: transparent;
+    }
     .menu-item-has-children:hover &{
       left: 0;
       display: block;
@@ -78,20 +91,32 @@
     color: white;
     margin-bottom:0;
     padding-left: 0 !important;
+    text-align: left;
+    border-bottom: solid 1px lighten($brand-col-1, 50%);
     &:last-child{
       margin-bottom: 0;
     }
+    .home &{
+      border-bottom: solid 1px white;
+    }
   }
   &sub-menu-link{
-    color: white;
+    color: lighten($brand-col-1, 20%);
     text-decoration: none;
     display: block;
     width: 100%;
     padding: $act-unit-s;
+    //padding-left: ;
+    .home &{
+      color: white;
+    }
     &:hover{
       @extend .c-nav-menu__sub-menu-link;
-      color: white;
-      background: darken($brand-col-2, 10%);
+      color: $brand-col-1 !important;
+     background: rgba(white, 0.4);
+      .home &{
+        color: white !important;
+      }
     }
   }
 }
@@ -105,14 +130,13 @@
 .c-nav-menu__list--{
   &primary{
     @extend .o-list-flex--center;
-    justify-content: flex-end;
-    & a {
-      color: $brand-col-1;
+    justify-content: flex-start;
+    @include mq ($from: wide){
+      justify-content: flex-end;
     }
+
     .home & {
-      a{
-        color: white;
-      }
+
       .is-hidden-home{
         display: none;
       }
@@ -127,8 +151,11 @@
   }
   &mobile-bookings{
     text-align: left;
-    @include mq ($from: desktop){
+    @include mq ($from: wide){
       display: none;
+      .l-site__off-page-container--mobile-navigation & {
+        display: block;
+      }
     }
   }
   &pagination{
@@ -168,10 +195,12 @@
     margin-right: 0;
     margin-left: 0;
     text-transform: uppercase;
+    display: table-cell;
     &:last-child{
       @include mq ($from: desktop){
         border: solid 1px $brand-col-1;
         margin-right: $act-unit;
+
         .home & {
           border: solid 1px white;
         }
@@ -204,22 +233,34 @@
     @extend .c-nav-menu__item--stacked;
     text-align: left;
   }
+
+    &mobile-bookings{
+      padding-left: $act-unit !important;
+      padding-right: $act-unit !important;
+    }
+
   &image{
     display: inline-block;
-    @include mq ($from: desktop){
+    @include mq ($from: tablet){
       width: calc(50% - 2px);
       padding: $act-unit-s;
       margin-bottom: 0;
+      .hide-image{
+        display: none;
+      }
+    }
+    &:first-child{
+      height: 475px;
     }
   }
   &image:first-child{
-    @include mq ($from: desktop){
+    @include mq ($from: tablet){
       width: 100%;
     }
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
-    @include mq ($from: desktop){
+    @include mq ($from: tablet){
       margin-bottom: 0;
     }
     &:last-child{
@@ -243,14 +284,21 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    padding:$act-unit-s $act-unit;
     display: block;
     background: transparent;
     font-weight: 500;
-    color: white;
-      @include mq ($from: desktop){
-        padding:$act-unit-s $act-unit 2px;
-      }
+
+    color: $brand-col-1;
+
+    .home &{
+      color: white;
+    }
+
+    @include mq ($from: desktop){
+        padding:$act-unit-s $act-unit;
+        display: block;
+    }
     }
     &:hover{
       color: $brand-col-2;
@@ -275,7 +323,14 @@
     font-weight: 500;
   }
   &mobile{
+     //@extend .c-nav-menu__link--blocky;
+     text-transform: uppercase;
+    @include act-font-size($act-fs-5)
+   }
+  &mobile-pages{
     //@extend .c-nav-menu__link--blocky;
+    text-transform: uppercase;
+    @include act-font-size($act-fs-5)
   }
   &mobile-bookings{
     color: #fff;
@@ -307,12 +362,23 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
+
+[class*=c-nav-menu__link-label--] {
+  @extend .c-nav-menu__link-label !optional;
+}
+
+
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu--
 
 [class*=c-nav-menu__sub-menu--] {
    @extend .c-nav-menu__sub-menu !optional;
  }
+
+.c-nav-menu__sub-menu--primary{
+  width: 200px;
+}
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-list--
 
@@ -325,6 +391,8 @@
 [class*=c-nav-menu__sub-menu-item--] {
   @extend .c-nav-menu__sub-menu-item !optional;
 }
+
+
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-link--
 
@@ -344,10 +412,10 @@
      }
      .is-icon-pos-right &{
        margin-left: 0;
-       @include mq ($from: desktop){
+       //@include mq ($from: desktop){
          display: flex;
          flex-direction: row-reverse;
-       }
+       //}
      }
   }
   .is-icon-pos-right &{

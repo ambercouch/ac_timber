@@ -1,39 +1,39 @@
 //text-align
 .u-tac{
-  text-align: center;
+  text-align: center !important;
 }
 .u-tal{
-  text-align: left;
+  text-align: left !important;
 }
 .u-tar{
-   text-align: right;
+   text-align: right !important;
  }
 .u-taj{
-  text-align: justify;
+  text-align: justify !important;
 }
 
 
 
 //text-transform
 .u-ttu{
-   text-transform: uppercase;
+   text-transform: uppercase !important;
  }
 .u-ttl{
-  text-transform: lowercase;
+  text-transform: lowercase !important;
 }
 .u-ttc{
-  text-transform: capitalize;
+  text-transform: capitalize !important;
 }
 
 .u-tdn{
-  text-decoration: none;
+  text-decoration: none !important;
 
   *{
     text-decoration: none;
   }
 }
 .u-tdu{
-  text-decoration: underline;
+  text-decoration: underline !important;
   a{
     text-decoration: underline;
   }
