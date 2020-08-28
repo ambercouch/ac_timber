@@ -62,13 +62,18 @@
     line-height: $act-unit;
   }
   &sub-menu{
+    pointer-events: all;
     position: absolute;
     left: -99999px;
     display: none;
-    top: 100%;
+    top: 70%;
     margin-left: 0;
     z-index: 999;
     padding: $act-unit-t;
+    background: rgba(white, 0.9);
+    .home &{
+      background: transparent;
+    }
     .menu-item-has-children:hover &{
       left: 0;
       display: block;
@@ -87,7 +92,7 @@
     margin-bottom:0;
     padding-left: 0 !important;
     text-align: left;
-    border-bottom: solid 1px #555;
+    border-bottom: solid 1px lighten($brand-col-1, 50%);
     &:last-child{
       margin-bottom: 0;
     }
@@ -96,15 +101,22 @@
     }
   }
   &sub-menu-link{
-    color: white;
+    color: lighten($brand-col-1, 20%);
     text-decoration: none;
     display: block;
     width: 100%;
     padding: $act-unit-s;
+    //padding-left: ;
+    .home &{
+      color: white;
+    }
     &:hover{
       @extend .c-nav-menu__sub-menu-link;
-      color: white;
-      background: darken($brand-col-2, 10%);
+      color: $brand-col-1 !important;
+     background: rgba(white, 0.4);
+      .home &{
+        color: white !important;
+      }
     }
   }
 }
@@ -122,13 +134,9 @@
     @include mq ($from: wide){
       justify-content: flex-end;
     }
-    & a {
-      color: $brand-col-1;
-    }
+
     .home & {
-      a{
-        color: white;
-      }
+
       .is-hidden-home{
         display: none;
       }
@@ -280,11 +288,17 @@
     display: block;
     background: transparent;
     font-weight: 500;
-    color: white;
-      @include mq ($from: desktop){
+
+    color: $brand-col-1;
+
+    .home &{
+      color: white;
+    }
+
+    @include mq ($from: desktop){
         padding:$act-unit-s $act-unit;
         display: block;
-      }
+    }
     }
     &:hover{
       color: $brand-col-2;
@@ -361,6 +375,10 @@
 [class*=c-nav-menu__sub-menu--] {
    @extend .c-nav-menu__sub-menu !optional;
  }
+
+.c-nav-menu__sub-menu--primary{
+  width: 200px;
+}
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-list--
 
