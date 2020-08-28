@@ -15,23 +15,11 @@ BEM BLOCK .c-feature-image--
 
 .c-feature-image--{
   &service{
-
     height: 100%;
   }
   &single-page{
     text-align: center;
-    &__img{
-      @include mq ($from: tablet){
-        height: 700px;
-        width: 100%;
-        margin: auto;
-        object-fit: cover;
-        height: 40vh;
-        @include mq ($from: wide){
-          height: 50vh;
-        }
-      }
-    }
+    height: 100%;
   }
 }
 
@@ -53,3 +41,13 @@ BEM ELEMENTS.c-feature-image__
   }
 
 }
+
+/*
+BEM ELEMENT .c-feature-image__img--
+*/
+
+[class*='c-feature-image__img--']{
+  @extend .c-feature-image__img;
+}
+
+

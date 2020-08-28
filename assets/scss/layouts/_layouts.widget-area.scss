@@ -33,6 +33,9 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    @include mq($from: desktop){
+      padding: 0;
+    }
   }
 }
 
@@ -106,7 +109,7 @@
     margin-bottom:$inuit-global-spacing-unit;
     @extend .u-1-2--tablet;
     @include mq($from: tablet){
-      padding-left:$inuit-global-spacing-unit ;
+      padding-left:0;
     }
     &:first-child{
       padding-left:0 ;

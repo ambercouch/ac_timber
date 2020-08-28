@@ -14,6 +14,11 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['template'] = $post->post_type;
 $context['postType'] = $post->post_type;
+if(get_field('service_icon')){
+    $context['postIcon'] = get_field('service_icon');
+    $context['postIconClass'] = 'has-post-icon';
+}
+
 
 
 require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';

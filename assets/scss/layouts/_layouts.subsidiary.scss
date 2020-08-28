@@ -7,8 +7,8 @@
   display: block;
 
   @include mq ($from: desktop){
-    width: 90vw;
-    max-width: 1800px;
+    width: $inuit-wrapper-width;
+    max-width: 100%;
     margin: auto;
   }
 }

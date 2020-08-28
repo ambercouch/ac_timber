@@ -34,7 +34,7 @@ BEM ELEMENTS .l-site__
       @include mq ($from: desktop){
         //width: 600px;
         margin: auto;
-        margin-bottom: 50px;
+        margin-bottom: $act-unit;
       }
     }
   }

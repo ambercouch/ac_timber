@@ -36,7 +36,7 @@ function act_menu_filters($sorted_menu_objects, $args) {
 
             if($src){
                 $image_el = '<img class="c-post-thumb__img" alt="'.$menu_object->title.'" src="'.$src.'" srcset="'.$srcSet.'" sizes="'.$sizes.'"/>';
-                $icon_image_el = '<img class="c-post-thumb__img-icon" src="'.$menu_icon_src.'" alt="Icon" />';
+                $icon_image_el = '<img class="c-post-thumb__post-icon-img--menu-item style-svg" src="'.$menu_icon_src.'" alt="Icon" />';
 
                 $link_thum_el .= '<div class="c-post-thumb--menu-item">';
                     $link_thum_el .= '<div class="c-post-thumb__image">';
@@ -46,7 +46,7 @@ function act_menu_filters($sorted_menu_objects, $args) {
                         $link_thum_el .= '<div class="c-post-thumb__content--menu-item">';
                             $link_thum_el .= '<div class="c-post-thumb__header--menu-item">';
                             $link_thum_el .= '<header class="c-header--menu-item">';
-                            $link_thum_el .= '<div  class="c-post-thumb__icon" >'.  $icon_image_el .'</div>';
+                            $link_thum_el .= '<div  class="c-post-thumb__post-icon--menu-item" >'.  $icon_image_el .'</div>';
 
                                 $link_thum_el .= '<h2 class="c-header__heading--menu-item">';
                                     $link_thum_el .= '<span class="c-header__title--menu-item">';
