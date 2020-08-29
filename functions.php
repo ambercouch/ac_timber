@@ -167,6 +167,7 @@ function act_conditional_shipping( $rates, $package ) {
    //print_r($rates); die;
     // examine $package for products. this could be a whitelist of specific
     // products that you wish to be treated in a special manner...
+    // AC - This need to be automated eg if the shipping is DO NOT SHIP
     $special_ids             = array( 401, 395, 394, 393, 389,  388, 386, 385, 380, 350, 349, 346, 336, 333, 324, 316, 311, 833, 829);
     $special_product_present = false;
     foreach ( $package['contents'] as $line_item ) {
@@ -177,13 +178,15 @@ function act_conditional_shipping( $rates, $package ) {
 
     $rates = array_filter( $rates, function ( $r ) use ( $special_product_present ) {
         // do some logic here to return true (for rates that you wish to be displayed), or false.
-        // example: only allow shipping methods that start with "local"
+        // AC - only allow shipping methods that start with "doorstep"
         if ( $special_product_present ) {
             return preg_match( '/^doorstep/', strtolower( $r->label ) );
         } else {
             return true;
-        }
+    }
     } );
 
     return $rates;
 }
+
+
