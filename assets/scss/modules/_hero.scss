@@ -8,7 +8,7 @@ BEM BLOCK .hero
   height: 100vh;
   position: relative;
   @include mq ($from: tablet, $until: wide){
-    height: 40vh !important;
+    height: 100vh !important;
   }
   @include mq ( $from: wide ){
     height: 100vh !important;

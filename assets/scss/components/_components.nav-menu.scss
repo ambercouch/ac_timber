@@ -250,7 +250,9 @@
       }
     }
     &:first-child{
-      height: 475px;
+      @include mq($from: desktop){
+        height: 475px;
+      }
     }
   }
   &image:first-child{
