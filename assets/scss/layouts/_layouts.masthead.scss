@@ -51,13 +51,13 @@ BEM ELEMENTS .l-masthead__
     }
   }
   &navigation{
-    display: block;
+    display: none;
     padding-left: 0;
     margin: $act-unit 0;
     //@extend .element--band-block-bottom;
     //@extend .is-split-nav;
     @extend .element--abso-layer;
-    @include mq($from: tablet){
+    @include mq($from: wide){
       display: block;
       width: 100%;
       padding-left: 0;
