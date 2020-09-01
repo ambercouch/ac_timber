@@ -17,9 +17,11 @@
         <h1 class="entry-title c-header__heading{{ templateClass }} ">
           <span class="entry-title c-header__title{{ templateClass }} ">{{ post.title }}</span>
         </h1>
+ {% if postIcon %}
         <div class="c-header__icon--service">
           <img class="style-svg c-header__img--service" src="{{ postIcon.url }}" alt="{{ post.title }}" />
         </div>
+        {% endif %}
       </header>
     </div>
   {% endif %}
