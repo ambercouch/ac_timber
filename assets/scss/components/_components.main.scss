@@ -4,11 +4,12 @@ BEM BLOCK .c-main
 
 .c-main{
   @extend .c-site-wrapper--responsive;
-  padding-top: $inuit-global-spacing-unit !important;
-
+  //padding-top: $inuit-global-spacing-unit !important;
+  padding-top: 0 !important;
   padding-bottom: $inuit-global-spacing-unit !important;
   @include mq($from : desktop){
-    padding-top: $inuit-global-spacing-unit-huge !important;
+    //padding-top: $inuit-global-spacing-unit-huge !important;
+    padding-top: 0 !important;
   }
   &.has-side-bar{
     @include mq($from: tablet) {

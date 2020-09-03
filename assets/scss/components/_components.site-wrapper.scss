@@ -5,6 +5,7 @@ $site-wrapper-padding : $inuit-global-spacing-unit-huge;
   @extend .o-wrapper;
   background: $site-wrapper-color;
   padding: $site-wrapper-padding;
+  padding-top: 0 !important;
 }
 
 .c-site-wrapper--{

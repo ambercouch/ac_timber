@@ -179,3 +179,15 @@
 .wpcf7-form-control-wrap{
   @extend .c-contact-form__input-wrapper;
 }
+
+.contact > .wp-block-group__inner-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include mq($from : tablet){
+    flex-direction: row;
+  }
+}
+.wp-block-group__inner-container p {
+  margin: 0;
+}

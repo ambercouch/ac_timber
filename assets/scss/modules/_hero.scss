@@ -4,9 +4,11 @@ BEM BLOCK .hero
 .hero{
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 500px;
-  height: 100vh;
+  max-height: 750px;
+  min-height: 400px;
+  height: 40vh;
   position: relative;
+  margin-bottom: $act-unit;
 }
 [class*=hero--]:not([class*=__hero]){
   @extend .hero;

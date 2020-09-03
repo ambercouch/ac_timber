@@ -36,6 +36,10 @@
 
   &body{
     display: block;
+    .contact &{
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &footer{
@@ -78,5 +82,3 @@
 [class*='single-page__comment-link--']{
   @extend .single-page__comment-link
 }
-
-

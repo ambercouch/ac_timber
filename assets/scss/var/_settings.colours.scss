@@ -19,9 +19,13 @@ $thb-claret : #76232f;
 $thb-tarnished-gold : #c19a00;
 $thb-hot-pink : #fb1a62;
 
-$brand-col-1 : $thb-claret;
-$brand-col-2 : $thb-tarnished-gold;
-$brand-col-3 : $thb-hot-pink;
+$n2e-blue: #002C77;
+$n2e-grey: #75787b;
+$n2e-red: #a50034;
+
+$brand-col-1 : $n2e-blue;
+$brand-col-2 : $n2e-grey;
+$brand-col-3 : $n2e-red;
 $brand-col-4 : $act-grey;
 $brand-col-5 : $act-grey-light;
 $brand-col-6 : $act-grey-dark;
@@ -29,9 +33,8 @@ $brand-col-7 : $act-grey;
 $brand-col-8 : $act-grey-light;
 $brand-col-9 : $act-grey-dark;
 
-$col-text : darken($brand-col-1, 10% );
-$col-heading : darken($brand-col-1, 10% );
-$col-link : $brand-col-2;
-$col-link-hover : lighten($brand-col-2, 5%);
-$col-accent : $brand-col-3;
-
+$col-text : darken($brand-col-2, 40% );
+$col-heading : darken($brand-col-2, 20% );
+$col-link : $brand-col-3;
+$col-link-hover : lighten($brand-col-3, 5%);
+$col-accent : $brand-col-2;
