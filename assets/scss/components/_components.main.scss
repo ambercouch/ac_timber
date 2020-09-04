@@ -67,4 +67,17 @@ BEM BLOCK MODIFIERS .c-main--
       padding-right: $act-unit-l;
     }
   }
+  &--front-page{
+    &__img{
+      margin-bottom: $act-unit-l;
+      figure{
+        width: 100%;
+        img{
+          width: 100%;
+          max-height: 50vh;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }
