@@ -56,6 +56,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'operator' => '==',
                     'value' => 'page',
                 ),
+                array (
+                    array (
+                        'param' => 'page_type',
+                        'operator' => '!=',
+                        'value' => 'front_page',
+                    ),
+                ),
             ),
             array (
                 array (
@@ -64,6 +71,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'value' => 'service',
                 ),
             ),
+
         ),
         'menu_order' => 2,
         'position' => 'normal',
