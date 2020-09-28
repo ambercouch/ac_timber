@@ -1,10 +1,21 @@
 {% extends "base.twig" %}
+{% set mainMod = "--blog" %}
 
 {% block before_head %}
 <!-- index.twig -->
 {% endblock %}
 
 {% block hero %}
+  {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+  %}
+    <section id="siteHero" class="site__hero">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
+  {% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -12,11 +23,34 @@
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post) %}
     {% set postFormatClass = '--'~postFormat %}
-    {% include ['content'~postFormat~'.twig', 'content.twig'] %}<br>
+    {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}<br>
   {% endfor %}
 
 {% endblock %}
 
 {% block belowContent %}
+  <div class="content__below">
+    {% if posts.pagination.pages is not empty %}
+      <div class="content__pagination">
+        {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+      </div>
+    {% endif %}
+  </div>
+  <!-- removed comments in home.twig -->
 {% endblock %}
 
+{% set hasSideBar = true %}
+
+{% block sidebar %}
+  <div class="l-side-bar--blog {{ not sidebar_widgets ? 'is-empty' : ''}}">
+    {% if sidebar_widgets == '' %}
+      <!-- Add some widgets to the footer -->
+    {% else %}
+      <div class="l-sidebar__widget-area--sidebar-widgets">
+        <div class="l-widget-area--sidebar-widgets">
+          {{sidebar_widgets}}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endblock %}
