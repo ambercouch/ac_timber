@@ -19,11 +19,15 @@
   &item{
     @extend .o-list-bare__item;
     @extend .o-list-inline__item;
+    padding-left: 0.5em;
     &:after{
       content: ',';
     }
     &:last-child:after{
       content: '';
+    }
+    &:first-child{
+      padding-left: 0;
     }
   }
 

@@ -156,8 +156,12 @@
       justify-content: space-between;
     }
     &label {
-      width: 49%;
+
+      width: 100%;
       margin-bottom: $act-unit;
+      @include mq($from: tablet){
+        width: 49%;
+      }
     }
     &label--{
       &textarea{
