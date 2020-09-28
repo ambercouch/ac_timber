@@ -16,48 +16,16 @@ ACTIMBER = {
 
             fitvids();
 
-            document.addEventListener( 'wpcf7mailsent', function( event, el ) {
+            var popup_hidden_post_slugs = ['work-life-balance','some-page', 'work-life-thank-you']
 
-                var cf7Id = event.detail.id;
-                var selectorRedirect = '#'+cf7Id+' input[name=redirect]';
-                var redirect = $(selectorRedirect).val();
-                if(redirect){
-                    location = redirect;
-                }
-
-                console.log(selectorRedirect);
-                console.log($(selectorRedirect).val());
-                console.log('event detail id');
-                console.log('el');
-                console.log(el);
-
-            }, false );
-
-            var act_new_visitor = (Cookies.get('_act-return') === 'is-return' ) ? false : true;
-            var hide_popup = (Cookies.get('_act-hide-popup') === 'is-hidden') ? true : false
-
-            var notice = $('[data-remodal-id=notice-covid]').remodal();
-
-            console.log('hide_popup test ')
-            console.log(hide_popup)
-            if (hide_popup === false){
-                console.log('hide_popup')
-                console.log(hide_popup)
-                notice.open();
-            }
+            Cookies.set('_act_popup_hidden_post_slugs', JSON.stringify(popup_hidden_post_slugs));
 
             $(document).on('cancellation', '[data-remodal-id=notice-covid]', function () {
-                console.log('Cancel button is clicked');
-                    Cookies.set('_act-hide-popup', 'is-hidden');
+                Cookies.set('_act-hide-popup', 'is-hidden');
             });
 
             console.log('$act_new_vistitor');
-            console.log(act_new_visitor);
-
             Cookies.set('_act-return', 'is-return');
-
-
-
 
 
             /**
@@ -112,16 +80,142 @@ ACTIMBER = {
 
         }
     },
+    home:{
+        init: function () {
+            console.log('we is home');
+            var post_slug =  document.body.getAttribute('data-post-slug');
+            var popup_hidden_post_slugs = JSON.parse(Cookies.get('_act_popup_hidden_post_slugs'))
+            var act_new_visitor = (Cookies.get('_act-return') === 'is-return' ) ? false : true;
+            var hide_popup = (Cookies.get('_act-hide-popup') === 'is-hidden') ? true : false;
+            if(popup_hidden_post_slugs.indexOf(post_slug.replace(/_/g ,'-')) > -1){
+                hide_popup = true;
+            }else{
+                hide_popup = hide_popup;
+            }
+
+            var notice = $('[data-remodal-id=notice-covid]').remodal();
+
+            if (hide_popup === false){
+                console.log('show the popup')
+                notice.open();
+                console.log(notice)
+            }else{
+                notice.destroy();
+                console.log('dont show the popup .destroy()')
+                console.log('(hide_popup = ' + hide_popup);
+            }
+
+        }
+    },
+    blog: {
+        init: function () {
+            console.log('we is blog');
+
+            var post_slug =  document.body.getAttribute('data-post-slug');
+            var popup_hidden_post_slugs = JSON.parse(Cookies.get('_act_popup_hidden_post_slugs'))
+            var act_new_visitor = (Cookies.get('_act-return') === 'is-return' ) ? false : true;
+            var hide_popup = (Cookies.get('_act-hide-popup') === 'is-hidden') ? true : false;
+            if(popup_hidden_post_slugs.indexOf(post_slug.replace(/_/g ,'-')) > -1){
+                hide_popup = true;
+            }else{
+                hide_popup = hide_popup;
+            }
+
+            var notice = $('[data-remodal-id=notice-covid]').remodal();
+
+            if (hide_popup === false){
+                console.log('show the popup')
+                notice.open();
+                console.log(notice)
+            }else{
+                notice.destroy();
+                console.log('dont show the popup .destroy()')
+                console.log('(hide_popup = ' + hide_popup);
+            }
+
+        }
+    },
     page: {
         init: function () {
             //uncomment to debug
-            //console.log('pages');
+            console.log('pages');
+
+            document.addEventListener( 'wpcf7mailsent', function( event, el ) {
+
+                var cf7Id = event.detail.id;
+                var selectorRedirect = '#'+cf7Id+' input[name=redirect]';
+                var redirect = $(selectorRedirect).val();
+                if(redirect){
+                    location = redirect;
+                }
+
+            }, false );
+
+            /*
+            Removed pop up from pages
+             */
+            // var post_slug =  document.body.getAttribute('data-post-slug');
+            // var popup_hidden_post_slugs = JSON.parse(Cookies.get('_act_popup_hidden_post_slugs'))
+            // var act_new_visitor = (Cookies.get('_act-return') === 'is-return' ) ? false : true;
+            // var hide_popup = (Cookies.get('_act-hide-popup') === 'is-hidden') ? true : false;
+            // if(popup_hidden_post_slugs.indexOf(post_slug.replace(/_/g ,'-')) > -1){
+            //     hide_popup = true;
+            // }else{
+            //     hide_popup = hide_popup;
+            // }
+            //
+            // var notice = $('[data-remodal-id=notice-covid]').remodal();
+            //
+            //     if (hide_popup === false){
+            //         console.log('show the popup')
+            //         notice.open();
+            //         console.log(notice)
+            //     }else{
+            //         notice.destroy();
+            //         console.log('dont show the popup .destroy()')
+            //         console.log('(hide_popup = ' + hide_popup);
+            //     }
+
+
+
+
+
+
+
+        },
+        work_life_balance: function () {
+            console.log('pages wlb');
+
         }
     },
     post: {
         init: function () {
             //uncomment to debug
-            //console.log('posts');
+            console.log('posts');
+
+            console.log('we is home');
+            var post_slug =  document.body.getAttribute('data-post-slug');
+            var popup_hidden_post_slugs = JSON.parse(Cookies.get('_act_popup_hidden_post_slugs'))
+            var act_new_visitor = (Cookies.get('_act-return') === 'is-return' ) ? false : true;
+            var hide_popup = (Cookies.get('_act-hide-popup') === 'is-hidden') ? true : false;
+            if(popup_hidden_post_slugs.indexOf(post_slug.replace(/_/g ,'-')) > -1){
+                hide_popup = true;
+            }else{
+                hide_popup = hide_popup;
+            }
+
+            var notice = $('[data-remodal-id=notice-covid]').remodal();
+
+            if (hide_popup === false){
+                console.log('show the popup')
+                notice.open();
+                console.log(notice)
+            }else{
+                notice.destroy();
+                console.log('dont show the popup .destroy()')
+                console.log('(hide_popup = ' + hide_popup);
+            }
+
         }
     }
 };
@@ -143,6 +237,9 @@ UTIL = {
         UTIL.exec('common');
         UTIL.exec(template);
         UTIL.exec(template, handle);
+
+
+
     }
 };
 jQuery(window).load(UTIL.init);

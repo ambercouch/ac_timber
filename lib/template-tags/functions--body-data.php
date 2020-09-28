@@ -11,9 +11,15 @@ function _act_get_body_data() {
         $post_type = "archive";
     }
 
+    if (is_home()) {
+        $post_type = 'blog';
+    }
+
     if (is_front_page()) {
         $post_type = 'home';
     }
+
+
 
     $body_data['post-type'] = $post_type;
 
@@ -22,8 +28,10 @@ function _act_get_body_data() {
     if (is_archive() and isset(get_queried_object()->taxonomy)){
         $tax = get_taxonomy( get_queried_object()->taxonomy );
         $post_slug = sanitize_title( $tax->labels->singular_name);
-    }elseif(is_archive() and !isset(get_queried_object()->taxonomy)){
+    }elseif(is_archive() and get_queried_object() and !isset(get_queried_object()->taxonomy)){
         $post_slug = get_queried_object()->name;
+    }else{
+        $post_slug = "archive-date";
     }
 
     if (is_home()) {
