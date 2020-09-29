@@ -51,31 +51,31 @@ function  act_cpt() {
 
     register_taxonomy( 'service_category', array( 'service' ), $args );
 
-    $labels = array(
-        'name' => _x('Testimonials', 'post type general name'),
-        'singular_name' => _x('Testimonial', 'post type singular name'),
-        'add_new' => _x('Add New', 'Testimonial'),
-        'add_new_item' => __('Add New Testimonial'),
-        'edit_item' => __('Edit Testimonial'),
-        'new_item' => __('New Testimonial'),
-        'all_items' => __('All Testimonials'),
-        'view_item' => __('View Testimonial'),
-        'search_items' => __('Search Testimonials'),
-        'not_found' => __('No Testimonials found'),
-        'not_found_in_trash' => __('No Testimonials found in the trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Testimonials'
-    );
-    $args = array(
-        'labels' => $labels,
-        'menu_icon' => 'dashicons-format-quote',
-        'description' => 'Testimonials offered',
-        'public' => true,
-        'menu_position' => 20,
-        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
-        'has_archive' => 'testimonial'
-    );
-    register_post_type('testimonial', $args);
+//    $labels = array(
+//        'name' => _x('Testimonials', 'post type general name'),
+//        'singular_name' => _x('Testimonial', 'post type singular name'),
+//        'add_new' => _x('Add New', 'Testimonial'),
+//        'add_new_item' => __('Add New Testimonial'),
+//        'edit_item' => __('Edit Testimonial'),
+//        'new_item' => __('New Testimonial'),
+//        'all_items' => __('All Testimonials'),
+//        'view_item' => __('View Testimonial'),
+//        'search_items' => __('Search Testimonials'),
+//        'not_found' => __('No Testimonials found'),
+//        'not_found_in_trash' => __('No Testimonials found in the trash'),
+//        'parent_item_colon' => '',
+//        'menu_name' => 'Testimonials'
+//    );
+//    $args = array(
+//        'labels' => $labels,
+//        'menu_icon' => 'dashicons-format-quote',
+//        'description' => 'Testimonials offered',
+//        'public' => true,
+//        'menu_position' => 20,
+//        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+//        'has_archive' => 'testimonial'
+//    );
+//    register_post_type('testimonial', $args);
 
 }
 
