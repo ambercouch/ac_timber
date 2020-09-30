@@ -210,12 +210,21 @@ function act_shortcode_cta($atts, $content){
 
     $a['text'] = '<p>'.$a['text'].'</p>';
 
-    $output = '<div class="o-box">';
-    $output .= '<div class="c-cta">';
-    $output .= '<h3 class="c-cta__title">'.$a['title'].'</h3>';
+
+    $output = '<div class="c-cta">';
+    $output .= '<div class="c-cta__header">';
+    $output .= '<header class="c-header--cta">';
+    $output .= '<h4 class="c-header__heading--cta">';
+    $output .= '<span class="c-header__title--cta">'.$a['title'].'</span>';
+    $output .= '</h4>';
+    $output .= '</header>';
+    $output .= '</div>';
     $output .= '<div class="c-cta__content">'.$a['text'].'</div>';
     $output .= '<div class="c-cta__footer">';
-    $output .= '<a class="c-cta__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
+    $output .= '<div class="c-cta__btn">';
+    $output .= '<div class="c-btn--cta">';
+    $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
+    $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
