@@ -220,6 +220,11 @@ if( function_exists('acf_add_local_field_group') ):
                     'operator' => '==',
                     'value' => 'page',
                 ),
+                array (
+                    'param' => 'page_type',
+                    'operator' => '!=',
+                    'value' => 'front_page',
+                ),
             ),
             array (
                 array (

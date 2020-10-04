@@ -5,6 +5,7 @@
 .l-widget-area {
   display: block;
   position: relative;
+
 }
 
 /*
@@ -44,7 +45,10 @@
 
 .l-widget-area__ {
   &widget {
-    display: block
+    display: block;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   &heading {
     display: block

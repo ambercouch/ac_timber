@@ -202,3 +202,39 @@ function act_shortcode_svg_icon($atts, $content = null) {
 }
 
 
+add_shortcode('act_cta', 'act_shortcode_cta');
+function act_shortcode_cta($atts, $content){
+    $a = shortcode_atts(array(
+        'title' => 'Add a Title',
+        'text' => 'Add Some text',
+        'btn' => 'Submit',
+        'url' => '/'
+    ), $atts);
+
+    $a['text'] = '<p>'.$a['text'].'</p>';
+
+
+    $output = '<div class="c-cta">';
+    $output .= '<div class="c-cta__header">';
+    $output .= '<header class="c-header--cta">';
+    $output .= '<h4 class="c-header__heading--cta">';
+    $output .= '<span class="c-header__title--cta">'.$a['title'].'</span>';
+    $output .= '</h4>';
+    $output .= '</header>';
+    $output .= '</div>';
+    $output .= '<div class="c-cta__content">'.$a['text'].'</div>';
+    $output .= '<div class="c-cta__footer">';
+    $output .= '<div class="c-cta__btn">';
+    $output .= '<div class="c-btn--cta">';
+    $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
+    $output .= '</div>';
+    $output .= '</div>';
+    $output .= '</div>';
+    $output .= '</div>';
+
+    return $output;
+}
+
+
+
+

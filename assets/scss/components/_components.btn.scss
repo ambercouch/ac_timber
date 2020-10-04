@@ -42,6 +42,14 @@
       }
     }
   }
+  &cta{
+    background: #fff;
+    @extend .o-btn--full;
+    @extend .o-btn--pill;
+    @include mq($from: desktop){
+      max-width: 200px;
+    }
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--
@@ -65,7 +73,7 @@
     display: inline;
   }
   &link {
-    display: inline
+    display: inline;
   }
   &content {
     display: block
@@ -78,5 +86,15 @@
 //BEM ELEMENT MODIFIER FALLBACK .c-btn--
 
 [class*=c-btn__header--] {
-  @extend .c-btn__header;
+   @extend .c-btn__header;
+ }
+
+[class*=c-btn__link--] {
+  @extend .c-btn__link;
+}
+
+.c-btn__link--{
+  &cta{
+    color: $col-accent;
+  }
 }

@@ -54,6 +54,14 @@
     max-width: 25%;
     border: none;
   }
+  &list{
+    @extend .o-list-bare;
+    margin-bottom: 0;
+  }
+  &item{
+    @extend .o-list-bare__item;
+    padding: 0;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-testimonial-thumb-list--

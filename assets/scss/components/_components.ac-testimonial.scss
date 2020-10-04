@@ -1,0 +1,81 @@
+/*
+  BEM BLOCK .c-ac-testimonial
+ */
+
+.c-ac-testimonial {
+  display: block;
+  font-family: $act-font-family-serif;
+  font-weight: 700;
+  @include act-font-size($act-fs-3);
+}
+
+/*
+  BEM BLOCK MODIFIER .c-ac-testimonial--
+ */
+
+.c-ac-testimonial-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-ac-testimonial--
+
+[class*=c-ac-testimonial--] {
+  @extend .c-ac-testimonial;
+}
+
+/*
+  BEM ELEMENTS .c-ac-testimonial__
+ */
+
+.c-ac-testimonial__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block;
+    padding-left: 0;
+    border-left: none;
+  }
+  &intro{
+    quotes: initial;
+    p:last-child{
+      &:after{
+        content: '\201d';
+        display: inline;
+        font-style: normal;
+      }
+    }
+  }
+  &cite{
+    font-weight: 700;
+    @include act-font-size($act-fs-3);
+    &:before{
+      content: "\2014";
+    }
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-ac-testimonial--
+
+[class*=c-ac-testimonial__header--] {
+  @extend .c-ac-testimonial__header;
+}

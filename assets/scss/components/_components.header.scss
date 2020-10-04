@@ -4,7 +4,7 @@
 
 .c-header {
   display: block;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 /*
@@ -16,9 +16,17 @@
     display: block
   }
   &page{
-
-
-
+    &:after{
+      content: '';
+      padding-top: $act-unit;
+      width: 150px;
+      border-bottom: 1px solid $col-accent;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &cta{
+    color: #fff;
   }
 }
 
@@ -40,7 +48,7 @@
 
   &heading {
     display: block;
-    @include act-font-size($act-fs-1);
+    @include act-font-size($act-fs-2);
   }
 
   &title {
@@ -64,6 +72,17 @@
 
 [class*=c-header__heading--] {
   @extend .c-header__heading;
+}
+
+.c-header__heading--{
+  &cta{
+    font-weight: normal;
+    color: #fff;
+  }
+  &page{
+    color: $brand-col-3;
+    font-size: 2em;
+  }
 }
 
 /*

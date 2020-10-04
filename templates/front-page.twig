@@ -9,6 +9,13 @@
   <!-- {{ hidePageTitle }} -->
 {% endblock %}
 
+{% block hero %}
+  {% if removeHero %}
+  {% else %}
+    {{  parent() }}
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 
   {% for post in posts %}
