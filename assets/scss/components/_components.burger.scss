@@ -6,9 +6,9 @@
   right:  $act-unit;
   top: $act-unit-l;
   z-index: 99999;
+  margin: 6px;
   @include mq ($from: desktop){
     position: absolute;
-    top: $act-unit;
     display: none;
   }
 }
