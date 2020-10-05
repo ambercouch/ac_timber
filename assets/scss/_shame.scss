@@ -226,3 +226,20 @@ form.woocommerce-checkout{
   }
 }
 
+
+#wc-stripe-cc-form{
+  width:400px;
+  max-width:100%
+}
+
+.c-options-table{
+  overflow:auto;
+}
+
+.woocommerce-cart-form__cart-item .product-thumbnail{
+   display:none;
+ }
+
+.woocommerce-cart-form__contents .product-thumbnail{
+  display:none;
+}
