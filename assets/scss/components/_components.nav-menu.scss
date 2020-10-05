@@ -87,6 +87,8 @@
 .c-nav-menu__list--{
   &primary{
     @extend .o-list-flex--center;
+    height: 95px;
+    align-items: center;
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -140,13 +142,13 @@
   }
   &shop{
     border-radius: 2px;
-    color: white;
+    color: $brand-col-1;
     padding: 0 $act-unit-t !important;
     @include act-font-size($inuit-font-size-h6, 1);
     font-weight: 100;
     &:hover{
       background: rgba(white, 0.1);
-      color: white;
+      color: darken($brand-col-1, 10%);
     }
   }
   &mobile{
