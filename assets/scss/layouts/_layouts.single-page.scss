@@ -52,8 +52,8 @@
   }
 }
 
-[class*='single-page--']{
-  @extend .post;
+[class*='l-single-page--']{
+  //@extend .post;
 }
 
 [class*='single-page__header--']{
@@ -68,15 +68,15 @@
   }
 }
 
-[class*='single-page__heading--']{
+[class*='l-single-page__heading--']{
   @extend .l-single-page__heading;
 }
 
-[class*='single-page__feature-image--']{
+[class*='l-single-page__feature-image--']{
   @extend .l-single-page__feature-image;
 }
 
-[class*='single-page__body--']{
+[class*='l-single-page__body--']{
   @extend .l-single-page__body
 }
 .l-single-page__body--{
@@ -88,11 +88,11 @@
   }
 }
 
-[class*='single-page__footer--']{
+[class*='l-single-page__footer--']{
   @extend .l-single-page__footer;
 }
 
-[class*='single-page__comment-link--']{
+[class*='l-single-page__comment-link--']{
   @extend .l-single-page__comment-link
 }
 

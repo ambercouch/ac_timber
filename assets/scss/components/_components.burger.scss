@@ -5,6 +5,10 @@
   right:  $act-unit;
   top: $act-unit-s;
   z-index: 99999;
+  @include mq ($from: desktop){
+    position: absolute;
+    top: 37px;
+  }
 }
 .c-burger__btn{
   cursor: pointer;
@@ -18,15 +22,16 @@
     //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     //right: 14rem;
   }
-  @include mq($from : desktop){
-    display: none;
-  }
 }
 
 .c-burger__label{
+  display: none;
   @include act-font-size($act-fs-6);
-  color: white;
+  color: $col-accent;
   text-transform: uppercase;
+  .home &{
+    color: $col-accent;
+  }
 }
 
 .c-burger__bars{
@@ -40,24 +45,27 @@
 .c-burger__bar {
   transition: transform 0.1s linear;
   position: absolute;
-  width: 1.1em;
+  width: 13px;
   height: 2px;
-  background-color: #fff;
+  background-color: $brand-col-1;
+  .home &{
+    background-color: $col-accent;
+  }
 }
 .c-burger__bar--tl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
+  transform-origin: 6px 0px;
   top: 13px;
-  left: 0.5em;
+  right: 21px;
   [data-state=on] &{
     transform: rotate(45deg) translate(0.3em, 0);
   }
 }
 .c-burger__bar--tr{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
+  transform-origin: 7px 0px;
   top: 13px;
-  right: 0.5em;
+  left:  21px;
   [data-state=on] &{
     transform: rotate(-45deg) translate(-0.3em, 0);
   }
@@ -65,8 +73,8 @@
 .c-burger__bar--m{
   @extend .c-burger__bar;
   transform-origin: 1.1em 0.1em;
-  top: 22px;
-  left: 0.5em;
+  top: 21px;
+  left: 8px;
   width: 26px !important;
   margin-top: -0.1em;
   [data-state=on] &{
@@ -75,18 +83,18 @@
 }
 .c-burger__bar--bl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
+  transform-origin: 7px 3px;
   top:27px;
-  left: 0.5em;
+  right: 21px;
   [data-state=on] &{
     transform: rotate(-45deg) translate(0.3em, 0);
   }
 }
 .c-burger__bar--br{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
+  transform-origin: 6px 3px;
   top:27px;
-  right: 0.5em;
+  left: 21px;
   [data-state=on] &{
     transform: rotate(45deg) translate(-0.3em, 0);
 

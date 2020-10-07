@@ -1,6 +1,6 @@
 .l-footer{
   display: block;
-  background: $brand-col-5;
+  background: #fff;
   text-align: center;
 }
 
@@ -49,8 +49,8 @@
   }
   &widget-area{
     @extend .c-site-wrapper--responsive;
-    padding-top: $act-unit-l;
-    padding-bottom: $act-unit-l;
+    padding-top: $act-unit;
+    padding-bottom: $act-unit;
     background-color: transparent;
   }
   &widgets{
@@ -66,17 +66,24 @@
 
   }
   &site-info{
-    background: $brand-col-2;
-    @include breakout-band($bgc : $brand-col-2)
+    background: #fff;
+    @include breakout-band($bgc : #fff);
+    color: #000;
+    @include act-font-size($act-fs-5);
+    text-align: center;
+    a{
+      color: #000;
+      text-decoration: underline !important;
+      white-space: nowrap;
+    }
   }
 }
 
 .l-footer{
   a{
-    color: $brand-col-2;
     text-decoration: none;
     &:hover{
-      color: white;
+      color: darken($col-link, 20%);
     }
   }
 }

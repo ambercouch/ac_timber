@@ -1,3 +1,6 @@
 a{
   @include a($col: $col-link);
+  p &{
+    white-space: nowrap;
+  }
 }

@@ -50,6 +50,14 @@
     padding: $act-unit-t !important;
     @include act-font-size($act-fs-6, 1);
   }
+  &pill{
+    border-radius: $act-unit-h;
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+  }
+  &full{
+    width: 100%;
+  }
   &transparent{
     @extend .o-btn;
     background: transparent;

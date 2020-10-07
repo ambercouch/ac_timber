@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .c-text
+ */
+
+.c-text {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-text--
+ */
+
+.c-text-- {
+  &intro {
+    display: block;
+    @include act-font-size($act-fs-3);
+    font-weight: 500;
+    font-family: $act-font-family-serif;
+    margin-bottom: $act-unit-h;
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-text--
+
+[class*=c-text--] {
+  @extend .c-text;
+}
+
+/*
+  BEM ELEMENTS .c-text__
+ */
+
+.c-text__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-text--
+
+[class*=c-text__header--] {
+  @extend .c-text__header;
+}

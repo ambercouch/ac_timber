@@ -132,7 +132,7 @@
     margin-right: $act-unit;
   }
   &social{
-    margin-right: $act-unit-l;
+    margin-right: $act-unit;
     margin-left: 0;
   }
   &footer{
@@ -213,6 +213,10 @@
         background: rgba(#000, 0.2);
       }
     }
+  }
+  &social{
+    padding: $act-unit-t;
+    display: block;
   }
 }
 
