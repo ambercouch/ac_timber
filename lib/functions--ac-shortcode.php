@@ -320,7 +320,7 @@ function act_shortcode_page_sections($atts, $content = null)
             if( $section_image != ''){
                 $image_srcset = wp_get_attachment_image_srcset($section_image['ID']);
                 $image_src = wp_get_attachment_image_url($section_image['ID']);
-                $image_sizes = wp_get_attachment_image_sizes($section_image['ID']);
+                $image_sizes = wp_get_attachment_image_sizes($section_image['ID'], 'large');
 
 
                 $section_image_markup .= '<div class="c-feature-image--section">';
