@@ -1,13 +1,15 @@
 
 .c-burger{
+  display: block;
   cursor: pointer;
   position: fixed;
   right:  $act-unit;
-  top: $act-unit-s;
+  top: $act-unit-l;
   z-index: 99999;
+  margin: 6px;
   @include mq ($from: desktop){
     position: absolute;
-    top: 37px;
+    display: none;
   }
 }
 .c-burger__btn{

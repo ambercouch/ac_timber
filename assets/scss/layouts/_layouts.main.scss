@@ -93,7 +93,7 @@ BEM BLOCK MODIFIERS .l-main--
   &page{
 
     @include mq($from: desktop){
-      padding-right: $act-unit-h;
+      padding-right: 0;
     }
 
   }

@@ -46,6 +46,9 @@
     background: #fff;
     @extend .o-btn--full;
     @extend .o-btn--pill;
+    @include mq($from: desktop){
+      max-width: 200px;
+    }
   }
 }
 

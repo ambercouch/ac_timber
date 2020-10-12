@@ -104,6 +104,10 @@
   &primary{
   @extend .o-list-flex--center;
   }
+  &mobile{
+    display: flex;
+    flex-direction: column;
+  }
   &pagination{
     @extend .o-flex-split--last;
   }
@@ -114,7 +118,7 @@
   &footer{
   display: flex;
     flex-direction: row;
-}
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
@@ -146,6 +150,7 @@
   }
   &mobile{
     @extend .c-nav-menu__item--stacked;
+    text-align: left;
   }
   &image{
     display: inline-block;
@@ -163,10 +168,13 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    padding: 0 $act-unit-s;
     display: block;
     background: transparent;
     font-weight: 500;
+    @include mq ($from: desktop){
+      font-weight: bold;
+    }
     &:hover{
       color: $brand-col-2;
     }
@@ -177,7 +185,7 @@
     }
     .current-menu-item &{
       background: transparent;
-      font-weight: 500;
+      font-weight: bold;
       .is-overlay-hero &{
         color: darken(white, 5%);
       }
@@ -193,6 +201,7 @@
   }
   &mobile{
     //@extend .c-nav-menu__link--blocky;
+    color: white;
   }
   &blocky{
     padding:$act-unit-s;
@@ -265,5 +274,3 @@
   }
 
 }
-
-

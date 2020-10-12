@@ -16,7 +16,6 @@
     display: block
   }
   &page{
-
     &:after{
       content: '';
       padding-top: $act-unit;
@@ -79,6 +78,11 @@
   &cta{
     font-weight: normal;
     color: #fff;
+  }
+  &page{
+    color: $brand-col-3;
+    font-size: 2em;
+    margin-bottom: 0;
   }
 }
 
