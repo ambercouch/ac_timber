@@ -6,8 +6,17 @@ BEM BLOCK .l-main
   background: transparent;
   @extend .c-site-wrapper--responsive;
   padding-top: 0;
-  padding-left: $act-unit-l * 1.5;
-  padding-right: $act-unit-l * 1.5;
+  padding-left: $act-unit-l * 1.25;
+  padding-right: $act-unit-l * 1.25;
+  @include mq($from : mobile){
+    padding-left: $act-unit-h;
+    padding-right: $act-unit-h;
+  }
+
+  @include mq($from : mobile){
+    padding-left: $act-unit-h * 1.5;
+    padding-right: $act-unit-h * 1.5;
+  }
 
   padding-bottom: $act-unit;
   @include mq($from : desktop){
