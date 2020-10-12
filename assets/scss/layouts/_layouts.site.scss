@@ -13,9 +13,13 @@
   flex-direction: column;
   min-height: 100vh;
   text-align: center;
-  background-image: url('assets/images/png/background-full.png');
+
   background-repeat: repeat-y;
   background-position: center 0 ;
+
+  @include mq($from : desktop){
+    background-image: url('assets/images/png/background-full.png');
+  }
 }
 
 /*
