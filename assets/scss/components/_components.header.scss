@@ -80,9 +80,12 @@
     color: #fff;
   }
   &page{
-    color: $brand-col-3;
-    font-size: 2em;
+    //color: $brand-col-3;
+    @include act-font-size($act-fs-2);
     margin-bottom: 0;
+    @include mq($from: tablet){
+      @include act-font-size($act-fs-k);
+    }
   }
 }
 

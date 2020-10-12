@@ -17,7 +17,12 @@
     font-weight: 500;
     font-family: $act-font-family-serif;
     margin-bottom: $act-unit-h;
+    @include width($width : 600px);
+    @include mq($from : desktop){
+      @include act-font-size($act-fs-2, $modifier : 2);
+    }
   }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-text--
