@@ -7,6 +7,10 @@
   font-family: $act-font-family-serif;
   font-weight: 700;
   @include act-font-size($act-fs-3);
+  text-align: left;
+  .home & {
+    text-align: center;
+  }
 }
 
 /*
@@ -64,8 +68,18 @@
   &cite{
     font-weight: 700;
     @include act-font-size($act-fs-3);
+    display: inline-block;
+    margin-left: 1em;
+    .home &{
+      display: inline;
+      margin-left: 0;
+    }
     &:before{
       content: "\2014";
+      margin-left: -1em;
+      .home &{
+        margin-left: 0;
+      }
     }
   }
 
