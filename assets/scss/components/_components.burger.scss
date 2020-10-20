@@ -4,7 +4,7 @@
   cursor: pointer;
   position: fixed;
   right:  $act-unit;
-  top: $act-unit-l;
+  top: 0;
   z-index: 99999;
   margin: 6px;
   @include mq ($from: desktop){
