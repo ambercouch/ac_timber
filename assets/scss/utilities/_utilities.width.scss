@@ -14,6 +14,14 @@ UTILITIES width in px from 500 to 1500
 .u-w-500px{
    width: 500px !important;
  }
+.u-w-500px---{
+  &desk{
+    @include mq($from : desktop){
+      width: 500px !important;
+    }
+  }
+
+}
 
 .u-w-600px{
   width: 600px !important;
