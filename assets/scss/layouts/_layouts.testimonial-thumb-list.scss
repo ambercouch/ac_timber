@@ -4,10 +4,10 @@
 
 .l-testimonial-thumb-list {
   display: flex;
-  max-width: 1200px;
   margin: 0 auto;
-  //margin-top: $act-unit-h * 1.5;
-  //align-items: flex-start;
+  @include mq($from : tablet, $until : desktop){
+    padding: 0 $act-unit-l;
+  };
 }
 
 /*
@@ -57,11 +57,18 @@
   &list{
     @extend .o-list-bare;
     margin-bottom: 0;
+    @include mq($from: desktop){
+      column-count: 2;
+      column-gap: $act-unit-l;
+    }
   }
   &item{
     @extend .o-list-bare__item;
     padding: 0;
     margin: 0;
+    @include mq($from: desktop){
+      display: inline-block;
+    }
   }
 }
 

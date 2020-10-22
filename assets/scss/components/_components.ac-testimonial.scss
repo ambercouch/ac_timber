@@ -6,8 +6,11 @@
   display: block;
   font-family: $act-font-family-serif;
   font-weight: 700;
-  @include act-font-size($act-fs-3);
+  @include act-font-size($act-fs-4);
   text-align: left;
+  @include mq($from: tablet){
+    @include act-font-size($act-fs-3);
+  }
   .home & {
     text-align: center;
   }

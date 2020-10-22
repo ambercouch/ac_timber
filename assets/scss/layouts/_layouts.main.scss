@@ -11,11 +11,13 @@ BEM BLOCK .l-main
   @include mq($from : mobile){
     padding-left: $act-unit-h;
     padding-right: $act-unit-h;
+    padding-top: $act-unit-l;
   }
 
   @include mq($from : mobile){
-    padding-left: $act-unit-l * 1.5;
-    padding-right: $act-unit-l * 1.5;
+    padding-left: $act-unit-l * 1.75;
+    padding-right: $act-unit-l * 1.75;
+    padding-top: $act-unit-h !important;
   }
 
   padding-bottom: $act-unit;
@@ -44,7 +46,7 @@ BEM BLOCK MODIFIERS .l-main--
     padding: 0 !important;
   }
   &page{
-    padding-top: 0;
+    //padding-top: 0;
   }
   &front-page{
     padding-top: $act-unit-l;

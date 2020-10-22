@@ -1,6 +1,6 @@
 .l-footer{
   display: block;
-  background: #fff;
+
   text-align: center;
 }
 
@@ -66,8 +66,8 @@
 
   }
   &site-info{
-    background: #fff;
-    @include breakout-band($bgc : #fff);
+
+
     color: #000;
     @include act-font-size($act-fs-5);
     text-align: center;
