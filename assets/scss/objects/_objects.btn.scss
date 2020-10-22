@@ -51,6 +51,7 @@
     @include act-font-size($act-fs-6, 1);
   }
   &pill{
+    @extend .o-btn;
     border-radius: $act-unit-h;
     padding-left: $act-unit ;
     padding-right: $act-unit ;
