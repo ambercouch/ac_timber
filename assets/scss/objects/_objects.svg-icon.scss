@@ -19,10 +19,6 @@
   }
 }
 
-.o-svg-icon--envelope{
-  display: flex;
-}
-
 
 //BEM BLOCK MODIFIER FALLBACK .o-svg-icon--
 
@@ -43,10 +39,10 @@
     stroke: currentColor;
     fill: currentColor;
     @include size($act-unit);
-    //position: absolute;
-    //left: 50%;
-    //top: 50%;
-    //transform: translate(-50%, -50%);
+    .c-contact-boxes &{
+      @include size($act-unit * 1.5);
+      color: $brand-col-3;
+    }
   }
 }
 
@@ -54,6 +50,10 @@
 
 [class*=svg-icon__header--] {
 
+}
+
+[class*=o-svg-icon__svg--] {
+  @extend .o-svg-icon__svg;
 }
 
 .o-svg-icon--envelope{

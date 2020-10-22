@@ -1,0 +1,93 @@
+/*
+  BEM BLOCK .c-contact-boxes
+ */
+
+.c-contact-boxes {
+  position: static;
+  display: block;
+  @include width($width:600px);
+  @include mq($from: tablet){
+    display: flex;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-contact-boxes--
+ */
+
+.c-contact-boxes-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-contact-boxes--
+
+[class*=c-contact-boxes--] {
+  @extend .c-contact-boxes;
+}
+
+/*
+  BEM ELEMENTS .c-contact-boxes__
+ */
+
+.c-contact-boxes__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block;
+    font-weight: 500;
+    color: $brand-col-3;
+    margin-bottom: $act-unit-t;
+    @include act-font-size($act-fs-3);
+  }
+  &content{
+    @include act-font-size($act-fs-6);
+    margin-bottom: $act-unit-t;
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &box{
+    //background: #ccc;
+    margin-left: 0 !important;
+    width: 100% !important;
+    flex-basis: 100% !important;
+    &:first-child{
+      border-bottom: solid 1px $brand-col-3;
+      margin-bottom: $act-unit;
+      padding-bottom: $act-unit;
+    }
+    @include mq($from: tablet){
+      width: 50% !important;
+      flex-basis: 50% !important;
+      border-left: solid 1px $brand-col-3;
+      padding-bottom: $act-unit;
+      &:first-child{
+        border-left: none;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-contact-boxes--
+
+[class*=c-contact-boxes__header--] {
+  @extend .c-contact-boxes__header;
+}

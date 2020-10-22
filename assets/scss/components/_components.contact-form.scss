@@ -7,6 +7,7 @@
   max-width: 100%;
   margin: 0 auto $act-unit-s;
   text-align: left;
+  @include width($width: 600px);
 }
 
 /*
@@ -72,15 +73,18 @@
   &input{
     display: block;
     width: 100%;
-    border: none;
+    border: solid 1px $brand-col-3;
     padding:$act-unit-t;
   }
   &label{
     display: block;
-    margin-bottom: $act-unit-t;
+    margin-bottom: $act-unit;
+    @include act-font-size($act-fs-6)
   }
   &label-text{
-    @include act-font-size($act-fs-5, 1);
+    @include act-font-size($act-fs-6, 1);
+    padding-bottom: $act-unit-s * 1.5;
+    display: block;
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -256,8 +260,8 @@
 
 .wpcf7-submit{
   transition: background 0.3s ease;
-  @extend .c-contact-form__input;
-  padding:$act-unit-t;
+  @extend .o-btn--pill;
+  @extend .o-btn--full;
   background: $brand-col-3;
   color: white;
   cursor: pointer;

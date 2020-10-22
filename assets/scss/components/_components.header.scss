@@ -3,7 +3,7 @@
  */
 
 .c-header {
-  display: block;
+  display: inline-block;
   text-transform: none;
 }
 
@@ -19,10 +19,11 @@
     &:after{
       content: '';
       padding-top: $act-unit;
-      width: 150px;
+      width: 100px;
       border-bottom: 1px solid $col-accent;
       display: block;
       margin: 0 auto;
+      max-width: 70%;
     }
   }
   &cta{

@@ -14,8 +14,8 @@ BEM BLOCK .l-main
   }
 
   @include mq($from : mobile){
-    padding-left: $act-unit-h * 1.5;
-    padding-right: $act-unit-h * 1.5;
+    padding-left: $act-unit-l * 1.5;
+    padding-right: $act-unit-l * 1.5;
   }
 
   padding-bottom: $act-unit;
@@ -67,18 +67,13 @@ BEM BLOCK MODIFIERS .l-main--
   }
   &content{
     padding: 0;
-    width: 850px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    @include width($width: 800px);
   }
-
 }
 
 
 
 .l-main__content{
-
 
   .has-side-bar &{
 
