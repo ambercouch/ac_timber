@@ -26,6 +26,10 @@
  */
 
 .c-btn-- {
+  &product-cta{
+    text-transform: none;
+    width: 100%;
+  }
   &type {
     display: block
   }
