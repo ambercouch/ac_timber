@@ -24,6 +24,7 @@
       <div class="c-post-thumb__footer">
       <div class="c-post-thumb__price">{{ product.get_price_html }}</div>
       <div class="c-post-thumb__add-btn"><a href="{{ product.add_to_cart_url }}" data-product_id="{{ product.get_id }}" data-product_sku="{{ product.get_sku }}" data-quantity="1" class="button c-btn--product-cta product_type_simple {{ classAjaxAdd }} product-type_{{ product.type }}">{{ product.add_to_cart_text }}</a></div>
+        <div class="c-post-thumb__read-more"><a href="{{ post.link }}" class="c-post-thumb__read-more-link">Read more</a></div>
       </div>
 </div>
     </div>

@@ -78,6 +78,12 @@
   &feature-image{
     margin-bottom: $act-unit-s;
   }
+  &read-more-link{
+    text-decoration: none;
+    @include act-font-size($act-fs-6);
+    padding: $act-unit-t;
+    display: block;
+  }
 
 }
 
