@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('ACTIMBER SEARCH');
 ACTIMBER = {
     common: {
         init: function () {
