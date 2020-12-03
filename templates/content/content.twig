@@ -1,14 +1,8 @@
 <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
-  {% if post.get_field('video_id') %}
-    <div class="post__feature-image{{ postFormatClass }}">
+  {% if post.thumbnail %}
+    <div class="post__feature-image">
       <div class="feature-image">
-        <a href="{{ post.link }}">
-          <img src="http://img.youtube.com/vi/{{ post.get_field('video_id') }}/maxresdefault.jpg" class="feature-image__img" alt="{{ post.title }}"/>
-          <svg class="feature-image__play-button" viewBox="0 0 200 200" alt="Play video">
-            <circle cx="100" cy="100" r="90" fill="none" stroke-width="15" stroke="#fff"></circle>
-            <polygon points="70, 55 70, 145 145, 100" fill="#fff"></polygon>
-          </svg>
-        </a>
+        <img src="{{ post.thumbnail.src('feature16-4') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
   {%  endif %}
@@ -30,8 +24,8 @@
 
   {% else %}
     <div class="entry-content post__body{{ postFormatClass }}">
-      <p>{{ post.content | striptags | truncate(20) }}</p>
-      {#<a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>#}
+      <p>{{ post.content | striptags | truncate(40) }}</p>
+      <a href="{{ post.link }}" class="post__read-more">Read More</a>
     </div>
 
   {% endif %}
@@ -39,7 +33,6 @@
     <a class="post__comment-link{{ postFormatClass }}" href="{{ post.link }}#comments">
       <span>{{ post.comment_count }} Comments </span>
     </a>
-
   </footer>
 
 </article>

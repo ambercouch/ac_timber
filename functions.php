@@ -97,6 +97,8 @@ require_once get_template_directory() . '/lib/functions--walkers.php';
 add_action('wp_print_styles', 'my_deregister_styles', 100);
 
 function my_deregister_styles() {
-    wp_deregister_style('contact-form-7');
+    //wp_deregister_style('contact-form-7');
     wp_deregister_style('bodhi-svgs-attachment');
 }
+
+
