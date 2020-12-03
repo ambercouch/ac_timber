@@ -15,44 +15,15 @@ ACTIMBER = {
 
            // $("[data-fitvid]").fitVids();
 
-            var showButton = $('[data-control=requestForm]');
-            var container = $('[data-container=requestForm]');
-            ACTIMBER.fn.open(container, showButton);
+            $('[data-control]').each(function () {
+                var controlId = $(this).attr('data-control')
+                if (controlId != ''){
+                    var showButton = $('[data-control='+controlId+']');
+                    var container = $('[data-container='+controlId+']');
+                    ACTIMBER.fn.open(container, showButton);
+                }
 
-            var showButton = $('[data-control=testMay19]');
-            var container = $('[data-container=testMay19]');
-            ACTIMBER.fn.open(container, showButton);
-
-            var showButton = $('[data-control=testApril19]');
-            var container = $('[data-container=testApril19]');
-            ACTIMBER.fn.open(container, showButton);
-
-            var showButton = $('[data-control=testMarch19]');
-            var container = $('[data-container=testMarch19]');
-            ACTIMBER.fn.open(container, showButton);
-
-
-            var showButton = $('[data-control=testFeb19]');
-            var container = $('[data-container=testFeb19]');
-            ACTIMBER.fn.open(container, showButton);
-
-            var showButton = $('[data-control=testJan19]');
-            var container = $('[data-container=testJan19]');
-            ACTIMBER.fn.open(container, showButton);
-
-            var showButton = $('[data-control=testDec18]');
-            var container = $('[data-container=testDec18]');
-            ACTIMBER.fn.open(container, showButton);
-
-            var showButton = $('[data-control=testNov18]');
-            var container = $('[data-container=testNov18]');
-            ACTIMBER.fn.open(container, showButton);
-
-            var showButton = $('[data-control=testSept18]');
-            var container = $('[data-container=testSept18]');
-            ACTIMBER.fn.open(container, showButton);
-
-
+            })
 
             /**
              * navigation.js
