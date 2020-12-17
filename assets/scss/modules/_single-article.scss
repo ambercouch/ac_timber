@@ -10,7 +10,7 @@
   &feature-image{
     margin-bottom: $inuit-global-spacing-unit;
   }
-  
+
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
     position: relative;
@@ -18,7 +18,6 @@
 
   &heading{
     margin-bottom: 0;
-    padding-left: 1.3em;
     &:after{
       //display: block;
       //width: 50%;
@@ -35,13 +34,13 @@
     @include inuit-font-size($inuit-font-size-h5);
     padding: 0;
   }
-  
+
   &body{
     display: block;
     //width: 50%;
     //padding: 0 $inuit-global-spacing-unit-large;
   }
-  
+
   &footer{
     @include inuit-font-size($inuit-font-size-h6, 1);
     //width: 50%;
@@ -50,7 +49,7 @@
     //flex-grow: 1;
     //position: relative;
   }
-  
+
   &comment-link{
     @include inuit-font-size($inuit-font-size-h6, 1);
     //position: absolute;

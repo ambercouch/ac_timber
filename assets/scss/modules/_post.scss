@@ -28,7 +28,6 @@
   &heading{
     @include inuit-font-size($inuit-font-size-h2);
     margin-bottom: 0;
-    margin-left: 1.5em;
     &:after{
 
     }
@@ -55,6 +54,7 @@
   }
 
   &comment-link{
+    display: none;
     @include inuit-font-size($inuit-font-size-h5, 1);
   }
 }
