@@ -89,3 +89,23 @@ product list items
   }
 }
 
+div.product-search{
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.product-search-field{
+  border: none;
+  padding: $act-unit-s;
+  @include act-font-size($act-fs-3, 1)
+}
+
+.product-search-results-content{
+  padding: $act-unit !important;
+  .product{
+    margin-bottom: $act-unit !important;
+    border-bottom: solid 1px !important;
+    padding-bottom: $act-unit !important;
+  }
+}
+
