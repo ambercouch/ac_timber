@@ -109,3 +109,37 @@ div.product-search{
   }
 }
 
+.woocommerce div.product p.price{
+  color: $brand-col-1;
+}
+
+.woocommerce div.product .stock{
+  color: $brand-col-1;
+}
+
+.woocommerce span.onsale {
+  height: 6em;
+ width: 6em;
+  padding: .202em;
+  font-size: 1em;
+  font-weight: 700;
+  position: absolute;
+  text-align: center;
+  line-height: 1;
+  top: -.5em;
+  left: -.5em;
+  margin: 0;
+  border-radius: 100%;
+  background-color: $nwl-red;
+  color: #fff;
+  font-size: .857em;
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.onsale-text-sale{
+  font-size: 1.3em;
+}
