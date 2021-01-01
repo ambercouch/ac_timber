@@ -32,11 +32,18 @@ class StarterSite extends TimberSite {
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
 
+        add_action( 'wp_enqueue_scripts', array( $this, 'loadScripts' ) );
         parent::__construct();
     }
 
     function register_post_types() {
         //this is where you can register custom post types
+    }
+
+    function loadScripts() {
+        wp_enqueue_script( 'typewatch' );
+        wp_enqueue_script( 'product-search' );
+        wp_enqueue_style( 'product-search' );
     }
 
     function register_taxonomies() {
