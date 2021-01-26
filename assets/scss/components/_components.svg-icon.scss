@@ -53,3 +53,10 @@
     height: auto;
   }
 }
+
+.c-svg-icon {
+  .c-nav-menu__list--social &{
+    @include size($act-unit-l);
+  }
+
+}
