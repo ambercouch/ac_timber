@@ -143,3 +143,21 @@ div.product-search{
 .onsale-text-sale{
   font-size: 1.3em;
 }
+
+.subscription_details  a.button{
+  font-weight: 300;
+  margin-bottom: $act-unit-t;
+  margin-left: $act-unit-t;
+  @include act-font-size($act-fs-5);
+  width: 100% !important;
+  display: block;
+  text-align: center;
+  @include mq($from : tablet){
+    width: 45%;
+  }
+}
+
+.subscription_details__td--action{
+  display: flex !important;
+  flex-wrap: wrap;
+}

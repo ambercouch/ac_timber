@@ -217,3 +217,30 @@ function add_percentage_to_sale_badge( $html, $post, $product ) {
 }
 
 
+function act_subscriptions_button( $actions, $subscription ) {
+
+    foreach ( $actions as $action_key => $action ) {
+
+        switch ( $action_key ) {
+//          case 'change_payment_method':	// Hide "Change Payment Method" button?
+            case 'suspend':	// Hide "Change Payment Method" button?
+                $actions[$action_key]['name'] = "Pause subscription";
+                break;
+//			case 'change_address':		// Hide "Change Address" button?
+//			case 'switch':			// Hide "Switch Subscription" button?
+//			case 'resubscribe':		// Hide "Resubscribe" button from an expired or cancelled subscription?
+//			case 'pay':			// Hide "Pay" button on subscriptions that are "on-hold" as they require payment?
+//			case 'reactivate':		// Hide "Reactive" button on subscriptions that are "on-hold"?
+			case 'cancel':			// Hide "Cancel" button on subscriptions that are "active" or "on-hold"?
+                $actions[$action_key]['name'] = "Cancel subscription";
+                break;
+            default:
+                error_log( '-- $action = ' . print_r( $action, true ) );
+                break;
+        }
+    }
+
+    return $actions;
+}
+add_filter( 'wcs_view_subscription_actions', 'act_subscriptions_button', 100, 2 );
+
