@@ -10,9 +10,16 @@ $context            = Timber::context();
 $context['sidebar'] = Timber::get_widgets( 'shop-sidebar' );
 
 if ( is_singular( 'product' ) ) {
+
+    $product_badge_position = get_field('product_badge_position');
+
     $context['post']    = Timber::get_post();
     $product            = wc_get_product( $context['post']->ID );
     $context['product'] = $product;
+    if ($product_badge_position and $product_badge_position != 'hidden'){
+        $context['image_product_badge'] = get_field('image_product_badge');
+        $context['product_badge_position'] =  $product_badge_position;
+    }
 
     // Get related products
     $related_limit               = wc_get_loop_prop( 'columns' );

@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .c-product-badge
+ */
+
+.c-product-badge {
+  display: block;
+  border: solid 2px rgba($brand-col-2, 0.2);
+  border-radius: 50%;
+  padding: 1px;
+  overflow: hidden;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-product-badge--
+ */
+
+.c-product-badge-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-product-badge--
+
+[class*=c-product-badge--] {
+  @extend .c-product-badge;
+}
+
+/*
+  BEM ELEMENTS .c-product-badge__
+ */
+
+.c-product-badge__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-product-badge--
+
+[class*=c-product-badge__header--] {
+  @extend .c-product-badge__header;
+}

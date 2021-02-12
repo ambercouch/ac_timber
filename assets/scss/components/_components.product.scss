@@ -64,6 +64,17 @@
     grid-column-start: 1;
     grid-column-end: 3;
   }
+  &product-badge{
+    position: absolute;
+    @include size(100px);
+    z-index: 10;
+    @include mq($from : desktop){
+    @include size(120px);
+    }
+  }
+  &feature-image{
+    position: relative;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-product--
@@ -89,3 +100,40 @@
     width: auto;
   }
 }
+
+
+.is-position-top-right{
+  &.c-product__product-badge{
+    right: - $act-unit-s;
+    top: - $act-unit-s;
+
+  }
+}
+
+.is-position-bottom-right{
+  &.c-product__product-badge{
+    right: - $act-unit-s;
+    bottom: 225px;
+
+  }
+}
+
+.is-position-bottom-left{
+  &.c-product__product-badge{
+    left: - $act-unit-s;
+    bottom: 225px;
+
+  }
+}
+
+.is-position-top-left{
+  &.c-product__product-badge{
+    left: - $act-unit-s;
+    top: - $act-unit-s;
+    .sale &{
+      left: 120px;
+    }
+  }
+}
+
+

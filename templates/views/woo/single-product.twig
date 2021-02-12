@@ -10,6 +10,13 @@
   <div itemscope itemtype="http://schema.org/Product" class="c-product{{ templateClass }} {{ post.class }}">
 
     <div class="c-product__feature-image{{ templateClass }}">
+      {% if image_product_badge and product_badge_position != 'hidden' %}
+        <div class="c-product__product-badge is-position-{{ product_badge_position }}">
+          <div class="c-product-badge--feature-image">
+            <img src="{{ image_product_badge.url }}" alt="" class="c-product-badge__img--feature-image ">
+          </div>
+        </div>
+      {% endif %}
       {% do action('woocommerce_before_single_product_summary') %}
 {#      <div class="c-feature-image--single-page">#}
 {#        <img class="c-feature-image__img--single-page" src="{{ post.thumbnail.src('shop_single') }}" />#}
