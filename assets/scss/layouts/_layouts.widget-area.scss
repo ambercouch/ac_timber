@@ -30,6 +30,9 @@
     flex-direction: column;
     align-items: center;
   }
+  &main-before{
+    display: flex;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-widget-area--
