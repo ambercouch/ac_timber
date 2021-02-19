@@ -11,9 +11,6 @@
  */
 
 .c-widget-- {
-  &type {
-    display: block;
-  }
   &footer {
     color: white;
     @include act-font-size($inuit-font-size-h6, 1.5);
@@ -44,6 +41,9 @@
     img{
       object-position: center;
     }
+  }
+  &main-before{
+    @include act-font-size($act-fs-5);
   }
 }
 
@@ -113,5 +113,18 @@
 .hide-title{
   .c-widget__header{
     display: none;
+  }
+}
+
+.c-widget{
+  ul{
+    @extend .o-list-bare;
+  }
+  li{
+    @extend .o-list-bare__item;
+    padding-left: 0;
+  }
+  a{
+    text-decoration: none;
   }
 }
