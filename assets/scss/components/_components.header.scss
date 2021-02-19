@@ -66,6 +66,16 @@
   @extend .c-header__heading;
 }
 
+.c-header__heading--{
+  &sidebar{
+    @include act-font-size($act-fs-4);
+    margin-bottom: $act-unit-s;
+  }
+  &main-before{
+    @include act-font-size($act-fs-4);
+    margin-bottom: $act-unit-s;
+  }
+}
 /*
  * .c-header extendable styles
  */
