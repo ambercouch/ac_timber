@@ -66,12 +66,14 @@ BEM BLOCK MODIFIERS .l-main--
 
     @include mq($from: tablet) {
       width: 65%;
+      flex: 0 0 65%;
       padding-right: $act-unit;
     }
 
     @include mq($from: desktop) {
       width: 75%;
-      padding-right: $act-unit-l;
+      flex: 0 0 75%;
+      padding--right: $act-unit-l;
     }
   }
 }

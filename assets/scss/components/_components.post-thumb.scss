@@ -30,6 +30,9 @@
   &menu-item{
     position: relative;
   }
+  &blog-list{
+    text-align: left;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--

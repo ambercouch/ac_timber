@@ -1,47 +1,49 @@
-{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postFormatClass = postFormat ? '-'~postFormat : '--blog-list' %}
 {% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
 <!-- content.twig -->
-{% block content %}
-  <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
+
+  <article id="post-{{ post.id }}" class="c-post-thumb{{ postFormatClass }} {{ post.class }}">
   {% if post.thumbnail %}
-    <div class="post{{ postFormatClass }}__feature-image">
-      <div class="feature-image">
-        <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
+    <div class="c-post-thumb{{ postFormatClass }}__feature-image">
+      <div class="c-feature-image--post-thumb">
+        <img class="c-feature-image__img" src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
   {%  endif %}
-
-    <header class="entry-header post__header{{ postFormatClass }} ">
-      <h2 class="entry-title post__heading{{ postFormatClass }}">
-        <span class="post__title{{ postFormatClass }}">
-          <a class="post__title-link{{ postFormatClass }}" href="{{ post.link }}">{{ post.title }}</a>
+<div class="c-post-thumb__header">
+  <header class="entry-header c-header--post-thumb{{ postFormatClass }} ">
+    <h2 class="entry-title c-header--heading--post-thumb{{ postFormatClass }}">
+        <span class="c-header__title">
+          <a class="c-header__title-link{{ postFormatClass }}" href="{{ post.link }}">{{ post.title }}</a>
         </span>
-      </h2>
-      <div class="entry-meta post__post-meta{{ postFormatClass }}">
-        {% include 'inc/post-meta.twig' %}
-      </div>
-    </header>
+    </h2>
+    <div class="entry-meta c-header__post-meta{{ postFormatClass }}">
+      {% include 'inc/post-meta.twig' %}
+    </div>
+  </header>
+</div>
+
 
     {% if  post.post_excerpt != '' %}
-      <div class="entry-content post{{ postFormatClass }}__body">
-        <div class="post__text--excerpt">
+      <div class="entry-content c-post-thumb__body">
+        <div class="c-post-thumb__excerpt">
           <p>{{ post.post_excerpt }}</p>
         </div>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <a href="{{ post.link }}" class="c-post-thumb__read-more">Read More</a>
       </div>
 
     {% else %}
-      <div class="entry-content post{{ postFormatClass }}__body">
-        <div class="post__text--truncated">
+      <div class="entry-content c-post-thumb__body">
+        <div class="c-post-thumb__excerpt--truncated">
           <p>{{ post.content | striptags | truncate(20) }}</p>
         </div>
         <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>
 
     {% endif %}
-    <footer class="post{{ postFormatClass }}__footer">
+    <footer class="c-post-thumb__footer">
       {% if (fn('comments_open', post) or post.comment_count > 0 ) %}
-      <a class="post{{ postFormatClass }}__comment-link" href="{{ post.link }}#comments">
+      <a class="c-post-thumb__comment-link" href="{{ post.link }}#comments">
         <span>{{ post.comment_count }} Comments </span>
       </a>
       {% endif %}
@@ -50,4 +52,3 @@
     </footer>
 
   </article>
-{% endblock %}
