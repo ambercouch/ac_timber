@@ -167,6 +167,22 @@ function eg_extend_subscription_expiration_options( $subscription_lengths ) {
     return $subscription_lengths;
 }
 
+add_action('wp', 'ac_remove_hidden_products');
+function ac_remove_hidden_products(){
+    global $post;
+    if (is_product()) {
+
+        $product = wc_get_product($post->ID);
+        $product_visibility =  $product->get_catalog_visibility();
+
+        if ($product_visibility === 'hidden') {
+            global $wp_query;
+            $wp_query->set_404();
+            status_header(404);
+        }
+        
+    }
+}
 
 
 
