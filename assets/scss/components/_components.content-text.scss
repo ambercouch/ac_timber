@@ -1,0 +1,64 @@
+/*
+  BEM BLOCK .c-content-text
+ */
+
+.c-content-text {
+
+  @include mq($from: tablet){
+    display: block;
+    font-size: 3vw;
+    line-height: 4vw;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .c-content-text--
+ */
+
+.c-content-text-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-content-text--
+
+[class*=c-content-text--] {
+  @extend .c-content-text;
+}
+
+/*
+  BEM ELEMENTS .c-content-text__
+ */
+
+.c-content-text__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-content-text--
+
+[class*=c-content-text__header--] {
+  @extend .c-content-text__header;
+}
