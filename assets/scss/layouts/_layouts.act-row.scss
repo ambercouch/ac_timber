@@ -1,0 +1,90 @@
+/*
+  BEM BLOCK .l-act-row
+ */
+
+.l-act-row {
+  display: flex;
+  *:last-child{
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/*
+  BEM BLOCK MODIFIER .l-act-row--
+ */
+
+.l-act-row-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-act-row--
+
+[class*=l-act-row--] {
+  @extend .l-act-row;
+}
+
+/*
+  BEM ELEMENTS .l-act-row__
+ */
+
+.l-act-row__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &col {
+    .l-content &{
+      flex-basis: 50% !important;
+    }
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-act-row--
+
+[class*=l-act-row__header--] {
+  @extend .l-act-row__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-act-row__col--
+
+[class*=l-act-row__col--] {
+  @extend .l-act-row__col;
+}
+
+.l-act-row__col--{
+  &text{
+    padding: $act-unit-s;
+    @include mq($from: tablet){
+      padding: $act-unit;
+    }
+    @include mq($from: desktop){
+      padding: $act-unit-l;
+    }
+    @include mq($from: wide){
+      padding: $act-unit-h;
+    }
+  }
+}
