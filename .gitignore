@@ -2,3 +2,5 @@
 /dist/
 /style.css
 /gulpfile.js
+
+assets/scss/_vendor.scss
