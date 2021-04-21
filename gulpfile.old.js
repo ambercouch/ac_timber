@@ -1,23 +1,19 @@
 var siteLocalUrl = 'phoenixsprinklers.local';
-var defaultBrowser = ['C:\\Program Files (x86)\\Firefox Developer Edition\\firefox.exe'];
+var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var uglify = require('gulp-uglify');
-var pump = require('pump');
-var concat = require('gulp-concat');
-// var browserify = require('gulp-browserify');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var sourcemaps = require('gulp-sourcemaps');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var pixrem = require('pixrem');
-var browserSync = require('browser-sync').create();
-var svgstore = require('gulp-svgstore');
-var svgmin = require('gulp-svgmin');
-var critical = require('critical');
-var stripDebug = require('gulp-strip-debug');
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const browserSync = require('browser-sync').create();
+const pipeline = require('readable-stream').pipeline;
+const uglify = require('gulp-uglify');
+const svgstore = require('gulp-svgstore');
+const svgmin = require('gulp-svgmin');
+const rename = require('gulp-rename');
 
 /*
  SOURCE FILES
@@ -37,6 +33,13 @@ var jsNpmScripts = [
     'flickity/dist/flickity.pkgd.js'
 ];
 
+var cssNpmScripts = [
+    //Add any vendor css scripts here that you want to include
+    //'flickity/dist/flickity.css'
+    'remodal/dist/remodal.css',
+    'remodal/dist/remodal-default-theme.css',
+];
+
 for (var i = 0; i < jsCustomScripts.length; i++) {
     //Add the default path
     jsCustomScripts[i] = jsPath + jsCustomScripts[i];
@@ -46,74 +49,77 @@ for (var i = 0; i < jsNpmScripts.length; i++) {
     jsNpmScripts[i] = jsNpmPath + jsNpmScripts[i];
 }
 
+for (var i = 0; i < cssNpmScripts.length; i++) {
+    //Add the default path
+    cssNpmScripts[i] = jsNpmPath + cssNpmScripts[i];
+}
+
 //Concat the vendor scripts with the custom scripts
-var jsScripts = jsNpmScripts.concat( jsCustomScripts);
+jsScripts = jsNpmScripts.concat(jsCustomScripts);
+
 
 
 /*
  GULP TASKS
  */
 
-//TASK: log - Just a test
-gulp.task('log', function () {
-    gutil.log('bleen it to the max');
-    gutil.log(jsScripts);
-});
-
 //TASK: scripts - Concat and uglify all the vendor and custom javascript
-gulp.task('js', function (cb) {
-    pump([
-            gulp.src(jsScripts),
-            concat('main.js'),
-            // browserify(),
-            uglify(),
-            gulp.dest('dist/js/')
-        ],
-        cb
+function scripts() {
+    return pipeline(
+        gulp.src(jsScripts),
+        concat('main.js'),
+        uglify(),
+        gulp.dest('dist/js/')
     );
-});
+}
 
-//TASK: sass - Concat and uglify all the vendor and custom javascript
-gulp.task('sass', function (cb) {
 
+function vendorStyles(){
+    return gulp.src(cssNpmScripts)
+        .pipe(concat('_vendor.scss'))
+        .pipe(gulp.dest('assets/scss/'));
+
+    //console.log("testing vendorStyles")
+
+}
+
+//compile scss into css
+function styles() {
     return gulp.src('assets/scss/main.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(postcss([ autoprefixer(), cssnano(), pixrem() ]))
-        .pipe(sourcemaps.write('.'))
+        .pipe(sass().on('error',sass.logError))
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(concat('style.css'))
-        .pipe(gulp.dest(''))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('.'))
         .pipe(browserSync.stream());
+}
 
-});
+function svgdefs() {
+    return gulp
+        .src('assets/images/svg/*.svg')
+        .pipe(svgmin())
+        .pipe(rename({prefix: 'icon-'}))
+        .pipe(svgstore())
+        .pipe(rename("defs.svg"))
+        .pipe(gulp.dest('templates/inc/'));
+}
 
-
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass','js','svgstore'], function () {
-
+function serve() {
     browserSync.init({
         proxy: siteLocalUrl,
         browser: defaultBrowser
     });
 
-    gulp.watch("assets/scss/**/*.scss", ['sass']);
-    gulp.watch("assets/images/svg/**/*.svg", ['svgstore']).on('change', browserSync.reload);
+    gulp.watch("assets/scss/**/*.scss",  styles);
+    gulp.watch("assets/images/svg/**/*.svg", svgdefs).on('change', browserSync.reload);
     gulp.watch("templates/**/*.twig").on('change', browserSync.reload);
-    gulp.watch("assets/js/**/*.js",['scripts']).on('change', browserSync.reload);
-});
+    gulp.watch("assets/js/**/*.js", scripts ).on('change', browserSync.reload);
 
-gulp.task('svgstore', function () {
-    return gulp
-        .src('assets/images/svg/*.svg')
-        .pipe(svgmin(function (file) {
-            return {
-                plugins: [{
-                    cleanupIDs: {
-                        minify: true
-                    }
-                }]
-            }
-        }))
-        .pipe(svgstore())
-        .pipe(gulp.dest('templates/inc'));
-});
+}
+
+exports.serve = serve;
+exports.styles = styles;
+exports.scripts = scripts;
+exports.svgdefs = svgdefs;
+exports.vendorStyles = vendorStyles;
