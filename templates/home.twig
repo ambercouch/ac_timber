@@ -16,9 +16,9 @@
 
     {% block content %}
       <div class="l-post-thumb-list">
-        <div class="l-post-thumb-list__list">
+        <div class="l-post-thumb-list__list--column">
               {% for post in posts %}
-                <div class="l-post-thumb-list__item">
+                <div class="l-post-thumb-list__item--column">
                   <div class="l-post-thumb-list__post-thumb">
                       {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
                       {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}

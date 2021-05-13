@@ -80,6 +80,12 @@
   @extend .l-post-thumb-list__list;
 }
 
+.l-post-thumb-list__list--{
+  &column{
+    flex-direction: column;
+  }
+}
+
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
 
 [class*=l-post-thumb-list__item--] {
@@ -98,6 +104,9 @@
     &:nth-child(2){
       background: $brand-col-5;
     }
+  }
+  &column{
+    width: 100%;
   }
 }
 
