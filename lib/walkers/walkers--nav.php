@@ -60,7 +60,7 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$indent = str_repeat( $t, $depth );
 
 		// Default class.
-		$classes = array( 'sub-menu' );
+		$classes = array( 'sub-menu c-nav-sub-menu__list' );
 
 		/**
 		 * Filters the CSS class(es) applied to a menu list element.
@@ -74,7 +74,7 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-		$output .= "{$n}{$indent}<ul $class_names>{$n}";
+		$output .= "{$n}{$indent}<div class='c-nav-menu__nav-sub-menu'><div class='c-nav-sub-menu'><ul $class_names>{$n}";
 	}
 
 	/**
@@ -97,7 +97,7 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 			$n = "\n";
 		}
 		$indent = str_repeat( $t, $depth );
-		$output .= "$indent</ul>{$n}";
+		$output .= "$indent</ul></div><!-- /.c-nav-sub-menu --></div><!-- /.c-nav-menu__sub-menu -->{$n}";
 	}
 
 	/**
@@ -125,9 +125,11 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 		}
 		$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
 
+		$item_class = ($depth < 1) ? ' c-nav-menu__item' : ' c-nav-sub-menu__item';
+
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'c-nav-menu__item--'.$args->menu->slug.' menu-item-' . $item->ID;
+		$classes[] = 'depth-'.$depth.$item_class.'--'.$args->menu->slug.' menu-item-' . $item->ID;
 
 		/**
 		 * Filters the arguments for a single nav menu item.
@@ -170,8 +172,11 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 
 		$output .= $indent . '<li' . $id . $class_names .'>';
 
-		$atts = array();
-		$atts['class'] = ! empty( $item->class ) ? $item->attr_class .' c-nav-menu__link--'.$args->menu->slug.' ' : 'c-nav-menu__link--'.$args->menu->slug;
+		$link_class = ($depth < 1) ? ' c-nav-menu__link' : ' c-nav-sub-menu__link';
+
+
+        $atts = array();
+		$atts['class'] = ! empty( $item->class ) ? $item->attr_class.$link_class.'--'.$args->menu->slug.' ' : $link_class.'--'.$args->menu->slug;
 		$atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
 		$atts['target'] = ! empty( $item->target )     ? $item->target     : '';
 		$atts['rel']    = ! empty( $item->xfn )        ? $item->xfn        : '';
