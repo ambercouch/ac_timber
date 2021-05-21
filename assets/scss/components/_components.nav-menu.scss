@@ -37,6 +37,9 @@
   &link{
     text-decoration: none;
   }
+  &nav-sub-menu{
+    display:none;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__list--
