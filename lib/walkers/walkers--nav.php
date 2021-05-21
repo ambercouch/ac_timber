@@ -15,6 +15,14 @@
  * @see Walker
  */
 class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
+
+    /**
+     * Somewhere to store the current item - AC 2021 05 21
+     *
+     * @var object
+     */
+    private $curItem;
+
 	/**
 	 * What the class handles.
 	 *
@@ -74,7 +82,7 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 		$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
 		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-		$output .= "{$n}{$indent}<div class='c-nav-menu__nav-sub-menu'><div class='c-nav-sub-menu'><ul $class_names>{$n}";
+		$output .= "{$n}{$indent}<div class='c-nav-menu__nav-sub-menu'  data-state='off' data-container='submenu_".$this->curItem->ID."' ><div class='c-nav-sub-menu'><ul $class_names>{$n}";
 	}
 
 	/**
@@ -115,6 +123,11 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 	 * @param int      $id     Current item ID.
 	 */
 	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+
+	    /*
+	     *  Store the $item globally on the class
+	     */
+        $this->curItem = $item;
 
 		if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
 			$t = '';
@@ -209,6 +222,8 @@ class Ac_Walker_Nav_Menu extends Walker_Nav_Menu {
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
+
+		$attributes = ($args->walker->has_children) ? $attributes . ' data-control="submenu_'.$item->ID.'" data-state="off" ' : $attributes;
 
 		/** This filter is documented in wp-includes/post-template.php */
 		$title = apply_filters( 'the_title', $item->title, $item->ID );
