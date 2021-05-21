@@ -15,55 +15,15 @@ ACTIMBER = {
 
             //$("[data-fitvid]").fitVids();
 
+            $('[data-control]').each(function () {
+                var controlId = $(this).attr('data-control')
+                if (controlId != ''){
+                    var showButton = $('[data-control='+controlId+']');
+                    var container = $('[data-container='+controlId+']');
+                    ACTIMBER.fn.open(container, showButton);
+                }
 
-            /**
-             * navigation.js
-             *
-             * Handles toggling the navigation menu for small screens.
-             */
-            //( function() {
-            //  var container, button, menu;
-            //
-            //  container = document.getElementById( 'main-navigation' );
-            //  if ( ! container ) {
-            //    return;
-            //  }
-            //
-            //
-            //  button = test;//document.getElementsByClassName( 'responsive-toggle' )[0];
-            //  if ( 'undefined' === typeof button ) {
-            //    button = container.querySelectorAll('.responsive-toggle')[0]
-            //  }
-            //  if ( 'undefined' === typeof button ) {
-            //    return;
-            //  }
-            //
-            //  menu = container.getElementsByTagName( 'ul' )[0];
-            //
-            //  // Hide menu toggle button if menu is empty and return early.
-            //  if ( 'undefined' === typeof menu ) {
-            //    button.style.display = 'none';
-            //    return;
-            //  }
-            //
-            //  menu.setAttribute( 'aria-expanded', 'false' );
-            //
-            //  if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-            //    menu.className += ' nav-menu';
-            //  }
-            //
-            //  button.onclick = function() {
-            //    if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-            //      container.className = container.className.replace( ' toggled', '' );
-            //      button.setAttribute( 'aria-expanded', 'false' );
-            //      menu.setAttribute( 'aria-expanded', 'false' );
-            //    } else {
-            //      container.className += ' toggled';
-            //      button.setAttribute( 'aria-expanded', 'true' );
-            //      menu.setAttribute( 'aria-expanded', 'true' );
-            //    }
-            //  };
-            //} )();
+            })
 
 
         }
@@ -78,6 +38,76 @@ ACTIMBER = {
         init: function () {
             //uncomment to debug
             //console.log('posts');
+        }
+    },
+    fn: {
+        open: function (container, showButton, parent, listParent) {
+            var elState = showButton.attr('data-state');
+            var eventActOpen = new Event('actOpen');
+            var eventActClose = new Event('actClose');
+            var containId = container.attr('data-container')
+            showButton.on('click', function (e) {
+                e.preventDefault();
+                console.log('clicker');
+                elState = showButton.attr('data-state');
+                if ('off' === elState) {
+                    showButton.attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('is-state-on');
+                    document.body.className += ' container-is-open ' + 'container-open-' + containId ;
+                    window.dispatchEvent(eventActOpen)
+
+                } else {
+                    console.log(document.body.className)
+                    $(showButton).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('is-state-on');
+                    document.querySelector('body').classList.remove('container-is-open');
+                    document.querySelector('body').classList.remove('container-open-' + containId);
+
+                    window.dispatchEvent(eventActClose);
+                }
+            });
+        },
+        actDefer: function (successMethod, failMethod, testMethod, pause, attempts) {
+            var defTest = function () {
+
+                if (typeof jQuery !== 'undefined') {
+                    return true
+                }
+                return false;
+
+            };
+            //What to do if test is false
+            var defFail = function () {
+                console.log('The deftest failed');
+            }
+            //What to do if test is true
+            var defSuccess = function () {
+                console.log('The deftest passed');
+            }
+            attempts = (attempts === undefined) ? false : attempts;
+            pause = (pause === undefined) ? 50 : pause;
+            testMethod = (testMethod === undefined) ? defTest : testMethod;
+            failMethod = (failMethod === undefined) ? defFail : failMethod;
+            successMethod = (successMethod === undefined) ? defSuccess : successMethod;
+
+
+            if (testMethod()) {
+                console.log('the testmethod')
+                successMethod();
+            } else {
+                console.log('the failmethod')
+                failMethod();
+                if (attempts === false || attempts > 0) {
+                    setTimeout(function () {
+                        attempts = (attempts === false) ? attempts : attempts - 1;
+                        ACTIMBER.fn.actDefer(successMethod, failMethod, testMethod, pause, attempts)
+                    }, pause);
+                }
+            }
         }
     }
 };
