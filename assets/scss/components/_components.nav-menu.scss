@@ -38,7 +38,21 @@
     text-decoration: none;
   }
   &nav-sub-menu{
-    display:none;
+    transition: max-height 0.15s ease-out;
+    height: auto;
+    overflow: hidden;
+
+    &[data-state=off]{
+      transition: max-height 0.15s ease-out;
+      display: block;
+      max-height: 0px;
+    }
+
+    &[data-state=on]{
+      transition: max-height 0.15s ease-out;
+      display: block;
+      max-height: 10em;
+    }
   }
 }
 
@@ -160,6 +174,10 @@
      &:hover{
        background: darken($brand-col-3, 20%);
      }
+     &[data-state=on]{
+       background: darken($brand-col-3, 20%);
+   }
+
    }
  }
 .c-nav-menu__list--social{
