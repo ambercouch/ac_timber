@@ -33,5 +33,12 @@
 {% endblock %}
 
 {% block belowContent %}
+  <div class="content__below some test">
+    {% if posts.pagination.pages is not empty %}
+      <div class="content__pagination">
+        {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+      </div>
+    {% endif %}
+  </div>
   <!-- removed comments in home.twig -->
 {% endblock %}
