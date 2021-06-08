@@ -164,15 +164,24 @@
 
 .c-nav-menu__link--{
   &primary{
+    position: relative;
     padding:$act-unit $act-unit-s 0 $act-unit-s;
     display: block;
     background: transparent;
     font-size: 1.2rem;
     font-weight: 500;
-    &:hover{
-      // color: $brand-col-2;
-      color: darken(white, 5%);
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -0.3rem;
+      width: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s;
+      border-bottom: 1px solid white;
     }
+
     .is-overlay-hero &{
       color:white;
     }
@@ -186,6 +195,14 @@
       }
     }
 
+    &:hover,
+    .current-menu-item & {
+      // color: $brand-col-2;
+
+      &::after {
+        width: 50%;
+      }
+    }
   }
   &secondary{
     @extend .o-btn;

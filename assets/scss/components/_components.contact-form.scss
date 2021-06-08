@@ -221,6 +221,8 @@
  */
 .wpcf7{
   //@extend .c-contact-form;
+  background-color: $act-grey-light;
+  padding: 2rem;
 }
 .wpcf7-text{
    @extend .c-contact-form__input;
@@ -256,12 +258,12 @@
 .wpcf7-submit{
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
-  padding:$act-unit-t;
-  background: $brand-col-3;
+  padding:$act-unit-s $act-unit-l;
+  background: $brand-col-2;
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-3, 5%);
+    background: darken($brand-col-2, 5%);
   }
 }
 

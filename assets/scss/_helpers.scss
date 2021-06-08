@@ -16,3 +16,86 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+// Can be added via a Class in the Gutenberg editor for the columns block
+.tile-columns {
+  margin: 2rem 0 0 0;
+
+  .wp-block-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: $brand-col-2;
+    color: white;
+    font-size: 1rem;
+
+    @media only screen and (min-width: 782px) {
+      min-height: 14rem;
+    }
+
+    @media only screen and (min-width: 992px) {
+      font-size: 1.2rem;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.tile-columns + .tile-columns {
+  margin-top: 0;
+}
+
+/**
+ * Override standard Gutenberg block styles
+ **/
+
+.wp-block-columns .wp-block-column {
+  // Remove the columns based on the Bootstrap breakpoints
+  @media only screen and (max-width: 781px) {
+    flex-basis: 100% !important;
+    margin-left: 0;
+  }
+
+  @media only screen and (min-width: 782px) {
+    &:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
+
+  ul:not(.gform_fields):not(.gfield_checkbox):not(.page-numbers):not(.gfield_radio) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    list-style-type: none;
+
+    > li {
+      position: relative;
+      margin-bottom: 0.6rem;
+      padding-left: 1.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.4rem;
+        width: 0.4rem;
+        height: 0.4rem;
+        background-color: $brand-col-2;
+        border-radius: 1px;
+      }
+    }
+  }
+}
+
+hr.wp-block-separator {
+  margin: 3rem 0;
+  border-color: $brand-col-2;
+}
