@@ -223,6 +223,11 @@
   //@extend .c-contact-form;
   background-color: $act-grey-light;
   padding: 2rem;
+
+  label + label {
+    display: block;
+    margin-top: 1rem;
+  }
 }
 .wpcf7-text{
    @extend .c-contact-form__input;
