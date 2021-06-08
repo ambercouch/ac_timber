@@ -212,19 +212,21 @@
     font-weight: 500;
   }
   &mobile{
-    //@extend .c-nav-menu__link--blocky;
+    @extend .c-nav-menu__link--blocky;
   }
   &blocky{
     padding:$act-unit-s;
     display: block;
-    background-color: darken($brand-col-3, 15%);
+    background-color: darken($brand-col-2, 15%);
+    color: white;
+    text-align: center;
     &:hover{
       color: white;
-      background-color: darken($brand-col-3, 20%);
+      background-color: darken($brand-col-2, 20%);
     }
     &:focus{
       color: white;
-      background-color: darken($brand-col-3, 20%);
+      background-color: darken($brand-col-2, 20%);
     }
   }
   &homepage-service{

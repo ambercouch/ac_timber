@@ -33,10 +33,17 @@ BEM ELEMENTS .l-site__
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: darken($brand-col-3, 10%);
+    background: darken($brand-col-2, 10%);
     z-index: 1000;
     opacity: 0;
     padding-top: $act-unit-h;
+    font-size: 1.4rem;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+
     &[data-state=off]{
       opacity: 0 !important;
       @include inuit-hidden-visually();
@@ -62,6 +69,12 @@ BEM ELEMENTS .l-site__
 }
 
 .l-site__masthead{
+  padding-bottom: 1rem;
+
+  @include mq($from : desktop){
+    padding-bottom: 0;
+  }
+
   &,
   a {
     color: white;
