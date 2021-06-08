@@ -11,6 +11,7 @@
  */
 
 .c-nav-menu-- {
+  border: 1px solid yellow;
   &primary {
    @include act-font-size($act-fs-6, 1.3);
 
@@ -163,12 +164,14 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    padding:$act-unit $act-unit-s 0 $act-unit-s;
     display: block;
     background: transparent;
+    font-size: 1.2rem;
     font-weight: 500;
     &:hover{
-      color: $brand-col-2;
+      // color: $brand-col-2;
+      color: darken(white, 5%);
     }
     .is-overlay-hero &{
       color:white;

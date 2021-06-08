@@ -68,6 +68,7 @@ BEM ELEMENTS .l-masthead__
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
+    justify-content: flex-start !important;
     @include mq($from : desktop){
       max-width: 100%;
     }
@@ -82,6 +83,8 @@ BEM ELEMENTS .l-masthead__
   &masthead-before-widgets{
     @extend .element--abso-layer;
     padding: $act-unit;
+    bottom: 0;
+    margin-bottom: 0;
   }
 }
 

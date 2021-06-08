@@ -41,8 +41,11 @@
     padding: $inuit-global-spacing-unit;
     padding-left: $act-unit;
     padding-right: $act-unit;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     background: transparent;
     color: white;
+    text-align: center;
     a{
       color: white;
     }
@@ -73,10 +76,11 @@
 
 .l-footer{
   a{
-    color: $brand-col-2;
+    // color: $brand-col-2;
     text-decoration: none;
     &:hover{
-      color: white;
+      // color: white;
+      text-decoration: underline;
     }
   }
 }
@@ -86,6 +90,3 @@
 [class*=l-footer__widget-area--] {
   @extend .l-footer__widget-area;
 }
-
-
-
