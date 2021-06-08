@@ -10,3 +10,13 @@ style.css.map
 templates/inc/defs.svg
 
 assets/scss/_vendor.scss
+
+# OS generated files
+
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
