@@ -67,7 +67,7 @@
     }
   }
 
-  ul:not(.gform_fields):not(.gfield_checkbox):not(.page-numbers):not(.gfield_radio) {
+  ul:not(.gform_fields):not(.gfield_checkbox):not(.page-numbers):not(.gfield_radio):not(.wp-block-social-links) {
     margin-top: 2rem;
     margin-bottom: 2rem;
     list-style-type: none;
