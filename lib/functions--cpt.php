@@ -46,7 +46,7 @@ function  act_cpt() {
         'rewrite'           => array( 'slug' => 'gallery-type' ),
     );
 
-    register_taxonomy( 'gallery_type', array( 'gallery-item' ), $args );
+    register_taxonomy( 'gallery-type', array( 'gallery-item' ), $args );
 
 //    $labels = array(
 //        'name' => _x('Testimonials', 'post type general name'),

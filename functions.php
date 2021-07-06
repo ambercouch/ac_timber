@@ -29,6 +29,10 @@ require_once get_template_directory() . '/lib/functions--cpt.php';
 
 require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
+require_once get_template_directory() . '/lib/single-tax-term/class.taxonomy-single-term.php';
+
+$custom_tax_mb = new Taxonomy_Single_Term( 'gallery-type', array( 'gallery-item' ), 'select' );
+
 require_once get_template_directory() . '/lib/functions--walkers.php';
 
 
