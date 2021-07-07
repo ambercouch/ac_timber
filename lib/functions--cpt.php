@@ -1,6 +1,31 @@
 <?php
 function  act_cpt() {
     $labels = array(
+        'name' => _x('Creators', 'post type general name'),
+        'singular_name' => _x('Creator', 'post type singular name'),
+        'add_new' => _x('Add New', 'creator'),
+        'add_new_item' => __('Add New Creator'),
+        'edit_item' => __('Edit Creator'),
+        'new_item' => __('New Creator'),
+        'all_items' => __('All Creators'),
+        'view_item' => __('View Creator'),
+        'search_items' => __('Search Creators'),
+        'not_found' => __('No creators found'),
+        'not_found_in_trash' => __('No creators found in the Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Creators'
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Cov19chronicles art work creators',
+        'public' => true,
+        'menu_position' => 7,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments','page-attributes' ),
+        'has_archive' => true,
+    );
+    register_post_type('creator', $args);
+
+    $labels = array(
         'name' => _x('Gallery Items', 'post type general name'),
         'singular_name' => _x('Gallery Item', 'post type singular name'),
         'add_new' => _x('Add New', 'gallery item'),
@@ -47,6 +72,18 @@ function  act_cpt() {
     );
 
     register_taxonomy( 'gallery-type', array( 'gallery-item' ), $args );
+
+    $labels = array(
+        'name'              => _x( 'Creator', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Creator', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Creators' ),
+        'all_items'         => __( 'All Creators' ),
+        'edit_item'         => __( 'Edit Creator' ),
+        'update_item'       => __( 'Update Creator' ),
+        'add_new_item'      => __( 'Add New Creator' ),
+        'new_item_name'     => __( 'New Creator' ),
+        'menu_name'         => __( 'Creators' ),
+    );
 
 //    $labels = array(
 //        'name' => _x('Testimonials', 'post type general name'),
