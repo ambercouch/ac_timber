@@ -170,6 +170,35 @@ function  act_cpt() {
 
     register_taxonomy( 'collection-tag', array( 'gallery-collection' ), $args );
 
+    /*
+    * CPT - Team members
+    */
+
+    $labels = array(
+        'name' => _x('Team Members', 'post type general name'),
+        'singular_name' => _x('Team Members', 'post type singular name'),
+        'add_new' => _x('Add New', 'team member'),
+        'add_new_item' => __('Add New Gallery collection'),
+        'edit_item' => __('Edit Team Member'),
+        'new_item' => __('New Team Member'),
+        'all_items' => __('All Team Members'),
+        'view_item' => __('View Team Member'),
+        'search_items' => __('Search Team Members'),
+        'not_found' => __('No team members found'),
+        'not_found_in_trash' => __('No gallery collects found in the Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Team Members'
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Cov19chronicles collections of art work',
+        'public' => true,
+        'menu_position' => 5,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments','page-attributes' ),
+        'has_archive' => true,
+    );
+    register_post_type('team-member', $args);
+
 
 }
 
