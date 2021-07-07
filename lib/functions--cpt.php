@@ -114,6 +114,62 @@ function  act_cpt() {
 
     register_taxonomy( 'gallery-tag', array( 'gallery-item' ), $args );
 
+    /*
+    * CPT - Gallery Collections
+    */
+
+    $labels = array(
+        'name' => _x('Gallery Collections', 'post type general name'),
+        'singular_name' => _x('Gallery Collections', 'post type singular name'),
+        'add_new' => _x('Add New', 'gallery collection'),
+        'add_new_item' => __('Add New Gallery collection'),
+        'edit_item' => __('Edit Gallery Collection'),
+        'new_item' => __('New Gallery Collection'),
+        'all_items' => __('All Gallery Collections'),
+        'view_item' => __('View Gallery Collection'),
+        'search_items' => __('Search Gallery Collections'),
+        'not_found' => __('No gallery collections found'),
+        'not_found_in_trash' => __('No gallery collects found in the Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Collections'
+    );
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Cov19chronicles collections of art work',
+        'public' => true,
+        'menu_position' => 5,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments','page-attributes' ),
+        'has_archive' => true,
+    );
+    register_post_type('gallery-collection', $args);
+
+    /*
+    * CPT TAX - Gallery Colletion - Collection Tags
+    */
+
+    $labels = array(
+        'name'              => _x( 'Collection Tags', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Collection Tag', 'taxonomy singular name' ),
+        'search_Collections'      => __( 'Search Collection Tags' ),
+        'all_Collections'         => __( 'All Collection Tags' ),
+        'edit_Collection'         => __( 'Edit Collection Tag' ),
+        'update_Collection'       => __( 'Update Collection Tag' ),
+        'add_new_Collection'      => __( 'Add New Collection Tag' ),
+        'new_Collection_name'     => __( 'New Collection Tag' ),
+        'menu_name'         => __( 'Gallery Collection Tags' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'collection-tag' ),
+    );
+
+    register_taxonomy( 'collection-tag', array( 'gallery-collection' ), $args );
+
 
 }
 
