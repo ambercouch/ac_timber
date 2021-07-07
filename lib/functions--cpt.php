@@ -1,5 +1,10 @@
 <?php
 function  act_cpt() {
+
+    /*
+     * CPT - Creators
+     */
+
     $labels = array(
         'name' => _x('Creators', 'post type general name'),
         'singular_name' => _x('Creator', 'post type singular name'),
@@ -24,6 +29,11 @@ function  act_cpt() {
         'has_archive' => true,
     );
     register_post_type('creator', $args);
+
+
+    /*
+     * CPT - Gallery Items
+     */
 
     $labels = array(
         'name' => _x('Gallery Items', 'post type general name'),
@@ -50,6 +60,10 @@ function  act_cpt() {
     );
     register_post_type('gallery-item', $args);
 
+    /*
+     * CPT TAX - Gallery Item - Item Type
+     */
+
     $labels = array(
         'name'              => _x( 'Item Type', 'taxonomy general name' ),
         'singular_name'     => _x( 'Item Type', 'taxonomy singular name' ),
@@ -73,43 +87,33 @@ function  act_cpt() {
 
     register_taxonomy( 'gallery-type', array( 'gallery-item' ), $args );
 
+    /*
+    * CPT TAX - Gallery Item - Item Tags
+    */
+
     $labels = array(
-        'name'              => _x( 'Creator', 'taxonomy general name' ),
-        'singular_name'     => _x( 'Creator', 'taxonomy singular name' ),
-        'search_items'      => __( 'Search Creators' ),
-        'all_items'         => __( 'All Creators' ),
-        'edit_item'         => __( 'Edit Creator' ),
-        'update_item'       => __( 'Update Creator' ),
-        'add_new_item'      => __( 'Add New Creator' ),
-        'new_item_name'     => __( 'New Creator' ),
-        'menu_name'         => __( 'Creators' ),
+        'name'              => _x( 'Item Tags', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Item Tag', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Item Tags' ),
+        'all_items'         => __( 'All Item Tags' ),
+        'edit_item'         => __( 'Edit Item Tag' ),
+        'update_item'       => __( 'Update Item Tag' ),
+        'add_new_item'      => __( 'Add New Item Tag' ),
+        'new_item_name'     => __( 'New Item Tag' ),
+        'menu_name'         => __( 'Gallery Item Tags' ),
     );
 
-//    $labels = array(
-//        'name' => _x('Testimonials', 'post type general name'),
-//        'singular_name' => _x('Testimonial', 'post type singular name'),
-//        'add_new' => _x('Add New', 'Testimonial'),
-//        'add_new_item' => __('Add New Testimonial'),
-//        'edit_item' => __('Edit Testimonial'),
-//        'new_item' => __('New Testimonial'),
-//        'all_items' => __('All Testimonials'),
-//        'view_item' => __('View Testimonial'),
-//        'search_items' => __('Search Testimonials'),
-//        'not_found' => __('No Testimonials found'),
-//        'not_found_in_trash' => __('No Testimonials found in the trash'),
-//        'parent_item_colon' => '',
-//        'menu_name' => 'Testimonials'
-//    );
-//    $args = array(
-//        'labels' => $labels,
-//        'menu_icon' => 'dashicons-format-quote',
-//        'description' => 'Testimonials offered',
-//        'public' => true,
-//        'menu_position' => 20,
-//        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
-//        'has_archive' => 'testimonial'
-//    );
-//    register_post_type('testimonial', $args);
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'gallery-tag' ),
+    );
+
+    register_taxonomy( 'gallery-tag', array( 'gallery-item' ), $args );
+
 
 }
 
