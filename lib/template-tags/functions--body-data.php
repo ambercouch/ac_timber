@@ -3,27 +3,40 @@
 function _act_get_body_data() {
     global $post;
     $body_data =array();
-//  echo 'pid';
-//
+
     $post_type = get_post_type(get_the_ID());
 
     if (is_archive()){
         $post_type = "archive";
     }
 
+    if (is_home()) {
+        $post_type = 'blog';
+    }
+
     if (is_front_page()) {
         $post_type = 'home';
     }
 
+    if (is_404()) {
+        $post_type = '404';
+    }
+
     $body_data['post-type'] = $post_type;
 
-    $post_slug = $post->post_name;
+    if (is_object($post)){
+        $post_slug = $post->post_name;
+    }else{
+        $post_slug = 'unknown';
+    }
 
     if (is_archive() and isset(get_queried_object()->taxonomy)){
         $tax = get_taxonomy( get_queried_object()->taxonomy );
         $post_slug = sanitize_title( $tax->labels->singular_name);
-    }elseif(is_archive() and !isset(get_queried_object()->taxonomy)){
+    }elseif(is_archive() and get_queried_object() and !isset(get_queried_object()->taxonomy)){
         $post_slug = get_queried_object()->name;
+    }else{
+        //$post_slug = "archive-date";
     }
 
     if (is_home()) {
