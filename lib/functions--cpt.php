@@ -56,7 +56,8 @@ function  act_cpt() {
         'public' => true,
         'menu_position' => 5,
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments','page-attributes' ),
-        'has_archive' => true,
+        'has_archive' => 'gallery',
+        'rewrite' => array( 'slug' => 'gallery/art-work' )
     );
     register_post_type('gallery-item', $args);
 
@@ -82,7 +83,8 @@ function  act_cpt() {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'gallery-type' ),
+        'has_archive'       => 'gallery',
+        'rewrite'           => array( 'slug' => 'gallery','with_front' => false ),
     );
 
     register_taxonomy( 'gallery-type', array( 'gallery-item' ), $args );

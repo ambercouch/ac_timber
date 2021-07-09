@@ -1,0 +1,72 @@
+<article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
+
+  {% if(post.thumbnail or acSettings.defaultImage) %}
+    <div class="l-single-artwork__feature-image{{ templateClass }} ">
+      <div class="c-feature-image--single-page">
+        {% if(post.thumbnail.src()) %}
+          <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+        {% else %}
+          <img src="{{acSettings.defaultImage}}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+  {% if not hidePageTitle %}
+    <div class="l-single-page__header">
+    <header class="entry-header c-header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+      <h1 class="entry-title c-header__heading{{ templateClass }} ">
+        <span class="entry-title c-header__title{{ templateClass }} ">{{ post.title }}</span>
+      </h1>
+    </header>
+    </div>
+  {% endif %}
+    <div class="entry-content l-single-page__body{{ templateClass }} ">
+
+
+      {%  set have_rows = fn( 'have_rows','youtube_videos') %}
+      {% if have_rows %}
+      {% for item in post.meta('youtube_videos') %}
+        {% set the_row = fn('the_row') %}
+        {%  set video_url = fn('get_sub_field','youtube_id',false,false) %}
+        {% set video_url_array  = video_url | split('/')  %}
+        {% set video_id  = video_url_array[3]  %}
+
+        {% set video_title = (item.video_title) ? item.video_title : post.title ~ ' <small>(video ' ~ loop.index ~ ')</small>'%}
+        {% set video_creator = (item.creators_name) ? '<span>Video by </span><span>: </span><span>' ~ item.creators_name ~ '</span>' : '' %}
+        {% set video_caption = (item.video_caption) ? item.video_caption : '' %}
+
+        {% if item.video_thumbnail %}
+          {% set video_thumb = Image(item.video_thumbnail).src |resize(640, 360) %}
+        {% else %}
+          {% set video_thumb = "https://img.youtube.com/vi/" ~ video_url_array[3] ~ "/hqdefault.jpg" %}
+        {% endif %}
+
+
+
+        {{ video_title }}
+
+        <iframe
+            loading="lazy"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/{{ video_url_array[3] }}"
+            srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube.com/embed/{{ video_url_array[3] }}?autoplay=1><img src='{{ video_thumb}}' alt=''><span>▶</span></a>"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="{{ post.title }}"
+        ></iframe>
+
+        {{ video_creator }}
+
+        {{ video_caption }}
+
+      {% endfor %}
+      {% endif %}
+
+    </div>
+
+    <footer class="l-single-page__footer{{ templateClass }} ">
+    </footer>
+
+</article>

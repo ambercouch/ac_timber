@@ -1,16 +1,15 @@
 {% extends "base.twig" %}
 
 {% block before_head %}
-  <!-- home.twig -->
+  <!-- archive-gallery-item.twig -->
 {% endblock %}
 
 {% block hero %}
-  {% if removeHero %}
-  {% else %}
-  <section id="siteHero" class="l-site__hero">
-    {% include 'inc/hero.twig' ignore missing %}
-  </section>
-  {% endif %}
+
+{% endblock %}
+
+{% block before_main %}
+  {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}
 {% endblock %}
 
 
@@ -42,12 +41,8 @@
   <!-- removed comments in home.twig -->
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = false %}
 
 {% block sidebar %}
-  <div id="sidebar" class="c-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
-  </div>
+  <!-- sidebar removed -->
 {% endblock %}
