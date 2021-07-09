@@ -3,6 +3,13 @@
 // update the default comment form fields
 add_filter( 'comment_form_default_fields', 'act_comment_form_fields' );
 function act_comment_form_fields( $fields ) {
+    $commenter = wp_get_current_commenter();
+    $req = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $html_req 	= ( $req ? " required='required'" : '' );
+    $html5    	= current_theme_supports( 'html5', 'comment-form' );
+    $commenter	= wp_get_current_commenter();
+
     $fields   =  array(
         'author' => '<div class="comment-respond__input-wrapper--author">' . '<label class="comment-respond__label" for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
             '<input class="comment-respond__input--text" placeholder="' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
@@ -28,6 +35,7 @@ function act_comment_form_defaults( $defaults ) {
 //Reorder the form fields
 add_filter( 'comment_form_fields', 'act_reorder_comment_form_fields' );
 function act_reorder_comment_form_fields( $fields ) {
+
     //save the comment field
     $comment_field = $fields['comment'];
     //Unset the comment field
@@ -44,7 +52,7 @@ $args = array(
     'must_log_in'          => '<div class="comment-respond__log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</div>',
     /** This filter is documented in wp-includes/link-template.php */
     'logged_in_as'         => '<div class="comment-respond__logged-in">' . sprintf( __( '<a href="%1$s" aria-label="Logged in as %2$s. Edit your profile.">Logged in as %2$s</a>. <a href="%3$s">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink() ) ) ) . '</div>',
-//    'comment_notes_before' => '<div class="comment-respond__notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span> </div>',
+    //    'comment_notes_before' => '<div class="comment-respond__notes"><span id="email-notes">' . __( 'Your email address will not be published.' ) . '</span> </div>',
     'comment_notes_before' => '',
     'comment_notes_after'  => '',
     'class_form'           => 'comment-respond__form',
@@ -72,6 +80,9 @@ function act_get_comment_author_link( $return, $author, $comment_comment_id ){
 add_filter( 'cancel_comment_reply_link', 'act_cancel_comment_reply_link');
 function act_cancel_comment_reply_link( $formatted_link ){
     //Add class to cancel-reply-link
+    $link = isset($link) ? $link : '';
+    $style = isset($style) ? $style : '';
+    $text = isset($text) ? $text : '';
     $formatted_link = '<a class="comment__cancel-reply-link" rel="nofollow" id="cancel-comment-reply-link" href="' . $link . '"' . $style . '>' . $text . '</a>';
     return $formatted_link;
 }
