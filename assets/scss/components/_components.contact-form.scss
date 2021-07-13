@@ -73,6 +73,10 @@
     width: 100%;
     border: none;
     padding:$act-unit-t;
+    &::placeholder{
+      opacity: 0.5;
+      @include act-font-size($act-fs-6);
+    }
   }
   &label{
     display: block;
@@ -80,6 +84,8 @@
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
+    display: none;
+    color: $brand-col-3;
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -97,10 +103,16 @@
   }
   &content {
     display: block;
+    padding: $act-unit;
+    background: $brand-col-1;
     //@extend .c-contact-form__content--placeholder-blocks;
   }
   &footer {
     display: block
+  }
+  &textarea{
+    display: block;
+
   }
 }
 
@@ -267,4 +279,7 @@
 
 .wpcf7-form-control-wrap{
   //@extend .c-contact-form__input-wrapper;
+}
+.wpcf7-textarea{
+  @extend .c-contact-form__textarea;
 }
