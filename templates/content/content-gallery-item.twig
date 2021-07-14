@@ -1,0 +1,56 @@
+{% set postFormatClass =  galleryType ? '--' ~ galleryType | sanitize : '--no-type' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+{% set postImgSrc = post.thumbnail ?  post.thumbnail.src('feature500') : 'https://via.placeholder.com/500'%}
+<!-- content-gallery-item.twig -->
+
+  <article id="post-{{ post.id }}" class="c-gallery-item-thumb{{ postFormatClass }} {{ post.class }}">
+
+    <div class="c-gallery-item-thumb__feature-image{{ postFormatClass }}">
+      <div class="c-feature-image--gallery-item-thumb">
+        <img class="c-feature-image__img" src="{{ postImgSrc }}" alt="{{ post.title }}"/>
+      </div>
+    </div>
+
+<div class="c-gallery-item-thumb__header{{ postFormatClass }}">
+  <header class="entry-header c-header--gallery-item-thumb ">
+    <h2 class="entry-title c-header--heading--gallery-item-thumb">
+        <span class="c-header__title--gallery-item-thumb">
+          <a class="c-header__title-link--gallery-item-thumb" href="{{ post.link }}">{{ post.title }}</a>
+        </span>
+    </h2>
+    <div class="entry-meta c-header__post-meta--gallery-item-thumb">
+      {% include 'inc/post-meta-gallery-item.twig' %}
+    </div>
+  </header>
+</div>
+
+
+{#    {% if  post.post_excerpt != '' %}#}
+{#      <div class="entry-content c-gallery-item-thumb__body">#}
+{#        <div class="c-gallery-item-thumb__excerpt">#}
+{#          <p>{{ post.post_excerpt }}</p>#}
+{#        </div>#}
+{#        <a href="{{ post.link }}" class="c-gallery-item-thumb__read-more">Read More</a>#}
+{#      </div>#}
+
+{#    {% else %}#}
+{#      <div class="entry-content c-gallery-item-thumb__body">#}
+{#        <div class="c-gallery-item-thumb__excerpt--truncated">#}
+{#          <p>{{ post.content | striptags | truncate(20) }}</p>#}
+{#        </div>#}
+{#        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>#}
+{#      </div>#}
+
+{#    {% endif %}#}
+
+{#    <footer class="c-gallery-item-thumb__footer">#}
+{#      #}
+{#      {% if (fn('comments_open', post) or post.comment_count > 0 ) %}#}
+{#      <a class="c-gallery-item-thumb__comment-link" href="{{ post.link }}#comments">#}
+{#        <span>{{ post.comment_count }} Comments </span>#}
+{#      </a>#}
+{#      {% endif %}#}
+{#      #}
+{#    </footer>#}
+
+  </article>

@@ -46,6 +46,10 @@
   &title {
     display: inline;
   }
+  &title-link {
+    display: inline;
+    text-decoration: none;
+  }
 
   &link {
     display: inline
@@ -53,6 +57,9 @@
 
   &content {
     display: block
+  }
+  &post-meta{
+    display: block;
   }
 
   &footer {
@@ -85,4 +92,26 @@
   background: $brand-col-3;
   color: white;
   padding: $act-unit;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__title-link--
+
+[class*=c-header__title-link--] {
+  @extend .c-header__title-link;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__post-meta--
+
+[class*=c-header__post-meta--] {
+  @extend .c-header__post-meta;
+}
+
+.c-header__post-meta--{
+  &gallery-item-thumb{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: $act-unit;
+    margin-top: $act-unit;
+  }
 }

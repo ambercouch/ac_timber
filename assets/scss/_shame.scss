@@ -3,7 +3,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.gallery-item{
+.gallery-item:not([class*=c-gallery-item]){
   padding: $act-unit-t;
   padding-top: 0;
   margin: 1%;

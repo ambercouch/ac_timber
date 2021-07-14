@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .c-gallery-item-thumb
+ */
+
+.c-gallery-item-thumb {
+  display: block;
+  position: relative;
+  text-align: left;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-gallery-item-thumb--
+ */
+
+.c-gallery-item-thumb-- {
+    &video {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-gallery-item-thumb--
+
+[class*=c-gallery-item-thumb--] {
+  @extend .c-gallery-item-thumb;
+}
+
+/*
+  BEM ELEMENTS .c-gallery-item-thumb__
+ */
+
+.c-gallery-item-thumb__ {
+  &header {
+    display:block;
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &title-link {
+    display: inline;
+    text-decoration: none;
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-gallery-item-thumb__header--
+
+[class*=c-gallery-item-thumb__header--] {
+  @extend .c-gallery-item-thumb__header;
+}
+

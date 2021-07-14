@@ -17,10 +17,12 @@
       <div class="l-post-thumb-list">
         <div class="l-post-thumb-list__list--column">
               {% for post in posts %}
+                {% set galleryTypes = fn('wp_get_post_terms', post.id, 'gallery-type') %}
+                {% set galleryType =  galleryTypes[0].name %}
                 <div class="l-post-thumb-list__item--column">
                   <div class="l-post-thumb-list__post-thumb">
                       {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-                      {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
+                      {% include ['content/content-gallery-item.twig', 'content/content.twig'] %}
                   </div>
                 </div>
               {% endfor %}
