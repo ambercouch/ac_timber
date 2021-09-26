@@ -1,29 +1,21 @@
-<article {{ fn('post_class', ['$classes', 'entry'] ) }}>
-
-  <div class="media">
-
-    <div class="media-content">
+{% set modClass = (postType) ? '--'~postType : '' %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
 
 
-      <div class="media-figure {% if not post.thumbnail %}placeholder{% endif %}">
-        <a href="{{ post.link }}">
-          {% if post.thumbnail %}
-            <img src="{{ post.thumbnail.src|resize(post_thumb_size[0], post_thumb_size[1]) }}" />
-          {% else %}
-            <span class="thumb-placeholder"><i class="icon-camera"></i></span>
-          {% endif %}
-        </a>
-      </div>
+<article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+  <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+  {% if post.meta('custom_post_icon') %}
+  <div class="c-post-thumb__post-icon">
+              <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+  </div>
+  {% endif %}
 
-      {% if post.title %}
-        <h3 class="entry-title"><a href="{{ post.link }}">{{ post.title }}</a></h3>
-      {% else %}
-        <h3 class="entry-title"><a href="{{ post.link }}">{{ fn('the_title') }}</a></h3>
+      {% if headerTitle != false %}
+        <div class="c-post-thumb__header{{ modClass }}">
+          {% include "inc/header.twig" %}
+        </div>
       {% endif %}
 
-
-    </div>
-
-  </div>
+  </a>
 
 </article>
