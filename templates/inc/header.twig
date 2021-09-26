@@ -1,0 +1,11 @@
+{% set modClass = (postType) ? '--'~postType : '' %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+<div class="c-header{{ modClass }}">
+<header class="c-header__header{{ modClass }}">
+  <h3 class="c-header__heading{{ modClass }}">
+            <span class="c-header__title{{ modClass }}">
+               {{ headerTitle }}
+            </span>
+  </h3>
+</header>
+</div>
