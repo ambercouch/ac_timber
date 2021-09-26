@@ -33,6 +33,11 @@
   &blog-list{
     text-align: left;
   }
+  &service{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--
@@ -85,14 +90,18 @@
   &footer {
     display: block
   }
-  &link-title{
+  &title-link{
     color: black;
   }
+  &thumb-link{
+    text-decoration: none;
+  }
   &post-icon{
-    margin-bottom: $act-unit-l * 1;
+    margin-bottom: 1vw;
   }
   &post-icon-img{
-    height: 150px !important;
+   max-width: 100%;
+    max-height: 100%;
   }
   &excerpt{
     margin-top: auto;
@@ -167,5 +176,29 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__post-icon-img--
+
+[class*=c-post-thumb__post-icon-img--] {
+  @extend .c-post-thumb__post-icon-img;
+}
+
+.c-post-thumb__post-icon-img--{
+  &service {
+    @include size(33%);
+    fill: $brand-col-6;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__thumb-link--
+
+[class*=c-post-thumb__thumb-link--] {
+  @extend .c-post-thumb__thumb-link;
+}
+
+.c-post-thumb__thumb-link--{
+  &service {
+    color: $brand-col-6;
+  }
+}
 
 

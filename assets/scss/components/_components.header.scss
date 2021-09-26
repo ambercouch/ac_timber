@@ -4,7 +4,6 @@
 
 .c-header {
   display: block;
-  text-transform: uppercase;
 }
 
 /*
@@ -28,6 +27,12 @@
   @extend .c-header;
 }
 
+.c-header--{
+  &service{
+    color: $brand-col-6;
+  }
+}
+
 /*
   BEM ELEMENTS .c-header__
  */
@@ -35,12 +40,11 @@
 .c-header__ {
   &header {
     display: block;
-
   }
 
   &heading {
     display: block;
-    @include act-font-size($act-fs-1);
+   font-size: 3vw
   }
 
   &title {
@@ -74,6 +78,9 @@
   &main-before{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
+  }
+  &service{
+    color: $brand-col-6;
   }
 }
 /*
