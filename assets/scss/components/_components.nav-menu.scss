@@ -39,6 +39,7 @@
 .c-nav-menu__ {
  &list{
    @extend .o-list-bare;
+   line-height: 1;
    margin-bottom: 0;
    justify-content: flex-end;
  }
@@ -104,6 +105,9 @@
   &primary{
   @extend .o-list-flex--center;
   }
+  &hero{
+    @extend .o-list-flex--center;
+  }
   &pagination{
     @extend .o-flex-split--last;
   }
@@ -129,7 +133,7 @@
     margin-left: 0;
   }
   &hero{
-    margin-right: $act-unit;
+    //margin-right: $act-unit;
   }
   &social{
     margin-right: $act-unit-l;
@@ -187,7 +191,7 @@
   &secondary{
     @extend .o-btn;
     @extend .o-btn--rounded;
-    @extend .o-btn--brand-2;
+    @extend .o-btn--b2;
     text-transform: uppercase;
     font-weight: 500;
   }

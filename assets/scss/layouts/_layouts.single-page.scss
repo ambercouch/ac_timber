@@ -52,8 +52,8 @@
   }
 }
 
-[class*='single-page--']{
-  @extend .post;
+[class*='l-single-page--']{
+  @extend .l-single-page;
 }
 
 [class*='single-page__header--']{
