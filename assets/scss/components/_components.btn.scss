@@ -1,16 +1,22 @@
 /*
+<div class="c-btn">
+    <a class="c-btn__link href="xxx">
+       <span class="c-btn__label >Click Me</span>
+    </a>
+</div>
+
   BEM BLOCK .c-btn
+
  */
 
 .c-btn {
   @extend .o-btn;
   &:hover, &:focus{
-    color: white;
-    background: darken($brand-col-1,10%);
+    @extend .c-btn;
+    filter: brightness(90%);
   }
   &:active{
-    color: white;
-    background: darken($brand-col-1,20%);
+    filter: brightness(80%);
   }
 }
 
@@ -22,26 +28,31 @@
   &type {
     display: block
   }
-  &n{
-    @extend .c-btn;
-    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
-    @include act-font-size($act-fs-4, 1);
-    text-transform: none;
-  }
-  &ghost{
-    background: transparent !important;
-    border: solid 1px;
-    &.o-btn--brand-1{
-      &:hover{
-        background: rgba($brand-col-1, .8) !important;
-      }
-    }
-    &.o-btn--brand-2{
-      &:hover{
-        background: rgba($brand-col-2, .8) !important;
+  &primary{
+    @extend .o-btn--m;
+    @extend .o-btn--b1;
+    &[class*=__item]{
+      padding: 0 !important;
+      //background: red;
+      a{
+        @extend .o-btn--m
       }
     }
   }
+  &secondary{
+    @extend .o-btn--m;
+    border: solid;
+    color: $brand-col-1;
+    &[class*=__item]{
+      padding: 0 !important;
+      //background: red;
+      a{
+        @extend .o-btn--m;
+        color: $brand-col-1;
+      }
+    }
+  }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--
@@ -55,28 +66,30 @@
  */
 
 .c-btn__ {
-  &header {
-    display: block
-  }
-  &heading {
-    display: block
-  }
-  &title {
-    display: inline;
-  }
   &link {
-    display: inline
+    display: block;
   }
-  &content {
-    display: block
-  }
-  &footer {
-    display: block
+  &label{
+    display: inline-block;
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .c-btn--
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__link--
 
-[class*=c-btn__header--] {
-  @extend .c-btn__header;
+[class*=c-btn__link--] {
+  @extend .c-btn__link;
+}
+
+.c-btn__link--{
+
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__label--
+
+[class*=c-btn__label--] {
+  @extend .c-btn__label;
+}
+
+.c-btn__label--{
+
 }
