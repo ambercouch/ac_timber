@@ -4,7 +4,8 @@
   <ul class="l-post-thumb-list__list--project">
     {% for post in posts %}
       <li class="l-post-thumb-list__item--project">
-        {% include ["inc/post-thumb.twig"] %}
+        {% set headerTitle = (post.meta('project_thumb_title') ? post.meta('project_thumb_title') : post.title) %}
+        {% include ["inc/post-slide.twig"] with {'postType' : 'project', 'headerTitle' : headerTitle} %}
       </li>
     {% endfor %}
   </ul>
