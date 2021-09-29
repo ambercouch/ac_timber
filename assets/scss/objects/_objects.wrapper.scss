@@ -14,6 +14,13 @@
   &type {
     display: block
   }
+  &flex-col-centre{
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .o-wrapper--
