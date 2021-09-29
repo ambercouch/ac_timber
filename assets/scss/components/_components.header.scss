@@ -16,8 +16,16 @@
   }
   &page{
 
-
-
+  }
+  &project{
+    text-align: center;
+    &:after{
+      content : '';
+      display: block;
+      @include size(3px, 100px);
+      background: $brand-col-1;
+      margin: 0 auto $act-unit;
+    }
   }
 }
 
@@ -44,15 +52,23 @@
 
   &heading {
     display: block;
-   font-size: 3vw
+   font-size: 3vw;
+    text-decoration: none !important;
+  }
+  &sub-heading{
+    font-size: 2vw;
+    .c-header__header--project &{
+      text-decoration: underline;
+    }
   }
 
   &title {
     display: inline;
+    text-decoration: none !important;
   }
 
   &link {
-    display: inline
+    display: inline;
   }
 
   &content {
@@ -83,6 +99,36 @@
     color: $brand-col-6;
   }
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__title--
+
+[class*=c-header__title--] {
+  @extend .c-header__title;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__link--
+
+[class*=c-header__link--] {
+  @extend .c-header__link;
+}
+
+.c-header__link--{
+  &slide{
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__sub-heading--
+
+[class*=c-header__sub-heading--] {
+  @extend .c-header__sub-heading;
+}
+
+.c-header__sub-heading--{
+
+}
+
+
 /*
  * .c-header extendable styles
  */

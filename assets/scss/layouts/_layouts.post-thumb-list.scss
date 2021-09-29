@@ -4,6 +4,7 @@
 
 .l-post-thumb-list {
   display: block;
+
 }
 
 /*
@@ -17,6 +18,9 @@
   &feature-list{
     flex-direction: column;
     max-width: 1440px;
+  }
+  &project{
+    background: $brand-col-4;
   }
 }
 
@@ -58,7 +62,10 @@
     margin: 0 auto;
     flex-wrap: nowrap;
     justify-content: center;
-    @extend .o-list-bare
+    @extend .o-list-bare;
+    &[data-flickity]{
+      display: block;
+    }
   }
   &item{
     @extend .o-list-bare__item;
@@ -106,6 +113,9 @@
     }
   }
   &column{
+    width: 100%;
+  }
+  &project{
     width: 100%;
   }
 }

@@ -23,3 +23,15 @@
   max-width: 100%;
 }
 
+.flickity-prev-next-button.previous {
+  .l-post-thumb-list--project &{
+    left: calc(50% + 2vw);
+  }
+
+}
+.flickity-prev-next-button.next{
+  .l-post-thumb-list--project & {
+    right: 2vw;
+  }
+}
+

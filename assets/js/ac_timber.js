@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('ACTIMBER Flickity test');
 ACTIMBER = {
     common: {
         init: function () {
@@ -15,6 +15,17 @@ ACTIMBER = {
             //$("[data-fitvid]").fitVids();
 
             fitvids();
+
+            let elem = document.querySelector('[data-flickity=project-slider]');
+            let flkty = new Flickity( elem, {
+                // options
+                cellAlign: 'left',
+                contain: true,
+                pageDots: false
+            });
+
+// element argument can be a selector string
+//   for an individual element
 
 
             /**

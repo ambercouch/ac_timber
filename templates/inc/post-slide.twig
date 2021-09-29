@@ -2,18 +2,21 @@
 {% set headerTitle = (headerTitle) ? headerTitle : post.title %}
 
 <article {{ fn('post_class', ['c-post-slide'] ) }}>
-  <a href="{{ post.link }}" class="ac-test-slide c-post-thumb__thumb-link">
+  <a href="{{ post.link }}" class="c-post-silde__link--slide">
 
   <div class="c-post-slide__feature-image">
      <img class="c-post-slide__img--slide" src="{{ post.thumbnail.src('feature500') }}" />
   </div>
 
 <div class="c-post-slide__content">
-  <div class="c-post-slide__header">
-    {% include "inc/header.twig" %}
+  <div class="o-wrapper--flex-col-centre">
+    <div class="c-post-slide__header">
+      {% include "inc/header.twig" with {'preSubHeading' : 'Project'} %}
+    </div>
+    <button class='c-btn--secondary' href="{{ post.url }}">Find out more</button>
   </div>
-</div>
 
+</div>
 
   </a>
 

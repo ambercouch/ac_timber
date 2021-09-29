@@ -40,15 +40,28 @@
   }
 
   &link {
-    display: inline
+    display: inline;
   }
 
   &content {
-    display: block
+    display: block;
+    width: 50%;
   }
 
   &footer {
     display: block
+  }
+  &feature-image{
+    width: 50%;
+  }
+  &img{
+    width: 100%;
+    height: 100%;
+    filter: saturate(0);
+    transition: filter 0.3s ease-in-out;
+    &:hover,&:focus,&:active{
+      filter: saturate(100%);
+    }
   }
 }
 
@@ -57,3 +70,31 @@
 [class*=c-post-slide__header--] {
   @extend .c-post-slide__header;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-slide__link--
+
+[class*=c-post-slide__link--] {
+  @extend .c-post-slide__link;
+}
+
+.c-post-silde__link--{
+  &slide{
+    display: flex;
+    text-decoration: none;
+  }
+}
+
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-slide__link--
+
+[class*=c-post-slide__img--] {
+  @extend .c-post-slide__img;
+}
+
+.c-post-silde__img--{
+  &slide{
+
+  }
+}
+
+
