@@ -1,0 +1,59 @@
+/*
+  BEM BLOCK .o-wrapper
+ */
+
+.o-wrapper {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .o-wrapper--
+ */
+
+.o-wrapper-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .o-wrapper--
+
+[class*=o-wrapper--] {
+  @extend .o-wrapper;
+}
+
+/*
+  BEM ELEMENTS .o-wrapper__
+ */
+
+.o-wrapper__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .o-wrapper--
+
+[class*=o-wrapper__header--] {
+  @extend .o-wrapper__header;
+}
