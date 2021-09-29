@@ -20,12 +20,15 @@ BEM ELEMENTS .l-site__
  */
 .l-site__{
   &masthead{
-    background: white;
+    background: $brand-col-6;
     position: relative;
     z-index: 10;
   }
   &main{
     padding-top: $act-unit-l;
+    .home &{
+      padding-top: 0;
+    }
   }
   &off-page-container{
     transition: opacity 0.3s ease-in-out;
