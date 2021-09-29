@@ -2,10 +2,20 @@
 {% set headerTitle = (headerTitle) ? headerTitle : post.title %}
 <div class="c-header{{ modClass }}">
 <header class="c-header__header{{ modClass }}">
+  {% if preSubHeading %}
+  <h6  class="c-header__sub-heading--pre" >
+    <span class="c-header__sub-title" >{{ preSubHeading }}</span>
+  </h6>
+  {% endif %}
   <h3 class="c-header__heading{{ modClass }}">
             <span class="c-header__title{{ modClass }}">
                {{ headerTitle }}
             </span>
   </h3>
+  {% if postSubHeading  %}
+  <h6  class="c-header__sub-heading--post" >
+    <span class="c-header__sub-title" >{{ postSubHeading }}</span>
+  </h6>
+  {% endif %}
 </header>
 </div>
