@@ -10,7 +10,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 const pipeline = require('readable-stream').pipeline;
-const uglify = require('gulp-uglify');
+//const uglify = require('gulp-uglify');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
@@ -35,7 +35,7 @@ var jsNpmScripts = [
 
 var cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
-    //'flickity/dist/flickity.css'
+    'flickity/dist/flickity.css',
     'remodal/dist/remodal.css',
     'remodal/dist/remodal-default-theme.css',
 ];
@@ -68,7 +68,7 @@ function scripts() {
     return pipeline(
         gulp.src(jsScripts),
         concat('main.js'),
-        uglify(),
+        //uglify(),
         gulp.dest('dist/js/')
     );
 }
@@ -123,3 +123,5 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.svgdefs = svgdefs;
 exports.vendorStyles = vendorStyles;
+exports.default = gulp.series(vendorStyles, styles, scripts, svgdefs, serve);
+
