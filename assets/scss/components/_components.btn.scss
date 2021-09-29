@@ -43,6 +43,7 @@
     @extend .o-btn--m;
     border: solid;
     color: $brand-col-1;
+    background: transparent;
     &[class*=__item]{
       padding: 0 !important;
       //background: red;
