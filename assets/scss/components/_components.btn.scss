@@ -31,6 +31,8 @@
   &primary{
     @extend .o-btn--m;
     @extend .o-btn--b1;
+    min-width: $act-unit-h * 2;
+    text-align: center;
     &[class*=__item]{
       padding: 0 !important;
       //background: red;
