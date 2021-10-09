@@ -1,9 +1,9 @@
 
 .c-burger{
   cursor: pointer;
-  position: fixed;
+  position: absolute;
   right:  $act-unit;
-  top: $act-unit-s;
+  top: $act-unit-s / 2;
   z-index: 99999;
 }
 .c-burger__btn{
@@ -25,7 +25,7 @@
 
 .c-burger__label{
   @include act-font-size($act-fs-6);
-  color: white;
+  color: $col-text;
   text-transform: uppercase;
 }
 
@@ -42,24 +42,45 @@
   position: absolute;
   width: 1.1em;
   height: 2px;
-  background-color: #fff;
+  transition: background-color 0.3s;
+  background-color: $col-text;
 }
+
+.c-burger__btn:hover {
+  .c-burger__bars .c-burger__bar {
+    background-color: $brand-col-1;
+  }
+}
+
+body[data-mobile="on"] .c-burger__label{
+  color: white;
+
+  .c-burger__bar {
+    background-color: white;
+  }
+}
+
 .c-burger__bar--tl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
+  transform-origin: center;
   top: 13px;
   left: 0.5em;
   [data-state=on] &{
     transform: rotate(45deg) translate(0.3em, 0);
+    transform-origin: center;
+    top: 15px;
+    left: 15%;
   }
 }
 .c-burger__bar--tr{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
+  transform-origin: center;
   top: 13px;
   right: 0.5em;
   [data-state=on] &{
     transform: rotate(-45deg) translate(-0.3em, 0);
+    top: 15px;
+    right: 15%;
   }
 }
 .c-burger__bar--m{
@@ -70,7 +91,7 @@
   width: 26px !important;
   margin-top: -0.1em;
   [data-state=on] &{
-    transform: scale(0, 1);
+    display: none;
   }
 }
 .c-burger__bar--bl{
@@ -79,7 +100,7 @@
   top:27px;
   left: 0.5em;
   [data-state=on] &{
-    transform: rotate(-45deg) translate(0.3em, 0);
+    display: none;
   }
 }
 .c-burger__bar--br{
@@ -88,7 +109,6 @@
   top:27px;
   right: 0.5em;
   [data-state=on] &{
-    transform: rotate(45deg) translate(-0.3em, 0);
-
+    display: none;
   }
 }

@@ -9,10 +9,10 @@
   overflow: hidden;
 
   /* #2 */
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
 }
 
 /*
@@ -37,6 +37,28 @@ BEM ELEMENTS .l-site__
     z-index: 1000;
     opacity: 0;
     padding-top: $act-unit-h;
+    padding-bottom: $act-unit-h;
+    font-size: 1.4rem;
+    font-family: $act-font-family-headings;
+
+    @include mq($from : desktop){
+      padding-bottom: 0;
+    }
+
+    &,
+    a {
+      color: white;
+
+      &:hover {
+        color: $brand-col-1;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+
     &[data-state=off]{
       opacity: 0 !important;
       @include inuit-hidden-visually();

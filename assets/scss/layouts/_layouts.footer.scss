@@ -73,10 +73,10 @@
 
 .l-footer{
   a{
-    color: $brand-col-2;
+    color: white;
     text-decoration: none;
     &:hover{
-      color: white;
+      color: $brand-col-1;
     }
   }
 }
