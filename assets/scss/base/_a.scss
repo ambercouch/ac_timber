@@ -1,3 +1,5 @@
 a{
   @include a($col: $col-link);
+
+  transition: all 0.3s;
 }

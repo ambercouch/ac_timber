@@ -44,19 +44,26 @@ BEM ELEMENTS .l-masthead__
   &site-title{
     line-height: 1;
     margin-top: $act-unit-s;
+
     @include mq($from:desktop){
       margin-top: $act-unit;
-      margin-bottom: $act-unit;
+    }
+
+    .l-site-title__link {
+      display: block;
     }
   }
   &navigation{
     display: none;
-    //@extend .element--band-block-bottom;
-    //@extend .is-split-nav;
-    @extend .element--abso-layer;
+    // @extend .element--band-block-bottom;
+    // @extend .is-split-nav;
+    // @extend .element--abso-layer;
+
     @include mq($from: desktop){
-      display: block;
-      margin: $act-unit 0;
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
     }
   }
   &widget-area{
