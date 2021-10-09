@@ -16,3 +16,81 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+hr.wp-block-separator {
+  margin: 3rem 0;
+  border-color: $brand-col-2;
+}
+
+.wp-block-button {
+  .wp-block-button__link {
+    background-color: $brand-col-2;
+    color: white;
+    border-radius: 0.3rem;
+    box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-size: 0.8rem;
+
+    &:hover {
+      background-color: darken($color: $brand-col-2, $amount: 20%);
+    }
+  }
+
+  a:not([href]):not([tabindex]) {
+    color: white;
+  }
+}
+
+.wp-block-columns {
+  margin-bottom: 3rem;
+}
+
+.wp-block-cover {
+  margin: 3rem 0;
+
+  .wp-block-cover__inner-container {
+    max-width: 55rem;
+
+    .has-large-font-size {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.wp-block-image {
+  .alignright {
+    @include mq($until: tablet) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+
+      &,
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  figcaption {
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+.has-large-font-size {
+  font-size: 1.3rem;
+}
+
+.wp-block-group.has-background {
+  padding: $act-unit;
+
+  @include mq($from: tablet) {
+    padding: $act-unit-l;
+  }
+}
+
+.wp-block-social-links {
+  li {
+    padding-left: 0;
+  }
+}

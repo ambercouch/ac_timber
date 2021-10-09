@@ -26,6 +26,7 @@ BEM ELEMENTS .l-site__
   }
   &main{
     padding-top: $act-unit-l;
+    font-size: 0.8rem;
   }
   &off-page-container{
     transition: opacity 0.3s ease-in-out;
@@ -84,6 +85,8 @@ BEM ELEMENTS .l-site__
 }
 
 .l-site__masthead{
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+
   &.is-overlay-hero{
     position: relative;
     z-index: 999;

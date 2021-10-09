@@ -127,6 +127,10 @@
   &primary{
     margin-right: 0;
     margin-left: 0;
+
+    &.current_page_item a {
+      color: $brand-col-1;
+    }
   }
   &hero{
     margin-right: $act-unit;
