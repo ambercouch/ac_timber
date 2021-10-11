@@ -1,4 +1,104 @@
 //Font size
+.u-fs-1 {
+  @include act-font-size($inuit-font-size-h1);
+}
+.u-fs-2{
+  @include act-font-size($inuit-font-size-h2);
+}
+.u-fs-3{
+  @include act-font-size($inuit-font-size-h3);
+}
+.u-fs-4{
+  @include act-font-size($inuit-font-size-h4);
+}
+.u-fs-5{
+  @include act-font-size($inuit-font-size-h5);
+}
+.u-fs-6{
+  @include act-font-size($inuit-font-size-h6);
+}
+
+.u-fs-g{
+  @include act-font-size($act-fs-g);
+}
+
+.u-fs-m{
+  @include act-font-size($act-fs-m);
+}
+
+.u-fs-k{
+  @include act-font-size($act-fs-k);
+}
+
+//Font weight
+.u-fw-1 {
+  font-weight: 100;
+}
+.u-fw-2 {
+  font-weight: 200;
+}
+.u-fw-3 {
+  font-weight: 300;
+}
+.u-fw-4 {
+  font-weight: 400;
+}
+.u-fw-5 {
+  font-weight: 500;
+}
+.u-fw-6 {
+  font-weight: 600;
+}
+.u-fw-7 {
+  font-weight: 700;
+}
+.u-fw-8 {
+  font-weight: 800;
+}
+.u-fw-9 {
+  font-weight: 900;
+}
+
+.u-fw-l{
+  font-weight: lighter;
+}
+.u-fw-n{
+  font-weight: normal;
+}
+.u-fw-b{
+  font-weight: bold;
+}
+
+.u-fst-n{
+  font-style: normal;
+}
+.u-fst-i{
+  font-style: italic;
+}
+.u-fst-o{
+  font-style: oblique;
+}
+
+//Font family
+
+.u-ff-s{
+  font-family: $act-font-family-serif;
+}
+.u-ff-ss{
+  font-family: $act-font-family-sans;
+}
+.u-ff-a{
+  font-family: $act-font-family-alt;
+}
+.u-ff-m{
+  font-family: $act-font-family-mono;
+}
+.u-ff-h{
+  font-family: $act-font-family-headings;
+}
+
+
+//Font size
 .u-fs1{
   @include act-font-size($inuit-font-size-h1);
 }
