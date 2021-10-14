@@ -205,7 +205,9 @@ function act_shortcode_cta($atts, $content){
         'title' => 'Add a Title',
         'text' => 'Add Some text',
         'btn' => 'Submit',
-        'url' => '/'
+        'url' => '/',
+        'btn2' => '',
+        'url2' => ''
     ), $atts);
 
     $a['text'] = '<p>'.$a['text'].'</p>';
@@ -226,6 +228,15 @@ function act_shortcode_cta($atts, $content){
     $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
     $output .= '</div>';
     $output .= '</div>';
+if ($a['url2'] !== '' && $a['btn2'] !== '' ){
+    $output .= '<div class="c-cta__btn--alt">';
+    $output .= '<div class="c-btn--cta">';
+    $output .= '<a class="c-btn__link" href="'.$a['url2'].'">'.$a['btn2'].'</a>';
+    $output .= '</div>';
+    $output .= '</div>';
+}
+
+
     $output .= '</div>';
     $output .= '</div>';
 

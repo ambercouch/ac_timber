@@ -66,9 +66,9 @@
   }
   &read-more{
     @extend .c-btn;
-    @extend .c-btn--n;
-    @extend .c-btn--col-2;
-    
+    @extend .o-btn--m;
+    @extend .o-btn--b2;
+
     margin-bottom: $act-unit-s;
   }
   &comment-link {

@@ -1,23 +1,22 @@
 /*
+<div class="c-btn">
+    <a class="c-btn__link href="xxx">
+       <span class="c-btn__label >Click Me</span>
+    </a>
+</div>
+
   BEM BLOCK .c-btn
+
  */
 
 .c-btn {
-  @include inuit-font-size($act-fs-sp, 1);
-  display: inline-block;
-  background: $brand-col-1;
-  color: white;
-  padding: $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  border-radius: 0.5em;
-  text-transform: uppercase;
-  text-decoration: none;
+  @extend .o-btn;
   &:hover, &:focus{
-    color: white;
-    background: darken($brand-col-1,10%);
+    @extend .c-btn;
+    filter: brightness(90%);
   }
   &:active{
-    color: white;
-    background: darken($brand-col-1,20%);
+    filter: brightness(80%);
   }
 }
 
@@ -25,40 +24,42 @@
   BEM BLOCK MODIFIER .c-btn--
  */
 
-.c-btn-- {
+.c-btn--{
   &type {
     display: block
   }
-  &n{
-    @extend .c-btn;
-    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
-    @include act-font-size($act-fs-4, 1);
-    text-transform: none;
-  }
-  &col-1{
-    background: $brand-col-1;
-    color: white;
-    &:hover, &:focus{
-      color: white;
-      background: darken($brand-col-1,10%);
-    }
-    &:active{
-      color: white;
-      background: darken($brand-col-1,20%);
+  &primary{
+    @extend .o-btn--m;
+    @extend .o-btn--b1;
+    min-width: $act-unit-h * 2;
+    text-align: center;
+    &[class*=__item]{
+      padding: 0 !important;
+      //background: red;
+      a{
+        @extend .o-btn--m
+      }
     }
   }
-  &col-2{
-    background: $brand-col-2;
-    color: white;
-    &:hover, &:focus{
-      color: white;
-      background: darken($brand-col-2,10%);
-    }
-    &:active{
-      color: white;
-      background: darken($brand-col-2,20%);
+  &secondary{
+    @extend .o-btn--m;
+    border: solid;
+    color: $brand-col-1;
+    background: transparent;
+    &[class*=__item]{
+      padding: 0 !important;
+      //background: red;
+      a{
+        @extend .o-btn--m;
+        color: $brand-col-1;
+      }
     }
   }
+  &cta{
+    @extend .c-btn--primary;
+    @extend .o-btn--b3
+  }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--
@@ -72,28 +73,30 @@
  */
 
 .c-btn__ {
-  &header {
-    display: block
-  }
-  &heading {
-    display: block
-  }
-  &title {
-    display: inline;
-  }
   &link {
-    display: inline
+    display: block;
   }
-  &content {
-    display: block
-  }
-  &footer {
-    display: block
+  &label{
+    display: inline-block;
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .c-btn--
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__link--
 
-[class*=c-btn__header--] {
-  @extend .c-btn__header;
+[class*=c-btn__link--] {
+  @extend .c-btn__link;
+}
+
+.c-btn__link--{
+
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__label--
+
+[class*=c-btn__label--] {
+  @extend .c-btn__label;
+}
+
+.c-btn__label--{
+
 }
