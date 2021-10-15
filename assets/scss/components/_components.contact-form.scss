@@ -84,8 +84,7 @@
     background: transparent;
     border-bottom: solid white 2px;
     @include act-font-size($act-fs-4);
-    color: white;
-
+    color: #ffffff;
   }
   &label{
     display: block;
@@ -202,21 +201,21 @@
   }
   input {
     width: 100%;
-    color: #fff;
+    color: red;
     background: transparent;
     &::placeholder{
-      color: #fff;
+      color: red;
       opacity: 1;
     }
   }
   select {
     width: 100%;
-    color: #fff !important;
+    color: red !important;
     background: transparent !important;
   }
   textarea{
     background: transparent;
-    color: white;
+    color: red;
     &::placeholder{
       color: $brand-col-1;
       opacity: 1;
@@ -274,7 +273,10 @@
           5px 5px,
           1px 1.5em;
   background-repeat: no-repeat;
-
+  option{
+    color: $brand-col-1;
+    padding: $act-unit-t;
+  }
 }
 .wpcf7-textarea{
    @extend .c-contact-form__input;
