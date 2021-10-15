@@ -98,6 +98,10 @@
   &service{
     color: $brand-col-6;
   }
+  &footer{
+    @include act-font-size($act-fs-4);
+    margin-bottom: $act-unit-t;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__title--

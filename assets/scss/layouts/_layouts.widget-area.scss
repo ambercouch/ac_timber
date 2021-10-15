@@ -18,7 +18,7 @@
   &subsidiary{
     @include mq($from:desktop){
       display: grid;
-      grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
+      grid-template-columns: calc(50% - 24px ) calc(50% - 24px);
       grid-template-rows: auto auto;
       grid-column-gap: $act-unit-l;
       grid-row-gap: $act-unit-h;
@@ -27,8 +27,6 @@
   &footer-widgets{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
   }
   &main-before{
     display: flex;

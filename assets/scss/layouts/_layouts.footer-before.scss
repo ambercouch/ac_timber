@@ -5,6 +5,11 @@
 .l-footer-before {
   display: block;
   //background: $brand-col-4;
+  @extend .c-site-wrapper--responsive;
+  padding-top: $act-unit-l;
+  padding-bottom: $act-unit-l;
+  background-color: transparent;
+  text-align: left;
 }
 
 /*
@@ -54,7 +59,7 @@
   &widget-area{
 
     background: transparent;
-    text-align: center;
+    text-align: left;
   }
 }
 

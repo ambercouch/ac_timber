@@ -55,6 +55,9 @@
       }
     }
   }
+  &cta{
+    @extend .c-btn--primary
+  }
 
 }
 

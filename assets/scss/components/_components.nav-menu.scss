@@ -113,7 +113,7 @@
   }
   &social{
     @extend .o-list-flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
   &footer{
   display: flex;

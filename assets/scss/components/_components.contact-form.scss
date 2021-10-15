@@ -6,6 +6,9 @@
   display: block;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
+  ::placeholder{
+    color: transparent;
+  }
 }
 
 /*
@@ -35,9 +38,13 @@
     .ajax-loader{
       display: none !important;
     }
+
   }
   &next-step{
     @extend .c-contact-form--placeholder-blocks;
+  }
+  &footer{
+
   }
 }
 
@@ -61,7 +68,7 @@
   }
   &input-wrapper{
     display: block;
-    margin-bottom: 0;
+    margin-bottom: $act-unit-l;
   }
   &radio-wrapper{
     @extend .c-contact-form__label;
@@ -72,14 +79,20 @@
     display: block;
     width: 100%;
     border: none;
-    padding:$act-unit-t;
+    padding:$act-unit-s;
+    padding-left: 0;
+    background: transparent;
+    border-bottom: solid white 2px;
+    @include act-font-size($act-fs-4);
+    color: white;
+
   }
   &label{
     display: block;
     margin-bottom: $act-unit-t;
   }
   &label-text{
-    @include act-font-size($act-fs-5, 1);
+    @include act-font-size($act-fs-4, 1);
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -118,6 +131,7 @@
 .c-contact-form__input-wrapper--{
   &submit{
     padding-top:$inuit-global-spacing-unit-small;
+    grid-column-start: 1;
   }
   &check{
     .wpcf7-list-item{
@@ -129,6 +143,15 @@
 [class*=contact-form__input-content--] {
   @extend .c-contact-form__content;
 }
+.c-contact-form__content{
+  .c-contact-form--footer & {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $act-unit-l;
+    align-items: self-end;
+  }
+}
+
 /*
  * c-contact-form--placeholder-block
  */
@@ -148,7 +171,6 @@
       &textarea{
         width: 100%;
         margin-bottom: $act-unit;
-
       }
     }
     &label-text {
@@ -212,6 +234,14 @@
   @extend .c-contact-form__label;
 }
 
+.c-contact-form__label--{
+  &acceptance{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-bottom: $act-unit;
+  }
+}
+
 
 
 
@@ -257,9 +287,15 @@
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
   padding:$act-unit-t;
-  background: $brand-col-3;
-  color: white;
+  background: $brand-col-6;
+  color: $brand-col-1;
+  font-weight: 700;
   cursor: pointer;
+  display: inline-block;
+  width: auto;
+  border-bottom: 0;
+  line-height: 1;
+  @extend .c-btn--primary;
   &:hover{
     background: darken($brand-col-3, 5%);
   }
