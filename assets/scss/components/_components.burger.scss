@@ -1,16 +1,14 @@
 
 .c-burger{
-  cursor: pointer;
   position: fixed;
   right:  $act-unit;
-  top: $act-unit-s;
+  top: $act-unit-l *1.25;
   z-index: 99999;
+  @include act-font-size($act-fs-6);
 }
 .c-burger__btn{
   cursor: pointer;
   border: 0;
-  font-size: 14px;
-  font-size: 0.875rem;
   padding: 0;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
   background: transparent;
@@ -19,7 +17,7 @@
     //right: 14rem;
   }
   @include mq($from : desktop){
-    //display: none;
+    display: none;
   }
 }
 
@@ -27,68 +25,67 @@
   @include act-font-size($act-fs-6);
   color: $brand-col-1;
   text-transform: uppercase;
+  display: none;
 }
 
 .c-burger__bars{
   position: relative;
-  font-size: 14px;
-  font-size: 0.875rem;
-  width: 42px;
-  height: 36px;
+  @include size(40px, 26px);
+  margin-bottom: $act-unit-s;
 }
 
 .c-burger__bar {
   transition: transform 0.1s linear;
   position: absolute;
-  width: 1.1em;
+  width: 50%;
   height: 2px;
   background-color: $brand-col-1;
 }
 .c-burger__bar--tl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
-  top: 13px;
-  left: 0.5em;
+  transform-origin: 0px 50%;
+  top: 0;
+  left: 0;
   [data-state=on] &{
-    transform: rotate(45deg) translate(0.3em, 0);
+    transform: rotate(45deg) translate(3px, -5px);
   }
 }
 .c-burger__bar--tr{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
-  top: 13px;
-  right: 0.5em;
+  transform-origin: 100% 50%;
+  top: 0;
+  right: 0;
   [data-state=on] &{
-    transform: rotate(-45deg) translate(-0.3em, 0);
+    transform: rotate(-45deg) translate(-3px, -5px);
   }
 }
 .c-burger__bar--m{
   @extend .c-burger__bar;
   transform-origin: 1.1em 0.1em;
-  top: 22px;
-  left: 0.5em;
-  width: 26px !important;
-  margin-top: -0.1em;
+  top: 50%;
+  transform: translate(0 , - 50%);
+  width: 100% !important;
+  margin-top: 0;
   [data-state=on] &{
     transform: scale(0, 1);
   }
 }
 .c-burger__bar--bl{
   @extend .c-burger__bar;
-  transform-origin: 0.4em 0.1em;
-  top:27px;
-  left: 0.5em;
+  transform-origin: 0px 50%;
+  bottom: 0;
+  left: 0;
   [data-state=on] &{
-    transform: rotate(-45deg) translate(0.3em, 0);
+    transform: rotate(-45deg) translate(3px, 6px);
   }
 }
 .c-burger__bar--br{
   @extend .c-burger__bar;
-  transform-origin: 0.7em 0.1em;
-  top:27px;
-  right: 0.5em;
+  transform-origin: 100% 50%;
+  bottom: 0;
+  right: 0;
   [data-state=on] &{
-    transform: rotate(45deg) translate(-0.3em, 0);
+    transform: rotate(45deg) translate(-3px, 6px);
 
   }
 }
