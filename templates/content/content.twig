@@ -2,7 +2,7 @@
 {% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
 <!-- content.twig -->
 {% block content %}
-  <article id="post-{{ post-id }}" class="post{{ postFormatClass }} {{ post.class }}">
+  <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }}">
   {% if post.thumbnail %}
     <div class="post{{ postFormatClass }}__feature-image">
       <div class="feature-image">
@@ -25,13 +25,20 @@
     {% if  post.post_excerpt != '' %}
       <div class="entry-content post{{ postFormatClass }}__body">
         {{ post.post_excerpt }}
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <a href="{{ post.link }}" class="ac-test post{{ postFormatClass }}__read-more">Read More</a>
       </div>
 
     {% else %}
       <div class="entry-content post{{ postFormatClass }}__body">
         <p>{{ post.content | striptags | truncate(60) }}</p>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <div class="c-post__read-more">
+          <div class="c-btn--read-more">
+            <a class="c-btn__link href="{{ post.link }}" >
+              <span class="c-btn__label" >Read More</span>
+            </a>
+          </div>
+        </div>
+
       </div>
 
     {% endif %}

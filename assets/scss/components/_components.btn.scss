@@ -59,6 +59,10 @@
     @extend .c-btn--primary;
     @extend .o-btn--b3
   }
+  &read-more{
+    @extend .o-btn--s;
+    @extend .o-btn--b1
+  }
 
 }
 
