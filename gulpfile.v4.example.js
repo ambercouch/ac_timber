@@ -123,3 +123,4 @@ exports.styles = styles;
 exports.scripts = scripts;
 exports.svgdefs = svgdefs;
 exports.vendorStyles = vendorStyles;
+exports.default = gulp.series(vendorStyles, styles, scripts, svgdefs, serve);
