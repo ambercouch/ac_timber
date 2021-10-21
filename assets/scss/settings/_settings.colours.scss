@@ -14,21 +14,28 @@ $act-grey : #ccc;
 $act-grey-light : #f6f6f6;
 $act-grey-dark : #333;
 
-// TODO: These are placeholder colours
-$col-act-primary: #d83f87;
-$col-act-secondary: #44318d;
 
-$brand-col-1 : $col-act-primary;
-$brand-col-2 : $col-act-secondary;
+$jma-yellow: #ebffa2;
+$jma-deep-gold: #c99800;
+$jma-red-umber: #8d0000;
+$jma-dark-purple: #400040;
+$jma-rich-teal: #008080;
+
+// TODO: These are placeholder colours
+$col-act-primary: $jma-deep-gold;
+$col-act-secondary: $jma-rich-teal;
+
+$brand-col-1 : $jma-deep-gold;
+$brand-col-2 : $jma-rich-teal;
 $brand-col-3 : $act-grey-dark;
-$brand-col-4 : $act-grey;
-$brand-col-5 : $act-grey-light;
+$brand-col-4 : $jma-rich-teal;
+$brand-col-5 : $jma-dark-purple;
 $brand-col-6 : $act-grey-dark;
 $brand-col-7 : $act-grey;
 $brand-col-8 : $act-grey-light;
 $brand-col-9 : $act-grey-dark;
 
 $col-text : $act-grey-dark;
-$col-heading : $col-act-primary;
-$col-link : #5680e9;
-$col-accent : $col-act-secondary;
+$col-heading : $jma-red-umber;
+$col-link : $jma-rich-teal;
+$col-accent : $brand-col-1;
