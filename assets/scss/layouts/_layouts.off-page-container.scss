@@ -16,6 +16,11 @@
   &type {
     display: block
   }
+  &mobile-navigation{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-off-page-container--
@@ -65,7 +70,8 @@
     padding: $act-unit;
   }
   &widget-area{
-    padding: 0 $act-unit;
+    padding: $act-unit;
+    color: $brand-col-6;
   }
 }
 
@@ -80,4 +86,14 @@
 [class*=l-off-page-container__nav-menu--] {
   @extend .l-off-page-container__nav-menu;
 }
+
+.l-off-page-container__nav-menu--{
+  &mobile{
+    //@extend .c-site-wrapper--responsive;
+    //padding-top: $act-unit-l;
+    //padding-bottom: $act-unit-l;
+    background: transparent;
+  }
+}
+
 

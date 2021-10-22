@@ -19,7 +19,7 @@
 .l-single-page__{
 
   &header{
-    margin-bottom: $inuit-global-spacing-unit-large /2;
+    margin-bottom: $act-unit-h;
   }
 
   &heading{
@@ -86,6 +86,12 @@
     margin-right: auto;
     text-align: center;
   }
+  &page{
+    @extend .c-site-wrapper--responsive;
+    padding-top: $act-unit-l;
+    padding-bottom: $act-unit-l;
+    background-color: transparent;
+}
 }
 
 [class*='single-page__footer--']{
@@ -95,5 +101,7 @@
 [class*='single-page__comment-link--']{
   @extend .l-single-page__comment-link
 }
+
+
 
 

@@ -17,7 +17,7 @@
     //right: 14rem;
   }
   @include mq($from : desktop){
-    display: none;
+    //display: none;
   }
 }
 
@@ -26,12 +26,16 @@
   color: $brand-col-1;
   text-transform: uppercase;
   display: none;
+  .c-burger__btn[data-state=on] &{
+    color: $brand-col-6;
+  }
 }
 
 .c-burger__bars{
   position: relative;
   @include size(40px, 26px);
   margin-bottom: $act-unit-s;
+
 }
 
 .c-burger__bar {
@@ -40,6 +44,10 @@
   width: 50%;
   height: 2px;
   background-color: $brand-col-1;
+  .c-burger__btn[data-state=on] &{
+    background-color: $brand-col-6;
+  }
+
 }
 .c-burger__bar--tl{
   @extend .c-burger__bar;

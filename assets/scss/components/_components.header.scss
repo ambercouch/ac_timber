@@ -15,7 +15,9 @@
     display: block
   }
   &page{
-
+    text-align: center;
+    @include breakout-band($brand-col-2);
+    padding: $act-unit 0 $act-unit-l;
   }
   &project{
     text-align: center;
@@ -53,7 +55,7 @@
   &heading {
     display: block;
    font-size: 3vw;
-    text-decoration: none !important;
+    //text-decoration: none !important;
   }
   &sub-heading{
     font-size: 2vw;
@@ -87,6 +89,11 @@
 }
 
 .c-header__heading--{
+  &page{
+    text-decoration: underline;
+    @include act-font-size($act-fs-g);
+    font-weight: 900;
+  }
   &sidebar{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
@@ -101,6 +108,11 @@
   &footer{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-t;
+  }
+  &mobile-nav-after{
+    @include act-font-size($act-fs-4);
+    margin-bottom: $act-unit-t;
+    color: $brand-col-6;
   }
 }
 

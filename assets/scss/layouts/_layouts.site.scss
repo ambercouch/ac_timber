@@ -23,9 +23,12 @@ BEM ELEMENTS .l-site__
     background: $brand-col-6;
     position: relative;
     z-index: 10;
+    .page-template-default &{
+      background: $brand-col-2;
+    }
   }
   &main{
-    padding-top: $act-unit-l;
+    padding-top: 0;
     .home &{
       padding-top: 0;
     }
@@ -36,10 +39,10 @@ BEM ELEMENTS .l-site__
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: darken($brand-col-3, 10%);
+    background: $brand-col-1;
     z-index: 1000;
     opacity: 0;
-    padding-top: $act-unit-h;
+    padding-top: $act-unit-h * 2;
     &[data-state=off]{
       opacity: 0 !important;
       @include inuit-hidden-visually();
@@ -48,7 +51,7 @@ BEM ELEMENTS .l-site__
       opacity: 1;
     }
     @include mq($from : desktop){
-      display: none !important;
+      //display: none !important;
     }
   }
 
