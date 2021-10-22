@@ -46,6 +46,14 @@
       margin: 0 $act-unit-h;
     }
   }
+  &stacked{
+    //display: none !important;
+    @extend .o-list-flex;
+    flex-direction: column;
+    > *{
+      margin-left: 0;
+    }
+  }
 }
 
 .o-list-flex--center{
