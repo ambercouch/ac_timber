@@ -13,11 +13,12 @@
   {% endif %}
   {% if not hidePageTitle %}
     <div class="l-single-page__header">
-    <header class="entry-header c-header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
-      <h1 class="entry-title c-header__heading{{ templateClass }} ">
-        <span class="entry-title c-header__title{{ templateClass }} ">{{ post.title }}</span>
-      </h1>
-    </header>
+    {% include "inc/header.twig"
+      with {
+      headerTitle : null,
+      headingLevel : '1' ,
+      headerModClass : templateClass
+    }%}
     </div>
   {% endif %}
     <div class="entry-content l-single-page__body{{ templateClass }} ">

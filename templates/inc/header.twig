@@ -1,20 +1,42 @@
-{% set modClass = (postType) ? '--'~postType : '' %}
-{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
-<div class="c-header{{ modClass }}">
-<header class="c-header__header{{ modClass }}">
+{#
+Include this with optional params
+% include "inc/header.twig"
+      with {
+      headerTitle : null,
+      headingLevel : '1' ,
+      headerModClass : templateClass
+    }%}
+#}
+{% set headingLevel = (headingLevel) ? headingLevel : '2' %}
+{% set postTypeModClass = (postType) ? '--'~postType : null %}
+{% set headerModClass = (headerModClass) ? headerModClass : postTypeModClass %}
+
+{% set postAltTitle = (post.meta('post_alt_title')) ? post.meta('post_alt_title') : null %}
+{% set postTitle = (postAltTitle) ? postAltTitle  : post.title %}
+{% set headerTitle = (headerTitle) ? headerTitle : postTitle %}
+
+{% set postSubtitleAfter =  (post.meta('post_subtitle')) ? post.meta('post_subtitle') : null %}
+{% set headerSubtitleAfter = (headerSubtitleAfter) ? headerSubtitleAfter : postSubtitleAfter %}
+{% set headerSubtitleAfter = post.meta('post_heading_subtitle') %}
+
+
+<div class="c-header{{ headerModClass }}">
+<header class="c-header__header{{ headerModClass }}">
   {% if preSubHeading %}
   <h6  class="c-header__sub-heading--pre" >
     <span class="c-header__sub-title" >{{ preSubHeading }}</span>
   </h6>
   {% endif %}
-  <h3 class="c-header__heading{{ modClass }}">
-            <span class="c-header__title{{ modClass }}">
+  <h{{ headingLevel }} class="c-header__heading{{ headerModClass }}">
+            <span class="c-header__title{{ headerModClass }}">
                {{ headerTitle }}
             </span>
-  </h3>
-  {% if postSubHeading  %}
-  <h6  class="c-header__sub-heading--post" >
-    <span class="c-header__sub-title" >{{ postSubHeading }}</span>
+  </h{{ headingLevel }}>
+  {% if headerSubtitleAfter  %}
+  <h6  class="c-header__sub-heading--after" >
+    <span class="c-header__sub-title{{ headerModClass }}" >
+      {{ headerSubtitleAfter }}
+    </span>
   </h6>
   {% endif %}
 </header>
