@@ -19,6 +19,9 @@
     @include breakout-band($brand-col-2);
     padding: $act-unit 0 $act-unit-l;
   }
+  &service{
+    @extend .c-header--page;
+  }
   &project{
     text-align: center;
     &:after{
@@ -39,7 +42,7 @@
 
 .c-header--{
   &service{
-    color: $brand-col-6;
+    //color: $brand-col-6;
   }
 }
 
@@ -94,6 +97,9 @@
     @include act-font-size($act-fs-g);
     font-weight: 900;
   }
+  &service{
+    @extend .c-header__heading--page;
+  }
   &sidebar{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
@@ -101,9 +107,6 @@
   &main-before{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
-  }
-  &service{
-    color: $brand-col-6;
   }
   &footer{
     @include act-font-size($act-fs-4);
@@ -115,6 +118,8 @@
     color: $brand-col-6;
   }
 }
+
+
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__title--
 

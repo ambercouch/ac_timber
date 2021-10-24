@@ -26,9 +26,13 @@ BEM ELEMENTS .l-site__
     .page-template-default &{
       background: $brand-col-2;
     }
+    .single-service &{
+    background: $brand-col-2;
+  }
   }
   &main{
     padding-top: 0;
+    background: $brand-col-6;
     .home &{
       padding-top: 0;
     }

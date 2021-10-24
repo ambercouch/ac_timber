@@ -88,6 +88,8 @@
   }
   &page{
     @extend .c-site-wrapper--responsive;
+    padding-left: $act-unit-h * 1.5;
+    padding-right: $act-unit-h * 1.5;
     padding-top: $act-unit-l;
     padding-bottom: $act-unit-l;
     background-color: transparent;

@@ -20,7 +20,7 @@
   {% block content %}
     {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
     {% for post in posts %}
-    {% include  ['content/content-single'~templateSlug~'.twig', 'content/content-single.twig'] %}
+    {% include  ['content/content-single'~templateSlug~'.twig', 'content/content-single-page.twig'] %}
   {% endfor %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
 

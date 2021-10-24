@@ -32,6 +32,9 @@
     display: flex;
     justify-content: space-between;
   }
+  &main-after{
+    background: $brand-col-2;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-widget-area--

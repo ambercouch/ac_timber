@@ -21,6 +21,10 @@
     justify-content: center;
     align-items: center;
   }
+  &site{
+    width: $inuit-wrapper-width;
+    max-width: 100%;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .o-wrapper--

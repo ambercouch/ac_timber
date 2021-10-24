@@ -8,8 +8,14 @@
   @extend .c-site-wrapper--responsive;
   padding-top: $act-unit-l;
   padding-bottom: $act-unit-l;
+  padding-left: $act-unit-h * 1.5;
+  padding-right: $act-unit-h * 1.5;
   background-color: transparent;
   text-align: left;
+  @include mq($from : desktop){
+    padding-left: $act-unit-h * 1.5;
+    padding-right: $act-unit-h * 1.5;
+  }
 }
 
 /*
