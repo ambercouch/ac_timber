@@ -17,6 +17,17 @@
   {% block feature %}
   {% endblock %}
 
+  {% block contentHeader %}
+    <div class="l-content__header">
+      {% include "inc/header.twig"
+        with {
+        headerTitle : 'Services',
+        headingLevel : '2' ,
+        headerModClass : '--service-intro',
+        headerIcon: 'hide'
+      }%}
+    </div>
+  {% endblock %}
 
   {% block content %}
     {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
@@ -24,8 +35,11 @@
     {% include  ['content/content-single'~templateSlug~'.twig', 'content/content-single-page.twig'] %}
   {% endfor %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
-
 {% endblock %}
+
+  {% block contentAside %}
+   
+  {% endblock %}
 
 {% block afterContent %}
 {%  endblock %}
@@ -36,7 +50,12 @@
 
 
 
-
 {% block  subsidiary %}
   <!-- subsidiary removed -->
+{% endblock %}
+
+{% set hasSideBar  = false %}
+
+{% block sidebar %}
+ <!-- sidebar removed -->
 {% endblock %}

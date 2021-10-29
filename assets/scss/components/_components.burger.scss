@@ -29,6 +29,9 @@
   .c-burger__btn[data-state=on] &{
     color: $brand-col-6;
   }
+  .single-service &{
+    color: white;
+  }
 }
 
 .c-burger__bars{
@@ -46,6 +49,9 @@
   background-color: $brand-col-1;
   .c-burger__btn[data-state=on] &{
     background-color: $brand-col-6;
+  }
+  .single-service &{
+    background: $brand-col-6;
   }
 
 }

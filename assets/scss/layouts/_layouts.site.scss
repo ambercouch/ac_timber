@@ -27,8 +27,11 @@ BEM ELEMENTS .l-site__
       background: $brand-col-2;
     }
     .single-service &{
-    background: $brand-col-2;
-  }
+      background: $brand-col-1;
+      path{
+        fill: $brand-col-6;
+      }
+    }
   }
   &main{
     padding-top: 0;
