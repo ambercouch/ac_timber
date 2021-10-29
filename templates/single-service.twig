@@ -1,6 +1,7 @@
 {% extends "base.twig" %}
 {% set modContentClass = '' %}
 {% set modBaseClass = '--'~template  %}
+{% set templateClass =  template ? '--'~template  : '' %}
 {% set templateSlug = template ?  '-'~template  : '' %}
 
 
