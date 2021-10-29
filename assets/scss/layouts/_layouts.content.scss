@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .l-content
+ */
+
+.l-content {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-content--
+ */
+
+.l-content-- {
+  &service{
+    //display: flex
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-content--
+
+[class*=l-content--] {
+  @extend .l-content;
+}
+
+/*
+  BEM ELEMENTS .l-content__
+ */
+
+.l-content__ {
+  &header {
+    display: block;
+    margin-bottom: $act-unit-l * 1.5;
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-content--
+
+[class*=l-content__header--] {
+  @extend .l-content__header;
+}
