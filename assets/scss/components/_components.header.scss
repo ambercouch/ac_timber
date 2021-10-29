@@ -20,7 +20,20 @@
     padding: $act-unit 0 $act-unit-l;
   }
   &service{
+    padding: 0;
+    text-align: center;
     @extend .c-header--page;
+    &:after{
+      width: 0;
+      height: 80px;
+      border: solid 2px $brand-col-2;
+      margin: 0 auto;
+      position: static;
+    }
+  }
+  &service-intro{
+    @extend .c-header--page;
+    @include breakout-band($brand-col-1);
   }
   &project{
     text-align: center;
@@ -32,6 +45,7 @@
       margin: 0 auto $act-unit;
     }
   }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-header--
@@ -83,6 +97,11 @@
   &footer {
     display: block
   }
+  &post-icon{
+    @include size($act-unit-h);
+    fill: $brand-col-1;
+    margin: 0 auto $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__heading--
@@ -99,6 +118,13 @@
   }
   &service{
     @extend .c-header__heading--page;
+    @include act-font-size($act-fs-1);
+    text-decoration: none;
+    font-weight: 900;
+  }
+  &service-intro{
+    @extend .c-header__heading--page;
+    color: $brand-col-6 !important;
   }
   &sidebar{
     @include act-font-size($act-fs-4);
@@ -139,6 +165,17 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-header__post-icon--
+
+[class*=c-header__post-icon--] {
+  @extend .c-header__post-icon;
+}
+
+.c-header__post-icon--{
+
+}
+
+
 //BEM ELEMENT MODIFIER FALLBACK .c-header__sub-heading--
 
 [class*=c-header__sub-heading--] {
@@ -146,7 +183,9 @@
 }
 
 .c-header__sub-heading--{
-
+&service-intro{
+  color: $brand-col-6;
+}
 }
 
 
