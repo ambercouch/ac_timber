@@ -15,15 +15,24 @@ Include this with optional params
 {% set postTitle = (postAltTitle) ? postAltTitle  : post.title %}
 {% set headerTitle = (headerTitle) ? headerTitle : postTitle %}
 
-{% set postSubtitleAfter =  (post.meta('post_subtitle')) ? post.meta('post_subtitle') : null %}
-{% set headerSubtitleAfter = (headerSubtitleAfter) ? headerSubtitleAfter : postSubtitleAfter %}
-{% set headerSubtitleAfter = post.meta('post_heading_subtitle') %}
+{% set postSubtitleAfter =  (post.meta('post_heading_subtitle')) ? post.meta('post_heading_subtitle') : null %}
+{% set templateSubtitleAfter = (templateSubtitleAfter) ? templateSubtitleAfter : null %}
+{% set headerSubtitleAfter = (templateSubtitleAfter)? templateSubtitleAfter :  postSubtitleAfter %}
+
+{% set postIcon =  (post.meta('custom_post_icon')) ? post.meta('custom_post_icon') : null %}
+{% set headerIcon = (headerIcon) ? headerIcon : postIcon %}
 
 
 <div class="c-header{{ headerModClass }}">
 <header class="c-header__header{{ headerModClass }}">
+  {% if headerIcon and headerIcon != 'hide' %}
+    <div class="c-header__post-icon{{ headerModClass }}">
+      <img class="c-header__post-icon-img{{ headerModClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+    </div>
+  {% endif %}
+
   {% if preSubHeading %}
-  <h6  class="c-header__sub-heading--pre" >
+  <h6  class="c-header__sub-heading--pre c-header__sub-heading{{ headerModClass }}" >
     <span class="c-header__sub-title" >{{ preSubHeading }}</span>
   </h6>
   {% endif %}
@@ -32,8 +41,8 @@ Include this with optional params
                {{ headerTitle }}
             </span>
   </h{{ headingLevel }}>
-  {% if headerSubtitleAfter  %}
-  <h6  class="c-header__sub-heading--after" >
+  {% if headerSubtitleAfter and headerSubtitleAfter != 'hide' %}
+  <h6  class="c-header__sub-heading--after c-header__sub-heading{{ headerModClass }}" >
     <span class="c-header__sub-title{{ headerModClass }}" >
       {{ headerSubtitleAfter }}
     </span>
