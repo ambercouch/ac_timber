@@ -69,15 +69,17 @@
   {% endblock %}
 
   <section id="primary" class="l-site__main">
-    <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-side-bar{% else %}has-no-side-bar{% endif %}">
+    <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-sidebar{% else %}has-no-sidebar{% endif %}">
       <main class="l-main__content{{ mainMod }}">
         {% block before_content %}
         {% endblock %}
-        <div class="l-content{{ content_mod }}">
+        <div class="l-content{{ contentMod }}">
           {% block contentHeader %}
           {% endblock %}
           {% block content %}
             <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+          {% endblock %}
+          {% block contentAside %}
           {% endblock %}
           {% block contentFooter %}
           {% endblock %}
