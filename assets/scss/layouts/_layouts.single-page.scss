@@ -15,8 +15,10 @@
   }
   &service{
     &.has-sidebar{
-      display: grid;
-      grid-template-columns: 66% 34%;
+      @include mq($from: desktop){
+        display: grid;
+        grid-template-columns: 66% 34%;
+      }
     }
   }
 }
@@ -54,6 +56,13 @@
 
   &footer{
     @include inuit-font-size($inuit-font-size-h5, 1);
+    @extend .o-wrapper;
+    @include mq($from: desktop){
+      padding-left: $act-unit-h * 1.5;
+      padding-right: $act-unit-h * 1.5;
+     grid-column-start: 1;
+     grid-column-end: 3;
+    }
   }
 
   &aside{

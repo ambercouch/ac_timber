@@ -36,9 +36,11 @@
   {% endif %}
 
   {% if post.meta('post_content_footer') %}
-  <footer class="l-single-page__footer{{ templateClass }} ">
-    {{ post.meta('post_content_footer') }}
-  </footer>
+  <div class="l-single-page__footer{{ templateClass }} ">
+    <footer class="c-footer{{ templateClass }}">
+      {{ post.meta('post_content_footer') }}
+    </footer>
+  </div>
   {% endif %}
 
 </article>

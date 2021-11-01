@@ -98,9 +98,12 @@
     display: block
   }
   &post-icon{
-    @include size($act-unit-h);
-    fill: $brand-col-1;
-    margin: 0 auto $act-unit;
+      @include size($act-unit-h);
+      fill: $brand-col-1;
+      margin: 0 auto $act-unit;
+    }
+  &post-icon-img{
+    display: block;
   }
 }
 
@@ -143,7 +146,15 @@
     margin-bottom: $act-unit-t;
     color: $brand-col-6;
   }
+  &product-box{
+    color: $brand-col-1;
+    font-family: $act-font-family-sans;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include act-font-size($act-fs-4);
+  }
 }
+
 
 
 
@@ -172,7 +183,21 @@
 }
 
 .c-header__post-icon--{
+  &product-box{
+    @include size($act-unit-h * 1.25)
+  }
+}
 
+//BEM ELEMENT MODIFIER FALLBACK .c-header__post-icon--
+
+[class*=c-header__post-icon-img--] {
+  @extend .c-header__post-icon-img;
+}
+
+.c-header__post-icon-img--{
+  &service-intro{
+    fill: $brand-col-6;
+  }
 }
 
 
@@ -186,6 +211,11 @@
 &service-intro{
   color: $brand-col-6;
 }
+  &product-box{
+    @include act-font-size($act-fs-5);
+    font-family: $act-font-family-sans;
+    font-weight: 500;
+  }
 }
 
 

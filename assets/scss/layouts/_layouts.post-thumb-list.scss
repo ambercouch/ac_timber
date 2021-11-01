@@ -22,6 +22,9 @@
   &project{
     background: $brand-col-4;
   }
+  &product{
+    width: 100%;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-post-thumb-list--
@@ -91,6 +94,11 @@
   &column{
     flex-direction: column;
   }
+  &product{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -116,6 +124,9 @@
     width: 100%;
   }
   &project{
+    width: 100%;
+  }
+  &product{
     width: 100%;
   }
 }
