@@ -13,21 +13,23 @@ Include this with optional params
 
 {% set postAltTitle = (post.meta('post_alt_title')) ? post.meta('post_alt_title') : null %}
 {% set postTitle = (postAltTitle) ? postAltTitle  : post.title %}
-{% set headerTitle = (headerTitle) ? headerTitle : postTitle %}
+{% set templateTitle = (templateTitle) ? templateTitle : null %}
+{% set headerTitle = (templateTitle) ? templateTitle : postTitle %}
 
 {% set postSubtitleAfter =  (post.meta('post_heading_subtitle')) ? post.meta('post_heading_subtitle') : null %}
 {% set templateSubtitleAfter = (templateSubtitleAfter) ? templateSubtitleAfter : null %}
 {% set headerSubtitleAfter = (templateSubtitleAfter)? templateSubtitleAfter :  postSubtitleAfter %}
 
 {% set postIcon =  (post.meta('custom_post_icon')) ? post.meta('custom_post_icon') : null %}
-{% set headerIcon = (headerIcon) ? headerIcon : postIcon %}
+{% set tempalteIcon = (templateIcon) ? templateIcon : null %}
+{% set headerIcon = (templateIcon) ? templateIcon : postIcon %}
 
 
 <div class="c-header{{ headerModClass }}">
 <header class="c-header__header{{ headerModClass }}">
   {% if headerIcon and headerIcon != 'hide' %}
     <div class="c-header__post-icon{{ headerModClass }}">
-      <img class="c-header__post-icon-img{{ headerModClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+      <img class="c-header__post-icon-img{{ headerModClass }} is-svg-replace" src="{{ headerIcon.url }}" />
     </div>
   {% endif %}
 
