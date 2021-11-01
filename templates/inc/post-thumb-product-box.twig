@@ -1,0 +1,65 @@
+{% set modClass = (postType) ? '--'~postType : '' %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+{% set headerIcon = post.meta('product_icon') %}
+{% set productStrap = post.meta('product_strapline') %}
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+
+      {% if headerTitle != false %}
+        <div class="c-post-thumb__header{{ modClass }}">
+          {% include "inc/header.twig" with {
+            headingLevel : '4',
+            headerModClass : modClass,
+            templateIcon : headerIcon,
+            templateSubtitleAfter : productStrap
+          }%}
+
+          <div class="c-post-thumb__price-box">
+            <span class="c-post-thumb__price-box-currency">£</span>
+            <span class="c-post-thumb__price-box-price">{{ post.meta('product_price') }}</span>
+            <span class="c-post-thumb__price-box-frequency">{{ post.meta('price_frequency') }}</span>
+          </div>
+
+        </div>
+      {% endif %}
+
+  <div class="c-post-thumb__body{{ modclass }}">
+    <div class="c-post-thumb__info">
+      {{ post.meta('product_intro') }}
+    </div>
+
+    {% if post.meta('product_feature_list') %}
+    <div class="c-post-thumb__feature-list{{ modClass }}">
+      <div class="c-feature-list{{ modClass }}">
+        <div class="c-feature-list__header">
+        {% include "inc/header.twig" with {
+          headingLevel : '6',
+          headerModClass : 'feature-list-product-box',
+          templateTitle : 'Feature List',
+          templateIcon : 'hide'
+        }%}
+        </div>
+
+        <ul class="c-feature-list__list">
+          {% for item in post.meta('product_feature_list') %}
+          <li class="c-feature-list__item">
+            <span class="c-feature-list__item-icon">
+              <span class="c-svg-icon">
+                {% include "inc/svg-icon"  %}
+              </span>
+            </span>
+            <span class="c-feature-list__item-text">
+              {{ item.feature_list_text }}
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+
+
+</article>

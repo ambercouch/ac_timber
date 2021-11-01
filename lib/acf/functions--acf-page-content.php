@@ -113,8 +113,8 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array(
                 'key' => 'field_footer_content',
-                'label' => 'Post Footer Content',
-                'name' => 'post_footer_content',
+                'label' => 'Post Content Footer',
+                'name' => 'post_content_footer',
                 'type' => 'wysiwyg',
                 'instructions' => 'Extra content area used at the bottom of the article.',
                 'required' => 0,

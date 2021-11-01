@@ -75,6 +75,36 @@ function  act_cpt() {
 
     register_taxonomy( 'service_category', array( 'service' ), $args );
 
+    /*
+    Register Product
+    */
+
+    $labels = array(
+        'name' => _x('Products', 'post type general name'),
+        'singular_name' => _x('Product', 'post type singular name'),
+        'add_new' => _x('Add New', 'product'),
+        'add_new_item' => __('Add New Product'),
+        'edit_item' => __('Edit Product'),
+        'new_item' => __('New Product'),
+        'all_items' => __('All Products'),
+        'view_item' => __('View Product'),
+        'search_items' => __('Search Products'),
+        'not_found' => __('No products found'),
+        'not_found_in_trash' => __('No products found in the Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Products'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-products',
+        'description' => 'Ambercouch Products',
+        'public' => true,
+        'menu_position' => 5,
+        'supports' => array('title' ),
+        'has_archive' => true,
+    );
+    register_post_type('product', $args);
+
 //    $labels = array(
 //        'name' => _x('Testimonials', 'post type general name'),
 //        'singular_name' => _x('Testimonial', 'post type singular name'),
