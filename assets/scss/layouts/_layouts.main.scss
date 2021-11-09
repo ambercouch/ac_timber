@@ -12,7 +12,7 @@ BEM BLOCK .l-main
   @include mq($from : desktop){
     padding-top: 0 ;
   }
-  &.has-side-bar{
+  &.has-sidebar{
     @include mq($from: tablet) {
       display: flex;
     }
@@ -28,11 +28,11 @@ BEM BLOCK MODIFIERS .l-main--
 }
 
 .l-main--{
-  &service{
-    padding: 0 !important;
-  }
   &page{
     padding-top: 0;
+  }
+  &service{
+    @extend .l-main--page;
   }
   &front-page{
     padding-top: $act-unit-l;
@@ -66,7 +66,7 @@ BEM BLOCK MODIFIERS .l-main--
 
 
 .l-main__content{
-  .has-side-bar &{
+  .has-sidebar &{
 
     @include mq($from: tablet) {
       width: 65%;
@@ -84,7 +84,7 @@ BEM BLOCK MODIFIERS .l-main--
 
 .l-main__content--{
   &page{
-    .has-side-bar &{
+    .has-sidebar &{
       @include mq($from: desktop){
         padding-right: $act-unit-h;
       }
