@@ -54,7 +54,7 @@
   &page-section{
     max-width: 1024px;
     margin: auto;
-    &:first-child{
+    &:nth-child(odd){
       & .c-page-section{
         flex-direction: row-reverse;
       }
