@@ -9,13 +9,15 @@
 /*
   BEM BLOCK MODIFIER .c-nav-menu--
  */
-
 .c-nav-menu-- {
   &primary {
    @include act-font-size($act-fs-6, 1.3);
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
+    @include mq($from:desktop){
+      padding-right: 0
+    }
 
   }
   &secondary {
@@ -25,7 +27,6 @@
     //margin-top: $act-unit-l;
   }
 }
-
 //BEM BLOCK MODIFIER FALLBACK .c-nav-menu--
 
 [class*=c-nav-menu--] {
@@ -58,7 +59,6 @@
     top: 100%;
     margin-left: 0;
     z-index: 999;
-    background: $brand-col-2;
     padding: $act-unit-t;
     .menu-item-has-children:hover &{
       left: 0;
@@ -77,8 +77,13 @@
     color: white;
     margin-bottom:0;
     padding-left: 0 !important;
+    text-align: left;
+    border-bottom: solid 1px #555;
     &:last-child{
       margin-bottom: 0;
+    }
+    .home &{
+      border-bottom: solid 1px white;
     }
   }
   &sub-menu-link{
@@ -103,7 +108,22 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+    @extend .o-list-flex--center;
+    justify-content: flex-start;
+    @include mq ($from: wide){
+      justify-content: flex-end;
+    }
+    & a {
+      color: $brand-col-1;
+    }
+    .home & {
+      a{
+        color: white;
+      }
+      .is-hidden-home{
+        display: none;
+      }
+    }
   }
   &mobile{
     @extend .c-nav-menu__list--stacked;
@@ -114,6 +134,12 @@
   }
   &mobile-bookings{
     text-align: left;
+    @include mq ($from: wide){
+      display: none;
+      .l-site__off-page-container--mobile-navigation & {
+        display: block;
+      }
+    }
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -125,10 +151,19 @@
   &footer{
   display: flex;
     flex-direction: row;
+    justify-content: center;
   }
   &stacked{
     display: flex;
     flex-direction: column;
+  }
+  &homepage-service{
+    @include mq ($from: desktop){
+      //width: 90vw;
+      //max-width: 1800px;
+      margin: auto;
+      box-sizing: border-box;
+    }
   }
 }
 
@@ -142,6 +177,23 @@
   &primary{
     margin-right: 0;
     margin-left: 0;
+    text-transform: uppercase;
+    display: none;
+    @include mq ($from: wide){
+      display: block;
+    }
+    &:last-child{
+      display: block;
+      border: solid 1px $brand-col-1;
+      margin-right: $act-unit;
+      .home & {
+        display: none;
+        border: solid 1px white;
+        @include mq ($from: wide){
+          display: block;
+        }
+      }
+    }
   }
   &hero{
     margin-right: $act-unit;
@@ -171,9 +223,25 @@
   }
   &image{
     display: inline-block;
+    @include mq ($from: tablet){
+      width: calc(50% - 2px);
+      padding: $act-unit-s;
+      margin-bottom: 0;
+      .hide-image{
+        display: none;
+      }
+    }
+  }
+  &image:first-child{
+    @include mq ($from: tablet){
+      width: 100%;
+    }
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
+    @include mq ($from: tablet){
+      margin-bottom: 0;
+    }
     &:last-child{
       margin-bottom: 0;
 
@@ -195,10 +263,15 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    padding:$act-unit-s $act-unit;
     display: block;
     background: transparent;
     font-weight: 500;
+    color: white;
+      @include mq ($from: desktop){
+        padding:$act-unit-s $act-unit 2px;
+      }
+    }
     &:hover{
       color: $brand-col-2;
     }
@@ -214,8 +287,6 @@
         color: darken(white, 5%);
       }
     }
-
-  }
   &secondary{
     @extend .o-btn;
     @extend .o-btn--rounded;
@@ -293,7 +364,10 @@
      }
      .is-icon-pos-right &{
        margin-left: 0;
-       margin-right: $act-unit-s;
+       //@include mq ($from: desktop){
+         display: flex;
+         flex-direction: row-reverse;
+       //}
      }
   }
   .is-icon-pos-right &{
@@ -301,5 +375,3 @@
   }
 
 }
-
-

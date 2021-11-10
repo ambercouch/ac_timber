@@ -59,6 +59,12 @@
   &footer {
     display: block
   }
+  &icon--service{
+    width: 10%;
+    max-width: 125px;
+    min-width: 100px;
+    margin: auto;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__heading--
@@ -78,7 +84,6 @@
       font-weight: 300;
       @include act-font-size($act-fs-3);
     }
-
   &cta{
     color: #fff;
     @include act-font-size($act-fs-2);
@@ -89,6 +94,21 @@
     @include act-font-size($act-fs-4);
     color: #fff;
   }
+  &section{
+    @include mq ($from: desktop){
+      text-align: left;
+    }
+  }
+  &sub-heading-section{
+    font-family: $act-font-family-sans;
+    font-weight: 300;
+    @include act-font-size($act-fs-3);
+    @include mq ($from: desktop){
+      text-align: left;
+    }
+  }
+
+
 }
 
 /*

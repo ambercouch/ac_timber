@@ -23,9 +23,30 @@ BEM ELEMENTS .l-site__
     background: white;
     position: relative;
     z-index: 10;
+    max-width: 1800px;
+    @include mq ($from: desktop){
+      width: 90vw;
+      margin: auto;
+    }
   }
   &main{
-
+    p{
+      @include mq ($from: desktop){
+        //width: 600px;
+        margin: auto;
+        margin-bottom: 50px;
+      }
+    }
+  }
+  &main-after{
+    aside{
+      max-width: 1800px;
+      margin: auto;
+    }
+    @include mq ($from: desktop){
+      width: 90vw;
+      margin: auto;
+    }
   }
   &off-page-container{
     transition: opacity 0.3s ease-in-out;
@@ -43,9 +64,16 @@ BEM ELEMENTS .l-site__
     }
     &[data-state=on]{
       opacity: 1;
+      display: block;
+      width: 100%;
+      right: 0;
+      padding-left: $act-unit;
+      @include mq($from: tablet){
+        width: 300px;
+      }
     }
     @include mq($from : desktop){
-      display: none !important;
+      display: block;
     }
     a{
       color: white;
@@ -79,4 +107,3 @@ BEM ELEMENTS .l-site__
 .l-site__off-page-container{
 
 }
-

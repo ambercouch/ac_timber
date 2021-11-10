@@ -17,11 +17,14 @@
   }
   &subsidiary{
     @include mq($from:desktop){
-      display: grid;
-      grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
-      grid-template-rows: auto auto;
-      grid-column-gap: $act-unit-l;
-      grid-row-gap: $act-unit-h;
+      /*
+       * the only widget in the subsidiary is the gallery so i can not see why this would be needed.
+      */
+      //display: grid;
+      //grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
+      //grid-template-rows: auto auto;
+      //grid-column-gap: $act-unit-l;
+      //grid-row-gap: $act-unit-h;
     }
   }
   &footer-widgets{
@@ -47,6 +50,20 @@
   &widget {
     display: block;
     padding: $act-unit;
+    &--footer-image-desk{
+      &:first-child{
+        display: block;
+        @include mq ($from: desktop){
+          display: none;
+        }
+      }
+      &:last-child{
+        display: none;
+        @include mq ($from: desktop){
+          display: block;
+        }
+      }
+    }
   }
   &heading {
     display: block

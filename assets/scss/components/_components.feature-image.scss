@@ -18,6 +18,21 @@ BEM BLOCK .c-feature-image--
 
     height: 100%;
   }
+  &single-page{
+    text-align: center;
+    &__img{
+      @include mq ($from: tablet){
+        height: 700px;
+        width: 100%;
+        margin: auto;
+        object-fit: cover;
+        height: 40vh;
+        @include mq ($from: wide){
+          height: 50vh;
+        }
+      }
+    }
+  }
 }
 
  /*
@@ -38,4 +53,3 @@ BEM ELEMENTS.c-feature-image__
   }
 
 }
-

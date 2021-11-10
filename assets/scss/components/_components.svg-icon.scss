@@ -19,6 +19,11 @@
   }
   &arrow-right{
     @include size($act-unit-s);
+    margin-left: $act-unit-s;
+    @include mq ($from: desktop){
+      margin-left: $act-unit-s;
+      height: 100%;
+    }
   }
 }
 

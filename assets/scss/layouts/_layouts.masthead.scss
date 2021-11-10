@@ -11,6 +11,7 @@ BEM BLOCK .l-masthead
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 1800px;
   &:after{
     //width: 100%;
   }
@@ -50,13 +51,16 @@ BEM ELEMENTS .l-masthead__
     }
   }
   &navigation{
-    display: none;
+    display: block;
+    padding-left: 0;
+    margin: $act-unit 0;
     //@extend .element--band-block-bottom;
     //@extend .is-split-nav;
     @extend .element--abso-layer;
-    @include mq($from: desktop){
+    @include mq($from: tablet){
       display: block;
-      margin: $act-unit 0;
+      width: 100%;
+      padding-left: 0;
     }
   }
   &widget-area{
@@ -136,6 +140,9 @@ BEM ELEMENTS .l-masthead__
   width: 100%;
   display: flex;
   justify-content: center;
+  @include mq ($from: wide){
+    width: auto;
+  }
 }
 
 /*
@@ -152,9 +159,12 @@ BEM ELEMENTS .l-masthead__
 .element--abso-layer{
   //width: 100%;
   @extend .o-site-wrapper--m;
-  left: 0;
+  left: auto;
   position: absolute;
   pointer-events: none;
+  .home & {
+    left: 0;
+  }
 }
 
 .is-split-nav{

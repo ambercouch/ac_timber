@@ -58,6 +58,18 @@
       left: 0;
     }
   }
+  &img{
+    position: relative;
+    max-height: 700px;
+    width: 100%;
+    object-fit: cover;
+    @include mq ($from: tablet, $until: wide){
+      height: 25vh !important;
+    }
+    @include mq ($from: wide){
+      height: 40vh !important;
+    }
+  }
   &header {
     display: block
   }
@@ -87,6 +99,11 @@
   }
   &post-icon{
     margin-bottom: $act-unit-l * 1;
+    &--menu-item{
+      width: 10%;
+      max-width: 75px;
+      margin: auto;
+    }
   }
   &post-icon-img{
     height: 150px !important;
@@ -163,6 +180,3 @@
     transform: translate(0, -50%);
   }
 }
-
-
-

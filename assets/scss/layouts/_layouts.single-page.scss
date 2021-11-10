@@ -23,6 +23,10 @@
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    @include mq ($from: desktop){
+      margin-top: $inuit-global-spacing-unit-large;
+      margin-bottom: $inuit-global-spacing-unit-large;
+    }
   }
 
   &heading{
@@ -52,6 +56,12 @@
 
   &comment-link{
     @include inuit-font-size($inuit-font-size-h5, 1);
+  }
+  &body--service{
+
+    //@include mq ($from: desktop){
+      text-align: center;
+  //  }
   }
 }
 
@@ -98,5 +108,3 @@
 [class*='single-page__comment-link--']{
   @extend .l-single-page__comment-link
 }
-
-
