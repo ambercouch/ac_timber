@@ -23,7 +23,7 @@ function  act_cpt() {
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments','page-attributes' ),
         'has_archive' => true,
     );
-    register_post_type('project', $args);
+    //register_post_type('project', $args);
 //Services
     $labels = array(
         'name' => _x('Services', 'post type general name'),
