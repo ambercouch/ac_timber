@@ -16,9 +16,7 @@
     display: block
   }
   &page{
-
-
-
+    display: block;
   }
   &service{
     padding: 0;
@@ -89,6 +87,9 @@
     @include size($act-unit-h);
     fill: $brand-col-1;
     margin: 0 auto $act-unit;
+  }
+  &sub-heading{
+    display: block;
   }
 }
 
