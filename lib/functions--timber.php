@@ -75,9 +75,10 @@ class StarterSite extends TimberSite {
         //Set up Menus defined functions--ac-menus.php
         foreach (unserialize(ACT_MENUS) as $menu){
             //Menus
-            if($menu == 'Primary'){
+            // Hack to remove default primary menu
+            if($menu == 'Primary.removedefault'){
                 //Alway make the primary menu will fallback to page menu
-                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+                //$context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
             }elseif (has_nav_menu( strtolower($menu) )){
                 //Only create the timber menus if they exist as we don't want fallback
                 $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
