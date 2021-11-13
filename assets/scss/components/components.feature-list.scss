@@ -1,0 +1,85 @@
+/*
+  BEM BLOCK .c-feature-list
+ */
+
+.c-feature-list {
+  display: block;
+  text-align: left;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-feature-list--
+ */
+
+.c-feature-list-- {
+  &product-box {
+    @include act-font-size($act-fs-6)
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-feature-list--
+
+[class*=c-feature-list--] {
+  @extend .c-feature-list;
+}
+
+/*
+  BEM ELEMENTS .c-feature-list__
+ */
+
+.c-feature-list__ {
+  &header {
+    display: block;
+    color: $brand-col-6;
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &list{
+    @extend .o-list-bare;
+    border-top: solid 1px $brand-col-2;
+    padding-top: $act-unit-s;
+  }
+  &item{
+    @extend .o-list-bare__item;
+    //list-style: none;
+    display: flex;
+    padding-left: 0;
+    padding-bottom: $act-unit-s;
+    margin-bottom: $act-unit-s;
+    border-bottom: solid 1px $brand-col-2;
+  }
+  &item-icon{
+    display: block;
+    flex-basis: $act-unit ;
+    @include size($act-unit);
+    padding: 2px;
+  }
+  &item-text{
+    flex-shrink: 20;
+    margin-left: $act-unit-s;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-feature-list--
+
+[class*=c-feature-list__header--] {
+  @extend .c-feature-list__header;
+}
