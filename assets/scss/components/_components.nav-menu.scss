@@ -112,9 +112,12 @@
     justify-content: center;
   }
   &footer{
-  display: flex;
+    display: flex;
     flex-direction: row;
-}
+  }
+  &mobile{
+    @extend .o-list-flex--stacked;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
