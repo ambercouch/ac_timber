@@ -17,7 +17,7 @@
     //right: 14rem;
   }
   @include mq($from : desktop){
-    display: none;
+    //display: none;
   }
 }
 
@@ -27,10 +27,7 @@
   text-transform: uppercase;
   display: none;
   .c-burger__btn[data-state=on] &{
-    color: $brand-col-6;
-  }
-  .single-service &{
-    color: white;
+    color: $brand-col-1;
   }
 }
 

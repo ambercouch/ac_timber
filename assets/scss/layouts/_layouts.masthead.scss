@@ -46,7 +46,7 @@ BEM ELEMENTS .l-masthead__
     margin-top: $act-unit-s;
     @include mq($from:desktop){
       margin-top: $act-unit;
-      margin-bottom: $act-unit;
+      margin-bottom: 0;
     }
   }
   &navigation{

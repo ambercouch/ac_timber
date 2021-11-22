@@ -72,6 +72,11 @@ if( function_exists('acf_add_local_field_group') ):
                     'operator' => '==',
                     'value' => 'page',
                 ),
+                array(
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-templates/mxb-home.php',
+                ),
             ),
         ),
         'menu_order' => 0,
@@ -145,12 +150,24 @@ if( function_exists('acf_add_local_field_group') ):
                     'operator' => '==',
                     'value' => 'page',
                 ),
+                array(
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-templates/mxb-home.php',
+                ),
             ),
             array(
                 array(
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'post',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-templates/mxb-home.php',
                 ),
             ),
         ),

@@ -1,0 +1,147 @@
+/*
+  BEM BLOCK .l-section
+ */
+
+.l-section {
+  display: block;
+  padding-top: $act-unit;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-section--
+ */
+
+.l-section-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-section--
+
+[class*=l-section--] {
+  @extend .l-section;
+}
+
+/*
+  BEM ELEMENTS .l-section__
+ */
+
+.l-section__ {
+  &header {
+    display: block;
+  }
+
+  &header-wrapper{
+    @extend %shape-wrapper;
+  }
+  &header-container{
+    @extend %shape-container;
+  }
+  &header-content{
+    @extend %shape-content;
+    width: 650px !important;
+    padding-top: $act-unit-l *1.5 !important;
+  }
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+  &intro{
+    text-align: center;
+    margin-bottom: $act-unit-l;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+  &body{
+    @extend .o-box;
+    padding: $act-unit-l 0;
+  }
+
+  &footer {
+    display: block;
+    text-align: center;
+  }
+  &footer-wrapper{
+    @extend %shape-wrapper;
+  }
+  &footer-container{
+    @extend %shape-container;
+  }
+  &footer-content{
+    @extend %shape-content;
+  }
+  &cols{
+    display: flex;
+    margin-bottom: $act-unit-l;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-section--
+
+[class*=l-section__header--] {
+  @extend .l-section__header;
+}
+
+.is-col-50-50{
+  > *{
+    @extend .u-1-2;
+  }
+  > *:first-child{
+    padding-right: $act-unit-l;
+  }
+  > *:last-child{
+    padding-left: $act-unit-l;
+  }
+}
+
+.is-col-75-25{
+  > *:first-child{
+    @extend .u-2-3;
+    padding-right: $act-unit-l;
+  }
+  > *:last-child{
+    @extend .u-1-3;
+    padding-left: $act-unit-l;
+  }
+}
+
+.is-col-33-33-33{
+  > *{
+    @extend .u-1-3;
+  }
+  > *:first-child{
+
+    padding-right: $act-unit-l;
+  }
+  > *:last-child{
+    padding-left: $act-unit-l;
+  }
+}
+
+%shape-wrapper{
+  height: 175px;
+  overflow: hidden;
+}
+%shape-container{
+  @include size(1300px, 700px);
+  max-width: 100%;
+  margin: 0 auto;
+  background: $brand-col-2;
+  border-radius: 50%;
+}
+%shape-content{
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding-top: $act-unit * 1.5;
+}

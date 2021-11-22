@@ -120,9 +120,9 @@
     text-align: center;
   }
   &page{
-    padding-left: $act-unit-h * 1.5;
-    padding-right: $act-unit-h * 1.5;
-    padding-top: $act-unit-l;
+    padding-left: $act-unit-h;
+    padding-right: $act-unit-h;
+    padding-top: 0;
     padding-bottom: $act-unit-l;
     background-color: transparent;
   }

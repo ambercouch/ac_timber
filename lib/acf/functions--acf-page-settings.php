@@ -79,6 +79,11 @@ if( function_exists('acf_add_local_field_group') ):
                     'operator' => '==',
                     'value' => 'page',
                 ),
+                array (
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-templates/mxb-home.php',
+                ),
             ),
         ),
         'menu_order' => 0,
@@ -118,6 +123,11 @@ if( function_exists('acf_add_local_field_group') ):
                     'operator' => '==',
                     'value' => 'front_page',
                 ),
+                array (
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-templates/mxb-home.php',
+                ),
             ),
         ),
         'menu_order' => 0,
@@ -156,6 +166,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'page_type',
                     'operator' => '!=',
                     'value' => 'front_page',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '!=',
+                    'value' => 'page-templates/mxb-home.php',
                 ),
             ),
         ),

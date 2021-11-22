@@ -1,0 +1,76 @@
+<article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
+
+    <div class="entry-content l-single-page__body{{ templateClass }} ">
+        {% for item in post.meta('sections') %}
+
+            {% set colLayout =  item.section_column_layout %}
+            {% set classTitle =  item.section_title_class %}
+            {% set classSection =  item.section_title_class %}
+            {% set classIntro =  item.section_intro_class %}
+            {% set classFooter =  item.section_footer_class %}
+
+            <div class="l-section {{ classSection }}">
+
+                {% if not item.hide_section_title and item.section_title != '' %}
+                    <div class="l-section__header {{ classTitle }}">
+                      <div class="l-section__header-wrapper">
+                        <div class="l-section__header-container">
+                          <div class="l-section__header-content">
+                    {% include "inc/header.twig"
+                        with {
+                        templateTitle : item.section_title,
+                        headingLevel : '3' ,
+                        headerModClass : '--section-header'
+                    } %}
+                    </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endif %}
+              <div class="l-section__body">
+
+                {% if item.section_intro != '' %}
+                <div class="l-section__intro {{ classInto }}">
+                    {{ item.section_intro }}
+                </div>
+                {% endif %}
+
+                <div class="l-section__cols is-col-{{ colLayout }}">
+                    <div class="l-section__col--1">
+                        {{ item.section_column_1 }}
+                    </div>
+
+                    {% if colLayout != '100' %}
+                        <div class="l-section__col--2">
+                            {{ item.section_column_2 }}
+                        </div>
+                    {% endif %}
+
+                    {% if colLayout == '33-33-33' %}
+                        <div class="l-section__col--3">
+                            {{ item.section_column_3 }}
+                        </div>
+                    {% endif %}
+                </div>
+
+              </div>
+
+              {% if item.section_footer != '' %}
+                <footer class="l-section__footer">
+                  <div class="l-section__footer-wrapper">
+                  <div class="l-section__footer-container">
+                    <div class="l-section__footer-content">
+                      {{ item.section_footer }}
+                    </div>
+                  </div>
+                  </div>
+                </footer>
+              {% endif %}
+
+
+            </div>
+        {% endfor %}
+    </div>
+
+
+</article>

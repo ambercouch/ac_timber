@@ -63,6 +63,13 @@ if( function_exists('acf_add_local_field_group') ):
                         'value' => 'front_page',
                     ),
                 ),
+                array(
+                    array(
+                        'param' => 'page_template',
+                        'operator' => '==',
+                        'value' => 'page-templates/mxb-home.php',
+                    ),
+                ),
             ),
             array (
                 array (

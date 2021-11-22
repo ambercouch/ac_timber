@@ -4,7 +4,7 @@
 
 .c-header {
   display: block;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 }
 
 /*
@@ -43,6 +43,9 @@
       background: $brand-col-1;
       margin: 0 auto $act-unit;
     }
+  }
+  &section-header{
+    text-align: center;
   }
 
 }
