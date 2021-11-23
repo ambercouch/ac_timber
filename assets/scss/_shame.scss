@@ -23,3 +23,71 @@
   max-width: 100%;
 }
 
+
+.o-shape-1{
+  height: 175px;
+  overflow: visible;
+  overflow-y: clip;
+
+  > *{
+    @include size(1300px, 700px);
+    max-width: 100%;
+    margin: 0 auto;
+    background: $brand-col-3;
+    border-radius: 50%;
+    > *{
+      width: 400px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-top: $act-unit * 1.5;
+    }
+  }
+}
+
+
+.l-section__col--1{
+
+  position: relative;
+  height: 100%;
+  &:after{
+    background: red;
+    display: block;
+    content: "";
+    width: $act-unit;
+    height: $act-unit;
+    position: absolute;
+    right: $act-unit-s;
+    top: 0;
+    height: 100%;
+    background: url("assets/images/svg/mxb-wave.svg");
+    background-repeat: repeat-y;
+    background-size: 40%;
+    .has-no-borders &{
+      display: none !important;
+    }
+  }
+}
+
+.l-section__col--3{
+  position: relative;
+  height: 100%;
+  &:after{
+    background: red;
+    display: block;
+    content: "";
+    width: $act-unit;
+    height: $act-unit;
+    position: absolute;
+    left: $act-unit-s;
+    //transform: translate(50%);
+    top: 0;
+    height: 100%;
+    background: url("assets/images/svg/mxb-wave.svg");
+    background-repeat: repeat-y;
+    background-size: 40%;
+    background-position-x: 50%;
+    .has-no-borders &{
+      display: none !important;
+    }
+  }
+}

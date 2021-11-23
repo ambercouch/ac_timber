@@ -30,31 +30,31 @@ function act_menu_filters($sorted_menu_objects, $args) {
                 $image_el = '<img class="c-post-thumb__img" alt="'.$menu_object->title.'" src="'.$src.'" srcset="'.$srcSet.'" sizes="'.$sizes.'"/>';
 
                 $link_thum_el .= '<div class="c-post-thumb--menu-item">';
-                    $link_thum_el .= '<div class="c-post-thumb__image">';
-                    $link_thum_el .= $image_el;
-                    $link_thum_el .= '</div>';
-                    $link_thum_el .= '<div class="c-post-thumb__overlay-wrapper">';
-                        $link_thum_el .= '<div class="c-post-thumb__content--menu-item">';
-                            $link_thum_el .= '<header class="c-post-thumb__header">';
-                                $link_thum_el .= '<h2 class="c-post-thumb__heading">';
-                                    $link_thum_el .= '<span class="c-post-thumb__title">';
-                                    $link_thum_el .= $menu_object->title;
-                                    $link_thum_el .= '</span>';
-                                $link_thum_el .= '</h2>';
-                            $link_thum_el .= '</header>';
-                            $link_thum_el .= '<div class="c-post-thumb__body">';
-                            $link_thum_el .= '<div class="c-post-thumb__read-more">';
-                            $link_thum_el .= 'Find out more';
-                            $link_thum_el .= '</div>';
-                            $link_thum_el .= '</div>';
-                        $link_thum_el .= '</div>';
-                    $link_thum_el .= '</div>';
+                $link_thum_el .= '<div class="c-post-thumb__image">';
+                $link_thum_el .= $image_el;
+                $link_thum_el .= '</div>';
+                $link_thum_el .= '<div class="c-post-thumb__overlay-wrapper">';
+                $link_thum_el .= '<div class="c-post-thumb__content--menu-item">';
+                $link_thum_el .= '<header class="c-post-thumb__header">';
+                $link_thum_el .= '<h2 class="c-post-thumb__heading">';
+                $link_thum_el .= '<span class="c-post-thumb__title">';
+                $link_thum_el .= $menu_object->title;
+                $link_thum_el .= '</span>';
+                $link_thum_el .= '</h2>';
+                $link_thum_el .= '</header>';
+                $link_thum_el .= '<div class="c-post-thumb__body">';
+                $link_thum_el .= '<div class="c-post-thumb__read-more">';
+                $link_thum_el .= 'Find out more';
+                $link_thum_el .= '</div>';
+                $link_thum_el .= '</div>';
+                $link_thum_el .= '</div>';
+                $link_thum_el .= '</div>';
                 $link_thum_el .= '</div>';
 
                 $menu_object->title = $link_thum_el;
             }
         };
-   }
+    }
 
     //jump Links
     foreach ($sorted_menu_objects as $menu_object) {
@@ -99,7 +99,7 @@ function act_menu_filters($sorted_menu_objects, $args) {
                 $title_markup = '<div class="c-nav-menu__icon-title">'.$menu_item_icon_label.'</div>';
             }
 
-            $menu_object->title = '<div class="c-nav-menu__svg-icon "><div class="c-svg-icon--'. $icon_class_mod .'"><svg preserveAspectRatio="none" class="c-svg-icon__svg"><use class="c-svg-icon__use"  xlink:href="' . $menu_item_icon_id  . '" /></svg></div></div>'.$title_markup;
+            $menu_object->title = '<div class="c-nav-menu__svg-icon--'.$args->menu->slug.' "><div class="c-svg-icon--'. $icon_class_mod .'"><svg preserveAspectRatio="none" class="c-svg-icon__svg"><use class="c-svg-icon__use"  xlink:href="' . $menu_item_icon_id  . '" /></svg></div></div>'.$title_markup;
 
         }
     }

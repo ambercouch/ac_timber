@@ -5,17 +5,18 @@
 
             {% set colLayout =  item.section_column_layout %}
             {% set classTitle =  item.section_title_class %}
-            {% set classSection =  item.section_title_class %}
+            {% set classSection =  item.section_css_class %}
+            {% set classBody =  item.section_body_class %}
             {% set classIntro =  item.section_intro_class %}
             {% set classFooter =  item.section_footer_class %}
 
             <div class="l-section {{ classSection }}">
 
                 {% if not item.hide_section_title and item.section_title != '' %}
-                    <div class="l-section__header {{ classTitle }}">
+                    <div class="l-section__header ">
                       <div class="l-section__header-wrapper">
-                        <div class="l-section__header-container">
-                          <div class="l-section__header-content">
+                        <div class="l-section__header-container {{ classTitle }}">
+                          <div class="l-section__header-content ">
                     {% include "inc/header.twig"
                         with {
                         templateTitle : item.section_title,
@@ -27,7 +28,7 @@
                       </div>
                     </div>
                 {% endif %}
-              <div class="l-section__body">
+              <div class="l-section__body {{ classBody }}">
 
                 {% if item.section_intro != '' %}
                 <div class="l-section__intro {{ classInto }}">

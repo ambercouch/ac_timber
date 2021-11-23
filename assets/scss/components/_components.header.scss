@@ -126,6 +126,9 @@
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
   }
+  &footer{
+    color: $brand-col-5;
+  }
 }
 
 

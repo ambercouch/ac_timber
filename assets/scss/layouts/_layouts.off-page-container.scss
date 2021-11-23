@@ -62,7 +62,9 @@
     z-index: 999;
   }
   &nav-menu{
-    padding: $act-unit;
+   @extend .c-site-wrapper--responsive;
+    background-color: transparent;
+    padding-top: $act-unit-l ;
   }
   &widget-area{
     padding: 0 $act-unit;

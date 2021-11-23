@@ -29,6 +29,17 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    text-align: left;
+    @include mq($from : tablet){
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      .widget-first{
+        grid-column-start: 1;
+        grid-column-end: 5;
+        margin-bottom: $act-unit-h;
+        text-align: center;
+      }
+    }
   }
   &main-before{
     display: flex;
@@ -88,7 +99,7 @@
   &footer-widgets{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
     margin-bottom:$inuit-global-spacing-unit;
-    @extend .u-1-2--tablet;
+    //@extend .u-1-2--tablet;
     @include mq($from: tablet){
       padding-left:$inuit-global-spacing-unit ;
     }

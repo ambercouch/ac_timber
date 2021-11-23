@@ -24,6 +24,9 @@
   &social{
     //margin-top: $act-unit-l;
   }
+  &mobile{
+    padding: 0 $act-unit;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-nav-menu--
@@ -115,6 +118,12 @@
     display: flex;
     flex-direction: row;
   }
+  &shop{
+     @extend .o-list-flex--stacked;
+   }
+  &about{
+    @extend .o-list-flex--stacked;
+  }
   &mobile{
     @extend .o-list-flex--stacked;
   }
@@ -135,7 +144,7 @@
     margin-right: $act-unit;
   }
   &social{
-    margin-right: $act-unit-l;
+    margin-right: $act-unit-s;
     margin-left: 0;
   }
   &footer{
@@ -217,6 +226,9 @@
       }
     }
   }
+  &shop{
+    @include a($col : $brand-col-5);
+  }
 }
 
 
@@ -264,5 +276,18 @@
   }
 
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__svg-icon--
+
+[class*=c-nav-menu__svg-icon--] {
+  @extend .c-nav-menu__svg-icon !optional;
+}
+
+.c-nav-menu__svg-icon--{
+  &social{
+    @include size(35px);
+  }
+}
+
 
 

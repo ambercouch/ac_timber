@@ -1,6 +1,6 @@
 .l-footer{
   display: block;
-  background: $brand-col-5;
+  background: $brand-col-3;
   text-align: center;
 }
 
@@ -41,15 +41,16 @@
     padding: $inuit-global-spacing-unit;
     padding-left: $act-unit;
     padding-right: $act-unit;
-    background: transparent;
-    color: white;
+    background: $brand-col-3;
+    @include breakout-band($bgc : $brand-col-3)
+    color: $brand-col-1;
     a{
       color: white;
     }
   }
   &widget-area{
     @extend .c-site-wrapper--responsive;
-    padding-top: $act-unit-l;
+    padding-top: 0;
     padding-bottom: $act-unit-l;
     background-color: transparent;
   }
@@ -65,19 +66,12 @@
   &widget{
 
   }
-  &site-info{
-    background: $brand-col-2;
-    @include breakout-band($bgc : $brand-col-2)
-  }
+
 }
 
 .l-footer{
   a{
-    color: $brand-col-2;
-    text-decoration: none;
-    &:hover{
-      color: white;
-    }
+    @include a($col: $brand-col-5)
   }
 }
 

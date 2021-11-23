@@ -107,7 +107,7 @@ function act_disable_editor( $id = false ) {
     );
 
     $excluded_ids = array(
-        //get_option( 'page_on_front' )
+        get_option( 'page_on_front' )
     );
 
     if( empty( $id ) )
@@ -153,3 +153,44 @@ function act_disable_classic_editor() {
 
 }
 add_action( 'admin_head', 'act_disable_classic_editor' );
+
+/**
+ * Plugin Name: Testing ctrl+s and ctrl+p for saving and publishing posts.
+ * Plugin URI:  https://wordpress.stackexchange.com/a/199411/26350
+ */
+add_action( 'after_wp_tiny_mce', function()
+{?><script>
+    ( function ( $ ) {
+        'use strict';
+        $( window ).load( function () {
+            wpse.init();
+        });
+        var wpse = {
+            keydown : function (e) {
+                if( e.ctrlKey && 83 === e.which ) {
+                    // ctrl+s for "Save Draft"
+                    e.preventDefault();
+                    $( '#save-post' ).trigger( 'click' );
+                } else if ( e.ctrlKey && 80 === e.which ) {
+                    // ctrl+p for "Publish" or "Update"
+                    e.preventDefault();
+                    $( '#publish' ).trigger( 'click' );
+                }
+            },
+            set_keydown_for_document : function() {
+                $(document).on( 'keydown', wpse.keydown );
+            },
+            set_keydown_for_tinymce : function() {
+                if( typeof tinymce == 'undefined' )
+                    return;
+                for (var i = 0; i < tinymce.editors.length; i++)
+                    tinymce.editors[i].on( 'keydown', wpse.keydown );
+            },
+            init : function() {
+                wpse.set_keydown_for_document();
+                wpse.set_keydown_for_tinymce();
+            }
+        }
+    } ( jQuery ) );
+</script><?php });
+
