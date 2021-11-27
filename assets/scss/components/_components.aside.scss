@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .c-aside
+ */
+
+.c-aside {
+  display: block;
+
+}
+
+/*
+  BEM BLOCK MODIFIER .c-aside--
+ */
+
+.c-aside-- {
+  &project {
+    a{
+      @include a($col : $brand-col-1);
+      text-decoration: none;
+    }
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-aside--
+
+[class*=c-aside--] {
+  @extend .c-aside;
+}
+
+/*
+  BEM ELEMENTS .c-aside__
+ */
+
+.c-aside__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-aside--
+
+[class*=c-aside__header--] {
+  @extend .c-aside__header;
+}
