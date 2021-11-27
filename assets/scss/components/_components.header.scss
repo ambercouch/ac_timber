@@ -36,6 +36,10 @@
     @include breakout-band($brand-col-1);
   }
   &project{
+    @extend .c-header--page;
+    @include breakout-band($brand-col-6);
+  }
+  &slide{
     text-align: center;
     &:after{
       content : '';
@@ -44,6 +48,9 @@
       background: $brand-col-1;
       margin: 0 auto $act-unit;
     }
+  }
+  &product-box-feature-list{
+    color: $brand-col-6;
   }
 
 }
@@ -57,6 +64,9 @@
 .c-header--{
   &service{
     //color: $brand-col-6;
+  }
+  &thumb-service{
+    color: $brand-col-6;
   }
 }
 
@@ -76,7 +86,7 @@
   }
   &sub-heading{
     font-size: 2vw;
-    .c-header__header--project &{
+    .c-header__header--slide &{
       text-decoration: underline;
     }
   }
@@ -129,6 +139,9 @@
     @extend .c-header__heading--page;
     color: $brand-col-6 !important;
   }
+  &project{
+    @extend .c-header__heading--page;
+  }
   &sidebar{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
@@ -152,6 +165,16 @@
     font-weight: 700;
     text-transform: uppercase;
     @include act-font-size($act-fs-4);
+  }
+  &product-box-feature-list{
+    @extend .c-header__heading--product-box;
+    @include act-font-size($act-fs-6);
+    color: $brand-col-6;
+    font-weight: 500;
+    text-transform: none;
+  }
+  &thumb-service{
+    color: $brand-col-6;
   }
 }
 
@@ -186,6 +209,11 @@
   &product-box{
     @include size($act-unit-h * 1.25)
   }
+  &thumb-service{
+    fill: $brand-col-6;
+    @include size(10vw);
+    margin-bottom: $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__post-icon--
@@ -216,6 +244,7 @@
     font-family: $act-font-family-sans;
     font-weight: 500;
   }
+
 }
 
 

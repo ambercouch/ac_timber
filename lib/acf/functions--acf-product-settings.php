@@ -129,7 +129,7 @@ if( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_ac_product_features_title',
                 'label' => 'Product Features Title',
-                'name' => 'product_feature_title',
+                'name' => 'product_features_title',
                 'type' => 'text',
                 'instructions' => '',
                 'required' => 0,

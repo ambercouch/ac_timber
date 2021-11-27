@@ -1,0 +1,44 @@
+{% set classPostSidebar = (post.meta('post_content_aside'))? 'has-sidebar': 'has-no-sidebar' %}
+<article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }} {{ classPostSidebar }}">
+
+  {% if not hidePageTitle %}
+    <div class="l-single-page__header--project">
+    {% include "inc/header.twig"
+      with {
+      headingLevel : '1' ,
+      headerModClass : templateClass,
+      templateSubtitleAfter : post.meta('post_subtitle')
+    }%}
+    </div>
+  {% endif %}
+
+    {% if(post.thumbnail or acSettings.defaultImage) %}
+        <div class="l-single-page__feature-image{{ templateClass }} ">
+          {% include 'inc/feature-image.twig' %}
+        </div>
+    {% endif %}
+
+    <div class="entry-content l-single-page__body{{ templateClass }} ">
+      {{ post.content }}
+    </div>
+
+    {% if post.meta('post_content_aside') %}
+        <div class="l-single-page__aside{{ templateClass }} ">
+            <aside class="c-aside{{ templateClass }}">
+                {{ post.meta('post_content_aside') }}
+            </aside>
+        </div>
+    {% endif %}
+
+    {% if post.meta('post_content_subsidiary') %}
+    <div class="l-single-page__subsidiary{{ templateClass }} ">
+        <aside class="c-subsidiary{{ templateClass }}">
+            {{ post.meta('post_content_subsidiary') }}
+        </aside>
+    </div>
+    {% endif %}
+
+    <footer class="l-single-page__footer{{ templateClass }} ">
+    </footer>
+
+</article>

@@ -11,7 +11,10 @@
 <div class="c-post-slide__content">
   <div class="o-wrapper--flex-col-centre">
     <div class="c-post-slide__header">
-      {% include "inc/header.twig" with {'preSubHeading' : 'Project'} %}
+      {% include "inc/header.twig" with {
+        'preSubHeading' : 'Project',
+        'headerModClass' : '--slide'
+      } %}
     </div>
     <button class='c-btn--secondary' href="{{ post.url }}">Find out more</button>
   </div>

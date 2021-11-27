@@ -2,6 +2,7 @@
 {% set headerTitle = (headerTitle) ? headerTitle : post.title %}
 {% set headerIcon = post.meta('product_icon') %}
 {% set productStrap = post.meta('product_strapline') %}
+{% set listTitle = post.meta('product_features_title') %}
 
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
@@ -24,7 +25,7 @@
         </div>
       {% endif %}
 
-  <div class="c-post-thumb__body{{ modclass }}">
+  <div class="c-post-thumb__body{{ modClass }}">
     <div class="c-post-thumb__info">
       {{ post.meta('product_intro') }}
     </div>
@@ -35,8 +36,8 @@
         <div class="c-feature-list__header">
         {% include "inc/header.twig" with {
           headingLevel : '6',
-          headerModClass : 'feature-list-product-box',
-          templateTitle : 'Feature List',
+          headerModClass : '--product-box-feature-list',
+          templateTitle : listTitle,
           templateIcon : 'hide'
         }%}
         </div>
@@ -46,7 +47,7 @@
           <li class="c-feature-list__item">
             <span class="c-feature-list__item-icon">
               <span class="c-svg-icon">
-                {% include "inc/svg-icon.twig"  %}
+                {% include "inc/svg-icon.twig" with {'icon' : 'icon-check'} %}
               </span>
             </span>
             <span class="c-feature-list__item-text">
@@ -57,6 +58,12 @@
         </ul>
       </div>
     </div>
+    {% endif %}
+
+    {% if post.meta('product_footer') %}
+      <footer class="c-post-thumb__footer{{ modClass }}">
+        {{ post.meta('product_footer') |wpautop }}
+      </footer>
     {% endif %}
 
   </div>

@@ -5,6 +5,7 @@
 .o-svg-icon {
   display: block;
   position: relative;
+  @include size(100%)
 }
 
 
@@ -42,7 +43,7 @@
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
-    @include size($act-unit);
+    @include size(100%);
     //position: absolute;
     //left: 50%;
     //top: 50%;

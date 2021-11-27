@@ -38,4 +38,13 @@ BEM ELEMENTS.c-feature-image__
   }
 
 }
+[class*="c-feature-image__img--"]{
+  @extend .c-feature-image__img;
+}
 
+.c-feature-image__img--{
+  &project{
+    @include breakout-img();
+    max-height: 40vw;
+  }
+}

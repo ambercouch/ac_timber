@@ -50,3 +50,13 @@
     height: auto;
   }
 }
+
+
+.c-svg-icon__svg {
+ .l-footer__widget-area--footer-widgets &{
+   fill : $brand-col-1;
+   &:hover{
+     fill : $brand-col-2;
+   }
+ }
+}

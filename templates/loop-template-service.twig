@@ -4,8 +4,8 @@
   <ul class="l-post-thumb-list__list--service">
     {% for post in posts %}
       <li class="l-post-thumb-list__item--service">
-        {% set headerTitle = (post.meta('custom_post_thumb_title') ? post.meta('custom_post_thumb_title') : post.title) %}
-        {% include ["inc/post-thumb.twig"] with {'postType' : 'service', 'headerTitle' : headerTitle} %}
+        {% set headerTitle = (post.meta('post_short_title') ? post.meta('post_short_title') : post.title) %}
+        {% include ["inc/post-thumb.twig"] with {'tempModClass' : '--thumb-service', 'headerTitle' :  headerTitle } %}
       </li>
     {% endfor %}
   </ul>
