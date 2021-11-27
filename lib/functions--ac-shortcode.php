@@ -236,5 +236,32 @@ function act_shortcode_cta($atts, $content){
 }
 
 
+add_shortcode('act_content_gallery', 'act_shortcode_content_gallery');
+function act_shortcode_content_gallery($atts, $content){
+    extract(shortcode_atts(array('id' => null), $atts));
+    global $post;
+    $galleries = get_field('galleries' );
+    $images = $galleries[0]['gallery_images'] ;
+    $image_height = $galleries[0]['gallery_image_height'];
+    $output = "";
+    if ($images){
+        $output .= "<div class='l-content-gallery'>";
+        $output .= "<ul class='l-content-gallery__list'>";
+        foreach ($images as $image){
+            $output .= "<li style='height:". $image_height ."' class='l-content-gallery__item'>";
+            $output .= "<div class='l-content-gallery__image'>";
+            $output .= "<div class='c-feature-image--gallery'>";
+            $output .= "<img class='c-feature-image__img--gallery' src='";
+            $output .= esc_url($image['url']);
+            $output .= "'/>";
+            $output .= "</li>";        }
+        $output .= "</ul>";
+        $output .= "</div>";
+    }
+
+
+    return $output;
+};
+
 
 
