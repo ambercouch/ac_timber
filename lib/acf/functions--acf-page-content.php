@@ -130,6 +130,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'media_upload' => 1,
                 'delay' => 0,
             ),
+            array(
+                'key' => 'field_subsidiary_content',
+                'label' => 'Post Content Subsidiary',
+                'name' => 'post_content_subsidiary',
+                'type' => 'wysiwyg',
+                'instructions' => 'Extra content area used after the main content, before the footer.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '100',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'tabs' => 'all',
+                'toolbar' => 'full',
+                'media_upload' => 1,
+                'delay' => 0,
+            ),
         ),
         'location' => array(
             array(
@@ -137,6 +156,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'service',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'project',
                 ),
             ),
             array(
