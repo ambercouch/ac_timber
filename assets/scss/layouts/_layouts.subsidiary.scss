@@ -5,6 +5,7 @@
 .l-subsidiary {
   @extend .c-site-wrapper--responsive;
   padding-top: 0;
+  padding-bottom: 0;
 }
 
 /*
@@ -19,7 +20,7 @@
 
 //BEM BLOCK MODIFIER FALLBACK .l-subsidiary--
 
-[class*=subsidiary--] {
+[class*=l-subsidiary--] {
   @extend .l-subsidiary;
 }
 
@@ -50,6 +51,6 @@
 
 //BEM ELEMENT MODIFIER FALLBACK .l-subsidiary--
 
-[class*=subsidiary__header--] {
+[class*=l-subsidiary__header--] {
   @extend .l-subsidiary__header;
 }
