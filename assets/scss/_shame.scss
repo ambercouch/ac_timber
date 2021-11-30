@@ -194,7 +194,7 @@
     line-height: 1;
     border-bottom: solid 1px $brand-col-1;
     border-left: solid 1px white;
-    text-align: center;
+    text-align: center !important;
     &:first-child{
       border-left: none;
     }
