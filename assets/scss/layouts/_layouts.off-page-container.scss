@@ -61,6 +61,7 @@
     text-align: center;
     padding: $act-unit-s;
     z-index: 999;
+    pointer-events: none;
     @include mq($from:desktop){
       display: none !important;
     }
