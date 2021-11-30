@@ -16,6 +16,15 @@ ACTIMBER = {
 
             fitvids();
 
+            $('[data-control]').each(function () {
+                var controlId = $(this).attr('data-control')
+                if (controlId != ''){
+                    var showButton = $('[data-control='+controlId+']');
+                    var container = $('[data-container='+controlId+']');
+                    ACTIMBER.fn.open(container, showButton);
+                }
+            })
+
 
             /**
              * navigation.js
@@ -79,6 +88,38 @@ ACTIMBER = {
         init: function () {
             //uncomment to debug
             //console.log('posts');
+        }
+    },
+    fn: {
+        open: function (container, showButton, parent, listParent) {
+            var elState = showButton.attr('data-state');
+            var eventActOpen = new Event('actOpen');
+            var eventActClose = new Event('actClose');
+            var containId = container.attr('data-container')
+            showButton.on('click', function (e) {
+                e.preventDefault();
+                console.log('clicker');
+                elState = showButton.attr('data-state');
+                if ('off' === elState) {
+                    showButton.attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('is-state-on');
+                    document.body.className += ' container-is-open ' + 'container-open-' + containId;
+                    window.dispatchEvent(eventActOpen)
+
+                } else {
+                    console.log(document.body.className)
+                    $(showButton).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('is-state-on');
+                    document.querySelector('body').classList.remove('container-is-open');
+                    document.querySelector('body').classList.remove('container-open-' + containId);
+
+                    window.dispatchEvent(eventActClose);
+                }
+            });
         }
     }
 };

@@ -62,6 +62,9 @@
   &link-label{
     line-height: $act-unit;
   }
+  &nav-sub-menu{
+
+}
   &sub-menu{
     pointer-events: all;
     position: absolute;
@@ -75,13 +78,30 @@
     .home &{
       background: transparent;
     }
+    .l-site__off-page-container--mobile-navigation &{
+      background: transparent;
+    }
     .menu-item-has-children:hover &{
       left: 0;
       display: block;
+
     }
     &:hover{
       left: 0 !important;
       display: block !important;
+
+    }
+  }
+  &nav-sub-menu{
+    @extend .c-nav-menu__sub-menu;
+    padding: 0;
+    margin-bottom: $act-unit-s;
+    &[data-state=off]{
+      display: none !important;
+    }
+    &[data-state=on]{
+      display: block !important;
+      position: static;
     }
   }
   &sub-menu-list{
@@ -144,6 +164,10 @@
     }
   }
   &mobile{
+    @extend .c-nav-menu__list--stacked;
+    text-align: left;
+  }
+  &mobile-services{
     @extend .c-nav-menu__list--stacked;
     text-align: left;
   }
@@ -227,6 +251,10 @@
     }
   }
   &mobile{
+    @extend .c-nav-menu__item--stacked;
+    text-align: left;
+  }
+  &mobile-services{
     @extend .c-nav-menu__item--stacked;
     text-align: left;
   }
@@ -330,6 +358,11 @@
      text-transform: uppercase;
     @include act-font-size($act-fs-5)
    }
+  &mobile-services{
+    //@extend .c-nav-menu__link--blocky;
+    text-transform: uppercase;
+    @include act-font-size($act-fs-5)
+  }
   &mobile-pages{
     //@extend .c-nav-menu__link--blocky;
     text-transform: uppercase;
