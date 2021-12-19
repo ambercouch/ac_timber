@@ -32,7 +32,9 @@ var jsNpmScripts = [
     //All ready deprecated with browserify
     'fitvids/dist/fitvids.js',
     'remodal/dist/remodal.js',
-    'flickity/dist/flickity.pkgd.js'
+    'flickity/dist/flickity.pkgd.js',
+    'isotope-layout/dist/isotope.pkgd.js',
+    'isotope-packery/packery-mode.pkgd.js'
 ];
 
 var cssNpmScripts = [
