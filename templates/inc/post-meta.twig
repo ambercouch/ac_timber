@@ -1,50 +1,8 @@
 <div class="c-post-meta">
 
-  {#<div class="c-post-meta__section--post-type">#}
-    {#<div class="post-type">#}
-      {#<svg class="icon post-type__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none">#}
-        {#<title>{{ postFormat }}</title>#}
-        {#<desc>Post type {{ postFormat }}</desc>#}
-        {#<use xlink:href="#post-{{ postFormat }}"/>#}
-      {#</svg>#}
-    {#</div>#}
-  {#</div>#}
-
-  <div class="c-post-meta__section--post-author">
-    <div class="c-post-meta__post-author">
-        <span class="c-post-meta__label">Posted by</span> <span class="c-post-meta__author-name"><a class="c-post-meta__link" href="{{ post.author.link }}">{{ post.author }}</a></span>
-    </div>
-  </div>
-
-  {% if post.terms('category') %}
-  <div class="c-post-meta__section--post-cats">
-    <div class="c-post-meta__post-cats">
-      <span class="c-post-meta__label">Categories</span>
-      <ul class="c-post-meta__list--cats">
-        {% for term in post.terms('category') %}
-        <li class="c-post-meta__item--cats" ><a class="c-post-meta__link" href="{{ term.link }}" ><span  class="c-post-meta__link-label"  >{{ term }}</span></a></li>
-        {% endfor %}
-      </ul>
-    </div>
-  </div>
-  {% endif %}
-
-  {% if post.terms('tag') %}
-    <div class="c-post-meta__section--post-tags">
-      <div class="c-post-meta__post-tags">
-        <span class="c-post-meta__label">Tags</span>
-        <ul class="c-post-meta__list--tags">
-          {% for term in post.terms('tag') %}
-            <li class="c-post-meta__item--tags" ><a class="c-post-meta__link" href="{{ term.link }}"><span class="post-tags__link-label">{{ term }}</span></a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  {% endif %}
-
   <div class="c-post-meta__section--post-date">
     <div class="c-post-meta__post-date">
-      <span class="c-post-meta__label" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span>
+      <span class="c-post-meta__label" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span> <span class="c-post-meta__label" >by</span> <span class="c-post-meta__author-name">{{ post.author }}</span>
     </div>
   </div>
 

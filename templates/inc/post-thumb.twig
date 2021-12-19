@@ -5,6 +5,22 @@
 
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass]) }}>
+
+  {% if(post.thumbnail or acSettings.defaultImage) %}
+  <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+    <div class="c-post-thumb__feature-image{{ templateClass }} ">
+      {% include 'inc/feature-image.twig' %}
+    </div>
+  </a>
+    {% else %}
+  <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+      <div class="c-post-thumb__feature-image{{ templateClass }} is-default-image">
+        <div class="c-feature-image--blog is-default-image " >
+        </div>
+      </div>
+  </a>
+  {% endif %}
+
   <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
 
       {% if headerTitle != false %}
@@ -18,5 +34,9 @@
       {% endif %}
 
   </a>
+
+  <div class="entry-meta c-post-thumb__post-meta{{ modClass }}">
+    {% include 'inc/post-meta.twig' %}
+  </div>
 
 </article>

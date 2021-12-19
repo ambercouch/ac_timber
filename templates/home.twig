@@ -15,26 +15,25 @@
 
 
     {% block content %}
-      <div class="l-post-thumb-list">
-        <div class="l-post-thumb-list__list--column">
+      <div class="l-post-thumb-list--blog">
+        <ul class="l-post-thumb-list__list--blog" data-isotope="blog">
               {% for post in posts %}
-                <div class="l-post-thumb-list__item--column">
+                <li class="l-post-thumb-list__item--blog"  >
                   <div class="l-post-thumb-list__post-thumb">
-                      {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-                      {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
+                    {% include ["inc/post-thumb.twig"] with {'postType' : 'blog', 'headerTitle' : post.title} %}
                   </div>
-                </div>
+                </li>
               {% endfor %}
-        </div>
+        </ul>
       </div>
     {% endblock %}
 
 
 
 {% block belowContent %}
-  <div class="content__below">
+  <div class="l-content__below">
     {% if posts.pagination.pages is not empty %}
-    <div class="content__pagination">
+    <div class="l-content__pagination">
       {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
     </div>
     {% endif %}
@@ -42,12 +41,8 @@
   <!-- removed comments in home.twig -->
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = false %}
 
 {% block sidebar %}
-  <div id="sidebar" class="c-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
-  </div>
+
 {% endblock %}
