@@ -24,6 +24,8 @@
     "gulp-uglify": "^2.0.1",
     "gulp-util": "^3.0.8",
     "inuitcss": "^6.0.0-beta.5",
+    "isotope-layout": "^3.0.6",
+    "isotope-packery": "^2.0.1",
     "merge-stream": "^1.0.1",
     "pixrem": "^3.0.2",
     "pump": "^1.0.2",
