@@ -14,6 +14,7 @@
   &type {
     display: block
   }
+
   &page{
     text-align: center;
     @include breakout-band($brand-col-2);
@@ -129,6 +130,10 @@
     @include act-font-size($act-fs-g);
     font-weight: 900;
   }
+  &post{
+    margin-bottom: $act-unit;
+    text-decoration: underline;
+  }
   &service{
     @extend .c-header__heading--page;
     @include act-font-size($act-fs-1);
@@ -176,6 +181,9 @@
   &thumb-service{
     color: $brand-col-6;
   }
+  &blog{
+    @include act-font-size($act-fs-3)
+  }
 }
 
 
@@ -185,6 +193,18 @@
 
 [class*=c-header__title--] {
   @extend .c-header__title;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__link--
+
+[class*=c-header__link--] {
+  @extend .c-header__link;
+}
+
+.c-header__link--{
+  &slide{
+
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__link--

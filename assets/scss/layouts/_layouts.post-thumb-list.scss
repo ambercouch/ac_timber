@@ -4,7 +4,6 @@
 
 .l-post-thumb-list {
   display: block;
-
 }
 
 /*
@@ -24,6 +23,9 @@
   }
   &product{
     width: 100%;
+  }
+  &blog{
+    padding: 0 $act-unit;
   }
 }
 
@@ -57,7 +59,7 @@
     display: block
   }
   &post-thumb{
-  margin: 0 $act-unit
+  margin: 0 0;
     //padding: $act-unit-l;
   }
   &list{
@@ -72,9 +74,10 @@
   }
   &item{
     @extend .o-list-bare__item;
-    width: 33.333%;
+    width: calc((100% / 3) - ((48px * 2) / 3));
     text-align: center;
     padding-left: 0;
+    margin-bottom: $act-unit;
   }
 }
 
@@ -94,10 +97,16 @@
   &column{
     flex-direction: column;
   }
+  &block{
+    display: block;
+  }
   &product{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: $act-unit-l;
+  }
+  &blog{
+    flex-wrap: wrap;
   }
 }
 
@@ -110,6 +119,8 @@
 .l-post-thumb-list__item--{
   &service{
     height: 33.333vw;
+    width: 33.333%;
+    margin-bottom: 0;
     &:first-child{
       background: $brand-col-1;
     }
@@ -125,6 +136,7 @@
   }
   &project{
     width: 100%;
+    margin-bottom: 0 !important;
   }
   &product{
     width: 100%;

@@ -1,12 +1,16 @@
 .c-post-meta{
-  @include inuit-font-size($inuit-font-size-h5, 1);
+  text-align: left;
 }
 
 .c-post-meta__{
 
   &section{
-   margin-bottom: $act-unit-s;
-    @include act-font-size($inuit-font-size-h6,1)
+    margin-bottom: $act-unit-s;
+    @include act-font-size($act-fs-6,1);
+
+    .l-single-article__header &{
+      @include act-font-size($act-fs-4,1);
+    }
   }
 
   &list{
@@ -32,11 +36,10 @@
 
   &label{
     margin-bottom: $act-unit-t;
-    display: block;
+    display: inline;
   }
 
   &post-date{
-    @include inuit-font-size($inuit-font-size-h5, 1);
     display: block;
     visibility: inherit;
   }

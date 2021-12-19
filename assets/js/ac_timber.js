@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-console.log('ACTIMBER Flickity test');
+console.log('ACTIMBER ISOTOPE 123');
 ACTIMBER = {
     common: {
         init: function () {
@@ -16,12 +16,28 @@ ACTIMBER = {
 
             fitvids();
 
+
             let elem = document.querySelector('[data-flickity=project-slider]');
-            let flkty = new Flickity( elem, {
-                // options
-                cellAlign: 'left',
-                contain: true,
-                pageDots: false
+            if(elem){
+
+                let flkty = new Flickity( elem, {
+                    // options
+                    cellAlign: 'left',
+                    contain: true,
+                    pageDots: false
+                });
+
+            }
+
+
+            var $grid
+            $grid = $('.l-post-thumb-list__list--blog').isotope({
+                itemSelector: '.l-post-thumb-list__item--blog',
+                percentPosition: true,
+                layoutMode: 'packery',
+                packery: {
+                    gutter: 48
+                }
             });
 
 // element argument can be a selector string

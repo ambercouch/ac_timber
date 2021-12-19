@@ -22,33 +22,4 @@
     </div>
   </header>
 </div>
-
-
-    {% if  post.post_excerpt != '' %}
-      <div class="entry-content c-post-thumb__body">
-        <div class="c-post-thumb__excerpt">
-          <p>{{ post.post_excerpt }}</p>
-        </div>
-        <a href="{{ post.link }}" class="c-post-thumb__read-more">Read More</a>
-      </div>
-
-    {% else %}
-      <div class="entry-content c-post-thumb__body">
-        <div class="c-post-thumb__excerpt--truncated">
-          <p>{{ post.content | striptags | truncate(20) }}</p>
-        </div>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
-      </div>
-
-    {% endif %}
-    <footer class="c-post-thumb__footer">
-      {% if (fn('comments_open', post) or post.comment_count > 0 ) %}
-      <a class="c-post-thumb__comment-link" href="{{ post.link }}#comments">
-        <span>{{ post.comment_count }} Comments </span>
-      </a>
-      {% endif %}
-
-
-    </footer>
-
   </article>

@@ -51,6 +51,9 @@
   &footer {
     display: block
   }
+  &below{
+    padding: 0 $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-content--
