@@ -223,6 +223,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'rows' => 4,
                 'new_lines' => 'br',
             ),
+            array(
+                'key' => 'field_ac_product_contact-form',
+                'label' => 'Product Contact Form',
+                'name' => 'product_contact_form',
+                'type' => 'textarea',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '    ',
+                'placeholder' => '',
+                'maxlength' => '',
+                'rows' => 4,
+                'new_lines' => 'br',
+            ),
         ),
         'location' => array(
             array(

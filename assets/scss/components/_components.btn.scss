@@ -33,6 +33,7 @@
     @extend .o-btn--b1;
     min-width: $act-unit-h * 2;
     text-align: center;
+    color: $brand-col-6;
     &[class*=__item]{
       padding: 0 !important;
       //background: red;
@@ -57,6 +58,19 @@
   }
   &cta{
     @extend .c-btn--primary
+  }
+  &cta-product-box{
+    @extend .c-btn--primary;
+    background: $brand-col-2;
+    width: calc(100% + 96px);
+    position: relative;
+    left: -$act-unit-l;
+  }
+  &slide-more{
+    @extend .c-btn--secondary;
+    padding: $act-unit-s !important;
+    @include act-font-size($act-fs-5)
+    font-size: 1.5vw;
   }
 
 }

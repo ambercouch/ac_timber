@@ -18,18 +18,22 @@
   &page{
     text-align: center;
     @include breakout-band($brand-col-2);
-    padding: $act-unit 0 $act-unit-l;
+    padding: $act-unit $act-unit $act-unit-l;
   }
   &service{
     padding: 0;
     text-align: center;
     @extend .c-header--page;
+    margin-bottom: $act-unit;
     &:after{
       width: 0;
       height: 80px;
       border: solid 2px $brand-col-2;
       margin: 0 auto;
       position: static;
+    }
+    @include mq($from : tablet){
+      margin-bottom: 0;
     }
   }
   &service-intro{
@@ -45,9 +49,12 @@
     &:after{
       content : '';
       display: block;
-      @include size(3px, 100px);
+      @include size(3px, 6vw);
       background: $brand-col-1;
       margin: 0 auto $act-unit;
+      @include mq($from:tablet){
+        @include size(3px, 6vw);
+      }
     }
   }
   &product-box-feature-list{
@@ -82,11 +89,17 @@
 
   &heading {
     display: block;
-   font-size: 3vw;
+    font-size: 6vw;
+    @include mq($from: tablet){
+      font-size: 3vw;
+    }
     //text-decoration: none !important;
   }
   &sub-heading{
-    font-size: 2vw;
+    font-size: 4vw;
+    @include mq($from: tablet){
+      font-size: 2vw;
+    }
     .c-header__header--slide &{
       text-decoration: underline;
     }
@@ -127,8 +140,11 @@
 .c-header__heading--{
   &page{
     text-decoration: underline;
-    @include act-font-size($act-fs-g);
+    @include act-font-size($act-fs-1);
     font-weight: 900;
+    @include mq($from: tablet){
+      @include act-font-size($act-fs-g);
+    }
   }
   &post{
     margin-bottom: $act-unit;
@@ -180,6 +196,10 @@
   }
   &thumb-service{
     color: $brand-col-6;
+    font-size: 8vw;
+    @include mq($from : tablet){
+      font-size: 2vw;
+    }
   }
   &blog{
     @include act-font-size($act-fs-3)
@@ -231,8 +251,11 @@
   }
   &thumb-service{
     fill: $brand-col-6;
-    @include size(10vw);
+    @include size(60vw);
     margin-bottom: $act-unit-l;
+    @include mq($from:tablet){
+      @include size(10vw);
+    }
   }
 }
 

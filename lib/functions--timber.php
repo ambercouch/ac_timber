@@ -26,12 +26,12 @@ class StarterSite extends TimberSite {
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
 
-        add_image_size ( 'feature500', 500, 500, true );
+        add_image_size ( 'featureSquare', 1200, 1200, true );
         add_image_size ( 'feature16-9', 1600, 900, true );
         add_image_size ( 'feature16-4', 1600, 400, true );
-        add_image_size ( 'serviceMenuLarge', 900, 600, true );
-        add_image_size ( 'serviceMenuMedium', 600, 400, true );
-        add_image_size ( 'serviceMenuSmall', 300, 200, true );
+//        add_image_size ( 'serviceMenuLarge', 900, 600, true );
+//        add_image_size ( 'serviceMenuMedium', 600, 400, true );
+//        add_image_size ( 'serviceMenuSmall', 300, 200, true );
 
 
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );

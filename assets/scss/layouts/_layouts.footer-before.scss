@@ -8,11 +8,11 @@
   @extend .c-site-wrapper--responsive;
   padding-top: $act-unit-l;
   padding-bottom: $act-unit-l;
-  padding-left: $act-unit-h * 1.5;
-  padding-right: $act-unit-h * 1.5;
+  padding-left: $act-unit;
+  padding-right: $act-unit;
   background-color: transparent;
   text-align: left;
-  @include mq($from : desktop){
+  @include mq($from : tablet){
     padding-left: $act-unit-h * 1.5;
     padding-right: $act-unit-h * 1.5;
   }

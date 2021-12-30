@@ -5,7 +5,7 @@ BEM BLOCK .c-site-title
 .c-site-title{
   display: block;
   margin: 0;
-  width: 200px;
+  width: 25vw;
   min-height: 60px;
   max-width:100%;
   @include mq($from:tablet){

@@ -16,6 +16,16 @@ ACTIMBER = {
 
             fitvids();
 
+            $('[data-modal-trigger]').modaal({
+                content_source: '[data-modal]'
+            });
+            // $('[data-modal]').modaal('open');
+
+            $('[data-modal-close]').on('click', function () {
+                $('[data-modal]').modaal('close');
+            })
+
+
 
             let elem = document.querySelector('[data-flickity=project-slider]');
             if(elem){

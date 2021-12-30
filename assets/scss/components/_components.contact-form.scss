@@ -92,6 +92,7 @@
   }
   &label-text{
     @include act-font-size($act-fs-4, 1);
+    color: $brand-col-6;
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -144,6 +145,16 @@
 }
 .c-contact-form__content{
   .c-contact-form--footer & {
+    display: block;
+
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $act-unit-l;
+    align-items: self-end;
+    @include mq($from:tablet){
+      display: grid;
+    }
+  }
+  .c-contact-form--modal & {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column-gap: $act-unit-l;
@@ -174,6 +185,7 @@
     }
     &label-text {
       display: none;
+      color: $brand-col-6 !important;
     }
     &input-wrapper {
       padding: $act-unit-s;
@@ -223,12 +235,6 @@
   }
 }
 
-
-
-
-
-
-
 [class*=contact-form__input-label--] {
   @extend .c-contact-form__label;
 }
@@ -238,8 +244,43 @@
     grid-column-start: 1;
     grid-column-end: 3;
     margin-bottom: $act-unit;
+    display: block;
   }
 }
+
+[class*=contact-form__label-text--] {
+  @extend .c-contact-form__label-text;
+}
+
+.c-contact-form__label-text--{
+  &acceptance{
+    display: inline !important;
+  }
+}
+
+.c-contact-form__input{
+
+  .c-contact-form--modal & {
+    padding: 0 !important;
+    @include act-font-size($act-fs-5);
+    padding: $act-unit-t;
+    padding-left: 0;
+  }
+  &::placeholder{
+    .c-contact-form--modal & {
+      color: rgba($brand-col-6, 0.6) !important;
+    }
+  }
+}
+
+.c-contact-form__label-text{
+  .c-contact-form--modal & {
+    display: none;
+  }
+}
+
+
+
 
 
 
@@ -280,6 +321,9 @@
 }
 .wpcf7-textarea{
    @extend .c-contact-form__input;
+  .c-contact-form--modal & {
+    height: 100px;
+  }
  }
 .wpcf7-list-item-label{
   @extend .c-contact-form__label-text;
@@ -287,19 +331,24 @@
 
 .wpcf7-submit{
   transition: background 0.3s ease;
+  @extend .c-btn--primary;
   @extend .c-contact-form__input;
-  padding:$act-unit-t;
   background: $brand-col-6;
-  color: $brand-col-1;
+  color: $brand-col-1 !important;
   font-weight: 700;
   cursor: pointer;
   display: inline-block;
   width: auto;
   border-bottom: 0;
   line-height: 1;
-  @extend .c-btn--primary;
   &:hover{
     background: darken($brand-col-3, 5%);
+  }
+  .c-contact-form--modal & {
+    @extend .c-btn--primary;
+    padding: $act-unit !important;
+    color: $brand-col-1 !important;
+    background: $brand-col-6;
   }
 }
 

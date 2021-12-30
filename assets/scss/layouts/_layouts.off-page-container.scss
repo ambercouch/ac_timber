@@ -17,8 +17,11 @@
     display: block
   }
   &mobile-navigation{
-    display: grid;
-    grid-template-columns: 50% 50%;
+    display: block;
+    @include mq($from: tablet){
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
   }
 
 }

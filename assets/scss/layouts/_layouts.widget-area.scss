@@ -25,8 +25,12 @@
     }
   }
   &footer-widgets{
-    display: flex;
-    flex-wrap: wrap;
+    display: block;
+    @include mq($from:tablet){
+      display: flex;
+      flex-wrap: wrap;
+    }
+
   }
   &main-before{
     display: flex;

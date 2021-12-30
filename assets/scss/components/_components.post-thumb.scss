@@ -43,6 +43,8 @@
     background: $brand-col-2;
     color: $brand-col-1;
     justify-content: flex-start;
+
+
   }
 
 }
@@ -171,6 +173,9 @@
   &post-meta{
     padding: $act-unit;
   }
+  &cta-product-box{
+    margin-top: auto;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-post-thumb--
@@ -268,6 +273,12 @@
     padding: $act-unit-l;
     height: 100%;
     flex-shrink: 999;
+    display: flex;
+    flex-direction: column;
+    &.has-cta{
+      padding-bottom: 0 !important;
+
+    }
   }
 }
 

@@ -25,7 +25,10 @@
 
 .flickity-prev-next-button.previous {
   .l-post-thumb-list--project &{
-    left: calc(50% + 2vw);
+    @include mq($from: tablet){
+      left: calc(50% + 2vw);
+    }
+
   }
 
 }
@@ -33,5 +36,18 @@
   .l-post-thumb-list--project & {
     right: 2vw;
   }
+}
+
+.flickity-prev-next-button {
+  top: 75%;
+
+  @include mq($from: tablet){
+    top: 50%;
+
+  }
+}
+
+.modaal-container{
+  background: $brand-col-1;
 }
 

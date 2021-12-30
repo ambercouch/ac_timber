@@ -25,7 +25,7 @@
         </div>
       {% endif %}
 
-  <div class="c-post-thumb__body{{ modClass }}">
+  <div class="c-post-thumb__body{{ modClass }} {{ post.meta('product_contact_form') ? 'has-cta' : 'has-no-cta' }}">
     <div class="c-post-thumb__info">
       {{ post.meta('product_intro') }}
     </div>
@@ -64,6 +64,18 @@
       <footer class="c-post-thumb__footer{{ modClass }}">
         {{ post.meta('product_footer') |wpautop }}
       </footer>
+    {% endif %}
+
+    {% if post.meta('product_contact_form') %}
+      <div class="c-post-thumb__cta-product-box">
+        <a class="c-btn--cta-product-box" data-modal-trigger >Find out more</a>
+      </div>
+    <div class="c-modal" data-modal="covPopup" style="display: none" >
+      <div class="c-modal__contact-form--modal">
+        <div class="c-contact-form--modal">{{ post.meta('product_contact_form') | shortcodes }}</div>
+      </div>
+
+    </div>
     {% endif %}
 
   </div>

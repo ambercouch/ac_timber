@@ -48,7 +48,7 @@
 }
 
 [class*=comments__item--]{
-  @extend .comments__item;
+  //@extend .comments__item;
 }
 
 .comments__wrapper--{
