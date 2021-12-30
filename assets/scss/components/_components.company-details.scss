@@ -33,7 +33,6 @@
   &heading {
     display: block;
     @include act-font-size($act-fs-3);
-    color: white;
     margin-bottom: 0;
   }
   &title {
