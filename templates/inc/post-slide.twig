@@ -5,7 +5,7 @@
   <a href="{{ post.link }}" class="c-post-silde__link--slide">
 
   <div class="c-post-slide__feature-image">
-     <img class="c-post-slide__img--slide" src="{{ post.thumbnail.src('feature500') }}" />
+     {% include 'inc/feature-image.twig' with {'templateImageSize' : 'original', 'templateModClass' : '--slide'}%}
   </div>
 
 <div class="c-post-slide__content">
@@ -16,7 +16,7 @@
         'headerModClass' : '--slide'
       } %}
     </div>
-    <button class='c-btn--secondary' href="{{ post.url }}">Find out more</button>
+    <button class='c-btn--slide-more' href="{{ post.url }}">Find out more</button>
   </div>
 
 </div>
