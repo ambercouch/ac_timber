@@ -7,24 +7,10 @@ Include this with optional params
       headerModClass : templateClass
     }%}
 #}
-{% set headingLevel = (headingLevel) ? headingLevel : '2' %}
-{% set postTypeModClass = (postType) ? '--'~postType : null %}
-{% set headerModClass = (headerModClass) ? headerModClass : postTypeModClass %}
 
-{% set postAltTitle = (post.meta('post_alt_title')) ? post.meta('post_alt_title') : null %}
-{% set postTitle = (postAltTitle) ? postAltTitle  : post.title %}
-{% set templateTitle = (templateTitle) ? templateTitle : null %}
-{% set headerTitle = (templateTitle) ? templateTitle : postTitle %}
+{% set imgModClass = (templateModClass) ?  templateModClass : ''%}
+{% set imageSize =  (templateImageSize) ?  templateImageSize : 'original' %}
 
-{% set postSubtitleAfter =  (post.meta('post_heading_subtitle')) ? post.meta('post_heading_subtitle') : null %}
-{% set templateSubtitleAfter = (templateSubtitleAfter) ? templateSubtitleAfter : null %}
-{% set headerSubtitleAfter = (templateSubtitleAfter)? templateSubtitleAfter :  postSubtitleAfter %}
-
-{% set postIcon =  (post.meta('custom_post_icon')) ? post.meta('custom_post_icon') : null %}
-{% set tempalteIcon = (templateIcon) ? templateIcon : null %}
-{% set headerIcon = (templateIcon) ? templateIcon : postIcon %}
-
-
-<div class="c-feature-image{{ headerModClass }}">
-  <img srcset="{{ post.thumbnail.src('original')|resize(480)}} 480w, {{ post.thumbnail.src('original')|resize(1200)}} 1200w, {{ post.thumbnail.src('original')|resize(1920)}} 1920w, " class="c-feature-image__img{{ headerModClass }}" alt="{{ post.title }}"/>
+<div class="c-feature-image{{ imgModClass }}">
+  <img srcset="{{ post.thumbnail.src(imageSize)|resize(480)}} 480w, {{ post.thumbnail.src(imageSize)|resize(1200)}} 1200w, {{ post.thumbnail.src(imageSize)|resize(1920)}} 1920w, " class="c-feature-image__img{{ imgModClass }}" alt="{{ post.title }}"/>
 </div>
