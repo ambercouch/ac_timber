@@ -65,12 +65,16 @@ BEM ELEMENTS .l-masthead__
   }
   &branding{
     //@extend .element--items-centre;
-    @extend .element--flush-left;
+    @extend .element--centre;
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
     @include mq($from : desktop){
       max-width: 100%;
+      margin-left: 0 !important;
+    }
+    @include mq($from : tablet){
+      margin-left: 0 !important;
     }
   }
 }
@@ -146,6 +150,10 @@ BEM ELEMENTS .l-masthead__
 .element--flush-left{
   width: auto;
   margin-right: auto;
+}
+.element--centre{
+  width: auto;
+  margin:0 auto;
 }
 
 /*
