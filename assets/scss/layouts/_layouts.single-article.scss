@@ -74,3 +74,15 @@ BEM BLOCK MODIFIERS .l-main__body--
 
 }
 
+/*
+BEM BLOCK MODIFIERS .l-main__footer--
+ */
+
+[class*="l-single-article__footer--"]{
+  @extend .l-single-article__footer;
+}
+
+.l-single-article__footer--{
+
+}
+
