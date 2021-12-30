@@ -68,9 +68,13 @@
   }
   &slide-more{
     @extend .c-btn--secondary;
-    padding: $act-unit-s !important;
-    @include act-font-size($act-fs-5)
-    font-size: 1.5vw;
+    padding: $act-unit-t $act-unit !important;
+    @include act-font-size($act-fs-5);
+    //font-size: 1.5vw;
+    @include mq($from: tablet){
+      padding: $act-unit-s !important;
+    }
+
   }
 
 }
