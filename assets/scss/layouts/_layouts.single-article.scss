@@ -13,7 +13,12 @@
   }
   &header {
     margin-bottom: $inuit-global-spacing-unit;
-    padding: 0 $act-unit-h * 1.5;
+    padding: 0 $act-unit;
+    //display: none !important;
+    @include mq($from:tablet){
+      margin-bottom: $act-unit-h;
+      padding: $act-unit-l $act-unit-h * 1.5 $act-unit-h;
+    }
 
   }
   &heading {
@@ -34,7 +39,10 @@
   }
   &body {
     display: block;
-    padding: $act-unit-l $act-unit-h * 1.5 $act-unit-h;
+    padding: $act-unit;
+    @include mq($from : tablet){
+      padding: $act-unit-l $act-unit-h * 1.5 $act-unit-h;
+    }
   }
   &footer {
     display: block;

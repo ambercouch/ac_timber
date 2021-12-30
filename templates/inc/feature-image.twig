@@ -7,8 +7,7 @@ Include this with optional params
       headerModClass : templateClass
     }%}
 #}
-
-{% set imgModClass = (templateModClass) ?  templateModClass : ''%}
+{% set imgModClass = (templateModClass) ?  templateModClass : templateClass %}
 {% set imageSize =  (templateImageSize) ?  templateImageSize : 'original' %}
 
 <div class="c-feature-image{{ imgModClass }}">

@@ -92,7 +92,13 @@ BEM ELEMENTS.c-feature-image__
   }
   &post{
     @include breakout-img();
-    max-height: 30vw;
+    height: 100vw;
+    max-height: 50vh;
+    @include mq($from:tablet){
+      height: 30vw;
+      max-height: 75vh;
+    }
+
   }
   &blog{
     filter: saturate(0);

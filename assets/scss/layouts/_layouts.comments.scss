@@ -4,7 +4,10 @@
 
 .l-comments {
   display: block;
-  padding: $act-unit-l $act-unit-h * 1.5 $act-unit-h;
+  padding: $act-unit;
+  @include mq($from : tablet){
+    padding: $act-unit-l $act-unit-h * 1.5 $act-unit-h;
+  }
 }
 
 /*
@@ -33,7 +36,8 @@
   }
 
   &heading {
-    display: block
+    display: block;
+    padding-left: 0;
   }
 
   &title {
@@ -68,6 +72,12 @@
 
 [class*=l-comments__header--] {
   @extend .l-comments__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-comments--
+
+[class*=l-comments__heading--] {
+  @extend .l-comments__heading;
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-comments__item--

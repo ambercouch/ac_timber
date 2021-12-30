@@ -74,10 +74,13 @@
   }
   &item{
     @extend .o-list-bare__item;
-    width: calc((100% / 3) - ((48px * 2) / 3));
+    //@include size(100%);
     text-align: center;
     padding-left: 0;
     margin-bottom: $act-unit;
+    @include mq($from : tablet){
+      width: calc((100% / 3) - ((48px * 2) / 3));
+    }
   }
 }
 
