@@ -1,0 +1,86 @@
+/*
+  BEM BLOCK .c-comment-form
+ */
+
+.c-comment-form {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-comment-form--
+ */
+
+.c-comment-form-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-comment-form--
+
+[class*=c-comment-form--] {
+  @extend .c-comment-form;
+}
+
+/*
+  BEM ELEMENTS .c-comment-form__
+ */
+
+.c-comment-form__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &label{
+    display: block;
+    margin-bottom: $act-unit;
+  }
+  &label-text {
+    display: none;
+  }
+  &input{
+    width: 100%;
+    display: block;
+    border: solid 3px $brand-col-1;
+    padding: $act-unit-s $act-unit-s;
+  }
+  &textarea{
+    width: 100%;
+    padding: $act-unit-s $act-unit-s;
+    border: solid 3px $brand-col-1;
+  }
+  &input-wrapper{
+    margin-bottom: $act-unit;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-comment-form__header--
+
+[class*=c-comment-form__header--] {
+  @extend .c-comment-form__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-comment-form__input--
+
+[class*=c-comment-form__input--] {
+  @extend .c-comment-form__input;
+}

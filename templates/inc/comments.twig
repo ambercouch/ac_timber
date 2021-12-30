@@ -1,20 +1,59 @@
-<section id="comments" class="comments">
-  <div class="comments__wrapper--responses">
-    <h3 class="comments__heading--responses">Comments</h3>
-    <div class="comments__responses">
+<section id="comments" class="l-comments">
+  <div class="l-comments__heading--responses">
+    <h3 class="c-header__heading--responses">Comments</h3>
+  </div>
+
+    <div class="l-comments__responses">
       {%   if post.get_comments() %}
-        <ol class="comments__list">
+        <ol class="l-comments__list">
           {{ comment_list }}
         </ol>
       {%  else %}
         <p>No one has left a comment yet - Why not be the first!</p>
       {% endif %}
     </div>
+  <div class="l-comments__heading--comment-respond">
+    <h3 class="c-header__heading--comment-respond">Submit a Comment</h3>
   </div>
-  <div class="comments__wrapper--comment-respond">
-    <h3 class="comments__heading--comment-respond">Submit a Comment</h3>
-    <div class="comments__comment-respond">
-      {{ post.comment_form(comment_form_args) }}
-    </div>
+
+
+<div class="l-comments__comment-form">
+  <div class="c-comment-form">
+    <form class="c-comment-form__form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
+      {% if  user %}
+        <input class="c-comment-form__input--hidden" type="hidden" name="email" value="{{ user.email }}">
+        <input class="c-comment-form__input--hidden" type="hidden" name="author" value="{{ user.name }}">
+        <input class="c-comment-form__input--hidden" type="hidden" name="url" value="{{ user.link }}">
+      {% else %}
+        <label class="c-comment-form__label" >
+          <span class="c-comment-form__label-text">Email</span>
+          <input placeholder="Email" class="c-comment-form__input--email" required name="email" type="email" id="email">
+        </label>
+        <label class="c-comment-form__label">
+          <span class="c-comment-form__label-text">Name</span>
+          <input placeholder="Name" class="c-comment-form__input--text" required name="author" type="text">
+        </label>
+        <label class="c-comment-form__label">
+          <span class="c-comment-form__label-text">Website</span>
+          <input placeholder="Website" class="c-comment-form__input--text" name="url" type="url">
+        </label>
+      {% endif %}
+      <label class="c-comment-form__label">
+        <span class="c-comment-form__label-text">Comment</span>
+        <textarea class="c-comment-form__textarea" placeholder="Leave a comment..." name="comment" cols="60" rows="3"></textarea>
+      </label>
+      <input class="c-comment-form__input--hidden" name="comment_post_ID" value="{{ post.id }}" type="hidden">
+      <input class="c-comment-form__input--hidden" name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
+      <div class="c-comment-form__input-wrapper">
+        <button type="submit" name="Submit" class="c-btn--primary">Send</button>
+        <button class="c-btn--secondary" type="reset">Cancel</button>
+      </div>
+      <p>Your comment will be revised by the site if needed.</p>
+    </form>
+
+
   </div>
+</div>
+
+
 </section>
