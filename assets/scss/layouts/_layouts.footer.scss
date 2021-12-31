@@ -3,6 +3,9 @@
   background: $brand-col-6;
   text-align: left ;
   color: $brand-col-2;
+  a{
+    @include a($col: $brand-col-3, $col-hov : $brand-col-1)
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-footer--
@@ -53,6 +56,7 @@
     padding-top: $act-unit-l;
     padding-bottom: $act-unit-l;
     background-color: transparent;
+
   }
   &widgets{
     border-bottom: solid 1px white;
@@ -93,6 +97,9 @@
   &footer-widgets{
     padding-left: $act-unit;
     padding-right: $act-unit;
+    @include mq($from: tablet){
+      padding: $act-unit-l;
+    }
   }
 }
 

@@ -131,8 +131,9 @@
   &service{
     @extend .o-list-flex--stacked;
     justify-content: center;
-    align-content: center;
+    align-content: center !important;;
     text-align: center !important;
+    align-items: center;
 
   }
 }
@@ -152,7 +153,7 @@
     //margin-right: $act-unit;
   }
   &social{
-    margin-right: $act-unit-l;
+    margin-right: $act-unit;
     margin-left: 0;
   }
   &footer{
@@ -166,6 +167,7 @@
   }
   &mobile{
     @extend .c-nav-menu__item--stacked;
+    margin-bottom: $act-unit * 1.5;
   }
   &image{
     display: inline-block;
@@ -280,7 +282,7 @@
 
 .c-nav-menu__svg-icon--{
   &social{
-    @include size(24px);
+    @include size(32px);
   }
 }
 

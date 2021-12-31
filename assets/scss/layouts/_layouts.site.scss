@@ -20,6 +20,7 @@ BEM ELEMENTS .l-site__
  */
 .l-site__{
   &masthead{
+    transition: background 0s ease-in-out;
     background: $brand-col-6;
     position: relative;
     z-index: 10;
@@ -32,6 +33,22 @@ BEM ELEMENTS .l-site__
       path{
         fill: $brand-col-6;
       }
+    }
+    [data-mobile=on] &{
+      transition: background 0.3s ease-in-out;
+      z-index: 9999;
+      position: fixed;
+      background: $brand-col-1;
+      path{
+        fill: $brand-col-6;
+      }
+    }
+  }
+  &hero{
+    //padding-bottom: $act-unit;
+    [data-mobile=on] &{
+      padding-top: 201px;
+      background: $brand-col-6;
     }
   }
   &main{
@@ -59,7 +76,7 @@ BEM ELEMENTS .l-site__
       opacity: 1;
     }
     @include mq($from : tablet){
-      padding-top: $act-unit-h * 2;
+      padding-top: $act-unit-h * 2.25;
     }
   }
 

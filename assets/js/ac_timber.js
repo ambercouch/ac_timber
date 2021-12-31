@@ -16,9 +16,15 @@ ACTIMBER = {
 
             fitvids();
 
-            $('[data-modal-trigger]').modaal({
-                content_source: '[data-modal]'
-            });
+            $('[data-modal-trigger]').each(function (i) {
+                let triggerId = $(this).attr('data-modal-trigger');
+
+                $('[data-modal-trigger='+triggerId+']').modaal({
+                    content_source: '[data-modal='+triggerId+']'
+                });
+            })
+
+
             // $('[data-modal]').modaal('open');
 
             $('[data-modal-close]').on('click', function () {

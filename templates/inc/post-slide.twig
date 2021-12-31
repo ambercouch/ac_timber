@@ -1,11 +1,14 @@
 {% set modClass = (postType) ? '--'~postType : '' %}
 {% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+{% set postUrl = (post.meta('hide_project_content_link') and post.meta('project_url')) ? post.meta('project_url') : post.link %}
 
 <article {{ fn('post_class', ['c-post-slide'] ) }}>
-  <a href="{{ post.link }}" class="c-post-silde__link--slide">
+
 
   <div class="c-post-slide__feature-image">
+    <a href="{{ post.link }}" class="c-post-silde__link--slide">
      {% include 'inc/feature-image.twig' with {'templateImageSize' : 'original', 'templateModClass' : '--slide'}%}
+    </a>
   </div>
 
 <div class="c-post-slide__content">
@@ -16,11 +19,15 @@
         'headerModClass' : '--slide'
       } %}
     </div>
-    <button class='c-btn--slide-more' href="{{ post.url }}">Find out more</button>
+    {% if not post.meta('hide_project_content_link') %}
+    <button class='c-btn--slide-more' href="{{ post.link }}">Find out more</button>
+    {% elseif  post.meta('project_url')%}
+      <a class='c-btn--slide-more' href="{{ post.meta('project_url') }}">Visit the website</a>
+    {% endif %}
   </div>
 
 </div>
 
-  </a>
+
 
 </article>

@@ -68,13 +68,12 @@
 
     {% if post.meta('product_contact_form') %}
       <div class="c-post-thumb__cta-product-box">
-        <a class="c-btn--cta-product-box" data-modal-trigger >Find out more</a>
+        <a class="c-btn--cta-product-box" data-modal-trigger="{{ post.id }}" >Find out more</a>
       </div>
-    <div class="c-modal" data-modal="covPopup" style="display: none" >
+    <div class="c-modal" data-modal="{{ post.id }}" style="display: none" >
       <div class="c-modal__contact-form--modal">
         <div class="c-contact-form--modal">{{ post.meta('product_contact_form') | shortcodes }}</div>
       </div>
-
     </div>
     {% endif %}
 

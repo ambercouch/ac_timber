@@ -18,6 +18,9 @@ BEM BLOCK .l-masthead
   &.has-before-widgets{
     padding-top: 0;
   }
+  @include mq($from : tablet){
+    padding: 0 $act-unit-l;
+  }
 }
 
 /*

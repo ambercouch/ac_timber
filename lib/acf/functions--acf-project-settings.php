@@ -21,6 +21,21 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => 'Hide the link',
                 'default_value' => 1,
             ),
+            array (
+                'key' => 'field_project_url',
+                'label' => 'Project url',
+                'name' => 'project_url',
+                'type' => 'text',
+                'instructions' => 'Link to the project website',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+            ),
             array(
                 'key' => 'field_project_thumb_title',
                 'label' => 'Project Short Name',

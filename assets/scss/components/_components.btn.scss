@@ -31,6 +31,7 @@
   &primary{
     @extend .o-btn--m;
     @extend .o-btn--b1;
+    border: solid $brand-col-1;
     min-width: $act-unit-h * 2;
     text-align: center;
     color: $brand-col-6;
@@ -61,6 +62,7 @@
   }
   &cta-product-box{
     @extend .c-btn--primary;
+    border: none;
     background: $brand-col-2;
     width: calc(100% + 96px);
     position: relative;

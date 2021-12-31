@@ -177,7 +177,7 @@
   }
   &mobile-nav-after{
     @include act-font-size($act-fs-4);
-    margin-bottom: $act-unit-t;
+    margin-bottom: $act-unit;
     color: $brand-col-6;
   }
   &product-box{

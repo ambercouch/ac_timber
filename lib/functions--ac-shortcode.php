@@ -53,8 +53,8 @@ function act_contact( $atts ) {
         case 'tel':
             $contact_link = '<a data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
             break;
-        case 'website':
-            $contact_link = '<a href="'.$contact_value.'">'.$contact_value.'</a>';
+        case 'url':
+            $contact_link = '<a href="'.$contact_value.'">'.$contact_label.'</a>';
             break;
         case 'other':
             $contact_link = $contact_value;
@@ -66,11 +66,15 @@ function act_contact( $atts ) {
     $output = '';
     switch ($type){
         case 'item' :
-            $output .= '<div class="c-company-contact-item">';
-            $output .= '<span class="c-company-contact-item__label">';
-            $output .= $contact_label;
-            $output .= '</span>';
-            $output .= '<span class="c-company-contact-item__sep"> : </span>';
+            $output .= '<div class="c-company-contact-item" data-class="ct-'.$contact_type.'">';
+            if($contact_type != 'url')
+            {
+                $output .= '<span class="c-company-contact-item__label">';
+                $output .= $contact_label;
+                $output .= '</span>';
+                $output .= '<span class="c-company-contact-item__sep"> : </span>';
+            }
+
             $output .= '<span class="c-company-contact-item__value">';
             $output .= $contact_link;
             $output .= '</span">';
@@ -205,16 +209,20 @@ function act_shortcode_svg_icon($atts, $content = null) {
 add_shortcode('act_cta', 'act_shortcode_cta');
 function act_shortcode_cta($atts, $content){
     $a = shortcode_atts(array(
-        'title' => 'Add a Title',
-        'text' => 'Add Some text',
+        'title' => '',
+        'text' => '',
         'btn' => 'Submit',
+        'class' => '',
+        'btnclass' => '',
         'url' => '/'
     ), $atts);
+
+    extract($a);
 
     $a['text'] = '<p>'.$a['text'].'</p>';
 
 
-    $output = '<div class="c-cta">';
+    $output = '<div class="c-cta class '.$class.'">';
     $output .= '<div class="c-cta__header">';
     $output .= '<header class="c-header--cta">';
     $output .= '<h4 class="c-header__heading--cta">';
@@ -222,15 +230,49 @@ function act_shortcode_cta($atts, $content){
     $output .= '</h4>';
     $output .= '</header>';
     $output .= '</div>';
-    $output .= '<div class="c-cta__content">'.$a['text'].'</div>';
+    $output .= '<div class="c-cta__content">';
+    $output .= $a['text'];
+    $output .= $content;
+    $output .= '</div>';
     $output .= '<div class="c-cta__footer">';
-    $output .= '<div class="c-cta__btn">';
-    $output .= '<div class="c-btn--cta">';
+    $output .= '<div class="c-cta__btn ">';
+    $output .= '<div class="c-btn--cta '.$btnclass.'">';
     $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
     $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
     $output .= '</div>';
+
+    return $output;
+}
+
+add_shortcode('act_btn', 'act_shortcode_btn');
+function act_shortcode_btn($atts, $content){
+    $a = shortcode_atts(array(
+        'text' => '',
+        'class' => '',
+        'url' => '/',
+        'icon' => "",
+        'icon_class' => ''
+    ), $atts);
+
+    extract($a);
+
+
+    $output = '<a href="'.$url.'" class="c-btn '.$class.'">';
+    $output .= '<span class="c-btn__label">';
+    $output .= $a['text'];
+    $output .= '</span>';
+    if ($icon != ''){
+        $output .= '<span class="c-btn__icon '.$icon_class.' ">';
+        $output .= '<span class="o-svg-icon--'.$icon.'">';
+        $output .= '<svg viewBox="0 0 25 25" class="o-svg-icon__svg--'.$icon.'">';
+        $output .= '<use xlink:href="#icon-'.$icon.'"></use>';
+        $output .= '</svg>';
+        $output .= '</span>';
+        $output .= '</span>';
+    }
+    $output .= '</a>';
 
     return $output;
 }

@@ -4,12 +4,13 @@
   position: fixed;
   right:  $act-unit;
   top: $act-unit;
-  z-index: 99999;
+  z-index: 9999;
   @include act-font-size($act-fs-6);
   background: rgba(white, 0.1);
   padding: $act-unit-s $act-unit-t;
   @include mq($from : tablet){
     top: $act-unit-l *1.25 !important;
+    right:  $act-unit-l;
   }
 }
 
@@ -59,7 +60,7 @@
     background-color: $brand-col-6;
   }
   .single-service &{
-    background: $brand-col-6;
+    //background: $brand-col-6;
   }
 
 }

@@ -1,6 +1,6 @@
 .o-list-flex{
   display: flex;
-
+  align-items: center;
   > *{
     margin: 0 $act-unit-s;
 
@@ -50,6 +50,7 @@
     //display: none !important;
     @extend .o-list-flex;
     flex-direction: column;
+    align-items: flex-start;
     > *{
       margin-left: 0;
       margin-right: 0;
