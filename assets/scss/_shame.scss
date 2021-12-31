@@ -51,3 +51,11 @@
   background: $brand-col-1;
 }
 
+
+.c-hero__content h2{
+
+  @include mq($until : tablet){
+    font-size: $act-fs-1 !important;
+    line-height: 1.5;
+  }
+}

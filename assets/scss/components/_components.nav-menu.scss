@@ -110,6 +110,10 @@
   }
   &hero{
     @extend .o-list-flex--center;
+    flex-direction: column;
+    @include mq($from : tablet){
+      flex-direction: row;
+    }
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -134,7 +138,6 @@
     align-content: center !important;;
     text-align: center !important;
     align-items: center;
-
   }
 }
 
@@ -151,6 +154,15 @@
   }
   &hero{
     //margin-right: $act-unit;
+    width: 100%;
+
+    @include mq($until : tablet){
+      margin: 0;
+      margin-bottom: $act-unit;
+    }
+    @include mq($from : tablet){
+      width: auto;
+    }
   }
   &social{
     margin-right: $act-unit;

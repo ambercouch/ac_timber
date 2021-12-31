@@ -67,7 +67,7 @@ BEM ELEMENTS .l-site__
     background: $brand-col-1;
     z-index: 1000;
     opacity: 0;
-    padding-top: $act-unit-h;
+    padding-top: $act-unit-h * 1.5;
     &[data-state=off]{
       opacity: 0 !important;
       @include inuit-hidden-visually();
