@@ -31,7 +31,7 @@ var jsCustomScripts = [
 var jsNpmScripts = [
     //All ready deprecated with browserify
     'fitvids/dist/fitvids.js',
-    'remodal/dist/remodal.js',
+    'modaal/dist/js/modaal.js',
     'flickity/dist/flickity.pkgd.js',
     'isotope-layout/dist/isotope.pkgd.js',
     'isotope-packery/packery-mode.pkgd.js'
@@ -40,8 +40,7 @@ var jsNpmScripts = [
 var cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
     'flickity/dist/flickity.css',
-    'remodal/dist/remodal.css',
-    'remodal/dist/remodal-default-theme.css',
+    'modaal/dist/css/modaal.scss',
 ];
 
 for (var i = 0; i < jsCustomScripts.length; i++) {
