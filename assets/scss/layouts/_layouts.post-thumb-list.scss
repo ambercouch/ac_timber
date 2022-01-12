@@ -110,7 +110,11 @@
     }
 
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: $act-unit-l;
+    grid-gap: 1px;
+    @include mq($from: desktop){
+      grid-gap: $act-unit-l;
+    }
+
   }
   &blog{
     flex-wrap: wrap;

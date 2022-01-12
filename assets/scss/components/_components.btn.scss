@@ -64,9 +64,18 @@
     @extend .c-btn--primary;
     border: none;
     background: $brand-col-2;
-    width: calc(100% + 96px);
+
     position: relative;
-    left: -$act-unit-l;
+    width: calc(100% + 24px);
+    left: -$act-unit-s;
+    @include mq($from: tablet){
+      width: calc(100% + 48px);
+      left: -$act-unit;
+    }
+    @include mq($from: desktop){
+      width: calc(100% + 96px);
+      left: -$act-unit-l;
+    }
   }
   &slide-more{
     @extend .c-btn--secondary;

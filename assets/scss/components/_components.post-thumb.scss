@@ -187,10 +187,14 @@
 .c-post-thumb__header--{
   &product-box{
     padding: $act-unit-l;
-    height: 440px;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+
+    @include mq($from : tablet){
+      height: 440px;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -270,14 +274,21 @@
   &product-box {
     background: $brand-col-1;
     color: $brand-col-6;
-    padding: $act-unit-l;
+    padding: $act-unit-s;
+    padding-top: $act-unit;
     height: 100%;
     flex-shrink: 999;
     display: flex;
     flex-direction: column;
     &.has-cta{
       padding-bottom: 0 !important;
-
+    }
+    @include mq($from: tablet){
+      padding: $act-unit;
+    }
+    @include mq($from: desktop){
+      padding: $act-unit-l;
+      padding-top: $act-unit-l;
     }
   }
 }
