@@ -75,31 +75,85 @@ function  act_cpt() {
 
     register_taxonomy( 'service_category', array( 'service' ), $args );
 
-//    $labels = array(
-//        'name' => _x('Testimonials', 'post type general name'),
-//        'singular_name' => _x('Testimonial', 'post type singular name'),
-//        'add_new' => _x('Add New', 'Testimonial'),
-//        'add_new_item' => __('Add New Testimonial'),
-//        'edit_item' => __('Edit Testimonial'),
-//        'new_item' => __('New Testimonial'),
-//        'all_items' => __('All Testimonials'),
-//        'view_item' => __('View Testimonial'),
-//        'search_items' => __('Search Testimonials'),
-//        'not_found' => __('No Testimonials found'),
-//        'not_found_in_trash' => __('No Testimonials found in the trash'),
-//        'parent_item_colon' => '',
-//        'menu_name' => 'Testimonials'
-//    );
-//    $args = array(
-//        'labels' => $labels,
-//        'menu_icon' => 'dashicons-format-quote',
-//        'description' => 'Testimonials offered',
-//        'public' => true,
-//        'menu_position' => 20,
-//        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
-//        'has_archive' => 'testimonial'
-//    );
-//    register_post_type('testimonial', $args);
+    //Case Studies
+    $labels = array(
+        'name' => _x('Case Studies', 'post type general name'),
+        'singular_name' => _x('Case Study', 'post type singular name'),
+        'add_new' => _x('Add New', 'Case Study'),
+        'add_new_item' => __('Add New Case Study'),
+        'edit_item' => __('Edit Case Study'),
+        'new_item' => __('New Case Study'),
+        'all_items' => __('All Case Studies'),
+        'view_item' => __('View Case Study'),
+        'search_items' => __('Search Case Studies'),
+        'not_found' => __('No Case Studies found'),
+        'not_found_in_trash' => __('No Case Studies found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Case Studies'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-book-alt',
+        'description' => 'Case Studies offered',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'has_archive' => 'case-study'
+    );
+    register_post_type('case-study', $args);
+
+    //Stuff
+    $labels = array(
+        'name' => _x('Stuff', 'post type general name'),
+        'singular_name' => _x('Stuff', 'post type singular name'),
+        'add_new' => _x('Add New', 'Stuff'),
+        'add_new_item' => __('Add New Stuff'),
+        'edit_item' => __('Edit Stuff'),
+        'new_item' => __('New Stuff'),
+        'all_items' => __('All Stuff'),
+        'view_item' => __('View Stuff'),
+        'search_items' => __('Search Stuff'),
+        'not_found' => __('No Stuff found'),
+        'not_found_in_trash' => __('No Stuff found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Stuff'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-products',
+        'description' => 'Stuff offered',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'has_archive' => 'case-study'
+    );
+    register_post_type('stuff', $args);
+
+    //Post Collections
+    $labels = array(
+        'name'              => _x( 'Post Collection', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Post Collection', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Post Collections' ),
+        'all_items'         => __( 'All Post Collections' ),
+        'edit_item'         => __( 'Edit Post Collection' ),
+        'update_item'       => __( 'Update Post Collection' ),
+        'add_new_item'      => __( 'Add New Post Collection' ),
+        'new_item_name'     => __( 'New Tile Post Collection' ),
+        'menu_name'         => __( 'Post Collections' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'show_in_rest'      => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'collection' ),
+    );
+
+    register_taxonomy( 'post_collection', array( 'post' ), $args );
+
 
 }
 

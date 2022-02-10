@@ -4,6 +4,8 @@
 
 .l-post-thumb-list {
   display: block;
+  @include inuit-clearfix();
+  padding: $act-unit-h $act-unit;
 }
 
 /*
@@ -17,6 +19,15 @@
   &feature-list{
     flex-direction: column;
     max-width: 1440px;
+  }
+  &testimonial{
+    padding: 0;
+  }
+  &blog{
+    padding-top: $act-unit;
+    padding-bottom: $act-unit;
+
+
   }
 }
 
@@ -50,21 +61,32 @@
     display: block
   }
   &post-thumb{
-  margin: 0 $act-unit
+  margin: 0;
     //padding: $act-unit-l;
+    height: 100%;
   }
   &list{
     display: flex;
-    margin: 0 auto;
-    flex-wrap: nowrap;
+    margin: 0 -$act-unit;
+    margin-top: 0;
+    flex-wrap: wrap;
     justify-content: center;
     @extend .o-list-bare
+
   }
   &item{
     @extend .o-list-bare__item;
-    width: 33.333%;
+    width: calc(33% - 45px);
     text-align: center;
     padding-left: 0;
+    margin: 0;
+
+    @include mq($from: tablet){
+      margin: 0 $act-unit-s;
+    }
+    @include mq($from: desktop){
+      margin: 0 $act-unit;
+    }
   }
 }
 
@@ -83,6 +105,19 @@
 .l-post-thumb-list__list--{
   &column{
     flex-direction: column;
+  }
+  &case-study{
+    margin: 0 -$act-unit-l;
+  }
+  &testimonial{
+    margin: 0 -$act-unit;
+  }
+  &stuff{
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  &blog{
+    margin-left: - $act-unit !important;
   }
 }
 
@@ -107,6 +142,17 @@
   }
   &column{
     width: 100%;
+  }
+  &case-study{
+    padding: 0 ;
+    width: calc(25% - 48px);
+  }
+  &testimonial{
+    padding: 0;
+  }
+  &blog{
+    margin-bottom: $act-unit-l;
+    margin-left: $act-unit !important;
   }
 }
 

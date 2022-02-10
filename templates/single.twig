@@ -18,33 +18,23 @@
 
 {% block content %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
-  {% for post in posts %}
+
     {% include  ['content/content-single-'~postFormat~'.twig', 'content/content-single.twig'] %}
-  {% endfor %}
+
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
 {% endblock %}
 
 
 {% block belowContent %}
-  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
-    {{ parent() }}
-  {% endif %}
+      <div class="l-content__posts-nav">
+        {% include 'inc/posts-nav.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+      </div>
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = false %}
 
 {% block sidebar %}
-  <div class="l-side-bar--blog {{ not sidebar_widgets ? 'is-empty' : ''}}">
-    {% if sidebar_widgets == '' %}
-      <!-- Add some widgets to the footer -->
-    {% else %}
-      <div class="l-sidebar__widget-area--sidebar-widgets">
-        <div class="l-widget-area--sidebar-widgets">
-          {{sidebar_widgets}}
-        </div>
-      </div>
-    {% endif %}
-  </div>
+
 {% endblock %}
 
 

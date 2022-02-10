@@ -190,11 +190,14 @@ function act_shortcode_wp_nav_menu($atts, $content = null) {
 
 add_shortcode('act_svg_icon', 'act_shortcode_svg_icon');
 function act_shortcode_svg_icon($atts, $content = null) {
-    extract(shortcode_atts(array('icon' => null), $atts));
+    extract(shortcode_atts(
+        array('icon' => null,
+              'class' => ''
+        ), $atts));
     $icon = isset($icon)? $icon : $atts[0];
     $output = '';
-    $output .= '<span class="o-svg-icon--'.$icon.'">';
-    $output .= '<svg class="o-svg-icon__svg--'.$icon.'">';
+    $output .= '<span class="o-svg-icon--'.$icon.' '.$class.'">';
+    $output .= '<svg viewBox="0 0 25 25" class="o-svg-icon__svg--'.$icon.'">';
     $output .= '<use xlink:href="#icon-'.$icon.'"></use>';
     $output .= '</svg>';
     $output .= '</span>';
@@ -205,16 +208,20 @@ function act_shortcode_svg_icon($atts, $content = null) {
 add_shortcode('act_cta', 'act_shortcode_cta');
 function act_shortcode_cta($atts, $content){
     $a = shortcode_atts(array(
-        'title' => 'Add a Title',
-        'text' => 'Add Some text',
+        'title' => '',
+        'text' => '',
         'btn' => 'Submit',
+        'class' => '',
+        'btnclass' => '',
         'url' => '/'
     ), $atts);
+
+    extract($a);
 
     $a['text'] = '<p>'.$a['text'].'</p>';
 
 
-    $output = '<div class="c-cta">';
+    $output = '<div class="c-cta class '.$class.'">';
     $output .= '<div class="c-cta__header">';
     $output .= '<header class="c-header--cta">';
     $output .= '<h4 class="c-header__heading--cta">';
@@ -222,10 +229,13 @@ function act_shortcode_cta($atts, $content){
     $output .= '</h4>';
     $output .= '</header>';
     $output .= '</div>';
-    $output .= '<div class="c-cta__content">'.$a['text'].'</div>';
+    $output .= '<div class="c-cta__content">';
+    $output .= $a['text'];
+    $output .= $content;
+    $output .= '</div>';
     $output .= '<div class="c-cta__footer">';
-    $output .= '<div class="c-cta__btn">';
-    $output .= '<div class="c-btn--cta">';
+    $output .= '<div class="c-cta__btn ">';
+    $output .= '<div class="c-btn--cta '.$btnclass.'">';
     $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
     $output .= '</div>';
     $output .= '</div>';
@@ -235,6 +245,36 @@ function act_shortcode_cta($atts, $content){
     return $output;
 }
 
+add_shortcode('act_btn', 'act_shortcode_btn');
+function act_shortcode_btn($atts, $content){
+    $a = shortcode_atts(array(
+        'text' => '',
+        'class' => '',
+        'url' => '/',
+        'icon' => "",
+        'icon_class' => ''
+    ), $atts);
+
+    extract($a);
+
+
+    $output = '<a href="'.$url.'" class="c-btn '.$class.'">';
+    $output .= '<span class="c-btn__label">';
+    $output .= $a['text'];
+    $output .= '</span>';
+    if ($icon != ''){
+        $output .= '<span class="c-btn__icon '.$icon_class.' ">';
+        $output .= '<span class="o-svg-icon--'.$icon.'">';
+        $output .= '<svg viewBox="0 0 25 25" class="o-svg-icon__svg--'.$icon.'">';
+        $output .= '<use xlink:href="#icon-'.$icon.'"></use>';
+        $output .= '</svg>';
+        $output .= '</span>';
+        $output .= '</span>';
+    }
+    $output .= '</a>';
+
+    return $output;
+}
 
 
 

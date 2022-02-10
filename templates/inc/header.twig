@@ -24,6 +24,8 @@ Include this with optional params
 {% set tempalteIcon = (templateIcon) ? templateIcon : null %}
 {% set headerIcon = (templateIcon) ? templateIcon : postIcon %}
 
+{% set templateLink = (templateLink) ? templateLink : null %}
+{% set headerLink = (templateLink) ? templateLink : null %}
 
 <div class="c-header{{ headerModClass }}">
 <header class="c-header__header{{ headerModClass }}">
@@ -39,9 +41,17 @@ Include this with optional params
   </h6>
   {% endif %}
   <h{{ headingLevel }} class="c-header__heading{{ headerModClass }}">
-            <span class="c-header__title{{ headerModClass }}">
+    {% if templateLink %}
+    <a href="{{ templateLink }}" class="c-header__link-title{{ headerModClass }}">
+               <span class="c-header__title{{ headerModClass }}">
                {{ headerTitle }}
             </span>
+            </a>
+      {% else %}
+        <span class="c-header__title{{ headerModClass }}">
+               {{ headerTitle }}
+            </span>
+    {% endif %}
   </h{{ headingLevel }}>
   {% if headerSubtitleAfter and headerSubtitleAfter != 'hide' %}
   <h6  class="c-header__sub-heading--after c-header__sub-heading{{ headerModClass }}" >

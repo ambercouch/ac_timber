@@ -1,16 +1,5 @@
 <article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
-  {% if(post.thumbnail or acSettings.defaultImage) %}
-    <div class="l-single-page__feature-image{{ templateClass }} ">
-      <div class="c-feature-image--single-page">
-        {% if(post.thumbnail.src()) %}
-          <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
-        {% else %}
-          <img src="{{acSettings.defaultImage}}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
-        {% endif %}
-      </div>
-    </div>
-  {% endif %}
   {% if not hidePageTitle %}
     <div class="l-single-page__header">
     {% include "inc/header.twig"
@@ -21,6 +10,40 @@
     }%}
     </div>
   {% endif %}
+
+    <div class="l-single-page__page-intro{{ templateClass }}">
+
+                <div class="c-media-box--intro-header">
+                    <div class="c-media-box__image">
+                        {% include "inc/feature-image.twig"
+                            with {imgObj : Image(post.meta('page_intro_image'))}
+                        %}
+                    </div>
+                    <div class="c-media-box__content">
+                        <h1 class="c-media-box__heading">
+                            <span class="c-media-box__heading-name">{{ post.meta('page_intro_title') }}</span>
+                        </h1>
+                        <div class="c-media-box__body">
+                            {{ post.meta('page_intro_text') | wpautop }}
+                        </div>
+                        <div class="c-media-box__btn">
+                            <div class="c-btn--cta">
+                                <div class="c-btn__link">
+                                    <a href="{{ post.meta('button_1_url') }}">{{ post.meta('button_1_label') }}</a>
+                                </div>
+                            </div>
+                            <div class="c-btn--cta--text">
+                                <div class="c-btn__link">
+                                    <a href="{{ post.meta('button_2_url') }}">{{ post.meta('button_2_label') }}</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+    </div>
+
     <div class="entry-content l-single-page__body{{ templateClass }} ">
       {{ post.content }}
     </div>

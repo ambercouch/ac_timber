@@ -2,6 +2,7 @@
 .l-single-page {
   display: block;
   @include inuit-clearfix();
+  padding: $act-unit-h $act-unit;
 }
 
 [class*='l-single-page--']{
@@ -18,6 +19,19 @@
       display: grid;
       grid-template-columns: 66% 34%;
     }
+  }
+  &page{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &single-stuff{
+    @include mq($from : desktop){
+      display: grid;
+      grid-template-columns: 50% 50%;
+      //grid-template-rows: auto auto auto auto auto auto;
+      grid-column-gap: $act-unit;
+    }
+
   }
 }
 
@@ -47,6 +61,7 @@
 
   &body{
     display: block;
+
     .has-sidebar > &{
       padding-right: $act-unit-h;
     }
@@ -99,6 +114,9 @@
       grid-column-end: 3;
     }
   }
+  &single-stuff{
+    grid-column-start: 2;
+  }
 }
 
 [class*='l-single-page__heading--']{
@@ -107,6 +125,30 @@
 
 [class*='l-single-page__feature-image--']{
   @extend .l-single-page__feature-image;
+}
+
+.l-single-page__feature-image--{
+  &single-stuff{
+    grid-row: 1 / 3;
+    grid-column: 1/2;
+    padding-right: $act-unit;
+    position: relative;
+    padding-bottom: $act-unit-l;
+    margin-bottom: $act-unit-l;
+    &:before{
+      display: block;
+      content: "";
+      width: calc(100% - 24px);
+      height: $act-unit;
+      position: absolute;
+      left: 0;
+      bottom: - $act-unit;
+      z-index: 10;
+      background: url("assets/images/svg/mxb-wave-horz.svg");
+      background-repeat: repeat-x;
+      background-size: 6%;
+    }
+  }
 }
 
 [class*='l-single-page__body--']{
@@ -120,8 +162,7 @@
     text-align: center;
   }
   &page{
-    padding-left: $act-unit-h;
-    padding-right: $act-unit-h;
+
     padding-top: 0;
     padding-bottom: 0;
     background-color: transparent;
@@ -130,10 +171,28 @@
     @extend .l-single-page__body--page;
     padding-top: 0;
   }
+  &single-case-study{
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  &single-stuff{
+    grid-column: 2 / 2;
+    grid-row: 2 / 6;
+  }
+
 }
 
 [class*='l-single-page__footer--']{
   @extend .l-single-page__footer;
+}
+
+.l-single-page__footer--{
+  &single-stuff{
+    grid-row: 3;
+    grid-column: 1;
+    padding-right: $act-unit;
+  }
 }
 
 [class*='l-single-page__aside--']{

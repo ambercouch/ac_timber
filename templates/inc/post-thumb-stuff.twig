@@ -1,0 +1,47 @@
+{% set tempModClass = (tempModClass) ? tempModClass : null %}
+{% set typeModClass = (postType) ?  '--'~postType : null %}
+{% set modClass = (tempModClass) ? tempModClass : typeModClass %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+{% set headerSubtitleAfter = (headerSubtitleAfter) ? headerSubtitleAfter : null %}
+{% set featureImage = (featureImage) ? featureImage : 'hide' %}
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass]) }}>
+  <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+
+    {% if featureImage != "hide" %}
+    <div class="c-post-thumb__feature-image{{ modClass }}">
+      {% include "inc/feature-image.twig" with {
+        'imgObj' : featureImage
+      }
+      %}
+    </div>
+    {% endif %}
+  </a>
+
+    {% if headerTitle != false %}
+      <div class="c-post-thumb__header{{ modClass }}">
+        {% include "inc/header.twig" with {
+          'headerModClass' : modClass,
+          'templateTitle' :  headerTitle,
+          'templateSubtitleAfter' : headerSubtitleAfter
+        } %}
+      </div>
+    {% endif %}
+
+    <div class="c-post-thumb__excerpt{{ modClass }}">
+    {{ post.post_excerpt | wpautop }}
+    </div>
+
+    <footer class="c-post-thumb__footer{{ modClass }}">
+      <a href="{{ post.meta('buy_now_url') }}" class="c-btn--primary o-btn--brand-7">
+        <span class="c-btn__label">Buy Now</span>
+      </a>
+      <a href="{{ post.meta('buy_now_url') }}" class="c-btn--text u-ml-m">
+        <span class="c-btn__label">Find out more</span>
+      </a>
+    </footer>
+
+
+
+</article>

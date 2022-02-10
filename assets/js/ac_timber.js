@@ -16,57 +16,68 @@ ACTIMBER = {
 
             fitvids();
 
+            if(typeof acf !== 'undefined'){
+                if( acf.fields.color_picker ) {
+                    // custom colors
+                    var palette = ['#111111', '#333333', '#555555', '#777777', '#999999', '#cccccc'];
 
-            /**
-             * navigation.js
-             *
-             * Handles toggling the navigation menu for small screens.
-             */
-            //( function() {
-            //  var container, button, menu;
-            //
-            //  container = document.getElementById( 'main-navigation' );
-            //  if ( ! container ) {
-            //    return;
-            //  }
-            //
-            //
-            //  button = test;//document.getElementsByClassName( 'responsive-toggle' )[0];
-            //  if ( 'undefined' === typeof button ) {
-            //    button = container.querySelectorAll('.responsive-toggle')[0]
-            //  }
-            //  if ( 'undefined' === typeof button ) {
-            //    return;
-            //  }
-            //
-            //  menu = container.getElementsByTagName( 'ul' )[0];
-            //
-            //  // Hide menu toggle button if menu is empty and return early.
-            //  if ( 'undefined' === typeof menu ) {
-            //    button.style.display = 'none';
-            //    return;
-            //  }
-            //
-            //  menu.setAttribute( 'aria-expanded', 'false' );
-            //
-            //  if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-            //    menu.className += ' nav-menu';
-            //  }
-            //
-            //  button.onclick = function() {
-            //    if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-            //      container.className = container.className.replace( ' toggled', '' );
-            //      button.setAttribute( 'aria-expanded', 'false' );
-            //      menu.setAttribute( 'aria-expanded', 'false' );
-            //    } else {
-            //      container.className += ' toggled';
-            //      button.setAttribute( 'aria-expanded', 'true' );
-            //      menu.setAttribute( 'aria-expanded', 'true' );
-            //    }
-            //  };
-            //} )();
+                    // when initially loaded find existing colorpickers and set the palette
+                    acf.add_action('load', function() {
+                        $('input.wp-color-picker').each(function() {
+                            $(this).iris('option', 'palettes', palette);
+                        });
+                    });
+
+                    // if appended element only modify the new element's palette
+                    acf.add_action('append', function(el) {
+                        $(el).find('input.wp-color-picker').iris('option', 'palettes', palette);
+                    });
+                }
+            }
 
 
+            $(document).on('click', '[data-load-more]', function () {
+
+                console.log('clicker')
+
+                var button = $(this),
+                    container_selector = '.l-post-thumb-list__list--blog',
+                    data = {
+                        'action': 'loadmore',
+                        'query': ac_timber_params.posts, // that's how we get params from wp_localize_script() function
+                        'page' : ac_timber_params.current_page
+                    };
+
+                container_selector = button.attr('data-container-selector') ?  button.attr('data-container-selector') : container_selector;
+
+                $.ajax({ // you can also use $.post here
+                    url : ac_timber_params.ajaxurl, // AJAX handler
+                    data : data,
+                    type : 'POST',
+                    beforeSend : function ( xhr ) {
+                        button.addClass('is-loading')
+                    },
+                    success : function( data ){
+                        if( data ) {
+
+                            $(container_selector).append(data);
+                            button.removeClass('is-loading')
+                            ac_timber_params.current_page++;
+
+                            if (ac_timber_params.current_page == ac_timber_params.max_page )
+                                button.remove(); // if last page, remove the button
+
+                            // you can also fire the "post-load" event here if you use a plugin that requires it
+                            // $( document.body ).trigger( 'post-load' );
+
+                        } else {
+                            button.remove(); // if no data, remove the button as well
+
+                        }
+                    }
+                });
+
+            })
         }
     },
     page: {

@@ -1,0 +1,55 @@
+
+<div class="pagination">
+  <div class="pagination__nav-menu">
+<nav class="c-nav-menu--pagination">
+        <ul class="c-nav-menu__list--pagination">
+
+           {% if post.prev() %}
+                <li class="c-nav-menu__item--pagination c-nav-menu__item--prev">
+                    <a class="c-nav-menu__link--pagination" href="{{post.prev().link }}">
+                      <span class="c-nav-menu__icon">
+                        <span class="c-svg-icon">
+                        {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-left'} %}
+                      </span>
+                      </span>
+                      <span class="c-nav-menu__link-label--pagination">
+                         Previous Post
+                      </span>
+                    </a>
+                  <h4 class="c-nav-menu__item-heading">
+                    {{post.prev().title }}
+                  </h4>
+                </li>
+            {% else %}
+                <li class="c-nav-menu__item--pagination c-nav-menu__item--prev is-disabled">
+                  <span class="c-nav-menu__link-label-disabled--pagination" >Previous Post</span>
+                </li>
+            {% endif %}
+
+          {% if post.next() %}
+            <li class="c-nav-menu__item--pagination c-nav-menu__item--next">
+              <a class="c-nav-menu__link--pagination" href="{{post.next().link }}">
+                      <span class="c-nav-menu__link-label--pagination">
+                         Next Post
+                      </span>
+                <span class="c-nav-menu__icon">
+                        <span class="c-svg-icon">
+                        {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-right'} %}
+                      </span>
+                      </span>
+              </a>
+              <h4 class="c-nav-menu__item-heading">
+                {{post.prev().title }}
+              </h4>
+            </li>
+          {% else %}
+            <li class="c-nav-menu__item--pagination c-nav-menu__item--next is-disabled">
+              <span class="c-nav-menu__link-label-disabled--pagination" >Next Post</span>
+            </li>
+          {% endif %}
+
+        </ul>
+    </nav>
+</div>
+</div>
+

@@ -1,0 +1,48 @@
+{% extends "base.twig" %}
+{% set modContentClass = '' %}
+{% set modBaseClass = '--'~template  %}
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+{% set siteMastheadModClass = template ?  '--'~template  : '' %}
+{% set siteFooterModClass = template ?  '--'~template  : '' %}
+
+
+  {% block before_head %}
+    <!-- single-case-study.twig -->
+    <!-- postFormat {{postFormat}} -->
+
+  {% endblock %}
+
+ {% block hero %}
+{% endblock %}
+
+  {% block feature %}
+  {% endblock %}
+
+ {% block before_main %}
+<!-- removed main before -->
+ {% endblock %}
+
+
+  {% block content %}
+    {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+    {% for post in posts %}
+    {% include  ['content/content-single-case-study.twig', 'content/content-single.twig'] %}
+  {% endfor %}
+  {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+
+{% endblock %}
+
+{% block afterContent %}
+{%  endblock %}
+
+{% block belowContent %}
+  <!-- removed comments -->
+{% endblock %}
+
+
+
+
+{% block  subsidiary %}
+  <!-- subsidiary removed -->
+{% endblock %}

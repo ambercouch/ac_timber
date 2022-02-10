@@ -5,6 +5,7 @@
 .l-subsidiary {
   @extend .c-site-wrapper--responsive;
   padding-top: 0;
+  background: transparent;
 }
 
 /*
@@ -45,6 +46,9 @@
   }
   &footer {
     display: block
+  }
+  &widget-area{
+    //padding: 0 $act-unit;
   }
 }
 

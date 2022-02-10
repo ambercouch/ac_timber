@@ -17,11 +17,11 @@
   }
   &subsidiary{
     @include mq($from:desktop){
-      display: grid;
-      grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
-      grid-template-rows: auto auto;
-      grid-column-gap: $act-unit-l;
-      grid-row-gap: $act-unit-h;
+      //display: grid;
+      //grid-template-columns: calc(50% - $act-unit ) calc(50% - $act-unit);
+      //grid-template-rows: auto auto;
+      //grid-column-gap: $act-unit-l;
+      //grid-row-gap: $act-unit-h;
     }
   }
   &footer-widgets{
@@ -33,6 +33,7 @@
     @include mq($from : tablet){
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+      align-items: stretch;
       .widget-first{
         grid-column-start: 1;
         grid-column-end: 5;
@@ -95,6 +96,12 @@
     margin-bottom: $act-unit;
     padding-bottom: $act-unit;
     border-bottom: solid 1px;
+  }
+  &subsidiary-widgets{
+    margin-bottom: $act-unit-l;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   &footer-widgets{
     @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );

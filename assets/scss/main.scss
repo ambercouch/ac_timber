@@ -18,6 +18,7 @@
 @import "settings/settings.headings";
 @import "settings/settings.widths";
 @import "settings/settings.responsive";
+@import "settings/settings.spacings";
 
 
 /*
@@ -42,10 +43,6 @@
 @import "placeholders/off-page";
 @import "placeholders/cf";
 
-/*
-  UTILITIES
-*/
-@import "utilities";
 
 
 /*
@@ -90,6 +87,12 @@
   WP
 */
 @import "wp/wp.wysiwyg";
+
+/*
+  UTILITIES
+*/
+@import "utilities";
+
 
 
 /*

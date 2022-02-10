@@ -76,7 +76,11 @@
   }
 
   &link {
-    display: inline
+      display: inline
+    }
+
+  &link-title {
+    display: inline;
   }
 
   &content {
@@ -93,6 +97,9 @@
   }
   &sub-heading{
     display: block;
+    font-family: $act-font-family-sans;
+    font-weight: 500;
+    @include act-font-size($act-fs-3);
   }
 }
 
@@ -107,6 +114,9 @@
     text-decoration: underline;
     @include act-font-size($act-fs-g);
     font-weight: 900;
+  }
+  &blog{
+    @include act-font-size($act-fs-2)
   }
   &service{
     @extend .c-header__heading--page;
@@ -128,6 +138,34 @@
   }
   &footer{
     color: $brand-col-5;
+  }
+  &case-study{
+    @include act-font-size($act-fs-3);
+    margin-bottom: $act-unit-s;
+  }
+  &case-study-thumb{
+    margin-bottom: $act-unit-t;
+  }
+  &stuff{
+    @include act-font-size($act-fs-3);
+    margin-bottom: $act-unit-s;
+    text-align: left;
+  }
+  &section-header{
+    @include act-font-size($act-fs-k);
+    [class*=u-fs-] &{
+      font-size: inherit;
+    }
+  }
+  &testimonial{
+    margin-bottom: $act-unit-t;
+  }
+  &cta{
+    margin-bottom: $act-unit-l;
+  }
+  &blog-cates{
+    @include act-font-size($act-fs-1);
+    font-weight: 900;
   }
 }
 
@@ -169,9 +207,22 @@
 }
 
 .c-header__sub-heading--{
-&service-intro{
-  color: $brand-col-6;
+  &service-intro{
+     color: $brand-col-6;
+   }
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__link-title--
+
+[class*=c-header__link-title--] {
+  @extend .c-header__link-title;
+}
+
+.c-header__link-title--{
+  &blog{
+    @include a($brand-col-1);
+    text-decoration: none;
+  }
 }
 
 

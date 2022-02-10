@@ -23,14 +23,33 @@ BEM ELEMENTS .l-site__
     background: $brand-col-3;
     position: relative;
     z-index: 10;
+    .blog &{
+      background: $brand-col-7 !important;
+    }
+    .single-post &{
+      background: $brand-col-2 !important;
+    }
+    .archive &{
+      background: $brand-col-7 !important;
+    }
+  }
+  &main-before{
+    @extend .c-site-wrapper--responsive;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   &main{
     padding-top: 0;
+    background: $brand-col-2;
+  }
+  &subsidiary{
+    background: $brand-col-2;
   }
   &burger-wrapper{
      position: fixed;
      z-index: 9999;
      width: 100%;
+    pointer-events: none;
    }
   &burger-container{
     @extend .c-site-wrapper--responsive;
@@ -63,12 +82,21 @@ BEM ELEMENTS .l-site__
 
     /* #2 */
     margin-top: auto;
-    //background: $brand-col-4;
+    background: $brand-col-3;
   }
 }
 
 [class*=l-site__masthead--]{
   @extend .l-site__masthead;
+}
+
+.l-site__masthead--{
+  &single-case-study{
+    background: $brand-col-2;
+  }
+  &single-stuff{
+    background: $brand-col-2;
+  }
 }
 
 .l-site__masthead{
@@ -94,3 +122,26 @@ BEM ELEMENTS .l-site__
   }
 }
 
+[class*=l-site__footer--]{
+  @extend .l-site__footer;
+}
+
+.l-site__footer--{
+  &sigle-case-study{
+    background: $brand-col-6;
+  }
+  &sindle-stuff{
+    background: $brand-col-7;
+  }
+
+}
+
+[class*=l-site__main-before--]{
+  @extend .l-site__main-before;
+}
+
+.l-site__main-before--{
+  &blog{
+    max-width: 100%;
+  }
+}

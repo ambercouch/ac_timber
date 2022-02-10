@@ -1,0 +1,18 @@
+<div class="c-post-meta">
+
+  <div class="c-post-meta__section--post-date">
+    <div class="c-post-meta__post-date">
+      <span class="c-post-meta__label--date" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date | date("d F Y") }}</span>
+    </div>
+  </div>
+
+
+  {% if  post.edit_link != '' %}
+    <div class="c-post-meta__section--post-admin">
+      <div class="c-post-meta__post-admin">
+        <span class="c-post-meta__post-links"><a  class="c-post-meta__post-edit-link" href="{{  post.edit_link }}" title="Edit {{ post.title }}">Edit</a></span>
+      </div>
+    </div>
+  {% endif %}
+
+</div>

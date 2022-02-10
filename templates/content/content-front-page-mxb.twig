@@ -5,13 +5,15 @@
 
             {% set colLayout =  item.section_column_layout %}
             {% set classTitle =  item.section_title_class %}
+
             {% set classSection =  item.section_css_class %}
             {% set classBody =  item.section_body_class %}
             {% set classIntro =  item.section_intro_class %}
             {% set classFooter =  item.section_footer_class %}
+          {% set classHideBorders = (item.hide_column_borders)? "has-no-borders"  : "" %}
+          {% set classHideBottomBorder = (item.hide_bottom_border)? "has-no-bottom-border" : "" %}
 
-            <div class="l-section {{ classSection }}">
-
+            <div class="l-section {{ classSection }} {{ classHideBorders }} {{ classHideBottomBorder }} 123">
                 {% if not item.hide_section_title and item.section_title != '' %}
                     <div class="l-section__header ">
                       <div class="l-section__header-wrapper">
@@ -31,25 +33,31 @@
               <div class="l-section__body {{ classBody }}">
 
                 {% if item.section_intro != '' %}
-                <div class="l-section__intro {{ classInto }}">
+                <div class="l-section__intro {{ classIntro }}">
                     {{ item.section_intro }}
                 </div>
                 {% endif %}
 
                 <div class="l-section__cols is-col-{{ colLayout }}">
                     <div class="l-section__col--1">
+                      <div class="l-section__coll-content">
                         {{ item.section_column_1 }}
+                      </div>
                     </div>
 
                     {% if colLayout != '100' %}
                         <div class="l-section__col--2">
+                          <div class="l-section__coll-content">
                             {{ item.section_column_2 }}
+                          </div>
                         </div>
                     {% endif %}
 
                     {% if colLayout == '33-33-33' %}
                         <div class="l-section__col--3">
+                          <div class="l-section__coll-content">
                             {{ item.section_column_3 }}
+                          </div>
                         </div>
                     {% endif %}
                 </div>

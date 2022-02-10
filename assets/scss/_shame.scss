@@ -33,7 +33,6 @@
     @include size(1300px, 700px);
     max-width: 100%;
     margin: 0 auto;
-    background: $brand-col-3;
     border-radius: 50%;
     > *{
       width: 400px;
@@ -48,7 +47,7 @@
 .l-section__col--1{
 
   position: relative;
-  height: 100%;
+  height: auto;
   &:after{
     background: red;
     display: block;
@@ -62,6 +61,12 @@
     background: url("assets/images/svg/mxb-wave.svg");
     background-repeat: repeat-y;
     background-size: 40%;
+    .is-col-50-50 &{
+      right: - $act-unit-s;
+    }
+    .is-col-100 &{
+      display: none !important;
+    }
     .has-no-borders &{
       display: none !important;
     }
@@ -90,4 +95,19 @@
       display: none !important;
     }
   }
+}
+
+.wp-block-buttons .wp-block-button{
+  margin-bottom: $act-unit;
+}
+.wp-block-button__link{
+  color: $brand-col-1;
+  @extend .c-btn;
+  @extend .o-btn--s;
+  @extend .c-btn--ghost;
+  @extend .o-btn--pill;
+  border-width: 2px !important;
+  width: 125px;
+  max-width: 100%;
+  font-weight: 500;
 }

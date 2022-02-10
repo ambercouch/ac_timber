@@ -18,8 +18,9 @@ if ( ! class_exists( 'Timber' ) ) {
     return;
 }
 $context = Timber::get_context();
+$post = new TimberPost();
+$context['post'] = $post;
 $context['posts'] = new Timber\PostQuery();
-$context['foo'] = 'bar';
 
 if (is_category()){
     $context['catTitle'] = post_type_archive_title( '', false );;

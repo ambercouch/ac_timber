@@ -1,0 +1,43 @@
+{% set tempModClass = (tempModClass) ? tempModClass : null %}
+{% set typeModClass = (postType) ?  '--'~postType : null %}
+{% set modClass = (tempModClass) ? tempModClass : typeModClass %}
+{% set testimonialTitle = (post.meta('testimonial_title')) ? post.meta('testimonial_title') : null %}
+{% set headerTitle = (testimonialTitle) ? testimonialTitle : post.title %}
+{% set headerSubtitleAfter = (headerSubtitleAfter) ? headerSubtitleAfter : null %}
+{% set featureImage = (featureImage) ? featureImage : 'hide' %}
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass]) }}>
+  <div class="c-post-thumb__container{{ modClass }}">
+
+    {% if featureImage != "hide" %}
+    <div class="c-post-thumb__feature-image{{ modClass }}">
+      {% include "inc/feature-image.twig" with {
+        'imgObj' : featureImage
+      }
+      %}
+    </div>
+    {% endif %}
+
+    <div class="c-post-thumb__content">
+      {{ post.content }}
+    </div>
+
+    {% if headerTitle != false %}
+      <div class="c-post-thumb__header{{ modClass }}">
+        {% include "inc/header.twig" with {
+          'headerModClass' : modClass,
+          'templateTitle' :  headerTitle,
+          'templateSubtitleAfter' : headerSubtitleAfter
+        } %}
+      </div>
+    {% endif %}
+    <footer class="c-post-thumb__footer">
+      <cite class="c-post-thumb__cite">
+        {{ post.meta('testimonial_citation') }}
+      </cite>
+    </footer>
+
+  </div>
+
+</article>

@@ -108,5 +108,26 @@
   /* NO cssPageBannerImagePositionHorizontal */
   {% endif %}
 
+  {% if post.meta('header_background_colour') %}
+  .l-site__masthead, [class*=l-site__masthead--] {
+    background: {{post.meta('header_background_colour')}} !important;
+  }
+  {% else %}
+  /* NO header_background_colour */
+  {% endif %}
+
+  {% if post.meta('footer_background_colour') %}
+  .l-site__footer, [class*=l-site__footer--] {
+    background: {{post.meta('footer_background_colour')}} !important;
+  }
+  .l-footer__site-info:after{
+    background: {{post.meta('footer_background_colour')}} !important;
+  }
+  .l-footer__shape-header >*{
+    background: {{post.meta('footer_background_colour')}} !important;
+  }
+  {% else %}
+  /* NO footer_background_colour */
+  {% endif %}
 
 </style>

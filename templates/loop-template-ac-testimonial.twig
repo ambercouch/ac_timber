@@ -1,0 +1,17 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--testimonial">
+  <ul class="l-post-thumb-list__list--testimonial">
+    {% for post in posts %}
+      <li class="l-post-thumb-list__item--testimonial">
+        {% set headerTitle = (post.meta('author_name')) ? post.meta('author_name') : post.title %}
+        {% set headerSubtitleAfter = (post.meta('author_strapline')) ? post.meta('author_strapline') : 'hide' %}
+        {% include ["inc/post-thumb-testimonial.twig"] with {
+          'postType' : 'testimonial',
+          'headerTitle' : headerTitle,
+          'featureImage' : 'hide'
+        } %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

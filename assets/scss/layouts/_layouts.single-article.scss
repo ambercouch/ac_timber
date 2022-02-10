@@ -7,14 +7,51 @@
 
 .l-single-article__{
   &feature-image {
-    margin-bottom: $inuit-global-spacing-unit;
+    margin-bottom: - 175px;
   }
   &header {
     margin-bottom: $inuit-global-spacing-unit;
+    text-align: center;
+    position: relative;
+  }
+
+  &header-wrapper{
+    @extend %shape-wrapper;
+  }
+  &header-container{
+    @extend %shape-container;
+  }
+  &header-content{
+    @extend %shape-content;
+    width: 650px !important;
+    padding-top: $act-unit-l *1.5 !important;
 
   }
+
   &heading {
     @include inuit-font-size($inuit-font-size-h1, 1);
+  }
+  &after-header{
+    text-align: center;
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: $act-unit-l;
+    margin-bottom: $act-unit-l;
+    &:before{
+      display: block;
+      content: "";
+      width: calc(100% - 24px);
+      height: $act-unit;
+      position: absolute;
+      left: 0;
+      bottom: - $act-unit;
+      z-index: 10;
+      background: url("assets/images/svg/mxb-wave-horz.svg");
+      background-repeat: repeat-x;
+      background-size: 6%;
+    }
   }
   &title {
     display: block;
@@ -31,6 +68,27 @@
   }
   &body {
     display: block;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: $act-unit;
+    a{
+      @include a($col : $brand-col-6)
+    }
+    &:before{
+      display: block;
+      content: "";
+      width: calc(100% - 24px);
+      height: $act-unit;
+      position: absolute;
+      left: 0;
+      bottom: - $act-unit;
+      z-index: 10;
+      background: url("assets/images/svg/mxb-wave-horz.svg");
+      background-repeat: repeat-x;
+      background-size: 6%;
+    }
   }
   &footer {
     display: block;
@@ -52,6 +110,18 @@ BEM BLOCK MODIFIERS .l-main__feature-image--
 
 [class*="l-single-article__feature-image--"]{
   @extend .l-single-article__feature-image;
+}
+
+.l-single-article__feature-image--{
+
+}
+
+/*
+BEM BLOCK MODIFIERS .l-single-article__body--
+*/
+
+[class*="l-single-article__body--"]{
+  @extend .l-single-article__body;
 }
 
 .l-single-article__feature-image--{

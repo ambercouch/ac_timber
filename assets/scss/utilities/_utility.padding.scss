@@ -2,19 +2,19 @@
   padding: 0;
 }
 .u-pt, .u-p-t{
-   padding: $inuit-global-spacing-unit-tiny;
+   padding: $inuit-global-spacing-unit-tiny !important;
  }
 .u-ps, .u-p-s{
-  padding: $inuit-global-spacing-unit-small;
+  padding: $inuit-global-spacing-unit-small !important;
 }
 .u-pm, .u-p-m{
-  padding: $inuit-global-spacing-unit;
+  padding: $inuit-global-spacing-unit !important;
 }
 .u-pl, .u-p-l{
-  padding: $inuit-global-spacing-unit-large;
+  padding: $inuit-global-spacing-unit-large !important;
 }
 .u-ph, .u-p-h{
-  padding: $inuit-global-spacing-unit-huge;
+  padding: $inuit-global-spacing-unit-huge !important;
 }
 
 .u-pl0, .u-pl-0{
@@ -59,19 +59,19 @@
   padding-top: 0;
 }
 .u-ptt, .u-pt-t{
-  padding-top: $inuit-global-spacing-unit-tiny;
+  padding-top: $inuit-global-spacing-unit-tiny !important;
 }
 .u-pts, .u-pt-s{
-  padding-top: $inuit-global-spacing-unit-small;
+  padding-top: $inuit-global-spacing-unit-small !important;
 }
 .u-ptm, .u-pt-m{
-  padding-top: $inuit-global-spacing-unit;
+  padding-top: $inuit-global-spacing-unit !important;
 }
 .u-ptl, .u-pt-l{
-  padding-top: $inuit-global-spacing-unit-large;
+  padding-top: $inuit-global-spacing-unit-large !important;
 }
 .u-pth, .u-pt-h{
-  padding-top: $inuit-global-spacing-unit-huge;
+  padding-top: $inuit-global-spacing-unit-huge !important;
 }
 
 .u-pb0, .u-pb-0{

@@ -53,8 +53,21 @@
 
 //BEM ELEMENT MODIFIER FALLBACK .o-svg-icon--
 
-[class*=svg-icon__header--] {
+[class*=o-svg-icon__header--] {
 
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .o-svg-icon__svg--
+
+[class*=o-svg-icon__svg--] {
+@extend .o-svg-icon__svg
+}
+
+.o-svg-icon__svg--{
+  &audible-logo{
+    position: relative;
+    top: -17px;
+  }
 }
 
 .o-svg-icon--envelope{

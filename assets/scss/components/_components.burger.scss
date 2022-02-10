@@ -5,6 +5,7 @@
   top: $act-unit-l *1.25;
   z-index: 1;
   @include act-font-size($act-fs-6);
+  pointer-events: all;
 }
 .c-burger__btn{
   cursor: pointer;

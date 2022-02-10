@@ -5,6 +5,7 @@
 .l-main-before {
   display: block;
   background: $brand-col-3;
+  padding: 0 $act-unit;
 }
 /*
   BEM BLOCK MODIFIER .l-main-before--
@@ -13,6 +14,9 @@
 .l-main-before-- {
   &type {
     display: block
+  }
+  &blog{
+    background: $brand-col-7;
   }
 }
 

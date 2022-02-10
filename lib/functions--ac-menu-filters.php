@@ -99,7 +99,7 @@ function act_menu_filters($sorted_menu_objects, $args) {
                 $title_markup = '<div class="c-nav-menu__icon-title">'.$menu_item_icon_label.'</div>';
             }
 
-            $menu_object->title = '<div class="c-nav-menu__svg-icon--'.$args->menu->slug.' "><div class="c-svg-icon--'. $icon_class_mod .'"><svg preserveAspectRatio="none" class="c-svg-icon__svg"><use class="c-svg-icon__use"  xlink:href="' . $menu_item_icon_id  . '" /></svg></div></div>'.$title_markup;
+            $menu_object->title = '<div class="c-nav-menu__svg-icon--'.$menu->slug.' "><div class="c-svg-icon--'. $icon_class_mod .'"><svg preserveAspectRatio="none" class="c-svg-icon__svg"><use class="c-svg-icon__use"  xlink:href="' . $menu_item_icon_id  . '" /></svg></div></div>'.$title_markup;
 
         }
     }

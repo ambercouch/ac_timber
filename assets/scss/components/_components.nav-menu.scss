@@ -53,6 +53,20 @@
     text-decoration: none;
     pointer-events: all !important;
   }
+  &icon{
+    @include size($act-unit);
+
+
+    .c-nav-menu__item--prev &{
+      margin-right: $act-unit;
+    }
+    .c-nav-menu__item--next &{
+      margin-left: $act-unit;
+    }
+  }
+  &item-heading{
+    margin-top: $act-unit;
+  }
   &sub-menu{
     position: absolute;
     left: -99999px;
@@ -112,7 +126,7 @@
   }
   &social{
     @extend .o-list-flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
   &footer{
     display: flex;
@@ -164,6 +178,15 @@
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
+  }
+  &about{
+    margin-bottom: $act-unit-s;
+  }
+  &shop{
+    margin-bottom: $act-unit-s;
+  }
+  &blog-filters{
+    margin-right: $act-unit-s;
   }
 }
 
@@ -228,6 +251,36 @@
   }
   &shop{
     @include a($col : $brand-col-5);
+  }
+  &blog-filters{
+    //@include a($brand-col-1);
+    color: $brand-col-1;
+    @extend .c-btn;
+    @extend .o-btn--s;
+    @extend .c-btn--ghost;
+    @extend .o-btn--pill;
+    border-width: 2px !important;
+    min-width: 125px;
+    text-align: center;
+    padding: $act-unit-t * 1.5 !important;
+    padding-top: $act-unit-s !important;
+    padding-left: $act-unit !important;
+    padding-right: $act-unit !important;
+    font-weight: 500;
+    .current-menu-item &{
+      background: $brand-col-1 !important;
+      color: white !important;
+    }
+  }
+  &pagination{
+    color: $brand-col-1;
+    @extend .o-btn--icon-btn;
+    .c-nav-menu__item--prev &{
+    justify-content: flex-start;
+  }
+    .c-nav-menu__item--next &{
+      justify-content: flex-end;
+    }
   }
 }
 

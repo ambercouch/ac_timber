@@ -1,0 +1,66 @@
+/*
+  BEM BLOCK .c-pagination
+ */
+
+.c-pagination {
+  display: block;
+  text-align: center;
+  @include act-font-size($act-fs-3)
+}
+
+/*
+  BEM BLOCK MODIFIER .c-pagination--
+ */
+
+.c-pagination-- {
+  &type {
+    display: block
+  }
+  &load-more {
+    @include mq($from: desktop){
+      padding: $act-unit 0 0;
+    }
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-pagination--
+
+[class*=c-pagination--] {
+  @extend .c-pagination;
+}
+
+/*
+  BEM ELEMENTS .c-pagination__
+ */
+
+.c-pagination__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-pagination--
+
+[class*=c-pagination__header--] {
+  @extend .c-pagination__header;
+}

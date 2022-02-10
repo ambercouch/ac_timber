@@ -1,21 +1,33 @@
 //Font size
 .u-fs1, .u-fs-1 {
-  @include act-font-size($inuit-font-size-h1);
+  @include act-font-size($act-fs-1, $important: true);
 }
-.u-fs2, .u-fs-2{
-  @include act-font-size($inuit-font-size-h2);
+.u-fs2, .u-fs-2 {
+  @include act-font-size($act-fs-2, $important: true);
 }
 .u-fs3, .u-fs-3{
-  @include act-font-size($inuit-font-size-h3);
+  @include act-font-size($act-fs-3, $important: true);
 }
 .u-fs4, .u-fs-4{
-  @include act-font-size($inuit-font-size-h4);
+  @include act-font-size($act-fs-4, $important: true);
 }
 .u-fs5, .u-fs-5{
-  @include act-font-size($inuit-font-size-h5);
+  @include act-font-size($act-fs-5, $important: true);
 }
 .u-fs6, .u-fs-6{
-  @include act-font-size($inuit-font-size-h6);
+   @include act-font-size($act-fs-6, $important: true);
+ }
+
+.u-fs-k{
+  @include act-font-size($act-fs-k, $important: true);
+}
+
+.u-fs-m{
+  @include act-font-size($act-fs-m, $important: true);
+}
+
+.u-fs-g{
+  @include act-font-size($act-fs-g, $important: true);
 }
 
 //Font weight

@@ -5,11 +5,7 @@ BEM BLOCK .l-main
 .l-main{
   @extend .c-site-wrapper--responsive;
   background-color: $brand-col-2;
-  padding-top: 0;
-  padding-left: $act-unit;
-  padding-right: $act-unit;
 
-  padding-bottom: 0;
   @include mq($from : desktop){
     padding-top: 0 ;
   }
@@ -35,8 +31,8 @@ BEM BLOCK MODIFIERS .l-main--
   &service{
     @extend .l-main--page;
   }
-  &front-page{
-    padding-top: $act-unit-l;
+  &front-page-mxb{
+    padding-bottom: 0;
   }
   &full-browser-width{
     padding: 0 !important;

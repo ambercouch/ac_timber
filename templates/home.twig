@@ -4,6 +4,70 @@
   <!-- home.twig -->
 {% endblock %}
 
+{% block before_main %}
+<section class="l-site__main-before--blog">
+  <div class="l-main-before--blog">
+    <div class="l-section u-bgc-7 u-bob-7 has-no-borders  has-no-bottom-border">
+      <div class="l-section__body ">
+        <div class="l-section__cols is-col-50-50">
+          <div class="l-section__col--1">
+            <div class="l-section__coll-content">
+              {{ post.content }}
+            </div>
+          </div>
+          <div class="l-section__col--2">
+            <div class="l-section__coll-content">
+              <div class="c-post-thumb__feature-image{{ modClass }}">
+                {% include "inc/feature-image.twig" with {
+                  'imgObj' : post.thumbnail,
+                  'templateCap' : 'hide'
+                }
+                %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="l-section__footer">
+        <div class="l-section__footer-wrapper">
+          <div class="l-section__footer-container">
+            <div class="l-section__footer-content--blog">
+
+                <a class="c-btn--scroll-blogs" href="#next" >
+                  <span class="c-btn__label">
+                    View All Blog Posts
+                  </span>
+                  <span class="c-btn__icon--scroll-blogs">
+                      <span class="c-svg-icon">
+                        {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-down'} %}
+                      </span>
+                  </span>
+                </a>
+
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</section>
+  {% endblock %}
+
+{% block before_content %}
+  <section class="l-content-before">
+
+    {% include 'inc/header.twig' with {
+      'templateTitle' : 'Categories',
+      'headerModClass' : '--blog-cates'
+    } %}
+    <div class="l-content-before__nav-menu">
+      {{ function('do_shortcode', '[act_menu name="blog-filters"]') }}
+    </div>
+
+  </section>
+
+{% endblock %}
+
 {% block hero %}
   {% if removeHero %}
   {% else %}
@@ -14,40 +78,42 @@
 {% endblock %}
 
 
-    {% block content %}
-      <div class="l-post-thumb-list">
-        <div class="l-post-thumb-list__list--column">
-              {% for post in posts %}
-                <div class="l-post-thumb-list__item--column">
-                  <div class="l-post-thumb-list__post-thumb">
-                      {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-                      {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
-                  </div>
-                </div>
-              {% endfor %}
-        </div>
-      </div>
-    {% endblock %}
+{% block content %}
+  <div class="l-post-thumb-list--blog">
+    <ul class="l-post-thumb-list__list--blog" data-isotope="blog">
+      {% for post in posts %}
+        <li class="l-post-thumb-list__item--blog"  >
+          <div class="l-post-thumb-list__post-thumb">
+            {% include ["inc/post-thumb.twig"] with {'postType' : 'blog', 'headerTitle' : post.title} %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
 
 
 
 {% block belowContent %}
-  <div class="content__below">
+  <div class="l-content-below">
     {% if posts.pagination.pages is not empty %}
-    <div class="content__pagination">
-      {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-    </div>
+      <div class="l-content__                                                                                                                                                                     pagination">
+        <div class="c-pagination--load-more">
+          <div class="c-pagination__btn">
+            <button class="c-btn--load-more" data-load-more data-container-selector=".l-post-thumb-list__list--blog">
+              <span class="c-btn__label">Load More</span> <span class="c-btn__icon">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
     {% endif %}
   </div>
   <!-- removed comments in home.twig -->
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = false %}
 
 {% block sidebar %}
-  <div id="sidebar" class="c-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
-  </div>
+
 {% endblock %}

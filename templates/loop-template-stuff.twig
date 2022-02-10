@@ -1,0 +1,15 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--stuff">
+  <ul class="l-post-thumb-list__list--stuff">
+    {% for post in posts %}
+      <li class="l-post-thumb-list__item--stuff">
+        {% set headerTitle = (post.meta('author_name')) ? post.meta('author_name') : post.title %}
+        {% include ["inc/post-thumb-stuff.twig"] with {
+          'postType' : 'stuff',
+          'featureImage' : post.thumbnail
+        } %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

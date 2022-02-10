@@ -1,0 +1,70 @@
+/*
+  BEM BLOCK .c-shout-box
+ */
+
+.c-shout-box {
+  display: block;
+  display: flex;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-shout-box--
+ */
+
+.c-shout-box-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-shout-box--
+
+[class*=c-shout-box--] {
+  @extend .c-shout-box;
+}
+
+/*
+  BEM ELEMENTS .c-shout-box__
+ */
+
+.c-shout-box__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &col{
+    @extend .u-1-2;
+    padding: 0 $act-unit-l;
+    &:first-child{
+      padding-left: 0;
+    }
+    &:last-child{
+      padding-right: 0;
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-shout-box--
+
+[class*=c-shout-box__header--] {
+  @extend .c-shout-box__header;
+}

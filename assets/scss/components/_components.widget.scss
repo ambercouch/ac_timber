@@ -13,7 +13,7 @@
 .c-widget-- {
   &footer {
     color: white;
-    @include act-font-size($inuit-font-size-h6, 1.5);
+    @include act-font-size($inuit-font-size-h5, 1.5);
   }
   &sidebar{
     @include act-font-size($inuit-font-size-h5);
@@ -44,6 +44,11 @@
   }
   &main-before{
     @include act-font-size($act-fs-5);
+  }
+  &subsidiary{
+    .custom-html-widget{
+      padding: 0 $act-unit;
+    }
   }
 }
 
@@ -101,6 +106,7 @@
     .l-widget-area__widget--next-step &{
       padding: $act-unit;
     }
+
   }
 }
 
@@ -108,6 +114,12 @@
 
 [class*=c-widget__header--] {
   @extend .c-widget__header;
+}
+
+.c-widget__header--{
+  &subsidiary{
+    padding: 0 $act-unit;
+  }
 }
 
 .hide-title{

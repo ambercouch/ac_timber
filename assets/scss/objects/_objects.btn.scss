@@ -1,20 +1,17 @@
 .o-btn{
   transition: background 0.3s ease;
+  position: relative;
   display: inline-block;
-  line-height:1;
   width: auto;
   border: none;
   padding: $act-unit-s;
-  @include inuit-font-size($inuit-font-size-h5, 1);
-  background: $brand-col-1;
-  color: #fff;
+  @include act-font-size($act-fs-4, 1);
   text-decoration: none;
 }
 
 .o-btn{
   &:hover,&:focus{
-    background: darken($brand-col-1, 5%);
-    color: #fff;
+
   }
   a{
     text-decoration: none;
@@ -24,64 +21,113 @@
 [class*=o-btn]{
   @extend .o-btn;
 }
-.o-btn--{
+.o-btn-- {
+  &icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &icon-btn-inline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &h {
     @extend .o-btn;
     padding: $act-unit-h !important;
     @include act-font-size($act-fs-2, 1);
   }
+
   &l {
     @extend .o-btn;
     padding: $act-unit-l !important;
     @include act-font-size($act-fs-3, 1);
   }
+
   &m {
     @extend .o-btn;
     padding: $act-unit !important;
     @include act-font-size($act-fs-4, 1);
   }
+
   &s {
     @extend .o-btn;
     padding: $act-unit-s !important;
     @include act-font-size($act-fs-5, 1);
   }
+
   &t {
     @extend .o-btn;
     padding: $act-unit-t !important;
     @include act-font-size($act-fs-6, 1);
   }
-  &transparent{
+
+  &transparent {
     @extend .o-btn;
     background: transparent;
+    padding: 0;
+
+    &:hover, &:focus {
+      @extend .o-btn--transparent;
+    }
   }
-  &rounded-0{
+
+  &rounded-0 {
     @extend .o-btn;
     border-radius: 0 !important;
   }
+
   &rounded {
     @extend .o-btn;
-    border-radius: $act-unit;
+    border-radius: $act-unit !important;
   }
-  &brand-1{
+
+  &pill {
+    @extend .o-btn;
+    border-radius: 1000px !important;
+  }
+
+
+  &brand-1 {
     @extend .o-btn;
     background: $brand-col-1;
     border-color: $brand-col-1;
-    &:hover{
-      background: darken($brand-col-1, 10%);
-    }
-    a:hover{
-      color: white;
-    }
   }
-  &brand-2{
+
+  &brand-2 {
     @extend .o-btn;
     background: $brand-col-2;
     border-color: $brand-col-2;
-    &:hover{
-      background: darken($brand-col-2, 10%);
-    }
-    a:hover{
-      color: white;
-    }
+  }
+
+  &brand-3 {
+    @extend .o-btn;
+    background: $brand-col-3;
+    border-color: $brand-col-3;
+  }
+
+  &brand-4 {
+    @extend .o-btn;
+    background: $brand-col-4;
+    border-color: $brand-col-4;
+  }
+
+  &brand-5 {
+    @extend .o-btn;
+    background: $brand-col-5;
+    border-color: $brand-col-5;
+  }
+
+  &brand-6 {
+    @extend .o-btn;
+    background: $brand-col-6;
+    border-color: $brand-col-6;
+  }
+
+  &brand-7 {
+    @extend .o-btn;
+    background: $brand-col-7 !important;
+    border-color: $brand-col-7 !important;
   }
 }

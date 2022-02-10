@@ -19,21 +19,28 @@ class Ac_Custom_Loop extends WP_Widget
             $title = $instance['title'];
         } else
         {
-            $title = __('New title', 'ambercouch');
+            $title = __('New title', 'act');
         }
         if (isset($instance['post_type']))
         {
             $post_type = $instance['post_type'];
         } else
         {
-            $post_type = __('', 'ambercouch');
+            $post_type = __('', 'act');
         }
         if (isset($instance['show']))
         {
             $show = $instance['show'];
         } else
         {
-            $show = __('1', 'ambercouch');
+            $show = __('3', 'act');
+        }
+        if (isset($instance['orderby']))
+        {
+            $orderby = $instance['orderby'];
+        } else
+        {
+            $orderby = __('', 'act');
         }
         ?>
         <p>
@@ -48,6 +55,10 @@ class Ac_Custom_Loop extends WP_Widget
             <label for="<?php echo $this->get_field_id('show'); ?>"><?php _e('Number of posts to show:') ?></label>
             <input id="<?php echo $this->get_field_id('show'); ?>" type="text" size="3" value="<?php echo esc_attr($show); ?>" name="<?php echo $this->get_field_name('show'); ?>">
         </p>
+      <p>
+        <label for="<?php echo $this->get_field_id('orderby'); ?>"><?php _e('Order by:') ?></label>
+        <input class="widefat" id="<?php echo $this->get_field_id('orderby'); ?>" type="text"value="<?php echo esc_attr($orderby); ?>" name="<?php echo $this->get_field_name('orderby'); ?>">
+      </p>
         <?php
     }
 
@@ -57,6 +68,7 @@ class Ac_Custom_Loop extends WP_Widget
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['post_type'] = strip_tags($new_instance['post_type']);
         $instance['show'] = strip_tags($new_instance['show']);
+        $instance['orderby'] = strip_tags($new_instance['orderby']);
 
         return $instance;
     }
@@ -70,7 +82,6 @@ class Ac_Custom_Loop extends WP_Widget
         $wp_query = null;
         $wp_query = new WP_Query();
         $wp_query->query(array(
-                $tax => $cat,
                 'post_type' => $instance['post_type'],
                 'showposts' => $instance['show'],
                 'orderby' => 'menu_order',
@@ -80,17 +91,7 @@ class Ac_Custom_Loop extends WP_Widget
         echo $before_title;
         echo $instance['title'];
         echo $after_title;
-        if (have_posts()) :
-            ?>
-            <ul class="<?php echo $instance['post_type'] ?>-list">
-                <?php while (have_posts()): the_post(); ?>
-
-                    <?php get_template_part('content', $instance['post_type']) ?>
-
-                <?php endwhile; ?>
-            </ul>
-            <?php
-        endif;
+        echo do_shortcode('[ac_custom_loop orderby="'.$instance['orderby'].'" type="'.$instance['post_type'].'" show="'.$instance['show'].'" timber="true" wrapper="false"]');
         echo $after_widget;
         $wp_query = $temp_q;
     }
@@ -113,7 +114,7 @@ class Act_Tax_Link extends WP_Widget
 
     public function form($instance)
     {
-        
+
         if (isset($instance['tax_term']))
         {
             $tax_term = $instance['tax_term'];

@@ -4,14 +4,7 @@
 
 .c-btn {
   @extend .o-btn;
-  &:hover, &:focus{
-    color: white;
-    background: darken($brand-col-1,10%);
-  }
-  &:active{
-    color: white;
-    background: darken($brand-col-1,20%);
-  }
+  border-radius: 0;
 }
 
 /*
@@ -22,25 +15,111 @@
   &type {
     display: block
   }
+  &primary{
+    @extend .o-btn--rounded;
+    color: $brand-col-1;
+    background: $brand-col-3;
+    @include act-font-size($act-fs-3,1);
+    font-weight: bold;
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+    &:hover{
+      background: darken($brand-col-3, 10%);
+      color: $brand-col-1;
+    }
+
+  }
+  &secondary{
+    color: $brand-col-2;
+    @extend .c-btn--ghost;
+    @include act-font-size($act-fs-3,1);
+    font-weight: bold;
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+  }
+  &text{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: $col-text;
+    &:hover{
+      color: $col-text;
+    }
+  }
+
   &n{
     @extend .c-btn;
     padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
     @include act-font-size($act-fs-4, 1);
     text-transform: none;
   }
+
   &ghost{
     background: transparent !important;
     border: solid 1px;
+
     &.o-btn--brand-1{
       &:hover{
         background: rgba($brand-col-1, .8) !important;
       }
     }
+
     &.o-btn--brand-2{
       &:hover{
         background: rgba($brand-col-2, .8) !important;
       }
     }
+  }
+
+  &load-more{
+    background: transparent;
+    color: $brand-col-1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    width: $act-unit-h * 2;
+    margin:0 auto;
+    &.is-loading{
+      justify-content: center;
+    }
+    &:hover, &:focus{
+      @extend .c-btn--load-more;
+    }
+  }
+
+  &read-more{
+    @extend .o-btn--transparent;
+    @extend .o-btn--icon-btn;
+    color: $brand-col-1;
+    text-decoration: underline;
+    width: 125px;
+    max-width: 100%;
+  }
+
+  &contact{
+    a{
+      display: block;
+      padding: $act-unit-s * 1.5;
+      color: white !important;
+      @include act-font-size($act-fs-3, 1);
+      width: 175px;
+      max-width: 100%;
+    }
+  }
+
+  &cta{
+    @extend .o-btn--pill;
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+  }
+  &scroll-blogs{
+    @extend .o-btn--transparent;
+    @extend .o-btn--icon-btn-inline;
+    color: $brand-col-1;
+    max-width: 100%;
+    margin: 0 auto;
+    @include act-font-size($act-fs-3)
   }
 }
 
@@ -58,20 +137,51 @@
   &header {
     display: block
   }
+
   &heading {
     display: block
   }
+
   &title {
     display: inline;
   }
+
   &link {
     display: inline
   }
+
   &content {
     display: block
   }
+
   &footer {
     display: block
+  }
+  &label{
+    font-size: inherit;
+    .is-loading &{
+      display: none;
+    }
+  }
+  &icon{
+    display: block;
+    @include size($act-unit);
+    .is-loading &{
+      display: none;
+    }
+    &.is-icon-below{
+      left: 50%;
+      transform: translate(-50%, 0);
+      position: relative;
+    }
+  }
+  &load-text{
+    display: none;
+    @include size($act-unit);
+    text-align: center;
+    .is-loading &{
+      display: block;
+    }
   }
 }
 
@@ -80,3 +190,20 @@
 [class*=c-btn__header--] {
   @extend .c-btn__header;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__icon--
+
+[class*=c-btn__icon--] {
+  @extend .c-btn__icon;
+}
+
+.c-btn__icon--{
+  &read-more{
+    @include size($act-unit-s);
+  }
+  &scroll-blogs{
+    @include size($act-unit-s * 1.5);
+    margin-left: $act-unit;
+  }
+}
+

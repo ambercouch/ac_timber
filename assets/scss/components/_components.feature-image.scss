@@ -15,8 +15,18 @@ BEM BLOCK .c-feature-image--
 
 .c-feature-image--{
   &service{
-
     height: 100%;
+  }
+  &case-study{
+    border-radius: $act-unit;
+    overflow: hidden;
+  }
+  &case-study-thumb{
+    border-radius: $act-unit;
+    overflow: hidden;
+  }
+  &single-post{
+@include breakout-img();
   }
 }
 
@@ -38,4 +48,29 @@ BEM ELEMENTS.c-feature-image__
   }
 
 }
+
+[class*=c-feature-image__img--] {
+  @extend .c-feature-image__img;
+}
+
+.c-feature-image__img--{
+  &shout-box{
+    margin-bottom: $act-unit-l;
+  }
+  &case-study{
+    @include size(100%, 100%, $important : true);
+  }
+  &case-study-thumb{
+    @include size(100%, 30vw, $important : true);
+    max-width: 25vw;
+    max-height: 375px;
+  }
+  &blog{
+    border-radius: $act-unit;
+    height: 240px;
+    max-height: 16vw;
+  }
+}
+
+
 

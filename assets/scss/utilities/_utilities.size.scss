@@ -11,3 +11,18 @@
 .u-w-a{
   width: auto;
 }
+.u-s-t{
+  @include size($act-unit-t, $important : true)
+}
+.u-s-s{
+  @include size($act-unit-s, $important : true)
+}
+.u-s-m{
+  @include size($act-unit, $important : true)
+}
+.u-s-l{
+  @include size($act-unit-l, $important : true)
+}
+.u-s-h{
+  @include size($act-unit-h, $important : true)
+}

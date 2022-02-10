@@ -5,6 +5,39 @@
 .l-section {
   display: block;
   padding-top: $act-unit;
+  position: relative;
+    &:before{
+      background: red;
+      display: block;
+      content: "";
+      width: 100%;
+      height: $act-unit;
+      position: absolute;
+      left: 0;
+      bottom: - $act-unit;
+      z-index: 10;
+      background: url("assets/images/svg/mxb-wave-horz.svg");
+      background-repeat: repeat-x;
+      background-size: 3.6%;
+    }
+  &.has-no-bottom-border:before{
+    display: none !important;
+  }
+  &:last-child{
+    //padding-bottom: $act-unit;
+  }
+  &:last-child:before{
+    display: none !important;
+  }
+  img{
+    border-radius: $act-unit;
+  }
+  h1{
+    @include act-font-size($act-fs-g)
+  }
+  h2{
+    @include act-font-size($act-fs-k)
+  }
 }
 
 /*
@@ -53,6 +86,9 @@
   &intro{
     text-align: center;
     margin-bottom: $act-unit-l;
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
   }
 
   &link {
@@ -79,6 +115,7 @@
   }
   &footer-content{
     @extend %shape-content;
+    font-weight: 700;
   }
   &cols{
     display: flex;
@@ -90,6 +127,11 @@
 
 [class*=l-section__header--] {
   @extend .l-section__header;
+}
+.is-col-100{
+  > *{
+    width: 100%;
+  }
 }
 
 .is-col-50-50{
@@ -107,17 +149,19 @@
 .is-col-75-25{
   > *:first-child{
     @extend .u-2-3;
-    padding-right: $act-unit-l;
+    padding-right: $act-unit-h * 2;
   }
   > *:last-child{
     @extend .u-1-3;
-    padding-left: $act-unit-l;
+    padding-left: $act-unit-h;
   }
 }
 
 .is-col-33-33-33{
+  text-align: center;
   > *{
     @extend .u-1-3;
+    height: auto;
   }
   > *:first-child{
 
@@ -126,6 +170,14 @@
   > *:last-child{
     padding-left: $act-unit-l;
   }
+  .l-section__coll-content{
+    padding: 0 $act-unit-l;
+    font-size: $act-fs-3;
+    p{
+      margin-bottom: 0;
+    }
+  }
+;
 }
 
 %shape-wrapper{
@@ -145,3 +197,16 @@
   margin: 0 auto;
   padding-top: $act-unit * 1.5;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .l-section__footer-content--
+
+[class*=l-section__footer-content--] {
+  @extend .l-section__footer-content;
+}
+.l-section__footer-content--{
+  &blog{
+    text-align: center;
+    padding-top: $act-unit-h;
+  }
+}
+

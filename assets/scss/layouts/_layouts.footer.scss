@@ -1,6 +1,6 @@
 .l-footer{
   display: block;
-  background: $brand-col-3;
+
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
     padding-left: $act-unit;
     padding-right: $act-unit;
     background: $brand-col-3;
-    @include breakout-band($bgc : $brand-col-3)
+    @include breakout-band($bgc : $brand-col-3);
     color: $brand-col-1;
     a{
       color: white;
@@ -66,6 +66,24 @@
   &widget{
 
   }
+  &shape-header{
+    @include breakout-band($bgc : $brand-col-2);
+    >*{
+      background: $brand-col-3;
+      body.single-case-study & {
+        background: $brand-col-6;
+      }
+      body.single-stuff & {
+        background: $brand-col-7;
+      }
+    }
+    body.home & {
+      @include breakout-band($bgc : $brand-col-5);
+    }
+    body.home & {
+      @include breakout-band($bgc : $brand-col-5);
+    }
+  }
 
 }
 
@@ -79,6 +97,22 @@
 
 [class*=l-footer__widget-area--] {
   @extend .l-footer__widget-area;
+}
+
+
+//BEM ELEMENT MODIFIER FALLBACK .l-footer__site-info--
+
+ [class*=l-footer__site-info--] {
+   @extend .l-footer__site-info;
+ }
+
+.l-footer__site-info--{
+  &case-study{
+    @include breakout-band($bgc : $brand-col-6);
+  }
+  &stuff{
+    @include breakout-band($bgc : $brand-col-7);
+  }
 }
 
 

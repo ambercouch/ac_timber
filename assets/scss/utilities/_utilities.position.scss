@@ -13,25 +13,46 @@
   position: static !important;
 }
 
-.u-pos-l-0{
+.u-posl-0{
   left: 0;
 }
-.u-pos-l-n100{
+.u-posl-n100{
   left: -100px;
 
 }
 
-.u-pos-b-0{
+.u-posb-0{
   bottom:0;
 }
 
-.u-pos-b-n30{
+.u-posb-n30{
   bottom:-30px;
 }
 
-.u-pos-t-0{
+.u-post-0{
   top: 0;
 }
-.u-pos-l-0{
-  left: 0;
+.u-posl-0{
+   left: 0;
+ }
+
+.u-posl-m{
+  left: $act-unit;
+}
+
+.u-posl-l{
+  left: $act-unit-l;
+}
+.u-posl-h{
+  left: $act-unit-h;
+}
+
+.u-posl-25{
+  left: 25% !important;
+}
+.u-posl-50{
+  left: 50% !important;
+}
+.u-posl-75{
+  left: 75% !important;
 }

@@ -1,0 +1,77 @@
+{% set classPostSidebar = (post.meta('post_content_aside'))? 'has-sidebar': 'has-no-sidebar' %}
+<article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }} {{ classPostSidebar }}">
+
+
+
+    <div class="l-single-page__header{{ templateClass }}">
+      <header class="c-header">
+      <div class="c-header__media-box">
+      <div class="c-media-box--intro-header">
+        <div class="c-media-box__image">
+          {% include "inc/feature-image.twig"
+            with {imgObj : Image(post.meta('author_image'))}
+          %}
+        </div>
+        <div class="c-media-box__content">
+          <h1 class="c-media-box__heading">
+            <span class="c-media-box__heading-name">{{ post.meta('author_name') }}</span>
+            <span class="c-media-box__heading-sep">:</span>
+            <span class="c-media-box__heading-company">{{ post.meta('company_name') }}</span>
+          </h1>
+          <div class="c-media-box__body">
+            {{ post.meta('case_study_intro') | wpautop }}
+          </div>
+          <div class="c-media-box__btn">
+              <div class="c-btn--cta">
+                <div class="c-btn__link">
+                  <a href="{{ post.meta('button_url') }}">{{ post.meta('button_label') }}</a>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+      </header>
+
+    </div>
+
+  <div class="entry-content l-single-page__body{{ templateClass }} ">
+    {{ post.content }}
+  </div>
+
+
+
+    <div class="l-single-page__footer{{ templateClass }} ">
+      <footer class="c-footer{{ templateClass }}">
+        <div class="c-footer__shout-box">
+          <div class="c-shout-box--2-col">
+            <div class="c-shout-box__col">
+              <div class="c-shout-box__image">
+                {% include "inc/feature-image.twig"
+                  with {
+                  imgObj : Image(post.meta('shout_box_image')),
+                  templateModClass : '--shout-box'
+                }
+                %}
+              </div>
+              <div class="c-shout-box__btn">
+                <div class="c-btn--shout-box">
+                  <div class="c-btn__link">
+                    <a href="{{ post.meta('shout_box_button_url') }}">{{ post.meta('shout_box_button_label') }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="c-shout-box__col">
+              <div class="c-shout-box__content">
+                <h2 class="c-shout-box__heading">{{ post.meta('shout_box_title') }}</h2>
+                <div class="c-shout-box__body">{{ post.meta('shout_box_content') }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+</article>

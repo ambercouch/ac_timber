@@ -1,0 +1,29 @@
+{% set classPostSidebar = (post.meta('post_content_aside'))? 'has-sidebar': 'has-no-sidebar' %}
+<article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }} {{ classPostSidebar }}">
+
+
+  <div class="l-single-page__header{{ templateClass }}">
+    {% include "inc/header.twig"
+      with {
+      headerTitle : null,
+      headingLevel : '1' ,
+      headerModClass : templateClass
+    }%}
+  </div>
+
+  {% if post.thumbnail %}
+    <div class="l-single-page__feature-image{{ templateClass }}">
+        {% include "inc/feature-image.twig" %}
+    </div>
+  {% endif %}
+  <div class="entry-content l-single-page__body{{ templateClass }} ">
+    {{ post.content }}
+  </div>
+
+    <div class="l-single-page__footer{{ templateClass }} ">
+      <footer class="c-footer{{ templateClass }}">
+       {{ post.meta('buy_stuff_content') }}
+      </footer>
+    </div>
+
+</article>

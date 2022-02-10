@@ -32,11 +32,11 @@
 
   &label{
     margin-bottom: $act-unit-t;
-    display: block;
+    display: none;
   }
 
   &post-date{
-    @include inuit-font-size($inuit-font-size-h5, 1);
+    @include inuit-font-size($inuit-font-size-h3, 1);
     display: block;
     visibility: inherit;
   }
@@ -64,33 +64,43 @@
   }
 }
 
-[class*=post-meta--]{
+[class*=c-post-meta--]{
   @extend .c-post-meta;
 }
 
-[class*=post-meta__section--]{
+[class*=c-post-meta__section--]{
   @extend .c-post-meta__section;
 }
 
-[class*=post-meta__post-date--]{
+.c-post-meta__section--{
+  &post-date{
+    margin-bottom: 0;
+  }
+}
+
+[class*=c-post-meta__post-date--]{
   @extend .c-post-meta__post-date;
 }
 
-[class*=post-meta__post-tags--]{
+[class*=c-post-meta__post-tags--]{
   @extend .c-post-meta__post-tags;
 }
 
-[class*=post-meta__post-cats--]{
+[class*=c-post-meta__post-cats--]{
   @extend .c-post-meta__post-cats;
 }
 
-[class*=post-meta__post-author--]{
+[class*=c-post-meta__post-author--]{
     @extend .c-post-meta__post-author;
   }
 
-[class*=post-meta__list--]{
+[class*=c-post-meta__list--]{
   @extend .c-post-meta__list;
 }
-[class*=post-meta__item--]{
+[class*=c-post-meta__item--]{
   @extend .c-post-meta__item;
+}
+
+[class*=c-post-meta__label--]{
+  @extend .c-post-meta__label;
 }

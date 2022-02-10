@@ -1,6 +1,8 @@
 <?php
 
 //Love, love, love, love all you functions
+use Timber\PostQuery;
+
 require_once get_template_directory() . '/lib/functions--ac-sidebars.php';
 require_once get_template_directory() . '/lib/functions--ac-menus.php';
 require_once get_template_directory() . '/lib/functions--ac-settings.php';
@@ -103,7 +105,7 @@ add_action('login_enqueue_scripts', 'my_admin_theme_style');
 function act_disable_editor( $id = false ) {
 
     $excluded_templates = array(
-        //'page-templates/mxb-home.php',
+        'page-templates/mxb-home.php',
     );
 
     $excluded_ids = array(
@@ -193,4 +195,87 @@ add_action( 'after_wp_tiny_mce', function()
         }
     } ( jQuery ) );
 </script><?php });
+
+add_action( 'acf/input/admin_enqueue_scripts', function() {
+    wp_enqueue_script( 'acf-custom-colors', get_template_directory_uri() . '/assets/js/admin/aw-colours.js', 'acf-input', '1.0', true );
+});
+
+
+/*
+ * Load more functions
+ */
+
+function misha_my_load_more_scripts() {
+
+    global $wp_query;
+    global $gallery_item_show;
+
+    $wp_query->set('posts_per_page', $gallery_item_show);
+
+    // In most cases it is already included on the page and this line can be removed
+    wp_enqueue_script('jquery');
+
+    // register our main script but do not enqueue it yet
+    wp_register_script( 'ac_timber', get_stylesheet_directory_uri() . '/dist/js/main.js', array('jquery'), '20210827-1', true );
+
+    // now the most interesting part
+    // we have to pass parameters to myloadmore.js script but we can get the parameters values only in PHP
+    // you can define variables directly in your HTML but I decided that the most proper way is wp_localize_script()
+    wp_localize_script( 'ac_timber', 'ac_timber_params', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
+        'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+        'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+        'max_page' => $wp_query->max_num_pages
+    ) );
+
+    wp_enqueue_script( 'ac_timber' );
+}
+
+add_action( 'wp_enqueue_scripts', 'misha_my_load_more_scripts' );
+
+function ac_loadmore_ajax_handler(){
+
+    // prepare our arguments for the query
+    $args = json_decode( stripslashes( $_POST['query'] ), true );
+    $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+    $args['post_status'] = 'publish';
+
+    // it is always better to use WP_Query but not here
+    query_posts( $args );
+
+    $query_object = get_queried_object();
+
+    if($query_object->name == 'gallery-item' || $query_object->taxonomy == 'gallery-type'){
+        $loop_template = 'content-loop.twig';
+    } else {
+        $loop_template =  'content-loop-blog.twig';
+    }
+
+    if(class_exists('Timber')){
+        $context = Timber::get_context();
+        $context['posts'] = new Timber\PostQuery();
+        $templates = array( $loop_template );
+        ob_start();
+        Timber::render( $templates, $context );
+        $ob = ob_get_contents();
+        ob_end_clean();
+    }else{
+        ob_start();
+        ?>
+        <?php echo "<p>The Timber plugin is not active.<br> Activate Timber or set <code>timber='false'</code> in the short code</p>" ?>
+        <?php
+        $ob = ob_get_contents();
+        ob_end_clean();
+    }
+
+    echo $ob;
+
+    die; // here we exit the script and even no wp_reset_query() required!
+}
+
+
+
+add_action('wp_ajax_loadmore', 'ac_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'ac_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
 
