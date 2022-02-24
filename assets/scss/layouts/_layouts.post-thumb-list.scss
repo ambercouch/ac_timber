@@ -114,6 +114,9 @@
     @include mq($from: desktop){
       grid-gap: $act-unit-l;
     }
+    &.has-4-items{
+      grid-template-columns: 1fr 1fr;
+    }
 
   }
   &blog{

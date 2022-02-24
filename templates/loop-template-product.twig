@@ -1,7 +1,7 @@
 {# This is an example of a twig template.
  it can be copied to your theme template folder if you are using the timber plugin #}
 <div class="l-post-thumb-list--product">
-  <ul class="l-post-thumb-list__list--product">
+  <ul class="l-post-thumb-list__list--product has-{{ posts|length }}-items">
     {% for post in posts %}
       <li class="l-post-thumb-list__item--product">
         {% set headerTitle = (post.meta('custom_post_thumb_title') ? post.meta('custom_post_thumb_title') : post.title) %}
