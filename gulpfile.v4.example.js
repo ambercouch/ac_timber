@@ -10,10 +10,10 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 const pipeline = require('readable-stream').pipeline;
-const uglify = require('gulp-uglify');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
+const terser = require('gulp-terser');
 
 /*
  SOURCE FILES
@@ -65,12 +65,10 @@ jsScripts = jsNpmScripts.concat(jsCustomScripts);
 
 //TASK: scripts - Concat and uglify all the vendor and custom javascript
 function scripts() {
-    return pipeline(
-        gulp.src(jsScripts),
-        concat('main.js'),
-        uglify(),
-        gulp.dest('dist/js/')
-    );
+    return gulp.src(jsScripts)
+        .pipe(concat('main.js'))
+        //.pipe(terser())
+        .pipe(gulp.dest('dist/js/'));
 }
 
 
