@@ -7,6 +7,7 @@
   padding: $act-unit-s;
   @include act-font-size($act-fs-4, 1);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .o-btn{

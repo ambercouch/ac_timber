@@ -247,7 +247,11 @@ function ac_loadmore_ajax_handler(){
 
     if($query_object->name == 'gallery-item' || $query_object->taxonomy == 'gallery-type'){
         $loop_template = 'content-loop.twig';
-    } else {
+    }
+    elseif ($query_object->name == 'Podcast' && $query_object->taxonomy == 'category'){
+            $loop_template =  'content-loop-cat-pod.twig';
+    }
+    else {
         $loop_template =  'content-loop-blog.twig';
     }
 

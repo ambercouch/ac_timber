@@ -47,6 +47,9 @@
   &section-header{
     text-align: center;
   }
+  &tax-collection{
+    text-align: left;
+  }
 
 }
 
@@ -116,7 +119,8 @@
     font-weight: 900;
   }
   &blog{
-    @include act-font-size($act-fs-2)
+    @include act-font-size($act-fs-2);
+    margin-bottom: $act-unit-s;
   }
   &service{
     @extend .c-header__heading--page;
@@ -164,8 +168,9 @@
     margin-bottom: $act-unit-l;
   }
   &blog-cates{
-    @include act-font-size($act-fs-1);
+    @include act-font-size($act-fs-m);
     font-weight: 900;
+    margin-bottom: $act-unit-l;
   }
 }
 
@@ -210,6 +215,9 @@
   &service-intro{
      color: $brand-col-6;
    }
+  &case-study-thumb{
+    font-family: $act-font-family-serif;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-header__link-title--
@@ -222,6 +230,20 @@
   &blog{
     @include a($brand-col-1);
     text-decoration: none;
+  }
+  &cat-pod{
+    @include a($brand-col-1);
+    text-decoration: none;
+  }
+  &slide{
+    @include a($brand-col-1);
+    text-decoration: none;
+    @include act-font-size($act-fs-g)
+  }
+  &tax-collection{
+    @include a($brand-col-1);
+    text-decoration: none;
+    @include act-font-size($act-fs-g)
   }
 }
 

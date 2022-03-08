@@ -1,5 +1,5 @@
 {% for post in posts %}
-  <li class="l-post-thumb-list__item--blog"  >
+  <li id="itemPostId{{ post.id }}" class="l-post-thumb-list__item--blog"  >
     <div class="l-post-thumb-list__post-thumb">
       {% include ["inc/post-thumb.twig"] with {'postType' : 'blog', 'headerTitle' : post.title} %}
     </div>

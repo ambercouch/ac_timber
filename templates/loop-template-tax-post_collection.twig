@@ -1,0 +1,15 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--tax-collection">
+  <ul class="l-post-thumb-list__list--tax-collection">
+    {% for post in terms %}
+      <li class="l-post-thumb-list__item--tax-collection">
+
+        {% set headerTitle = (post.meta('custom_post_thumb_title') ? post.meta('custom_post_thumb_title') : post.title) %}
+        {% include ["inc/post-thumb-term.twig"] with {'postType' : 'tax-collection', 'headerTitle' : headerTitle} %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+

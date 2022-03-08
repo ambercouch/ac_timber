@@ -5,6 +5,10 @@
 .c-btn {
   @extend .o-btn;
   border-radius: 0;
+  &.is-loading{
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 /*
@@ -78,7 +82,7 @@
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
-    width: $act-unit-h * 2;
+    width: $act-unit-h * 2.5;
     margin:0 auto;
     &.is-loading{
       justify-content: center;
@@ -110,16 +114,21 @@
 
   &cta{
     @extend .o-btn--pill;
-    padding-left: $act-unit ;
-    padding-right: $act-unit ;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
+    font-family: $act-font-family-headings;
+    @include mq($from : tablet){
+      width: 150px;
+      max-width: 100%;
+    }
   }
   &scroll-blogs{
     @extend .o-btn--transparent;
     @extend .o-btn--icon-btn-inline;
-    color: $brand-col-1;
     max-width: 100%;
     margin: 0 auto;
-    @include act-font-size($act-fs-3)
+    @include act-font-size($act-fs-3);
+    @include a($col: $brand-col-1, $col-hov: $brand-col-7)
   }
 }
 
@@ -204,6 +213,9 @@
   &scroll-blogs{
     @include size($act-unit-s * 1.5);
     margin-left: $act-unit;
+  }
+  &load-more{
+    @include size($act-unit-s * 1.5);
   }
 }
 

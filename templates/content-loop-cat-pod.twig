@@ -1,0 +1,7 @@
+{% for post in posts %}
+  <li class="l-post-thumb-list__item--cat-pod"  >
+    <div class="l-post-thumb-list__post-thumb">
+      {% include ["inc/post-thumb-pod.twig"] with {'postType' : 'cat-pod', 'headerTitle' : post.title} %}
+    </div>
+  </li>
+{% endfor %}

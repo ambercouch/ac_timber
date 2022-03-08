@@ -62,6 +62,7 @@
   &input-wrapper{
     display: block;
     margin-bottom: 0;
+
   }
   &radio-wrapper{
     @extend .c-contact-form__label;
@@ -72,13 +73,32 @@
     display: block;
     width: 100%;
     border: none;
-    padding:$act-unit-t;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
+    border: solid 2px;
+    @extend .o-btn--rounded;
+    @include act-font-size($act-fs-5,1);
+    color: $brand-col-1;
+    background-color: transparent;
+    outline: none;
+
+  }
+  &input-group{
+    display: flex;
   }
   &label{
-    display: block;
+
     margin-bottom: $act-unit-t;
+
+    .c-contact-form__input-group &{
+      margin-right: $act-unit;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
   }
   &label-text{
+    display: none;
     @include act-font-size($act-fs-5, 1);
   }
   &label-text-radio{
@@ -128,6 +148,28 @@
 
 [class*=contact-form__input-content--] {
   @extend .c-contact-form__content;
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-contact-form--
+
+[class*=c-contact-form__input--] {
+  @extend .c-contact-form__input;
+}
+
+.c-contact-form__input--{
+  &submit{
+    display: inline-block;
+    border:none;
+    border-radius: $act-unit;
+    @include act-font-size($act-fs-5, 1);
+    padding: $act-unit-s $act-unit;
+    transition: background 0.3s ease;
+    background: $brand-col-3;
+    cursor: pointer;
+    &:hover{
+      background: darken($brand-col-3, 5%);
+    }
+  }
 }
 /*
  * c-contact-form--placeholder-block
@@ -254,15 +296,9 @@
 }
 
 .wpcf7-submit{
-  transition: background 0.3s ease;
-  @extend .c-contact-form__input;
-  padding:$act-unit-t;
-  background: $brand-col-3;
-  color: white;
-  cursor: pointer;
-  &:hover{
-    background: darken($brand-col-3, 5%);
-  }
+
+  @extend .c-contact-form__input--submit;
+
 }
 
 .wpcf7-form-control-wrap{

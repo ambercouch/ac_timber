@@ -1,0 +1,22 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--cat-pod">
+  <ul class="l-post-thumb-list__list--cat-pod" data-isotope="blog">
+    {% for post in posts %}
+      <li class="l-post-thumb-list__item--cat-pod"  >
+        <div class="l-post-thumb-list__post-thumb">
+          {% include ["inc/post-thumb-pod.twig"] with {'postType' : 'cat-pod', 'headerTitle' : post.title} %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<div class="c-pagination--load-more">
+  <div class="c-pagination__btn">
+    <button class="c-btn--load-more" data-acclsc-load-more data-container-selector=".l-post-thumb-list__list--cat-pod">
+      <span class="c-btn__label">Load More</span> <span class="c-btn__icon">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
+    </button>
+
+  </div>
+</div>

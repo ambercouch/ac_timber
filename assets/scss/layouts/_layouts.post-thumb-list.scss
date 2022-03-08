@@ -26,9 +26,9 @@
   &blog{
     padding-top: $act-unit;
     padding-bottom: $act-unit;
-
-
   }
+
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-post-thumb-list--
@@ -88,6 +88,10 @@
       margin: 0 $act-unit;
     }
   }
+  &media-box{
+    //height: 100%;
+    //position: absolute;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__header--
@@ -118,6 +122,12 @@
   }
   &blog{
     margin-left: - $act-unit !important;
+  }
+  &slides{
+    display: block;
+  }
+  &tax-collection{
+    margin: - $act-unit-l;
   }
 }
 
@@ -151,8 +161,19 @@
     padding: 0;
   }
   &blog{
-    margin-bottom: $act-unit-l;
+    margin-bottom: $act-unit * 1.5;
     margin-left: $act-unit !important;
+  }
+  &slides{
+    width: 100%;
+    min-height: 100%;
+  }
+  &tax-collection{
+    width: calc(25% - 48px);
+  }
+  &cat-pod{
+    padding: 0 ;
+    width: calc(25% - 48px);
   }
 }
 

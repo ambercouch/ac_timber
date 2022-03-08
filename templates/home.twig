@@ -7,7 +7,7 @@
 {% block before_main %}
 <section class="l-site__main-before--blog">
   <div class="l-main-before--blog">
-    <div class="l-section u-bgc-7 u-bob-7 has-no-borders  has-no-bottom-border">
+    <div class="l-section--blog-intro">
       <div class="l-section__body ">
         <div class="l-section__cols is-col-50-50">
           <div class="l-section__col--1">
@@ -33,7 +33,7 @@
           <div class="l-section__footer-container">
             <div class="l-section__footer-content--blog">
 
-                <a class="c-btn--scroll-blogs" href="#next" >
+                <a class="c-btn--scroll-blogs" data-scroll href="#primary" >
                   <span class="c-btn__label">
                     View All Blog Posts
                   </span>
@@ -79,17 +79,7 @@
 
 
 {% block content %}
-  <div class="l-post-thumb-list--blog">
-    <ul class="l-post-thumb-list__list--blog" data-isotope="blog">
-      {% for post in posts %}
-        <li class="l-post-thumb-list__item--blog"  >
-          <div class="l-post-thumb-list__post-thumb">
-            {% include ["inc/post-thumb.twig"] with {'postType' : 'blog', 'headerTitle' : post.title} %}
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+  {% include 'loop-template-post.twig' %}
 {% endblock %}
 
 
@@ -97,11 +87,11 @@
 {% block belowContent %}
   <div class="l-content-below">
     {% if posts.pagination.pages is not empty %}
-      <div class="l-content__                                                                                                                                                                     pagination">
+      <div class="l-content__pagination">
         <div class="c-pagination--load-more">
           <div class="c-pagination__btn">
             <button class="c-btn--load-more" data-load-more data-container-selector=".l-post-thumb-list__list--blog">
-              <span class="c-btn__label">Load More</span> <span class="c-btn__icon">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
+              <span class="c-btn__label">Load More</span> <span class="c-btn__icon--load-more">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
             </button>
 
           </div>

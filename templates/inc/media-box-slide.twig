@@ -1,0 +1,53 @@
+{% set tempModClass = (tempModClass) ? tempModClass : null %}
+{% set typeModClass = (postType) ?  '--'~postType : null %}
+{% set modClass = (tempModClass) ? tempModClass : typeModClass %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+{% set headerSubtitleAfter = (headerSubtitleAfter) ? headerSubtitleAfter : null %}
+{% set templateImage = (templateImage) ? templateImage : false %}
+{% set featureImage = (templateImage) ? templateImage : post.thumbnail  %}
+
+
+<div {{ fn('post_class', ['c-media-box'~modClass, '']) }}>
+
+  <div class="c-media-box__image">
+    <div class="c-media-box__post-thumb">
+      <div class="c-post-thumb--slide">
+        {% if featureImage != "hide" %}
+          <a href="{{ post.link }}" class="c-post-thumb__thumb-link{{ modClass }}">
+            <div class="c-post-thumb__feature-image{{ modClass }}">
+              {% include "inc/feature-image.twig" with {
+                'imgObj' : featureImage,
+                'templateCap' : 'hide',
+                'imgSize' : 'feature500'
+              }
+              %}
+            </div>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="c-media-box__content">
+    <div class="c-media-box__post-thumb">
+      <div class="c-post-thumb--slide">
+    {% if headerTitle != false %}
+      <div class="c-post-thumb__header{{ modClass }}">
+        {% include "inc/header.twig" with {
+          'headerModClass' : modClass,
+          'templateLink' : post.link,
+          'templateTitle' :  headerTitle,
+          'templateSubtitleAfter' : headerSubtitleAfter
+        } %}
+      </div>
+    {% endif %}
+    <div class="c-post-thumb__excerpt{{ modClass }}">
+      {{post.preview.length(10).read_more('') | wpautop }}
+    </div>
+    <a class="c-post-thumb__link-more" href="{{ post.link }}">Listen to podcast</a>
+      </div>
+    </div>
+  </div>
+
+</div>

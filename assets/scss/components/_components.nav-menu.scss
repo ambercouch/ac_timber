@@ -267,6 +267,7 @@
     padding-left: $act-unit !important;
     padding-right: $act-unit !important;
     font-weight: 500;
+    @include a($col: $brand-col-1, $col-hov: $brand-col-7);
     .current-menu-item &{
       background: $brand-col-1 !important;
       color: white !important;

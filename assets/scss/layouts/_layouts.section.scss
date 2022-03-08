@@ -33,10 +33,10 @@
     border-radius: $act-unit;
   }
   h1{
-    @include act-font-size($act-fs-g)
+    @include act-font-size($act-fs-m, $modifier: -1)
   }
   h2{
-    @include act-font-size($act-fs-k)
+    @include act-font-size($act-fs-1)
   }
 }
 
@@ -47,6 +47,11 @@
 .l-section-- {
   &type {
     display: block
+  }
+  &blog-intro{
+    background: $brand-col-7;
+    @include breakout-band($bgc : $brand-col-7);
+    padding: $act-unit $act-unit 0;
   }
 }
 
@@ -73,7 +78,7 @@
   }
   &header-content{
     @extend %shape-content;
-    width: 650px !important;
+    //width: 650px !important;
     padding-top: $act-unit-l *1.5 !important;
   }
   &heading {
@@ -121,6 +126,14 @@
     display: flex;
     margin-bottom: $act-unit-l;
   }
+  &col{
+    &:after{
+      .l-section--blog-intro &{
+        display: none !important;
+      }
+
+    }
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-section--
@@ -139,10 +152,10 @@
     @extend .u-1-2;
   }
   > *:first-child{
-    padding-right: $act-unit-l;
+    padding-right: $act-unit;
   }
   > *:last-child{
-    padding-left: $act-unit-l;
+    padding-left: $act-unit;
   }
 }
 
@@ -159,6 +172,8 @@
 
 .is-col-33-33-33{
   text-align: center;
+  margin-left: -$act-unit-l;
+  margin-right: -$act-unit-l;
   > *{
     @extend .u-1-3;
     height: auto;
@@ -208,5 +223,14 @@
     text-align: center;
     padding-top: $act-unit-h;
   }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-section__footer-content--
+
+[class*=l-section__col--] {
+  @extend .l-section__col;
+}
+.l-section__col--{
+
 }
 

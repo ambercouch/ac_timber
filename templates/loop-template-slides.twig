@@ -1,0 +1,13 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--slides">
+  <ul class="l-post-thumb-list__list--slides" data-flickity>
+    {% for post in posts %}
+      <li class="l-post-thumb-list__item--slides"  >
+        <div class="l-post-thumb-list__media-box">
+          {% include ["inc/media-box-slide.twig"] with {'postType' : 'slide', 'headerTitle' : post.title} %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

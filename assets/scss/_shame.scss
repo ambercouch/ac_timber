@@ -110,4 +110,15 @@
   width: 125px;
   max-width: 100%;
   font-weight: 500;
+  &:hover{
+    @extend .wp-block-button__link;
+  }
+}
+
+.flickity-page-dots .dot {
+  padding: 0 !important;
+ &:before{
+   content: '';
+   display: none !important;
+ }
 }

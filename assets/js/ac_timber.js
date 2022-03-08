@@ -16,6 +16,10 @@ ACTIMBER = {
 
             fitvids();
 
+            ACTIMBER.fn.actScrollLink();
+
+
+
             if(typeof acf !== 'undefined'){
                 if( acf.fields.color_picker ) {
                     // custom colors
@@ -36,19 +40,215 @@ ACTIMBER = {
             }
 
 
-            $(document).on('click', '[data-load-more]', function () {
 
-                console.log('clicker')
+
+            const podcastSlider = document.querySelector('[data-flickity]');
+
+
+            if(podcastSlider != null){
+                const flktyGallery = new Flickity( podcastSlider, {
+                    // options
+                    cellAlign: 'left',
+                    contain: true,
+                });
+            }
+
+
+        }
+    },
+    page: {
+        init: function () {
+            //uncomment to debug
+            //console.log('pages');
+        }
+    },
+    post: {
+        init: function () {
+            //uncomment to debug
+            //console.log('posts');
+        }
+    },
+    blog: {
+        init: function () {
+            //load the blogs
+            ACTIMBER.fn.actLoadBlogs();
+        }
+
+    },
+    archive: {
+        init: function(){
+
+        },
+        category: function () {
+            ACTIMBER.fn.actLoadBlogs();
+        }
+    },
+    fn: {
+        open: function (container, showButton, parent, pd  ) {
+
+            //console.log('pd1');
+            //console.log(pd);
+
+            pd = (pd === 'undefined' ) ? true : pd;
+
+            var elState = showButton.attr('data-state');
+            var eventActOpen = new Event('actOpen');
+            var eventActClose = new Event('actClose');
+            var containId = container.attr('data-container')
+            showButton.on('click', function (e) {
+                if(pd === true){
+                    e.preventDefault();
+                }
+                elState = showButton.attr('data-state');
+                if ('off' === elState) {
+                    console.log('off click')
+                    showButton.attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('is-state-on');
+                    document.body.className += ' container-is-open ' + 'container-open-' + containId ;
+                    window.dispatchEvent(eventActOpen)
+
+                } else {
+                    console.log('NOT off click')
+                    //console.log(document.body.className)
+                    $(showButton).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('is-state-on');
+                    document.querySelector('body').classList.remove('container-is-open');
+                    document.querySelector('body').classList.remove('container-open-' + containId);
+
+                    window.dispatchEvent(eventActClose);
+                }
+            });
+        },
+        actStateToggleSelect : function (element, state) {
+            if('off' === state ){
+                element.attr('data-state', 'on');
+            }
+            if('on' === state){
+                element.attr('data-state', 'off');
+            }
+        },
+        actStateToggle: function (container, showButton, parent, listParent) {
+            var elState = showButton.attr('data-state');
+            var eventActOpen = new Event('actOpen');
+            var eventActClose = new Event('actClose');
+            showButton.on('click', function(e){
+                e.preventDefault();
+                elState = $(this).attr('data-state');
+                // console.log('elState');
+                // console.log(this);
+                //
+                // console.log(elState);
+
+                if ('off' === elState ) {
+                    // console.log('click on');
+                    $(this).attr('data-state', 'on');
+                    $(container).attr('data-state', 'on');
+                    $(parent).attr('data-state', 'on');
+                    $(container).addClass('ac-on');
+                    document.body.className += ' ' + 'container-is-open';
+                    window.dispatchEvent(eventActOpen);
+
+                } else {
+                    // console.log('click off');
+                    $(this).attr('data-state', 'off');
+                    $(container).attr('data-state', 'off');
+                    $(parent).attr('data-state', 'off');
+                    $(container).removeClass('ac-on');
+                    document.querySelector('body').classList.remove('container-is-open');
+
+                    window.dispatchEvent(eventActClose);
+                }
+            });
+        },
+        actDefer: function (successMethod, failMethod, testMethod, pause, attempts) {
+            var defTest = function () {
+
+                if (typeof jQuery !== 'undefined') {
+                    return true
+                }
+                return false;
+
+            };
+            //What to do if test is false
+            var defFail = function () {
+                console.log('The deftest failed');
+            }
+            //What to do if test is true
+            var defSuccess = function () {
+                console.log('The deftest passed');
+            }
+            attempts = (attempts === undefined) ? false : attempts;
+            pause = (pause === undefined) ? 50 : pause;
+            testMethod = (testMethod === undefined) ? defTest : testMethod;
+            failMethod = (failMethod === undefined) ? defFail : failMethod;
+            successMethod = (successMethod === undefined) ? defSuccess : successMethod;
+
+
+            if (testMethod()) {
+                console.log('the testmethod')
+                successMethod();
+            } else {
+                console.log('the failmethod')
+                failMethod();
+                if (attempts === false || attempts > 0) {
+                    setTimeout(function () {
+                        attempts = (attempts === false) ? attempts : attempts - 1;
+                        ACTIMBER.fn.actDefer(successMethod, failMethod, testMethod, pause, attempts)
+                    }, pause);
+                }
+            }
+        },
+        actLoadBlogs: function(selectors = 'undefined'){
+
+            if (selectors == "undefined"){
+                selectors = {
+                    'control' : '[data-load-more]',
+                    'container' : '.l-post-thumb-list__list--blog',
+                }
+            }
+
+            $(document).on('click', selectors.control , function () {
+
+                var urlOrign = window.location.origin
+
+                //Pathname without the trailing slash
+                var urlPath = window.location.pathname.replace(/\/$/, '');
+
+                //get the path and see if it is already paged eg /page/2
+                var urlPathArray = urlPath.split('/');
+                var urlPathLength = urlPathArray.length
+                var urlPageMarker = urlPathArray[urlPathLength - 2]
+
+
+                if(urlPageMarker == 'page'){
+                    //if paged get the next page url
+                    var urlPageNum = urlPathArray[urlPathLength - 1]
+                    var urlPageNext = parseInt(urlPageNum) + 1;
+
+                    var urlUpdate= urlOrign + urlPath.substring(0, urlPath.lastIndexOf('/')) + '/' + urlPageNext + '/';
+
+                }else{
+                    //if not paged get the second page url
+                    var urlUpdate= urlOrign + urlPath + '/page/2/';
+
+                }
 
                 var button = $(this),
-                    container_selector = '.l-post-thumb-list__list--blog',
+
                     data = {
                         'action': 'loadmore',
                         'query': ac_timber_params.posts, // that's how we get params from wp_localize_script() function
                         'page' : ac_timber_params.current_page
                     };
 
-                container_selector = button.attr('data-container-selector') ?  button.attr('data-container-selector') : container_selector;
+                // console.log('senddata');
+                // console.log(data);
+
+                selectors.container = button.attr('data-container-selector') ?  button.attr('data-container-selector') : selectors.container;
 
                 $.ajax({ // you can also use $.post here
                     url : ac_timber_params.ajaxurl, // AJAX handler
@@ -60,7 +260,12 @@ ACTIMBER = {
                     success : function( data ){
                         if( data ) {
 
-                            $(container_selector).append(data);
+                            //console.log('data');
+                            // console.log(data);
+
+                            history.pushState({},"URL Rewrite Example",urlUpdate )
+
+                            $(selectors.container).append(data);
                             button.removeClass('is-loading')
                             ac_timber_params.current_page++;
 
@@ -78,18 +283,18 @@ ACTIMBER = {
                 });
 
             })
-        }
-    },
-    page: {
-        init: function () {
-            //uncomment to debug
-            //console.log('pages');
-        }
-    },
-    post: {
-        init: function () {
-            //uncomment to debug
-            //console.log('posts');
+        },
+        actScrollLink: function () {
+
+            $(document).on('click', '[data-scroll]', function (e) {
+                e.preventDefault();
+                let $clicker = $(this);
+                let targetID = $clicker.attr('href');
+                let $target = $(targetID);
+
+                $('html, body').animate({ scrollTop: $target.offset().top}, 1000 );
+            })
+
         }
     }
 };

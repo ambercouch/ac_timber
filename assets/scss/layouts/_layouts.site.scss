@@ -38,6 +38,9 @@ BEM ELEMENTS .l-site__
     padding-top: 0;
     padding-bottom: 0;
   }
+  &main-after{
+    background: $brand-col-2;
+  }
   &main{
     padding-top: 0;
     background: $brand-col-2;

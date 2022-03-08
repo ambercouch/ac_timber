@@ -10,7 +10,7 @@
     }%}
     </div>
   {% endif %}
-
+{% if post.meta('page_intro_image') or (post.meta('page_intro_title') or post.meta('page_intro_text') or post.meta('button_1_url') or post.meta('button_2_url') ) %}
     <div class="l-single-page__page-intro{{ templateClass }}">
 
                 <div class="c-media-box--intro-header">
@@ -43,6 +43,7 @@
                 </div>
 
     </div>
+    {% endif %}
 
     <div class="entry-content l-single-page__body{{ templateClass }} ">
       {{ post.content }}

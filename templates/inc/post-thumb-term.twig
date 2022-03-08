@@ -1,0 +1,46 @@
+{% set tempModClass = (tempModClass) ? tempModClass : null %}
+{% set typeModClass = (postType) ?  '--'~postType : null %}
+{% set modClass = (tempModClass) ? tempModClass : typeModClass %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+{% set headerSubtitleAfter = (headerSubtitleAfter) ? headerSubtitleAfter : null %}
+{% set templateImage = (templateImage) ? templateImage : false %}
+{% set featureImage = (templateImage) ? templateImage : post.meta('post_collection_image')  %}
+
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass]) }}>
+    {% if featureImage != "hide" %}
+      <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+        <div class="c-post-thumb__feature-image{{ modClass }}">
+      {% include "inc/feature-image.twig" with {
+        'imgObj' : Image(post.meta('post_collection_image')),
+        'templateCap' : 'hide',
+        'imgSize' : 'feature500'
+      }
+      %}
+    </div>
+  </a>
+    {% endif %}
+
+    {% if headerTitle != false %}
+      <div class="c-post-thumb__header{{ modClass }}">
+        {% include "inc/header.twig" with {
+          'headerModClass' : modClass,
+          'templateLink' : post.link,
+          'templateTitle' :  headerTitle,
+          'templateSubtitleAfter' : headerSubtitleAfter
+        } %}
+{#        <div class="entry-meta c-post-thumb__post-meta{{ modClass }}">#}
+{#          {% include 'inc/post-meta-blog.twig' %}#}
+{#        </div>#}
+      </div>
+    {% endif %}
+
+
+
+
+{#  <div class="c-post-thumb__excerpt{{ modClass }}">#}
+{#    {{post.preview.length(10).read_more('') | wpautop }}#}
+{#  </div>#}
+{#  <a class="c-post-thumb__link-more" href="{{ post.link }}">Read more</a>#}
+</article>

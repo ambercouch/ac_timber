@@ -18,7 +18,7 @@
   }
   &load-more {
     @include mq($from: desktop){
-      padding: $act-unit 0 0;
+      //padding: $act-unit 0 0;
     }
   }
 }

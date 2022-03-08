@@ -46,7 +46,7 @@
     color: $brand-col-1;
     border-radius: $act-unit;
     padding: $act-unit;
-    padding-bottom: $act-unit-l;
+    padding-bottom: $act-unit;
     p{
       color: $brand-col-5;
     }
@@ -55,10 +55,13 @@
     }
     cite{
       color: $brand-col-5;
-      @include act-font-size($act-fs-3);
+      @include act-font-size($act-fs-5);
       font-style: normal;
     }
 
+  }
+  &slide{
+    text-align: left !important;
   }
 
 }
@@ -159,6 +162,10 @@
   &blog{
     padding-bottom: $act-unit-t;
   }
+  &slide{
+    @extend .u-1-2--desktop;
+
+  }
 }
 
 [class*=c-post-thumb__wrapper--] {
@@ -240,6 +247,9 @@
     margin-bottom: $act-unit;
   }
   &blog{
+    margin-bottom: $act-unit;
+  }
+  &tax-collection{
     margin-bottom: $act-unit;
   }
 }
