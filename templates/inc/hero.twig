@@ -1,4 +1,4 @@
-{% if not fn('is_front_page') and pageSettingsShowSiteHero != true %}
+{% if not fn('is_front_page') and not fn('is_home') and pageSettingsShowSiteHero != true %}
   {%   set bannerImg = pageBannerImg %}
   {%   set bannerLogo = pageBannerLogo %}
   {%   set bannerContent = pageBannerContent %}

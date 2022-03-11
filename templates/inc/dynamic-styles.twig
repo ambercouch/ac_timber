@@ -1,8 +1,9 @@
 <!-- ACF Hero CSS -->
 <style>
+  {% set frontOrHome = ( fn('is_front_page') or  fn('is_home') ) ? true : false  %}
 
-  {% if (fn('is_front_page') and cssBannerImageHeight) or
-   (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
+  {% if ( (frontOrHome and cssBannerImageHeight) or
+   (not frontOrHome) and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
   /* cssBannerImageHeight */
   .c-hero{
     height: {{ cssBannerImageHeight }} !important;
@@ -12,7 +13,7 @@
   /* NO cssBannerImageHeight */
   {% endif %}
 
-  {% if not fn('is_front_page') and cssPageBannerImageHeight and pageSettingsShowSiteHero == false %}
+  {% if not frontOrHome and cssPageBannerImageHeight and pageSettingsShowSiteHero == false %}
   /* cssPageBannerImageHeight */
   .c-hero{
     height: {{ cssPageBannerImageHeight }} !important;
@@ -31,7 +32,7 @@
     /* NO cssBannerImagePositionHorizontal */
   {% endif %}
 
-  {% if (fn('is_front_page') and cssBannerImageSaturation ) or (not fn('is_front_page') and pageSettingsShowSiteHero == true  and cssBannerImageSaturation) %}
+  {% if (frontOrHome and cssBannerImageSaturation ) or (not frontOrHome and pageSettingsShowSiteHero == true  and cssBannerImageSaturation) %}
   /*  cssBannerImageSaturation */
   .c-image__background {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
@@ -39,7 +40,7 @@
   }
   {% else %}
   /* NO cssBannerImageSaturation */
-/* TESTING  {{ fn('is_front_page') ~ 'cssBannerImageSaturation ' ~ cssBannerImageSaturation ~ ' END TEST' }}*/
+/* TESTING  {{ frontOrHome ~ 'cssBannerImageSaturation ' ~ cssBannerImageSaturation ~ ' END TEST' }}*/
   {% endif %}
 
   {% if  cssPageBannerImageSaturation %}
@@ -52,8 +53,8 @@
   /* NO cssPageBannerImageSaturation */
   {% endif %}
 
-  {% if (fn('is_front_page') and cssBannerColourCast) or
-  (not fn('is_front_page') and cssBannerColourCast and pageSettingsShowSiteHero == true )%}
+  {% if (frontOrHome and cssBannerColourCast) or
+  (not frontOrHome and cssBannerColourCast and pageSettingsShowSiteHero == true )%}
   /* cssBannerColourCast */
   .c-hero__image:before{
     display: block !important;
