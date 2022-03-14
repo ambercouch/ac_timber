@@ -9,26 +9,5 @@ li{
 }
 
 ol{
-  margin-left: 0;
-  li{
-    counter-increment: li;
-    list-style: none;
-    position: relative;
-    padding-left: $act-unit-l;
-    margin-bottom: $act-unit;
-    &::before{
-      content: counter(li);
-      left: 0;
-      position: absolute;
-      background: black;
-      color: $brand-col-3;
-      @include size($act-unit-t * 5);
-      text-align: center;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 0;
-    }
-  }
+  //margin-left: $act-unit;
 }
