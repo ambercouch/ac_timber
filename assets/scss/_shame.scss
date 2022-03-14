@@ -98,21 +98,21 @@
 }
 
 .wp-block-buttons .wp-block-button{
-  margin-bottom: $act-unit;
+  //margin-bottom: $act-unit;
 }
 .wp-block-button__link{
-  color: $brand-col-1;
-  @extend .c-btn;
-  @extend .o-btn--s;
-  @extend .c-btn--ghost;
-  @extend .o-btn--pill;
-  border-width: 2px !important;
-  width: 125px;
-  max-width: 100%;
-  font-weight: 500;
-  &:hover{
-    @extend .wp-block-button__link;
-  }
+  //color: $brand-col-1;
+  //@extend .c-btn;
+  //@extend .o-btn--s;
+  //@extend .c-btn--ghost;
+  //@extend .o-btn--pill;
+  //border-width: 2px !important;
+  //width: 125px;
+  //max-width: 100%;
+  //font-weight: 500;
+  //&:hover{
+  //  @extend .wp-block-button__link;
+  //}
 }
 
 .flickity-page-dots .dot {
