@@ -51,7 +51,9 @@
   &blog-intro{
     background: $brand-col-7;
     @include breakout-band($bgc : $brand-col-7);
-    padding: $act-unit $act-unit 0;
+    padding: $act-unit 0 0;
+    margin-left: - $act-unit-s;
+    margin-right: - $act-unit-s;
   }
 }
 
@@ -80,6 +82,7 @@
     @extend %shape-content;
     //width: 650px !important;
     padding-top: $act-unit-l *1.5 !important;
+
   }
   &heading {
     display: block
@@ -198,19 +201,29 @@
 %shape-wrapper{
   height: 175px;
   overflow: hidden;
+  .header-is-transparent &{
+    height: auto;
+  }
 }
 %shape-container{
   @include size(1300px, 700px);
   max-width: 100%;
   margin: 0 auto;
-  background: $brand-col-2;
+  background: transparent;
   border-radius: 50%;
+  .header-is-transparent &{
+    height: auto;
+    width: auto;
+  }
 }
 %shape-content{
   width: 400px;
   max-width: 100%;
   margin: 0 auto;
   padding-top: $act-unit * 1.5;
+  .header-is-transparent &{
+    padding-top: 0 !important;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-section__footer-content--
@@ -233,4 +246,19 @@
 .l-section__col--{
 
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .l-section__footer-content--
+
+[class*=l-section__footer-container--] {
+  @extend .l-section__footer-container;
+}
+.l-section__footer-container--{
+  &blog{
+    background: $brand-col-2;
+  }
+
+}
+
+
+
 

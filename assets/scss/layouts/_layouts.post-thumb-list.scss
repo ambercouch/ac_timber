@@ -27,6 +27,17 @@
     padding-top: $act-unit;
     padding-bottom: $act-unit;
   }
+  &slides{
+    padding: $act-unit-l $act-unit;
+    padding-bottom: 0;
+  }
+  &tax-collection{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &cat-pod{
+    padding: 0;
+  }
 
 
 }
@@ -92,6 +103,10 @@
     //height: 100%;
     //position: absolute;
   }
+  &pagination{
+    text-align: center;
+    padding-top: $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__header--
@@ -127,7 +142,8 @@
     display: block;
   }
   &tax-collection{
-    margin: - $act-unit-l;
+    margin-left: - $act-unit-l;
+    margin-right: - $act-unit-l;
   }
 }
 
@@ -173,6 +189,7 @@
   }
   &cat-pod{
     padding: 0 ;
+    padding-bottom: $act-unit-l;
     width: calc(25% - 48px);
   }
 }

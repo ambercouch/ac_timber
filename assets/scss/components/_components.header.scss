@@ -50,6 +50,9 @@
   &tax-collection{
     text-align: left;
   }
+  &cat-pod{
+    text-align: left;
+  }
 
 }
 
@@ -114,8 +117,7 @@
 
 .c-header__heading--{
   &page{
-    text-decoration: underline;
-    @include act-font-size($act-fs-g);
+    @include act-font-size($act-fs-g, 1);
     font-weight: 900;
   }
   &blog{
@@ -171,6 +173,10 @@
     @include act-font-size($act-fs-m);
     font-weight: 900;
     margin-bottom: $act-unit-l;
+  }
+  &single-col-page-800{
+    @extend .c-header__heading--page;
+    margin-bottom: 0;
   }
 }
 

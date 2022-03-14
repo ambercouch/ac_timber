@@ -1,7 +1,7 @@
 <article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
   {% if not hidePageTitle %}
-    <div class="l-single-page__header">
+    <div class="l-single-page__header{{ templateClass }}">
     {% include "inc/header.twig"
       with {
       headerTitle : null,

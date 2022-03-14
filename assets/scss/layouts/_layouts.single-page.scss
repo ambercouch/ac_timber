@@ -62,6 +62,8 @@
   &body{
     display: block;
 
+
+
     .has-sidebar > &{
       padding-right: $act-unit-h;
     }
@@ -103,7 +105,27 @@
 }
 .l-single-page__header--{
   &single-col-page-800{
-    text-align: center;
+    text-align: left;
+    width: 40em;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-bottom: $act-unit-l;
+    margin-bottom: $act-unit-l;
+    &:before{
+      display: block;
+      content: "";
+      width: calc(100% - 24px);
+      height: $act-unit;
+      position: absolute;
+      left: 0;
+      bottom: - $act-unit;
+      z-index: 10;
+      background: url("assets/images/svg/mxb-wave-horz.svg");
+      background-repeat: repeat-x;
+      background-size: 6%;
+    }
   }
   &single-col-page-centred{
     text-align: center;
@@ -156,10 +178,13 @@
 }
 .l-single-page__body--{
   &single-col-page-800{
-    max-width: 36em;
+    max-width: 40em;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
+    h3{
+      @include act-font-size($act-fs-1)
+    }
   }
   &page{
 

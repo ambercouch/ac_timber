@@ -1,10 +1,11 @@
 <article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
-    <div class="entry-content l-single-page__body{{ templateClass }} ">
+    <div class="entry-content l-single-page__body--section-page ">
         {% for item in post.meta('sections') %}
 
             {% set colLayout =  item.section_column_layout %}
             {% set classTitle =  item.section_title_class %}
+            {% set classHeaderType =  'header-is-'~item.section_header_type %}
 
             {% set classSection =  item.section_css_class %}
             {% set classBody =  item.section_body_class %}
@@ -13,9 +14,9 @@
           {% set classHideBorders = (item.hide_column_borders)? "has-no-borders"  : "" %}
           {% set classHideBottomBorder = (item.hide_bottom_border)? "has-no-bottom-border" : "" %}
 
-            <div class="l-section {{ classSection }} {{ classHideBorders }} {{ classHideBottomBorder }} 123">
+            <div id="section-{{ loop.index }}" class="l-section {{ classSection }} {{ classHideBorders }} {{ classHideBottomBorder }}">
                 {% if not item.hide_section_title and item.section_title != '' %}
-                    <div class="l-section__header ">
+                    <div class="l-section__header {{ classHeaderType }}">
                       <div class="l-section__header-wrapper">
                         <div class="l-section__header-container {{ classTitle }}">
                           <div class="l-section__header-content ">
@@ -67,8 +68,8 @@
               {% if item.section_footer != '' %}
                 <footer class="l-section__footer">
                   <div class="l-section__footer-wrapper">
-                  <div class="l-section__footer-container">
-                    <div class="l-section__footer-content">
+                  <div class="l-section__footer-container {{ classFooter }}">
+                    <div class="l-section__footer-content ">
                       {{ item.section_footer }}
                     </div>
                   </div>

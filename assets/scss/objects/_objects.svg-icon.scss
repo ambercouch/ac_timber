@@ -3,7 +3,8 @@
  */
 
 .o-svg-icon {
-  display: block;
+  /*seem to help with vertical alignment*/
+  display: flex;
   position: relative;
   @include size(100%)
 }

@@ -252,6 +252,9 @@
   &tax-collection{
     margin-bottom: $act-unit;
   }
+  &cat-pod{
+    margin-bottom: $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__thumb-link--
@@ -262,6 +265,19 @@
 
 .c-post-thumb__thumb-link--{
   &case-study{
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__more-link--
+
+[class*=c-post-thumb__link-more--] {
+  @extend .c-post-thumb__link-more;
+}
+
+.c-post-thumb__link-more--{
+  &cat-pod{
+    text-align: left;
 
   }
 }
@@ -282,6 +298,13 @@
 
 [class*=c-post-thumb__excerpt--] {
   @extend .c-post-thumb__excerpt;
+}
+
+.c-post-thumb__excerpt--{
+  &cat-pod{
+    margin-top: 0;
+    margin-bottom: auto;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__footer--

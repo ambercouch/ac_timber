@@ -41,5 +41,7 @@
   <div class="c-post-thumb__excerpt{{ modClass }}">
     {{post.preview.length(10).read_more('') | wpautop }}
   </div>
-  <a class="c-post-thumb__link-more" href="{{ post.link }}">Listen to podcast</a>
+  <div class="c-post-thumb__more{{ modClass }}">
+    <a class="c-btn--podcast-more" href="{{ post.link }}"><span class="c-btn__icon">{% include 'inc/svg-icon.twig' with {'icon' : 'icon-play'} %}</span><span class="c-btn__label">Listen to podcast</span></a>
+  </div>
 </article>

@@ -20,6 +20,7 @@
   }
   &header-container{
     @extend %shape-container;
+    background: $brand-col-2 !important;
   }
   &header-content{
     @extend %shape-content;

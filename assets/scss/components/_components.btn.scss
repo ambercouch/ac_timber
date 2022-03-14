@@ -130,6 +130,20 @@
     @include act-font-size($act-fs-3);
     @include a($col: $brand-col-1, $col-hov: $brand-col-7)
   }
+  &podcast-more{
+    @extend .o-btn--text-link;
+    @extend .o-btn--icon-btn;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    .c-btn__icon{
+      @include size($act-unit-s);
+      margin-right: $act-unit-s;
+    }
+    .c-btn__label{
+      @extend .o-btn__label--text-link;
+    }
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--
@@ -192,6 +206,7 @@
       display: block;
     }
   }
+
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-btn--

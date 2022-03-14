@@ -11,12 +11,13 @@
     {% endfor %}
   </ul>
 </div>
+<div class="l-post-thumb-list__pagination">
+  <div class="c-pagination--load-more">
+    <div class="c-pagination__btn">
+      <button class="c-btn--load-more" data-acclsc-load-more data-container-selector=".l-post-thumb-list__list--cat-pod">
+        <span class="c-btn__label">Load More</span> <span class="c-btn__icon">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
+      </button>
 
-<div class="c-pagination--load-more">
-  <div class="c-pagination__btn">
-    <button class="c-btn--load-more" data-acclsc-load-more data-container-selector=".l-post-thumb-list__list--cat-pod">
-      <span class="c-btn__label">Load More</span> <span class="c-btn__icon">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
-    </button>
-
+    </div>
   </div>
 </div>

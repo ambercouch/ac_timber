@@ -63,6 +63,11 @@
     padding: $act-unit-t !important;
     @include act-font-size($act-fs-6, 1);
   }
+  &text-link{
+    padding: 0;
+    background: transparent;
+    color: $col-text !important;
+  }
 
   &transparent {
     @extend .o-btn;
@@ -130,5 +135,11 @@
     @extend .o-btn;
     background: $brand-col-7 !important;
     border-color: $brand-col-7 !important;
+  }
+}
+
+.o-btn__label--{
+  &text-link{
+    text-decoration: underline;
   }
 }
