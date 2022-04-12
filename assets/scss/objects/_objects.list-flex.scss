@@ -1,8 +1,9 @@
 .o-list-flex{
-  display: flex;
+  display: flex !important;
 
   > *{
     margin: 0 $act-unit-s;
+    padding-left: 0;
 
     &:first-child{
       margin-left: 0;
