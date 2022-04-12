@@ -1,21 +1,25 @@
 
 .c-burger{
   position: absolute;
-  left:  $act-unit-h * 1.25;
+  left: auto;
+
   top: $act-unit-l *1.25;
   z-index: 1;
   @include act-font-size($act-fs-6);
   pointer-events: all;
+  @include mq($from: desktop){
+    left:  $act-unit-h * 1.25;
+  }
 }
 .c-burger__btn{
   cursor: pointer;
   border: 0;
   padding: 0;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-  background: transparent;
+  background: rgba($brand-col-1, 0);
+  padding: $act-unit-s * 1.5 $act-unit-s;
   &[data-state=on]{
-    //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
-    //right: 14rem;
+    background: rgba($brand-col-2, 0);
   }
   @include mq($from : desktop){
     //display: none;
@@ -35,7 +39,7 @@
 .c-burger__bars{
   position: relative;
   @include size(40px, 26px);
-  margin-bottom: $act-unit-s;
+  margin-bottom: 0;
 
 }
 

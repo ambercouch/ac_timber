@@ -110,6 +110,9 @@
   &case-study{
     @include breakout-band($bgc : $brand-col-6);
   }
+  &single-case-study{
+    @include breakout-band($bgc : $brand-col-6);
+  }
   &stuff{
     @include breakout-band($bgc : $brand-col-7);
   }

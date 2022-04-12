@@ -16,7 +16,8 @@
                 <div class="c-media-box--intro-header">
                     <div class="c-media-box__image">
                         {% include "inc/feature-image.twig"
-                            with {imgObj : Image(post.meta('page_intro_image'))}
+                            with {imgObj : Image(post.meta('page_intro_image')),
+                                    templateModClass : '--intro-header'}
                         %}
                     </div>
                     <div class="c-media-box__content">
@@ -26,16 +27,18 @@
                         <div class="c-media-box__body">
                             {{ post.meta('page_intro_text') | wpautop }}
                         </div>
-                        <div class="c-media-box__btn">
-                            <div class="c-btn--cta">
-                                <div class="c-btn__link">
-                                    <a href="{{ post.meta('button_1_url') }}">{{ post.meta('button_1_label') }}</a>
-                                </div>
+                        <div class="c-media-box__btn-group">
+                            <div class="c-btn--cta-intro-primary">
+                             <a class="c-btn__link href="{{ post.meta('button_1_url') }}">
+                                <span class="c-btn__link-label">{{ post.meta('button_1_label') }}</span>
+                                    </a>
+
                             </div>
-                            <div class="c-btn--cta--text">
-                                <div class="c-btn__link">
-                                    <a href="{{ post.meta('button_2_url') }}">{{ post.meta('button_2_label') }}</a>
-                                </div>
+                            <div class="c-btn--cta-intro-secondary">
+                              <a class="c-btn__link" href="{{ post.meta('button_2_url') }}">
+                                  <span class="c-btn__link-label">{{ post.meta('button_2_label') }}</span>
+                              </a>
+
                             </div>
                         </div>
 

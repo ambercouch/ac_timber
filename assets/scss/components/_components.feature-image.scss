@@ -21,12 +21,16 @@ BEM BLOCK .c-feature-image--
     border-radius: $act-unit;
     overflow: hidden;
   }
+  &shout-box{
+
+  }
   &case-study-thumb{
     border-radius: $act-unit;
     overflow: hidden;
+    aspect-ratio: 2/3;
   }
   &single-post{
-@include breakout-img();
+    @include breakout-img();
   }
   &cat-pod{
     padding-top: 100%;
@@ -34,6 +38,18 @@ BEM BLOCK .c-feature-image--
     position: relative;
     overflow: hidden;
   }
+  &stuff{
+    background: #fff;
+    border-radius: $act-unit;
+    overflow: hidden;
+    aspect-ratio: 3/2;
+  }
+  &intro-header{
+    border-radius: $act-unit;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+  }
+
 }
 
  /*
@@ -57,6 +73,7 @@ BEM ELEMENTS.c-feature-image__
 
 [class*=c-feature-image__img--] {
   @extend .c-feature-image__img;
+  border-radius: $act-unit;
 }
 
 .c-feature-image__img--{
@@ -67,9 +84,7 @@ BEM ELEMENTS.c-feature-image__
     @include size(100%, 100%, $important : true);
   }
   &case-study-thumb{
-    @include size(100%, 25vw, $important : true);
-    max-width: 25vw;
-    max-height: 310px;
+    @include size(100%, 100%, $important : true);
   }
   &blog{
     border-radius: $act-unit;

@@ -6,3 +6,9 @@
 h1{
   @include act-font-size($act-fs-k)
 }
+
+h2{
+  .l-single-page__body--single-case-study &{
+    @include act-font-size($act-fs-1)
+  }
+}

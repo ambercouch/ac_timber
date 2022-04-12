@@ -153,7 +153,7 @@
     margin-bottom: $act-unit-t;
   }
   &stuff{
-    @include act-font-size($act-fs-3);
+    @include act-font-size($act-fs-1);
     margin-bottom: $act-unit-s;
     text-align: left;
   }
@@ -223,6 +223,7 @@
    }
   &case-study-thumb{
     font-family: $act-font-family-serif;
+    margin-bottom: 0;
   }
 }
 

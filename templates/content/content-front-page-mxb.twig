@@ -1,7 +1,15 @@
 <article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
     <div class="entry-content l-single-page__body--section-page ">
+      {% set sectionsArray = post.meta('sections') %}
         {% for item in post.meta('sections') %}
+          {% set index =  loop.index  %}
+          {% set next =  index   %}
+
+          {% set hasTitle = ( not item.hide_section_title and item.section_title != '' ) ? true : false %}
+          {% set hasTitle = ( not item.hide_section_title and item.section_title != '' ) ? true : false %}
+          {% set hasTitleNext = ( not sectionsArray[next].hide_section_title and sectionsArray[next].section_title != '' ) ? true : false %}
+
 
             {% set colLayout =  item.section_column_layout %}
             {% set classTitle =  item.section_title_class %}
@@ -13,9 +21,13 @@
             {% set classFooter =  item.section_footer_class %}
           {% set classHideBorders = (item.hide_column_borders)? "has-no-borders"  : "" %}
           {% set classHideBottomBorder = (item.hide_bottom_border)? "has-no-bottom-border" : "" %}
+          {% set classHasFooter = ( item.section_footer != '' )? "has-footer" : "has-no-footer" %}
+          {% set classHasTitle = ( hasTitle == true )? "has-title" : "has-no-title" %}
+          {% set classHasTitleNext = ( hasTitleNext  == true )? "has-title-next" : "has-no-title-next" %}
 
-            <div id="section-{{ loop.index }}" class="l-section {{ classSection }} {{ classHideBorders }} {{ classHideBottomBorder }}">
-                {% if not item.hide_section_title and item.section_title != '' %}
+
+            <div id="section-{{ loop.index }}" class="l-section {{ classSection }} {{ classHasTitle }} {{classHasFooter}} {{ classHasTitleNext }}{{ classHideBorders }} {{ classHideBottomBorder }}">
+                {% if hasTitle == true %}
                     <div class="l-section__header {{ classHeaderType }}">
                       <div class="l-section__header-wrapper">
                         <div class="l-section__header-container {{ classTitle }}">

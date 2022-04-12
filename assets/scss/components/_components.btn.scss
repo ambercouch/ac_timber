@@ -41,13 +41,24 @@
     padding-left: $act-unit ;
     padding-right: $act-unit ;
   }
+  &shout-box{
+    @extend .c-btn--primary;
+    font-family: $act-font-family-headings;
+    background: $brand-col-6;
+    a{
+      color: $brand-col-1;
+    }
+  }
   &text{
     background-color: transparent;
     border: none;
     text-decoration: underline;
-    color: $col-text;
+    //color: red !important;
     &:hover{
       color: $col-text;
+    }
+    .c-btn__link-label{
+      //color: $col-text !important;
     }
   }
 
@@ -122,6 +133,17 @@
       max-width: 100%;
     }
   }
+  &cta-intro-primary{
+    @extend .c-btn--cta;
+    background: $brand-col-1;
+  }
+  &cta-intro-secondary{
+    a{
+     @include a($col : $col-text);
+      text-decoration: underline;
+      font-family: $act-font-family-headings;
+    }
+  }
   &scroll-blogs{
     @extend .o-btn--transparent;
     @extend .o-btn--icon-btn-inline;
@@ -143,6 +165,9 @@
     .c-btn__label{
       @extend .o-btn__label--text-link;
     }
+  }
+  &stuff-more{
+    @extend .c-btn--podcast-more;
   }
 }
 

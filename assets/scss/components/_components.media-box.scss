@@ -6,6 +6,7 @@
   display: block;
   display: flex;
   border-radius: $act-unit;
+  @include act-font-size($act-fs-2)
 }
 
 /*
@@ -36,7 +37,7 @@
 .c-media-box__ {
   &image{
     @extend .u-1-2;
-    padding-right: $act-unit-h;
+    padding-right: $act-unit-l;
   }
   &header {
     display: block
@@ -56,10 +57,21 @@
 
   &content {
     @extend .u-1-2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &footer {
     display: block
+  }
+  &btn-group{
+    > *{
+      margin-left: $act-unit;
+    }
+    > :first-child{
+      margin-left: 0;
+    }
   }
 }
 

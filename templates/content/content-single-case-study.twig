@@ -22,11 +22,11 @@
             {{ post.meta('case_study_intro') | wpautop }}
           </div>
           <div class="c-media-box__btn">
-              <div class="c-btn--cta">
-                <div class="c-btn__link">
-                  <a href="{{ post.meta('button_url') }}">{{ post.meta('button_label') }}</a>
-                </div>
-              </div>
+            <div class="c-btn--cta-intro-primary">
+              <a class="c-btn__link" href="{{ post.meta('button_url') }}">
+              <span class="c-btn__link-label">{{ post.meta('button_label') }}</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -57,9 +57,9 @@
               </div>
               <div class="c-shout-box__btn">
                 <div class="c-btn--shout-box">
-                  <div class="c-btn__link">
-                    <a href="{{ post.meta('shout_box_button_url') }}">{{ post.meta('shout_box_button_label') }}</a>
-                  </div>
+                    <a class="c-btn__link" href="{{ post.meta('shout_box_button_url') }}">
+                      <span class="c-btn__link-label">{{ post.meta('shout_box_button_label') }}</span>
+                    </a>
                 </div>
               </div>
             </div>

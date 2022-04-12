@@ -4,7 +4,17 @@
 
 .l-section {
   display: block;
-  padding-top: $act-unit;
+  //padding-top: $act-unit;
+  padding-bottom: 175px;
+  &.has-footer{
+     padding-bottom: 0;
+   }
+  &.has-title-next{
+    //padding-bottom: $act-unit-h * 2 !important;
+  }
+  &.has-no-title-next{
+    padding-bottom: 0;
+  }
   position: relative;
     &:before{
       background: red;
@@ -70,6 +80,11 @@
 .l-section__ {
   &header {
     display: block;
+    width: calc(100vw - 24px);
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translate(-50%,0);
   }
 
   &header-wrapper{
@@ -114,6 +129,19 @@
   &footer {
     display: block;
     text-align: center;
+    width: calc(100vw - 24px);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,0);
+    @include mq($from : tablet){
+      width: auto;
+      margin-left: 0;
+      position: static;
+      left: auto;
+      bottom: auto;
+      transform: translate(0);
+    }
   }
   &footer-wrapper{
     @extend %shape-wrapper;
@@ -128,13 +156,37 @@
   &cols{
     display: flex;
     margin-bottom: $act-unit-l;
+    flex-direction: column;
+    @include mq($from : tablet){
+      &.is-col-33-33-33{
+        flex-direction: row;
+      }
+    }
+    @include mq($from : desktop){
+      flex-direction: row;
+    }
+    .is-col-rev &{
+      flex-direction: column-reverse;
+      @include mq($from : desktop){
+        flex-direction: row;
+      }
+    }
   }
   &col{
+    margin-bottom: $act-unit;
+    &:last-child{
+      margin-bottom: 0;
+      .is-col-rev &{
+        margin-bottom: $act-unit;
+        @include mq($from : desktop){
+          margin-bottom: 0;
+        }
+      }
+    }
     &:after{
       .l-section--blog-intro &{
         display: none !important;
       }
-
     }
   }
 }
@@ -152,24 +204,35 @@
 
 .is-col-50-50{
   > *{
-    @extend .u-1-2;
+    @extend .u-1-2--desktop;
   }
   > *:first-child{
-    padding-right: $act-unit;
+    @include mq($from : desktop){
+      padding-right: $act-unit;
+    }
+
   }
   > *:last-child{
-    padding-left: $act-unit;
+
+    @include mq($from : desktop){
+      padding-left: $act-unit;
+    }
   }
 }
 
 .is-col-75-25{
   > *:first-child{
-    @extend .u-2-3;
-    padding-right: $act-unit-h * 2;
+    @extend .u-2-3--desktop;
+    @include mq($from : desktop){
+      padding-right: $act-unit-h * 2;
+    }
+
   }
   > *:last-child{
-    @extend .u-1-3;
-    padding-left: $act-unit-h;
+    @extend .u-1-3--desktop;
+    @include mq($from : desktop) {
+      padding-left: $act-unit-h;
+    }
   }
 }
 
@@ -178,19 +241,30 @@
   margin-left: -$act-unit-l;
   margin-right: -$act-unit-l;
   > *{
-    @extend .u-1-3;
+    @extend .u-1-3--tablet;
     height: auto;
   }
   > *:first-child{
 
     padding-right: $act-unit-l;
+    padding-left: $act-unit-l;
+    @include mq($from : tablet){
+      padding-left: 0;
+    }
   }
   > *:last-child{
+    padding-right: $act-unit-l;
     padding-left: $act-unit-l;
+    @include mq($from : tablet){
+      padding-right: 0;
+    }
   }
   .l-section__coll-content{
-    padding: 0 $act-unit-l;
+
     font-size: $act-fs-3;
+    @include mq($from : desktop){
+      padding: 0 $act-unit-l;
+    }
     p{
       margin-bottom: 0;
     }
@@ -199,14 +273,17 @@
 }
 
 %shape-wrapper{
-  height: 175px;
+  height: $act-unit-h * 1.75;
   overflow: hidden;
   .header-is-transparent &{
     height: auto;
   }
+  @include mq($from : desktop){
+    height: 175px;
+  }
 }
 %shape-container{
-  @include size(1300px, 700px);
+  @include size(1300px, 350px);
   max-width: 100%;
   margin: 0 auto;
   background: transparent;
@@ -215,10 +292,13 @@
     height: auto;
     width: auto;
   }
+  @include mq($from : tablet){
+    @include size(1300px, 700px);
+  }
 }
 %shape-content{
   width: 400px;
-  max-width: 100%;
+  max-width: calc(100vw - 72px);
   margin: 0 auto;
   padding-top: $act-unit * 1.5;
   .header-is-transparent &{
@@ -244,7 +324,70 @@
   @extend .l-section__col;
 }
 .l-section__col--{
+  &1{
+    position: relative;
+    height: auto;
+    &:after{
+      background: red;
+      display: none;
+      content: "";
+      width: $act-unit;
+      height: $act-unit;
+      position: absolute;
+      right: - $act-unit-s;
+      top: 0;
+      height: 100%;
+      background: url("assets/images/svg/mxb-wave.svg");
+      background-repeat: repeat-y;
+      background-size: 40%;
+      @include mq($from : tablet){
+        .is-col-33-33-33 &{
+          display: block;
+        }
 
+      }
+      @include mq($from : desktop){
+        display: block;
+      }
+      .is-col-50-50 &{
+        right: - $act-unit-s;
+      }
+      .is-col-100 &{
+        display: none !important;
+      }
+      .has-no-borders &{
+        display: none !important;
+      }
+    }
+  }
+  &3{
+    position: relative;
+    height: 100%;
+    &:after{
+      background: red;
+      display: none;
+      content: "";
+      width: $act-unit;
+      height: $act-unit;
+      position: absolute;
+      left: - $act-unit-t;
+      //transform: translate(50%);
+      top: 0;
+      height: 100%;
+      background: url("assets/images/svg/mxb-wave.svg");
+      background-repeat: repeat-y;
+      background-size: 40%;
+      background-position-x: 50%;
+      .has-no-borders &{
+        display: none !important;
+      }
+      @include mq($from : tablet){
+        .is-col-33-33-33 &{
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-section__footer-content--

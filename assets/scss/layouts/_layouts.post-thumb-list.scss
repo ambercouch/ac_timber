@@ -38,6 +38,9 @@
   &cat-pod{
     padding: 0;
   }
+  &case-study{
+    padding-bottom: 0;
+  }
 
 
 }
@@ -82,21 +85,26 @@
     margin-top: 0;
     flex-wrap: wrap;
     justify-content: center;
-    @extend .o-list-bare
+    @extend .o-list-bare;
+    flex-direction: column;
+    @include mq($from : desktop){
+      flex-direction: row;
+    }
 
   }
   &item{
     @extend .o-list-bare__item;
-    width: calc(33% - 45px);
+    width: 100%;
     text-align: center;
     padding-left: 0;
     margin: 0;
-
+    margin-bottom: $act-unit;
     @include mq($from: tablet){
-      margin: 0 $act-unit-s;
+      margin: 0 0 $act-unit;
     }
     @include mq($from: desktop){
-      margin: 0 $act-unit;
+      width: calc(33% - 48px);
+      margin: 0 $act-unit 0;
     }
   }
   &media-box{
@@ -126,10 +134,17 @@
     flex-direction: column;
   }
   &case-study{
-    margin: 0 -$act-unit-l;
+    @include mq($from : tablet){
+      margin-left: -$act-unit-l;
+      margin-right: -$act-unit-l;
+      flex-direction: row;
+    }
+    margin-bottom: 0;
   }
   &testimonial{
-    margin: 0 -$act-unit;
+    margin: -$act-unit;
+    margin-top: 0;
+    margin-bottom: 0;
   }
   &stuff{
     flex-wrap: wrap;
@@ -171,7 +186,17 @@
   }
   &case-study{
     padding: 0 ;
-    width: calc(25% - 48px);
+    margin-bottom: $act-unit-l;
+    width: 100%;
+    @include mq($from : tablet){
+      width: calc(50% - 48px);
+      margin-left: $act-unit;
+      margin-right: $act-unit;
+    }
+    @include mq($from : desktop){
+      width: calc(25% - 48px);
+      margin-bottom: 0;
+    }
   }
   &testimonial{
     padding: 0;
@@ -191,6 +216,9 @@
     padding: 0 ;
     padding-bottom: $act-unit-l;
     width: calc(25% - 48px);
+  }
+  &stuff{
+    margin-bottom: $act-unit-l;
   }
 }
 

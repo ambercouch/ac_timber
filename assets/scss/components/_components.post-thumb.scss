@@ -8,6 +8,9 @@
   justify-content: flex-end;
   height: 100%;
   text-align: center;
+   > :last-child{
+    margin-top: auto !important;
+  }
 }
 
 /*
@@ -121,7 +124,7 @@
     height: 150px !important;
   }
   &excerpt{
-    margin-top: auto;
+    //margin-top: auto;
     @include act-font-size($inuit-font-size-h4);
     text-align: left;
   }
@@ -255,6 +258,9 @@
   &cat-pod{
     margin-bottom: $act-unit;
   }
+  &stuff{
+    margin-bottom: $act-unit;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__thumb-link--
@@ -313,5 +319,8 @@
   @extend .c-post-thumb__footer;
 }
 
+.c-post-thumb__footer--stuff{
+  @extend .o-list-flex;
+}
 
 
