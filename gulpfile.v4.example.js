@@ -1,7 +1,8 @@
-var siteLocalUrl = 'mysite.local';
+var siteLocalUrl = '.local';
 var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 const gulp = require('gulp');
+const { src, dest } = require('gulp');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
@@ -10,10 +11,12 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 const pipeline = require('readable-stream').pipeline;
-const uglify = require('gulp-uglify');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
+const terser = require('gulp-terser');
+const replace = require('gulp-replace');
+
 
 /*
  SOURCE FILES
@@ -30,12 +33,14 @@ var jsNpmScripts = [
     //All ready deprecated with browserify
     'fitvids/dist/fitvids.js',
     'remodal/dist/remodal.js',
-    'flickity/dist/flickity.pkgd.js'
+    'flickity/dist/flickity.pkgd.js',
+    // 'isotope-layout/dist/isotope.pkgd.js',
+    // 'isotope-packery/packery-mode.pkgd.js',
 ];
 
 var cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
-    //'flickity/dist/flickity.css'
+    'flickity/dist/flickity.css',
     'remodal/dist/remodal.css',
     'remodal/dist/remodal-default-theme.css',
 ];
@@ -68,9 +73,18 @@ function scripts() {
     return pipeline(
         gulp.src(jsScripts),
         concat('main.js'),
-        uglify(),
+        //terser(),
         gulp.dest('dist/js/')
     );
+}
+
+function vendorStyles(){
+    return gulp.src(cssNpmScripts)
+        .pipe(concat('_vendor.scss'))
+        .pipe(gulp.dest('assets/scss/'));
+
+    //console.log("testing vendorStyles")
+
 }
 
 
@@ -96,6 +110,20 @@ function svgdefs() {
         .pipe(gulp.dest('templates/inc/'));
 }
 
+function styleCacheBust() {
+    return src('templates/inc/footer_scripts.twig')
+        .pipe(replace(/actstylecache(.{15})/g, function handleReplace(match, p1, offset, string) {
+            // Replace foobaz with barbaz and log a ton of information
+            // See https://mdn.io/string.replace#Specifying_a_function_as_a_parameter
+            let rand = Math.floor((Math.random() * 999999) + 100000);
+            console.log('Found ' + match + ' with param ' + p1 + ' at ' + offset);
+            const d = new Date();
+            let dateString = (new Date()).toISOString().slice(0,10).replace(/-/g,"");
+            return 'actstylecache' + dateString + '-' + rand;
+        }))
+        .pipe(dest('templates/inc/'));
+};
+
 function serve() {
     browserSync.init({
         proxy: siteLocalUrl,
@@ -113,3 +141,8 @@ exports.serve = serve;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.svgdefs = svgdefs;
+exports.vendorStyles = vendorStyles;
+exports.styleCacheBust = styleCacheBust;
+exports.dist = gulp.series(vendorStyles, styles, scripts, svgdefs, styleCacheBust);
+exports.default = gulp.series(vendorStyles, styles, scripts, svgdefs, styleCacheBust, serve);
+
