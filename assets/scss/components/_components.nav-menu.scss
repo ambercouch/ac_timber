@@ -45,7 +45,7 @@
   &svg-icon{
     height: $act-unit;
   }
- &list{
+  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
    text-align: center;
@@ -84,7 +84,6 @@
     .menu-item-has-children:hover &{
       left: 0;
       display: block;
-
     }
     &:hover{
       left: 0 !important;
@@ -231,6 +230,27 @@
         }
       }
     }
+
+    &.menu-item-has-children:before{
+      content: '';
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0;
+    }
+    &.menu-item-has-children:hover:before{
+      transition: opacity 0.3s ease-in-out;
+      content: '';
+      display: block;
+      position: fixed;
+      pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      background: rgba(black, 0.7);
+      opacity: 1;
+      z-index: 1;
+    }
+
   }
   &hero{
     margin-right: $act-unit;
@@ -503,3 +523,5 @@
 
   }
 }
+
+
