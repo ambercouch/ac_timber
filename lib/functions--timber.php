@@ -11,7 +11,6 @@ Timber::$dirname = array('templates', 'views');
 
 class StarterSite extends TimberSite {
 
-    function __construct() {
         function __construct() {
             add_theme_support( 'post-formats', array(
                 'aside',
