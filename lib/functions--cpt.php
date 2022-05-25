@@ -23,8 +23,10 @@ function  act_cpt() {
         'public' => true,
         'menu_position' => 20,
         'show_in_rest' => true,
-        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
-        'has_archive' => 'service'
+        'hierarchical' => true,
+        'has_archive' => false,
+        'rewrite'   => array( 'slug' => '/', 'with_front' => false ),
+        'supports' => array('title','editor','author','thumbnail','excerpt','custom-fields','revisions','page-attributes'),
     );
     register_post_type('service', $args);
 
