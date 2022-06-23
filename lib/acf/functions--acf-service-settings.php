@@ -132,6 +132,38 @@ if( function_exists('acf_add_local_field_group') ):
                 'max_size' => '',
                 'mime_types' => '',
             ),
+            array(
+                'key' => 'field_post_thumb_link',
+                'label' => 'Post Thumb Link',
+                'name' => 'post_thumb_link',
+                'type' => 'url',
+                'instructions' => 'Link to an external site or alternative page',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_post_thumb_link_label',
+                'label' => 'Post Thumb Link Label',
+                'name' => 'post_thumb_link_label',
+                'type' => 'text',
+                'instructions' => 'The text that appears on the link',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => 'Find Out More',
+                'placeholder' => '',
+            ),
 
         ),
         'location' => array (
