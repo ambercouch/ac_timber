@@ -55,6 +55,9 @@ BEM ELEMENTS .l-site__
     margin-top: auto;
     //background: $brand-col-4;
   }
+  &hero{
+    margin-top: $act-unit;
+  }
 }
 
 [class*=l-site__masthead--]{

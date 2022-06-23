@@ -4,7 +4,7 @@
 
 .c-header {
   display: block;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 /*
@@ -101,15 +101,19 @@
 
 .c-header__heading--{
   &page{
-    text-decoration: underline;
+    text-decoration: none;
     @include act-font-size($act-fs-g);
     font-weight: 900;
+  }
+  &single-col-page-800{
+    @extend .c-header__heading--page;
   }
   &service{
     @extend .c-header__heading--page;
     @include act-font-size($act-fs-1);
     text-decoration: none;
     font-weight: 900;
+    color: white;
   }
   &service-intro{
     @extend .c-header__heading--page;

@@ -3,7 +3,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
-/* 
+/*
     Created on : 29-Jan-2015, 21:59:02
     Author     : Richard
 */
@@ -14,12 +14,19 @@ $act-grey : #ccc;
 $act-grey-light : #eee;
 $act-grey-dark : #666;
 
-$brand-col-1 : $act-grey;
-$brand-col-2 : $act-grey-light;
-$brand-col-3 : $act-grey-dark;
-$brand-col-4 : $act-grey;
-$brand-col-5 : $act-grey-light;
-$brand-col-6 : $act-grey-dark;
+$btl-dark-blue : #025a82;
+$btl-dark-turquoise : #017470;
+$btl-turquoise : #01b1aa;
+$btl-yellow: #ebab0a;
+$btl-dark-yellow: #b18201;
+$btl-dark-red: #790641;
+
+$brand-col-1 : $btl-dark-blue;
+$brand-col-2 : $btl-turquoise;
+$brand-col-3 : $btl-dark-turquoise;
+$brand-col-4 : $btl-yellow;
+$brand-col-5 : $btl-dark-yellow;
+$brand-col-6 : $btl-dark-red;
 $brand-col-7 : $act-grey;
 $brand-col-8 : $act-grey-light;
 $brand-col-9 : $act-grey-dark;

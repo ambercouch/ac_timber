@@ -56,15 +56,17 @@
   &list{
     display: flex;
     margin: 0 auto;
-    flex-wrap: nowrap;
+    //flex-wrap: nowrap;
+    flex-direction: column;
     justify-content: center;
     @extend .o-list-bare
   }
   &item{
     @extend .o-list-bare__item;
-    width: 33.333%;
+    width: 100%;
     text-align: center;
     padding-left: 0;
+    margin-bottom: $act-unit-l;
   }
 }
 
@@ -94,7 +96,7 @@
 
 .l-post-thumb-list__item--{
   &service{
-    height: 33.333vw;
+    height: auto;
     &:first-child{
       background: $brand-col-1;
     }
@@ -102,7 +104,13 @@
       background: $brand-col-3;
     }
     &:nth-child(2){
-      background: $brand-col-5;
+      background: $brand-col-2;
+    }
+    &:nth-child(3){
+      background: $brand-col-6;
+    }
+    &:nth-child(4){
+      background: $brand-col-4;
     }
   }
   &column{

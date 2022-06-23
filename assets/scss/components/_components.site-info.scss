@@ -9,7 +9,7 @@
     margin-bottom: 0;
   }
   a{
-    @include a($col : #fff);
+    color: white !important;
   }
 
 }

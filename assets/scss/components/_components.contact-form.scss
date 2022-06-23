@@ -6,6 +6,7 @@
   display: block;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
+  width: 800px;
 }
 
 /*
@@ -52,6 +53,10 @@
  */
 
 .c-contact-form__ {
+  &content{
+    padding: $act-unit;
+    background: lighten($brand-col-1, 70%);
+  }
   &header{
     display: block;
   }
@@ -257,11 +262,11 @@
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
   padding:$act-unit-t;
-  background: $brand-col-3;
+  background: $brand-col-1;
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-3, 5%);
+    background: darken($brand-col-1, 10%);
   }
 }
 

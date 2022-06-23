@@ -5,7 +5,7 @@
 .c-post-thumb {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   height: 100%;
   text-align: center;
 }
@@ -33,6 +33,9 @@
   &blog-list{
     text-align: left;
   }
+  &service{
+    color: white;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--
@@ -46,6 +49,10 @@
  */
 
 .c-post-thumb__ {
+  &feature-image{
+    display: block;
+    margin-bottom: $act-unit-l;
+  }
   &image{
     position: relative;
     &:after{
@@ -98,8 +105,8 @@
     margin-top: auto;
     @include act-font-size($inuit-font-size-h5);
   }
-  &more-link{
-    color: $brand-col-2;
+  &read-more{
+    color: white;
     text-decoration: none;
     @extend .o-btn--transparent;
     @extend .o-btn--rounded;
@@ -118,6 +125,10 @@
     top: 0;
     left: 0;
     z-index: 2;
+  }
+  &body{
+    padding: 0;
+    margin-bottom: $act-unit-l;
   }
 }
 
@@ -167,5 +178,31 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb--
+
+[class*=c-post-thumb__feature-image--] {
+  @extend .c-post-thumb__feature-image;
+}
+
+
+.c-post-thumb__feature-image--{
+  &service{
+
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__body--
+
+[class*=c-post-thumb__body--] {
+  @extend .c-post-thumb__body;
+}
+
+
+.c-post-thumb__body--{
+  &service{
+padding-left: $act-unit;
+padding-right: $act-unit;
+  }
+}
 
 
