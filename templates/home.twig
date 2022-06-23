@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block hero %}
-  {% if removeHero %}
+  {% if removeHeroBlog %}
   {% else %}
   <section id="siteHero" class="l-site__hero">
     {% include 'inc/hero.twig' ignore missing %}
@@ -45,7 +45,7 @@
 {% set hasSideBar = true %}
 
 {% block sidebar %}
-  <div id="sidebar" class="c-main__sidebar">
+  <div id="sidebar" class="l-main__sidebar">
     <div class="c-sidebar-widgets">
       {{ sidebar_widgets }}
     </div>

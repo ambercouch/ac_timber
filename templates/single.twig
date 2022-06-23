@@ -26,15 +26,13 @@
 
 
 {% block belowContent %}
-  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
     {{ parent() }}
-  {% endif %}
 {% endblock %}
 
 {% set hasSideBar = true %}
 
 {% block sidebar %}
-  <div class="l-side-bar--blog {{ not sidebar_widgets ? 'is-empty' : ''}}">
+  <div class="l-main__sidebar {{ not sidebar_widgets ? 'is-empty' : ''}}">
     {% if sidebar_widgets == '' %}
       <!-- Add some widgets to the footer -->
     {% else %}

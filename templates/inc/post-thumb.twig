@@ -1,14 +1,27 @@
 {% set modClass = (postType) ? '--'~postType : '' %}
 {% set headerTitle = (headerTitle) ? headerTitle : post.title %}
 
+{% set postLink = post.link %}
+{% set altLink = post.meta('post_thumb_link') %}
+{% set thumbLink = (altLink) ? altLink : postLink  %}
+{% set thumbLinkLabel = (altLink) ? post.meta('post_thumb_link_label') : 'Read More' %}
+
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
-  <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+  <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
   {% if post.meta('custom_post_icon') %}
-  <div class="c-post-thumb__post-icon">
-              <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
-  </div>
+    <div class="c-post-thumb__post-icon">
+      <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+    </div>
   {% endif %}
+    {% if post.thumbnail %}
+      <div class="c-post-thumb__feature-image{{ modClass }}">
+        <div class="c-feature-image--post-thumb">
+          <img class="c-feature-image__img" src="{{ post.thumbnail.src('original') }}" class="feature-image__img" alt="{{ post.title }}"/>
+        </div>
+      </div>
+    {%  endif %}
+  </a>
 
       {% if headerTitle != false %}
         <div class="c-post-thumb__header{{ modClass }}">
@@ -16,6 +29,15 @@
         </div>
       {% endif %}
 
-  </a>
+  {% if  post.meta('service_intro_content') %}
+  <div class="entry-content c-post-thumb__body{{ modClass }}">
+    <div class="c-post-thumb__excerpt">
+      {{ post.meta('service_intro_content') }}
+    </div>
+    {% if thumbLink %}
+    <a target="_blank" href="{{ thumbLink }}" class="c-post-thumb__read-more">{{ thumbLinkLabel  }}</a>
+    {% endif %}
+  </div>
+  {% endif %}
 
 </article>

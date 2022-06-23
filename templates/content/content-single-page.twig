@@ -12,7 +12,7 @@
     </div>
   {% endif %}
   {% if not hidePageTitle %}
-    <div class="l-single-page__header">
+    <div class="l-single-page__header{{ templateClass }} ">
     {% include "inc/header.twig"
       with {
       headerTitle : null,

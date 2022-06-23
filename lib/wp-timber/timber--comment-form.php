@@ -12,9 +12,9 @@ function act_comment_form_fields( $fields ) {
 
     $fields   =  array(
         'author' => '<div class="comment-respond__input-wrapper--author">' . '<label class="comment-respond__label" for="author">' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-            '<input class="comment-respond__input--text" placeholder="' . __( 'Name' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
+            '<input class="comment-respond__input--text" placeholder="' . __( 'Name' ) . ( $req ? '*' : '' ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></div>',
         'email'  => '<div class="comment-respond__input-wrapper--email"><label class="comment-respond__label" for="email">' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</label> ' .
-            '<input class="comment-respond__input--text" placeholder="' . __( 'Email' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />'.
+            '<input class="comment-respond__input--text" placeholder="' . __( 'Email' ) . ( $req ? '*' : '' ) . '" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />'.
             '<div class="comment-respond__email-notes"><small>Your email will not be published</small></div></div>',
         'url'    => '<div class="comment-respond__input-wrapper--url"><label class="comment-respond__label" for="url">' . __( 'Website' ) . '</label> ' .
             '<input class="comment-respond__input--text" placeholder="' . __( 'Website' ) . '" gid="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" /></div>',
@@ -106,4 +106,4 @@ $args = array(
     'echo'              => false // don't echo the form as we will store it in the twig context var
 );
 // $args for comment_list passed to twig
-$context['comment_list'] = wp_list_comments($args, get_comments(array('post_id' => $post->ID)));
+$context['comment_list'] = wp_list_comments($args, get_comments(array('status' => 'approved','post_id' => $post->ID)));
