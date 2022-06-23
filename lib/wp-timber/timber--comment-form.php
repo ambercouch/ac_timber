@@ -106,4 +106,4 @@ $args = array(
     'echo'              => false // don't echo the form as we will store it in the twig context var
 );
 // $args for comment_list passed to twig
-$context['comment_list'] = wp_list_comments($args, get_comments(array('status' => 'approved','post_id' => $post->ID)));
+$context['comment_list'] = wp_list_comments($args, get_comments(array('status' => 'approve','post_id' => $post->ID)));
