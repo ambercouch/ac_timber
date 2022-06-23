@@ -4,13 +4,16 @@
 
   <article id="post-{{ post.id }}" class="c-post-thumb{{ postFormatClass }} {{ post.class }}">
   {% if post.thumbnail %}
-    <div class="c-post-thumb{{ postFormatClass }}__feature-image">
+    <a href="{{ post.link }}">
+    <div class="c-post-thumb__feature-image{{ postFormatClass }}">
       <div class="c-feature-image--post-thumb">
-        <img class="c-feature-image__img" src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
+        <img class="c-feature-image__img" src="{{ post.thumbnail.src('original') }}" class="feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
+    </a>
   {%  endif %}
 <div class="c-post-thumb__header">
+
   <header class="entry-header c-header--post-thumb{{ postFormatClass }} ">
     <h2 class="entry-title c-header--heading--post-thumb{{ postFormatClass }}">
         <span class="c-header__title">
@@ -25,7 +28,7 @@
 
 
     {% if  post.post_excerpt != '' %}
-      <div class="entry-content c-post-thumb__body">
+      <div class="entry-content c-post-thumb__body{{ postFormatClass }}">
         <div class="c-post-thumb__excerpt">
           <p>{{ post.post_excerpt }}</p>
         </div>
@@ -35,7 +38,7 @@
     {% else %}
       <div class="entry-content c-post-thumb__body">
         <div class="c-post-thumb__excerpt--truncated">
-          <p>{{ post.content | striptags | truncate(20) }}</p>
+          <p>{{ post.content | striptags | truncate(50) }}</p>
         </div>
         <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
       </div>

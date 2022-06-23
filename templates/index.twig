@@ -1,11 +1,20 @@
 {% extends "base.twig" %}
 
 {% block before_head %}
-<!-- index.twig -->
+  <!-- index.twig -->
 {% endblock %}
 
 {% block hero %}
+  {% if removeHeroBlog %}
+  {% else %}
+    <section id="siteHero" class="l-site__hero">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
+  {% endif %}
 {% endblock %}
+
+
+
 
 {% block before_content %}
  {% if catDescription %}
@@ -24,5 +33,23 @@
 {% endblock %}
 
 {% block belowContent %}
+  <div class="content__below">
+    {% if posts.pagination.pages is not empty %}
+      <div class="content__pagination">
+        {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+      </div>
+    {% endif %}
+  </div>
+  <!-- removed comments in home.twig -->
+{% endblock %}
+
+{% set hasSideBar = true %}
+
+{% block sidebar %}
+  <div id="sidebar" class="l-main__sidebar">
+    <div class="c-sidebar-widgets">
+      {{ sidebar_widgets }}
+    </div>
+  </div>
 {% endblock %}
 
