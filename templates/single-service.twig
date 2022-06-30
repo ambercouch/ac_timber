@@ -35,10 +35,10 @@
 {% endblock %}
 
 
-
-
 {% block subsidiary %}
-
+{% if pageSettingsHideSubsidiary %}
+  {% else %}
   {{ parent() }}
+  {% endif %}
 
 {% endblock %}

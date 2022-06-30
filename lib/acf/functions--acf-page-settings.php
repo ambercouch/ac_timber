@@ -149,6 +149,22 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => 'Show',
                 'default_value' => 0,
             ),
+            array (
+                'key' => 'field_hide_site_subsidiary',
+                'label' => 'Hide the subsidiary content',
+                'name' => 'hide_site_subsidiary',
+                'type' => 'true_false',
+                'instructions' => 'This will hide the subsidary content on the page, including the global gallery',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Hide',
+                'default_value' => 0,
+            ),
         ),
         'location' => array (
             array (

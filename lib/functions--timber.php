@@ -138,6 +138,7 @@ class StarterSite extends TimberSite {
         $context['pageSettingsShowComments'] = get_field('show_page_comments', $post_id);
         $context['pageSettingsShowSiteHero'] = get_field('show_site_hero', $post_id);
         $context['pageSettingsHideSiteHero'] = get_field('hide_site_hero', $post_id);
+        $context['pageSettingsHideSubsidiary'] = get_field('hide_site_subsidiary', $post_id);
 
         $context['postEditUrl'] =  get_edit_post_link($post_id);
 
