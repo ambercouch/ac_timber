@@ -124,6 +124,9 @@
     @include act-font-size($act-fs-2);
     margin-bottom: $act-unit-s;
   }
+  &single-post{
+    text-align: center;
+  }
   &service{
     @extend .c-header__heading--page;
     @include act-font-size($act-fs-1);
@@ -144,6 +147,11 @@
   }
   &footer{
     color: $brand-col-5;
+    @include act-font-size($act-fs-g);
+    @include mq($from : tablet){
+      @include act-font-size($act-fs-1);
+      //display: none !important;
+    }
   }
   &case-study{
     @include act-font-size($act-fs-3);

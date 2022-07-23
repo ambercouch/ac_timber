@@ -88,12 +88,13 @@ BEM ELEMENTS.c-feature-image__
   }
   &blog{
     border-radius: $act-unit;
-    height: 240px;
-    max-height: 16vw;
+    //height: 240px;
+    //max-height: 16vw;
+    aspect-ratio: 3/2;
   }
   &tax-collection{
     @include mq($from : tablet){
-      height: 25vw !important;
+      aspect-ratio: 2/3;
     }
   }
   &cat-pod{
@@ -105,6 +106,16 @@ BEM ELEMENTS.c-feature-image__
     left: 0;
     bottom: 0;
     right: 0;
+    aspect-ratio: 1/1
+  }
+  &single-post{
+    border-radius: 0;
+    height: 160px;
+    max-height: 60vh;
+
+    @include mq($from : tablet){
+      height: 100%;
+    }
   }
 }
 

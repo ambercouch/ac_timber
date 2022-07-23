@@ -28,8 +28,13 @@
     padding-bottom: $act-unit;
   }
   &slides{
-    padding: $act-unit-l $act-unit;
+    padding: $act-unit-l 0;
     padding-bottom: 0;
+    @include mq($from: desktop){
+      padding: $act-unit-l $act-unit;
+      padding-bottom: 0;
+    }
+
   }
   &tax-collection{
     padding-top: 0;
@@ -81,7 +86,7 @@
   }
   &list{
     display: flex;
-    margin: 0 -$act-unit;
+
     margin-top: 0;
     flex-wrap: wrap;
     justify-content: center;
@@ -89,6 +94,9 @@
     flex-direction: column;
     @include mq($from : desktop){
       flex-direction: row;
+    }
+    @include mq($from : tablet){
+      margin: 0 -$act-unit;
     }
 
   }
@@ -142,16 +150,23 @@
     margin-bottom: 0;
   }
   &testimonial{
-    margin: -$act-unit;
+    margin: 0;
     margin-top: 0;
     margin-bottom: 0;
+    @include mq($from : tablet){
+      margin: -$act-unit;
+    }
   }
   &stuff{
     flex-wrap: wrap;
     justify-content: flex-start;
   }
   &blog{
-    margin-left: - $act-unit !important;
+    //margin-left: - $act-unit !important;
+    margin-bottom: 0;
+    @include mq($from : tablet){
+      margin-left: - $act-unit !important;
+    }
   }
   &slides{
     display: block;
@@ -159,7 +174,17 @@
   &tax-collection{
     margin-left: - $act-unit-l;
     margin-right: - $act-unit-l;
+    margin-top:0;
+    @include mq($from : tablet){
+      flex-direction: row;
+    }
   }
+  &cat-pod{
+    @include mq($from : tablet){
+      flex-direction: row;
+    }
+  }
+
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -203,19 +228,37 @@
   }
   &blog{
     margin-bottom: $act-unit * 1.5;
-    margin-left: $act-unit !important;
+    margin-left: 0 !important;
+    @include mq($from : desktop){
+      margin-left: $act-unit !important;
+    }
   }
   &slides{
     width: 100%;
     min-height: 100%;
   }
   &tax-collection{
-    width: calc(25% - 48px);
+    @include mq($from : tablet){
+      width: calc(50% - 48px);
+      margin: 0 24px;
+    }
+    @include mq($from : desktop){
+      width: calc(25% - 48px);
+    }
+
+
   }
   &cat-pod{
     padding: 0 ;
     padding-bottom: $act-unit-l;
-    width: calc(25% - 48px);
+
+    @include mq($from : tablet){
+      width: calc(50% - 48px);
+      margin: 0 $act-unit;
+    }
+    @include mq($from : desktop){
+      width: calc(25% - 48px);
+    }
   }
   &stuff{
     margin-bottom: $act-unit-l;

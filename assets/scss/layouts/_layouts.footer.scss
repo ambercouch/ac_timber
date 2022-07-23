@@ -68,6 +68,10 @@
   }
   &shape-header{
     @include breakout-band($bgc : $brand-col-2);
+    img {
+      display: block;
+      margin: 0 auto;
+    }
     >*{
       background: $brand-col-3;
       body.single-case-study & {
@@ -99,6 +103,12 @@
   @extend .l-footer__widget-area;
 }
 
+.l-footer__widget-area--{
+  &footer-widgets{
+    padding: $act-unit $act-unit-l;
+    padding-top: 0;
+  }
+}
 
 //BEM ELEMENT MODIFIER FALLBACK .l-footer__site-info--
 

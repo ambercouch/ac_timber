@@ -5,7 +5,10 @@
 .l-section {
   display: block;
   //padding-top: $act-unit;
-  padding-bottom: 175px;
+  .page-template-mxb-home &{
+    padding-bottom: 175px;
+  }
+
   &.has-footer{
      padding-bottom: 0;
    }
@@ -62,8 +65,13 @@
     background: $brand-col-7;
     @include breakout-band($bgc : $brand-col-7);
     padding: $act-unit 0 0;
-    margin-left: - $act-unit-s;
-    margin-right: - $act-unit-s;
+    padding-bottom: 175px;
+
+    @include mq($from : tablet){
+      padding-bottom: 0;
+      //margin-left: - $act-unit-s;
+      //margin-right: - $act-unit-s;
+    }
   }
 }
 
@@ -80,11 +88,14 @@
 .l-section__ {
   &header {
     display: block;
-    width: calc(100vw - 24px);
     position: absolute;
     left: 50%;
     bottom: 100%;
     transform: translate(-50%,0);
+    width: 700px;
+    @include mq($from : tablet){
+      width: calc(100vw);
+    }
   }
 
   &header-wrapper{
@@ -124,12 +135,19 @@
   &body{
     @extend .o-box;
     padding: $act-unit-l 0;
+    .has-footer &{
+      padding-bottom: 175px;
+      @include mq($from : tablet){
+        padding-bottom: $act-unit-l;
+      }
+    }
   }
 
   &footer {
     display: block;
     text-align: center;
     width: calc(100vw - 24px);
+    width: 700px;
     position: absolute;
     left: 50%;
     bottom: 0;
@@ -141,6 +159,7 @@
       left: auto;
       bottom: auto;
       transform: translate(0);
+
     }
   }
   &footer-wrapper{
@@ -175,9 +194,9 @@
   &col{
     margin-bottom: $act-unit;
     &:last-child{
-      margin-bottom: 0;
+      margin-bottom: $act-unit;
       .is-col-rev &{
-        margin-bottom: $act-unit;
+        margin-bottom: 0;
         @include mq($from : desktop){
           margin-bottom: 0;
         }
@@ -243,6 +262,12 @@
   > *{
     @extend .u-1-3--tablet;
     height: auto;
+    padding-right: $act-unit-l;
+    padding-left: $act-unit-l;
+    @include mq($from : tablet){
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
   > *:first-child{
 
@@ -273,17 +298,20 @@
 }
 
 %shape-wrapper{
-  height: $act-unit-h * 1.75;
+  height: 200px;
   overflow: hidden;
   .header-is-transparent &{
     height: auto;
+  }
+  @include mq($from : tablet){
+    height: $act-unit-h * 1.75;
   }
   @include mq($from : desktop){
     height: 175px;
   }
 }
 %shape-container{
-  @include size(1300px, 350px);
+  @include size(1300px, 600px);
   max-width: 100%;
   margin: 0 auto;
   background: transparent;

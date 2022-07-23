@@ -123,10 +123,16 @@
   }
   &pagination{
     @extend .o-flex-split--last;
+    @include mq($until : tablet){
+      flex-direction: column;
+    }
   }
   &social{
     @extend .o-list-flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    @include mq($from : tablet){
+      justify-content: flex-end;
+    }
   }
   &footer{
     display: flex;
@@ -134,9 +140,18 @@
   }
   &shop{
      @extend .o-list-flex--stacked;
+    @include act-font-size($act-fs-2);
+    @include mq($from : tablet){
+      @include act-font-size($act-fs-4);
+    }
+
    }
   &about{
     @extend .o-list-flex--stacked;
+    @include act-font-size($act-fs-2);
+    @include mq($from : tablet){
+      @include act-font-size($act-fs-4);
+    }
   }
   &mobile{
     @extend .o-list-flex--stacked;
@@ -187,6 +202,10 @@
   }
   &blog-filters{
     margin-right: $act-unit-s;
+    margin-bottom: $act-unit;
+    @include mq($from : tablet){
+
+    }
   }
 }
 

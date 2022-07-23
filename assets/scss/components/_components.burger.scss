@@ -1,12 +1,14 @@
 
 .c-burger{
   position: absolute;
-  left: auto;
-
+  left: $act-unit;
   top: $act-unit-l *1.25;
   z-index: 1;
   @include act-font-size($act-fs-6);
   pointer-events: all;
+  @include mq($from: mobile){
+    left: $act-unit * 1.5;
+  }
   @include mq($from: desktop){
     left:  $act-unit-h * 1.25;
   }
@@ -23,6 +25,7 @@
   }
   @include mq($from : desktop){
     //display: none;
+
   }
 }
 

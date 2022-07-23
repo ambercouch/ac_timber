@@ -28,13 +28,32 @@
   height: 175px;
   overflow: visible;
   overflow-y: clip;
+  display: block;
+  position: relative;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%,0);
+  width: 700px;
+  @include mq($from : tablet){
+    width: calc(100%);
+    transform: translate(0,0);
+    bottom: auto;
+    left: auto;
+    margin-bottom: 0!important;
+    padding-top: 0;
+  }
 
   > *{
-    @include size(1300px, 700px);
-    max-width: 100%;
+    //@include size(1300px, 600px);
+    height: 600px;
     margin: 0 auto;
     border-radius: 50%;
+    @include mq($from : tablet){
+      @include size(1300px, 700px);
+      max-width: 100%;
+    }
     > *{
+      width: auto;
       width: 400px;
       max-width: 100%;
       margin: 0 auto;

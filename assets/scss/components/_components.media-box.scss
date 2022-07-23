@@ -6,7 +6,11 @@
   display: block;
   display: flex;
   border-radius: $act-unit;
-  @include act-font-size($act-fs-2)
+  @include act-font-size($act-fs-2);
+  flex-direction: column;
+  @include mq($from : tablet){
+    flex-direction: row;
+  }
 }
 
 /*
@@ -36,8 +40,13 @@
 
 .c-media-box__ {
   &image{
-    @extend .u-1-2;
-    padding-right: $act-unit-l;
+    @extend .u-1-2--tablet;
+    padding-right: 0;
+    margin-bottom: $act-unit-l;
+    @include mq($from : tablet){
+      padding-right: $act-unit-l;
+      margin-bottom: 0;
+    }
   }
   &header {
     display: block
@@ -56,7 +65,7 @@
   }
 
   &content {
-    @extend .u-1-2;
+    @extend .u-1-2--tablet;
     display: flex;
     flex-direction: column;
     justify-content: center;

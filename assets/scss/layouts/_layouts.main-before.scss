@@ -18,7 +18,9 @@
   }
   &blog{
     background: $brand-col-7;
-    @extend .c-site-wrapper--responsive;
+    //@extend .c-site-wrapper--responsive;
+    padding-left:  $act-unit;
+    padding-right:  $act-unit;
   }
 }
 

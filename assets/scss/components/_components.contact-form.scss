@@ -85,13 +85,21 @@
   }
   &input-group{
     display: flex;
+    flex-direction: column;
+    @include mq($from : tablet){
+      flex-direction: row;
+    }
   }
   &label{
-
-    margin-bottom: $act-unit-t;
-
+    margin-bottom: $act-unit;
+    @include mq($from : tablet){
+      margin-bottom: $act-unit-t;
+    }
     .c-contact-form__input-group &{
-      margin-right: $act-unit;
+      margin-right: 0;
+      @include mq($from : tablet){
+        margin-right: $act-unit;
+      }
       &:last-child{
         margin-right: 0;
       }
@@ -137,7 +145,10 @@
 
 .c-contact-form__input-wrapper--{
   &submit{
-    padding-top:$inuit-global-spacing-unit-small;
+    padding-top:0;
+    @include mq($from : tablet){
+      padding-top: $act-unit-s;
+    }
   }
   &check{
     .wpcf7-list-item{

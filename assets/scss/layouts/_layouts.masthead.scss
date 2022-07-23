@@ -68,6 +68,7 @@ BEM ELEMENTS .l-masthead__
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
+    margin-top: $act-unit;
     @include mq($from : desktop){
       max-width: 100%;
     }

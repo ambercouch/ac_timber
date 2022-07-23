@@ -4,7 +4,12 @@
 
 .l-content-before {
   display: block;
-  padding: $act-unit-l $act-unit;
+  padding: 0 $act-unit;
+ @include mq($from : tablet){
+   padding: $act-unit-l $act-unit;
+ }
+
+
 }
 
 /*
