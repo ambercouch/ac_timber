@@ -1,17 +1,43 @@
 /**
  * Created by Richard on 19/09/2016.
  */
-
-//console.log('ACTIMBER');
+console.log('ACTIMBER image loaded webfonts');
 ACTIMBER = {
     common: {
         init: function () {
+
+            // (function(d) {
+            //     var config = {
+            //             kitId: 'qep1lzg',
+            //             scriptTimeout: 3000,
+            //             async: true
+            //         },
+            //         h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+            // })(document);
+            //
+            // try {
+            //     Typekit.load({
+            //         loading: function() {
+            //             // JavaScript to execute when fonts start loading
+            //             console.log('font loading');
+            //         },
+            //         loaded: function() {
+            //             console.log('font loaded');
+            //         },
+            //         inactive: function() {
+            //             // JavaScript to execute when fonts become inactive
+            //             console.log('font inactive');
+            //         }
+            //     })
+            // } catch(e) {}
+
             'use strict';
             //uncomment to debug
             console.log('common');
 
             //add js class
             jQuery('body').addClass('js');
+            jQuery('body').removeClass('no-js');
             //$("[data-fitvid]").fitVids();
 
             fitvids();
@@ -42,7 +68,7 @@ ACTIMBER = {
 
 
 
-            const podcastSlider = document.querySelector('[data-flickity]');
+            const podcastSlider = document.querySelector('.l-post-thumb-list__list--slides');
 
 
             if(podcastSlider != null){
@@ -50,8 +76,11 @@ ACTIMBER = {
                     // options
                     cellAlign: 'left',
                     contain: true,
+                    imagesLoaded: true,
                 });
             }
+
+
 
 
         }
