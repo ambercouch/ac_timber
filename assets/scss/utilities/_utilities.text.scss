@@ -12,6 +12,14 @@
   text-align: justify;
 }
 
+.u-ta-c--{
+  &mobile{
+    @include mq($from : mobile, $until : tablet){
+      text-align: center;
+    }
+  }
+}
+
 
 
 //text-transform
