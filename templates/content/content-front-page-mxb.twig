@@ -26,7 +26,7 @@
           {% set classHasTitleNext = ( hasTitleNext  == true )? "has-title-next" : "has-no-title-next" %}
 
 
-            <div id="section-{{ loop.index }}" class="l-section {{ classSection }} {{ classHasTitle }} {{classHasFooter}} {{ classHasTitleNext }}{{ classHideBorders }} {{ classHideBottomBorder }}">
+            <div id="section-{{ loop.index }}" class="l-section {{ classSection }} {{ classHasTitle }} {{classHasFooter}} {{ classHasTitleNext }} {{ classHideBorders }} {{ classHideBottomBorder }}">
                 {% if hasTitle == true %}
                     <div class="l-section__header {{ classHeaderType }}">
                       <div class="l-section__header-wrapper">
