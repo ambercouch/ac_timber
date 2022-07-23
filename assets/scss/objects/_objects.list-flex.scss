@@ -1,48 +1,58 @@
 .o-list-flex{
   display: flex !important;
-
+  margin: 0 - $act-unit;
   > *{
-    margin: 0 $act-unit-s;
-    padding-left: 0;
-
-    &:first-child{
-      margin-left: 0;
-    }
-
-    &:last-child{
-      margin-right: 0;
-    }
-
+      padding: 0 $act-unit;
   }
+}
+[class*="o-list-flex--"]{
+ @extend .o-list-flex;
 }
 
 .o-list-flex--{
+  &wrap-mobile{
+    flex-wrap: wrap;
+    > *{
+      padding-bottom: $act-unit !important;
+    }
+    @include mq($from : tablet){
+      flex-wrap: nowrap;
+      > *{
+        padding-bottom: 0 !important;
+      }
+    }
+  }
   &flush{
     > * {
       margin: 0 !important;
     }
   }
   &tiny{
+    margin: 0 - $act-unit-t;
     > * {
       margin: 0 $act-unit-t;
     }
   }
   &small{
+    margin: 0 - $act-unit-s;
     > * {
       margin: 0 $act-unit-s;
     }
   }
   &medium{
+    margin: 0 - $act-unit;
     > * {
       margin: 0 $act-unit;
     }
   }
   &large{
+    margin: 0 - $act-unit-l;
     > * {
       margin: 0 $act-unit-l;
     }
   }
   &huge{
+    margin: 0 - $act-unit-h;
     > * {
       margin: 0 $act-unit-h;
     }
