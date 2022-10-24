@@ -6,30 +6,80 @@ ACTIMBER = {
     common: {
         init: function () {
 
-            // (function(d) {
-            //     var config = {
-            //             kitId: 'qep1lzg',
-            //             scriptTimeout: 3000,
-            //             async: true
-            //         },
-            //         h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-            // })(document);
-            //
-            // try {
-            //     Typekit.load({
-            //         loading: function() {
-            //             // JavaScript to execute when fonts start loading
-            //             console.log('font loading');
-            //         },
-            //         loaded: function() {
-            //             console.log('font loaded');
-            //         },
-            //         inactive: function() {
-            //             // JavaScript to execute when fonts become inactive
-            //             console.log('font inactive');
-            //         }
-            //     })
-            // } catch(e) {}
+            var lastScrollTop = 0;
+            var scrollTimer = null;
+            var scrollTop = $(window).scrollTop();
+            var scrolling = false
+            var startScroll = false;
+            var topHight = 200;
+
+            if(scrollTop >= topHight){
+                $('body').attr('data-pos-top', 'false')
+                console.log('top = false')
+            }else{
+                $('body').attr('data-pos-top', 'true')
+                console.log('top = true')
+            }
+
+            $(window).scroll(function() {
+
+                scrollTop = $(this).scrollTop();
+
+                if (startScroll === false) {
+                    console.log("start scrolling")
+                    startScroll = true;
+                    if(scrollTop >= topHight){
+                        $('body').attr('data-pos-top', 'false')
+                        console.log('top = false')
+                    }else{
+                        $('body').attr('data-pos-top', 'true')
+                        console.log('top = true')
+                    }
+
+                }
+
+                if (scrolling === false) {
+                    setTimeout(function () {
+                        console.log("scrolling")
+                        if (scrollTop > lastScrollTop){
+                            //scrolling down
+                            $('body').attr('data-scroll-direction', 'down')
+                        } else {
+                            //scrolling up
+                            $('body').attr('data-scroll-direction', 'up')
+                        }
+                        if(scrollTop >= topHight){
+                            $('body').attr('data-pos-top', 'false')
+                            console.log('top = false')
+                        }else{
+                            $('body').attr('data-pos-top', 'true')
+                            console.log('top = true')
+                        }
+                    }, 200);
+
+                }
+
+                if (scrollTimer) {
+                    clearTimeout(scrollTimer);   // clear any previous pending timer
+                }
+
+                scrollTimer = setTimeout(function () {
+                    console.log("not scrolling")
+                    startScroll = false;
+                    lastScrollTop = scrollTop;
+                    if(scrollTop >= topHight-){
+                        $('body').attr('data-pos-top', 'false')
+                        console.log('top = false')
+                    }else{
+                        $('body').attr('data-pos-top', 'true')
+                        console.log('top = true')
+                    }
+                }, 200);   // set new timer
+
+
+
+            }); //missing );
+
 
             'use strict';
             //uncomment to debug
