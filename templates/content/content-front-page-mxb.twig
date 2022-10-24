@@ -19,15 +19,40 @@
             {% set classBody =  item.section_body_class %}
             {% set classIntro =  item.section_intro_class %}
             {% set classFooter =  item.section_footer_class %}
+
+            {% set backgroundImage =  item.section_background_image %}
+          {% if backgroundImage %}
+            {% set imgObj =  Image(backgroundImage) %}
+            {% set imgSize =  'original' %}
+            {% set imgAlt = (imgObj.alt) ? imgObj.alt :  post.title %}
+            {% set classBackgroundImage = 'has-background-image' %}
+            {% else %}
+              {% set imgObj = '' %}
+              {% set imgSize =  '' %}
+              {% set imgAlt =  '' %}
+              {% set classBackgroundImage = '' %}
+          {% endif %}
+
+
           {% set classHideBorders = (item.hide_column_borders)? "has-no-borders"  : "" %}
           {% set classHideBottomBorder = (item.hide_bottom_border)? "has-no-bottom-border" : "" %}
           {% set classHasFooter = ( item.section_footer != '' )? "has-footer" : "has-no-footer" %}
           {% set classHasTitle = ( hasTitle == true )? "has-title" : "has-no-title" %}
           {% set classHasTitleNext = ( hasTitleNext  == true )? "has-title-next" : "has-no-title-next" %}
+          {% set classBackgroundAdjustment = item.section_background_adjustment %}
+          {% set classBackgroundPosition = item.section_background_position %}
 
 
-            <div id="section-{{ loop.index }}" class="l-section {{ classSection }} {{ classHasTitle }} {{classHasFooter}} {{ classHasTitleNext }} {{ classHideBorders }} {{ classHideBottomBorder }}">
-                {% if hasTitle == true %}
+
+            <div id="section-{{ loop.index }}" class="l-section {{ classBackgroundImage }} {{ classBackgroundAdjustment }} {{ classBackgroundPosition }} {{ classSection }} {{ classHasTitle }} {{classHasFooter}} {{ classHasTitleNext }} {{ classHideBorders }} {{ classHideBottomBorder }}">
+              {% if  backgroundImage %}
+              <div class="l-section__background-image">
+                <div class="c-background-image">
+                  <img srcset="{{ imgObj.src(imgSize)|resize(480)}} 480w, {{ imgObj.src(imgSize)|resize(1200)}} 1200w, {{ imgObj.src(imgSize)|resize(1920)}} 1920w, " class="c-background-image__img" alt="{{ imgAlt }}" />
+                </div>
+              </div>
+              {% endif %}
+              {% if hasTitle == true %}
                     <div class="l-section__header {{ classHeaderType }}">
                       <div class="l-section__header-wrapper">
                         <div class="l-section__header-container {{ classTitle }}">

@@ -18,6 +18,12 @@
   &.has-no-title-next{
     padding-bottom: 0;
   }
+  &.has-background-image{
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
   position: relative;
     &:before{
       background: red;
@@ -86,6 +92,9 @@
  */
 
 .l-section__ {
+  &background-image{
+  @include  breakout-img()
+  }
   &header {
     display: block;
     position: absolute;
@@ -192,6 +201,7 @@
     }
   }
   &col{
+    z-index: 1;
     margin-bottom: $act-unit;
     &:last-child{
       margin-bottom: $act-unit;

@@ -9,7 +9,7 @@
   height: 100%;
   text-align: center;
    > :last-child{
-    margin-top: auto !important;
+    margin-top: auto;
   }
 }
 
@@ -42,6 +42,8 @@
   }
   &case-study-thumb{
     text-align: left;
+    justify-content: flex-start;
+
   }
   &testimonial{
     text-align: left;
@@ -270,8 +272,8 @@
 }
 
 .c-post-thumb__thumb-link--{
-  &case-study{
-
+  &case-study-thumb{
+    margin-top: 0 !important;
   }
 }
 
@@ -321,6 +323,10 @@
 
 .c-post-thumb__footer--stuff{
   @extend .o-list-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
 }
 
 

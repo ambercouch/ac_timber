@@ -20,6 +20,7 @@
     display: block
   }
   &primary{
+
     @extend .o-btn--rounded;
     color: $brand-col-1;
     background: $brand-col-3;
@@ -27,6 +28,7 @@
     font-weight: bold;
     padding-left: $act-unit ;
     padding-right: $act-unit ;
+    margin-bottom: $act-unit;
     &:hover{
       background: darken($brand-col-3, 10%);
       color: $brand-col-1;
@@ -164,10 +166,13 @@
     }
     .c-btn__label{
       @extend .o-btn__label--text-link;
+      white-space: nowrap;
     }
   }
   &stuff-more{
     @extend .c-btn--podcast-more;
+    margin-bottom: $act-unit;
+    padding: $act-unit-s;
   }
 }
 
@@ -207,6 +212,7 @@
   }
   &label{
     font-size: inherit;
+    white-space: nowrap !important;
     .is-loading &{
       display: none;
     }

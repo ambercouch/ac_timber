@@ -1,5 +1,12 @@
 blockquote{
   border-left: solid ;
-  padding-left: $act-unit-s;
-  margin-left: $act-unit-s;
+  padding-left: 0.5em;
+  margin-left: 0em;
+  font-size: 90%;
+  @include mq($from : tablet){
+
+    padding-left: 1em;
+    margin-left: 0.5em;
+  }
+
 }

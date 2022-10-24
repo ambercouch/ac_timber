@@ -220,7 +220,7 @@
     }
     @include mq($from : desktop){
       width: calc(25% - 48px);
-      margin-bottom: 0;
+      margin-bottom: $act-unit-l;
     }
   }
   &testimonial{
@@ -261,7 +261,7 @@
     }
   }
   &stuff{
-    margin-bottom: $act-unit-l;
+    margin-bottom: $act-unit-h;
   }
 }
 

@@ -97,3 +97,43 @@
  }
 }
 
+.c-background-image{
+  //@include breakout-img();
+  height: 100%;
+
+}
+.c-background-image__img{
+  .is-dark-image &{
+    filter: brightness(75%)
+  }
+}
+.c-background-image:after{
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  .is-light-image &{
+     background: #bbb;
+     opacity: 0.6;
+    mix-blend-mode: screen;
+   }
+  .is-dark-image &{
+    background: #444;
+    opacity: 0.4;
+    mix-blend-mode: darken;
+  }
+}
+.c-background-image__img{
+  .is-light-image &{
+    filter: brightness(120%)
+  }
+}
+
+.is-dark-image{
+  color: white;
+}
