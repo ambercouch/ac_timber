@@ -1,9 +1,12 @@
-<link  href="{{ site.theme.link }}/style.css?v=20211130-5" rel="stylesheet" property='stylesheet'>
+<link  href="{{ site.theme.link }}/style.css?v=202207" rel="stylesheet" property='stylesheet'>
 
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
 
+<!-- wp footer -->
 {{ fn('wp_footer') }}
+
+<!-- wp footer -->
 
 <link rel="stylesheet" href="https://use.typekit.net/{{ typeKitId }}.css">
 
@@ -33,4 +36,44 @@
         }
     }
 
+</script>
+
+<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js"></script>
+<script>
+    var config = {
+        apiKey: '9827fecfbf3abe3d4d07f85f6ea3a48998a16554',
+        product: 'COMMUNITY',
+        initialState: "OPEN",
+        position: "RIGHT",
+        theme: "LIGHT",
+        rejectButton: false,
+        text : {
+            thirdPartyTitle : 'Warning: Some cookies require your attention',
+            thirdPartyDescription : 'Consent for some third party cookies can not be automatically revoked. Please follow the link below if you want to opt out of them.',
+        },
+        statement : {
+            description: 'For more information visit our',
+            name : 'Privacy Statement',
+            url: '/privacy-policy',
+            updated : '28/05/2018'
+        },
+        optionalCookies: [
+            {
+                name: 'analytics',
+                label: 'Analytics',
+                description: 'Analytical cookies help us to improve our website by collecting and reporting information on its usage.',
+                cookies: ['_ga', '_gid', '_gat', '__utma', '__utmt', '__utmb', '__utmc', '__utmz', '__utmv'],
+                onAccept : function(){
+                    //GA4
+                    gtag('consent', 'update', {'analytics_storage': 'granted'});
+                },
+                onRevoke: function(){
+                    //GA4
+                    gtag('consent', 'update', {'analytics_storage': 'denied'});
+                }
+            }
+        ]
+    };
+
+    CookieControl.load( config );
 </script>
