@@ -34,6 +34,15 @@ BEM ELEMENTS.c-feature-image__
     height: 100%;
     display: block;
     object-fit: cover;
+    height: 300px;
+    @include mq($from:desktop){
+      height: 500px;
+    }
+  }
+  &caption{
+    text-align: right;
+    @include act-font-size($act-fs-6);
+    padding: $act-unit-t 0;
   }
 
   &button{
