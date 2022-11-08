@@ -72,13 +72,37 @@ function  act_cpt() {
     $args = array(
         'labels' => $labels,
         'menu_icon' => 'dashicons-format-quote',
-        'description' => 'Testimonials offered',
+        'description' => 'Testimonials recieved',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'supports' => array('title','editor','author','excerpt','custom-fields','comments','revisions','page-attributes'),
         'has_archive' => 'testimonial'
     );
-    register_post_type('testimonial', $args);
+    //register_post_type('testimonial', $args);
+
+    //Testimonial tag
+    $labels = array(
+        'name'              => _x( 'Testimonail Tags', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Testimonial Tag', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Testimonail Tags' ),
+        'all_items'         => __( 'All Testimonail Tags' ),
+        'edit_item'         => __( 'Edit Testimonail Tag' ),
+        'update_item'       => __( 'Update Testimonail Tag' ),
+        'add_new_item'      => __( 'Add New Testimonail Tag' ),
+        'new_item_name'     => __( 'New Tile Testimonail Tag' ),
+        'menu_name'         => __( 'Testimonail Tags' ),
+    );
+
+    $args = array(
+        'hierarchical'      => false,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'testmonial-tag' ),
+    );
+
+    //register_taxonomy( 'testimonial_tag', array( 'testimonial' ), $args );
 
 }
 
