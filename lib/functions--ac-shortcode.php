@@ -201,6 +201,25 @@ function act_shortcode_svg_icon($atts, $content = null) {
     return $output;
 }
 
+add_shortcode('act_btn', 'act_shortcode_btn');
+function act_shortcode_btn($atts, $content){
+
+    $a = shortcode_atts(array(
+        'label' => 'Click',
+        'url' => '/',
+        'class' => ''
+    ), $atts);
+
+    $btnClass = "c-btn " . $a['class'];
+
+    $output = '';
+
+    $output .= '<div class="'.$btnClass.'">';
+    $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['label'].'</a>';
+    $output .= '</div>';
+
+    return $output;
+}
 
 add_shortcode('act_cta', 'act_shortcode_cta');
 function act_shortcode_cta($atts, $content){
