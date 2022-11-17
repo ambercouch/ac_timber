@@ -7,6 +7,7 @@ BEM BLOCK .c-hero
   min-height: 500px;
   height: 100vh;
   position: relative;
+  @extend .o-wrapper;
 }
 
 /*
@@ -15,6 +16,7 @@ BEM ELEMENTS .c-hero__
 .c-hero__{
   &container{
     height: 100%;
+    position: relative;
   }
   &image{
     width:100%;
