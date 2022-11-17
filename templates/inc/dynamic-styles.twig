@@ -4,7 +4,7 @@
   {% if (fn('is_front_page') and cssBannerImageHeight) or
    (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
   /* cssBannerImageHeight */
-  .hero{
+  .c-hero{
     height: {{ cssBannerImageHeight }} !important;
     min-height: unset !important;
   }
@@ -14,7 +14,7 @@
 
   {% if not fn('is_front_page') and cssPageBannerImageHeight and pageSettingsShowSiteHero == false %}
   /* cssPageBannerImageHeight */
-  .hero{
+  .c-hero{
     height: {{ cssPageBannerImageHeight }} !important;
     min-height: unset !important;
   }
@@ -24,7 +24,7 @@
 
   {% if cssBannerImagePositionHorizontal %}
   /* cssBannerImagePositionHorizontal */
-  .hero__background-img{
+  .c-hero__background-img{
     object-position: {{ cssBannerImagePositionHorizontal }} ;
   }
   {% else %}
@@ -33,17 +33,18 @@
 
   {% if (fn('is_front_page') and cssBannerImageSaturation ) or (not fn('is_front_page') and pageSettingsShowSiteHero == true  and cssBannerImageSaturation) %}
   /*  cssBannerImageSaturation */
-  .hero__background-img {
+  .c-image__background {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
   }
   {% else %}
   /* NO cssBannerImageSaturation */
+/* TESTING  {{ fn('is_front_page') ~ 'cssBannerImageSaturation ' ~ cssBannerImageSaturation ~ ' END TEST' }}*/
   {% endif %}
 
   {% if  cssPageBannerImageSaturation %}
   /* cssPageBannerImageSaturation */
-  .hero__background-img {
+  .c-image--background {
     -webkit-filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
     filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
   }
@@ -53,7 +54,8 @@
 
   {% if (fn('is_front_page') and cssBannerColourCast) or
   (not fn('is_front_page') and cssBannerColourCast and pageSettingsShowSiteHero == true )%}
-  .hero__background:before{
+  /* cssBannerColourCast */
+  .c-hero__image:before{
     display: block !important;
     background: {{cssBannerColourCastColour}} !important;
     opacity: {{cssBannerColourCastOpacity}} !important;
@@ -72,7 +74,7 @@
 
   {% if cssPageBannerColourCast and pageSettingsShowSiteHero == false %}
   /* cssPageBannerColourCast */
-  .hero__background:before{
+  .c-hero__image:before{
     display: block !important;
     background: {{cssPageBannerColourCastColour}} !important;
     opacity: {{cssPageBannerColourCastOpacity}} !important;
@@ -91,7 +93,7 @@
 
   {% if cssPageBannerImageHeight %}
   /* cssPageBannerImageHeight */
-  .hero--page{
+  .c-hero--page{
     height: {{ cssPageBannerImageHeight }} !important;
     min-height: unset !important;
   }
@@ -101,7 +103,7 @@
 
   {% if cssPageBannerImagePositionHorizontal %}
   /* cssPageBannerImagePositionHorizontal */
-  .hero__background-img{
+  .c-image--background{
     object-position: {{ cssPageBannerImagePositionHorizontal }} ;
   }
   {% else %}
