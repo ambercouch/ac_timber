@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('ACTIMBER image popup');
 ACTIMBER = {
     common: {
         init: function () {
@@ -14,6 +14,10 @@ ACTIMBER = {
             jQuery('body').addClass('js');
             //$("[data-fitvid]").fitVids();
 
+            // fitvids({
+            //     players: 'iframe[data-src*="player.vimeo.com"]'
+            // });
+
             fitvids();
 
             $('[data-control]').each(function () {
@@ -24,6 +28,10 @@ ACTIMBER = {
                     ACTIMBER.fn.open(container, showButton);
                 }
             })
+
+            // $(document).on('click', '.img-modal a', function (e) {
+            //     e.preventDefault();
+            // })
 
 
             /**

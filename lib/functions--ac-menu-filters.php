@@ -31,16 +31,30 @@ function act_menu_filters($sorted_menu_objects, $args) {
             $menu_icon_src =  wp_get_attachment_image_url( $menu_icon['id']);
 
             $srcSet = wp_get_attachment_image_srcset($menu_image['id'], 'serviceMenuLarge');
-            $src = wp_get_attachment_image_url($menu_image['id'], 'serviceMenuLarge');
-            $sizes = wp_get_attachment_image_sizes($menu_image['id'], 'serviceMenuLarge');
+            $src = wp_get_attachment_image_url($menu_image['id'], 'serviceMenuSmall');
+            $srcMedium = wp_get_attachment_image_url($menu_image['id'], 'serviceMenuMedium');
+            $srcLarge = wp_get_attachment_image_url($menu_image['id'], 'serviceMenuLarge');
+            $sizes = wp_get_attachment_image_sizes($menu_image['id'], 'serviceMenuSmall');
+            $sizesMedium = wp_get_attachment_image_sizes($menu_image['id'], 'serviceMenuMedium');
+            $sizesLarge = wp_get_attachment_image_sizes($menu_image['id'], 'serviceMenuLarge');
 
             if($src){
+                $picture_el = "";
+                $picture_el .= "<picture  >";
+
+                $picture_el .= "<source srcset='".$srcLarge."' type='image/jpg' media='(min-width: 900px)'>";
+                $picture_el .= "<source srcset='".$srcMedium."' type='image/jpg' media='(min-width: 600px)'>";
+                $picture_el .= "<source srcset='".$src."' type='image/jpg' media='(min-width: 300px)'>";
+
+                $picture_el .= "<img class='c-post-thumb__img' alt='".$menu_object->title."' src='".$src."' />";
+                $picture_el .= "</picture>";
+
                 $image_el = '<img class="c-post-thumb__img" alt="'.$menu_object->title.'" src="'.$src.'" srcset="'.$srcSet.'" sizes="'.$sizes.'"/>';
                 $icon_image_el = '<img class="c-post-thumb__post-icon-img--menu-item style-svg" src="'.$menu_icon_src.'" alt="Icon" />';
 
                 $link_thum_el .= '<div class="c-post-thumb--menu-item">';
                     $link_thum_el .= '<div class="c-post-thumb__image">';
-                    $link_thum_el .= $image_el;
+                    $link_thum_el .= $picture_el;
                     $link_thum_el .= '</div>';
                     $link_thum_el .= '<div class="c-post-thumb__overlay-wrapper">';
                         $link_thum_el .= '<div class="c-post-thumb__content--menu-item">';
