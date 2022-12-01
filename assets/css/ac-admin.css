@@ -41,3 +41,8 @@ body{
     color: #bdd0c7;
     background-color: #2b2023;
 }
+
+.acf-repeater .acf-row > * {
+    border-bottom: solid 5px #999;
+    border-top: solid 5px #ccc !important;
+}
