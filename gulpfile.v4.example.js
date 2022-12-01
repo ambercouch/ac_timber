@@ -1,4 +1,4 @@
-var siteLocalUrl = 'mysite.local';
+var siteLocalUrl = 'moxiebooks.local';
 var defaultBrowser = ['C:\\Program Files \\Firefox Developer Edition\\firefox.exe', 'Chrome'];
 
 const gulp = require('gulp');
@@ -10,6 +10,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 const pipeline = require('readable-stream').pipeline;
+const uglify = require('gulp-uglify');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
@@ -35,7 +36,7 @@ var jsNpmScripts = [
 
 var cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
-    //'flickity/dist/flickity.css'
+    'flickity/dist/flickity.css',
     'remodal/dist/remodal.css',
     'remodal/dist/remodal-default-theme.css',
 ];
