@@ -1,0 +1,59 @@
+/*
+  BEM BLOCK .c-notice
+ */
+
+.c-notice {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-notice--
+ */
+
+.c-notice-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-notice--
+
+[class*=c-notice--] {
+  @extend .c-notice;
+}
+
+/*
+  BEM ELEMENTS .c-notice__
+ */
+
+.c-notice__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-notice--
+
+[class*=c-notice__header--] {
+  @extend .c-notice__header;
+}
