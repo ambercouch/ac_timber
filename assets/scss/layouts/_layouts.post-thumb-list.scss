@@ -84,6 +84,9 @@
   &column{
     flex-direction: column;
   }
+  &service{
+    flex-wrap: wrap;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -94,7 +97,7 @@
 
 .l-post-thumb-list__item--{
   &service{
-    height: 33.333vw;
+    width: 50%;
     &:first-child{
       background: $brand-col-1;
     }

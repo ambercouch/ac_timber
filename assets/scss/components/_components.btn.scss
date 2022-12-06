@@ -19,6 +19,16 @@
  */
 
 .c-btn--{
+  &primary{
+    @extend .c-btn;
+    padding-left: $act-unit *1.5;
+    padding-right: $act-unit * 1.5;
+    color: white !important;
+    background: $brand-col-4;
+    &:hover, &:focus{
+      background: darken($brand-col-4,10%);
+    }
+  }
   &type {
     display: block
   }
@@ -65,7 +75,11 @@
     display: inline;
   }
   &link {
-    display: inline
+    display: inline;
+    color: white;
+    &:hover, &:focus{
+      color: white;
+    }
   }
   &content {
     display: block

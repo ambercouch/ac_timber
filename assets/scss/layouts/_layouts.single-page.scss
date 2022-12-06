@@ -120,11 +120,15 @@
     text-align: center;
   }
   &page{
-    padding-left: $act-unit-h * 1.5;
-    padding-right: $act-unit-h * 1.5;
+    //padding-left: $act-unit-h * 1.5;
+    //padding-right: $act-unit-h * 1.5;
     padding-top: $act-unit-l;
     padding-bottom: $act-unit-l;
     background-color: transparent;
+    .has-sidebar &{
+      padding-right: $act-unit;
+      padding-top: $act-unit;
+    }
   }
   &service{
     @extend .l-single-page__body--page;

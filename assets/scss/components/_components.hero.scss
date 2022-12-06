@@ -22,6 +22,8 @@ BEM ELEMENTS .c-hero__
     width:100%;
     height: 100%;
     position: absolute;
+    border-radius: 0 0 $act-unit-s $act-unit-s;
+    overflow: hidden;
   }
   &img{
 

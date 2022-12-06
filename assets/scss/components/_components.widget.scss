@@ -23,9 +23,8 @@
     }
   }
   &masthead-before {
-    color: white;
+    @include act-font-size($act-fs-5);
     text-align: left;
-    @include act-font-size($milli-size, 1.5);
     padding: $act-unit-t 0;
     margin-bottom: $act-unit;
     @include mq($from : tablet){

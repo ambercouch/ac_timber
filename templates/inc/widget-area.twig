@@ -1,7 +1,7 @@
 {% set widgetContainer =  widgetContainer ?? 'default' %}
 {% set widgetArea = widgetArea ?? widgetContainer|replace({'-':''}) %}
 {% set widgets = _context[widgetArea ~ '_widgets']|default %}
-<div class="l-{{ widgetContainer }}{{ not mainbefore_widgets ? '--empty' : ''}}">
+<div class="l-{{ widgetContainer }}{{ not widgets ? '--empty' : ''}}">
   {% if widgets  == '' %}
     <!-- Add some widgets to the footer -->
   {% else %}

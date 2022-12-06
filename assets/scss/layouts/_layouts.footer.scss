@@ -1,7 +1,7 @@
 .l-footer{
   display: block;
-  background: $brand-col-5;
-  text-align: center;
+  background: transparent;
+  text-align: left;
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-footer--
@@ -51,6 +51,8 @@
     @extend .c-site-wrapper--responsive;
     padding-top: $act-unit-l;
     padding-bottom: $act-unit-l;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
     background-color: transparent;
   }
   &widgets{
@@ -66,8 +68,8 @@
 
   }
   &site-info{
-    background: $brand-col-2;
-    @include breakout-band($bgc : $brand-col-2)
+    background: transparent;
+    //@include breakout-band($bgc : $brand-col-2)
   }
 }
 
