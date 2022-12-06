@@ -109,7 +109,7 @@
   }
   &social{
     @extend .o-list-flex;
-    justify-content: center;
+    justify-content: flex-start;
   }
   &footer{
     display: flex;
@@ -135,7 +135,7 @@
     margin-right: $act-unit;
   }
   &social{
-    margin-right: $act-unit-l;
+    margin-right: $act-unit-t;
     margin-left: 0;
   }
   &footer{
@@ -216,6 +216,16 @@
         background: rgba(#000, 0.2);
       }
     }
+  }
+  &social{
+    display: block;
+    color: white !important;
+    background: $brand-col-4;
+    @include size($act-unit-l);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
   }
 }
 

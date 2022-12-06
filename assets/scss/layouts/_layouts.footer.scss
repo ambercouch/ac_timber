@@ -35,25 +35,23 @@
     margin: 0 auto $inuit-global-spacing-unit;
   }
   &site-info{
+    border-top: solid $brand-col-5;
     @extend .c-site-wrapper--responsive;
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: left;
-    padding: $inuit-global-spacing-unit;
-    padding-left: $act-unit;
-    padding-right: $act-unit;
+    padding: $act-unit 0;
+
     background: transparent;
-    color: white;
+    color: $brand-col-1;
     a{
-      color: white;
+      color: $brand-col-1 !important;
     }
   }
   &widget-area{
     @extend .c-site-wrapper--responsive;
-    padding-top: $act-unit-l;
-    padding-bottom: $act-unit-l;
-    padding-left: $act-unit;
-    padding-right: $act-unit;
+    padding: $act-unit-l 0;
     background-color: transparent;
+
   }
   &widgets{
     border-bottom: solid 1px white;
@@ -78,7 +76,7 @@
     color: $brand-col-2;
     text-decoration: none;
     &:hover{
-      color: white;
+      color: darken($brand-col-2, 20%);
     }
   }
 }

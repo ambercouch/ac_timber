@@ -4,7 +4,6 @@
 
 .c-header {
   display: block;
-  text-transform: uppercase;
 }
 
 /*
@@ -122,6 +121,9 @@
   &main-before{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
+  }
+  &footer{
+    @include act-font-size($act-fs-4)
   }
 }
 

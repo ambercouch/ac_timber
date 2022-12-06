@@ -29,6 +29,10 @@
       background: darken($brand-col-4,10%);
     }
   }
+  &secondary{
+    @extend .c-btn--primary;
+    background: $brand-col-2;
+  }
   &type {
     display: block
   }

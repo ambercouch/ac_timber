@@ -4,9 +4,8 @@
   flex-wrap: wrap;
 }
 .gallery-item{
-
   .gallery-icon{
-    padding: $act-unit;
+
     padding-bottom: 0 !important;
   }
 
@@ -15,6 +14,10 @@
    }
   .gallery-columns-4 &{
     flex-basis: 25%;
+  }
+  img{
+    width: 200px;
+    height: auto;
   }
 
 }

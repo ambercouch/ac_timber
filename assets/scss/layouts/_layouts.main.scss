@@ -47,15 +47,15 @@ BEM BLOCK MODIFIERS .l-main--
 .l-main__{
   &sidebar{
     background: transparent;
-    padding: $act-unit;
+    padding: $act-unit 0;
 
     @include mq($from: tablet) {
-      width: 400px;
+      width: 100%;
       min-width: 35%;
     }
     @include mq($from: desktop) {
-      min-width: 25%;
-      width: 400px;
+      flex-basis: 33%;
+      min-width: 300px;
     }
   }
   &content{

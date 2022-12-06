@@ -4,6 +4,13 @@
 
 .c-notice {
   display: block;
+  padding-left: $act-unit-l;
+  position: relative;
+  margin-bottom: $act-unit;
+  h4{
+    margin-bottom: 0;
+    color: $brand-col-4;
+  }
 }
 
 /*
@@ -13,6 +20,23 @@
 .c-notice-- {
   &type {
     display: block
+  }
+  &info{
+    &:before{
+      font-family: $act-font-family-mono;
+      content: 'i';
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0,-50%);
+      background: $brand-col-4;
+      color: white;
+      line-height: 1.5em;
+      width: 1.5em;
+      border-radius: 1.5em;
+      text-align: center;
+    }
   }
 }
 

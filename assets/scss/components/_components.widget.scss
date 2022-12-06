@@ -12,8 +12,8 @@
 
 .c-widget-- {
   &footer {
-    color: white;
-    @include act-font-size($inuit-font-size-h6, 1.5);
+    color: $brand-col-1;
+    @include act-font-size($inuit-font-size-h5, 1.5);
   }
   &sidebar{
     @include act-font-size($inuit-font-size-h5);
@@ -43,6 +43,17 @@
   }
   &main-before{
     @include act-font-size($act-fs-5);
+  }
+  &sidebar-contact-form{
+    background: $brand-col-5;
+    padding: $act-unit;
+    border-radius: $act-unit-s;
+    overflow: hidden;
+  }
+  &sidebar-contact-info{
+    border: solid 1px $brand-col-5;
+    padding: $act-unit;
+    border-radius: $act-unit-s;
   }
 }
 
