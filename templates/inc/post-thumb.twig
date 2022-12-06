@@ -29,15 +29,22 @@
         </div>
       {% endif %}
 
-  {% if  post.meta('service_intro_content') %}
+
   <div class="entry-content c-post-thumb__body{{ modClass }}">
+    {% if  post.meta('service_intro_content') %}
     <div class="c-post-thumb__excerpt">
       {{ post.meta('service_intro_content') }}
     </div>
+    {% endif %}
+    <ul>
+      {%  for item in post.meta('service_feature_list') %}
+        <li>{{ item.service_feature }}</li>
+      {% endfor %}
+    </ul>
     {% if thumbLink %}
     <a target="_blank" href="{{ thumbLink }}" class="c-post-thumb__read-more">{{ thumbLinkLabel  }}</a>
     {% endif %}
   </div>
-  {% endif %}
+
 
 </article>
