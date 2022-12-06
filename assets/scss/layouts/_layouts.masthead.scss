@@ -50,8 +50,8 @@ BEM ELEMENTS .l-masthead__
     }
   }
   &navigation{
-    display: none;
-    @extend .element--band-block-bottom;
+    border-top: solid $brand-col-5;
+   @extend .element--band-plain-bottom;
     //@extend .is-split-nav;
     //@extend .element--abso-layer;
     @include mq($from: desktop){
@@ -82,10 +82,50 @@ BEM ELEMENTS .l-masthead__
   &masthead-before-widgets{
     @extend .element--abso-layer;
     padding: $act-unit;
+    width: 1200px;
+    left: 50% !important;
+    transform: translate(-50%, 0);
+    text-align: right;
+
   }
 }
 
+/*
+ * band-plain-bottom
+ */
+.element--band-plain-bottom{
 
+  .c-nav-menu__link{
+    border-top: solid transparent  4px;
+  }
+
+  .current-menu-item{
+    .c-nav-menu__link{
+      font-weight: 500;
+      border-top: solid $brand-col-2 4px;
+    }
+  }
+
+  @include mq($from : desktop){
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background: transparent;
+
+    margin: 0;
+  }
+  .c-nav-menu{
+
+  }
+  .c-nav-menu__link{
+    color: $brand-col-1;
+    &:hover{
+      font-weight: 500;
+      border-top: solid $brand-col-2 4px;
+    }
+
+  }
+}
 /*
  * band-block-bottom
  */
@@ -156,6 +196,9 @@ BEM ELEMENTS .l-masthead__
   left: 0;
   position: absolute;
   pointer-events: none;
+  > *{
+    pointer-events: all;
+  }
 }
 
 .is-split-nav{
