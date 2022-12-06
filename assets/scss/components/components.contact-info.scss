@@ -1,0 +1,75 @@
+/*
+  BEM BLOCK .c-contact-info
+ */
+
+.c-contact-info {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-contact-info--
+ */
+
+.c-contact-info-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-contact-info--
+
+[class*=c-contact-info--] {
+  @extend .c-contact-info;
+}
+
+/*
+  BEM ELEMENTS .c-contact-info__
+ */
+
+.c-contact-info__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+  &item{
+    margin-bottom: $act-unit-s;
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-contact-info--
+
+[class*=c-contact-info__header--] {
+  @extend .c-contact-info__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-contact-info__item--
+
+[class*=c-contact-info__item--] {
+  @extend .c-contact-info__item;
+}
+.c-contact-info__item--{
+  &em{
+    @include act-font-size($act-fs-4);
+    font-weight: bold;
+    margin-bottom: $act-unit;
+  }
+}

@@ -35,7 +35,9 @@ function act_contact( $atts ) {
     extract(shortcode_atts(array(
         'row' => 1,
         'type' => 'item',
-        'event_label' => 'acContact'
+        'event_label' => 'acContact',
+        'class' => '',
+        'sep' => ':'
     ), $atts));
 
     //return 'contact' . $row;
@@ -48,13 +50,13 @@ function act_contact( $atts ) {
 
     switch ($contact_type){
         case 'email':
-            $contact_link = '<a  data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a  class="c-contact-info__link--email" data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'tel':
-            $contact_link = '<a data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a class="c-contact-info__link--tel" data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'website':
-            $contact_link = '<a href="'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a class="c-contact-info__link" href="'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'other':
             $contact_link = $contact_value;
@@ -66,12 +68,14 @@ function act_contact( $atts ) {
     $output = '';
     switch ($type){
         case 'item' :
-            $output .= '<div class="c-company-contact-item">';
-            $output .= '<span class="c-company-contact-item__label">';
+            $itemClass = 'c-contact-info__item--'.$contact_type. ' ' . $class;
+
+            $output .= '<div class="'.$itemClass.'">';
+            $output .= '<span class="c-contact-info__label">';
             $output .= $contact_label;
             $output .= '</span>';
-            $output .= '<span class="c-company-contact-item__sep"> : </span>';
-            $output .= '<span class="c-company-contact-item__value">';
+            $output .= '<span class="c-contact-info__sep"> '. $sep .' </span>';
+            $output .= '<span class="c-contact-info__value">';
             $output .= $contact_link;
             $output .= '</span">';
             $output .= '</div>';
