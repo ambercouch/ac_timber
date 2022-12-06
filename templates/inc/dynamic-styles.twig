@@ -33,7 +33,7 @@
 
   {% if (fn('is_front_page') and cssBannerImageSaturation ) or (not fn('is_front_page') and pageSettingsShowSiteHero == true  and cssBannerImageSaturation) %}
   /*  cssBannerImageSaturation */
-  .c-image__background {
+  .c-image--background {
     -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
     filter: saturate({{ cssBannerImageSaturation }}%) !important;
   }
