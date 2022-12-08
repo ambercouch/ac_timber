@@ -36,9 +36,20 @@
       {{ post.meta('service_intro_content') }}
     </div>
     {% endif %}
-    <ul>
+    <ul class="c-feature-list__list" >
       {%  for item in post.meta('service_feature_list') %}
-        <li>{{ item.service_feature }}</li>
+        <li class="c-feature-list__item" >
+           <span class="c-feature-list__item-icon">
+              <span class="c-svg-icon">
+                {% include "inc/svg-icon.twig" with {'icon' : 'icon-check'} %}
+              </span>
+            </span>
+
+          <span class="c-feature-list__item-text">
+              {{ item.service_feature }}
+            </span>
+
+          </li>
       {% endfor %}
     </ul>
     {% if thumbLink %}
