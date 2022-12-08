@@ -1,0 +1,6 @@
+{# Usage {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-down'} %} #}
+<span class="c-svg-icon{{ svgIconClass }} c-svg-icon--{{ icon }}">
+          <svg class="c-svg-icon__svg--{{ icon }}">
+            <use xlink:href="#{{ icon }}"></use>
+          </svg>
+</span>
