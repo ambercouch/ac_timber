@@ -25,6 +25,7 @@
     padding-right: $act-unit * 1.5;
     color: white !important;
     background: $brand-col-4;
+    border-radius: $act-unit-s;
     &:hover, &:focus{
       background: darken($brand-col-4,10%);
     }
@@ -32,6 +33,11 @@
   &secondary{
     @extend .c-btn--primary;
     background: $brand-col-2;
+  }
+  &thumb-read-more{
+    @extend .c-btn--primary;
+    @extend .o-btn--block;
+
   }
   &type {
     display: block
@@ -98,3 +104,18 @@
 [class*=c-btn__header--] {
   @extend .c-btn__header;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__link--
+
+[class*=c-btn__link--] {
+  @extend .c-btn__link;
+}
+
+.c-btn__link--{
+  &thumb-read-more{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+

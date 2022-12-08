@@ -18,6 +18,7 @@
     flex-direction: column;
     max-width: 1440px;
   }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-post-thumb-list--
@@ -63,7 +64,6 @@
   &item{
     @extend .o-list-bare__item;
     width: 33.333%;
-    text-align: center;
     padding-left: 0;
   }
 }
@@ -86,6 +86,8 @@
   }
   &service{
     flex-wrap: wrap;
+    align-items: flex-start;
+    gap: $act-unit
   }
 }
 
@@ -97,15 +99,15 @@
 
 .l-post-thumb-list__item--{
   &service{
-    width: 50%;
+    width: calc(50% - 12px);
     &:first-child{
-      background: $brand-col-1;
+      //background: $brand-col-1;
     }
     &:last-child{
-      background: $brand-col-3;
+      //background: $brand-col-3;
     }
     &:nth-child(2){
-      background: $brand-col-5;
+      //background: $brand-col-5;
     }
   }
   &column{
