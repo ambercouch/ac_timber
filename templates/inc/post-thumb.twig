@@ -42,7 +42,17 @@
       {% endfor %}
     </ul>
     {% if thumbLink %}
-    <a target="_blank" href="{{ thumbLink }}" class="c-post-thumb__read-more">{{ thumbLinkLabel  }}</a>
+      <div class="c-btn--thumb-read-more">
+        <a target="_blank" href="{{ thumbLink }}" class="c-btn__link--thumb-read-more">
+          <span class="c-btn__lable--thumb-read-more">
+          {{ thumbLinkLabel  }}
+          </span>
+          <span class="c-btn__icon--thumb-read-more">
+            {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-right'} %}
+          </span>
+        </a>
+      </div>
+
     {% endif %}
   </div>
 
