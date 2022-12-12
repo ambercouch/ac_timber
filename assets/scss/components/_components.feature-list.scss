@@ -69,6 +69,7 @@
   &item-icon{
     display: block;
     flex-basis: $act-unit ;
+    color: $col-accent;
     @include size($act-unit);
     padding: 2px;
   }

@@ -100,8 +100,8 @@
 
 .c-header__heading--{
   &page{
-    text-decoration: underline;
-    @include act-font-size($act-fs-g);
+    text-decoration: none;
+    @include act-font-size($act-fs-1);
     font-weight: 900;
   }
   &service{
