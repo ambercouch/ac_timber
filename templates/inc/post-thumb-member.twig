@@ -1,0 +1,76 @@
+{% set modClass = (postType) ? '--'~postType : '' %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+
+{% set postLink = post.link %}
+{% set altLink = post.meta('post_thumb_link') %}
+{% set thumbLink = (altLink) ? altLink : postLink  %}
+{% set thumbLinkLabel = (altLink) ? post.meta('post_thumb_link_label') : 'Read More' %}
+{% set featureImage = (featureImage) ? featureImage : 'hide' %}
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+  <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+  {% if post.meta('custom_post_icon') %}
+    <div class="c-post-thumb__post-icon">
+      <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+    </div>
+  {% endif %}
+
+    {% if featureImage %}
+      <div class="c-post-thumb__feature-image{{ modClass }}">
+        {% include "inc/feature-image.twig" with {
+          'imgObj' : featureImage
+        }
+        %}
+      </div>
+      {% else %}
+      <!-- NO POST THUMBNAIL -->
+    {%  endif %}
+  </a>
+
+      {% if headerTitle != false %}
+        <div class="c-post-thumb__header{{ modClass }}">
+          {% include "inc/header.twig" %}
+        </div>
+      {% endif %}
+
+
+  <div class="entry-content c-post-thumb__body{{ modClass }}">
+    {% if  post.meta('service_intro_content') %}
+    <div class="c-post-thumb__excerpt">
+      {{ post.meta('service_intro_content') }}
+    </div>
+    {% endif %}
+    <ul class="c-feature-list__list" >
+      {%  for item in post.meta('service_feature_list') %}
+        <li class="c-feature-list__item" >
+           <span class="c-feature-list__item-icon">
+              <span class="c-svg-icon">
+                {% include "inc/svg-icon.twig" with {'icon' : 'icon-check'} %}
+              </span>
+            </span>
+
+          <span class="c-feature-list__item-text">
+              {{ item.service_feature }}
+            </span>
+
+          </li>
+      {% endfor %}
+    </ul>
+    {% if thumbLink %}
+      <div class="c-btn--thumb-read-more">
+        <a target="_blank" href="{{ thumbLink }}" class="c-btn__link--thumb-read-more">
+          <span class="c-btn__lable--thumb-read-more">
+          {{ thumbLinkLabel  }}
+          </span>
+          <span class="c-btn__icon--thumb-read-more">
+            {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-right'} %}
+          </span>
+        </a>
+      </div>
+
+    {% endif %}
+  </div>
+
+
+</article>
