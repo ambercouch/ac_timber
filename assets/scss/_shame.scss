@@ -26,3 +26,32 @@
   max-width: 100%;
 }
 
+.wp-block-quote{
+  display: grid;
+  grid-template-columns: $act-unit-l 1fr;
+  column-gap: $act-unit-l;
+  background: $brand-col-5;
+  padding: $act-unit;
+  color: $brand-col-4;
+  border-left: 0;
+  border-radius: $act-unit-s;
+  &:before{
+    content:url('assets/images/svg/quote-left-shl.svg');
+    display: inline-block;
+    @include size($act-unit-l);
+
+
+  }
+  p{
+    @include act-font-size($act-fs-2);
+    font-weight: 700;
+  }
+  cite{
+    grid-column-start: 2;
+    font-style: normal;
+    &:before{
+      content: '- '
+    }
+  }
+}
+

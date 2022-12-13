@@ -9,7 +9,7 @@
 
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
-  <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+
   {% if post.meta('custom_post_icon') %}
     <div class="c-post-thumb__post-icon">
       <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
@@ -26,51 +26,65 @@
       {% else %}
       <!-- NO POST THUMBNAIL -->
     {%  endif %}
-  </a>
 
+<div class="c-post-thumb__wrapper">
       {% if headerTitle != false %}
         <div class="c-post-thumb__header{{ modClass }}">
-          {% include "inc/header.twig" %}
+          {% include "inc/header.twig" with {
+            templateSubtitleAfter : post.meta('member_role')
+          }
+          %}
         </div>
       {% endif %}
 
 
-  <div class="entry-content c-post-thumb__body{{ modClass }}">
-    {% if  post.meta('service_intro_content') %}
-    <div class="c-post-thumb__excerpt">
-      {{ post.meta('service_intro_content') }}
-    </div>
-    {% endif %}
+  <div class="entry-content c-post-thumb__body{{ modClass }}" >
     <ul class="c-feature-list__list" >
-      {%  for item in post.meta('service_feature_list') %}
+      {%  for item in post.meta('member_contact_info') %}
+
+        {% if item.acf_fc_layout == 'contact_email' %}
+          {% set contactInfo = item.contact_email_address %}
+          {% set infoMarkUp = '<a class="c-feature-list__link--email" href="mailto:' ~ contactInfo ~ '" >' ~ contactInfo ~ '</a>' %}
+          {% set icon = 'icon-envelope' %}
+        {% elseif item.acf_fc_layout == 'contact_mobile' %}
+          {% set contactInfo = item.contact_mobile_number%}
+          {% set infoMarkUp = '<a class="c-feature-list__link--mob" href="tel:' ~ contactInfo ~ '" >' ~ contactInfo ~ '</a>' %}
+          {% set icon = 'icon-mobile-alt-solid' %}
+        {% elseif item.acf_fc_layout == 'contact_tel' %}
+          {% set contactInfo = item.contact_telephone_number%}
+          {% set infoMarkUp = '<a class="c-feature-list__link--tel" href="tel:' ~ contactInfo ~ '" >' ~ contactInfo ~ '</a>' %}
+          {% set icon = 'icon-phone' %}
+          {% else %}
+      {% set infoMarkUp = '' %}
+      {% endif %}
+
         <li class="c-feature-list__item" >
            <span class="c-feature-list__item-icon">
               <span class="c-svg-icon">
-                {% include "inc/svg-icon.twig" with {'icon' : 'icon-check'} %}
+                {% include "inc/svg-icon.twig" with {'icon' : icon } %}
               </span>
             </span>
 
           <span class="c-feature-list__item-text">
-              {{ item.service_feature }}
+              {{  infoMarkUp }}
             </span>
 
           </li>
       {% endfor %}
     </ul>
-    {% if thumbLink %}
-      <div class="c-btn--thumb-read-more">
-        <a target="_blank" href="{{ thumbLink }}" class="c-btn__link--thumb-read-more">
-          <span class="c-btn__lable--thumb-read-more">
-          {{ thumbLinkLabel  }}
-          </span>
-          <span class="c-btn__icon--thumb-read-more">
-            {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-right'} %}
-          </span>
-        </a>
-      </div>
-
-    {% endif %}
+{#    {% if thumbLink %}#}
+{#      <div class="c-btn--thumb-read-more">#}
+{#        <a target="_blank" href="{{ thumbLink }}" class="c-btn__link--thumb-read-more">#}
+{#          <span class="c-btn__lable--thumb-read-more">#}
+{#          {{ thumbLinkLabel  }}#}
+{#          </span>#}
+{#          <span class="c-btn__icon--thumb-read-more">#}
+{#            {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-right'} %}#}
+{#          </span>#}
+{#        </a>#}
+{#      </div>#}
+{#    {% endif %}#}
   </div>
 
-
+</div>
 </article>

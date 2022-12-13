@@ -33,6 +33,10 @@
   &blog-list{
     text-align: left;
   }
+  &member{
+    border: solid 1px $brand-col-6;
+    border-radius: $act-unit-s;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--
@@ -101,6 +105,7 @@
   }
   &wrapper{
     display: block;
+    padding: 0 $act-unit;
   }
   &overlay-wrapper{
     position: absolute;
@@ -179,6 +184,9 @@
       top:0;
       left: 0;
     }
+  }
+  &member{
+    border-radius: $act-unit-s $act-unit-s 0 0;
   }
  }
 

@@ -2,6 +2,7 @@
 .l-single-page {
   display: block;
   @include inuit-clearfix();
+  margin-bottom: $act-unit-h;
 }
 
 [class*='l-single-page--']{

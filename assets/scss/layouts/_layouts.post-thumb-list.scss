@@ -19,6 +19,7 @@
     max-width: 1440px;
   }
 
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-post-thumb-list--
@@ -89,6 +90,10 @@
     align-items: flex-start;
     gap: $act-unit
   }
+  &member{
+   margin-left: -$act-unit-s;
+    margin-right: -$act-unit-s;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -112,6 +117,9 @@
   }
   &column{
     width: 100%;
+  }
+  &member{
+    padding: 0 $act-unit-s;
   }
 }
 

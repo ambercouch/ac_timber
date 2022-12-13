@@ -20,6 +20,16 @@
   &arrow-right{
     @include size($act-unit-s);
   }
+  &icon-phone{
+    transform: rotateZ(90deg);
+    @include size($act-unit-s * 1.5)
+  }
+  &icon-envelope{
+    @include size($act-unit-s * 1.5)
+  }
+  &icon-mobile-alt-solid{
+    @include size($act-unit-s * 1.5)
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-svg-icon--
