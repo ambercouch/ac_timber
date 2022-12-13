@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+{% set hasSideBar = true %}
+
+{% block before_head %}
+  <!-- page.twig -->
+  <!-- template - {{ template }} -->
+  <!-- {{ hidePageTitle }} -->
+{% endblock %}
+
+{% block hero %}
+  {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+  %}
+  <section id="siteHero" class="l-site__hero{{ templateClass }}">
+    {% include 'inc/hero.twig' ignore missing %}
+  </section>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% include 'content/content-single-page'~template_slug~'.twig' %}
+  {% endfor %}
+
+{% endblock %}
+
+{% block belowContent %}
+  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
+    {{ parent() }}
+  {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+<div class="l-main__sidebar">
+  <div class="c-sidebar">
+    <div class="c-sidebar__widgets">
+      {{ sidebar_widgets }}
+    </div>
+    {% if post.page_sidebar_custom_code != '' %}
+      <div class="c-sidebar__page-sidebar">
+        {{ fn('do_shortcode', post.page_sidebar_custom_code) }}
+      </div>
+    {% endif %}
+    {% include 'inc/comments.twig' %}
+  </div>
+</div>
+{% endblock %}
+
+
+
+
+
+
