@@ -17,14 +17,17 @@
 @import "settings/settings.shadows";
 @import "settings/settings.headings";
 @import "settings/settings.widths";
-@import "settings/settings.responsive";
 
+@import "settings/settings.responsive";
+@import "settings/settings.spacings";
 
 /*
  INUIT FRAME WORK
  */
 @import "inuit";
 @import "tools/tools.aliases";
+
+
 
 
 
