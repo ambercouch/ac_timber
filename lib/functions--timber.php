@@ -44,6 +44,10 @@ class StarterSite extends TimberSite {
 
         add_filter('excerpt_more', array( $this,'act_excertp_more')); // Add 'View Article' button instead of [...] for Excerpts
 
+
+        add_action( 'wp_footer',  array( $this, 'act_add_footer_styles' )  );
+
+
         // Register all the menu locations.
         foreach (unserialize(ACT_MENUS) as $menu)
         {
@@ -180,6 +184,15 @@ class StarterSite extends TimberSite {
         global $post;
         return '... <a class="c-post-thumb__link-more" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
     }
+
+    function act_add_footer_styles() {
+
+            wp_register_style('act_styles', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css') );
+            wp_enqueue_style('act_styles');
+
+    }
+
+
 
 }
 
