@@ -295,6 +295,10 @@ function act_shortcode_page_sections($atts, $content = null)
 
 
             $section_title = get_sub_field('section_title');
+            $section_id = sanitize_title(get_sub_field('section_id'));
+            if ($section_id == ''){
+                $section_id = sanitize_title($section_title);
+            }
             $section_title_markup = '';
             $section_sub_title = get_sub_field('section_sub_title');
             $section_sub_title_markup = '';
@@ -329,7 +333,7 @@ function act_shortcode_page_sections($atts, $content = null)
             }
 
             $output .= '<div class="l-page-sections__page-section">';
-            $output .= '<div class="c-page-section">';
+            $output .= '<div class="c-page-section" id="'.$section_id.'">';
             $output .= '<div class="c-page-section__feature-image">';
             $output .= $section_image_markup;
             $output .= '</div>';
