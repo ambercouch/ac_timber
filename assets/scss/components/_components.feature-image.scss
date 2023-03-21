@@ -31,7 +31,6 @@ BEM BLOCK .c-feature-image--
   }
   &single-post{
     @include breakout-img();
-    position: relative;
   }
   &cat-pod{
     padding-top: 100%;
