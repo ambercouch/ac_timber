@@ -3,6 +3,7 @@
  */
 
 .l-main-before {
+
   display: block;
   background: $brand-col-3;
   padding-top: 0;
@@ -18,9 +19,8 @@
   }
   &blog{
     background: $brand-col-7;
-    //@extend .c-site-wrapper--responsive;
-    padding-left:  $act-unit;
-    padding-right:  $act-unit;
+    @extend .c-site-wrapper--responsive;
+
   }
 }
 

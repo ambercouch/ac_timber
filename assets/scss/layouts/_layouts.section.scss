@@ -70,7 +70,7 @@
   &blog-intro{
     background: $brand-col-7;
     @include breakout-band($bgc : $brand-col-7);
-    padding: $act-unit 0 0;
+    padding: $act-unit  $act-unit 0;
     padding-bottom: 175px;
 
     @include mq($from : tablet){

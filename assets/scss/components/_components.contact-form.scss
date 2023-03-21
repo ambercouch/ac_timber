@@ -91,9 +91,10 @@
     }
   }
   &label{
+    display: block;
     margin-bottom: $act-unit;
     @include mq($from : tablet){
-      margin-bottom: $act-unit-t;
+      margin-bottom: $act-unit;
     }
     .c-contact-form__input-group &{
       margin-right: 0;
