@@ -67,7 +67,7 @@ ACTIMBER = {
                     console.log("not scrolling")
                     startScroll = false;
                     lastScrollTop = scrollTop;
-                    if(scrollTop >= topHight-){
+                    if(scrollTop >= topHight){
                         $('body').attr('data-pos-top', 'false')
                         console.log('top = false')
                     }else{
