@@ -7,7 +7,7 @@ BEM BLOCK .l-masthead
   @extend .o-wrapper;
   padding: $act-unit;
   padding-top: 0;
-  padding-bottom: 0;
+  //padding-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

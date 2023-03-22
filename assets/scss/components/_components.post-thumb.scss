@@ -68,6 +68,12 @@
   &slide{
     text-align: left !important;
   }
+  &tax-collection{
+    justify-content: flex-start;
+    &>:last-child{
+      margin-top: 0;
+    }
+  }
 
 }
 

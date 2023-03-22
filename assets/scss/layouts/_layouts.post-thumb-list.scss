@@ -28,7 +28,7 @@
     padding-bottom: $act-unit;
   }
   &slides{
-    padding: $act-unit-l 0;
+    padding: 0 0;
     padding-bottom: 0;
     @include mq($from: desktop){
       padding: $act-unit-l $act-unit;

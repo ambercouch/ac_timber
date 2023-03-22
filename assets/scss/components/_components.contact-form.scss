@@ -82,8 +82,11 @@
     background-color: transparent;
     outline: none;
     &::placeholder{
-      color: white;
-      opacity: 0.6;
+      [class*=podcast] &{
+        color: white;
+        opacity: 0.6;
+      }
+
     }
 
   }
@@ -96,8 +99,9 @@
   }
   &label{
     margin-bottom: $act-unit;
+    display: block;
     @include mq($from : tablet){
-      margin-bottom: $act-unit-t;
+      margin-bottom: $act-unit-s;
     }
     .c-contact-form__input-group &{
       margin-right: 0;

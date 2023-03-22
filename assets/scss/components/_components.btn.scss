@@ -22,9 +22,10 @@
   &primary{
 
     @extend .o-btn--rounded;
+    text-align: center;
     color: $brand-col-1;
     background: $brand-col-3;
-    @include act-font-size($act-fs-3,1);
+    @include act-font-size($act-fs-3,1.5);
     font-weight: bold;
     padding-left: $act-unit ;
     padding-right: $act-unit ;
@@ -32,6 +33,10 @@
     &:hover{
       background: darken($brand-col-3, 10%);
       color: $brand-col-1;
+    }
+    @include mq($from : tablet){
+      line-height: 1;
+      text-align: left;
     }
 
   }
@@ -212,7 +217,9 @@
   }
   &label{
     font-size: inherit;
-    white-space: nowrap !important;
+    @include mq($from : tablet){
+      white-space: nowrap !important;
+    }
     .is-loading &{
       display: none;
     }

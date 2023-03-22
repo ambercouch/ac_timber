@@ -144,6 +144,11 @@
   &body{
     @extend .o-box;
     padding: $act-unit-l 0;
+    //padding-top: 0;
+
+    @include mq($from : tablet){
+      padding-top: $act-unit-l;
+    }
     .has-footer &{
       padding-bottom: 175px;
       @include mq($from : tablet){
