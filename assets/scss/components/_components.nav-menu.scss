@@ -130,6 +130,7 @@
   &social{
     @extend .o-list-flex;
     justify-content: flex-start;
+    margin-right: 0 !important;
     @include mq($from : tablet){
       justify-content: flex-end;
     }
@@ -175,6 +176,8 @@
   &social{
     margin-right: $act-unit-s;
     margin-left: 0;
+    padding: 0 !important;
+
   }
   &footer{
     margin-left: $act-unit;

@@ -1,8 +1,9 @@
 .o-list-flex{
   display: flex !important;
-  margin: 0 - $act-unit;
+  margin-left: -$act-unit !important;
+  margin-right: -$act-unit !important;
   > *{
-      padding: 0 $act-unit;
+      padding: 0 $act-unit !important;
   }
 }
 [class*="o-list-flex--"]{

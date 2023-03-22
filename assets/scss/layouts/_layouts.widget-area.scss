@@ -110,6 +110,15 @@
     @include mq($from: tablet){
       padding-left:$inuit-global-spacing-unit ;
       padding-top: $act-unit-l;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:nth-child(2){
+        align-items: flex-start;
+      }
+      &:last-child{
+        align-items: flex-end;
+      }
     }
     &:first-child{
       padding-left:0 ;
