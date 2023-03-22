@@ -440,6 +440,23 @@
 
 }
 
+.l-section.is-equal-height{
+  height: auto;
+
+  .l-section__cols{
+    height: auto;
+  }
+  .l-section__col{
+    height: auto;
+  }
+  .l-section__coll-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 
 
 
