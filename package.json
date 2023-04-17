@@ -4,7 +4,7 @@
   "devDependencies": {
     "animate.css": "^3.5.2",
     "autoprefixer": "^6.7.6",
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.29.1",
     "browsersync": "0.0.1-security",
     "critical": "^1.1.0",
     "cssnano": "^3.10.0",
