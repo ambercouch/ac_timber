@@ -50,6 +50,9 @@
   }
   img{
     border-radius: $act-unit;
+    &.is-icon{
+      border-radius: 0;
+          }
   }
   h1{
     @include act-font-size($act-fs-m, $modifier: -1)
