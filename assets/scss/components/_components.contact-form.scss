@@ -79,12 +79,12 @@
     @extend .o-btn--rounded;
     @include act-font-size($act-fs-5,1);
     color: $brand-col-1;
-    background-color: transparent;
+    background-color: rgba(black, 0.1);
     outline: none;
     &::placeholder{
       [class*=podcast] &{
         color: white;
-        opacity: 0.6;
+        opacity: 0.5;
       }
 
     }
