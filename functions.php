@@ -277,9 +277,8 @@ function ac_loadmore_ajax_handler(){
     die; // here we exit the script and even no wp_reset_query() required!
 }
 
-
-
 add_action('wp_ajax_loadmore', 'ac_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'ac_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 
 
+add_filter('wpcf7_autop_or_not', '__return_false');
