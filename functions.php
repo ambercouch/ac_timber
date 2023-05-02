@@ -153,3 +153,5 @@ function act_disable_classic_editor() {
 
 }
 add_action( 'admin_head', 'act_disable_classic_editor' );
+
+add_filter('wpcf7_autop_or_not', '__return_false');
