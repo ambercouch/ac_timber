@@ -84,7 +84,7 @@ function act_conditional_shipping( $rates, $package ) {
 
         // AC - only allow shipping methods that start with "doorstep" or "local"
         if ( $special_product_present ) {
-            return preg_match( '/local|doorstep/', strtolower( $r->label ) );
+            return preg_match( '/local|doorstep|click/', strtolower( $r->label ) );
         } else {
             return true;
         }
@@ -180,7 +180,7 @@ function ac_remove_hidden_products(){
             $wp_query->set_404();
             status_header(404);
         }
-        
+
     }
 }
 
