@@ -282,3 +282,8 @@ add_action('wp_ajax_nopriv_loadmore', 'ac_loadmore_ajax_handler'); // wp_ajax_no
 
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+add_filter( 'wp_theme_editor_filetypes', function( $filetypes ) {
+    $filetypes[] = 'twig';
+    return $filetypes;
+} );
