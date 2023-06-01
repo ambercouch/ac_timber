@@ -4,7 +4,7 @@
   <ul class="l-post-thumb-list__list--product has-{{ posts|length }}-items">
     {% for post in posts %}
       <li class="l-post-thumb-list__item--product">
-        {% set headerTitle = (post.meta('custom_post_thumb_title') ? post.meta('custom_post_thumb_title') : post.title) %}
+        {% set headerTitle = (post.meta('product_title') ? post.meta('product_title') : post.title) %}
         {% include ["inc/post-thumb-product-box.twig"] with {'postType' : 'product-box', 'headerTitle' : headerTitle} %}
       </li>
     {% endfor %}
