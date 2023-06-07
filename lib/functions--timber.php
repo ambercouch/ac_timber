@@ -67,7 +67,7 @@ class StarterSite extends TimberSite {
 
         //Site vars
         $context['site'] = $this;
-        $context['environment'] = ENVIRONMENT;
+        $context['environment'] = 'production';
 
         //AC Template settings
         $context['acSettings'] = acSettings();

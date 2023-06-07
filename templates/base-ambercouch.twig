@@ -1,0 +1,124 @@
+<!doctype html>
+<html {{ site.language_attributes }} data-env-{{environment}}={{environment}}>
+<head>
+  <!-- base.twig -->
+  {% block before_head %}
+    <!-- beforehead block -->
+  {% endblock %}
+
+  <meta charset="{{ site.charset }}">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="pingback" href="{{ site.pingback_url }}">
+
+  {% include 'inc/favicon.twig' %}
+
+  <!-- Critical CSS -->
+  <style>
+    {% include 'critical.css' ignore missing %}
+  </style>
+  {% include 'inc/dynamic-styles-site-title.twig' %}
+  {% include 'inc/dynamic-styles.twig' %}
+
+  {{ fn('wp_head') }}
+
+  {% block after_head %}
+  {% endblock %}
+
+</head>
+<!-- BS Deploy -->
+<body id="siteBody" class="{{ body_class }} {{ hasHeroClass }} no-js"  data-mobile="off" data-window-top="true" {{ fn('_act_body_data') }}>
+
+
+<div class="defs" style="display: none">
+  {% include 'inc/defs.svg' ignore missing %}
+</div>
+
+<div id="page" class="l-site">
+
+  {% include 'site-accessibility.twig' %}
+
+  {% block header %}
+    <header id="masthead" class="l-site__masthead{{ siteMastheadModClass }} {{ siteMastheadOverlayClass }} {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
+      {% include 'inc/masthead.twig' %}
+    </header>
+  {% endblock %}
+
+  {% block mobile_nav %}
+    {% include 'inc/mobile-nav.twig' %}
+  {% endblock %}
+
+  {% block hero %}
+    {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or  cssPageBannerColourCastColour != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+    %}
+    <section id="siteHero" class="l-site__hero">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
+    {% endif %}
+  {% endblock %}
+
+  {% block before_main %}
+    <section class="l-site__main-before">
+      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}
+    </section >
+  {% endblock %}
+
+  <section id="primary" class="l-site__main">
+    <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-sidebar{% else %}has-no-sidebar{% endif %}">
+      <main class="l-main__content{{ mainMod }}">
+        {% block before_content %}
+        {% endblock %}
+        <div class="l-content{{ contentMod }}">
+          {% block contentHeader %}
+          {% endblock %}
+          {% block content %}
+            <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
+          {% endblock %}
+          {% block contentAside %}
+          {% endblock %}
+          {% block contentFooter %}
+          {% endblock %}
+        </div>
+        {% block belowContent %}
+          {% if (fn('comments_open')) %}
+            {% include 'inc/comments.twig' %}
+          {% endif %}
+        {% endblock %}
+      </main>
+      {% block sidebar %}
+      {% endblock %}
+    </div>
+  </section>
+
+  {% block after_main %}
+    <section class="l-site__main-after">
+      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-after'}%}
+    </section >
+  {% endblock %}
+
+  {% block subsidiary %}
+    {% if subsidiary_widgets or menuService %}
+      <section id="subsidiary" class="l-site__subsidiary">
+          {% include 'inc/subsidiary.twig' %}
+      </section>
+    {% endif %}
+  {% endblock %}
+
+  {% block footer %}
+    <footer class="l-site__footer{{ siteFooterModClass }}" role="contentinfo">
+      {% include 'inc/footer.twig' %}
+    </footer>
+  {% endblock %}
+
+  {% include 'inc/footer_scripts.twig' %}
+
+</div>{# /#page #}
+
+</body>
+
+</html>
