@@ -39,6 +39,11 @@ BEM BLOCK MODIFIERS .l-main--
     padding: 0 !important;
     max-width: none;
   }
+  &404{
+    background: transparent;
+    position: relative;
+    padding-right: 20vw;
+  }
 }
 
 
