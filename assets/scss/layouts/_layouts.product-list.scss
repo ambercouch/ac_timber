@@ -1,0 +1,92 @@
+/*
+  BEM BLOCK .l-product-list
+ */
+
+.l-product-list {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-product-list--
+ */
+
+.l-product-list-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-product-list--
+
+[class*=l-product-list--] {
+  @extend .l-product-list;
+}
+
+/*
+  BEM ELEMENTS .l-product-list__
+ */
+
+.l-product-list__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+
+  &list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    @extend .o-list-bare;
+    width: 100%;
+  }
+  &item {
+    padding: $act-unit;
+    @include mq($from : tablet){
+      width: 33.33%;
+    }
+    @include mq($from : desktop){
+      width: 25%;
+    }
+  }
+  &post-thumb{
+    display: block;
+    height: 100%;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-product-list--
+
+[class*=l-product-list__header--] {
+  @extend .l-product-list__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-product-list__list--
+
+[class*=l-product-list__list--] {
+  @extend .l-product-list__list;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-product-list__item--
+
+[class*=l-product-list__item--] {
+  @extend .l-product-list__item;
+}
