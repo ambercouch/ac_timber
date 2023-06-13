@@ -55,7 +55,10 @@ BEM ELEMENTS .l-masthead__
     //@extend .is-split-nav;
     @extend .element--abso-layer;
     @include mq($from: desktop){
-      display: block;
+      /*
+       * Hide main nav
+       */
+      display: none !important;
       margin: $act-unit 0;
     }
   }

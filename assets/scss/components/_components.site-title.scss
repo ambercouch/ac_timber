@@ -33,7 +33,7 @@ BEM BLOCK MODIFIERS .c-site-title
    }
   &text{
     @include size(auto);
-    font-family: $act-font-family-serif;
+    font-family: $act-font-family-headings;
     font-weight: 600;
     display: block;
     margin-bottom: 0;

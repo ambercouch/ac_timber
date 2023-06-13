@@ -75,7 +75,11 @@
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
   }
+  &single-col-page-800{
+    text-align: center;
+  }
 }
+
 /*
  * .c-header extendable styles
  */

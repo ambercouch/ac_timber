@@ -69,3 +69,9 @@ BEM ELEMENTS .hero__
   }
 
 }
+
+//BEM ELEMENT MODIFIER  .c-contact-form__ELEMENT--
+
+[class*=hero__body--] {
+  @extend .hero__body;
+}

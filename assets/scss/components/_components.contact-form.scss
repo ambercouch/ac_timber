@@ -80,7 +80,7 @@
   }
   &label{
     display: block;
-    margin-bottom: $act-unit-t;
+    margin-bottom: $act-unit;
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
@@ -104,7 +104,7 @@
   &content {
     display: block;
     padding: $act-unit;
-    background: $brand-col-1;
+    background: $brand-col-4;
     //@extend .c-contact-form__content--placeholder-blocks;
   }
   &footer {
