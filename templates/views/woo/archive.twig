@@ -1,0 +1,34 @@
+{% extends 'base.twig' %}
+
+{% set collectionMod =  collectionMod ? '--'~collectionMod  : '' %}
+
+{% block hero %}
+{% endblock %}
+
+
+
+{% block content %}
+
+
+  <div class="l-product-list{{ collectionMod }}">
+    <ul class="l-product-list__list{{ collectionMod }}">
+    {% for post in products %}
+      {% set product = fn('wc_get_product' , post.ID ) %}
+      {% set classAjaxAdd = product.supports('ajax_add_to_cart') ? 'add_to_cart_button ajax_add_to_cart' : '' %}
+
+      <li class="l-product-list__item{{ collectionMod }}">
+        <!-- product.supports('ajax_add_to_cart') = {{ product.supports('ajax_add_to_cart') }} * -->
+        <article {{ fn('post_class', ['entry', 'l-product-list__post-thumb'] ) }}>
+        {% include ["inc/tease-product.twig"] %}
+        </article>
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
+
+  {% do action('woocommerce_after_shop_loop') %}
+
+{% endblock  %}
+
+{% block belowContent %}
+{% endblock %}

@@ -25,6 +25,7 @@ class StarterSite extends TimberSite {
         ));
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
+        add_theme_support( 'woocommerce' );
 
         add_image_size ( 'feature500', 500, 500, true );
         add_image_size ( 'feature16-9', 1600, 900, true );
@@ -203,9 +204,11 @@ function ac_dd($var){
     die();
 }
 
-function myfoo( $text ) {
-    $text .= ' bar!';
-    return $text;
+function timber_set_product( $post ) {
+    global $product;
+    if ( is_woocommerce() ) {
+        $product = wc_get_product( $post->ID );
+    }
 }
 
 require_once get_template_directory() . '/lib/wp-timber/timber--nav-menu.php';

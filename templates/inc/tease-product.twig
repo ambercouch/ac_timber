@@ -1,0 +1,34 @@
+
+{{ fn('timber_set_product', post) }}
+<div class="c-post-thumb--product">
+
+  <div class="c-post-thumb__content">
+
+    {#      {% do  action('woocommerce_before_shop_loop_item_title') %}#}
+
+    <div class="c-post-thumb__feature-image {% if not post.thumbnail %}placeholder{% endif %}">
+      <a class="c-post-thumb__image-link " title="Click to find out more" href="{{ post.link }}">
+        {% if post.thumbnail %}
+          <img class="c-post-thumb__img" src="{{ post.thumbnail.src }}" />
+        {% else %}
+          <span class="c-post-thumb__placeholder thumb-placeholder"><i class="icon-camera"></i></span>
+        {% endif %}
+      </a>
+    </div>
+    <div class="c-post-thumb__meta">
+      {% if post.title %}
+        <h3 class="entry-title c-post-thumb__heading"><a href="{{ post.link }}">{{ post.title }}</a></h3>
+      {% else %}
+        <h3 class="entry-title c-post-thumb__heading"><a href="{{ post.link }}">{{ fn('the_title') }}</a></h3>
+      {% endif %}
+      <div class="c-post-thumb__footer">
+        <div class="c-post-thumb__price">{{ product.get_price_html }}</div>
+        <div class="c-post-thumb__add-btn"><a href="{{ product.add_to_cart_url }}" data-product_id="{{ product.get_id }}" data-product_sku="{{ product.get_sku }}" data-quantity="1" class="button c-btn--product-cta product_type_simple {{ classAjaxAdd }} product-type_{{ product.type }}">{{ product.add_to_cart_text }}</a></div>
+        <div class="c-post-thumb__read-more"><a href="{{ post.link }}" class="c-post-thumb__read-more-link">Read more</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
