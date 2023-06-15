@@ -25,7 +25,14 @@ class StarterSite extends TimberSite {
         ));
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
+
+        // woocommerce set up
         add_theme_support( 'woocommerce' );
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
+
+
 
         add_image_size ( 'feature500', 500, 500, true );
         add_image_size ( 'feature16-9', 1600, 900, true );
@@ -192,9 +199,7 @@ class StarterSite extends TimberSite {
             wp_enqueue_style('act_styles');
 
     }
-
-
-
+    
 }
 
 new StarterSite();
