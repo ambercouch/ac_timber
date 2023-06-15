@@ -209,11 +209,61 @@ function ac_dd($var){
     die();
 }
 
-function timber_set_product( $post ) {
-    global $product;
-    if ( is_woocommerce() ) {
-        $product = wc_get_product( $post->ID );
+function timber_set_product( $post )
+    {
+        global $product;
+
+        if (is_woocommerce())
+        {
+            $product = wc_get_product($post->ID);
+        }
     }
+
+/*
+ * AC Fix for woocommerce_upsell_display when using PHP 8.1
+ * Fatal error: Uncaught TypeError: array_slice(): Argument #3 ($length) must be of type ?int, array given in /home/vagrant/code/etp/public/wp-content/plugins/woocommerce/includes/wc-template-functions.php on line 2120
+ * Fix : cast $limit to (int)
+ * https://stackoverflow.com/a/76481455/1640115
+*/
+function woocommerce_upsell_display( $limit = '-1', $columns = 4, $orderby = 'rand', $order = 'desc' ) {
+    global $product;
+
+    if ( ! $product ) {
+        return;
+    }
+
+    // Handle the legacy filter which controlled posts per page etc.
+    $args = apply_filters(
+        'woocommerce_upsell_display_args',
+        array(
+            'posts_per_page' => $limit,
+            'orderby'        => $orderby,
+            'order'          => $order,
+            'columns'        => $columns,
+        )
+    );
+    wc_set_loop_prop( 'name', 'up-sells' );
+    wc_set_loop_prop( 'columns', apply_filters( 'woocommerce_upsells_columns', isset( $args['columns'] ) ? $args['columns'] : $columns ) );
+
+    $orderby = apply_filters( 'woocommerce_upsells_orderby', isset( $args['orderby'] ) ? $args['orderby'] : $orderby );
+    $order   = apply_filters( 'woocommerce_upsells_order', isset( $args['order'] ) ? $args['order'] : $order );
+    $limit   = (int)apply_filters( 'woocommerce_upsells_total', isset( $args['posts_per_page'] ) ? $args['posts_per_page'] : $limit );
+
+    // Get visible upsells then sort them at random, then limit result set.
+    $upsells = wc_products_array_orderby( array_filter( array_map( 'wc_get_product', $product->get_upsell_ids() ), 'wc_products_array_filter_visible' ), $orderby, $order );
+    $upsells = $limit > 0 ? array_slice( $upsells, 0, $limit ) : $upsells;
+
+    wc_get_template(
+        'single-product/up-sells.php',
+        array(
+            'upsells'        => $upsells,
+
+            // Not used now, but used in previous version of up-sells.php.
+            'posts_per_page' => $limit,
+            'orderby'        => $orderby,
+            'columns'        => $columns,
+        )
+    );
 }
 
 require_once get_template_directory() . '/lib/wp-timber/timber--nav-menu.php';
