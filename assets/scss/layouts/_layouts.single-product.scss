@@ -1,0 +1,73 @@
+/*
+  BEM BLOCK .l-single-product
+ */
+
+.l-single-product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: $act-unit-l;
+  grid-row-gap: $act-unit-l;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-single-product--
+ */
+
+.l-single-product-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-single-product--
+
+[class*=l-single-product--] {
+  @extend .l-single-product;
+}
+
+/*
+  BEM ELEMENTS .l-single-product__
+ */
+
+.l-single-product__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &summary-after{
+    grid-column-start: 1 ;
+    grid-column-end: 3;
+  }
+  &product-gallery{
+    //display: flex;
+    //justify-content: center;
+    .woocommerce-product-gallery{
+      margin-bottom: 0 !important;
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-single-product--
+
+[class*=l-single-product__header--] {
+  @extend .l-single-product__header;
+}
