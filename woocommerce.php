@@ -29,7 +29,7 @@ if ( is_singular( 'product' ) ) {
     // Restore the context and loop back to the main query loop.
     wp_reset_postdata();
 
-    Timber::render( 'views/woo/single-product.twig', $context );
+    Timber::render( 'woocommerce/single-product.twig', $context );
 } else {
     $posts = Timber::get_posts();
     $context['products'] = $posts;
@@ -48,5 +48,5 @@ if ( is_singular( 'product' ) ) {
         $context['collectionMod'] = $term;
     }
 
-    Timber::render( 'views/woo/archive.twig', $context );
+    Timber::render( 'woocommerce/archive.twig', $context );
 }

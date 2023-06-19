@@ -7,11 +7,14 @@
 
   {% do action('woocommerce_before_single_product') %}
 
-  <div itemscope itemtype="http://schema.org/Product" class="c-product{{ templateClass }} {{ post.class }}">
+  <div itemscope itemtype="http://schema.org/Product" class="l-single-product{{ templateClass }} {{ post.class }}">
 
-    <div class="c-product__feature-image{{ templateClass }}">
+    <div class="l-single-product__product-gallery{{ templateClass }}">
+      <div class="c-product-gallery">
+
+
       {% if image_product_badge and product_badge_position != 'hidden' %}
-        <div class="c-product__product-badge is-position-{{ product_badge_position }}">
+        <div class="c-product-badge is-position-{{ product_badge_position }}">
           <div class="c-product-badge--feature-image">
             <img src="{{ image_product_badge.url }}" alt="" class="c-product-badge__img--feature-image ">
           </div>
@@ -21,17 +24,17 @@
 {#      <div class="c-feature-image--single-page">#}
 {#        <img class="c-feature-image__img--single-page" src="{{ post.thumbnail.src('shop_single') }}" />#}
 {#      </div>#}
-    </div>
+        </div>
+      </div>
 
-    <div class="c-product__summary">
+    <div class="l-single-product__product-summary">
 {#      <header class="c-product__header">#}
 {#        <h1 class="c-product__heading">{{ post.title }}</h1>#}
 {#      </header>#}
       {% do action('woocommerce_single_product_summary') %}
     </div>
-    <div class="c-product__summary-after">
+    <div class="l-single-product__summary-after">
     {% do action('woocommerce_after_single_product_summary') %}
-
     <meta itemprop="url" content="{{ post.link }}" />
     </div>
 
