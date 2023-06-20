@@ -40,7 +40,7 @@ function act_contact( $atts ) {
 
     //return 'contact' . $row;
     $contact_items = get_field('contact', 'options');
-    $contact_item = $contact_items[$row - 1];
+    $contact_item = ( isset($contact_items[$row - 1])) ? $contact_items[$row - 1] : $contact_items[0];
     $contact_type = $contact_item['contact_type'];
     $contact_label = $contact_item['contact_label'];
     $contact_value_key = 'contact_'.$contact_type;
