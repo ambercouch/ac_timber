@@ -20,6 +20,9 @@
   &type {
     display: block
   }
+  &post-collection{
+    margin-bottom: $act-unit-l;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-content-before--

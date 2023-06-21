@@ -47,6 +47,14 @@
   &section-header{
     text-align: center;
   }
+  &post-collection{
+    text-align: center;
+    margin-bottom: $act-unit-l;
+  }
+  &post-collection-archive{
+    text-align: center;
+    margin-bottom: $act-unit-h;
+  }
   &tax-collection{
     text-align: left;
   }
@@ -181,6 +189,11 @@
     @include act-font-size($act-fs-m);
     font-weight: 900;
     margin-bottom: $act-unit-l;
+  }
+  &post-collection{
+    @include act-font-size($act-fs-m);
+    font-weight: 900;
+    margin-bottom: $act-unit-t;
   }
   &single-col-page-800{
     @extend .c-header__heading--page;

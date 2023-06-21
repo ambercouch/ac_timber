@@ -40,7 +40,14 @@ if ( is_day() ) {
     $context['cate'] = $tax.'-'.$cate_slug;
 } elseif ( is_post_type_archive() ) {
     $context['title'] = post_type_archive_title( '', false );
+
     array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+} elseif (is_tax()){
+
+    $q = get_queried_object();
+    $tax_slug = strtr($q->taxonomy, '_', '-');
+    $context['termTitle'] = $q->name;
+    array_unshift( $templates, 'archive-' .  $tax_slug . '.twig' );
 }
 
 $page_for_posts = get_option( 'page_for_posts' );
