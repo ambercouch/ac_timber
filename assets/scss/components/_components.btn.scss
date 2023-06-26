@@ -4,13 +4,10 @@
 
 .c-btn {
   @extend .o-btn;
-  &:hover, &:focus{
-    color: white;
-    background: darken($brand-col-1,10%);
-  }
-  &:active{
-    color: white;
-    background: darken($brand-col-1,20%);
+  border-radius: 0;
+  &.is-loading{
+    cursor: default;
+    pointer-events: none;
   }
 }
 
@@ -21,6 +18,45 @@
 .c-btn--{
   &type {
     display: block
+  }
+  &primary{
+    @extend .c-btn;
+    text-align: center;
+    color: $col-text;
+    background: $col-accent;
+    @include act-font-size($act-fs-4,1);
+    font-weight: bold;
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+    margin-bottom: $act-unit;
+    &:hover, &:active, &:focus {
+      background: lighten($col-accent, 10%);
+      color: $col-text;
+    }
+    @include mq($from : tablet){
+      line-height: 1;
+      text-align: left;
+    }
+    a{
+      color: $col-text;
+    }
+
+  }
+  &secondary{
+    @extend .c-btn;
+    //@extend .c-btn--ghost;
+    color: $col-light;
+    @include act-font-size($act-fs-4,1);
+    //font-weight: bold;
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+    &:hover, &:active, &:focus {
+      background: darken($col-accent, 10%);
+      color: $col-light;
+    }
+    a{
+      color: $col-light;
+    }
   }
   &n{
     @extend .c-btn;

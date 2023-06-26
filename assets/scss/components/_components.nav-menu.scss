@@ -217,6 +217,9 @@
       }
     }
   }
+  &hero{
+    @extend .c-btn--primary;
+  }
 }
 
 
