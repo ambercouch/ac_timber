@@ -5,6 +5,7 @@
   {%   set menuName = pageBannerMenuName %}
   {% else %}
     {% set menuName = "hero" %}
+    {% set menu = _context['menu' ~ menuName | capitalize ] %}
 {% endif %}
 
 <div class="c-hero" >
@@ -17,7 +18,7 @@
     {% endif %}
 
 
-    <div class="c-hero__body{{ templateClass }}">
+    <div class="c-hero__body{{ templateClass }} {{ classSiteBannerContentPosHoz}} {{ classSiteBannerContentPosVert }}">
 
       {% if bannerLogo.url != '' %}
       <div class="c-hero__logo">
@@ -25,17 +26,19 @@
       </div>
       {% endif %}
 
-      {% if  bannerContent != '' %}
-      <div class="c-hero__content">
+      {% if  bannerContent != '' or (not hideBannerMenu and menuName != '') %}
+      <div class="c-hero__content {{ classSiteBannerContentStyle }}" style="width:{{ cssSiteBannerContentWidth }}">
         {{  bannerContent  }}
+
+        {% if not hideBannerMenu and menu | length %}
+          <div class="c-hero__nav-menu--hero-cta">
+            {% include 'inc/navigation.twig' %}
+          </div>
+        {% endif %}
+
       </div>
       {% endif %}
 
-      {% if not hideBannerMenu and menuName != '' %}
-      <div class="c-hero__nav-menu--call-to-action">
-        {% include 'inc/navigation.twig' %}
-      </div>
-      {% endif %}
     </div>
   </div>
 </div>

@@ -174,6 +174,23 @@ class StarterSite extends TimberSite {
 
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
+
+        /*
+         * Banner content classes
+         */
+
+        $site_banner_width = get_field('banner_content_width','options');
+        $site_banner_opacity = get_field('banner_content_background_opacity','options') / 100;
+        $site_banner_style_class = 'is-' . get_field('banner_content_style','options') .'-background';
+        $site_banner_h_position = get_field('banner_content_position_horizontal','options');
+        $site_banner_v_position = get_field('banner_content_position_vertical','options');
+
+        $context['cssSiteBannerContentWidth'] = $site_banner_width;
+        $context['classSiteBannerContentStyle'] = $site_banner_style_class;
+        $context['cssSiteBannerContentOpacity'] =  $site_banner_opacity ;
+        $context['classSiteBannerContentPosHoz'] = $site_banner_h_position ;
+        $context['classSiteBannerContentPosVert'] = $site_banner_v_position ;
+
         return $context;
 
     }
@@ -199,7 +216,7 @@ class StarterSite extends TimberSite {
             wp_enqueue_style('act_styles');
 
     }
-    
+
 }
 
 new StarterSite();

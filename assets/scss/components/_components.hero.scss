@@ -25,7 +25,6 @@ BEM ELEMENTS .c-hero__
 
   }
   &body{
-    //display: none !important;
     position: relative;
     width: 100%;
     color: white;
@@ -35,16 +34,21 @@ BEM ELEMENTS .c-hero__
     align-items: center;
     justify-content: center;
     z-index: 2;
-    flex-direction: column;
+    flex-direction: row;
+    @extend .u-p-l--desktop;
+    @extend .u-p--tablet;
+    @extend .u-p-s--mobile;
   }
   &content{
+    @extend .o-island;
     display: inline-block;
-    padding: $act-unit-s;
+    padding: $act-unit-l;
     text-align: center;
     max-width: 100%;
-    width: 1000px;
-    * {
-      color: white;
+    position: relative;
+    > * {
+      position: relative;
+      z-index: 1;
     }
   }
  &menu{
@@ -81,4 +85,55 @@ BEM ELEMENTS .c-hero__
   height: 100%;
   width: 100%;
   filter: saturate(10%);
+}
+
+.is-dark-background{
+  &.c-hero__content{
+    position: relative;
+    color: $col-light;
+    p{
+      color:  $col-light;
+    }
+    a{
+      color:  $col-light;
+    }
+    a:hover{
+      color: darken($col-dark, 20%);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+      background: $col-dark;
+    }
+  }
+}
+.is-light-background{
+  &.c-hero__content{
+    position: relative;
+    color: $col-dark;
+    p{
+      color: $col-dark;
+    }
+    a{
+      color: $col-dark;
+    }
+    a:hover{
+      color: darken($col-dark, 20%);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+      background: $col-light;
+    }
+  }
 }
