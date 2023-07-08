@@ -185,4 +185,19 @@ function ac_remove_hidden_products(){
 }
 
 
+add_filter('woocommerce_variable_price_html', 'act_variation_from_price', 10, 2);
+add_filter('woocommerce_variable_subscription_price_html', 'act_variation_from_price', 10, 2);
+
+function act_variation_from_price( $price, $product ) {
+
+    $price = '';
+
+    $price .= "<span>From: </span>";
+    $price .= wc_price($product->get_price());
+
+    return $price;
+}
+
+
+
 
