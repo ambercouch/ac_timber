@@ -21,28 +21,10 @@
     </div>
   {% endif %}
     <div class="entry-content l-single-page__body{{ templateClass }} ">
-      <div class="l-single-page__body-intro">
-        {{ post.content }}
-      </div>
-
-      {%  if post.meta('content_column_1') or  post.meta('content_column_2') %}
-      <div class="l-single-page__body-additional-content">
-        <div class="l-page-columns__columns--flex is-2-col">
-          <div class="l-page-columns__col--flex">
-            {{ post.meta('content_column_1') }}
-          </div>
-          <div class="l-page-columns__col--flex">
-            {{ post.meta('content_column_2') }}
-          </div>
-        </div>
-      </div>
-      {%  endif %}
+      {{ post.content }}
     </div>
 
-
-  {% if post.meta('page_footer') %}
     <footer class="l-single-page__footer{{ templateClass }} ">
     </footer>
-  {% endif %}
 
 </article>

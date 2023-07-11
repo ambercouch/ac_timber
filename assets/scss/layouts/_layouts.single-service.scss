@@ -1,14 +1,14 @@
 /*
-BEM BLOCK .c-single-service
+BEM BLOCK .l-single-service
  */
-.c-single-service {
+.l-single-service {
   max-width: $article-max-width;
   margin: 0 auto;
 
 
 }
 
-.c-single-service--{
+.l-single-service--{
   &layout5050{
     @include mq($from : tablet){
       display: grid;
@@ -19,14 +19,14 @@ BEM BLOCK .c-single-service
 }
 
 /*
-BEM BLOCK ELEMENTS .c-single-service__
+BEM BLOCK ELEMENTS .l-single-service__
  */
 
-.c-single-service__{
+.l-single-service__{
 
   &feature-image{
-    margin-bottom: $inuit-global-spacing-unit;
-
+    margin-bottom: $act-unit-l;
+    padding: 0 $act-unit
   }
 
   &header{
@@ -47,12 +47,12 @@ BEM BLOCK ELEMENTS .c-single-service__
   }
 
   &content{
-    @extend .o-site-wrapper;
-    @extend .o-island;
     display: block;
-    padding: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;
+    padding: 0 $act-unit $act-unit;
     grid-column-start: right;
     grid-row-start: body;
+    max-width: 100%;
+    width: 800px;
   }
 
   &footer{
@@ -64,9 +64,9 @@ BEM BLOCK ELEMENTS .c-single-service__
   }
 }
 
-.c-single-service__feature-image-- {
+.l-single-service__feature-image-- {
   &layout5050 {
-    @extend .c-single-service__feature-image ;
+    @extend .l-single-service__feature-image ;
     grid-column-start: left;
     grid-row-start: head;
     grid-row-end: 3;
@@ -77,9 +77,9 @@ BEM BLOCK ELEMENTS .c-single-service__
   }
 }
 
-.c-single-service__header-- {
+.l-single-service__header-- {
   &layout5050 {
-    @extend .c-single-service__header;
+    @extend .l-single-service__header;
     text-align: center;
     grid-row-start: 1;
     grid-column-start: right;
