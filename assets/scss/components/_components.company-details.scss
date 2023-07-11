@@ -32,8 +32,7 @@
   }
   &heading {
     display: block;
-    @include act-font-size($act-fs-3);
-    color: white;
+    @include act-font-size($act-fs-4);
     margin-bottom: 0;
   }
   &title {

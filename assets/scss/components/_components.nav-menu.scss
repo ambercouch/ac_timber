@@ -13,6 +13,9 @@
 .c-nav-menu-- {
   &primary {
    @include act-font-size($act-fs-6, 1.3);
+    max-width: $inuit-wrapper-width;
+    margin: 0 auto;
+    padding: 0 $act-unit-l;
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
@@ -55,7 +58,7 @@
     left: -99999px;
     pointer-events: all !important;
     display: none;
-    top: 100%;
+    top: 99%;
     margin-left: 0;
     z-index: 999;
     background: $brand-col-2;
@@ -164,7 +167,7 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    padding:$act-unit-s;
     display: block;
     background: transparent;
     font-weight: 500;

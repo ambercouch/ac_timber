@@ -104,7 +104,7 @@
   &content {
     display: block;
     padding: $act-unit;
-    background: $brand-col-4;
+    background:  $col-accent;
     //@extend .c-contact-form__content--placeholder-blocks;
   }
   &footer {
@@ -268,8 +268,8 @@
 .wpcf7-submit{
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
-  padding:$act-unit-t;
-  background: $brand-col-3;
+  padding:$act-unit-s;
+  background: $brand-col-1;
   color: white;
   cursor: pointer;
   &:hover{

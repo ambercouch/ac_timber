@@ -29,6 +29,10 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
+    @include mq($from : desktop){
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
   &main-before{
     display: flex;
@@ -86,19 +90,29 @@
     border-bottom: solid 1px;
   }
   &footer-widgets{
-    @include inuit-font-size($inuit-font-size-h6, $inuit-global-line-height / 1.5 );
+    @include inuit-font-size($act-fs-6);
     margin-bottom:$inuit-global-spacing-unit;
-    @extend .u-1-2--tablet;
+    text-align: left;
     @include mq($from: tablet){
       padding-left:$inuit-global-spacing-unit ;
+      flex-basis: 50%;
+    }
+    @include mq($from: desktop){
+      padding-left:$inuit-global-spacing-unit ;
+      flex-basis: 25%;
     }
     &:first-child{
       padding-left:0 ;
     }
     &:last-child{
-      @include mq($from : tablet, $until: desktop){
+      @include mq($from : tablet){
         padding-left:0 ;
-        width: 100% !important;
+        flex-basis: 100% !important;
+      }
+      @include mq($from : desktop){
+        padding-left:0 ;
+        flex-basis: 33.33% !important;
+        margin-left: auto ;
       }
     }
   }

@@ -56,7 +56,7 @@
   }
 
   &footer {
-    display: block
+    display: block;
   }
 }
 
@@ -77,6 +77,13 @@
   }
   &single-col-page-800{
     text-align: center;
+  }
+  &footer{
+    color: $col-accent;
+  }
+  &cta{
+    margin-bottom: 0;
+    color: #fff;
   }
 }
 

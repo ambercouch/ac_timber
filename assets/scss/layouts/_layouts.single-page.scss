@@ -15,11 +15,12 @@
   }
 }
 
-//.post Elements
+//.l-single-page Elements
 .l-single-page__{
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    padding: 0 $act-unit;
   }
 
   &heading{
@@ -41,6 +42,11 @@
 
   &body{
     display: block;
+    padding: 0 $act-unit;
+  }
+  &body-itro{
+    display: block;
+    padding: 0 $act-unit;
   }
 
   &footer{
@@ -52,8 +58,8 @@
   }
 }
 
-[class*='single-page--']{
-  @extend .post;
+[class*='l-single-page--']{
+  @extend .l-single-page;
 }
 
 [class*='single-page__header--']{

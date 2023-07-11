@@ -4,6 +4,8 @@
 
 .c-btn {
   @extend .o-btn;
+  min-width: 200px;
+  text-align: center;
   &:hover, &:focus{
     color: white;
     background: darken($brand-col-1,10%);
@@ -21,6 +23,47 @@
 .c-btn--{
   &type {
     display: block
+  }
+  &primary{
+    @extend .c-btn;
+    text-align: center;
+    color: $col-dark !important;
+    background: $brand-col-2;
+    @include act-font-size($act-fs-4,1);
+    font-weight: bold;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
+    &:hover, &:active, &:focus {
+      background: darken($col-accent, 10%);
+      color: $col-light !important;
+    }
+    @include mq($from : tablet){
+      line-height: 1;
+      text-align: center;
+    }
+    a{
+      color: $col-dark !important;
+    }
+  }
+  &secondary{
+    @extend .c-btn;
+    @extend .c-btn--ghost;
+    color: $col-dark;
+    background: $brand-col-2;
+    @include act-font-size($act-fs-4,1);
+    padding-left: $act-unit ;
+    padding-right: $act-unit ;
+    font-weight: bold;
+    &:hover, &:active, &:focus {
+      background: darken($col-accent, 10%);
+      color: $col-light;
+    }
+    a{
+      color: $col-dark !important;
+    }
+  }
+  &cta{
+    @extend .c-btn--primary;
   }
   &n{
     @extend .c-btn;

@@ -12,7 +12,6 @@
 
 .c-widget-- {
   &footer {
-    color: white;
     @include act-font-size($inuit-font-size-h6, 1.5);
   }
   &sidebar{

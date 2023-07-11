@@ -17,6 +17,9 @@ BEM BLOCK .l-masthead
   &.has-before-widgets{
     padding-top: 0;
   }
+  @include mq($from : desktop){
+    padding-left: $act-unit-l;
+  }
 }
 
 /*
@@ -56,18 +59,19 @@ BEM ELEMENTS .l-masthead__
     @extend .element--abso-layer;
     @include mq($from: desktop){
       /*
-       * Hide main nav
+       * Show main nav
        */
-      display: none !important;
-      margin: $act-unit 0;
+      display: block !important;
+      margin-top: $act-unit;
+      padding: 0;
     }
   }
   &widget-area{
     width: 100%;
   }
   &branding{
-    @extend .element--items-centre;
-    //@extend .element--flush-left;
+    //@extend .element--items-centre;
+    @extend .element--flush-left;
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
