@@ -1,25 +1,25 @@
 {% block content %}
-  <article id="post-{{ post.id }}" class="c-single-service{{ templateClass }} {{ post.class }}">
+  <article id="post-{{ post.id }}" class="l-single-service{{ templateClass }} {{ post.class }}">
 
   {% if post.thumbnail %}
-    <div class="c-single-service__feature-image{{ templateClass }}">
+    <div class="l-single-service__feature-image{{ templateClass }}">
       <div class="c-feature-image--service">
         <img src="{{ post.thumbnail.src('serviceMenuLarge') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
       </div>
     </div>
   {%  endif %}
 
-    <header class="entry-header c-single-service__header{{ templateClass }} ">
+    <header class="entry-header l-single-service__header{{ templateClass }} ">
 
-      <h2 class="entry-title c-single-service__heading{{ templateClass }}">
-        <span class="c-single-service__title{{ templateClass }}">{{ post.title }}</span>
+      <h2 class="entry-title l-single-service__heading{{ templateClass }}">
+        <span class="l-single-service__title{{ templateClass }}">{{ post.title }}</span>
       </h2>
 
     </header>
 
-    <div class="entry-content c-single-service__body{{ templateClass }}">
+    <div class="entry-content l-single-service__body{{ templateClass }}">
 
-        <div class="c-single-service__content{{ templateClass }}">
+        <div class="l-single-service__content{{ templateClass }}">
           {{ post.content }}
         </div>
 

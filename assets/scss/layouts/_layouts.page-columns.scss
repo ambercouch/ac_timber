@@ -1,0 +1,71 @@
+/*
+  BEM BLOCK .l-page-columns
+ */
+
+.l-page-columns {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-page-columns--
+ */
+
+.l-page-columns-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-page-columns--
+
+[class*=l-page-columns--] {
+  @extend .l-page-columns;
+}
+
+/*
+  BEM ELEMENTS .l-page-columns__
+ */
+
+.l-page-columns__ {
+  &header {
+    display: block
+  }
+
+ &columns{
+  display: flex;
+   column-gap: $act-unit-l;
+ }
+  &col{
+    flex-basis: 50%;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-page-columns--
+
+[class*=l-page-columns__header--] {
+  @extend .l-page-columns__header;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-page-columns__columns
+
+[class*=l-page-columns__columns--] {
+  @extend .l-page-columns__columns;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-page-columns__col
+
+[class*=l-page-columns__col--] {
+  @extend .l-page-columns__col;
+}

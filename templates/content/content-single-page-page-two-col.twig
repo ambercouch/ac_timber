@@ -12,38 +12,19 @@
     </div>
   {% endif %}
   {% if not hidePageTitle %}
-    <div class="l-single-page__header{{ templateClass }} ">
-    {% include "inc/header.twig"
-      with {
-      headerTitle : null,
-      headingLevel : '1' ,
-      headerModClass : templateClass
-    }%}
+    <div class="l-single-page__header">
+    <header class="entry-header c-header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+      <h1 class="entry-title c-header__heading{{ templateClass }} ">
+        <span class="entry-title c-header__title{{ templateClass }} ">{{ post.title }}</span>
+      </h1>
+    </header>
     </div>
   {% endif %}
     <div class="entry-content l-single-page__body{{ templateClass }} ">
-      <div class="l-single-page__body-intro">
-        {{ post.content }}
-      </div>
-
-      {%  if post.meta('content_column_1') or  post.meta('content_column_2') %}
-      <div class="l-single-page__body-additional-content">
-        <div class="l-page-columns__columns--flex is-2-col">
-          <div class="l-page-columns__col--flex">
-            {{ post.meta('content_column_1') }}
-          </div>
-          <div class="l-page-columns__col--flex">
-            {{ post.meta('content_column_2') }}
-          </div>
-        </div>
-      </div>
-      {%  endif %}
+      {{ post.content }}
     </div>
 
-
-  {% if post.meta('page_footer') %}
     <footer class="l-single-page__footer{{ templateClass }} ">
     </footer>
-  {% endif %}
 
 </article>
