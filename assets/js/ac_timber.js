@@ -19,13 +19,13 @@ ACT = {
                 });
             }
 
-            var showButton = document.getElementById('menuButton');
-            var container = document.getElementById('primaryNavigation');
-            ACT.ac_fn.open(container, showButton);
+            // var showButton = document.getElementById('menuButton');
+            // var container = document.getElementById('primaryNavigation');
+            // ACT.ac_fn.open(container, showButton);
 
-            var searchButton = document.getElementById('mastheadSearchBtn');
-            var searchForm = document.getElementById('mastheadSearchForm');
-            ACT.ac_fn.open(searchForm, searchButton);
+            // var searchButton = document.getElementById('mastheadSearchBtn');
+            // var searchForm = document.getElementById('mastheadSearchForm');
+            // ACT.ac_fn.open(searchForm, searchButton);
 
 
             var ddMenus = document.getElementsByClassName('menu-item-has-children');
@@ -113,33 +113,33 @@ ACT = {
                 });
             });
 
-            var showButton, container;
+            // var showButton, container;
+            //
+            // showButton = document.getElementById('menuButton');
+            // container = document.getElementById('primaryNavigation');
 
-            showButton = document.getElementById('menuButton');
-            container = document.getElementById('primaryNavigation');
 
-
-            var scrollTimer = null;
-            var acScrolling = false;
-            var acScrollTop = $(window).scrollTop();
-
-            $(window).scroll(function () {
-
-                if (ACT.settings.acScrolling === false) {
-                    setTimeout(function () {
-                        ACT.ac_fn.startScroll(showButton);
-                    }, 200);
-                }
-
-                if (scrollTimer) {
-                    clearTimeout(scrollTimer);   // clear any previous pending timer
-                }
-
-                scrollTimer = setTimeout(function () {
-                    ACT.ac_fn.endScroll(showButton);
-                }, 200);   // set new timer
-
-            });
+            // var scrollTimer = null;
+            // var acScrolling = false;
+            // var acScrollTop = $(window).scrollTop();
+            //
+            // $(window).scroll(function () {
+            //
+            //     if (ACT.settings.acScrolling === false) {
+            //         setTimeout(function () {
+            //             ACT.ac_fn.startScroll(showButton);
+            //         }, 200);
+            //     }
+            //
+            //     if (scrollTimer) {
+            //         clearTimeout(scrollTimer);   // clear any previous pending timer
+            //     }
+            //
+            //     scrollTimer = setTimeout(function () {
+            //         ACT.ac_fn.endScroll(showButton);
+            //     }, 200);   // set new timer
+            //
+            // });
 
         }
     },

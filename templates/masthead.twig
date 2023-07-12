@@ -25,18 +25,23 @@
     </div>
   </div>
 
-  <nav class="masthead__navigation--social">
-    {% include 'navigation--social.twig' %}
-  </nav>
+  <div class="l-masthead__navigation">
+    {% set menuName = "primary" %}
+    {% include 'inc/navigation.twig' %}
+  </div>
 
-  <button id="menuButton" class="btn--menu" data-state="off">
-    <span class="btn--menu__bar--tl"></span>
-    <span class="btn--menu__bar--tr"></span>
-    <span class="btn--menu__bar--m"></span>
-    <span class="btn--menu__bar--br"></span>
-    <span class="btn--menu__bar--bl"></span>
-  </button>
-  <nav class="masthead__navigation" id="primaryNavigation" role="navigation" data-state="off">
-    {% include 'navigation--primary.twig' %}
-  </nav>
+{#  <nav class="masthead__navigation--social">#}
+{#    {% include 'navigation--social.twig' %}#}
+{#  </nav>#}
+
+{#  <button id="menuButton" class="btn--menu" data-state="off">#}
+{#    <span class="btn--menu__bar--tl"></span>#}
+{#    <span class="btn--menu__bar--tr"></span>#}
+{#    <span class="btn--menu__bar--m"></span>#}
+{#    <span class="btn--menu__bar--br"></span>#}
+{#    <span class="btn--menu__bar--bl"></span>#}
+{#  </button>#}
+{#  <nav class="masthead__navigation" id="primaryNavigation" role="navigation" data-state="off">#}
+{#    {% include 'navigation--primary.twig' %}#}
+{#  </nav>#}
 </div>
