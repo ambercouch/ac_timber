@@ -8,7 +8,7 @@
     margin-left: 6px;
     display: block;
     @include media-query(lap-and-up){
-      @include size(300px, 50px);
+      @include size(230px, 36px);
       margin-left: 6px;
     }
   }
