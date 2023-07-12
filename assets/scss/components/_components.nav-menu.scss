@@ -55,13 +55,27 @@
     pointer-events: all !important;
   }
   &sub-menu{
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      @include size(0px);
+      border: solid 10px #fff;
+      border-color: white transparent white transparent;
+      border-top-style: none;
+
+      left: 20px;
+      top: -10px;
+      background: transparent;
+      color: #fff;
+    }
     position: absolute;
     left: -99999px;
     display: none;
-    top: 100%;
+    top: calc(100% + 24px);
     margin-left: 0;
     z-index: 999;
-    background: $brand-col-2;
+    background: white;
     padding: $act-unit-t;
     .menu-item-has-children:hover &{
       left: 0;
@@ -75,9 +89,11 @@
   &sub-menu-list{
     //@extend .o-list-bare ;
     margin: 0;
+    padding: 0;
+    list-style: none;
   }
   &sub-menu-item{
-    color: white;
+
     margin-bottom:0;
     padding-left: 0 !important;
     &:last-child{
@@ -85,11 +101,14 @@
     }
   }
   &sub-menu-link{
-    color: white;
+    //color: white;
+    @include act-font-size(15px);
     text-decoration: none;
     display: block;
     width: 100%;
-    padding: $act-unit-s;
+    padding: 1px $act-unit-s;
+    white-space: nowrap;
+    color: $col-scc-gray;
     &:hover{
       @extend .c-nav-menu__sub-menu-link;
       color: white;
@@ -175,12 +194,15 @@
 .c-nav-menu__link--{
   &primary{
     @include act-font-size(15px);
-    padding: 0 $act-unit-t;
+    padding: 0 $act-unit-t $act-unit;
     display: block;
     background: transparent;
     font-weight: 500;
+    color: $col-scc-gray;
+    margin-bottom: - $act-unit;
+
     &:hover{
-      color: $brand-col-2;
+      color: $brand-col-1;
     }
     .is-overlay-hero &{
       color:white;
