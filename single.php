@@ -9,19 +9,22 @@
  * @since    Timber 0.1
  */
 
+if ( ! class_exists( 'Timber' ) ) {
+    echo 'Timber not activated. Make sure you activate the plugin in <a href="/wp-admin/plugins.php#timber">/wp-admin/plugins.php</a>';
+    return;
+}
+
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
-$context['mainMod'] = '--'.$post->post_type;
-$context['contentMod'] = '--'.$post->post_type;
-$context['template'] = $post->post_type;
-$context['postType'] = $post->post_type;
+$context['footer_widgets'] = Timber::get_widgets('Footer');
 
 
-require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';
+require_once get_template_directory() . '/lib/wp-timber/functions/timber--comment-form.php';
 
 if ( post_password_required( $post->ID ) ) {
-	Timber::render( 'single-password.twig', $context );
+    Timber::render( 'single-password.twig', $context );
 } else {
-	Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' ), $context );
+    Timber::render( array( 'single-' . $post->ID . '.twig', 'single-' . $post->post_type . '.twig', 'single.twig' , 'index.twig' ), $context );
 }
+

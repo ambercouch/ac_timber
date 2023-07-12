@@ -24,7 +24,10 @@ if ( ! function_exists( '_act_setup' ) ) :
          */
         add_theme_support( 'post-thumbnails' );
 
-
+        // This theme uses wp_nav_menu() in one location.
+        register_nav_menus( array(
+            'primary' => esc_html__( 'Primary', '_act' ),
+        ) );
 
         /*
          * Switch default core markup for search form, comment form, and comments
@@ -56,6 +59,8 @@ if ( ! function_exists( '_act_setup' ) ) :
             'default-image' => '',
         ) ) );
 
+        add_image_size ( 'feature500', 500, 500, true );
+        add_image_size ( 'feature1000', 1000, 250, true );
 
     }
 endif;

@@ -1,79 +1,62 @@
 /*
   BEM BLOCK .l-site
-  #1 Fixes the horizontal scroll issue with width: 100vw when vertical scroll bars present
-  #2 Force the footer to the bottom of short pages
  */
 
-.l-site{
-  /* #1 */
-  overflow: hidden;
-
-  /* #2 */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
+.l-site {
+  display: block;
 }
 
 /*
-BEM ELEMENTS .l-site__
+  BEM BLOCK MODIFIER .l-site--
  */
-.l-site__{
-  &masthead{
-    background: white;
-    position: relative;
-    z-index: 10;
-  }
-  &main{
-    padding-top: $act-unit-l;
-  }
-  &off-page-container{
-    transition: opacity 0.3s ease-in-out;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background: darken($brand-col-3, 10%);
-    z-index: 1000;
-    opacity: 0;
-    padding-top: $act-unit-h;
-    &[data-state=off]{
-      opacity: 0 !important;
-      @include inuit-hidden-visually();
-    }
-    &[data-state=on]{
-      opacity: 1;
-    }
-    @include mq($from : desktop){
-      display: none !important;
-    }
-  }
 
-  &footer{
-
-    /* #2 */
-    margin-top: auto;
-    //background: $brand-col-4;
+.l-site-- {
+  &type {
+    display: block
   }
 }
 
-[class*=l-site__masthead--]{
-  @extend .l-site__masthead;
+//BEM BLOCK MODIFIER FALLBACK .l-site--
+
+[class*=l-site--] {
+  @extend .l-site;
 }
 
-.l-site__masthead{
-  &.is-overlay-hero{
-    position: relative;
-    z-index: 999;
-    height: 0;
+/*
+  BEM ELEMENTS .l-site__
+ */
+
+.l-site__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &main-after{
+
   }
 }
 
-[class*=l-site__off-page-container--]{
-  @extend .l-site__off-page-container;
+//BEM ELEMENT MODIFIER FALLBACK .l-site--
+
+[class*=l-site__header--] {
+  @extend .l-site__header;
 }
-
-.l-site__off-page-container{
-
-}
-

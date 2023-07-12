@@ -1,75 +1,20 @@
 .comments{
-  max-width: $article-max-width;
-  margin: 0 auto;
+  padding: 0 $inuit-base-spacing-unit;
 }
 
-.comments__{
-  &wrapper{
-    display: block;
-    padding:$inuit-global-spacing-unit-small 0;
-    margin-bottom:$inuit-global-spacing-unit;
-    background: #eee;
-    @include mq($from : tablet){
-      padding:$inuit-global-spacing-unit;
+.comments{
 
-    }
+  &__title{
+    @include inuit-font-size($inuit-heading-size-1);
+    background: $brand-col-2--light;
+    padding: 0 $inuit-base-spacing-unit--small;
+    color: #fff6de;
   }
-  &heading{
-    display: block;
-    padding: 0 $inuit-global-spacing-unit;
-    margin-bottom:  $inuit-global-spacing-unit-small;
-    @include mq($from : tablet){
-      padding:0;
-      margin-bottom:  $inuit-global-spacing-unit;
-    }
+  &__response{
+    padding: 0 $inuit-base-spacing-unit--small;
   }
-  &list{
-    margin: 0;
-    margin-bottom:$inuit-global-spacing-unit;
+  &__respond{
+
   }
-  &item{
-    list-style: none;
-    background: #ddd;
-    margin-bottom: $inuit-global-spacing-unit;
-    padding-bottom: $inuit-global-spacing-unit;
-  }
-}
 
-[class*=comments__wrapper--]{
-  @extend .comments__wrapper;
-}
-
-[class*=comments__heading--]{
-  @extend .comments__heading;
-}
-
-[class*=comments__list--]{
-  @extend .comments__list;
-}
-
-[class*=comments__item--]{
-  @extend .comments__item;
-}
-
-.comments__wrapper--{
-  &responses{
-    margin-bottom:0;
-    border-bottom:solid #ccc;
-  }
-}
-
-.comments__item--{
-  &children{
-    margin: 0 0 $inuit-global-spacing-unit-small $inuit-global-spacing-unit-small;
-    background: #fff;
-
-    @include mq($from : tablet, $until : desktop){
-      margin: 0 0 $inuit-global-spacing-unit $inuit-global-spacing-unit;
-
-    }
-    @include mq($from : desktop){
-      margin: 0 $inuit-global-spacing-unit $inuit-global-spacing-unit $inuit-global-spacing-unit-large;
-
-    }
-  }
 }

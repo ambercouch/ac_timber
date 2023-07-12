@@ -1,0 +1,57 @@
+<div class="post-meta">
+
+  <div class="post-meta__post-type">
+    <div class="post-type">
+      <svg class="icon post-type__icon" role="img" aria-label="Post type {{ postFormatRead }}" preserveAspectRatio="none">
+        <title>{{ postFormatRead }}</title>
+        <desc>Post type {{ postFormatRead }}</desc>
+        <use xlink:href="#icon-post{{ postFormat }}"/>
+      </svg>
+    </div>
+  </div>
+
+  {% if  fn('get_post_type') != 'event' %}
+    <div class="post-meta__published">
+      <div class="published">
+        {{ fn('_act_posted_on', post.ID ) }}
+      </div>
+    </div>
+  {% else %}
+
+    <div class="post-meta__event-info">
+      <div class="event-info">
+        <h4 class="event-info__title">Event Details</h4>
+        <table class="event-info__table">
+          <tr class="event-info__date">
+            <td><span class="event-info__label">Date: </span></td>
+            <td>{{ event_date }}</td>
+          </tr>
+          <tr class="event-info__time">
+            <td><span class="event-info__label">Time: </span></td>
+            <td>{{ event_time }}</td>
+          </tr>
+          <tr class="event-info__address">
+            <td><span class="event-info__label">Location: </span></td>
+            <td>
+              <address>
+                {{ (fn('eo_get_venue_name')) ? '<strong>' ~  fn('eo_get_venue_name') ~ '</strong>, ' : '' }}
+                {{ (event_venue_address) ? event_venue_address ~ ', ' : '' }}
+                {{ (event_venue_city) ?event_venue_city ~ ', ' : '' }}
+                {{ (event_venue_postcode) ?event_venue_postcode ~ ', ' : '' }}
+              </address>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  {% endif %}
+
+  <div class="post-meta__tagged">
+    <div class="tagged">
+      {{ fn('_act_entry_footer') }}
+    </div>
+  </div>
+
+  {#<span class="post-meta__date">{{ post.date }}</span>#}
+</div>

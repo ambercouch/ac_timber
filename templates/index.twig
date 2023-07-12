@@ -1,55 +1,33 @@
 {% extends "base.twig" %}
 
-{% block before_head %}
-  <!-- index.twig -->
+{% block criticalcss %}
+  <style>
+    .hero__content {position: absolute;width:100%;bottom:60%;text-align:center;z-index:99;transform:translate(0,50%);}.site__masthead{background:#fff;z-index: 999;width: 100%;position:fixed;top: 0;transition:transform 0.3s ease;}.site__masthead {transform:translate(0, -100%);}
+    {% include 'critical.css' %}
+  </style>
 {% endblock %}
 
-{% block hero %}
-  {% if removeHeroBlog %}
-  {% else %}
-    <section id="siteHero" class="l-site__hero">
-      {% include 'inc/hero.twig' ignore missing %}
-    </section>
-  {% endif %}
-{% endblock %}
+  {% block hero %}
+    {% if not fn('is_paged') and not fn('is_category')and not fn('is_tag')%}
+      {{ parent() }}
+    {% endif %}
+  {% endblock %}
 
-
-
-
-{% block before_content %}
- {% if catDescription %}
-  <div class="l-content__before-content u-fw500">
-    {{ catDescription }}
-  </div>
-  {% endif %}
-{% endblock %}
 
 {% block content %}
+  {% if fn('is_home')%}
+    {% include 'main__header--blog.twig'  %}
+  {% endif %}
+  {% if fn('is_archive')%}
+    {% include 'main__header.twig'  %}
+  {% endif %}
+
+  {{  fn('is_paged') or fn('is_category') or fn('is_tag') ? fn('the_posts_navigation') : '' }}
 
   {% for post in posts %}
     {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
-    {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
+    {% include 'content'~postFormat~'.twig' %}
   {% endfor %}
+
+  {{ fn('the_posts_navigation') }}
 {% endblock %}
-
-{% block belowContent %}
-  <div class="content__below">
-    {% if posts.pagination.pages is not empty %}
-      <div class="content__pagination">
-        {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-      </div>
-    {% endif %}
-  </div>
-  <!-- removed comments in home.twig -->
-{% endblock %}
-
-{% set hasSideBar = true %}
-
-{% block sidebar %}
-  <div id="sidebar" class="l-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
-  </div>
-{% endblock %}
-

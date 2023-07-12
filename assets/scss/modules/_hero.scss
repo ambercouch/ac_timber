@@ -1,0 +1,74 @@
+.hero{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  @include color-overlay($brand-col-2, 0.4);
+  overflow: hidden;
+  background: url('/wp-content/uploads/2016/02/stretton-climate-care-home.jpg') 50% 50%;
+  background-size: cover;
+}
+
+/*
+ * Elements
+ */
+.hero{
+  &__logo{
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+  &__image{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+  }
+  &__img{
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    filter: blur(0.5px);
+  }
+  &__content{
+    position: absolute;
+    width: 100%;
+    bottom:60%;
+    text-align: center;
+    z-index: 99;
+
+    transform: translate(0, 50%);
+  }
+  &__svg{
+    @include size(500px, 175px);
+    @include media-query(palm){
+      @include size(250px, 87px);
+    }
+  }
+  &__call-to-action{
+    //@extend .u-1-of-2-desk;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto;
+    @include media-query(lap-and-up){
+      flex-direction: row;
+    }
+  }
+  &__scroll-to{
+    position: absolute;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+  }
+
+}
+.has-icon{
+  line-height: 1 !important;
+}
+.has-icon__icon{
+  @include size(1em);
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 1 !important;
+}

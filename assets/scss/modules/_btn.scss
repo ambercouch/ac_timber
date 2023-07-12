@@ -1,0 +1,154 @@
+.btn{
+  display: block;
+  &__icon{
+    fill:#fff;
+    display: block;
+    @include size(2.2em);
+    margin: 0 auto 0;
+    position: relative;
+    top: 0.5em;
+
+  }
+}
+.btn--square{
+  border: 0;
+  padding: 0;
+  @include inuit-font-size(14px);
+  @include size(3.2em);
+  background: rgba($brand-col-1, 0.2);
+  &:hover{
+    background: rgba($brand-col-1, 1);
+  }
+}
+
+.btn--menu{
+
+  @extend .btn--square;
+  position: fixed;
+  top: 92px;
+  right: 2em;
+  background: rgba($brand-col-1, 0.7);
+  z-index: 99999;
+  transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08),
+  top 0.3s ease;
+
+  &[data-state=on]{
+    transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
+    right: 17rem;
+    &:before{
+      display: none;
+    }
+  }
+  [data-hidden="false"] &{
+    top: $inuit-base-spacing-unit--small;
+
+  }
+  &:before{
+    content : "MENU";
+    left: - $inuit-base-spacing-unit * 1.5;
+    position: relative;
+    @include inuit-font-size(16px);
+    color: #fff;
+    @include media-query(desk){
+       left: - $inuit-base-spacing-unit--large;
+     }
+    @include media-query(lap){
+      display: none;
+    }
+    [data-hidden="false"] &{
+      color: $brand-col-2;
+    }
+  }
+}
+.btn--menu__bar {
+  transition: transform 0.1s linear;
+  position: absolute;
+  width: 1.1em;
+  height: 0.2em;
+  background-color: #fff;
+}
+.btn--menu__bar--tl{
+  @extend .btn--menu__bar;
+  transform-origin: 0.4em 0.1em;
+  top: 0.8em;
+  left: 0.5em;
+  [data-state=on] &{
+    transform: rotate(45deg) translate(0.3em, 0);
+  }
+}
+.btn--menu__bar--tr{
+  @extend .btn--menu__bar;
+  transform-origin: 0.7em 0.1em;
+  top: 0.8em;
+  right: 0.5em;
+  [data-state=on] &{
+    transform: rotate(-45deg) translate(-0.3em, 0);
+  }
+}
+.btn--menu__bar--m{
+  @extend .btn--menu__bar;
+  transform-origin: 1.1em 0.1em;
+  top: 50%;
+  left: 0.5em;
+  width: 2.2em;
+  margin-top: -0.1em;
+  [data-state=on] &{
+    transform: scale(0, 1);
+  }
+}
+.btn--menu__bar--bl{
+  @extend .btn--menu__bar;
+  transform-origin: 0.4em 0.1em;
+  bottom: 0.8em;
+  left: 0.5em;
+  [data-state=on] &{
+    transform: rotate(-45deg) translate(0.3em, 0);
+  }
+}
+.btn--menu__bar--br{
+  @extend .btn--menu__bar;
+  transform-origin: 0.7em 0.1em;
+  bottom: 0.8em;
+  right: 0.5em;
+  [data-state=on] &{
+    transform: rotate(45deg) translate(-0.3em, 0);
+
+  }
+}
+
+.btn--twitter{
+  @extend .btn;
+  @extend .btn--square;
+}
+.btn--fb{
+  @extend .btn;
+  @extend .btn--square;
+}
+.btn--search{
+  @extend .btn;
+  @extend .btn--square;
+}
+
+.btn--toggle-map{
+  @extend .btn--cta2--small;
+  background: $brand-col-3--light;
+  border-color: $brand-col-3--light;
+}
+.btn--toggle-map{
+  &__show{
+    [data-state=off] &{
+      display: block;
+    }
+    [data-state=on] &{
+      display: none;
+    }
+  }
+  &__hide{
+    [data-state=off] &{
+      display: none;
+    }
+    [data-state=on] &{
+      display: off;
+    }
+  }
+}

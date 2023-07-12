@@ -1,0 +1,7 @@
+%input-style-1,
+.input-style-1{
+  border: solid 5px rgba($col-scc-gray, 0.2);
+  padding: $inuit-base-spacing-unit--small /2 $inuit-base-spacing-unit--small;
+  @include inuit-font-size($small-size);
+  width: 100%;
+}

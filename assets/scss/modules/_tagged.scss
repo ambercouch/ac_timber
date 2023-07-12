@@ -1,0 +1,19 @@
+.tagged{
+  @include inuit-font-size($micro-size);
+}
+
+.tagged{
+
+  &__cat-links{
+    display: block;
+    a{
+      @extend %link-style--bc2;
+    }
+  }
+  &__tag-links{
+    display: block;
+    a{
+      @extend %link-style--bc2;
+    }
+  }
+}

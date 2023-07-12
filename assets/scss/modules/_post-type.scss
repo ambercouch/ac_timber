@@ -1,22 +1,21 @@
 .post-type{
-  visibility: visible;
-  display: block;
-}
-
-.post-type__{
-  &icon{
-    @include inuit-font-size($inuit-font-size-h2);
-    display: block;
-    width: 1em;
-    height: 1em;
-    margin-top: 0.05em;
+  &__icon{
+    @include size(48px, 36px);
+    vertical-align: middle;
+    position: relative;
+    border-right: solid 0.5em #fff;
+    background: #fff;
   }
 }
 
-[class*=post-type--]{
-  @extend .post-type;
-}
-
-[class*=post-type__icon--]{
-  @extend .post-type__icon;
+.post-type{
+  &__icon{
+    .is-paged & {
+      @include size(42px, 36px);
+      vertical-align: middle;
+      position: relative;
+      border-right: solid 0.25em #fff;
+      background: $brand-col-1;
+    }
+  }
 }

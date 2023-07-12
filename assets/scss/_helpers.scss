@@ -2,17 +2,7 @@
 .visuallyhidden{
   @include accessible-hidden;
 }
-
-.is-hidden{
-  display: none !important;
+.cf{
+  @extend .clearfix;
 }
 
-.has-title-hidden{
-
-}
-.aligncenter{
-  text-align: center;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}

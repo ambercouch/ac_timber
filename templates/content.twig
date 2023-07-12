@@ -1,0 +1,50 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '' %}
+{% set postPagedClass = fn('is_paged') ? 'is-paged' : '' %}
+{% set postFormatRead = postFormat? fn('get_post_format', post) : '' %}
+
+{% block content %}
+  <article id="post-{{ post.id }}" class="post{{ postFormatClass }} {{ post.class }} {{ postPagedClass }}">
+
+    <a  href="{{ post.link }}" class="post{{ postFormatClass }}__feature-image {{ postPagedClass }}">
+      <div class="feature-image">
+  {% if(post.thumbnail.src()) %}
+        <img src="{{ post.thumbnail.src('feature500') }}" class="feature-image__img" alt="{{ post.title }}"/>
+  {% else %}
+    <img src="{{ theme.link }}/assets/images/jpg/stretton-climate-care-crop.jpg" class="feature-image__img" alt="{{ post.title }}"/>
+  {% endif %}
+    </div>
+    </a>
+
+    <header class="entry-header post{{ postFormatClass }}__header {{ postPagedClass }}">
+      <h2 class="entry-title post{{ postFormatClass }}__title {{ postPagedClass }}">
+        <a href="{{ post.link }}">{{ post.title }}</a>
+      </h2>
+      <div class="entry-meta post{{ postFormatClass }}__post-meta {{ postPagedClass }}">
+        {% include 'post-meta.twig' %}
+      </div>
+    </header>
+    {% if  not fn('is_paged') %}
+    {% if  post.post_excerpt != '' %}
+      <div class="entry-content post{{ postFormatClass }}__body {{ postPagedClass }}">
+        {{ post.post_excerpt }}
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more {{ postPagedClass }}">Read
+          More &hellip;</a>
+      </div>
+    {% else %}
+      <div class="entry-content post{{ postFormatClass }}__body {{ postPagedClass }}">
+        <p>{{ post.content | striptags | truncate(20) }}</p>
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more {{ postPagedClass }}">Read
+          More &hellip;</a>
+      </div>
+    {% endif %}
+    {% endif %}
+
+    <footer class="post{{ postFormatClass }}__footer {{ postPagedClass }}">
+      <a class="post{{ postFormatClass }}__comment-link {{ postPagedClass }}" href="{{ post.link }}#comments">
+        <span class="post{{ postFormatClass }}__comment-count {{ postPagedClass }}">{{ post.comment_count }}</span>
+        Comments
+      </a>
+    </footer>
+
+  </article>
+{% endblock %}

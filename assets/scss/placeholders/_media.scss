@@ -1,0 +1,13 @@
+.media{
+  margin-bottom: $inuit-base-spacing-unit;
+  &__img{
+    &--small{
+      max-width: 20%;
+    }
+  }
+  &__body{
+    > :first-child{
+      margin-top: 0;
+    }
+  }
+}

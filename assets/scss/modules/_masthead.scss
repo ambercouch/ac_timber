@@ -1,0 +1,40 @@
+.masthead{
+
+  max-width: $site-container-width;
+  margin: 0 auto;
+  padding-top: $inuit-base-spacing-unit--small;
+  padding-bottom: $inuit-base-spacing-unit--small;
+  display: flex;
+
+}
+
+.masthead{
+
+  &__branding{
+    @extend .u-1-of-3-desk;
+  }
+
+  &__navigation--social{
+    @extend .u-2-of-3-desk;
+    @extend .u-2-of-3-lap;
+    display: none;
+    @include media-query(lap-and-up){
+      display: block;
+      padding-right: $inuit-base-spacing-unit--large;
+    }
+
+  }
+
+  &__navigation{
+
+    @extend %off-page--curtain;
+
+    [data-hidden=true] &{
+      top:78px
+  }
+  }
+
+
+
+
+}

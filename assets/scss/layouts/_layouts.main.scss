@@ -1,95 +1,59 @@
 /*
-BEM BLOCK .l-main
+  BEM BLOCK .l-main
  */
 
-.l-main{
-  @extend .c-site-wrapper--responsive;
-  padding-top: 0;
-  padding-left: $act-unit;
-  padding-right: $act-unit;
-
-  padding-bottom: $act-unit;
-  @include mq($from : desktop){
-    padding-top: 0 ;
-  }
-  &.has-sidebar{
-    @include mq($from: tablet) {
-      display: flex;
-    }
-  }
+.l-main {
+  display: block;
 }
 
 /*
-BEM BLOCK MODIFIERS .l-main--
+  BEM BLOCK MODIFIER .l-main--
  */
 
-[class*="l-main--"]{
+.l-main-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-main--
+
+[class*=l-main--] {
   @extend .l-main;
 }
 
-.l-main--{
-  &page{
-    padding-top: 0;
-  }
-  &service{
-    @extend .l-main--page;
-  }
-  &front-page{
-    padding-top: $act-unit-l;
-  }
-  &full-browser-width{
-    padding: 0 !important;
-    max-width: none;
-  }
-}
+/*
+  BEM ELEMENTS .l-main__
+ */
 
-
-
-.l-main__{
-  &sidebar{
-    background: $brand-col-5;
-    padding: $act-unit;
-
-    @include mq($from: tablet) {
-      width: 35%;
-    }
-    @include mq($from: desktop) {
-      width: 25%;
-    }
-  }
-  &content{
-    padding: 0;
+.l-main__ {
+  &header {
+    display: block
   }
 
-}
+  &heading {
+    display: block
+  }
 
+  &title {
+    display: inline;
+  }
 
+  &link {
+    display: inline
+  }
 
-.l-main__content{
-  .has-sidebar &{
+  &content {
+    display: block
+  }
 
-    @include mq($from: tablet) {
-      width: 65%;
-      flex: 0 0 65%;
-      padding-right: $act-unit;
-    }
-
-    @include mq($from: desktop) {
-      width: 75%;
-      flex: 0 0 75%;
-      padding--right: $act-unit-l;
-    }
+  &footer {
+    display: block
   }
 }
 
-.l-main__content--{
-  &page{
-    .has-sidebar &{
-      @include mq($from: desktop){
-        padding-right: $act-unit-h;
-      }
-    }
+//BEM ELEMENT MODIFIER FALLBACK .l-main--
 
-
-  }
+[class*=l-main__header--] {
+  @extend .l-main__header;
 }

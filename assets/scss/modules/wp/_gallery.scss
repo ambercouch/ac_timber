@@ -1,0 +1,23 @@
+.gallery{
+  display: flex;
+  margin-bottom: $inuit-base-spacing-unit;
+  @include media-query(palm){
+    flex-wrap: wrap;
+  }
+}
+.gallery-item{
+  margin: 0;
+  @include media-query(palm){
+    max-width: 50%;
+  }
+}
+
+.gallery-columns-2{
+  justify-content: center;
+  .gallery-item{
+    width: 25%;
+    @include media-query(palm){
+      width: 50% !important;
+    }
+  }
+}

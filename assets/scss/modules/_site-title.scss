@@ -1,0 +1,16 @@
+.site-title{
+  margin: 0;
+  &__link{
+    display: block;
+  }
+  &__logo{
+    @include size(200px, 33px);
+    margin-left: 6px;
+    display: block;
+    @include media-query(lap-and-up){
+      @include size(300px, 50px);
+      margin-left: 6px;
+    }
+  }
+
+}

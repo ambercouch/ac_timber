@@ -1,0 +1,35 @@
+.main {
+  max-width: $site-container-width;
+  margin: 0 auto $inuit-base-spacing-unit--large * 2;
+}
+
+.main {
+  &__content {
+    &.is-paged {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+
+  &__header{
+    font-weight: 100;
+    background: #fff;
+    padding: 0 $inuit-base-spacing-unit--small;
+    margin-bottom: $inuit-base-spacing-unit;
+    width: 100%;
+
+  }
+  &__title{
+    font-weight: 100;
+    font-family: $base-font-family;
+    @include inuit-font-size($milli-size);
+    margin-bottom: 0;
+    &--blog{
+      text-transform: uppercase;
+      color: $col-scc-gray;
+      text-align: center;
+      page-break-after: auto;
+    }
+  }
+}

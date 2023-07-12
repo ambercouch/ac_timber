@@ -1,0 +1,46 @@
+.site{
+  &__masthead{
+    background: #fff;
+    z-index:999;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    transition: transform 0.3s ease;
+
+    .admin-bar &{
+      top: 32px;
+    }
+
+    &[data-hidden=true]{
+      transform: translate(0, -100%);
+    }
+
+    &[data-hidden=false]{
+      transform: translate(0, 0);
+    }
+  }
+
+  &__main{
+    padding-top:$inuit-base-spacing-unit--large;
+    @include media-query(lap-and-up){
+      padding-top:$inuit-base-spacing-unit--large * 2;
+    }
+  }
+
+  &__feature{
+    background: $brand-col-2--light;
+    padding-top:$inuit-base-spacing-unit--large;
+    @include media-query(lap-and-up){
+      padding-top:$inuit-base-spacing-unit--large * 2;
+    }
+  }
+
+  &__subsidiary{
+    background: $brand-col-2;
+    padding-top:$inuit-base-spacing-unit--large;
+    @include media-query(lap-and-up){
+      padding-top:$inuit-base-spacing-unit--large * 2;
+    }
+  }
+
+}

@@ -1,0 +1,13 @@
+.wp-caption{
+  padding: 0;
+  background: $col-scc-gray;
+  img{
+    display: block;
+    margin: 0 !important;
+
+  }
+}
+.wp-caption-text{
+  padding: $inuit-base-spacing-unit--small !important;
+  color: #fff;
+}

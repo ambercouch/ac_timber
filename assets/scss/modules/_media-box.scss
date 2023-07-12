@@ -1,0 +1,63 @@
+.media-box{
+  display: flex;
+  margin-bottom:$inuit-base-spacing-unit;
+  padding: $inuit-base-spacing-unit;
+  box-shadow: $z1-shadow;
+  flex-wrap: wrap;
+}
+.media-box{
+  &__image{
+    width:100%;
+    @include media-query('lap'){
+      width:33.33%;
+    }
+    @include media-query('desk'){
+      width:25%;
+    }
+    img{
+      width: 100%;
+      display: block;
+      border-left: solid $inuit-base-spacing-unit--small /2  $brand-col-2;
+      .is-right &{
+        border-right: solid $inuit-base-spacing-unit--small /2  $brand-col-2;
+        border-left: none;
+      }
+    }
+  }
+
+  &__text{
+    padding-left: 0;
+    width:100%;
+    @include media-query('lap'){
+      width:66.66%;
+      padding-left: $inuit-base-spacing-unit;
+    }
+    @include media-query('desk'){
+      width:75%;
+      padding-left: $inuit-base-spacing-unit;
+    }
+    .is-right &{
+      padding-left: 0;
+      padding-right: 0;
+
+      @include media-query('lap'){
+        width:66.66%;
+        padding-right: $inuit-base-spacing-unit;
+      }
+      @include media-query('desk'){
+        width:75%;
+        padding-right: $inuit-base-spacing-unit;
+      }
+
+    }
+  }
+
+  &__title{
+    margin-bottom: 0;
+    color: $brand-col-2;
+  }
+  &.is-right{
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+}

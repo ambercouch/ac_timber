@@ -1,38 +1,34 @@
 {% extends "base.twig" %}
 
-{% set templateClass =  template ? '--'~template  : '' %}
-{% set templateSlug = template ?  '-'~template  : '' %}
+  {% block hero %}
+  {% endblock %}
 
-{% block before_head %}
-  <!-- page.twig -->
-  <!-- template - {{ template }} -->
-  <!-- {{ hidePageTitle }} -->
+{% block feature %}
 {% endblock %}
 
-{% block hero %}
-  {% if pageBannerImg != ''
-    or cssPageBannerColourCast != ''
-    or pageSettingsShowSiteHero == true
-    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
-  %}
-  <section id="siteHero" class="l-site__hero{{ templateClass }}">
-    {% include 'inc/hero.twig' ignore missing %}
-  </section>
-  {% endif %}
-{% endblock %}
 
 {% block content %}
 
   {% for post in posts %}
-    {% include 'content/content-single-page'~template_slug~'.twig' %}
+    {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+    {% include 'content-single-page.twig' %}
   {% endfor %}
 
-{% endblock %}
+  {% if (fn('comments_open')) %}
+  <section id="comments" class="comments">
+    <h3 class="comments__title">Comments</h3>
+    <div class="comments__response">
+      {% for cmt in post.get_comments() %}
+        {% include "comment.twig" with {comment:cmt} %}
+      {% endfor %}
+    </div>
+    <h3 class="comments__title">Leave a Reply</h3>
+    <div class="comments__respond">
+      {{ comment_form }}
+   </div>
+  </section>
+{% endif %}
 
-{% block belowContent %}
-  {% if not pageGlobalSettingHideComments or pageSettingsShowComments %}
-    {{ parent() }}
-  {% endif %}
 {% endblock %}
 
 

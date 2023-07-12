@@ -1,0 +1,32 @@
+dl{
+  margin-bottom: $inuit-base-spacing-unit;
+  @extend %clearfix;
+}
+dt{
+  font-weight: 600;
+  color: $brand-col-3;
+  border-bottom:solid 1px rgba($brand-col-3--light, 0.5);
+  margin-bottom: $inuit-base-spacing-unit--small;
+}
+dd{
+  margin-left: 1em;
+  padding-left: 0;
+  .alignleft{
+    @include media-query(lap-and-up) {
+      margin-left: 0 !important;
+    }
+  }
+  .alignright{
+    @include media-query(lap-and-up) {
+      margin-right: 0 !important;
+    }
+  }
+  img{
+    @include media-query(lap) {
+      width: 33%
+    }
+    @include media-query(desk) {
+      width: 20%
+    }
+  }
+}

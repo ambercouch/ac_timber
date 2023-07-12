@@ -1,0 +1,98 @@
+.island {
+  @extend .u-1-of-1-palm;
+  @extend .u-1-of-3-desk;
+  @extend .u-2-of-5-lap;
+
+  background: $brand-col-3--light;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $inuit-base-spacing-unit--large;
+  box-shadow: $z2-shadow;
+}
+
+.island {
+
+  &__feature-image{
+    margin-bottom: $inuit-base-spacing-unit--small;
+    overflow: hidden;
+  }
+  &__header{
+    padding: 0 $inuit-base-spacing-unit;
+  }
+  &__title{
+    @include inuit-font-size($inuit-heading-size-1,1);
+    margin-bottom: 0;
+  }
+  &__body{
+    padding: 0 $inuit-base-spacing-unit $inuit-base-spacing-unit;
+    @include media-query(lap-and-up){
+      padding: 0 $inuit-base-spacing-unit
+    }
+  }
+  &__cta{
+    padding: $inuit-base-spacing-unit--small;
+    align-self: center;
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    max-width: 100%;
+    @include media-query(desk){
+      padding: $inuit-base-spacing-unit 0;
+    }
+  }
+  &__btn{
+    opacity: 1;
+  }
+
+}
+
+.island {
+
+  &--charity {
+    @extend .island;
+
+    &__feature-image{
+      @extend .island__feature-image;
+    }
+    &__header{
+      @extend .island__header;
+    }
+    &__body{
+      @extend .island__body;
+    }
+    &__cta{
+      @extend .island__cta;
+    }
+    &__btn{
+      @extend .island__btn;
+    }
+    &__title{
+      @extend .island__title;
+    }
+  }
+
+  &--events {
+    @extend .island;
+
+    &__feature-image{
+      @extend .island__feature-image;
+    }
+    &__header{
+      @extend .island__header;
+    }
+    &__body{
+      @extend .island__body;
+    }
+    &__cta{
+      @extend .island__cta;
+    }
+    &__btn{
+      @extend .island__btn;
+    }
+    &__title{
+      @extend .island__title;
+    }
+  }
+}
+

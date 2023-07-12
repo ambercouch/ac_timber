@@ -1,0 +1,108 @@
+
+.feature-image {
+  position: relative;
+
+  &.compat-object-fit{
+    background-size: cover;
+    background-position: center center;
+    .feature-image__img{
+      opacity: 0;
+    }
+  }
+
+  @include media-query(lap-and-up) {
+    article:nth-of-type(odd) & {
+      @include internal-arrow(left);
+    }
+    article:nth-of-type(even) & {
+      @include internal-arrow(right);
+    }
+  }
+
+  @include media-query(palm) {
+    @include internal-arrow(bottom);
+    //margin-bottom: $inuit-base-spacing-unit--large;
+  }
+
+  &__img {
+    @include size(500px);
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    @include media-query(palm) {
+      width: 100%;
+      height: 250px;
+    }
+  }
+}
+
+.feature-image {
+  &--single-post {
+     @extend .feature-image;
+     &__img {
+       @extend .feature-image__img;
+       @include size(1000px, 250px);
+
+     }
+     &:after {
+       display: none !important;
+     }
+   }
+  &--single-page {
+    @extend .feature-image;
+    &__img {
+      @extend .feature-image__img;
+      @include size(1000px, 250px);
+
+    }
+    &:after {
+      display: none !important;
+    }
+  }
+}
+
+.feature-image {
+  &--island {
+    position: relative;
+    @include color-overlay($brand-col-2, 0.3);
+    &__img {
+      width: inherit;  /* Make images fill their parent's space. Solves IE8. */
+      max-width: 100%; /* Add !important if needed. */
+      height: auto;
+      display: block;
+
+    }
+
+    &__icon {
+      display: block;
+      @include size(200px, 100px);
+      margin: 0 auto;
+    }
+
+  }
+}
+
+.has-overlay {
+  position: relative;
+  &__overlay {
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    width: 100%;
+  }
+}
+
+.feature-image{
+  .is-paged & {
+    &:after {
+      display: none !important;
+    }
+  }
+
+  &__img {
+    .is-paged & {
+      @include size(100%);
+    }
+  }
+}

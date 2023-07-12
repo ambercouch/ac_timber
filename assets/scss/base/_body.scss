@@ -1,13 +1,9 @@
-html{
-  min-height: 100%;
-  @include mq($until: tablet ){
-    font-size: ($inuit-global-font-size-mobile / 16px) * 1em; /* [1] */
-
-  }
-  font-weight: 300;
-}
 body{
-  background: white;
-  min-height: 100%;
-  color: $col-text;
+  background: $col-scc-gray-xxlight;
+  &.single-post{
+    display: block;
+    height: auto;
+    box-shadow: none;
+    background: $col-scc-gray-xxlight;
+  }
 }

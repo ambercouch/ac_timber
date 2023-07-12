@@ -1,0 +1,42 @@
+<div class="masthead">
+  <div class="masthead__branding">
+    <div class="masthead__site-title">
+      {% if fn('is_front_page') %}
+        <h1 class="site-title">
+          <a class="site-title__link" href="{{ site.url }} " rel="home">
+            <svg class="icon site-title__logo" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none">
+              <title>{{ site.title }}</title>
+              <desc>{{ site.description }}</desc>
+              <use xlink:href="#icon-stretton-climate-care-logo-type"/>
+            </svg>
+          </a>
+        </h1>
+      {% else %}
+        <span class="site-title">
+               <a class="site-title__link" href="{{ site.url }} " rel="home">
+                 <svg class="icon site-title__logo" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none">
+                   <title>{{ site.title }}</title>
+                   <desc>{{ site.description }}</desc>
+                   <use xlink:href="#icon-stretton-climate-care-logo-type"/>
+                 </svg>
+               </a>
+        </span>
+      {% endif %}
+    </div>
+  </div>
+
+  <nav class="masthead__navigation--social">
+    {% include 'navigation--social.twig' %}
+  </nav>
+
+  <button id="menuButton" class="btn--menu" data-state="off">
+    <span class="btn--menu__bar--tl"></span>
+    <span class="btn--menu__bar--tr"></span>
+    <span class="btn--menu__bar--m"></span>
+    <span class="btn--menu__bar--br"></span>
+    <span class="btn--menu__bar--bl"></span>
+  </button>
+  <nav class="masthead__navigation" id="primaryNavigation" role="navigation" data-state="off">
+    {% include 'navigation--primary.twig' %}
+  </nav>
+</div>

@@ -1,0 +1,30 @@
+.scroll-to{
+
+}
+
+.scroll-to{
+  &__link{
+    outline: none;
+    @include size(3.5em, 7em);
+    margin: 0 auto;
+    display: block;
+    @include media-query(lap-and-up){
+      @include size(2.5em, 5em);
+    }
+
+  }
+  &__icon{
+    @include size(3.5em);
+    display: block;
+    animation: avia_fade_move_down 3s ease-in-out infinite;
+    @include media-query(lap-and-up){
+      @include size(2.5em);
+    }
+  }
+}
+
+@keyframes avia_fade_move_down {
+  0%   { transform:translate(0,-30px); opacity: 0;  }
+  50%  { opacity: 1;  }
+  100% { transform:translate(0,30px); opacity: 0; }
+}

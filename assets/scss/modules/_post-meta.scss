@@ -1,0 +1,79 @@
+
+.post-meta {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  &::before {
+    content: '';
+    display: block;
+    width: 99%;
+    height: 6px;
+    background: $brand-col-1;
+    position: absolute;
+    top: 18px;
+    transform: translate(0, -50%);
+    left: 0;
+  }
+  &__post-type {
+    @extend .u-1-of-2;
+  }
+  &__published {
+    @extend .u-1-of-2;
+  }
+  &__tagged {
+    display: none;
+    .single-post & {
+      display: block;
+      @extend .u-1-of-1;
+    }
+  }
+
+  &__date {
+    @include inuit-font-size($milli-size);
+    position: relative;
+    background: #fff;
+    padding-left: 0.5em;
+    line-height: 36px;
+    float: right;
+    color: $col-scc-gray;
+
+  }
+
+  &__tagged {
+    padding: $inuit-base-spacing-unit--small 0;
+  }
+}
+
+.post-meta {
+  &__date {
+    &--updated {
+      display: none;
+    }
+    &--published {
+      @extend .post-meta__date;
+    }
+  }
+}
+
+.post-meta {
+  .is-paged & {
+    height: 36px;
+  }
+
+  &::before {
+    .is-paged & {
+
+    }
+  }
+
+  &__date {
+    .is-paged & {
+      @include inuit-font-size($micro-size);
+      line-height: 36px;
+    }
+  }
+  &__event-info{
+    width:100%;
+  }
+
+}

@@ -1,6 +1,6 @@
 <?php
 
-//filters the_category_list to return only the first category
+//filters the_category_list to return onlt the first category
 function _act_first_cat($cats)
 {
     return [$cats[0]];
@@ -29,12 +29,14 @@ if (!function_exists('_act_entry_footer')) :
                 printf('<span class="tagged__tag-links">' . esc_html__('Tagged %1$s', '_s') . '</span>', $tags_list); // WPCS: XSS OK.
             }
         }
-//        if (!is_single() && !post_password_required() && (comments_open() || get_comments_number()))
-//        {
-//            echo '<span class="tagged__comment-links">';
-//            comments_popup_link(esc_html__('Leave a comment', '_s'), esc_html__('1 Comment', '_s'), esc_html__('% Comments', '_s'));
-//            echo '</span>';
-//        }
+        if (!is_single() && !post_password_required() && (comments_open() || get_comments_number()))
+        {
+            echo '<span class="tagged__comment-links">';
+            comments_popup_link(esc_html__('Leave a comment', '_s'), esc_html__('1 Comment', '_s'), esc_html__('% Comments', '_s'));
+            echo '</span>';
+        }
+        edit_post_link(sprintf(/* translators: %s: Name of current post */
+            esc_html__('Edit %s', '_s'), the_title('<span class="screen-reader-text">"', '"</span>', false)), '<span class="tagged__edit-link">', '</span>');
     }
 endif;
 

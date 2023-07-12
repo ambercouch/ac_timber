@@ -1,0 +1,41 @@
+
+  <div class="hero">
+    <div class="hero__container">
+      {#<div class="hero__image">#}
+        {#<img  alt="" class="hero__img" src="/wp-content/uploads/2016/02/stretton-climate-care-home.jpg"#}
+              {#srcset="/wp-content/uploads/2016/02/stretton-climate-care-home-300x225.jpg 300w,#}
+                 {#/wp-content/uploads/2016/02/stretton-climate-care-home-768x576.jpg 768w,#}
+                 {#/wp-content/uploads/2016/02/stretton-climate-care-home-1024x768.jpg 1024w,#}
+                 {#/wp-content/uploads/2016/02/stretton-climate-care-home.jpg 1900w"#}
+        {#>#}
+    {#</div>#}
+
+      <div class="hero__content">
+        <div class="hero__logo">
+          <svg class="icon hero__svg" role="img" aria-label="{{ site.title }} {{ site.description }}" preserveAspectRatio="none" >
+            <title>{{ site.title }}</title>
+            <desc>{{ site.description }}</desc>
+            <use xlink:href="#icon-stretton-climate-care-logo-main" />
+          </svg>
+        </div>
+        <div class="hero__call-to-action">
+          <a href="#primary" class="btn--cta1">Read Our Blog</a>
+          <a href="/contact-us/" class="btn--cta1">Contact Us</a>
+        </div>
+        <div style="padding: 6px; text-align: center; margin-top: 24px">
+          <p style="color:white">Call us on : <a style="color:white; text-decoration: none; font-weight: bold" href="tel:07528 493 181">07528 493 181</a></p>
+        </div>
+
+      </div>
+      <div class="hero__scroll-to">
+        <div class="scroll-to"><a href="#primary" class="scroll-to__link">
+            <svg class="scroll-to__icon" role="img" aria-label="Scroll to content" preserveAspectRatio="none">
+              <title>Scroll icon</title>
+              <desc>Scroll to content</desc>
+              <use xlink:href="#icon-scroll-down" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

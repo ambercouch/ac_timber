@@ -1,72 +1,144 @@
-/*
-  BEM BLOCK .navigation
- */
+.navigation {
+  &__link {
+    display: block;
+  }
+  &__list {
+    margin: $inuit-base-spacing-unit $inuit-base-spacing-unit--large;
+    padding: 0;
+  }
+  &__item {
+    list-style: none;
+  }
+}
 
 .navigation {
-  display: block;
-}
+  &--social {
 
-/*
-  BEM BLOCK MODIFIER .navigation--
- */
-
-.navigation-- {
-  &service {
-    display: block
-  }
-}
-
-//BEM BLOCK MODIFIER FALLBACK .navigation--
-
-[class*=navigation--] {
-  @extend .navigation;
-}
-
-/*
-  BEM ELEMENTS .navigation__
- */
-
-.navigation__ {
-  &list{
-    @extend .o-list-bare;
-  }
-  &item{
-    display: block;
-    padding: 0 $inuit-global-spacing-unit-tiny / 2 $inuit-global-spacing-unit-tiny;
-  }
-}
-
-/*
-  BEM ELEMENT MODIFIER .navigation__list--
- */
-
-.navigation__list--{
-  &service{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-end;
+    position: relative;
+
+    &__btn {
+      margin-right: $inuit-base-spacing-unit;
+      flex-shrink: 0;
+    }
+    @include media-query(desk) {
+      padding-right: $inuit-base-spacing-unit--large;
+    }
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .navigation__list--
+.navigation {
+  &--primary {
+    padding-top: $inuit-base-spacing-unit;
+    @include media-query(lap-and-up) {
+      padding-top: $inuit-base-spacing-unit--large * 1.5;
+    }
+    &__list {
+      @extend .navigation__list;
+      &--sub {
+        @extend .navigation--primary__list;
+        margin: $inuit-base-spacing-unit--small 0 0 0;
+        overflow: hidden;
+        transition: all 0.6s ease;
+        &[data-state=off] {
+          max-height: 0px;
+          margin: 0px;
+        }
+        &[data-state=on] {
+          max-height: 300px;
+          margin: $inuit-base-spacing-unit--small 0 0 0;
+        }
 
-[class*=navigation__list--] {
-  @extend .navigation__list;
-}
+      }
+    }
+    &__item {
+      @extend .navigation__item;
+      margin: $inuit-base-spacing-unit--small / 2 0;
+      padding: $inuit-base-spacing-unit--small / 2 0;
+      border-bottom: solid 1px $brand-col-1--light;
+      &--sub {
+        @extend .navigation--primary__item;
+        border: none;
+      }
+    }
+    &__link {
+      @extend .navigation__link;
+      @extend .btn;
+      background: transparent;
+      border: transparent;
+      font-family: $heading-font-family;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
+      position: relative;
+      z-index: 2;
+      &:before {
+        transition: all 0.3s ease;
+        content: '';
+        width: 0%;
+        z-index: -1;
+      }
+      &:hover {
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+        &:before {
+          background: rgba($brand-col-1--dark, 0.3);
+          content: '';
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          right: 0;
+          left: auto;
+          top: 0;
+          transform: translate(0, 0);
+          z-index: -1;
 
-/*
-  BEM ELEMENT MODIFIER .navigation__list--
- */
+        }
+      }
+      &[data-state=on]{
+        &:before {
+          background: rgba($brand-col-1--dark, 0);
+        }
+        &:after {
+          background: rgba($brand-col-1--dark, 0);
+        }
+      }
 
-.navigation__item--{
-  &service{
-    @extend .u-1-3--wide;
-    @extend .u-1-3--desktop;
-    @extend .u-1-3--tablet;
-    @extend .u-1-2--mobile;
+      &--sub {
+        @extend .navigation--primary__link;
+        background: rgba($brand-col-1--dark, 0.3);
+        @include inuit-font-size($small-size)
+      }
+
+    }
   }
 }
 
-[class*=navigation__item--] {
-  @extend .navigation__item;
+.menu-item-has-children{
+  position: relative;
+  &:after{
+    pointer-events: none;
+    transition: all 0.3s ease;
+    content:'';
+    @include size(14px);
+    position: absolute;
+    z-index: 10;
+    right: $inuit-base-spacing-unit--small;
+    top:28px;
+    background-image: url('assets/images/svg/plus--white.svg');
+    background-size: 14px;
+    opacity: 0;
+  }
+  &:hover{
+    &:after{
+      opacity: 1;
+    }
+  }
+  &[data-state=on]{
+    &:after{
+      opacity: 1;
+      transform: rotateZ(45deg);
+    }
+  }
+
 }

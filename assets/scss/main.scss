@@ -1,102 +1,125 @@
+/* WordPress theme comments */
 @import "style";
+/* ac_timber settings first to override inuit defaults */
+@import "var/settings.defaults";
+@import "var/settings.colours";
+@import "var/settings.fonts";
+@import "var/settings.headings";
+@import "var/settings.container";
+@import "var/settings.shadows";
+@import "var/settings.widths";
+@import "var/settings.buttons";
+@import "../vendor/inuit-defaults/settings.defaults";
+@import "../vendor/inuit-responsive-settings/settings.responsive";
+@import "var/settings.responsive";
+@import "../vendor/inuit-functions/tools.functions";
+@import "../vendor/inuit-mixins/tools.mixins";
+@import "../vendor/inuit-tools-widths/tools.widths";
+@import "../vendor/inuit-responsive-tools/tools.responsive";
+//@import "tools.aliases";
+@import "../vendor/inuit-normalize/generic.normalize";
+@import "../vendor/inuit-box-sizing/generic.box-sizing";
+@import "../vendor/inuit-shared/generic.shared";
+@import "../vendor/inuit-page/base.page";
+@import "../vendor/inuit-headings/base.headings";
 
+////@import "base.links";
+////@import "base.quotes";
+//
+@import "../vendor/inuit-buttons/objects.buttons";
+//@import "../vendor/inuit-layout/objects.layout";
+@import "var/settings.widths";
+@import "../vendor/inuit-media/objects.media";
 
-
-/*
- FUCTIONS
- */
-@import "functions";
-
-/*
- SETTINGS
- */
-//@import "settings/settings.article";
-@import "settings/settings.fonts";
-@import "settings/settings.colours";
-@import "settings/settings.defaults";
-@import "settings/settings.shadows";
-@import "settings/settings.headings";
-@import "settings/settings.widths";
-
-@import "settings/settings.responsive";
-@import "settings/settings.spacings";
-
-/*
- INUIT FRAME WORK
- */
-@import "inuit";
-@import "tools/tools.aliases";
-
-
-
-
-
-/*
-  UTILITIES OLD
-*/
-
+@import "base";
 @import "mixins";
 @import "helpers";
-@import "base";
-@import "settings/settings.article";
-@import "settings/settings.fonts";
 @import "typography";
 @import "accessibility";
+
 @import "placeholders/off-page";
-@import "placeholders/cf";
+@import "placeholders/btn";
+@import "placeholders/post__image";
+@import "placeholders/input";
+@import "placeholders/links";
+@import "placeholders/media";
 
-/*
-  UTILITIES
-*/
-@import "utilities";
-
-
-/*
-  OBJECTS
-*/
-@import "objects";
-
-/*
-  COMPONENTS
-*/
-@import "components";
-
-/*
-  Layouts
-*/
 @import "layouts";
 
-/*
-  MODULES
-*/
-
-@import "modules/page";
-@import "modules/content";
-@import "modules/feature-cat";
-@import "modules/post-type";
-@import "modules/video-embed";
-@import "modules/comments";
-@import "modules/comment-respond";
-@import "modules/response";
-@import "modules/footer";
-@import "modules/widget_act_company_address";
+@import "modules/main";
+@import "modules/site";
+@import "modules/site-title";
+@import "modules/masthead";
 @import "modules/navigation";
-@import "modules/image-menu-item";
+@import "modules/search-form";
+@import "modules/hero";
+@import "modules/scroll-to";
+@import "modules/post";
+@import "modules/post-meta";
+@import "modules/tagged";
+@import "modules/post-type";
+@import "modules/posts-navigation";
+@import "modules/feature-image";
+@import "modules/feature";
+@import "modules/subsidiary";
+@import "modules/single-post";
+@import "modules/single-page";
+@import "modules/comments";
+@import "modules/response";
+@import "modules/comment-form";
+@import "modules/island";
+@import "modules/footer";
+@import "modules/btn";
+@import "modules/login-form";
+@import "modules/event";
+@import "modules/event-info";
+@import "modules/media-box";
+@import "modules/newsletter-drawer";
+
+@import "modules/vendor/remodal";
+@import "modules/vendor/wpcf7";
+
+@import "modules/wp/wp-caption";
+@import "modules/wp/alignleft";
+@import "modules/wp/wpcf7";
+@import "modules/wp/gallery";
+@import "modules/wp/gallery";
+@import "modules/wp/wpcf7";
 
 
-@import "settings/settings.widths";
 
-
-/*
-  WP
-*/
-@import "wp/wp.wysiwyg";
-
-
-/*
-  SHAME
-*/
-@import "shame";
-
-
+//@import "ui/modules/placeholders/container";
+//@import "ui/modules/placeholders/layout";
+//@import "ui/modules/placeholders/responsive-toggle";
+//@import "ui/modules/placeholders/menu--responsive-expand";
+//@import "ui/modules/placeholders/menu--responsive-expand-break-points";
+//@import "ui/modules/placeholders/nav";
+//@import "ui/modules/placeholders/nav-break-points";
+//@import "ui/modules/site";
+//@import "ui/modules/master-header";
+//@import "ui/modules/navigation";
+//@import "ui/modules/content";
+//@import "ui/modules/subsidiary";
+//@import "ui/modules/footer";
+//@import "ui/modules/menu";
+//@import "ui/modules/branding";
+//@import "ui/accessibility";
+//@import "ui/modules/post";
+//@import "ui/modules/widget";
+//@import "ui/modules/sidebar";
+//@import "ui/modules/branding";
+//@import "ui/modules/widgets/search-form";
+//@import "ui/accessibility";
+//
+//
+//
+////@import "components.page-head";
+////@import "components.page-foot";
+////@import "components.site-nav";
+////@import "components.ads";
+////@import "components.promo";
+@import "../vendor/inuit-widths/trumps.widths";
+@import "../vendor/inuit-widths-responsive/trumps.widths-responsive";
+@import "../vendor/inuit-spacing/trumps.spacing";
+@import "../vendor/inuit-clearfix/trumps.clearfix";
 

@@ -1,98 +1,80 @@
 <!doctype html>
-<html {{ site.language_attributes }} data-env-{{environment}}={{environment}}>
+<html {{ site.language_attributes }} >
 <head>
-  <!-- base.twig -->
-  {% block before_head %}
-    <!-- beforehead block -->
+  <meta charset="{{ site.charset }}">
+
+  {% block criticalcss %}
+  <style>
+  {% include 'critical--page.css' %}
+  </style>
   {% endblock %}
 
-  <meta charset="{{ site.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="{{ site.pingback_url }}">
 
-  {% include 'inc/favicon.twig' %}
 
-  <!-- Critical CSS -->
-  <style>
-    {% include 'critical.css' ignore missing %}
-  </style>
-  {% include 'inc/dynamic-styles-site-title.twig' %}
-  {% include 'inc/dynamic-styles.twig' %}
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
   {{ fn('wp_head') }}
-
-  {% block after_head %}
-  {% endblock %}
+<script>
+  /*! modernizr 3.3.1 (Custom Build) | MIT *
+   * http://modernizr.com/download/?-objectfit-setclasses !*/
+  !function(e,n,t){function r(e,n){return typeof e===n}function o(){var e,n,t,o,i,s,a;for(var f in g)if(g.hasOwnProperty(f)){if(e=[],n=g[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(o=r(n.fn,"function")?n.fn():n.fn,i=0;i<e.length;i++)s=e[i],a=s.split("."),1===a.length?Modernizr[a[0]]=o:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=o),y.push((o?"":"no-")+a.join("-"))}}function i(e){var n=_.className,t=Modernizr._config.classPrefix||"";if(w&&(n=n.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(r,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),w?_.className.baseVal=n:_.className=n)}function s(e){return e.replace(/([a-z])-([a-z])/g,function(e,n,t){return n+t.toUpperCase()}).replace(/^-/,"")}function a(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):w?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}function f(e,n){return!!~(""+e).indexOf(n)}function l(e){return e.replace(/([A-Z])/g,function(e,n){return"-"+n.toLowerCase()}).replace(/^ms-/,"-ms-")}function u(){var e=n.body;return e||(e=a(w?"svg":"body"),e.fake=!0),e}function p(e,t,r,o){var i,s,f,l,p="modernizr",d=a("div"),c=u();if(parseInt(r,10))for(;r--;)f=a("div"),f.id=o?o[r]:p+(r+1),d.appendChild(f);return i=a("style"),i.type="text/css",i.id="s"+p,(c.fake?c:d).appendChild(i),c.appendChild(d),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(n.createTextNode(e)),d.id=p,c.fake&&(c.style.background="",c.style.overflow="hidden",l=_.style.overflow,_.style.overflow="hidden",_.appendChild(c)),s=t(d,e),c.fake?(c.parentNode.removeChild(c),_.style.overflow=l,_.offsetHeight):d.parentNode.removeChild(d),!!s}function d(n,r){var o=n.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(l(n[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+l(n[o])+":"+r+")");return i=i.join(" or "),p("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==getComputedStyle(e,null).position})}return t}function c(e,n){return function(){return e.apply(n,arguments)}}function m(e,n,t){var o;for(var i in e)if(e[i]in n)return t===!1?e[i]:(o=n[e[i]],r(o,"function")?c(o,t||n):o);return!1}function v(e,n,o,i){function l(){p&&(delete z.style,delete z.modElem)}if(i=r(i,"undefined")?!1:i,!r(o,"undefined")){var u=d(e,o);if(!r(u,"undefined"))return u}for(var p,c,m,v,h,y=["modernizr","tspan"];!z.style;)p=!0,z.modElem=a(y.shift()),z.style=z.modElem.style;for(m=e.length,c=0;m>c;c++)if(v=e[c],h=z.style[v],f(v,"-")&&(v=s(v)),z.style[v]!==t){if(i||r(o,"undefined"))return l(),"pfx"==n?v:!0;try{z.style[v]=o}catch(g){}if(z.style[v]!=h)return l(),"pfx"==n?v:!0}return l(),!1}function h(e,n,t,o,i){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+S.join(s+" ")+s).split(" ");return r(n,"string")||r(n,"undefined")?v(a,n,o,i):(a=(e+" "+E.join(s+" ")+s).split(" "),m(a,n,t))}var y=[],g=[],C={_version:"3.3.1",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){g.push({name:e,fn:n,options:t})},addAsyncTest:function(e){g.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=C,Modernizr=new Modernizr;var _=n.documentElement,w="svg"===_.nodeName.toLowerCase(),x="Moz O ms Webkit",S=C._config.usePrefixes?x.split(" "):[];C._cssomPrefixes=S;var b=function(n){var r,o=prefixes.length,i=e.CSSRule;if("undefined"==typeof i)return t;if(!n)return!1;if(n=n.replace(/^@/,""),r=n.replace(/-/g,"_").toUpperCase()+"_RULE",r in i)return"@"+n;for(var s=0;o>s;s++){var a=prefixes[s],f=a.toUpperCase()+"_"+r;if(f in i)return"@-"+a.toLowerCase()+"-"+n}return!1};C.atRule=b;var E=C._config.usePrefixes?x.toLowerCase().split(" "):[];C._domPrefixes=E;var j={elem:a("modernizr")};Modernizr._q.push(function(){delete j.elem});var z={style:j.elem.style};Modernizr._q.unshift(function(){delete z.style}),C.testAllProps=h;var N=C.prefixed=function(e,n,t){return 0===e.indexOf("@")?b(e):(-1!=e.indexOf("-")&&(e=s(e)),n?h(e,n,t):h(e,"pfx"))};Modernizr.addTest("objectfit",!!N("objectFit"),{aliases:["object-fit"]}),o(),i(y),delete C.addTest,delete C.addAsyncTest;for(var P=0;P<Modernizr._q.length;P++)Modernizr._q[P]();e.Modernizr=Modernizr}(window,document);
+</script>
 
 </head>
-<!-- BS Deploy -->
-<body id="siteBody" class="{{ body_class }} {{ hasHeroClass }} no-js"  data-mobile="off" data-window-top="true" {{ fn('_act_body_data') }}>
-{{ fn('wp_body_open') }}
 
+<body class="{{ body_class }}" {{ fn('_act_body_data') }}>
+<!-- TSO 20191111 -->
 <div class="defs" style="display: none">
-  {% include 'inc/defs.svg' ignore missing %}
+{% include 'inc/defs.svg' ignore missing %}
 </div>
 
-<div id="page" class="l-site">
+<div id="page" class="site">
 
   {% include 'site-accessibility.twig' %}
 
-  {% block header %}
-    <header id="masthead" class="l-site__masthead{{ siteMastheadModClass }} {{ siteMastheadOverlayClass }} {{ hidePageMasthead ? 'is-hidden' : 'is-not-hidden' }}" role="banner">
-      {% include 'inc/masthead.twig' %}
+  {% block masthead %}
+    <header id="act_masthead" data-hidden="{{ (not fn('is_paged') and fn('is_home')) ? 'true' : 'false' }}" class="site__masthead" role="banner">
+      {% include 'masthead.twig' %}
     </header>
   {% endblock %}
 
-  {% block mobile_nav %}
-    {% include 'inc/mobile-nav.twig' %}
-  {% endblock %}
-
   {% block hero %}
-    {% if pageBannerImg != ''
-    or cssPageBannerColourCast != ''
-    or  cssPageBannerColourCastColour != ''
-    or pageSettingsShowSiteHero == true
-    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
-    %}
-    <section id="siteHero" class="l-site__hero">
-      {% include 'inc/hero.twig' ignore missing %}
+    <section class="site__hero">
+      {% include 'hero.twig' %}
     </section>
-    {% endif %}
   {% endblock %}
 
-  {% block before_main %}
-    <section class="l-site__main-before">
-      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}
-    </section >
-  {% endblock %}
-
-  <section id="primary" class="l-site__main">
-    <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-sidebar{% else %}has-no-sidebar{% endif %}">
-      <main class="l-main__content{{ mainMod }}">
-        {% block before_content %}
-        {% endblock %}
-        <div class="l-content{{ contentMod }}">
-          {% block contentHeader %}
-          {% endblock %}
-          {% block content %}
-            <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
-          {% endblock %}
-          {% block contentAside %}
-          {% endblock %}
-          {% block contentFooter %}
-          {% endblock %}
-        </div>
-        {% block belowContent %}
-          {% if (fn('comments_open')) %}
-            {% include 'inc/comments.twig' %}
-          {% endif %}
+  <section id="primary" class="site__main">
+    <div class="main">
+      <main class="main__content {{ fn('is_paged') ? 'is-paged' : '' }}">
+        {% block content %}
+          <p>Hello world! This AC Timber. I am the content Block in base.twig. Extend me!</p>
         {% endblock %}
       </main>
-      {% block sidebar %}
-      {% endblock %}
+      <!-- Sidebar should go here when needed -->
     </div>
+
   </section>
 
   {% block after_main %}
@@ -101,24 +83,31 @@
     </section >
   {% endblock %}
 
+  {% block feature %}
+    <section id="feature" class="site__feature">
+      {% include 'feature.twig' %}
+    </section>
+  {% endblock %}
+
   {% block subsidiary %}
-    {% if subsidiary_widgets or menuService %}
-      <section id="subsidiary" class="l-site__subsidiary">
-          {% include 'inc/subsidiary.twig' %}
-      </section>
-    {% endif %}
+    <section id="subsidiary" class="site__subsidiary">
+      {% include 'subsidiary.twig' %}
+    </section>
   {% endblock %}
-
-  {% block footer %}
-    <footer class="l-site__footer" role="contentinfo">
-      {% include 'inc/footer.twig' %}
-    </footer>
-  {% endblock %}
-
-  {% include 'inc/footer_scripts.twig' %}
 
 </div>{# /#page #}
 
-</body>
+{% block footer %}
+<footer class="site__footer" role="contentinfo">
+  {% include 'footer.twig' %}
+</footer>
+{% endblock %}
 
+
+
+{% include 'footer_scripts.twig' %}
+
+
+
+</body>
 </html>

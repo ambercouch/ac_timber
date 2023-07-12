@@ -1,49 +1,13 @@
-html{
-  &:hover {
-    &[data-env-local]:after {
-      text-transform: uppercase;
-      content: attr(data-env-local);
-      display: inline-block;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background: red;
-      font-size: 12px;
-      line-height: 1;
-      padding: 6px;
-      color: white;
-      opacity: 0.5;
-    }
+html {
+  font-size: ($inuit-base-font-size / 16px) * 1em; /* [1] */
+  line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
 
-    &[data-env-local]:before {
-      text-transform: uppercase;
-      display: inline-block;
-      position: fixed;
-      right: 0;
-      top: 0;
-      background: red;
-      font-size: 12px;
-      line-height: 1;
-      padding: 6px;
-      color: white;
-      opacity: 0.5;
-      z-index: 9999;
-      @include mq($until: mobile) {
-        content: 'tiny';
-      }
-      @include mq($from: mobile, $until: tablet) {
-        content: 'mobile';
-      }
-      @include mq($from: tablet, $until: desktop) {
-        content: 'tablet';
-      }
-      @include mq($from: desktop, $until: wide) {
-        content: 'desktop';
-      }
-      @include mq($from: wide) {
-        content: 'wide';
-      }
-    }
+  @include media-query(lap){
+    font-size: ($inuit-base-font-size / 16px) * 0.9em; /* [1] */
+    line-height: $inuit-base-line-height / $inuit-base-font-size; /* [1] */
   }
-
+  @include media-query(palm){
+    font-size: ($inuit-base-font-size / 16px) * 0.71em; /* [1] */
+    line-height: ($inuit-base-line-height / $inuit-base-font-size) * 1.1; /* [1] */
+  }
 }
