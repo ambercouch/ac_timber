@@ -13,6 +13,7 @@
 .c-nav-menu-- {
   &primary {
    @include act-font-size($act-fs-6, 1.3);
+    height: 100%;
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
@@ -38,9 +39,12 @@
 
 .c-nav-menu__ {
  &list{
-   @extend .o-list-bare;
+   //@extend .o-list-bare;
    margin-bottom: 0;
    justify-content: flex-end;
+   margin: 0;
+   padding: 0;
+   list-style: none;
  }
   &item{
     position: relative;
@@ -69,7 +73,7 @@
     }
   }
   &sub-menu-list{
-    @extend .o-list-bare ;
+    //@extend .o-list-bare ;
     margin: 0;
   }
   &sub-menu-item{
@@ -102,13 +106,16 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+  //@extend .o-list-flex--center;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
   &pagination{
-    @extend .o-flex-split--last;
+    //@extend .o-flex-split--last;
   }
   &social{
-    @extend .o-list-flex;
+    //@extend .o-list-flex;
     justify-content: center;
   }
   &footer{
@@ -116,7 +123,7 @@
     flex-direction: row;
   }
   &mobile{
-    @extend .o-list-flex--stacked;
+    //@extend .o-list-flex--stacked;
   }
 }
 
@@ -130,6 +137,7 @@
   &primary{
     margin-right: 0;
     margin-left: 0;
+    margin-bottom: 0;
   }
   &hero{
     margin-right: $act-unit;
@@ -166,7 +174,8 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    @include act-font-size(15px);
+    padding: 0 $act-unit-t;
     display: block;
     background: transparent;
     font-weight: 500;
@@ -188,9 +197,9 @@
 
   }
   &secondary{
-    @extend .o-btn;
-    @extend .o-btn--rounded;
-    @extend .o-btn--brand-2;
+    //@extend .o-btn;
+    //@extend .o-btn--rounded;
+    //@extend .o-btn--brand-2;
     text-transform: uppercase;
     font-weight: 500;
   }
@@ -218,7 +227,7 @@
     }
   }
   &hero{
-    @extend .c-btn--primary;
+    //@extend .c-btn--primary;
   }
 }
 

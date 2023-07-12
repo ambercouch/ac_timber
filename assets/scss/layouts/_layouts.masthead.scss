@@ -4,7 +4,7 @@ BEM BLOCK .l-masthead
 .l-masthead{
   border-bottom:none;
   width: 100%;
-  @extend .o-wrapper;
+  //@extend .o-wrapper;
   padding: $act-unit;
   padding-top: 0;
   padding-bottom: 0;
@@ -53,10 +53,10 @@ BEM ELEMENTS .l-masthead__
     display: none;
     //@extend .element--band-block-bottom;
     //@extend .is-split-nav;
-    @extend .element--abso-layer;
+    //@extend .element--abso-layer;
     @include mq($from: desktop){
       display: block;
-      margin: $act-unit 0;
+      margin: 0 0 0 auto;
     }
   }
   &widget-area{
@@ -152,7 +152,7 @@ BEM ELEMENTS .l-masthead__
  */
 .element--abso-layer{
   //width: 100%;
-  @extend .o-site-wrapper--m;
+  //@extend .o-site-wrapper--m;
   left: 0;
   position: absolute;
   pointer-events: none;

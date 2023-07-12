@@ -11,7 +11,7 @@
 .masthead{
 
   &__branding{
-    @extend .u-1-of-3-desk;
+    width: auto;
   }
 
   &__navigation--social{

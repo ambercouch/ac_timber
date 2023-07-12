@@ -1,5 +1,11 @@
 /* WordPress theme comments */
 @import "style";
+
+/*
+ FUCTIONS
+ */
+@import "functions";
+
 /* ac_timber settings first to override inuit defaults */
 @import "var/settings.defaults";
 @import "var/settings.colours";
@@ -16,12 +22,25 @@
 @import "../vendor/inuit-mixins/tools.mixins";
 @import "../vendor/inuit-tools-widths/tools.widths";
 @import "../vendor/inuit-responsive-tools/tools.responsive";
-//@import "tools.aliases";
+
 @import "../vendor/inuit-normalize/generic.normalize";
 @import "../vendor/inuit-box-sizing/generic.box-sizing";
 @import "../vendor/inuit-shared/generic.shared";
 @import "../vendor/inuit-page/base.page";
 @import "../vendor/inuit-headings/base.headings";
+
+@import "tools/tools.aliases";
+
+$mq-breakpoints: (
+        mobile:  440px,
+        tablet:  840px,
+        desktop: 1000px,
+        wide:    1300px
+);
+
+@import "../../node_modules/sass-mq/mq";
+
+
 
 ////@import "base.links";
 ////@import "base.quotes";
@@ -45,6 +64,7 @@
 @import "placeholders/media";
 
 @import "layouts";
+@import "components";
 
 @import "modules/main";
 @import "modules/site";
