@@ -5,24 +5,33 @@
 {% block hero %}
 {% endblock %}
 
-
-
 {% block content %}
-
-
-  <div class="l-product-list{{ collectionMod }}">
-    <ul class="l-product-list__list{{ collectionMod }}">
-    {% for post in products %}
-      {% set product = fn('wc_get_product' , post.ID ) %}
-      {% set classAjaxAdd = product.supports('ajax_add_to_cart') ? 'add_to_cart_button ajax_add_to_cart' : '' %}
-
-      <li class="l-product-list__item{{ collectionMod }}">
-        <!-- product.supports('ajax_add_to_cart') = {{ product.supports('ajax_add_to_cart') }} * -->
-        <article {{ fn('post_class', ['entry', 'l-product-list__post-thumb'] ) }}>
-        {% include ["inc/tease-product.twig"] %}
-        </article>
-      </li>
-    {% endfor %}
+  <div class="l-product-list woocommerce">
+    <div class="l-product-list__intro">
+      {{ post.content }}
+    </div>
+    <div class="l-product-list__before u-clearfix">
+      {% do action('woocommerce_before_shop_loop') %}
+    </div>
+    <ul class="l-product-list__list">
+      {% for post in posts %}
+        {% set product = fn('wc_get_product' , post.ID ) %}
+        {% set variants = product.get_available_variations() %}
+        {% set attributes = product.get_attributes() %}
+        {% set defaultAtts = product.get_default_attributes() %}
+        {% set classAjaxAdd = product.supports('ajax_add_to_cart') ? 'add_to_cart_button ajax_add_to_cart' : '' %}
+        {% set productType = '' %}
+        {% for att, value in defaultAtts %}
+          {% if att == 'pa_product-type' %}
+            {% set productType = fn('get_term_by', 'slug', value, 'pa_product-type') %}
+          {% endif %}
+        {% endfor %}
+        <li class="l-product-list__item">
+          <div class="l-product-list__post-thumb">
+            {% include ["inc/post-thumb--product.twig"] %}
+          </div>
+        </li>
+      {% endfor %}
     </ul>
   </div>
 

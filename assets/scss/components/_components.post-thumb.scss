@@ -33,6 +33,16 @@
   &blog-list{
     text-align: left;
   }
+  &post-thumb-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    //background: $col-light;
+    color: $col-dark;
+    text-align: left;
+    //padding: 2px;
+
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--
@@ -66,7 +76,11 @@
   }
   &heading {
     display: block;
-    @include act-font-size($inuit-font-size-h3)
+    @include act-font-size($inuit-font-size-h5);
+    color: $col-light;
+    a{
+      color: $col-dark;
+    }
   }
   &title {
     display: inline;
@@ -74,14 +88,13 @@
   &link {
     display: block;
     text-decoration: none;
+    color: $col-light;
     &:hover{
-      text-decoration: none;
-      color: $brand-col-2 !important;
+      @extend .c-post-thumb__link;
+      color: $col-light;
     }
   }
-  &content {
-    display: block
-  }
+
   &footer {
     display: block
   }
@@ -118,6 +131,21 @@
     top: 0;
     left: 0;
     z-index: 2;
+  }
+  &feature-image{
+    background-color: #f8f1e5;
+    //background-image: url("https://www.transparenttextures.com/patterns/crissxcross.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+  &meta{
+    padding: $act-unit 0;
+  }
+  &price{
+    @include act-font-size($act-fs-6);
+    color: $col-dark;
+    .amount{
+      font-weight: bold;
+    }
   }
 }
 
@@ -167,5 +195,44 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__feature-imag--
+
+[class*=c-post-thumb__feature-image--] {
+  @extend .c-post-thumb__feature-image;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__link--
+
+[class*=c-post-thumb__link--] {
+  @extend .c-post-thumb__link;
+}
+
+.c-post-thumb__link--{
+  &content{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    //display: none !important;
+  }
+}
+//BEM ELEMENT MODIFIER FALLBACK .c-post-thumb__meta--
+
+[class*=c-post-thumb__meta--] {
+  @extend .c-post-thumb__meta;
+}
+
+.c-post-thumb__meta--{
+  &post-thumb-product{
+    padding: $act-unit-s  $act-unit-s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    & > *:last-child{
+      //margin-top: auto;
+    }
+
+  }
+}
 
 

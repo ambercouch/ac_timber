@@ -5,7 +5,7 @@
 .c-product-gallery {
   display: flex;
   justify-content: center;
-  background: $brand-col-1;
+  background: $col-light;
   .woocommerce-product-gallery{
     float: none !important;
     width: 100% !important;
@@ -65,4 +65,8 @@
 
 [class*=c-product-gallery__header--] {
   @extend .c-product-gallery__header;
+}
+
+.woocommerce div.product div.images .woocommerce-product-gallery__wrapper .zoomImg{
+  background: $col-light;
 }

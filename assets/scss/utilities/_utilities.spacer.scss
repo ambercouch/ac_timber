@@ -1,0 +1,21 @@
+[class*=u-spacer-]{
+  border: none 0 transparent;
+  border-style: none;
+  border-width: 0;
+}
+.u-spacer-t{
+  @extend .u-p-t
+}
+.u-spacer-s{
+  @extend .u-p-s
+}
+
+.u-spacer-m{
+  @extend .u-p
+}
+.u-spacer-l{
+  @extend .u-p-l
+}
+.u-spacer-h{
+  @extend .u-p-h
+}

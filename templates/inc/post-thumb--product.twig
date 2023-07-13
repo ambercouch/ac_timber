@@ -1,0 +1,44 @@
+{{ fn('timber_set_product', post) }}
+{% set modClass = (postType) ? '--'~postType : '--post-thumb-product' %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+
+{% set postLink = post.link %}
+{% set altLink = post.meta('post_thumb_link') %}
+{% set thumbLink = (altLink) ? altLink : postLink  %}
+{% set thumbLinkLabel = (altLink) ? post.meta('post_thumb_link_label') : 'Read More' %}
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+  <a href="{{thumbLink}}" class="c-post-thumb__link--feature-image">
+  {% if post.meta('custom_post_icon') %}
+    <div class="c-post-thumb__post-icon">
+      <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+    </div>
+  {% endif %}
+    {% if post.thumbnail %}
+      <div class="c-post-thumb__feature-image{{ modClass }}">
+        <div class="c-feature-image--post-thumb">
+          <img class="c-feature-image__img" src="{{ post.thumbnail.src('original') }}" class="feature-image__img" alt="{{ post.title }}"/>
+        </div>
+      </div>
+    {%  endif %}
+  </a>
+  <a href="{{thumbLink}}" class="c-post-thumb__link--content" >
+          {% if headerTitle != false %}
+            <div class="c-post-thumb__header{{ modClass }}">
+              {% include "inc/header.twig"
+                  with{
+                headingLevel : 3,
+                headerModClass : modClass,
+                templateSubtitleAfter: productType.name
+              }%}
+            </div>
+          {% endif %}
+
+  <div class="c-post-thumb__meta{{ modClass }}">
+    <div class="c-post-thumb__price">{{ product.get_price_html }}</div>
+    <div class="c-post-thumb__add-btn"><button href="{{ product.add_to_cart_url }}" data-product_id="{{ product.get_id }}" data-product_sku="{{ product.get_sku }}" data-quantity="1" class="c-btn--product-cta product_type_simple {{ classAjaxAdd }} product-type_{{ product.type }}">{{ product.add_to_cart_text }}</button></div>
+{#    <div class="c-post-thumb__read-more"><a href="{{ post.link }}" class="c-post-thumb__read-more-link">Find more</a></div>#}
+  </div>
+  </a>
+
+</article>

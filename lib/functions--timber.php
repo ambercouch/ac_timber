@@ -28,7 +28,7 @@ class StarterSite extends TimberSite {
 
         // woocommerce set up
         add_theme_support( 'woocommerce' );
-        add_theme_support( 'wc-product-gallery-zoom' );
+        //add_theme_support( 'wc-product-gallery-zoom' );
         add_theme_support( 'wc-product-gallery-lightbox' );
         add_theme_support( 'wc-product-gallery-slider' );
 
@@ -109,7 +109,16 @@ class StarterSite extends TimberSite {
          */
         global $post_id;
 
-        //var_dump( get_field('page_banner_image')); die();
+        if (is_cart()){
+            if ( WC()->cart->get_cart_contents_count() == 0 ) {
+                $cart_class = "is-cart-empty";
+            }else{
+                $cart_class = "is-cart-not-empty";
+            }
+
+            $context['classCartEmpty'] = $cart_class;
+        }
+
 
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);

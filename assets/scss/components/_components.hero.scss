@@ -46,6 +46,11 @@ BEM ELEMENTS .c-hero__
     text-align: center;
     max-width: 100%;
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
     > * {
       position: relative;
       z-index: 1;

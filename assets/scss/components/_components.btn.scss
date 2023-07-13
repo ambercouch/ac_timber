@@ -5,6 +5,8 @@
 .c-btn {
   @extend .o-btn;
   border-radius: 0;
+  text-align: center;
+  cursor: pointer;
   &.is-loading{
     cursor: default;
     pointer-events: none;
@@ -22,7 +24,7 @@
   &primary{
     @extend .c-btn;
     text-align: center;
-    color: $col-text;
+    color: $col-light !important;
     background: $col-accent;
     @include act-font-size($act-fs-4,1);
     font-weight: bold;
@@ -30,15 +32,14 @@
     padding-right: $act-unit ;
     margin-bottom: $act-unit;
     &:hover, &:active, &:focus {
-      background: lighten($col-accent, 10%);
-      color: $col-text;
+      background: darken($col-accent, 10%);
+      color: $col-light !important;
     }
     @include mq($from : tablet){
       line-height: 1;
-      text-align: left;
     }
     a{
-      color: $col-text;
+      color: $col-light;
     }
 
   }
@@ -56,6 +57,26 @@
     }
     a{
       color: $col-light;
+    }
+  }
+  &add-to-cart{
+
+  }
+  &nav-btn{
+    background: transparent;
+    a{
+      @extend .c-btn--primary;
+      padding: $act-unit-s $act-unit!important;
+      margin-bottom: 0;
+      @include act-font-size($act-fs-5,1)
+    }
+    &.current_page_item a{
+      @extend .c-btn--primary;
+      padding: $act-unit-s $act-unit!important;
+      margin-bottom: 0;
+      @include act-font-size($act-fs-5,1)
+      cursor: default;
+    background: darken($col-accent, 10%)
     }
   }
   &n{
@@ -77,6 +98,23 @@
         background: rgba($brand-col-2, .8) !important;
       }
     }
+  }
+  &product-cta{
+    @extend .c-btn--primary;
+    font-weight: normal;
+    @include act-font-size($act-fs-5);
+    display: block;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    margin-top: $act-unit-s;
+    margin-bottom: 0;
+
+  }
+  &add-to-cart{
+    @extend .c-btn--primary;
+    margin-bottom: $act-unit-t;
+    width: 100%;
   }
 }
 

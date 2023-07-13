@@ -8,7 +8,7 @@
 
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
-  <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+  <a href="{{thumbLink}}" class="c-post-thumb__link--feature-image" target="_blank">
   {% if post.meta('custom_post_icon') %}
     <div class="c-post-thumb__post-icon">
       <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
@@ -35,7 +35,9 @@
       {{ post.meta('service_intro_content') }}
     </div>
     {% if thumbLink %}
-    <a target="_blank" href="{{ thumbLink }}" class="c-post-thumb__read-more">{{ thumbLinkLabel  }}</a>
+      <div class="c-btn--read-more">
+        <a target="_blank" href="{{ thumbLink }}" class="c-btn__link--read-more">{{ thumbLinkLabel  }}</a>
+      </div>
     {% endif %}
   </div>
   {% endif %}

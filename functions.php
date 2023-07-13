@@ -155,3 +155,77 @@ function act_disable_classic_editor() {
 add_action( 'admin_head', 'act_disable_classic_editor' );
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+/*
+ * Filter the variable product price to show the from price
+ */
+
+add_filter('woocommerce_variable_price_html', 'act_variation_from_price', 10, 2);
+
+function act_variation_from_price( $price, $product ) {
+
+    $price = '';
+
+    $price .= "<span>From </span>";
+    $price .= wc_price($product->get_price());
+
+    return $price;
+}
+
+
+/*
+ * Remove the single excerpt (product content)
+ */
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+//remove_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10);
+add_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 0);
+//remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
+remove_action( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+
+function my_text_change() {
+    return __( 'Buy Now', 'woocommerce' );
+}
+add_filter( 'woocommerce_product_add_to_cart_text', 'my_text_change' );
+
+add_filter('woocommerce_checkout_fields', 'act_checkout_fields');
+function act_checkout_fields($fields)
+{
+    //unset($fields['billing']['billing_address_2']);
+    $fields['billing']['billing_company']['placeholder'] = 'Company Name';
+    $fields['billing']['billing_company']['label'] = 'Business Name';
+    $fields['billing']['billing_company']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_first_name']['placeholder'] = 'First Name';
+    $fields['billing']['billing_first_name']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_last_name']['placeholder'] = 'Last Name';
+    $fields['billing']['billing_last_name']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_email']['placeholder'] = 'Email Address ';
+    $fields['billing']['billing_email']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_phone']['placeholder'] = 'Phone ';
+    $fields['billing']['billing_phone']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_city']['placeholder'] = 'City ';
+    $fields['billing']['billing_city']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_state']['placeholder'] = 'County ';
+    $fields['billing']['billing_state']['label_class'] = 'u-d-n';
+    $fields['billing']['billing_postcode']['placeholder'] = 'Postcode ';
+    $fields['billing']['billing_postcode']['label_class'] = 'u-d-n';
+
+    $fields['shipping']['shipping_company']['placeholder'] = 'Company Name';
+    $fields['shipping']['shipping_company']['label'] = 'Business Name';
+    $fields['shipping']['shipping_company']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_first_name']['placeholder'] = 'First Name';
+    $fields['shipping']['shipping_first_name']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_last_name']['placeholder'] = 'Last Name';
+    $fields['shipping']['shipping_last_name']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_email']['placeholder'] = 'Email Address ';
+    $fields['shipping']['shipping_email']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_phone']['placeholder'] = 'Phone ';
+    $fields['shipping']['shipping_phone']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_city']['placeholder'] = 'City ';
+    $fields['shipping']['shipping_city']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_state']['placeholder'] = 'County ';
+    $fields['shipping']['shipping_state']['label_class'] = 'u-d-n';
+    $fields['shipping']['shipping_postcode']['placeholder'] = 'Postcode ';
+    $fields['shipping']['shipping_postcode']['label_class'] = 'u-d-n';
+    return $fields;
+}

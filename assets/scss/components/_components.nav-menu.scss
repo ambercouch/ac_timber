@@ -103,6 +103,8 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
+    align-items: center;
+    gap: $act-unit;
   }
   &pagination{
     @extend .o-flex-split--last;

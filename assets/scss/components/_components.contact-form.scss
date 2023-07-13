@@ -13,6 +13,12 @@
  */
 
 .c-contact-form-- {
+  &billing{
+    margin-bottom: $act-unit;
+  }
+  &shipping{
+    margin-bottom: $act-unit;
+  }
   &request {
     .c-contact-form__content{
       @include mq($from : tablet){
@@ -128,6 +134,29 @@
 
 [class*=contact-form__input-content--] {
   @extend .c-contact-form__content;
+}
+
+.c-contact-form__content--{
+  &billing{
+    //display: none !important;
+    border: solid 1px $brand-col-3;
+    border-radius: $act-unit-t;
+    padding: $act-unit;
+    background: lighten($brand-col-2, 30%);
+    input{
+      padding: $act-unit-s $act-unit-s;
+      @include act-font-size($act-fs-5, 1);
+      border: none;
+    }
+    input::placeholder{
+      @include act-font-size($act-fs-6, 1);
+      vertical-align: middle;
+      display: block;
+    }
+    label{
+      display: none;
+    }
+  }
 }
 /*
  * c-contact-form--placeholder-block

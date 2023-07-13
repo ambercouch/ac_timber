@@ -1,0 +1,69 @@
+/*
+  BEM BLOCK .l-checkout
+ */
+
+.l-checkout {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .l-checkout--
+ */
+
+.l-checkout-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .l-checkout--
+
+[class*=l-checkout--] {
+  @extend .l-checkout;
+}
+
+/*
+  BEM ELEMENTS .l-checkout__
+ */
+
+.l-checkout__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+  &form{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    text-align: left;
+    grid-column-gap: $act-unit-l;
+  }
+  &payment{
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-checkout--
+
+[class*=l-checkout__header--] {
+  @extend .l-checkout__header;
+}

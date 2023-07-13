@@ -43,9 +43,6 @@
     padding-right: $act-unit;
     background: transparent;
     color: white;
-    a{
-      color: white;
-    }
   }
   &widget-area{
     @extend .c-site-wrapper--responsive;
@@ -72,13 +69,7 @@
 }
 
 .l-footer{
-  a{
-    color: $brand-col-2;
-    text-decoration: none;
-    &:hover{
-      color: white;
-    }
-  }
+
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-footer__widget-area--

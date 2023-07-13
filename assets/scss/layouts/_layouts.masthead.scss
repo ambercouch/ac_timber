@@ -63,8 +63,8 @@ BEM ELEMENTS .l-masthead__
     width: 100%;
   }
   &branding{
-    @extend .element--items-centre;
-    //@extend .element--flush-left;
+    //@extend .element--items-centre;
+    @extend .element--flush-left;
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;

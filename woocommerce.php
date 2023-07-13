@@ -9,6 +9,7 @@ if ( ! class_exists( 'Timber' ) ) {
 $context            = Timber::context();
 $context['sidebar'] = Timber::get_widgets( 'shop-sidebar' );
 
+
 if ( is_singular( 'product' ) ) {
 
     $product_badge_position = get_field('product_badge_position');
@@ -24,13 +25,14 @@ if ( is_singular( 'product' ) ) {
     // Get related products
     $related_limit               = wc_get_loop_prop( 'columns' );
     $related_ids                 = wc_get_related_products( $context['post']->id, $related_limit );
-    $context['related_products'] =  Timber::get_posts( $related_ids );
+    $context['related_products'] = Timber::get_posts( $related_ids );
 
     // Restore the context and loop back to the main query loop.
     wp_reset_postdata();
 
     Timber::render( 'woocommerce/single-product.twig', $context );
 } else {
+    $context['post']    = Timber::get_post(6);
     $posts = Timber::get_posts();
     $context['products'] = $posts;
 

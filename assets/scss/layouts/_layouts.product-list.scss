@@ -27,6 +27,9 @@
  */
 
 .l-product-list__ {
+  &before{
+    margin: $act-unit-l 0;
+  }
   &header {
     display: block
   }
@@ -59,7 +62,6 @@
     width: 100%;
   }
   &item {
-    padding: $act-unit;
     @include mq($from : tablet){
       width: 33.33%;
     }
