@@ -119,7 +119,7 @@ class StarterSite extends TimberSite {
             $context['classCartEmpty'] = $cart_class;
         }
 
-
+        $context['options'] = get_fields('options');
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
