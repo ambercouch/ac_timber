@@ -183,3 +183,20 @@ body a.button.wc-forward{
 .woocommerce-MyAccount-content{
   text-align: left;
 }
+.c-img--cover{
+  height: 100%;
+  img{
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+.woocommerce-NoticeGroup-checkout{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.woocommerce form .form-row.woocommerce-invalid .select2-container, .woocommerce form .form-row.woocommerce-invalid input.input-text, .woocommerce form .form-row.woocommerce-invalid select{
+  border: solid 1px #a00;
+}

@@ -38,6 +38,7 @@ BEM BLOCK MODIFIERS .c-site-title
     font-weight: 900;
     display: block;
     margin-bottom: 0;
+
     @include act-font-size($inuit-font-size-h1, $modifier: 0);
     @include mq($from: tablet){
       @include size(auto);
@@ -56,10 +57,10 @@ BEM ELEMENTS .c-site-title
   &link{
     @include act-font-size($inuit-font-size-h1, $modifier: 1);
     display: block;
-    color: $col-text;
+    color: $brand-col-1;
     text-decoration: none;
     &:hover,&:focus{
-      color: $col-text;
+      color: $brand-col-1;
     }
   }
   &img{
@@ -67,7 +68,7 @@ BEM ELEMENTS .c-site-title
   }
   &description-heading{
     margin-bottom: 0;
-    color: $col-text;
+    color: $brand-col-6;
     font-family: $act-font-family-sans;
     font-weight: 500;
     @include act-font-size($inuit-font-size-h6, $modifier: 1);

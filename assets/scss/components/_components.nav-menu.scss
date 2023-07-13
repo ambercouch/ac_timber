@@ -120,6 +120,13 @@
   &mobile{
     @extend .o-list-flex--stacked;
   }
+  &hero{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
@@ -134,7 +141,7 @@
     margin-left: 0;
   }
   &hero{
-    margin-right: $act-unit;
+    //margin-right: $act-unit;
   }
   &social{
     margin-right: $act-unit-l;
@@ -173,7 +180,7 @@
     background: transparent;
     font-weight: 500;
     &:hover{
-      color: $brand-col-2;
+      color: darken($brand-col-5, 10%);
     }
     .is-overlay-hero &{
       color:white;

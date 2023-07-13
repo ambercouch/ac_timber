@@ -79,6 +79,11 @@
     background: darken($col-accent, 10%)
     }
   }
+  &checkout{
+    width: 300px;
+    max-width: 100%;
+    font-weight: bold;
+  }
   &n{
     @extend .c-btn;
     padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;

@@ -26,10 +26,10 @@ $etp-almost-black: #292929;
 
 $brand-col-1 : $etp-earthy-green;
 $brand-col-2 : $etp-soft-gray;
-$brand-col-3 : $etp-soft-gray;
-$brand-col-4 : $act-off-white;
-$brand-col-5 : $act-ashen-black;
-$brand-col-6 : $etp-salmon-tones;
+$brand-col-3 : lighten($etp-soft-gray, 30%);
+$brand-col-4 : $etp-off-white;
+$brand-col-5 : $etp-salmon-tones;
+$brand-col-6 : $etp-almost-black;
 $brand-col-7 : $act-amber;
 $brand-col-8 : $act-slate-grey;
 $brand-col-9 : $act-slate-grey;
@@ -38,6 +38,6 @@ $col-dark : $etp-almost-black;
 $col-light : $etp-off-white;
 $col-text : $etp-almost-black;
 $col-heading : $brand-col-1;
-$col-link : $brand-col-6;
-$col-accent : $brand-col-6;
+$col-link : $brand-col-5;
+$col-accent : $brand-col-5;
 
