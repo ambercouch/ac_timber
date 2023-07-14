@@ -27,7 +27,7 @@
       {% endif %}
 
       {% if  bannerContent != '' or (not hideBannerMenu and menuName != '') %}
-      <div class="c-hero__content {{ classSiteBannerContentStyle }}" style="width:{{ cssSiteBannerContentWidth }}">
+      <div class="c-hero__content {{ classSiteBannerContentStyle }} {{ classSiteBannerContentWidth }}" >
         {{  bannerContent  }}
 
         {% if not hideBannerMenu and menu | length %}
