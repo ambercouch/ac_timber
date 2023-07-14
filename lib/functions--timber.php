@@ -194,7 +194,7 @@ class StarterSite extends TimberSite {
         $site_banner_h_position = get_field('banner_content_position_horizontal','options');
         $site_banner_v_position = get_field('banner_content_position_vertical','options');
 
-        $context['cssSiteBannerContentWidth'] = $site_banner_width;
+        $context['classSiteBannerContentWidth'] = $site_banner_width;
         $context['classSiteBannerContentStyle'] = $site_banner_style_class;
         $context['cssSiteBannerContentOpacity'] =  $site_banner_opacity ;
         $context['classSiteBannerContentPosHoz'] = $site_banner_h_position ;
