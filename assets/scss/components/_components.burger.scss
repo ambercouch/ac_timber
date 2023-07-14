@@ -2,7 +2,7 @@
 .c-burger{
   position: fixed;
   right:  $act-unit;
-  top: $act-unit-l *1.25;
+  top: $act-unit *1.25;
   z-index: 99999;
   @include act-font-size($act-fs-6);
 }

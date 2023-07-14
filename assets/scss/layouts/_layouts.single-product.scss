@@ -3,10 +3,14 @@
  */
 
 .l-single-product {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: $act-unit-l;
-  grid-row-gap: $act-unit-l;
+  display:block;
+  @include mq($from : tablet){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: $act-unit-l;
+    grid-row-gap: $act-unit-l;
+  }
+
   width: 1060px;
   margin: 0 auto;
   max-width: 100%;
@@ -63,6 +67,10 @@
   &product-gallery{
     //display: flex;
     //justify-content: center;
+    margin-bottom: $act-unit;
+    @include mq($from: desktop){
+      margin-bottom: 0;
+    }
     .woocommerce-product-gallery{
       margin-bottom: 0 !important;
     }

@@ -62,6 +62,8 @@
     width: 100%;
   }
   &item {
+    margin-bottom: $act-unit-l;
+    padding-left:0;
     @include mq($from : tablet){
       width: 33.33%;
     }

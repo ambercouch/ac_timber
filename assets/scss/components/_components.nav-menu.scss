@@ -50,6 +50,12 @@
     text-decoration: none;
     pointer-events: all !important;
   }
+  &link-label{
+    display: inline;
+    .c-nav-menu__item--icon &{
+      display:flex;
+    }
+  }
   &sub-menu{
     position: absolute;
     left: -99999px;
@@ -119,6 +125,7 @@
   }
   &mobile{
     @extend .o-list-flex--stacked;
+    align-items: flex-end;
   }
   &hero{
     display: flex;
@@ -151,6 +158,7 @@
     margin-left: $act-unit;
   }
   &stacked{
+    margin: 0;
     margin-bottom: $act-unit-s;
     &:last-child{
       margin-bottom: 0;
@@ -158,12 +166,20 @@
   }
   &mobile{
     @extend .c-nav-menu__item--stacked;
+    //margin-bottom: $act-unit !important;
+    &.c-btn--nav-btn{
+      margin-bottom: $act-unit-s;
+    }
+
   }
   &image{
     display: inline-block;
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
+  }
+  &icon{
+
   }
 }
 
@@ -205,6 +221,8 @@
   }
   &mobile{
     //@extend .c-nav-menu__link--blocky;
+    padding: $act-unit-s 0;
+    display: block;
   }
   &blocky{
     padding:$act-unit-s;
@@ -256,7 +274,11 @@
   @extend .c-nav-menu__sub-menu-link !optional;
 }
 
-.c-nav-menu__link{
+[class*=c-nav-menu__link-label--] {
+  @extend .c-nav-menu__link-label;
+}
+
+.c-nav-menu__link-label{
 
   .has-label &{
     display: flex;

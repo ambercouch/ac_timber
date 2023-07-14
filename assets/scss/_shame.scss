@@ -72,8 +72,12 @@ body a.button.wc-forward{
 }
 
 .l-cart{
-  display: flex;
-  gap: $act-unit-l;
+  display: block;
+  @include mq($from : tablet){
+    display: flex;
+    gap: $act-unit-l;
+  }
+
 
   th{
     background: lighten($brand-col-2, 30%) !important;
@@ -84,10 +88,15 @@ body a.button.wc-forward{
 }
 .l-cart__{
   &form{
+    @include mq($from : tablet){
+
     width: 70%;
+    }
   }
   &payment{
-    width: 30% !important;
+    @include mq($from : tablet) {
+      width: 30% !important;
+    }
   }
 
 }
@@ -129,19 +138,30 @@ body a.button.wc-forward{
   font-weight: 500;
 }
 .shop_table .product-remove{
-  width: 0;
+  @include mq($from : tablet){
+    width: 0;
+  }
 }
 .shop_table .product-thumbnail{
-  width: 0;
+  @include mq($from : tablet){
+    width: 0;
+  }
 }
 .shop_table .product-price{
-  width: 0;
+  @include mq($from : tablet){
+    width: 0;
+  }
 }
 .shop_table .product-quantity{
-  width: 0;
+  @include mq($from : tablet){
+    width: 0;
+  }
 }
 .shop_table .product-subtotal{
-  width: 0;
+  @include mq($from : tablet){
+    width: 0;
+  }
+
 }
 .cart_totals .shop_table{
   background: lighten($brand-col-2, 30%);
@@ -199,4 +219,11 @@ body a.button.wc-forward{
 
 .woocommerce form .form-row.woocommerce-invalid .select2-container, .woocommerce form .form-row.woocommerce-invalid input.input-text, .woocommerce form .form-row.woocommerce-invalid select{
   border: solid 1px #a00;
+}
+
+.c-media--col-rev{
+  @include mq($until : tablet){
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

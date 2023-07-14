@@ -120,10 +120,13 @@
     text-align: center;
   }
   &page{
-    padding-left: $act-unit-h * 1.5;
-    padding-right: $act-unit-h * 1.5;
-    padding-top: $act-unit-l;
-    padding-bottom: $act-unit-l;
+    @include mq($from : desktop){
+      padding-left: $act-unit-h * 1.5;
+      padding-right: $act-unit-h * 1.5;
+      padding-top: $act-unit-l;
+      padding-bottom: $act-unit-l;
+    }
+
     background-color: transparent;
   }
   &service{
