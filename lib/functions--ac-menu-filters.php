@@ -17,9 +17,10 @@ function act_menu_filters($sorted_menu_objects, $args) {
 
     //Image menu
     foreach ($sorted_menu_objects as $menu_object) {
-        $menu_object->classes[] = "c-nav-menu__item--image";
-        $object_id = $menu_object->object_id;
         if($menu_style == 'image'){
+
+            $menu_object->classes[] = "c-nav-menu__item--image";
+            $object_id = $menu_object->object_id;
             $image_el = '';
             $link_thum_el = '';
             $menu_image = get_field('service_background_image' , $object_id);
@@ -66,34 +67,33 @@ function act_menu_filters($sorted_menu_objects, $args) {
 
     //icon menus
     foreach ($sorted_menu_objects as $menu_object) {
-
-
-        $menu_label = $menu_object->title;
-
         $menu_item_icon = get_field('menu_icon', $menu_object);
-        $menu_item_icon_pos = get_field('icon_position', $menu_object);
-
-
-        $menu_item_icon_show_label = get_field('show_label', $menu_object);
-        $item_class_label = "";
-        $item_class_label_pos = "";
-        $menu_item_icon_label = "";
-
-        if ($menu_item_icon_show_label == true){
-            $menu_item_icon_label =  $menu_label;
-            $item_class_label = " has-label ";
-            $item_class_label_pos = " is-icon-pos-".$menu_item_icon_pos;
-            $menu_object->classes[] =  $item_class_label;
-            $menu_object->classes[] =  $item_class_label_pos;
-
-        }
 
         if ($menu_item_icon != ""){
+
+            $menu_object->classes[] = "c-nav-menu__item--icon";
+
+            $menu_label = $menu_object->title;
+            $menu_item_icon_pos = get_field('icon_position', $menu_object);
+            $menu_item_icon_show_label = get_field('show_label', $menu_object);
+
+            $item_class_label = "";
+            $item_class_label_pos = "";
+            $menu_item_icon_label = "";
+
+            if ($menu_item_icon_show_label == true){
+                $menu_item_icon_label =  $menu_label;
+                $item_class_label = " has-label ";
+                $item_class_label_pos = " is-icon-pos-".$menu_item_icon_pos;
+                $menu_object->classes[] =  $item_class_label;
+                $menu_object->classes[] =  $item_class_label_pos;
+            }
+
+
             $icon_class_mod = str_replace("icon-","", $menu_item_icon);
             $menu_item_icon_id = "#".$menu_item_icon;
 
             $title_markup = false;
-
 
             if ($menu_item_icon_label != ""){
                 $title_markup = '<div class="c-nav-menu__icon-title">'.$menu_item_icon_label.'</div>';
