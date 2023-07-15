@@ -47,7 +47,7 @@ BEM BLOCK MODIFIERS .l-main--
 
 .l-main__{
   &sidebar{
-    background: $brand-col-5;
+    background: $brand-col-4;
     padding: $act-unit;
 
     @include mq($from: tablet) {

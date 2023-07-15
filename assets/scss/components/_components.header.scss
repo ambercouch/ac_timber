@@ -71,6 +71,9 @@
   &title {
     display: inline;
   }
+  &title-link{
+    text-decoration: none;
+  }
 
   &link {
     display: inline
@@ -166,6 +169,12 @@
 &service-intro{
   color: $brand-col-6;
 }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__link-title--
+
+[class*=c-header__title-link--] {
+  @extend .c-header__title-link;
 }
 
 
