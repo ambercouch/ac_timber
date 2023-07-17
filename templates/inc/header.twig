@@ -2,7 +2,7 @@
 Include this with optional params
 {% include "inc/header.twig"
       with {
-      headerTitle : null,
+      templateHeaderTitle : null,
       headingLevel : '1' ,
       headerModClass : templateClass
     }%}
@@ -13,15 +13,15 @@ Include this with optional params
 
 {% set postAltTitle = (post.meta('post_alt_title')) ? post.meta('post_alt_title') : null %}
 {% set postTitle = (postAltTitle) ? postAltTitle  : post.title %}
-{% set templateTitle = (templateTitle) ? templateTitle : null %}
-{% set headerTitle = (templateTitle) ? templateTitle : postTitle %}
+{% set templateHeaderTitle = (templateHeaderTitle) ? templateHeaderTitle : null %}
+{% set headerTitle = (templateHeaderTitle) ? templateHeaderTitle : postTitle %}
 
 {% set postSubtitleAfter =  (post.meta('post_heading_subtitle')) ? post.meta('post_heading_subtitle') : null %}
 {% set templateSubtitleAfter = (templateSubtitleAfter) ? templateSubtitleAfter : null %}
 {% set headerSubtitleAfter = (templateSubtitleAfter)? templateSubtitleAfter :  postSubtitleAfter %}
 
 {% set postIcon =  (post.meta('custom_post_icon')) ? post.meta('custom_post_icon') : null %}
-{% set tempalteIcon = (templateIcon) ? templateIcon : null %}
+{% set templateIcon = (templateIcon) ? templateIcon : null %}
 {% set headerIcon = (templateIcon) ? templateIcon : postIcon %}
 
 

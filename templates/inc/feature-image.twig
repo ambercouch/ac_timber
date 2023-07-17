@@ -1,0 +1,27 @@
+{#
+Include this with optional params
+{% include "inc/feature-image.twig"
+      with {
+      headerTitle : null,
+      headingLevel : '1' ,
+      headerModClass : templateClass
+    }%}
+#}
+
+{% set imgObj = (imgObj) ? imgObj :  post.thumbnail %}
+{% set imgSize = (imgSize) ? imgSize :  'original' %}
+{% set imgAlt = (imgObj.alt) ? imgObj.alt :  post.title %}
+{% set templateCap = (templateCap) ? templateCap :  imgObj.caption %}
+{% set postTypeModClass = (postType) ? '--'~postType : null %}
+{% set imgModClass = (templateModClass) ? templateModClass : postTypeModClass %}
+
+{% if imgObj %}
+<div class="c-feature-image{{ imgModClass }}">
+  <img srcset="{{ imgObj.src(imgSize)|resize(480)}} 480w, {{ imgObj.src(imgSize)|resize(1200)}} 1200w, {{ imgObj.src(imgSize)|resize(1920)}} 1920w, " class="c-feature-image__img{{ imgModClass }}" alt="{{ imgAlt }}"/>
+{% if templateCap and templateCap != 'hide' %}
+  <div class="c-feature-image__caption">
+    {{ templateCap | wpautop }}
+  </div>
+{% endif %}
+</div>
+{% endif %}

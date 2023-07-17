@@ -5,7 +5,7 @@
 .c-post-thumb {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: stretch;
   height: 100%;
   text-align: center;
 }
@@ -80,7 +80,9 @@
     }
   }
   &content {
-    display: block
+    display: block;
+    padding: $act-unit-s;
+    height: 100%;
   }
   &footer {
     display: block

@@ -94,15 +94,15 @@
 
 .l-post-thumb-list__item--{
   &service{
-    height: 33.333vw;
+    //height: 33.333vw;
     &:first-child{
-      background: $brand-col-1;
+      background: $brand-col-2;
     }
     &:last-child{
       background: $brand-col-3;
     }
     &:nth-child(2){
-      background: $brand-col-5;
+      background: $brand-col-4;
     }
   }
   &column{

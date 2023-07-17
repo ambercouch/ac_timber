@@ -17,7 +17,7 @@
     </div>
     {% endif %}
 
-
+{% if bannerContent != '' or  bannerLogo.url != '' %}
     <div class="c-hero__body{{ templateClass }} {{ classSiteBannerContentPosHoz}} {{ classSiteBannerContentPosVert }}">
 
       {% if bannerLogo.url != '' %}
@@ -40,5 +40,6 @@
       {% endif %}
 
     </div>
+    {% endif %}
   </div>
 </div>

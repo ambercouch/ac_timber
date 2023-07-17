@@ -3,9 +3,9 @@
 <div class="l-post-thumb-list--service">
   <ul class="l-post-thumb-list__list--service">
     {% for post in posts %}
+      {% set templateHeaderTitle = (post.meta('service_title') ? post.meta('service_title') : post.title) %}
       <li class="l-post-thumb-list__item--service">
-        {% set headerTitle = (post.meta('custom_post_thumb_title') ? post.meta('custom_post_thumb_title') : post.title) %}
-        {% include ["inc/post-thumb.twig"] with {'postType' : 'service', 'headerTitle' : headerTitle} %}
+        {% include ["inc/post-thumb.twig"] with {'postType' : 'service', 'templateHeaderTitle' : templateHeaderTitle} %}
       </li>
     {% endfor %}
   </ul>

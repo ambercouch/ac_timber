@@ -1,31 +1,49 @@
 {% set modClass = (postType) ? '--'~postType : '' %}
-{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
 
+{% set templateHeaderTitle = (templateHeaderTitle) ? templateHeaderTitle : post.title %}
 {% set postLink = post.link %}
-{% set altLink = post.meta('post_thumb_link') %}
-{% set thumbLink = (altLink) ? altLink : postLink  %}
-{% set thumbLinkLabel = (altLink) ? post.meta('post_thumb_link_label') : 'Read More' %}
+{% set altLink = (altLink) ? altLink : post.meta('post_thumb_link') %}
+{% set disableLink = post.meta('hide_service_content_link') %}
+
+{% if disableLink != true %}
+  {% set thumbLink = (altLink) ? altLink : postLink  %}
+  {% set thumbLinkLabel = (post.meta('post_thumb_link_label')) ? post.meta('post_thumb_link_label') : 'Read More' %}
+{% endif %}
+
+{% set imgObj = (post.meta('service_image')) ? Image(post.meta('service_image'))  : null %}
+
 
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+  {% if thumbLink %}
   <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+    {%  endif %}
   {% if post.meta('custom_post_icon') %}
     <div class="c-post-thumb__post-icon">
       <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
     </div>
   {% endif %}
-    {% if post.thumbnail %}
+    {% if imgObj != "hide" %}
       <div class="c-post-thumb__feature-image{{ modClass }}">
-        <div class="c-feature-image--post-thumb">
-          <img class="c-feature-image__img" src="{{ post.thumbnail.src('original') }}" class="feature-image__img" alt="{{ post.title }}"/>
-        </div>
+        {% include "inc/feature-image.twig" with {
+          "imgObj" : imgObj
+        }%}
       </div>
     {%  endif %}
+    {% if thumbLink %}
   </a>
+  {%  endif %}
+<div class="c-post-thumb__content">
+      {% if templateHeaderTitle != false %}
 
-      {% if headerTitle != false %}
         <div class="c-post-thumb__header{{ modClass }}">
-          {% include "inc/header.twig" %}
+          {% if thumbLink %}
+          <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+            {%  endif %}
+          {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle }%}
+            {% if thumbLink %}
+          </a>
+          {%  endif %}
         </div>
       {% endif %}
 
@@ -39,5 +57,6 @@
     {% endif %}
   </div>
   {% endif %}
+</div>
 
 </article>

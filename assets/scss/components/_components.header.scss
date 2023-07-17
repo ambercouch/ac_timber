@@ -4,7 +4,7 @@
 
 .c-header {
   display: block;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 /*
@@ -104,7 +104,7 @@
 
 .c-header__heading--{
   &page{
-    text-decoration: underline;
+    text-decoration: none;
     @include act-font-size($act-fs-g);
     font-weight: 900;
   }
