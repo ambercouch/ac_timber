@@ -54,6 +54,7 @@
 
   &footer{
     @include inuit-font-size($inuit-font-size-h5, 1);
+    @extend .c-site-wrapper;
   }
 
   &aside{
