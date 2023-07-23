@@ -60,6 +60,7 @@
     justify-content: center;
     @extend .o-list-bare;
     width: 100%;
+    gap: $act-unit-l
   }
   &item {
     margin-bottom: $act-unit-l;

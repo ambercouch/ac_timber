@@ -23,6 +23,10 @@ BEM ELEMENTS .l-site__
     background: white;
     position: relative;
     z-index: 10;
+    padding-bottom: $act-unit;
+    @include mq($from : desktop){
+      padding-bottom: 0;
+    }
   }
   &main{
     padding-top: $act-unit-l;

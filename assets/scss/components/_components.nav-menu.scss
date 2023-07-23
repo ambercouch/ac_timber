@@ -224,6 +224,18 @@
     padding: $act-unit-s 0;
     display: block;
   }
+  &products{
+    @include a($col : $col-light);
+    display: block;
+    padding: $act-unit-t / 2;
+    margin-bottom: $act-unit-t;
+  }
+  &info{
+    @include a($col : $col-light)
+    display: block;
+    padding: $act-unit-t / 2;
+    margin-bottom: $act-unit-t;
+  }
   &blocky{
     padding:$act-unit-s;
     display: block;

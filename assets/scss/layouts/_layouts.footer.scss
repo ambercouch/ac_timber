@@ -2,6 +2,9 @@
   display: block;
   background: $brand-col-5;
   text-align: center;
+  @include mq($from: tablet){
+    text-align: left;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-footer--

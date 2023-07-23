@@ -99,6 +99,7 @@
   }
   &sub-heading{
     display: block;
+    @include act-font-size($act-fs-5)
   }
   &price{
     @include act-font-size($act-fs-6, $important: true);
@@ -141,13 +142,19 @@
     margin-bottom: $act-unit-s;
   }
   &post-thumb-product{
-    @include act-font-size($act-fs-6);
+    @include act-font-size($act-fs-4);
     font-family: $act-font-family-sans;
     text-align: left;
     font-weight: normal;
     text-transform: none;
     color: $col-dark;
     margin-bottom: 0;
+    @include mq($from : desktop){
+      @include act-font-size($act-fs-5);
+    }
+  }
+  &footer{
+    color: $col-light;
   }
 
 }

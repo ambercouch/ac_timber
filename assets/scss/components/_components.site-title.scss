@@ -71,7 +71,7 @@ BEM ELEMENTS .c-site-title
     color: $brand-col-6;
     font-family: $act-font-family-sans;
     font-weight: 500;
-    @include act-font-size($inuit-font-size-h6, $modifier: 1);
+    @include act-font-size($inuit-font-size-h4, $modifier: 1);
   }
 }
 

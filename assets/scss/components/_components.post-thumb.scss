@@ -141,7 +141,7 @@
     padding: $act-unit 0;
   }
   &price{
-    @include act-font-size($act-fs-6);
+    @include act-font-size($act-fs-5);
     color: $col-dark;
     .amount{
       font-weight: bold;
