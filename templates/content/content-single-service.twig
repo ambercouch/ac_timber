@@ -25,5 +25,11 @@
 
     </div>
 
+    {% if post.meta('post_footer_content') %}
+      <footer class="l-single-service__footer{{ templateClass }} ">
+        {{ post.meta('post_footer_content') }}
+      </footer>
+    {% endif %}
+
   </article>
 {% endblock %}
