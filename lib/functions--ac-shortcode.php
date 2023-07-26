@@ -224,16 +224,23 @@ function act_shortcode_btn($atts, $content){
 add_shortcode('act_cta', 'act_shortcode_cta');
 function act_shortcode_cta($atts, $content){
     $a = shortcode_atts(array(
-        'title' => 'Add a Title',
-        'text' => 'Add Some text',
-        'btn' => 'Submit',
-        'url' => '/'
+        'title' => '',
+        'text' => '',
+        'btn1' => 'Submit',
+        'btn2' => 'Submit',
+        'class' => '',
+        'class1' => 'c-btn--cta ',
+        'class2' => 'c-btn--secondary',
+        'url1' => '',
+        'url2' => ''
     ), $atts);
+
+    extract($a);
 
     $a['text'] = '<p>'.$a['text'].'</p>';
 
 
-    $output = '<div class="c-cta">';
+    $output = '<div class="c-cta '.$class.'">';
     $output .= '<div class="c-cta__header">';
     $output .= '<header class="c-header--cta">';
     $output .= '<h4 class="c-header__heading--cta">';
@@ -241,13 +248,28 @@ function act_shortcode_cta($atts, $content){
     $output .= '</h4>';
     $output .= '</header>';
     $output .= '</div>';
-    $output .= '<div class="c-cta__content">'.$a['text'].'</div>';
+    $output .= '<div class="c-cta__content">';
+    $output .= $a['text'];
+    $output .= $content;
+    $output .= '</div>';
     $output .= '<div class="c-cta__footer">';
-    $output .= '<div class="c-cta__btn">';
-    $output .= '<div class="c-btn--cta">';
-    $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['btn'].'</a>';
+    $output .= '<div class="c-btn-group">';
+    if ($a['url1'] != '') {
+
+        $output .= '<div class=" '.$class1.' ">';
+        $output .= '<a class="c-btn__link" href="'.$a['url1'].'">'.$a['btn1'].'</a>';
+        $output .= '</div>';
+
+    };
+    if ($a['url2'] != '') {
+
+        $output .= '<div class=" '.$class2.' ">';
+        $output .= '<a class="c-btn__link" href="'.$a['url2'].'">'.$a['btn2'].'</a>';
+        $output .= '</div>';
+
+    };
     $output .= '</div>';
-    $output .= '</div>';
+
     $output .= '</div>';
     $output .= '</div>';
 
