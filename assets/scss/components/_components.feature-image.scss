@@ -17,6 +17,39 @@ BEM BLOCK .c-feature-image--
 
   &service{
     height: 100%;
+    position: relative;
+    margin: $act-unit-l $act-unit-l $act-unit-l;
+    position: relative;
+    left: -6px;
+    border-radius: 9999px;
+    overflow: hidden;
+    box-shadow: 1.2vw 0.8vw 0px 3.6vw $brand-col-2;
+    @include mq($from : tablet){
+      box-shadow: 0.45vw 0.3vw 0px 1.2vw$brand-col-2;
+    }
+    @include mq($from : desktop){
+      box-shadow: 0.45vw 0.3vw 0vw 1.2vw $brand-col-2;
+    }
+    @include mq($from : wide){
+    box-shadow: 9px 6px 0vw 24px $brand-col-2;
+  }
+    &:after{
+      transition: background 0.3s ease-in-out;
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(#000, 0.4);
+      z-index: 1;
+      top:0;
+      left: 0;
+    }
+    .c-post-thumb:hover &{
+      &:after{
+        background: rgba(#000, 0);
+      }
+    }
   }
 }
 
@@ -57,10 +90,8 @@ BEM ELEMENT MODS .c-feature-image__img--
 }
 
 .is-circle-crop{
-
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 9999px
-
 }
 

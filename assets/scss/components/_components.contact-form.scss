@@ -97,6 +97,10 @@
   }
   &content {
     display: block;
+    padding: $act-unit;
+    background:  $col-dark;
+    color: $col-light;
+  ;
     //@extend .c-contact-form__content--placeholder-blocks;
   }
   &footer {

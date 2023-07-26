@@ -60,12 +60,13 @@
 .c-header__ {
   &header {
     display: block;
-
+    margin-bottom: $act-unit;
   }
 
   &heading {
     display: block;
     @include act-font-size($act-fs-1);
+    margin-bottom: 0;
   }
 
   &title {
@@ -126,6 +127,16 @@
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
   }
+  &subsidiary{
+    color: $brand-col-2;
+  }
+  &single-col-page-800{
+    @include act-font-size($act-fs-g);
+    margin-bottom: $act-unit-l;
+  }
+  &footer{
+    color: $col-light;
+  }
 }
 
 
@@ -166,8 +177,12 @@
 }
 
 .c-header__sub-heading--{
-&service-intro{
-  color: $brand-col-6;
+&service{
+  background: $col-dark;
+  color: $col-light;
+  display: inline-block;
+  padding: 2px $act-unit-s 0;
+  @include act-font-size($act-fs-5)
 }
 }
 

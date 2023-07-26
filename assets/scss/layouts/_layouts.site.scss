@@ -20,9 +20,13 @@ BEM ELEMENTS .l-site__
  */
 .l-site__{
   &masthead{
-    background: white;
+    background: $brand-col-2;
     position: relative;
     z-index: 10;
+    padding-bottom: $act-unit-s;
+    @include mq ($from : desktop){
+      padding-bottom: 0;
+    }
   }
   &main{
     padding-top: $act-unit-l;
@@ -47,6 +51,9 @@ BEM ELEMENTS .l-site__
     @include mq($from : desktop){
       display: none !important;
     }
+  }
+  &subsidiary{
+    background: $brand-col-8;
   }
 
   &footer{

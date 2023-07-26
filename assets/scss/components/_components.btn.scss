@@ -38,7 +38,7 @@
       text-align: left;
     }
     a{
-      color: $col-text;
+      color: $col-light;
     }
 
   }
@@ -57,6 +57,9 @@
     a{
       color: $col-light;
     }
+  }
+  &read-more{
+    @extend .c-btn--primary;
   }
   &n{
     @extend .c-btn;

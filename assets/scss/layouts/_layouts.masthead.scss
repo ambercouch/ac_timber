@@ -5,13 +5,19 @@ BEM BLOCK .l-masthead
   border-bottom:none;
   width: 100%;
   @extend .o-wrapper;
+  position: relative;
   padding: $act-unit;
   padding-top: 0;
   padding-bottom: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: $act-unit;
+  //margin-bottom: $act-unit;
+  @include mq($from : desktop){
+    padding: $act-unit-l;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
   &:after{
     //width: 100%;
   }
@@ -57,15 +63,18 @@ BEM ELEMENTS .l-masthead__
     @extend .element--abso-layer;
     @include mq($from: desktop){
       display: block;
-      margin: $act-unit 0;
+      margin: $act-unit-l 0 $act-unit;
+      padding-left: $act-unit-l;
+      padding-right: $act-unit-l;
     }
   }
   &widget-area{
     width: 100%;
   }
   &branding{
-    @extend .element--items-centre;
-    //@extend .element--flush-left;
+    //@extend .element--items-centre;
+    @extend .element--flush-left;
+
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
@@ -81,8 +90,11 @@ BEM ELEMENTS .l-masthead__
 
 .l-masthead__widget-area--{
   &masthead-before-widgets{
-    @extend .element--abso-layer;
-    padding: $act-unit;
+    //@extend .element--abso-layer;
+    padding: $act-unit-t;
+    background: $col-dark;
+    color: $col-light;
+    @include breakout-band($bgc :  $col-dark);
   }
 }
 

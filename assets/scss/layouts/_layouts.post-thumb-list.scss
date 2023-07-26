@@ -58,13 +58,20 @@
     margin: 0 auto;
     flex-wrap: nowrap;
     justify-content: center;
-    @extend .o-list-bare
+    @extend .o-list-bare;
+    flex-direction: column;
+    @include mq($from : tablet){
+      flex-direction: row;
+    }
   }
   &item{
     @extend .o-list-bare__item;
-    width: 33.333%;
+    flex-basis: 100%;
     text-align: center;
     padding-left: 0;
+    @include mq($from : tablet){
+      flex-basis: calc(100% / 3);
+    }
   }
 }
 
@@ -84,6 +91,9 @@
   &column{
     flex-direction: column;
   }
+  &service{
+    gap : $act-unit-l;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -96,13 +106,13 @@
   &service{
     //height: 33.333vw;
     &:first-child{
-      background: $brand-col-2;
+      //background: $brand-col-2;
     }
     &:last-child{
-      background: $brand-col-3;
+      //background: $brand-col-3;
     }
     &:nth-child(2){
-      background: $brand-col-4;
+      //background: $brand-col-4;
     }
   }
   &column{

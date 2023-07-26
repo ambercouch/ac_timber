@@ -10,7 +10,7 @@ $site-wrapper-padding : $inuit-global-spacing-unit-huge;
 .c-site-wrapper--{
   &responsive{
     @extend .c-site-wrapper;
-    padding: $site-wrapper-padding / 8;
+    padding: 0;
     @include mq($from : mobile, $until : tablet){
 
       padding: $site-wrapper-padding / 4 ;

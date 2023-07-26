@@ -103,6 +103,10 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
+    .c-widget--footer &{
+      flex-direction: column;
+      justify-content: flex-start;
+    }
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -170,13 +174,17 @@
     display: block;
     background: transparent;
     font-weight: 500;
+    color: $col-text;
     &:hover{
-      color: $brand-col-2;
+      color: $brand-col-3;
     }
     .is-overlay-hero &{
       color:white;
     }
     .c-nav-menu__item:last-child &{
+    }
+    .c-widget--footer &{
+      padding:$act-unit-s $act-unit-t $act-unit-s 0;
     }
     .current-menu-item &{
       background: transparent;
@@ -196,6 +204,7 @@
   }
   &mobile{
     //@extend .c-nav-menu__link--blocky;
+    color: $col-dark;
   }
   &blocky{
     padding:$act-unit-s;

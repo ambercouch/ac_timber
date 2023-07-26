@@ -27,7 +27,10 @@
     text-align: left;
     @include act-font-size($milli-size, 1.5);
     padding: $act-unit-t 0;
-    margin-bottom: $act-unit;
+    margin-bottom: 0;
+    a{
+      @include a($col : $col-link, $col-hov : lighten($col-link, 20%))
+    }
     @include mq($from : tablet){
       text-align: right;
     }

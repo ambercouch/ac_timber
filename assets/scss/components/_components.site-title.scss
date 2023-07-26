@@ -66,7 +66,9 @@ BEM ELEMENTS .c-site-title
   }
   &description-heading{
     margin-bottom: 0;
-    color: $col-text;
+    color: #fff;
+    background: $col-dark;
+    padding: 0 $act-unit-s;
     font-family: $act-font-family-sans;
     font-weight: 500;
     @include act-font-size($inuit-font-size-h6, $modifier: 1);
