@@ -23,3 +23,36 @@
   max-width: 100%;
 }
 
+.c-feature-list{
+  li:before{
+    content : url(/wp-content/themes/ac_timber/assets/images/svg/check.svg);
+    display: inline-block;
+    @include act-font-size($act-fs-2);
+    width: $act-unit;
+    aspect-ratio: 1 ;
+    filter: invert(1);
+    margin-right: $act-unit ;
+    position: relative;
+    top: 6px;
+  }
+  li{
+    vertical-align: middle;
+    margin-bottom: $act-unit-t;
+    color: $col-light;
+    display: flex;
+  }
+}
+.l-widget-area--footer-widgets {
+.c-company-contact-item{
+  a{
+    padding: $act-unit-s $act-unit-t $act-unit-s 0 !important;
+    display: inline-block;
+  }
+}
+}
+
+.c-image--hero-background{
+  @include mq($until : tablet){
+    object-position: 60%;
+  }
+}

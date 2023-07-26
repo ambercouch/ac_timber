@@ -18,20 +18,27 @@ $act-ashen-black: #1C232A;
 $act-electric-blue: #00A0E9;
 $act-amber: #FFBF00;
 
-$brand-col-1 : $act-charcoal-grey;
-$brand-col-2 : $act-steel-grey;
-$brand-col-3 : $act-slate-grey;
-$brand-col-4 : $act-off-white;
+$ssr-primary-red: #d20001;
+$ssr-rust-orange: #e66b1f;
+$ssr-mustard-yellow: #ffbe1f;
+$ssr-deep-charcoal: #292929;
+$ssr-ivory-white: #f9f6f2;
+$ssr-additional-grey: #7c7973;
+
+$brand-col-1 : $ssr-deep-charcoal;
+$brand-col-2 : $ssr-mustard-yellow;
+$brand-col-3 : $ssr-rust-orange;
+$brand-col-4 : $ssr-ivory-white;
 $brand-col-5 : $act-ashen-black;
-$brand-col-6 : $act-electric-blue;
+$brand-col-6 : $ssr-primary-red;
 $brand-col-7 : $act-amber;
-$brand-col-8 : $act-slate-grey;
+$brand-col-8 : $ssr-additional-grey;
 $brand-col-9 : $act-slate-grey;
 
-$col-dark : $act-ashen-black;
-$col-light : $act-off-white;
-$col-text : $brand-col-1;
-$col-heading : $brand-col-3;
-$col-link : $brand-col-6;
+$col-dark : $ssr-deep-charcoal;
+$col-light :  $ssr-ivory-white;
+$col-text : $ssr-deep-charcoal;
+$col-heading : $ssr-deep-charcoal;
+$col-link : $brand-col-3;
 $col-accent : $brand-col-6;
 
