@@ -16,7 +16,7 @@
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
   {% if thumbLink %}
-  <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+  <a href="{{thumbLink}}" class="c-post-thumb__link" >
     {%  endif %}
   {% if post.meta('custom_post_icon') %}
     <div class="c-post-thumb__post-icon">
@@ -38,7 +38,7 @@
 
         <div class="c-post-thumb__header{{ modClass }}">
           {% if thumbLink %}
-          <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+          <a href="{{thumbLink}}" class="c-post-thumb__link">
             {%  endif %}
           {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle }%}
             {% if thumbLink %}
@@ -52,10 +52,17 @@
     <div class="c-post-thumb__excerpt">
       {{ post.meta('service_intro_content') }}
     </div>
-    {% if thumbLink %}
-    <a target="_blank" href="{{ thumbLink }}" class="c-post-thumb__read-more">{{ thumbLinkLabel  }}</a>
-    {% endif %}
   </div>
+  {% endif %}
+
+  {% if thumbLink %}
+    <div class="c-post-thumb__footer">
+
+      <div class="c-btn--read-more">
+        <a href="{{ thumbLink }}" class="c-btn__link--read-more">{{ thumbLinkLabel  }}</a>
+      </div>
+
+    </div>
   {% endif %}
 </div>
 
