@@ -34,6 +34,10 @@
  &columns{
   display: flex;
    column-gap: $act-unit-l;
+   flex-direction: column;
+   @include mq ($from : tablet){
+     flex-direction: row;
+   }
  }
   &col{
     flex-basis: 50%;
