@@ -1,0 +1,35 @@
+{% extends "base.twig" %}
+{% set postFormatClass = postFormat ? '--'~postFormat : '' %}
+
+
+{% block before_head %}
+  <!-- single.twig -->
+  <!-- postFormat {{postFormat}} -->
+
+{% endblock %}
+
+  {% block hero %}
+  {% endblock %}
+
+{% block feature %}
+{% endblock %}
+
+
+{% block content %}
+  {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+  {% for post in posts %}
+    {% include  ['content/content-single-'~postFormat~'.twig', 'content/content-single.twig'] %}
+  {% endfor %}
+  {{  fn('is_paged')? fn('the_posts_navigation') : '' }}
+
+{% endblock %}
+
+{% block belowContent %}
+
+{% endblock %}
+
+
+
+
+
+

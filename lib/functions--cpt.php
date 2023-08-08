@@ -98,7 +98,7 @@ function  act_cpt() {
         'description' => 'Client case studies',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
+        'supports' => array('title','editor','author','thumbnail','excerpt','custom-fields','revisions','page-attributes','post-formats'),
         'has_archive' => 'case-study'
     );
     register_post_type('case-study', $args);
