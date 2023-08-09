@@ -12,7 +12,19 @@ Timber::$dirname = array('templates', 'views');
 class StarterSite extends TimberSite {
 
     function __construct() {
-        add_theme_support( 'post-formats' );
+
+        add_theme_support( 'post-formats', array(
+            'aside',
+            'gallery',
+            'link',
+            'image',
+            'quote',
+            'status',
+            'video',
+            'audio',
+            'chat'
+        ));
+
         add_theme_support( 'post-thumbnails' );
         add_theme_support( 'menus' );
         add_filter( 'timber_context', array( $this, 'add_to_context' ) );
