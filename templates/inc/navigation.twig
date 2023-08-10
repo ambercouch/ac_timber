@@ -4,16 +4,16 @@
 <div class="c-nav-menu--{{ menuName }}">
   <ul class="c-nav-menu__list--{{ menuName }}">
     {% for item in  menu.get_items %}
-      <li class="c-nav-menu__item--{{ menuName }} {{item.classes | join(' ')}}">
-        <a class="c-nav-menu__link--{{ menuName }}" href="{{item.get_link}}">
+      <li id="itemId{{item.id}}-{{  menuName }}" class="c-nav-menu__item--{{ menuName }} {{item.classes | join(' ')}}" data-itemid="{{item.id}}-{{  menuName }}" data-state="off" >
+        <a id="linkId{{item.id}}-{{  menuName }}"  class="c-nav-menu__link--{{ menuName }}" href="{{item.get_link}}" {{ item.get_children ? 'data-state="off"':'' }}>
           <span class="c-nav-menu__link-label--{{ menuName }}">{{item.title}}</span>
         </a>
         {% if item.get_children %}
           <div class="c-nav-menu__sub-menu--{{ menuName }}">
-            <ul class="c-nav-menu__sub-menu-list--{{ menuName }}">
+            <ul id="listId{{item.id}}-{{  menuName }}" class="c-nav-menu__sub-menu-list--{{ menuName }}"  data-state="off" >
               {% for child in item.get_children %}
-                <li class="c-nav-menu__sub-menu-item--{{ menuName }}">
-                  <a class="c-nav-menu__sub-menu-link--{{ menuName }}" href="{{child.get_link}}">{{child.title}}</a>
+                <li d="itemId{{child.id}}-{{  menuName }}" class="c-nav-menu__sub-menu-item--{{ menuName }}">
+                  <a id="linkId{{child.id}}-{{  menuName }}" class="c-nav-menu__sub-menu-link--{{ menuName }}" href="{{child.get_link}}">{{child.title}}</a>
                 </li>
               {% endfor %}
             </ul>

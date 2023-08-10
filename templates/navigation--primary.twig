@@ -1,13 +1,15 @@
+{% set menuName = (menuName) ? menuName : 'primary' %}
+{% set menu = _context['menu' ~ menuName | capitalize ] %}
 <div class="navigation--primary">
   <ul class="navigation--primary__list">
-    {% for item in menuPrimary.get_items %}
-      <li id="itemId{{item.id}}" class="navigation--primary__item {{ item.classes | join(' ') }}" data-itemid="{{item.id}}" data-state="off" >
-        <a id="linkId{{item.id}}" class="navigation--primary__link" href="{{ item.get_link }}" {{ item.get_children ? 'data-state="off"':'' }}>{{ item.title }}</a>
+    {% for item in menu.get_items %}
+      <li id="itemId{{item.id}}-{{  menuName }}" class="navigation--primary__item {{ item.classes | join(' ') }}" data-itemid="{{item.id}}-{{  menuName }}" data-state="off" >
+        <a id="linkId{{item.id}}-{{  menuName }}" class="navigation--primary__link" href="{{ item.get_link }}" {{ item.get_children ? 'data-state="off"':'' }}>{{ item.title }}</a>
         {% if item.get_children %}
-          <ul id="listId{{item.id}}" class="navigation--primary__list--sub" data-state="off" >
+          <ul id="listId{{item.id}}-{{  menuName }}" class="navigation--primary__list--sub" data-state="off" >
             {% for child in item.get_children %}
-              <li id="itemId{{child.id}}" class="navigation--primary__item--sub" >
-                <a id="linkId{{child.id}}" class="  navigation--primary__link--sub" href="{{ child.get_link }}">{{ child.title }}</a>
+              <li id="itemId{{child.id}}-{{  menuName }}" class="navigation--primary__item--sub" >
+                <a id="linkId{{child.id}}-{{  menuName }}" class="  navigation--primary__link--sub" href="{{ child.get_link }}">{{ child.title }}</a>
               </li>
             {% endfor %}
           </ul>

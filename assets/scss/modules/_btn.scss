@@ -22,7 +22,9 @@
 }
 
 .btn--menu{
-
+@include mq($from : desktop){
+  display: none !important;
+}
   @extend .btn--square;
   position: fixed;
   top: 92px;

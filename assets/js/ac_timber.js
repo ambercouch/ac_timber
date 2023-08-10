@@ -19,9 +19,9 @@ ACT = {
                 });
             }
 
-            // var showButton = document.getElementById('menuButton');
-            // var container = document.getElementById('primaryNavigation');
-            // ACT.ac_fn.open(container, showButton);
+            var showButton = document.getElementById('menuButton');
+            var container = document.getElementById('primaryNavigation');
+            ACT.ac_fn.open(container, showButton);
 
             // var searchButton = document.getElementById('mastheadSearchBtn');
             // var searchForm = document.getElementById('mastheadSearchForm');
@@ -35,7 +35,7 @@ ACT = {
             [].forEach.call(ddMenus, function (e, i) {
                 itemid = e.dataset.itemid;
                 ddList = e.parentNode;
-                var ddparent = document.getElementById('itemId' + itemid);
+                var ddparent = e;
                 var ddButton = document.getElementById('linkId' + itemid);
                 var subMenu = document.getElementById('listId' + itemid);
                 ACT.ac_fn.open(subMenu, ddButton, ddparent, ddList);

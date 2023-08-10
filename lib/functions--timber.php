@@ -31,6 +31,15 @@ class StarterSite extends TimberSite {
         add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
         add_action( 'init', array( $this, 'register_post_types' ) );
         add_action( 'init', array( $this, 'register_taxonomies' ) );
+
+        // Register all the menu locations.
+        foreach (unserialize(ACT_MENUS) as $menu)
+        {
+            register_nav_menus(array(
+                strtolower($menu) => esc_html__(ucfirst($menu), '_act'),
+            ));
+        }
+
         parent::__construct();
     }
 
@@ -47,8 +56,20 @@ class StarterSite extends TimberSite {
         //site vars
         $context['site'] = $this;
 
-        //Primary Menu
-        $context['menuPrimary'] = new TimberMenu('primary');
+        //Set up Menus defined functions--ac-menus.php
+        foreach (unserialize(ACT_MENUS) as $menu){
+            //Menus
+            // Hack to remove default primary menu
+            if($menu == 'Primary.removedefault'){
+                //Alway make the primary menu will fallback to page menu
+                //$context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }elseif (has_nav_menu( strtolower($menu) )){
+                //Only create the timber menus if they exist as we don't want fallback
+                $context['menu'.ucfirst($menu)] = new TimberMenu(strtolower($menu));
+            }else{
+                //$context['menu'.ucfirst($menu)] = 'no menu - '.strtolower($menu);
+            }
+        }
 
 
         //Set up sidebars defined functions--ac-sidebars.php

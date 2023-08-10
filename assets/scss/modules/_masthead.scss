@@ -29,6 +29,10 @@
 
     @extend %off-page--curtain;
 
+    padding: $act-unit
+  ;
+    padding-top: $act-unit-h;
+
     [data-hidden=true] &{
       top:78px
   }
