@@ -60,7 +60,7 @@
     justify-content: center;
     @extend .o-list-bare;
     width: 100%;
-    gap: $act-unit-l
+    gap: $act-unit
   }
   &item {
     margin-bottom: $act-unit-l;
@@ -69,7 +69,7 @@
       width: 33.33%;
     }
     @include mq($from : desktop){
-      width: 25%;
+      width: calc(25% - 18px);
     }
   }
   &post-thumb{

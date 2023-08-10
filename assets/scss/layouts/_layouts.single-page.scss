@@ -26,6 +26,10 @@
 
   &header{
     margin-bottom: $inuit-global-spacing-unit-large /2;
+    @include mq($from : desktop){
+      padding-left: $act-unit-h * 1.5;
+      padding-right: $act-unit-h * 1.5;
+    }
   }
 
   &heading{
