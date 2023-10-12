@@ -65,6 +65,9 @@ BEM ELEMENTS.c-feature-image__
     display: block;
     object-fit: cover;
   }
+  &caption{
+    display: none;
+  }
 
   &button{
 
