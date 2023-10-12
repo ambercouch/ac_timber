@@ -3,13 +3,13 @@
  */
 
 .c-btn {
-  @extend .o-btn;
-  border-radius: 0;
-  &.is-loading{
-    cursor: default;
-    pointer-events: none;
-  }
-}
+   @extend .o-btn;
+   border-radius: 0;
+   &.is-loading{
+     cursor: default;
+     pointer-events: none;
+   }
+ }
 
 /*
   BEM BLOCK MODIFIER .c-btn--

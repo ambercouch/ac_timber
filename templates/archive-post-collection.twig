@@ -1,0 +1,69 @@
+{% extends "base.twig" %}
+
+{% block before_head %}
+  <!-- archive-post-collection.twig -->
+{% endblock %}
+
+{% block before_main %}
+
+  {% endblock %}
+
+{% block before_content %}
+  <section class="l-content-before--post-collection">
+
+    {% include 'inc/header.twig' with {
+      'templateTitle' : 'Collection',
+      'headerModClass' : '--post-collection',
+      'templateSubtitleAfter' : termTitle
+    } %}
+    <div class="l-content-before__nav-menu">
+      {{ function('do_shortcode', '[ac_custom_loop tax="post_collection" collections="true" timber="true" ]') }}
+    </div>
+
+  </section>
+
+{% endblock %}
+
+{% block hero %}
+  {% if removeHero %}
+  {% else %}
+  <section id="siteHero" class="l-site__hero">
+    {% include 'inc/hero.twig' ignore missing %}
+  </section>
+  {% endif %}
+{% endblock %}
+
+
+{% block content %}
+  {% include 'inc/header.twig' with {
+    'templateTitle' :  'Podcasts - ' ~ termTitle,
+    'headerModClass' : '--post-collection-archive'
+  } %}
+  {% include 'loop-template-post.twig' %}
+{% endblock %}
+
+
+
+{% block belowContent %}
+  <div class="l-content-below">
+    {% if posts.pagination.pages is not empty %}
+      <div class="l-content__pagination">
+        <div class="c-pagination--load-more">
+          <div class="c-pagination__btn">
+            <button class="c-btn--load-more" data-load-more data-container-selector=".l-post-thumb-list__list--blog">
+              <span class="c-btn__label">Load More</span> <span class="c-btn__icon--load-more">{%  include 'inc/svg-icon.twig' with {'icon' : 'icon-arrow-down'} %}</span> <span class="c-btn__load-text">Loading...</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+  <!-- removed comments in home.twig -->
+{% endblock %}
+
+{% set hasSideBar = false %}
+
+{% block sidebar %}
+
+{% endblock %}
