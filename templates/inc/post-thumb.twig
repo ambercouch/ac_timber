@@ -6,7 +6,7 @@
 {% set templateImage = (templateImage) ? templateImage : false %}
 {% set featureImage = (templateImage) ? templateImage : post.thumbnail  %}
 
-
+<!-- post-thumb.twig -->
 <article {{ fn('post_class', ['c-post-thumb'~modClass]) }}>
     {% if featureImage != "hide" %}
       <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
