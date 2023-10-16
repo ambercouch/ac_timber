@@ -218,10 +218,8 @@ class StarterSite extends TimberSite {
     }
 
     function act_add_footer_styles() {
-
             wp_register_style('act_styles', get_template_directory_uri() . '/style.css', array(), filemtime(get_template_directory() . '/style.css') );
             wp_enqueue_style('act_styles');
-
     }
 
 }

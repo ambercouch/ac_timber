@@ -63,6 +63,11 @@ BEM ELEMENTS .c-site-title
   }
   &img{
     display: block;
+    /*
+    max-height: 16vh; AC - Get a bit more space on horizontal phones
+     */
+    max-height: 16vh;
+    min-height: 60px;
   }
   &description-heading{
     margin-bottom: 0;

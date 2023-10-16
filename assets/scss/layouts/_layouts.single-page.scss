@@ -53,7 +53,7 @@
   }
 
   &footer{
-    @include inuit-font-size($inuit-font-size-h5, 1);
+    @include inuit-font-size($inuit-font-size-h5);
     @extend .c-site-wrapper--responsive;
     padding-top: 0;
   }

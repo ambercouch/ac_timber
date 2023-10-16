@@ -5,7 +5,12 @@
     {% for post in posts %}
       {% set templateHeaderTitle = (post.meta('service_title') ? post.meta('service_title') : post.title) %}
       <li class="l-post-thumb-list__item--service">
-        {% include ["inc/post-thumb.twig"] with {'postType' : 'service', 'templateHeaderTitle' : templateHeaderTitle} %}
+        {% include ["inc/post-thumb.twig"] with {
+            'postType' : 'service',
+            'templateHeaderTitle' : templateHeaderTitle,
+            'templateImageSize' : '(max-width:839px) 480px, 300px'
+          }
+        %}
       </li>
     {% endfor %}
   </ul>

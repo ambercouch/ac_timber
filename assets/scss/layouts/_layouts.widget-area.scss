@@ -42,6 +42,12 @@
     display: flex;
     justify-content: space-between;
   }
+  &masthead-before-widgets{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 24px;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-widget-area--
@@ -83,12 +89,6 @@
 
 .l-widget-area__widget--{
   &masthead-before-widgets{
-    
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 24px;
-
     padding-right: 0;
     @include mq($from : desktop){
       padding-right: 0;

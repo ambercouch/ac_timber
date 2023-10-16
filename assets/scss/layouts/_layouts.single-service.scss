@@ -48,11 +48,11 @@ BEM BLOCK ELEMENTS .l-single-service__
 
   &content{
     display: block;
-    padding: 0 $act-unit $act-unit;
-    grid-column-start: right;
-    grid-row-start: body;
     max-width: 100%;
-    width: 800px;
+    > p{
+      width: 39em;
+      max-width: 100%;
+    }
   }
 
   &footer{
@@ -87,4 +87,8 @@ BEM BLOCK ELEMENTS .l-single-service__
     align-items: center;
     justify-content: center;
   }
+}
+
+[class*="l-single-service__content--"]{
+  @extend .l-single-service__content;
 }

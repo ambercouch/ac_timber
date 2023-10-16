@@ -15,9 +15,14 @@ Include this with optional params
 {% set postTypeModClass = (postType) ? '--'~postType : null %}
 {% set imgModClass = (templateModClass) ? templateModClass : postTypeModClass %}
 
+{% set imgSizes =  (templateImageSize) ? templateImageSize : '(max-width:439px) 480px, (max-width:839px) 1200px, (max-width:999px) 1200px, (max-width:1299px) 1920px,'  %}
+
 {% if imgObj %}
 <div class="c-feature-image{{ imgModClass }}">
-  <img srcset="{{ imgObj.src(imgSize)|resize(480)}} 480w, {{ imgObj.src(imgSize)|resize(1200)}} 1200w, {{ imgObj.src(imgSize)|resize(1920)}} 1920w, " class="c-feature-image__img{{ imgModClass }}" alt="{{ imgAlt }}"/>
+  <img srcset="{{ imgObj.src(imgSize)|resize(400)}} 400w, {{ imgObj.src(imgSize)|resize(480)}} 480w, {{ imgObj.src(imgSize)|resize(1200)}} 1200w, {{ imgObj.src(imgSize)|resize(1920)}} 1920w, "
+       sizes="{{ imgSizes }}"
+       class="c-feature-image__img{{ imgModClass }}"
+       alt="{{ imgAlt }}"/>
 {% if templateCap and templateCap != 'hide' %}
   <div class="c-feature-image__caption">
     {{ templateCap | wpautop }}

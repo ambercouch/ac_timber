@@ -40,10 +40,13 @@ BEM BLOCK .c-feature-image--
       width: 100%;
       height: 100%;
       position: absolute;
-      background: rgba(#000, 0.4);
+      background: rgba(#000, 0.2);
       z-index: 1;
       top:0;
       left: 0;
+      @include mq($until : desktop){
+        display: none;
+      }
     }
     .c-post-thumb:hover &{
       &:after{

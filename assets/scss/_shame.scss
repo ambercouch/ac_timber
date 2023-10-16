@@ -1,7 +1,12 @@
 .gallery{
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  @include mq($from : desktop){
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
 }
 .gallery-item{
   padding: $act-unit-t;
@@ -9,13 +14,21 @@
   margin: 1%;
   margin-top: 0;
   &:first-child{
-    margin-left: 0;
+    @include mq($from : tablet){
+      margin-left: 0;
+    }
   }
   &:last-child{
-    margin-right: 0;
+    @include mq($from : tablet){
+      margin-right: 0;
+    }
   }
   .gallery-columns-3 &{
-    width: 32%;
+    width: 100%;
+    @include mq($from : tablet){
+      width: 32%;
+    }
+
   }
 }
 
@@ -34,6 +47,7 @@
     margin-right: $act-unit ;
     position: relative;
     top: 6px;
+    flex-shrink: 0;
   }
   li{
     vertical-align: middle;
@@ -53,6 +67,61 @@
 
 .c-image--hero-background{
   @include mq($until : tablet){
-    object-position: 60%;
+    object-position: 65% bottom ;
   }
 }
+
+
+blockquote {
+  border-left: none;
+  padding-left: 0;
+  margin-left: 0;
+  padding: $act-unit $act-unit $act-unit $act-unit-l * 1.5;
+  background: $brand-col-3;
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto $act-unit-h;
+  position: relative;
+  &:after{
+    content : "";
+    background: transparent;
+    display: inline-block;
+    border: solid $act-unit $brand-col-3;
+    position: absolute;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    //border-right-color: black;
+    right: $act-unit;
+    top: 100%;
+  }
+  p{
+    color: $col-light;
+    quotes: "“" "”" "‘" "’";
+    position: relative;
+    &:before{
+      content: open-quote;
+      position: absolute;
+      margin-left: -0.75em;
+      margin-top: -0.25em;
+      @include act-font-size($act-fs-m);
+    }
+    &:after{
+      content: close-quote;
+      position: absolute;
+      margin-right: -1em;
+      @include act-font-size($act-fs-m);
+      opacity: 0;
+
+    }
+  }
+
+
+
+}
+
+.u-as-c{
+  align-self: center;
+}
+
+
+

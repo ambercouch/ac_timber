@@ -47,7 +47,8 @@ function  act_cpt() {
         'public' => true,
         'menu_position' => 20,
         'supports' => array('title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'),
-        'has_archive' => 'service'
+        'has_archive' => false,
+        'rewrite'   => array( 'slug' => '/transport', 'with_front' => true ),
     );
     register_post_type('service', $args);
 

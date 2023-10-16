@@ -1,6 +1,7 @@
 {% set modClass = (postType) ? '--'~postType : '' %}
 
 {% set templateHeaderTitle = (templateHeaderTitle) ? templateHeaderTitle : post.title %}
+{% set templateImageSize = (templateImageSize) ? templateImageSize : '' %}
 {% set postLink = post.link %}
 {% set altLink = (altLink) ? altLink : post.meta('post_thumb_link') %}
 {% set disableLink = post.meta('hide_service_content_link') %}
@@ -26,7 +27,8 @@
     {% if imgObj != "hide" %}
       <div class="c-post-thumb__feature-image{{ modClass }}">
         {% include "inc/feature-image.twig" with {
-          "imgObj" : imgObj
+          "imgObj" : imgObj,
+          "templateImageSize" : templateImageSize,
         }%}
       </div>
     {%  endif %}

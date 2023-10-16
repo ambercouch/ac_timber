@@ -114,6 +114,9 @@
   &social{
     @extend .o-list-flex;
     justify-content: center;
+    .l-off-page-container--mobile-navigation &{
+      justify-content: flex-start;
+    }
   }
   &footer{
     display: flex;
@@ -141,6 +144,9 @@
   &social{
     margin-right: $act-unit-l;
     margin-left: 0;
+    .l-widget-area__widget--masthead-before-widgets &{
+      margin-right: $act-unit-s;
+    }
   }
   &footer{
     margin-left: $act-unit;
@@ -228,6 +234,11 @@
   }
   &hero{
     @extend .c-btn--primary;
+  }
+  &social{
+    .c-widget--mobile-nav-after &{
+      color: $col-dark !important;
+    }
   }
 }
 

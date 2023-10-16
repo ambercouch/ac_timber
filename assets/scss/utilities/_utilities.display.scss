@@ -17,3 +17,32 @@
 .u-f-w{
   flex-wrap: wrap;
 }
+
+.u-d-n{
+  display: none;
+  &--tiny{
+    @include mq($until : mobile){
+      display: none !important;
+    }
+  }
+  &--mob{
+    @include mq($from: mobile, $until : tablet){
+      display: none !important;
+    }
+  }
+  &--tablet{
+    @include mq($from: tablet, $until : desktop){
+      display: none !important;
+    }
+  }
+  &--desk{
+    @include mq($from: desktop, $until : wide){
+      display: none !important;
+    }
+  }
+  &--wide{
+    @include mq($from: wide){
+      display: none !important;
+    }
+  }
+}
