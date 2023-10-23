@@ -23,9 +23,9 @@ ACT = {
             var container = document.getElementById('primaryNavigation');
             ACT.ac_fn.open(container, showButton);
 
-            // var searchButton = document.getElementById('mastheadSearchBtn');
-            // var searchForm = document.getElementById('mastheadSearchForm');
-            // ACT.ac_fn.open(searchForm, searchButton);
+            var searchButton = document.getElementById('mastheadSearchBtn');
+            var searchForm = document.getElementById('mastheadSearchForm');
+            ACT.ac_fn.open(searchForm, searchButton);
 
 
             var ddMenus = document.getElementsByClassName('menu-item-has-children');
