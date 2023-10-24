@@ -28,7 +28,8 @@ BEM ELEMENTS .hero__
     filter: saturate(10%);
   }
   &body{
-    position: relative;
+    position: absolute;
+    top: 0;
     width: 100%;
     color: white;
     max-height:100%;

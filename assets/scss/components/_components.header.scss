@@ -44,6 +44,12 @@
       margin: 0 auto $act-unit;
     }
   }
+  &blog-list{
+    padding: 0 $act-unit-l;
+  }
+  &blog{
+
+  }
 
 }
 
@@ -73,9 +79,13 @@
   }
 
   &link {
-    display: inline
+    display: inline;
+    text-decoration: none;
   }
 
+  &title-link{
+    text-decoration: none;
+  }
   &content {
     display: block
   }
@@ -100,6 +110,15 @@
 }
 
 .c-header__heading--{
+  &blog{
+    color: $brand-col-1;
+    font-family: $act-font-family-sans;
+  }
+  &post{
+    color: $brand-col-1;
+    font-family: $act-font-family-sans;
+    @include act-font-size($act-fs-k)
+  }
   &page{
     text-decoration: none;
     @include act-font-size($act-fs-g);
@@ -127,6 +146,7 @@
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
   }
+
 }
 
 
@@ -170,6 +190,18 @@
 &service-intro{
   color: $brand-col-6;
 }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-header__title-link--
+
+[class*=c-header__title-link--] {
+  @extend .c-header__title-link;
+}
+
+.c-header__title-link--{
+  &blog-list{
+    color: $brand-col-1;
+  }
 }
 
 

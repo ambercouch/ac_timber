@@ -42,6 +42,23 @@
       }
     }
   }
+  &read-more{
+    @extend .o-btn--brand-2;
+    @extend .o-btn--pill
+  }
+  &primary{
+    @extend .o-btn--brand-2;
+    @extend .o-btn--pill;
+    a{
+    color:white !important;
+  }
+  }
+  &blog-back{
+    @extend .c-btn--primary;
+  }
+  &cancel-comment{
+    display: none !important;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-btn--
@@ -80,3 +97,24 @@
 [class*=c-btn__header--] {
   @extend .c-btn__header;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-btn--
+
+[class*=c-btn__link--] {
+  @extend .c-btn__link;
+}
+
+.c-btn__link--{
+
+  &primary{
+    color: white;
+  }
+  &read-more{
+    @extend .c-btn__link--primary
+  }
+  &blog-back{
+    @extend .c-btn__link--primary
+  }
+}
+
+

@@ -1,7 +1,16 @@
 
+{% set menuTitle = (menuTitle) ? menuTitle : '' %}
 {% set menuName = (menuName) ? menuName : 'primary' %}
 {% set menu = _context['menu' ~ menuName | capitalize ] %}
+
 <div class="c-nav-menu--{{ menuName }}">
+  {% if menuTitle != '' %}
+    <h4 class="c-nav-menu__heading--{{ menuName }}">
+      <span class="c-nav-menu__title--{{ menuName }}">
+        {{ menuTitle }}
+      </span>
+    </h4>
+  {% endif %}
   <ul class="c-nav-menu__list--{{ menuName }}">
     {% for item in  menu.get_items %}
       <li class="c-nav-menu__item--{{ menuName }} {{item.classes | join(' ')}}">

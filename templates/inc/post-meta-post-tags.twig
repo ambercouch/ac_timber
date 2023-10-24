@@ -1,0 +1,12 @@
+<div class="c-post-meta__section--post-tags">
+    <div class="c-post-meta__post-tags">
+      <div class="c-post-meta__label--tags">Tagged</div>
+<div class="c-post-meta__list">
+  {% for term in post.terms('tags') %}
+    <li class="c-post-meta__item"><a class="c-post-meta__link" href="{{term.link}}">{{term.name}}</a></li>
+  {% endfor %}
+</div>
+    </div>
+  </div>
+
+

@@ -32,7 +32,7 @@
   {% endfor %}
 {% endblock %}
 
-{% block belowContent %}
+{% block after_content %}
   <div class="content__below">
     {% if posts.pagination.pages is not empty %}
       <div class="content__pagination">
@@ -43,13 +43,14 @@
   <!-- removed comments in home.twig -->
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = false %}
 
 {% block sidebar %}
-  <div id="sidebar" class="l-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
-  </div>
+  <!-- removed sidebar -->
+{#  <div id="sidebar" class="l-main__sidebar">#}
+{#    <div class="c-sidebar-widgets">#}
+{#      {{ sidebar_widgets }}#}
+{#    </div>#}
+{#  </div>#}
 {% endblock %}
 

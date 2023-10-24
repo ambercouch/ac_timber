@@ -23,3 +23,31 @@
   max-width: 100%;
 }
 
+.wp-block-quote{
+  color: $brand-col-2;
+  font-weight: bold;
+  margin-left: 0;
+  padding-left:$act-unit-l;
+  margin-top: $act-unit-l;
+  margin-bottom: $act-unit-l;
+  p{
+    @include act-font-size($act-fs-3)
+  }
+}
+
+.c-island--primary{
+  @extend .o-island;
+  background: $brand-col-1;
+  padding: $act-unit-l;
+  color: white;
+  margin-bottom: $act-unit;
+  border-radius: $act-unit;
+  p{
+    color: white;
+  }
+  @include headings(){
+    color: white;
+    font-family: $act-font-family-sans;
+  }
+}
+

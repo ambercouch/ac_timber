@@ -80,3 +80,14 @@ BEM ELEMENTS .l-site__
 
 }
 
+[class*=l-site__main--]{
+  @extend .l-site__main;
+}
+
+.l-site__main--{
+  &blog{
+    background: $brand-col-7;
+  }
+}
+
+

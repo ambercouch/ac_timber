@@ -68,7 +68,7 @@
     </section >
   {% endblock %}
 
-  <section id="primary" class="l-site__main">
+  <section id="primary" class="l-site__main{{ mainMod }}">
     <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-sidebar{% else %}has-no-sidebar{% endif %}">
       <main class="l-main__content{{ mainMod }}">
         {% block before_content %}
@@ -84,10 +84,14 @@
           {% block contentFooter %}
           {% endblock %}
         </div>
-        {% block belowContent %}
-          {% if (fn('comments_open')) %}
-            {% include 'inc/comments.twig' %}
-          {% endif %}
+        {% block after_content %}
+          <div class="l-content__after">
+            {% if (fn('comments_open')) %}
+              <div class="l-content__comments">
+                {% include 'inc/comments.twig' %}
+              </div>
+            {% endif %}
+          </div>
         {% endblock %}
       </main>
       {% block sidebar %}

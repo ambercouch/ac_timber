@@ -1,58 +1,65 @@
-{% set postFormat = postFormat? fn('get_post_format', post) : '' %}
+{% set postFormat = postFormat? fn('get_post_format', post) : 'blog-post' %}
 
 {% block content %}
   <article id="post-{{ post.id }}" class="l-single-article {{ post.class }}">
-  {% if post.thumbnail %}
-    <div class="l-single-article__feature-image--single">
-      <div class="c-feature-image--single">
-        <img src="{{ post.thumbnail.src('original') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+    {% if not hidePageTitle %}
+      <div class="l-single-article__header">
+        <header class="entry-header c-header{{ templateClass }} {{ hidePageTitle ? 'is-hidden' : '' }}">
+          <h1 class="entry-title c-header__heading{{ templateClass }} ">
+            <span class="entry-title c-header__title{{ templateClass }} ">{{ post.title }}</span>
+          </h1>
+          <div class="entry-meta c-header__post-meta{{ templateClass }}">
+                        {% include 'inc/post-meta-blog.twig' %}
+                        {% include 'inc/post-meta-social-share.twig' %}
+          </div>
+        </header>
       </div>
+    {% endif %}
+      {% if post.thumbnail %}
+      <div class="l-single-article__feature-image--single">
+        <div class="c-feature-image--single">
+          <img src="{{ post.thumbnail.src('original') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+        </div>
+      </div>
+    {%  endif %}
+
+
+
+    <div class="entry-content l-single-article__body">
+
+      <div class="l-single-article__content">
+        {{ post.content }}
+      </div>
+      <div class="l-single-article__page-links">
+        {% if post.pagination %}
+          <nav>Pages:
+            {% for page in post.pagination.pages %}
+              {% if page.current %}
+                <span class="current">{{ page.title }}</span>{{ loop.last ? '' : ', ' }}
+              {% else %}
+                <a href="{{ page.link }}">{{ page.title }}</a>{{ loop.last ? '' : ', ' }}
+              {% endif %}
+            {% endfor %}
+          </nav>
+        {% endif %}
+      </div>
+
     </div>
-  {%  endif %}
-
-    <header class="entry-header single-article__header ">
-      <h1 class="entry-title single-article__heading">
-        <span class="l-single-article__title">
-          {{ post.title }}
-        </span>
-      </h1>
-      <div class="entry-meta single-article__post-meta">
-        <div class="post-meta">
-          {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
-            {#<title>{{ postFormat }}</title>#}
-            {#<desc>Post type {{ postFormat }}</desc>#}
-            {#<use xlink:href="#icon-post{{ postFormat }}" />#}
-          {#</svg>#}
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
-      </div>
-    </header>
-
-      <div class="entry-content single-article__body">
-
-        <div class="l-single-article__content">
-          {{ post.content }}
-        </div>
-        <div class="l-single-article__page-links">
-          {% if post.pagination %}
-            <nav>Pages:
-              {% for page in post.pagination.pages %}
-                {% if page.current %}
-                  <span class="current">{{ page.title }}</span>{{ loop.last ? '' : ', ' }}
-                {% else %}
-                  <a href="{{ page.link }}">{{ page.title }}</a>{{ loop.last ? '' : ', ' }}
-                {% endif %}
-              {% endfor %}
-            </nav>
-          {% endif %}
-        </div>
-
-      </div>
 
 
     <footer class="l-single-article__footer">
+      <div class="l-single-article__blog-back">
+        <div class="c-btn--blog-back">
+          <a href="{{  fn('get_permalink', fn('get_option','page_for_posts') ) }}" class="c-btn__link--blog-back"><span class="c-btn__label">Back to blog</span></a>
+        </div>
+      </div>
+      <div class="l-single-article__post-meta-after">
 
-
+        <div class="c-post-meta--post-footer">
+          {% include 'inc/post-meta-post-author.twig' %}
+          {% include 'inc/post-meta-post-tags.twig' %}
+        </div>
+      </div>
     </footer>
 
   </article>

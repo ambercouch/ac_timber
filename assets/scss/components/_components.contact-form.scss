@@ -60,13 +60,18 @@
   &header{
     display: block;
   }
+  &heading{
+    color: $brand-col-1;
+    font-family: $act-font-family-sans;
+    font-weight: 500;
+  }
   &fieldset{
     background: $col-text;
     padding: $act-unit-t;
   }
   &input-wrapper{
     display: block;
-    margin-bottom: 0;
+    margin-bottom: $act-unit;
   }
   &radio-wrapper{
     @extend .c-contact-form__label;
@@ -77,13 +82,16 @@
     display: block;
     width: 100%;
     border: none;
-    padding:$act-unit-t;
+    padding:$act-unit-t $act-unit;
+    @include act-font-size($act-fs-6);
+    border-radius: $act-unit-t;
+    border: solid 1px darken($brand-col-7, 10%);
   }
   &label{
-    display: block;
     margin-bottom: $act-unit-t;
   }
   &label-text{
+    display: none;
     @include act-font-size($act-fs-5, 1);
   }
   &label-text-radio{
@@ -116,13 +124,18 @@
   @extend .c-contact-form__header;
 }
 
+[class*=contact-form__heading--] {
+  @extend .c-contact-form__heading;
+}
+
 [class*=contact-form__input-wrapper--] {
   @extend .c-contact-form__input-wrapper;
 }
 
 .c-contact-form__input-wrapper--{
   &submit{
-    padding-top:$inuit-global-spacing-unit-small;
+    padding-top:$act-unit-l;
+    margin-bottom: 0;
   }
   &check{
     .wpcf7-list-item{
@@ -131,9 +144,38 @@
   }
 }
 
-[class*=contact-form__input-content--] {
+[class*=c-contact-form__content--] {
   @extend .c-contact-form__content;
 }
+
+.c-contact-form__content--{
+  &comment-form{
+    background: transparent;
+    padding: 0;
+  }
+}
+
+[class*=c-contact-form__label--] {
+  @extend .c-contact-form__label;
+}
+
+.c-contact-form__label--{
+}
+
+[class*=c-contact-form__input--] {
+  @extend .c-contact-form__input;
+}
+
+.c-contact-form__input--{
+  &submit{
+    display: inline-block;
+    width: auto;
+    border-radius: 9999px;
+  }
+}
+
+
+
 /*
  * c-contact-form--placeholder-block
  */
@@ -183,6 +225,8 @@
       }
     }
   }
+
+
   input {
     width: 100%;
     color: #fff;

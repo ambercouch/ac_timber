@@ -14,8 +14,8 @@
   {%  endif %}
 <div class="c-post-thumb__header">
 
-  <header class="entry-header c-header--post-thumb{{ postFormatClass }} ">
-    <h2 class="entry-title c-header--heading--post-thumb{{ postFormatClass }}">
+  <header class="entry-header c-header{{ postFormatClass }} ">
+    <h2 class="entry-title c-header--heading{{ postFormatClass }}">
         <span class="c-header__title">
           <a class="c-header__title-link{{ postFormatClass }}" href="{{ post.link }}">{{ post.title }}</a>
         </span>
@@ -36,15 +36,21 @@
       </div>
 
     {% else %}
-      <div class="entry-content c-post-thumb__body">
+      <div class="entry-content c-post-thumb__body{{ postFormatClass }}">
         <div class="c-post-thumb__excerpt--truncated">
           <p>{{ post.content | striptags | truncate(50) }}</p>
         </div>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <div class="c-post-thumb__read-more">
+          <div class="c-btn--read-more">
+            <a href="{{ post.link }}" class="c-btn__link--read-more">
+              <span class="c-btn__label">Read More</span>
+            </a>
+          </div>
+        </div>
       </div>
 
     {% endif %}
-    <footer class="c-post-thumb__footer">
+    <footer class="c-post-thumb__footer{{ postFormatClass }}">
       {% if (fn('comments_open', post) or post.comment_count > 0 ) %}
       <a class="c-post-thumb__comment-link" href="{{ post.link }}#comments">
         <span>{{ post.comment_count }} Comments </span>

@@ -18,8 +18,24 @@ if ( ! class_exists( 'Timber' ) ) {
     return;
 }
 $context = Timber::get_context();
+$context['post'] = new TimberPost();
 $context['posts'] = new Timber\PostQuery();
 $context['foo'] = 'bar';
+
+$postPageId = get_option( 'page_for_posts' );
+
+$context['pageBannerImg'] = get_field('page_banner_image', $postPageId);
+$context['pageBannerContent'] = get_field('page_banner_content', $postPageId);
+$context['pageBannerLogo'] = get_field('page_banner_logo', $postPageId);
+
+$context['cssPageBannerImageSaturation'] = get_field('page_banner_image_saturation', $postPageId);
+$context['cssPageBannerColourCast'] = get_field('page_banner_image_colour_cast', $postPageId);
+$context['cssPageBannerColourCastColour'] = get_field('page_banner_image_colour_cast_colour', $postPageId);
+$context['cssPageBannerColourCastOpacity'] = get_field('page_banner_image_colour_cast_opacity', $postPageId);
+$context['cssPageBannerColourCastMode'] = get_field('page_banner_image_colour_cast_mode', $postPageId);
+$context['cssPageBannerImageHeight'] = get_field('page_banner_image_height', $postPageId);
+$context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal', $postPageId);
+
 
 if (is_category()){
     $context['catTitle'] = post_type_archive_title( '', false );;

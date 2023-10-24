@@ -1,20 +1,35 @@
-<section id="comments" class="comments">
-  <div class="comments__wrapper--responses">
-    <h3 class="comments__heading--responses">Comments</h3>
-    <div class="comments__responses">
-      {%   if post.get_comments() %}
-        <ol class="comments__list">
-          {{ comment_list }}
-        </ol>
-      {%  else %}
-        <p>No one has left a comment yet - Why not be the first!</p>
-      {% endif %}
+<section id="comments" class="l-comments">
+  <div class="l-comments__wrapper--responses">
+    <div class="l-comments__responses">
+      <div class="l-responses-list">
+        <h3 class="l-responses-list__heading">Comments</h3>
+        {% if post.comments %}
+          <ol class="l-responses-list__list">
+          {% for cmt in post.comments %}
+            <li class="l-responses-list__item">
+              <div class="l-responses-list__comment">
+
+                  {% include "inc/comment.twig" with {comment:cmt} %}
+
+              </div>
+
+            </li>
+          {% endfor %}
+          </ol>
+        {% endif %}
+      </div>
     </div>
-  </div>
-  <div class="comments__wrapper--comment-respond">
-    <h3 class="comments__heading--comment-respond">Submit a Comment</h3>
-    <div class="comments__comment-respond">
-      {{ post.comment_form(comment_form_args) }}
     </div>
+
+  <div class="l-comments__wrapper--comment-form">
+    <div class="c-contact-form--comment-form">
+      <h3 class="c-contact-form__heading--comment-form">Submit a comment</h3>
+    </div>
+    {% if post.comment_status == "closed" %}
+      <p> comments for this post are closed </p>
+    {% else %}
+      <!-- comment form -->
+      {% include "inc/comment-form.twig" %}
+    {% endif %}
   </div>
 </section>
