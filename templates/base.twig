@@ -63,9 +63,11 @@
   {% endblock %}
 
   {% block before_main %}
-    <section class="l-site__main-before">
+    {% if _context['mainbefore_widgets'] != '' %}
+    <section class="l-site__main-before test">
       {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}
     </section >
+    {% endif %}
   {% endblock %}
 
   <section id="primary" class="l-site__main">
