@@ -3,7 +3,7 @@
 {% set widgets = _context[widgetArea ~ '_widgets']|default %}
 <div class="l-{{ widgetContainer }}{{ not mainbefore_widgets ? '--empty' : ''}}">
   {% if widgets  == '' %}
-    <!-- Add some widgets to the footer -->
+    <!-- Add some widgets to the {{ widgetContainer }} -->
   {% else %}
     <div class="l-{{ widgetContainer }}__widget-area--{{ widgetContainer }}">
       <div class="l-widget-area--{{ widgetContainer }}">
