@@ -107,6 +107,7 @@ class StarterSite extends TimberSite {
 
         //var_dump( get_field('page_banner_image')); die();
 
+        $context['options'] = get_fields('options');
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
