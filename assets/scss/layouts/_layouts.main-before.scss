@@ -44,7 +44,11 @@
   }
 
   &content {
-    display: block
+    display: block;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 $act-unit-l;
   }
 
   &footer {
@@ -73,6 +77,13 @@
     padding: 0 $act-unit-l;
   }
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .l-main-before__content--
+
+[class*=l-main-before__content--] {
+  @extend .l-main-before__content;
+}
+
 
 //BEM ELEMENT MODIFIER FALLBACK .l-main-before__widget-area--
 

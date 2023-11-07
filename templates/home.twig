@@ -15,6 +15,11 @@
           headerModClass : '--blog'
         }%}
       </div>
+      {% if post.content %}
+    <div class="l-main-before__content--blog ">
+      {{ post.content }}
+    </div>
+        {% endif %}
       <div class="l-main-before__nav-menu--blog">
         {% set menuName = "categories" %}
         {% set menuTitle = "Categories" %}
