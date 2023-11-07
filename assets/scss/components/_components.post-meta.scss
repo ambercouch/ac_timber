@@ -4,6 +4,13 @@
 
 .c-post-meta__{
 
+  &heading{
+    font-weight: 500;
+    font-family: $act-font-family-sans;
+    color: $brand-col-1;
+    margin-bottom: 0;
+  }
+
   &section{
    margin-bottom: $act-unit-s;
     @include act-font-size($inuit-font-size-h6,1)
@@ -32,7 +39,6 @@
 
   &label{
     margin-bottom: $act-unit-t;
-    display: block;
   }
 
   &post-date{
@@ -44,6 +50,7 @@
 
   &post-tags{
     margin-bottom: $act-unit-t;
+    display: flex;
   }
 
   &post-cats{
@@ -52,6 +59,7 @@
 
   &post-author{
     visibility: inherit;
+    margin-right: $act-unit-l;
   }
 
   &post-edit{
@@ -64,33 +72,77 @@
   }
 }
 
-[class*=post-meta--]{
-  @extend .c-post-meta;
+[class*=c-post-meta--]{
+   @extend .c-post-meta;
+ }
+.c-post-meta--{
+  &post-footer{
+    display: flex;
+  }
 }
-
 [class*=post-meta__section--]{
   @extend .c-post-meta__section;
 }
 
-[class*=post-meta__post-date--]{
-  @extend .c-post-meta__post-date;
+.c-post-meta__section--{
+  &post-date{
+    padding-bottom: $act-unit;
+    border-bottom: solid 2px $brand-col-7;
+    margin-bottom: $act-unit;
+  }
+  &social-share {
+    display: flex;
+  }
 }
 
-[class*=post-meta__post-tags--]{
-  @extend .c-post-meta__post-tags;
-}
+  [class*=post-meta__heading--]{
+    @extend .c-post-meta__heading;
+  }
 
-[class*=post-meta__post-cats--]{
-  @extend .c-post-meta__post-cats;
-}
 
-[class*=post-meta__post-author--]{
+  .c-post-meta__heading--{
+    &social-share{
+      margin-right: $act-unit !important;
+    }
+  }
+
+  [class*=post-meta__post-date--]{
+    @extend .c-post-meta__post-date;
+  }
+
+  [class*=post-meta__post-tags--]{
+    @extend .c-post-meta__post-tags;
+  }
+
+  [class*=post-meta__post-cats--]{
+    @extend .c-post-meta__post-cats;
+  }
+
+  [class*=post-meta__post-author--]{
     @extend .c-post-meta__post-author;
   }
 
-[class*=post-meta__list--]{
-  @extend .c-post-meta__list;
-}
-[class*=post-meta__item--]{
-  @extend .c-post-meta__item;
-}
+  [class*=post-meta__list--]{
+    @extend .c-post-meta__list;
+  }
+  [class*=post-meta__item--]{
+    @extend .c-post-meta__item;
+  }
+
+  [class*=post-meta__label--]{
+    @extend .c-post-meta__label;
+  }
+
+  .c-post-meta__label--{
+    &post-date{
+      display: none;
+    }
+    &post-author{
+      padding-right: $act-unit-s;
+    }
+    &tags{
+      padding-right: $act-unit-s;
+    }
+  }
+
+

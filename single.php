@@ -17,6 +17,9 @@ $context['contentMod'] = '--'.$post->post_type;
 $context['template'] = $post->post_type;
 $context['postType'] = $post->post_type;
 
+$context['PostCategories'] = get_the_category();
+$context['PostCategory'] = get_the_category()[0]->cat_name;
+
 
 require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';
 

@@ -1,15 +1,49 @@
 {% extends "base.twig" %}
+{% set mainMod = "--blog" %}
 
 {% block before_head %}
   <!-- home.twig -->
 {% endblock %}
 
-{% block hero %}
-  {% if removeHeroBlog %}
-  {% else %}
-  <section id="siteHero" class="l-site__hero">
-    {% include 'inc/hero.twig' ignore missing %}
+{% block before_main %}
+  <section class="l-main-before--blog">
+    {% if not hidePageTitle %}
+      <div class="l-main-before__header--blog ">
+        {% include "inc/header.twig"
+          with {
+          headingLevel : '1' ,
+          headerModClass : '--blog'
+        }%}
+      </div>
+      {% if post.content %}
+    <div class="l-main-before__content--blog ">
+      {{ post.content }}
+    </div>
+        {% endif %}
+      <div class="l-main-before__nav-menu--blog">
+        {% set menuName = "categories" %}
+        {% set menuTitle = "Categories" %}
+        {% include 'inc/navigation.twig' %}
+      </div>
+    {% endif %}
+
+{#    <div class="l-main-before__widget-area">#}
+{#      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}#}
+{#    </div>#}
+
   </section>
+
+{% endblock %}
+
+{% block hero %}
+  {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or pageSettingsShowSiteHero == true
+    or ( (fn('is_front_page') or fn('is_archive') )and pageSettingsHideSiteHero != true )
+  %}
+    <section id="siteHero" class="l-site__hero{{ templateClass }}">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
   {% endif %}
 {% endblock %}
 
@@ -31,7 +65,7 @@
 
 
 
-{% block belowContent %}
+{% block after_content %}
   <div class="content__below">
     {% if posts.pagination.pages is not empty %}
     <div class="content__pagination">
@@ -42,12 +76,13 @@
   <!-- removed comments in home.twig -->
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = fales %}
 
 {% block sidebar %}
-  <div id="sidebar" class="l-main__sidebar">
-    <div class="c-sidebar-widgets">
-      {{ sidebar_widgets }}
-    </div>
-  </div>
+  <!-- removed sidebar -->
+{#  <div id="sidebar" class="l-main__sidebar">#}
+{#    <div class="c-sidebar-widgets">#}
+{#      {{ sidebar_widgets }}#}
+{#    </div>#}
+{#  </div>#}
 {% endblock %}

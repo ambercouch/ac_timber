@@ -37,6 +37,9 @@
  */
 
 .c-nav-menu__ {
+  &heading{
+    color: $brand-col-1;
+  }
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
@@ -49,6 +52,9 @@
   &link{
     text-decoration: none;
     pointer-events: all !important;
+  }
+  &link-label{
+    display: inline;
   }
   &sub-menu{
     position: absolute;
@@ -94,6 +100,13 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__heading--
+
+[class*=c-nav-menu__heading--] {
+  @extend .c-nav-menu__heading !optional;
+  font-family: $act-font-family-sans;
+}
+
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__list--
 
 [class*=c-nav-menu__list--] {
@@ -110,6 +123,10 @@
   &social{
     @extend .o-list-flex;
     justify-content: center;
+  }
+  &social-share{
+    @extend .o-list-flex;
+    justify-content: flex-start;
   }
   &footer{
     display: flex;
@@ -194,6 +211,23 @@
     text-transform: uppercase;
     font-weight: 500;
   }
+  &categories{
+    @extend .c-btn;
+    @extend .o-btn--pill;
+    @extend .o-btn--transparent;
+    color: $brand-col-2;
+    &:hover{
+      .current_page_item &{
+        background: $brand-col-2;
+        color: white;
+      }
+    }
+    .current_page_item &, .current-menu-item &{
+      background: $brand-col-2;
+      color: white;
+      cursor: default;
+    }
+  }
   &mobile{
     //@extend .c-nav-menu__link--blocky;
   }
@@ -219,6 +253,17 @@
   }
 }
 
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
+
+[class*=c-nav-menu__link-label--] {
+  @extend .c-nav-menu__link-label !optional;
+}
+
+.c-nav-menu__link-label--{
+  &social-share{
+    display: none;
+  }
+}
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu--
 

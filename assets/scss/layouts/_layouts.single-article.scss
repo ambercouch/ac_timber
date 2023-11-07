@@ -1,16 +1,28 @@
 .l-single-article {
   max-width: $article-max-width;
-  margin: 0 auto $inuit-global-spacing-unit-large;
-  border-bottom: solid 1px;
-  padding-bottom: $inuit-global-spacing-unit;
+  margin: 0 auto 0;
+  padding-bottom: 0;
 }
 
 .l-single-article__{
   &feature-image {
     margin-bottom: $inuit-global-spacing-unit;
+    @include mq($from: desktop){
+      max-width: 36em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
   }
   &header {
     margin-bottom: $inuit-global-spacing-unit;
+
+    @include mq($from: desktop){
+      max-width: 36em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
 
   }
   &heading {
@@ -31,9 +43,29 @@
   }
   &body {
     display: block;
+    @include mq($from: desktop){
+      max-width: 36em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
   }
   &footer {
     display: block;
+    padding: $act-unit 0;
+    @include mq($from: desktop){
+      max-width: 36em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+    }
+  }
+  &blog-back{
+    margin-bottom: $act-unit-l;
+  }
+  &post-meta-after{
+    border-top: solid 2px $brand-col-7;
+    padding: $act-unit 0;
   }
 
   &comment-link {

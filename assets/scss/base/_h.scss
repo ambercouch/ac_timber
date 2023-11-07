@@ -1,6 +1,11 @@
 @include headings(){
   font-weight: 700;
   color: $col-heading;
+  .l-single-article &{
+    color: $col-text;
+    font-family: $act-font-family-sans;
+  }
+
 }
 
 h1{

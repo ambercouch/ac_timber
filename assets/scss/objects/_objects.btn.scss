@@ -9,6 +9,7 @@
   background: $brand-col-1;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .o-btn{
@@ -61,6 +62,12 @@
   &rounded {
     @extend .o-btn;
     border-radius: $act-unit;
+  }
+  &pill{
+    @extend .o-btn;
+    border-radius: 9999px;
+    padding-left:$act-unit;
+    padding-right:$act-unit;
   }
   &brand-1{
     @extend .o-btn;

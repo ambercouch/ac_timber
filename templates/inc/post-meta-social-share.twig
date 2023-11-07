@@ -1,0 +1,34 @@
+<div class="c-post-meta">
+  <div class="c-post-meta__section--social-share">
+
+      <h6 class="c-post-meta__heading--social-share">Share</h6>
+      <div class="c-post-meta__nav-menu--social-share">
+      <div class="c-nav-menu--social-share">
+        <div class="c-nav-menu__list--social-share">
+          <div class="c-nav-menu__item--social-share">
+            <a class="c-nav-menu__link--social-share" href="http://twitter.com/share?url={{ post.link }}&text={{ post.title }}&size=l&count=none" target="_blank">
+              <span class="c-nav-menu__link-label--social-share">Share on Twitter</span><span class="c-nav-menu__svg-icon">{% include 'inc/svg-use.twig' with {'icon' : 'icon-twitter'} %}</span>
+            </a>
+          </div>
+          <div class="c-nav-menu__item--social-share">
+            <a class="c-nav-menu__link--social-share" href="https://www.facebook.com/sharer/sharer.php?u={{ post.link }}" target="_blank">
+              <span class="c-nav-menu__link-label--social-share">Share on Facebook</span><span class="c-nav-menu__svg-icon">{% include 'inc/svg-use.twig' with {'icon' : 'icon-facebook'} %}</span>
+
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+  </div>
+
+  {% if  post.edit_link != '' %}
+    <div class="c-post-meta__section--post-admin">
+      <div class="c-post-meta__post-admin">
+          <span class="c-post-meta__post-links"><a  class="c-post-meta__link--edit" href="{{ post.edit_link }}" title="Edit {{ post.title }}">Edit</a></span>
+      </div>
+     </div>
+  {% endif %}
+
+</div>

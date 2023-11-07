@@ -4,15 +4,15 @@
 
 .l-main-before {
   display: block;
-  background: $brand-col-3;
+  background: #f2f2f2;
 }
 /*
   BEM BLOCK MODIFIER .l-main-before--
  */
 
 .l-main-before-- {
-  &type {
-    display: block
+  &blog {
+    padding-top: $act-unit-l;
   }
 }
 
@@ -44,7 +44,11 @@
   }
 
   &content {
-    display: block
+    display: block;
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 $act-unit-l;
   }
 
   &footer {
@@ -54,6 +58,9 @@
     margin: 0 0 $act-unit 0;
     padding: $act-unit;
   }
+  &nav-menu{
+    display: block;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-main-before--
@@ -62,8 +69,39 @@
   @extend .l-main-before__header;
 }
 
+.l-main-before__header--{
+  &blog{
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 $act-unit-l;
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .l-main-before__content--
+
+[class*=l-main-before__content--] {
+  @extend .l-main-before__content;
+}
+
+
 //BEM ELEMENT MODIFIER FALLBACK .l-main-before__widget-area--
 
  [class*=l-main-before__widget-area--] {
    @extend .l-main-before__widget-area;
  }
+
+//BEM ELEMENT MODIFIER FALLBACK .l-main-before__widget-area--
+
+[class*=l-main-before__nav-menu--] {
+  @extend .l-main-before__nav-menu;
+}
+
+.l-main-before__nav-menu--{
+  &blog{
+    width: 900px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 $act-unit-l;
+  }
+}

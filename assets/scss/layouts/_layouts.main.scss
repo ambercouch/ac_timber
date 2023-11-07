@@ -41,6 +41,12 @@ BEM BLOCK MODIFIERS .l-main--
     padding: 0 !important;
     max-width: none;
   }
+  &blog{
+    max-width: 900px;
+    background: transparent;
+    //display: none !important;
+
+  }
 }
 
 
@@ -60,6 +66,7 @@ BEM BLOCK MODIFIERS .l-main--
   &content{
     padding: 0;
   }
+
 
 }
 
