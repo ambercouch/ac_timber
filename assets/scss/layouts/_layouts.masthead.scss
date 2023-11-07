@@ -11,7 +11,7 @@ BEM BLOCK .l-masthead
   padding-bottom: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  //justify-content: center;
   //margin-bottom: $act-unit;
   @include mq($from : desktop){
     padding: $act-unit-l;
@@ -57,24 +57,41 @@ BEM ELEMENTS .l-masthead__
     }
   }
   &navigation{
+    //Hide main navigation on mobile
     display: none;
+
+    /*
+     * band-block-bottom - Blocking navigation band positioned below the logo
+     */
     //@extend .element--band-block-bottom;
-    //@extend .is-split-nav;
+
+    /*
+     * band-block-top - Blocking navigation band positioned Above the logo
+     */
+    //@extend .element--band-block-top;
+
+    /*
+    * is-split-nav - splits the nav items left and right
+    */
+    // @extend .is-split-nav;
+
+    /*
+     * abso-layer poition absolute to move the navigation inline with the logo
+     */
     @extend .element--abso-layer;
+
     @include mq($from: desktop){
       display: block;
-      margin: $act-unit-l 0 $act-unit;
-      padding-left: $act-unit-l;
-      padding-right: $act-unit-l;
+      margin: 0;
+      padding: 0;
     }
   }
   &widget-area{
     width: 100%;
   }
   &branding{
-    //@extend .element--items-centre;
-    @extend .element--flush-left;
-
+    @extend .element--items-centre;
+    //@extend .element--flush-left;
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
@@ -115,21 +132,17 @@ BEM ELEMENTS .l-masthead__
   @include mq($from : desktop){
     width: 100%;
     display: flex;
-    align-items: flex-start;
     background: $brand-col-2;
     @include breakout-band($bgc : $brand-col-2);
     margin: 0;
   }
-  .c-nav-menu{
 
-  }
   .c-nav-menu__link{
     color: #fff;
     &:hover{
       color: white;
       background: darken($brand-col-2, 10%);;
     }
-
   }
 }
 /*
@@ -176,7 +189,7 @@ BEM ELEMENTS .l-masthead__
   .c-nav-menu__list{
     width: 100%;
     justify-content: center;
-    > :nth-child(5){
+    > :nth-child(4){
       margin-left: auto;
     }
   }
