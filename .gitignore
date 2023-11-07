@@ -10,3 +10,5 @@ style.css.map
 templates/inc/defs.svg
 
 assets/scss/_vendor.scss
+
+.idea/
