@@ -23,8 +23,8 @@ if( function_exists('acf_add_local_field_group') ):
                 'preview_size' => 'thumbnail', // Set the size of the image preview
                 'min_width' => 180, // Set the minimum width of the image
                 'min_height' => 180, // Set the minimum height of the image
-                'max_width' => 300, // Set the maximum width of the image
-                'max_height' => 300, // Set the maximum height of the image
+                'max_width' => 500, // Set the maximum width of the image
+                'max_height' => 500, // Set the maximum height of the image
                 'mime_types' => 'jpg,jpeg,png'
                 // Add any other relevant settings or parameters here
             ),
