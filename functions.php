@@ -97,5 +97,7 @@ require_once get_template_directory() . '/lib/functions--ac-woocommerce.php';
 //// Attach callback to 'tiny_mce_before_init'
 //add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
 
+add_filter('wpcf7_autop_or_not', '__return_false');
+
 
 
