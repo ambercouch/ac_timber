@@ -20,7 +20,7 @@
       } %}
     </div>
     {% if not post.meta('hide_project_content_link') %}
-    <button class='c-btn--slide-more' href="{{ post.link }}">Find out more</button>
+    <a class='c-btn--slide-more' href="{{ post.link }}">Find out more</a>
     {% elseif  post.meta('project_url')%}
       <a class='c-btn--slide-more' href="{{ post.meta('project_url') }}">Visit the website</a>
     {% endif %}
