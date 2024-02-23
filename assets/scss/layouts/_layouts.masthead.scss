@@ -57,7 +57,10 @@ BEM ELEMENTS .l-masthead__
     }
   }
   &navigation{
-    //Hide main navigation on mobile
+
+    /*
+     * Hide main navigation on mobile
+     */
     display: none;
 
     /*
@@ -76,13 +79,13 @@ BEM ELEMENTS .l-masthead__
     // @extend .is-split-nav;
 
     /*
-     * abso-layer poition absolute to move the navigation inline with the logo
+     * abso-layer position absolute to move the navigation inline with the logo
      */
     @extend .element--abso-layer;
 
     @include mq($from: desktop){
       display: block;
-      margin: 0;
+      margin: 0 auto;
       padding: 0;
     }
   }
@@ -90,8 +93,8 @@ BEM ELEMENTS .l-masthead__
     width: 100%;
   }
   &branding{
-    @extend .element--items-centre;
-    //@extend .element--flush-left;
+    //@extend .element--items-centre;
+    @extend .element--flush-left;
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
