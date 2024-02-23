@@ -93,8 +93,16 @@ BEM ELEMENTS .l-masthead__
     width: 100%;
   }
   &branding{
+    /*
+     * Position the logo and strap centre
+     */
     //@extend .element--items-centre;
+
+    /*
+     * Position the logo and strap centre
+     */
     @extend .element--flush-left;
+    
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
