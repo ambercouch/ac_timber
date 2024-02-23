@@ -57,6 +57,7 @@
     top: 100%;
     margin-left: 0;
     z-index: 999;
+    pointer-events: all!important;
     background: $brand-col-2;
     padding: $act-unit-t;
     .menu-item-has-children:hover &{
@@ -71,6 +72,11 @@
   &sub-menu-list{
     @extend .o-list-bare ;
     margin: 0;
+    pointer-events: all;
+    &:hover{
+      left: 0 !important;
+      display: block !important;
+    }
   }
   &sub-menu-item{
     color: white;
