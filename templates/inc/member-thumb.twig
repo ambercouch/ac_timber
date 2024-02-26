@@ -1,0 +1,55 @@
+{% set modClass = (templateModClass) ? '--'~templateModClass : '' %}
+{% set imgObj = post.thumbnail ? Image(post.thumbnail) : null %}
+{% set templateHeaderTitle = post.meta('member_name') ? post.meta('member_name') : post.title %}
+
+<article {{ fn('post_class', ['c-member-thumb'~modClass] ) }}>
+  {# Display the featured image if available #}
+  {% if imgObj %}
+    <div class="c-member-thumb__feature-image{{ modClass }}">
+      {% include "inc/feature-image.twig" with {
+        "imgObj" : imgObj
+      } %}
+    </div>
+  {% endif %}
+
+  <div class="c-member-thumb__content">
+    <div class="c-member-thumb__header{{ modClass }}">
+      {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle } %}
+    </div>
+
+    {# Display Member Position #}
+    {% if post.meta('member_position') %}
+      <div class="c-member-thumb__position">
+        <strong>Position:</strong> {{ post.meta('member_position') }}
+      </div>
+    {% endif %}
+
+    {# Display Member Location #}
+    {% if post.meta('member_location') %}
+      <div class="c-member-thumb__location">
+        <strong>Location:</strong> {{ post.meta('member_location') }}
+      </div>
+    {% endif %}
+
+    {# Display Member Bio #}
+    {% if post.meta('member_bio') %}
+      <div class="c-member-thumb__bio">
+        {{ post.meta('member_bio') }}
+      </div>
+    {% endif %}
+
+    {# Display Member Email #}
+    {% if post.meta('member_email') %}
+      <div class="c-member-thumb__email">
+        <strong>Email:</strong> <a href="mailto:{{ post.meta('member_email') }}">{{ post.meta('member_email') }}</a>
+      </div>
+    {% endif %}
+
+    {# Display Member Telephone #}
+    {% if post.meta('member_tel') %}
+      <div class="c-member-thumb__tel">
+        <strong>Tel:</strong> {{ post.meta('member_tel') }}
+      </div>
+    {% endif %}
+  </div>
+</article>
