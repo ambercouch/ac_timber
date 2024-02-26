@@ -29,7 +29,17 @@ BEM ELEMENTS .l-site__
     }
   }
   &main{
-    padding-top: $act-unit-l;
+    padding-top: 0;
+  }
+  &burger-wrapper{
+     position: fixed;
+     z-index: 9999;
+     width: 100%;
+   }
+  &burger-container{
+    @extend .c-site-wrapper--responsive;
+    position: relative;
+    background: transparent;
   }
   &off-page-container{
     transition: opacity 0.3s ease-in-out;
@@ -37,7 +47,7 @@ BEM ELEMENTS .l-site__
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: darken($brand-col-3, 10%);
+    background: $brand-col-5;
     z-index: 1000;
     opacity: 0;
     padding-top: $act-unit-h;
@@ -80,7 +90,14 @@ BEM ELEMENTS .l-site__
   @extend .l-site__off-page-container;
 }
 
-.l-site__off-page-container{
-
+.l-site__off-page-container--{
+  &mobile-navigation{
+    @include mq($from : tablet){
+       width: 50vw;
+     }
+    @include mq($from : desktop){
+      width: 30vw;
+    }
+  }
 }
 

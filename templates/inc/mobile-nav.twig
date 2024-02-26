@@ -1,20 +1,24 @@
 {% if mobilenavbefore_widgets == '' and mobilenavafter_widgets == '' and menuMobile.get_items == ''%}
   <!-- Add some widgets to the mobilenav or some items to the mobile menu and the burger will appear-->
 {% else %}
-  <div class="c-burger">
-  <button id="menuButton" class="c-burger__btn" data-state="off">
-    <div class="c-burger__bars">
-    <div class="c-burger__bar--tl"></div>
-    <div class="c-burger__bar--tr"></div>
-    <div class="c-burger__bar--m"></div>
-    <div class="c-burger__bar--br"></div>
-    <div class="c-burger__bar--bl"></div>
+<div class="l-site__burger-wrapper">
+  <div class="l-site__burger-container">
+    <div class="c-burger">
+    <button id="menuButton" class="c-burger__btn" data-state="off">
+      <div class="c-burger__bars">
+      <div class="c-burger__bar--tl"></div>
+      <div class="c-burger__bar--tr"></div>
+      <div class="c-burger__bar--m"></div>
+      <div class="c-burger__bar--br"></div>
+      <div class="c-burger__bar--bl"></div>
+      </div>
+      <div class="c-burger__label">
+        Menu
+      </div>
+    </button>
     </div>
-    <div class="c-burger__label">
-      Menu
-    </div>
-  </button>
   </div>
+</div>
 
 
   <div id="mobileNavigation" class="l-site__off-page-container--mobile-navigation" data-state="off">
