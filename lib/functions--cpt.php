@@ -79,7 +79,7 @@ function act_cpt() {
         'description' => 'Holds our team members and their specific data',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'page-attributes'),
+        'supports' => array('title', 'thumbnail', 'excerpt'),
         'has_archive' => true,
         'menu_icon' => 'dashicons-groups',
         'show_in_rest' => false // Enables Gutenberg support
@@ -132,7 +132,7 @@ function act_cpt() {
         'description' => 'Lists current job vacancies',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'page-attributes'),
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
         'has_archive' => true,
         'menu_icon' => 'dashicons-businessman',
         'show_in_rest' => false // Enables Gutenberg support
