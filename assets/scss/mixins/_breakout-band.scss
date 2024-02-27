@@ -1,6 +1,7 @@
-@mixin breakout-band($bgc : #ccc, $padding : 0, $pos : 'centre'){
+@mixin breakout-band($bgc : #ccc, $col : #fff, $padding : 0, $pos : 'centre'){
   position: relative;
   z-index: 1;
+  color: $col;
   &:after{
     position: absolute;
     content: '';

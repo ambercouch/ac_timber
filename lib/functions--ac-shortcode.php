@@ -276,6 +276,41 @@ function act_shortcode_cta($atts, $content){
     return $output;
 }
 
+add_shortcode('act_band', 'act_shortcode_band');
+function act_shortcode_band($atts, $content){
+    $a = shortcode_atts(array(
+        'col' => '#fff',
+        'bgc' => '#000',
+        'text' => ''
+    ), $atts);
+
+    extract($a);
+    $bob_class = "u-bob";
+
+    // Check if it starts with '#' and is a potential hex
+    if (strpos($bgc, '#') === 0 && ctype_xdigit(ltrim($variable, '#'))) {
+        // It's a hexadecimal string (with '#')
+        // Do something for hexadecimal
+    } elseif (filter_var($bgc, FILTER_VALIDATE_INT) !== false && $bgc > 0) {
+        // It's a positive integer
+        // Do something for positive integer
+        $bob_class .= '--'.$bgc;
+    } else {
+        // Default action
+    }
+
+    $output = '';
+
+    $output .= '<div class="'.$bob_class.'">';
+    $output .= '<div class="u-pt u-pb" >';
+    $output .= $content;
+    $output .= '</div>';
+    $output .= '</div>';
+
+
+    return $output;
+}
+
 
 
 
