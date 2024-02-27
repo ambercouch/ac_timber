@@ -29,7 +29,7 @@ BEM BLOCK MODIFIERS .l-main--
 
 .l-main--{
   &page{
-    padding-top: 0;
+    padding-top: $act-unit-l;
   }
   &service{
     @extend .l-main--page;

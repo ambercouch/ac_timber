@@ -180,5 +180,13 @@
   @extend .c-post-thumb__body;
 }
 
+.c-post-thumb__body--{
+  &service{
+    margin-bottom: auto;
+    margin-top: auto;
+    padding: $act-unit 0;
+  }
+};
+
 
 

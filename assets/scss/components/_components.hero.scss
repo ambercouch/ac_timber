@@ -91,6 +91,9 @@ BEM ELEMENTS .c-hero__
   &.c-hero__content{
     position: relative;
     color: $col-light;
+    @include headings(){
+      color: $col-light;
+    }
     p{
       color:  $col-light;
     }
