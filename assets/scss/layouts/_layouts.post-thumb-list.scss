@@ -18,6 +18,7 @@
     flex-direction: column;
     max-width: 1440px;
   }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-post-thumb-list--
@@ -92,7 +93,12 @@
     flex-direction: column;
   }
   &service{
-    gap : $act-unit-l;
+    gap : 0;
+    flex-wrap: wrap;
+  }
+  &vacancy{
+    display: block !important;
+    text-align: left;
   }
 }
 
@@ -117,6 +123,10 @@
   }
   &column{
     width: 100%;
+  }
+  &vacancy{
+    text-align: left;
+    margin-bottom: $act-unit;
   }
 }
 

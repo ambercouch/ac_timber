@@ -1,0 +1,27 @@
+{% set modClass = (templateModClass) ? '--'~templateModClass : '' %}
+{% set imgObj = post.thumbnail ? Image(post.thumbnail) : null %}
+{% set templateHeaderTitle = templateHeaderTitle ? templateHeaderTitle : post.title %}
+
+<article {{ fn('post_class', ['c-vacancy-thumb'~modClass] ) }}>
+  {# Display the featured image if available #}
+  {% if imgObj %}
+    <div class="c-vacancy-thumb__feature-image{{ modClass }}">
+      {% include "inc/feature-image.twig" with {
+        "imgObj" : imgObj
+      } %}
+    </div>
+  {% endif %}
+
+  <div class="c-vacancy-thumb__content">
+    <div class="c-vacancy-thumb__header{{ modClass }}">
+      {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle } %}
+    </div>
+
+    {# Display Member Telephone #}
+    {% if post.content %}
+      <div class="c-vacancy-thumb__body">
+        {{ post.content }}
+      </div>
+    {% endif %}
+  </div>
+</article>

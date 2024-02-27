@@ -1,0 +1,60 @@
+/*
+  BEM BLOCK .c-vacancy-thumb
+ */
+
+.c-vacancy-thumb {
+  display: block;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-vacancy-thumb--
+ */
+
+.c-vacancy-thumb-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-vacancy-thumb--
+
+[class*=c-vacancy-thumb--] {
+  @extend .c-vacancy-thumb;
+}
+
+/*
+  BEM ELEMENTS .c-vacancy-thumb__
+ */
+
+.c-vacancy-thumb__{
+  &header {
+    display: block !important;
+    margin-bottom: $act-unit;
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-vacancy-thumb--
+
+[class*=c-vacancy-thumb__header--] {
+  @extend .c-vacancy-thumb__header;
+}
