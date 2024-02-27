@@ -29,6 +29,31 @@ function act_cpt() {
     );
     register_post_type('service', $args);
 
+    // Registering the 'Member Type' Taxonomy
+    $labels = array(
+        'name'              => _x('Service Groups', 'taxonomy general name'),
+        'singular_name'     => _x('Service Group', 'taxonomy singular name'),
+        'search_items'      => __('Search Service Groups'),
+        'all_items'         => __('All Service Groups'),
+        'parent_item'       => __('Parent Service Group'),
+        'parent_item_colon' => __('Parent Service Group:'),
+        'edit_item'         => __('Edit Service Group'),
+        'update_item'       => __('Update Service Group'),
+        'add_new_item'      => __('Add New Service Group'),
+        'new_item_name'     => __('New Member Service Group'),
+        'menu_name'         => __('Service Groups'),
+    );
+    $args = array(
+        'hierarchical'      => true, // Behaves like categories (set to false if it behaves like tags)
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array('slug' => 'service-group'),
+        'show_in_rest'      => false // Enables Gutenberg support for taxonomy
+    );
+    register_taxonomy('service_group', array('service'), $args);
+
     // Registering the 'Project' Custom Post Type
     $labels = array(
         'name' => _x('Projects', 'post type general name'),
