@@ -17,6 +17,11 @@ BEM BLOCK .l-main
       display: flex;
     }
   }
+  .page-template-page-980-center-title &,
+  .service-template-page-980-center-title &{
+    width: 980px;
+    max-width: 100%;
+  }
 }
 
 /*

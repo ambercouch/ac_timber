@@ -1,4 +1,5 @@
-<?php /** Template Name: Single Col Page 800
+<?php
+/** Template Name: Single Col Page 800
  *
  * @package WordPress
  * @subpackage ac_timber
