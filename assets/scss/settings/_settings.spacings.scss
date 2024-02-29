@@ -20,7 +20,8 @@ $inuit-spacing-sizes: (
         "-s": $inuit-global-spacing-unit-small,
         "-l": $inuit-global-spacing-unit-large,
         "-h": $inuit-global-spacing-unit-huge,
-        "-0": 0
+        "-0": 0,
+        "-a": auto
 );
 
 
@@ -45,5 +46,6 @@ $inuit-responsive-spacing-sizes: (
         "-s": $inuit-global-spacing-unit-small,
         "-l": $inuit-global-spacing-unit-large,
         "-h": $inuit-global-spacing-unit-huge,
-        "-0": 0
+        "-0": 0,
+        "-a": auto
 );
