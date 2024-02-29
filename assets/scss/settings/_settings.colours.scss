@@ -18,9 +18,12 @@ $act-ashen-black: #1C232A;
 $act-electric-blue: #00A0E9;
 $act-amber: #e59700;
 
+$abs-deep-green: #008E6D;
+$abs-mute-gold: #BC9B6A;
+
 $brand-col-1 : $act-charcoal-grey;
-$brand-col-2 : $act-steel-grey;
-$brand-col-3 : $act-slate-grey;
+$brand-col-2 : $abs-mute-gold;
+$brand-col-3 : $abs-deep-green;
 $brand-col-4 : $act-off-white;
 $brand-col-5 : $act-ashen-black;
 $brand-col-6 : $act-electric-blue;
@@ -30,10 +33,10 @@ $brand-col-9 : $act-slate-grey;
 
 $col-dark : $act-ashen-black;
 $col-light : $act-off-white;
-$col-accent : $act-amber;
+$col-accent : $abs-deep-green;
 
 $col-text : $col-dark;
-$col-heading : $brand-col-2;
+$col-heading : $brand-col-1;
 $col-link :$col-accent;
-$body-col: $col-light;
+$body-col: #fff;
 

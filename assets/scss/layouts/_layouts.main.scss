@@ -41,6 +41,7 @@ BEM BLOCK MODIFIERS .l-main--
   }
   &front-page{
     padding-top: $act-unit-l;
+    padding-bottom: 0;
   }
   &full-browser-width{
     padding: 0 !important;

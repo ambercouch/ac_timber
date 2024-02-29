@@ -111,7 +111,7 @@
   @extend .l-single-page__feature-image;
 }
 
-[class*='l-single-page__body--']{
+  [class*='l-single-page__body--']{
   @extend .l-single-page__body
 }
 .l-single-page__body--{
@@ -121,10 +121,13 @@
     margin-right: auto;
     text-align: center;
   }
-  &page{
+    &page{
     //padding-top: $act-unit-l;
     padding-bottom: $act-unit-l;
     background-color: transparent;
+    .home &{
+      padding-bottom: 0;
+    }
   }
   &service{
     @extend .l-single-page__body--page;

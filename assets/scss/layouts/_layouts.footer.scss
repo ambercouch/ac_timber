@@ -1,6 +1,7 @@
 .l-footer{
   display: block;
-  background: $brand-col-5;
+  background: $col-light;
+  color: $col-text;
   text-align: center;
 }
 
@@ -73,10 +74,10 @@
 
 .l-footer{
   a{
-    color: $col-light;
+    color: $col-accent;
     text-decoration: none;
     &:hover{
-      color: white;
+      color: $col-accent;
     }
   }
 }

@@ -65,6 +65,7 @@ BEM ELEMENTS .c-site-title
     display: block;
   }
   &description-heading{
+
     margin-bottom: 0;
     color: $col-text;
     background: transparent;
@@ -72,6 +73,7 @@ BEM ELEMENTS .c-site-title
     font-family: $act-font-family-sans;
     font-weight: 500;
     @include act-font-size($act-fs-6, $modifier: 1);
+    display: none;
   }
 }
 

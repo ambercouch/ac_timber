@@ -12,7 +12,7 @@
 
 .c-widget-- {
   &footer {
-    color: white;
+    color: $col-text;
     @include act-font-size($inuit-font-size-h6, 1.5);
   }
   &sidebar{
