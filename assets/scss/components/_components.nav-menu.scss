@@ -16,6 +16,22 @@
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
+    .menu-item-has-children{
+      padding-right: $act-unit;
+      &:after{
+        content: url(assets/images/svg/down.svg);
+        width: $act-unit-s;
+        height: $act-unit-s;
+        line-height: 9px;
+        position: absolute;
+        right: $act-unit-s;
+        top: 50%;
+        vertical-align: baseline;
+        transform: translate(0, -50%);
+        :hover>&{
+          filter: invert(29%) sepia(94%) saturate(1614%) hue-rotate(148deg) brightness(91%) contrast(107%);    }
+        }
+      }
 
   }
   &secondary {
@@ -58,7 +74,7 @@
     margin-left: 0;
     z-index: 999;
     pointer-events: all!important;
-    background: $brand-col-2;
+    background: white;
     padding: $act-unit-t;
     .menu-item-has-children:hover &{
       left: 0;
@@ -87,7 +103,7 @@
     }
   }
   &sub-menu-link{
-    color: white;
+    color: $col-text;
     text-decoration: none;
     display: block;
     width: 100%;
