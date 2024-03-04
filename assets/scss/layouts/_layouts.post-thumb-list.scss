@@ -64,6 +64,13 @@
     @include mq($from : tablet){
       flex-direction: row;
     }
+    ul{
+      list-style: disc;
+      margin-left: 1.5em;
+    }
+    li{
+      padding-left: 0;
+    }
   }
   &item{
     @extend .o-list-bare__item;
@@ -100,6 +107,10 @@
     display: block !important;
     text-align: left;
   }
+  &member{
+    display: block;
+    text-align: left;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -111,6 +122,7 @@
 .l-post-thumb-list__item--{
   &service{
     //height: 33.333vw;
+    margin-bottom: $act-unit-l ;
     &:first-child{
       //background: $brand-col-2;
     }
@@ -126,7 +138,13 @@
   }
   &vacancy{
     text-align: left;
-    margin-bottom: $act-unit;
+    padding-bottom: $act-unit;
+    border-bottom: solid 1px $col-light;
+    margin-bottom: $act-unit-l;
+  }
+  &member{
+    text-align: left;
+    margin-bottom: $act-unit-l;
   }
 }
 
