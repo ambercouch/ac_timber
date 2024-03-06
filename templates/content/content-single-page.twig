@@ -42,7 +42,7 @@
 
 
   {% if post.meta('post_footer_content') %}
-    <footer class="l-single-page__footer{{ templateClass }} ">
+    <footer class="l-single-page__footer{{ templateClass }} {{ post.meta('post_footer_class') }}">
       {{ post.meta('post_footer_content') }}
     </footer>
   {% endif %}
