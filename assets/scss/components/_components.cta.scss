@@ -60,7 +60,7 @@
   &content {
     display: block;
     width: 800px;
-    margin: 0 auto $act-unit-l;
+    margin: 0 auto $act-unit-l 0;
     max-width: 100%;
     @include act-font-size($act-fs-2)
   }

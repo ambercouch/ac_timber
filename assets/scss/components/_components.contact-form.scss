@@ -6,6 +6,11 @@
   display: block;
   max-width: 100%;
   margin: 0 auto $act-unit-s;
+  @include act-font-size($act-fs-5);
+  ::placeholder{
+    color : $col-light;
+    @include act-font-size($act-fs-6)
+  }
 }
 
 /*
@@ -73,10 +78,11 @@
     width: 100%;
     border: none;
     padding:$act-unit-t;
+    border: solid 1px $col-light;
   }
   &label{
     display: block;
-    margin-bottom: $act-unit-t;
+    margin-bottom: $act-unit;
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
@@ -98,8 +104,8 @@
   &content {
     display: block;
     padding: $act-unit;
-    background:  $col-dark;
-    color: $col-light;
+    background:  transparent;
+    color: $col-dark;
   ;
     //@extend .c-contact-form__content--placeholder-blocks;
   }

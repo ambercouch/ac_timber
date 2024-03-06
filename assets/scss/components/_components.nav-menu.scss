@@ -13,6 +13,8 @@
 .c-nav-menu-- {
   &primary {
    @include act-font-size($act-fs-6, 1.3);
+    font-weight: 300;
+    text-transform: uppercase;
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
@@ -33,12 +35,16 @@
         }
       }
 
+
   }
   &secondary {
     @include act-font-size($inuit-font-size-h5, 1.3);
   }
   &social{
     //margin-top: $act-unit-l;
+  }
+  &footer_menu{
+    margin-bottom: $act-unit;
   }
 }
 
@@ -103,15 +109,16 @@
     }
   }
   &sub-menu-link{
+    @include act-font-size($act-fs-s);
     color: $col-text;
     text-decoration: none;
     display: block;
     width: 100%;
     padding: $act-unit-s;
+    white-space: nowrap;
     &:hover{
       @extend .c-nav-menu__sub-menu-link;
-      color: white;
-      background: darken($brand-col-2, 10%);
+      color: $col-accent;
     }
   }
 }
@@ -143,6 +150,12 @@
   }
   &mobile{
     @extend .o-list-flex--stacked;
+  }
+  &footer_menu{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
   }
 }
 
@@ -195,7 +208,7 @@
     padding:$act-unit $act-unit-s;
     display: block;
     background: transparent;
-    font-weight: 500;
+    font-weight: 300;
     color: $col-text;
     &:hover{
       color: $brand-col-3;
@@ -249,7 +262,15 @@
     }
   }
   &hero{
+    opacity: 0.8;
     @extend .c-btn--primary;
+    background: $brand-col-2 !important;
+    color: $col-text !important;
+    &:hover{
+      opacity: 1;
+      background: lighten($brand-col-2, 10%) !important;
+    }
+
   }
 }
 
@@ -260,22 +281,50 @@
    @extend .c-nav-menu__sub-menu !optional;
  }
 
+.c-nav-menu__sub-menu--{
+  &primary {
+    padding-bottom: $act-unit ;
+    min-width: $act-unit-h  * 2;
+    max-width: 100% !important;
+    text-transform: none;
+  }
+}
+
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-list--
 
 [class*=c-nav-menu__sub-menu-list--] {
   @extend .c-nav-menu__sub-menu-list !optional;
 }
 
+.c-nav-menu__sub-menu-list--{
+
+}
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-item--
 
 [class*=c-nav-menu__sub-menu-item--] {
   @extend .c-nav-menu__sub-menu-item !optional;
 }
 
+.c-nav-menu__sub-menu-item--{
+  &primary{
+
+    margin-left: $act-unit-s;
+    margin-right: $act-unit-s;
+  }
+}
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-link--
 
 [class*=c-nav-menu__sub-menu-link--] {
   @extend .c-nav-menu__sub-menu-link !optional;
+}
+
+.c-nav-menu__sub-menu-link--{
+  &primary{
+    border-bottom: solid 1px rgba($col-text, 0.3);
+    padding: $act-unit-t;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .c-nav-menu__link{
@@ -296,7 +345,6 @@
   .is-icon-pos-right &{
     flex-direction: row-reverse;
   }
-
 }
 
 

@@ -17,6 +17,7 @@
       {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle } %}
     </div>
 
+    <div class="c-member-thumb__meta">
     {# Display Member Position #}
     {% if post.meta('member_position') %}
       <div class="c-member-thumb__position">
@@ -30,6 +31,7 @@
         <strong>Location:</strong> {{ post.meta('member_location') }}
       </div>
     {% endif %}
+    </div>
 
     {# Display Member Bio #}
     {% if post.meta('member_bio') %}
