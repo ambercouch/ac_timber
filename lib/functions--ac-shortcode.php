@@ -294,7 +294,7 @@ function act_shortcode_band($atts, $content){
     } elseif (filter_var($bgc, FILTER_VALIDATE_INT) !== false && $bgc > 0) {
         // It's a positive integer
         // Do something for positive integer
-        $bob_class .= '--'.$bgc;
+        $bob_class .= '-'.$bgc;
     } else {
         // Default action
     }

@@ -1,21 +1,21 @@
 .u-bob{
   @include breakout-band()
 }
-.u-bob--1{
+.u-bob-1{
   @include breakout-band($bgc : $brand-col-1)
 }
-.u-bob--2{
+.u-bob-2{
   @include breakout-band($bgc : $brand-col-2)
 }
-.u-bob--3{
+.u-bob-3{
   @include breakout-band($bgc : $brand-col-3)
 }
-.u-bob--4{
+.u-bob-4{
   @include breakout-band($bgc : $brand-col-4)
 }
-.u-bob--5{
+.u-bob-5{
   @include breakout-band($bgc : $brand-col-5)
 }
-.u-bob--6{
+.u-bob-6{
   @include breakout-band($bgc : $brand-col-6)
 }
