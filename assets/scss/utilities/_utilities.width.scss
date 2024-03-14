@@ -16,15 +16,20 @@ UTILITIES width in px from 500 to 1500
  */
 
 .u-w-500px{
-   width: 500px !important;
+  @include mq($from : desktop){
+    width: 500px !important;
+    margin: 0 auto;
+    max-width: 100%;
+  }
  }
 .u-w-500px---{
   &desk{
-    @include mq($from : desktop){
-      width: 500px !important;
-    }
-  }
-
+     @include mq($from : desktop){
+       width: 500px !important;
+       margin: 0 auto;
+       max-width: 100%;
+     }
+   }
 }
 
 .u-w-600px{
@@ -36,15 +41,32 @@ UTILITIES width in px from 500 to 1500
 }
 
 .u-w-800px{
-  width: 800px !important;
+  &desk{
+    @include mq($from : desktop){
+      width: 800px !important;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
 }
 
 .u-w-900px{
-  width: 900px !important;
+  &desk{
+    @include mq($from : desktop){
+      width: 900px !important;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+  }
 }
 
 .u-w-1000px{
-   width: 1000px !important;
+  &desk{
+    @include mq($from : desktop){
+      width: 1000px !important;
+      margin: 0 auto;
+    }
+  }
  }
 
 .u-w-1100px{
