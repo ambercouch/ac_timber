@@ -24,7 +24,7 @@ function  act_cpt() {
         'has_archive' => true,
     );
     //register_post_type('project', $args);
-//Services
+    //Services
     $labels = array(
         'name' => _x('Services', 'post type general name'),
         'singular_name' => _x('Service', 'post type singular name'),
@@ -51,7 +51,7 @@ function  act_cpt() {
     );
     register_post_type('service', $args);
 
-//Service Categories
+    //Service Categories
     $labels = array(
         'name'              => _x( 'Service Categories', 'taxonomy general name' ),
         'singular_name'     => _x( 'Service Category', 'taxonomy singular name' ),
@@ -153,6 +153,60 @@ function  act_cpt() {
     );
 
     register_taxonomy( 'post_collection', array( 'post' ), $args );
+
+    //Media Post Type
+    $labels = array(
+        'name' => _x('Media', 'post type general name'),
+        'singular_name' => _x('Media', 'post type singular name'),
+        'add_new' => _x('Add New', 'Media'),
+        'add_new_item' => __('Add New Media'),
+        'edit_item' => __('Edit Media'),
+        'new_item' => __('New Media'),
+        'all_items' => __('All Media'),
+        'view_item' => __('View Media'),
+        'search_items' => __('Search Media'),
+        'not_found' => __('No Media found'),
+        'not_found_in_trash' => __('No Media found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Media'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-media-default',
+        'description' => 'Media',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title','thumbnail'),
+        'has_archive' => false,
+        'publicly_queryable' => false
+    );
+    register_post_type('media', $args);
+
+    //Media Categories
+    $labels = array(
+        'name'              => _x( 'Media Types', 'taxonomy general name' ),
+        'singular_name'     => _x( 'Media Type', 'taxonomy singular name' ),
+        'search_items'      => __( 'Search Media Types' ),
+        'all_items'         => __( 'All Media Types' ),
+        'edit_item'         => __( 'Edit Media Type' ),
+        'update_item'       => __( 'Update Media Type' ),
+        'add_new_item'      => __( 'Add New Media Type' ),
+        'new_item_name'     => __( 'New Tile Media Type' ),
+        'menu_name'         => __( 'Media Types' ),
+    );
+
+    $args = array(
+        'hierarchical'      => true,
+        'labels'            => $labels,
+        'show_ui'           => true,
+        'show_admin_column' => true,
+        'query_var'         => true,
+        'rewrite'           => array( 'slug' => 'media-cat' ),
+        'publicly_queryable' => false
+
+    );
+    register_taxonomy( 'media_tags', array( 'media' ), $args );
+
 
 
 }
