@@ -15,12 +15,8 @@
   &--social {
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     position: relative;
-
-    .masthead__navigation &{
-      flex-wrap: wrap;
-    }
 
     &__btn {
       margin-right: $inuit-base-spacing-unit;
