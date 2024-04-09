@@ -37,6 +37,7 @@
     transform: translate(0, 50%);
   }
   &__svg{
+    fill: $brand-col-3;
     @include size(500px, 175px);
     @include media-query(palm){
       @include size(250px, 87px);
