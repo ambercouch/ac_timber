@@ -2,6 +2,10 @@
   display: block;
   background: transparent;
   text-align: left;
+  padding: 0 $act-unit;
+  @include mq($from : tablet){
+    //padding: 0;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-footer--

@@ -131,6 +131,11 @@
 [class*=contact-form__input-content--] {
   @extend .c-contact-form__content;
 }
+
+[class*=c-contact-form__input--] {
+  @extend .c-contact-form__input;
+}
+
 /*
  * c-contact-form--placeholder-block
  */

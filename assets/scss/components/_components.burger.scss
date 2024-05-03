@@ -2,7 +2,7 @@
 .c-burger{
   position: fixed;
   right:  $act-unit;
-  top: $act-unit-l *1.25;
+  top: $act-unit * 1.5;
   z-index: 99999;
   @include act-font-size($act-fs-6);
 }
@@ -27,7 +27,7 @@
   text-transform: uppercase;
   display: none;
   .c-burger__btn[data-state=on] &{
-    color: $brand-col-6;
+    color: $brand-col-2;
   }
   .single-service &{
     color: white;
@@ -46,9 +46,9 @@
   position: absolute;
   width: 50%;
   height: 2px;
-  background-color: $brand-col-1;
+  background-color: $brand-col-2;
   .c-burger__btn[data-state=on] &{
-    background-color: $brand-col-1;
+    background-color: $brand-col-2;
   }
 
 }

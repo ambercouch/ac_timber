@@ -8,7 +8,7 @@
 
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
-  <a href="{{thumbLink}}" class="c-post-thumb__link" target="_blank">
+  <a href="{{thumbLink}}" class="c-post-thumb__link">
   {% if post.meta('custom_post_icon') %}
     <div class="c-post-thumb__post-icon">
       <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
@@ -54,7 +54,7 @@
     </ul>
     {% if thumbLink %}
       <div class="c-btn--thumb-read-more">
-        <a target="_blank" href="{{ thumbLink }}" class="c-btn__link--thumb-read-more">
+        <a href="{{ thumbLink }}" class="c-btn__link--thumb-read-more">
           <span class="c-btn__lable--thumb-read-more">
           {{ thumbLinkLabel  }}
           </span>

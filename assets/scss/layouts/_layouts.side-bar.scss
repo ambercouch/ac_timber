@@ -1,34 +1,34 @@
 /*
-  BEM BLOCK .l-side-bar
+  BEM BLOCK .l-sidebar
  */
 
-.l-side-bar {
+.l-sidebar {
   display: block;
   padding-top: $act-unit-h * 1.5;
   width: 25%;
 }
 
 /*
-  BEM BLOCK MODIFIER .l-side-bar--
+  BEM BLOCK MODIFIER .l-sidebar--
  */
 
-.l-side-bar-- {
+.l-sidebar-- {
   &type {
     display: block
   }
 }
 
-//BEM BLOCK MODIFIER FALLBACK .l-side-bar--
+//BEM BLOCK MODIFIER FALLBACK .l-sidebar--
 
-[class*=l-side-bar--] {
-  @extend .l-side-bar;
+[class*=l-sidebar--] {
+  @extend .l-sidebar;
 }
 
 /*
-  BEM ELEMENTS .l-side-bar__
+  BEM ELEMENTS .l-sidebar__
  */
 
-.l-side-bar__ {
+.l-sidebar__ {
   &header {
     display: block
   }
@@ -52,10 +52,23 @@
   &footer {
     display: block
   }
+  &wrapper{
+    border: solid 1px $brand-col-5;
+    padding: $act-unit;
+    border-radius: $act-unit-s;
+    margin-bottom: $act-unit;
+  }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .l-side-bar--
+//BEM ELEMENT MODIFIER FALLBACK .l-sidebar--
 
-[class*=l-side-bar__header--] {
-  @extend .l-side-bar__header;
+[class*=l-sidebar__header--] {
+  @extend .l-sidebar__header;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .l-sidebar__wrapper--
+
+[class*=l-sidebar__wrapper--] {
+  @extend .l-sidebar__wrapper;
+}
+

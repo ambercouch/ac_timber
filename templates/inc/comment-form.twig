@@ -7,35 +7,32 @@
             <input type="hidden" name="author" value="{{ user.name }}">
             <input type="hidden" name="url" value="{{ user.link }}">
         {% else %}
-            <label class="c-contact-form__label">
-              <span class="c-contact-form__label-text" >Email</span>
-              <span class="c-contact-form__input-wrapper" >
-                <input class="c-contact-form__input" placeholder="Email" required name="email" type="email" id="email">
-              </span>
-            </label>
+
             <label class="c-contact-form__label">
               <span class="c-contact-form__label-text" >Name</span>
               <span class="c-contact-form__input-wrapper" >
                 <input class="c-contact-form__input" placeholder="Name"  required name="author" type="text">
               </span>
             </label>
-            <label class="c-contact-form__label">
-              <span class="c-contact-form__label-text" >Website</span>
-              <span class="c-contact-form__input-wrapper" >
-                <input class="c-contact-form__input" placeholder="Website" name="url" type="url">
+
+          <label class="c-contact-form__label">
+            <span class="c-contact-form__label-text" >Email</span>
+            <span class="c-contact-form__input-wrapper" >
+                <input class="c-contact-form__input" placeholder="Email" required name="email" type="email" id="email">
               </span>
-            </label>
+          </label>
+
         {% endif %}
         <label class="c-contact-form__label--textarea">
-          <span class="c-contact-form__label-text" >Comment</span>
-            <textarea class="c-contact-form__input--textarea" placeholder="Leave a comment..." name="comment" cols="60" rows="3"></textarea>
+          <span class="c-contact-form__label-text" >Review</span>
+            <textarea class="c-contact-form__input--textarea" placeholder="Leave a review..." name="comment" cols="60" rows="3"></textarea>
         </label>
         <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
         <input name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
         <div class="c-contact-form__input-wrapper--submit" >
-        <input class="c-contact-form__input--submit c-btn--primary" type="submit" name="Post comment" class="btn">
+        <input class="c-contact-form__input--submit c-btn--secondary" type="submit" name="Post comment" class="btn">
         </div>
-        <button class="c-btn--cancel-comment" type="reset">Cancel</button>
+
 {#        <p>Your comment will be revised by the site if needed.</p>#}
       </div>
     </form>

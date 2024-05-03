@@ -4,9 +4,12 @@
   {% if (fn('is_front_page') and cssBannerImageHeight) or
    (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
   /* cssBannerImageHeight */
-  .c-hero{
-    height: {{ cssBannerImageHeight }} !important;
-    min-height: unset !important;
+
+  @media (min-width: 840px){
+    .c-hero{
+      height: {{ cssBannerImageHeight }} !important;
+      min-height: unset !important;
+    }
   }
   {% else %}
   /* NO cssBannerImageHeight */
@@ -14,9 +17,11 @@
 
   {% if not fn('is_front_page') and cssPageBannerImageHeight and pageSettingsShowSiteHero == false %}
   /* cssPageBannerImageHeight */
-  .c-hero{
-    height: {{ cssPageBannerImageHeight }} !important;
-    min-height: unset !important;
+  @media (min-width: 840px){
+    .c-hero{
+      height: {{ cssBannerImageHeight }} !important;
+      min-height: unset !important;
+    }
   }
   {% else %}
   /* NO cssBannerImageHeight */

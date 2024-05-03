@@ -5,7 +5,7 @@ BEM BLOCK .l-masthead
   border-bottom:none;
   width: 100%;
   @extend .o-wrapper;
-  padding: $act-unit;
+  padding: $act-unit * 1.5;
   padding-top: 0;
   padding-bottom: 0;
   display: flex;
@@ -16,6 +16,9 @@ BEM BLOCK .l-masthead
   }
   &.has-before-widgets{
     padding-top: 0;
+  }
+  @include mq($from : tablet){
+    padding: $act-unit;
   }
 }
 
@@ -68,8 +71,11 @@ BEM ELEMENTS .l-masthead__
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
+    padding-top: $act-unit-s;
     @include mq($from : desktop){
       max-width: 100%;
+      padding-top: 0;
+
     }
   }
 }
@@ -82,11 +88,20 @@ BEM ELEMENTS .l-masthead__
   &masthead-before-widgets{
     @extend .element--abso-layer;
     padding: $act-unit;
-    width: 1200px;
-    left: 50% !important;
-    transform: translate(-50%, 0);
-    text-align: right;
 
+
+
+    text-align: right;
+    @include mq($from : desktop){
+      left: 50% !important;
+      transform: translate(-50%, 0);
+      width: 1200px;
+    }
+    @include mq($until: tablet){
+      position: static !important;
+      order: 2;
+      padding:0;
+    }
   }
 }
 

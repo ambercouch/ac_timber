@@ -40,6 +40,18 @@
 {% block sidebar %}
 <div class="l-main__sidebar--page-sidebar">
   <div class="c-sidebar">
+    <div class="l-sidebar__wrapper--comment-form">
+      <div class="c-contact-form--comment-form">
+        <h3 class="c-contact-form__heading--comment-form">Leave a Review</h3>
+      </div>
+      {% if post.comment_status == "closed" %}
+        <p> comments for this post are closed </p>
+      {% else %}
+        <!-- comment form -->
+        {% include "inc/comment-form.twig"  %}
+      {% endif %}
+    </div>
+
     <div class="c-sidebar__widgets">
       {{ sidebar_widgets }}
     </div>

@@ -97,7 +97,7 @@ function  act_cpt() {
         'description' => 'Our Team',
         'public' => true,
         'menu_position' => 20,
-        'supports' => array('title','editor','thumbnail','excerpt','custom-fields','revisions'),
+        'supports' => array('title','editor','thumbnail','excerpt','custom-fields','revisions','page-attributes'),
         'has_archive' => false,
         'publicly_queryable' => false
     );

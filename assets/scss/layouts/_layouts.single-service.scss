@@ -22,11 +22,12 @@
       display: grid;
       grid-template-columns: 66% 34%;
     }
-    ul{
+    > ul{
       margin-left: $act-unit;
     }
     li{
       list-style: none;
+      margin-bottom: $act-unit-t;
       &:before{
         content: '\2022';
         color: $brand-col-4;

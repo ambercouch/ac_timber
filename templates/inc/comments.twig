@@ -2,7 +2,7 @@
   <div class="l-comments__wrapper--responses">
     <div class="l-comments__responses">
       <div class="l-responses-list">
-        <h3 class="l-responses-list__heading">Comments</h3>
+
         {% if post.comments %}
           <ol class="l-responses-list__list">
             {% for cmt in post.comments %}
@@ -20,11 +20,11 @@
       </div>
     </div>
   </div>
-
+{% if showCommentForm != false %}
   <div class="l-comments__wrapper--comment-form">
-    <div class="c-contact-form--comment-form">
-      <h3 class="c-contact-form__heading--comment-form">Submit a comment</h3>
-    </div>
+      <div class="c-contact-form--comment-form">
+        <h3 class="c-contact-form__heading--comment-form">Leave a Review</h3>
+      </div>
     {% if post.comment_status == "closed" %}
       <p> comments for this post are closed </p>
     {% else %}
@@ -32,4 +32,6 @@
       {% include "inc/comment-form.twig" %}
     {% endif %}
   </div>
+  {% endif %}
+
 </section>

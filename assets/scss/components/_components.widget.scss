@@ -24,11 +24,12 @@
   }
   &masthead-before {
     @include act-font-size($act-fs-5);
-    text-align: left;
+    text-align: center;
     padding: $act-unit-t 0;
-    margin-bottom: $act-unit;
+    margin-bottom: 0;
     @include mq($from : tablet){
       text-align: right;
+      margin-bottom: $act-unit;
     }
 
   }

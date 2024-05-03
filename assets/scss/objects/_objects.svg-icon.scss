@@ -42,7 +42,8 @@
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
-    @include size($act-unit);
+    @include size(100%);
+    aspect-ratio: 1;
     //position: absolute;
     //left: 50%;
     //top: 50%;

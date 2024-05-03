@@ -1,0 +1,88 @@
+/*
+  BEM BLOCK .c-comment
+ */
+
+.c-comment {
+  display: block;
+  background: $brand-col-5;
+  padding: $act-unit;
+  border-radius: $act-unit-s;
+}
+
+/*
+  BEM BLOCK MODIFIER .c-comment--
+ */
+
+.c-comment-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-comment--
+
+[class*=c-comment--] {
+  @extend .c-comment;
+}
+
+/*
+  BEM ELEMENTS .c-comment__
+ */
+
+.c-comment__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block;
+    padding: 0;
+    margin: 0;
+    border: none;
+    @include act-font-size($act-fs-3);
+    font-weight: 700;
+  }
+  &cite{
+    font-weight: 500;
+  }
+  &body{
+    grid-column-start: 2;
+  }
+  &avatar{
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+
+  &footer {
+    display: block
+  }
+  &icon{
+    width: $act-unit-l;
+    margin-bottom: $act-unit;
+  }
+  &cite{
+    &:before{
+      display: inline-block;
+      content: '-';
+      margin-right: $act-unit-t;
+    }
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-comment--
+
+[class*=c-comment__header--] {
+  @extend .c-comment__header;
+}

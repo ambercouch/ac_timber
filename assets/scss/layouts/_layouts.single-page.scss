@@ -20,6 +20,12 @@
       grid-template-columns: 66% 34%;
     }
   }
+  &page-sidebar{
+
+    @include mq($from: tablet){
+      padding-right: $act-unit-h;
+    }
+  }
 }
 
 //.post Elements
@@ -126,6 +132,9 @@
     //padding-top: $act-unit-l;
     //padding-bottom: $act-unit-l;
     background-color: transparent;
+    > p{
+      @extend .u-2-3--desktop;
+    }
     .has-sidebar &{
       padding-right: $act-unit;
       padding-top: $act-unit;

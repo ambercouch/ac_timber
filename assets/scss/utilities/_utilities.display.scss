@@ -14,7 +14,11 @@
   display: flex;
 }
 .u-d-ilf{
-  display: flex;
+  display: block;
+  @include mq($from : desktop){
+    display: flex;
+  }
+
 }
 
 .u-f-w{

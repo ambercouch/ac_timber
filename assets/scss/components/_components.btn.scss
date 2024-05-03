@@ -97,6 +97,9 @@
   &footer {
     display: block
   }
+  &icon{
+    @include size($act-unit)
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-btn--
@@ -117,5 +120,10 @@
     justify-content: space-between;
     align-items: center;
   }
+}
+//BEM ELEMENT MODIFIER FALLBACK .c-btn__icon--
+
+[class*=c-btn__icon--] {
+  @extend .c-btn__icon;
 }
 

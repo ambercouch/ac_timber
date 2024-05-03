@@ -16,6 +16,10 @@
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
+    display: none;
+    @include mq($from : desktop){
+      display: block !important;
+    }
 
   }
   &secondary {
@@ -92,6 +96,9 @@
       background: darken($brand-col-2, 10%);
     }
   }
+  &svg-icon{
+    @include size($act-unit)
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__list--
@@ -112,8 +119,8 @@
     justify-content: flex-start;
   }
   &footer{
-    display: flex;
-    flex-direction: row;
+    display: block;
+
   }
   &mobile{
     @extend .o-list-flex--stacked;
@@ -139,7 +146,8 @@
     margin-left: 0;
   }
   &footer{
-    margin-left: $act-unit;
+    display: block !important;
+    margin-bottom: $act-unit-s;
   }
   &stacked{
     margin-bottom: $act-unit-s;
@@ -196,6 +204,7 @@
   }
   &mobile{
     //@extend .c-nav-menu__link--blocky;
+    color: $brand-col-1 ;
   }
   &blocky{
     padding:$act-unit-s;
