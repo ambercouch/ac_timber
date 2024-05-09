@@ -13,14 +13,6 @@ $templateSlug = 'page-sidebar';
 $post = new TimberPost();
 $context['post'] = $post;
 
-// Fetch and order comments for the post
-$comments = get_comments(array(
-    'post_id' => $post->ID,
-    'order'   => 'DESC' // Orders the comments from newest to oldest
-));
-
-$context['post']->comments = Timber::get_comments($comments);
-
 $context['mainMod'] =  '--page-sidebar';
 $context['template'] = $templateSlug;
 $templates = array( 'page-sidebar-' . $post->post_name . '.twig', 'page-sidebar.twig', 'page.twig' );
