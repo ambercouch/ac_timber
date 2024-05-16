@@ -1,2 +1,10 @@
 /node_modules/
 /dist/
+
+templates/inc/defs.svg
+
+style.css
+
+style.css.map
+
+assets/scss/_vendor.scss
