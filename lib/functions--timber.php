@@ -74,7 +74,7 @@ class StarterSite extends TimberSite {
         if(defined('ENVIRONMENT')){
             $context['environment'] = ENVIRONMENT;
         }else{
-            $context['environment'] = 'local';
+            $context['environment'] = 'production';
         }
 
 
