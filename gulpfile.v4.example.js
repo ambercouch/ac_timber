@@ -10,10 +10,10 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const browserSync = require('browser-sync').create();
 const pipeline = require('readable-stream').pipeline;
+const uglify = require('gulp-uglify');
 const svgstore = require('gulp-svgstore');
 const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
-const terser = require('gulp-terser');
 
 /*
  SOURCE FILES
@@ -65,21 +65,14 @@ jsScripts = jsNpmScripts.concat(jsCustomScripts);
 
 //TASK: scripts - Concat and uglify all the vendor and custom javascript
 function scripts() {
-    return gulp.src(jsScripts)
-        .pipe(concat('main.js'))
-        //.pipe(terser())
-        .pipe(gulp.dest('dist/js/'));
+    return pipeline(
+        gulp.src(jsScripts),
+        concat('main.js'),
+        uglify(),
+        gulp.dest('dist/js/')
+    );
 }
 
-
-function vendorStyles(){
-    return gulp.src(cssNpmScripts)
-        .pipe(concat('_vendor.scss'))
-        .pipe(gulp.dest('assets/scss/'));
-
-    //console.log("testing vendorStyles")
-
-}
 
 //compile scss into css
 function styles() {
@@ -120,5 +113,3 @@ exports.serve = serve;
 exports.styles = styles;
 exports.scripts = scripts;
 exports.svgdefs = svgdefs;
-exports.vendorStyles = vendorStyles;
-exports.default = gulp.series(vendorStyles, styles, scripts, svgdefs, serve);
