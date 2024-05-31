@@ -43,13 +43,23 @@ function act_quote_banner( $atts ) {
 
     $has_image_class = '';
     $has_image = false;
-if ($img !== false){
-    $attachment = get_page_by_title($img, OBJECT, 'attachment')  ;
-    $thumbnail =  wp_get_attachment_image($attachment->ID );
-    $has_image = ($thumbnail != false) ? true : false;
-    $has_image_class = ($thumbnail != false) ? 'has-image' : '';
-}
 
+    if ($img !== false){
+        $args = array(
+            'post_type' => 'attachment',
+            'title' => $img,
+            'post_status' => 'inherit',
+            'numberposts' => 1,
+        );
+        $attachments = get_posts($args);
+
+        if (!empty($attachments)) {
+            $attachment = $attachments[0];
+            $thumbnail = wp_get_attachment_image($attachment->ID);
+            $has_image = ($thumbnail != false) ? true : false;
+            $has_image_class = ($thumbnail != false) ? 'has-image' : '';
+        }
+    }
 
     $output = '';
     $output .= '<div class="quote '.$has_image_class.'">';
@@ -69,13 +79,7 @@ if ($img !== false){
     $output .= '</div><!-- .quote__content -->';
     $output .= '</div><!-- .quote -->';
 
-//    $logo = get_field('company_logo', 'option');
-//    if ($logo == ''){
-//        return;
-//    }
-//
-//    $output = '<img class="'.$class.'" src="'.$logo['url'].'" alt="'.$logo['alt'].'" />';
-
-    return  $output  ;
+    return $output;
 }
+
 add_shortcode('act_quote_banner', 'act_quote_banner');
