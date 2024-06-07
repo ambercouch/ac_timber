@@ -2,11 +2,11 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array (
-        'key' => 'group_57e28e3190931',
+        'key' => 'group_page_settings',
         'title' => 'Page Settings',
         'fields' => array (
             array (
-                'key' => 'field_57e28e51c2cd6',
+                'key' => 'field_hide_title',
                 'label' => 'Hide Title',
                 'name' => 'hide_title',
                 'type' => 'true_false',
@@ -18,7 +18,55 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'message' => 'Hide',
+                'message' => 'Hide Title',
+                'default_value' => 0,
+            ),
+            array (
+                'key' => 'field_hide_logo',
+                'label' => 'Hide Logo',
+                'name' => 'hide_site_logo',
+                'type' => 'true_false',
+                'instructions' => 'This option will hide the logo that is in the masthead.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Hide logo',
+                'default_value' => 0,
+            ),
+            array (
+                'key' => 'field_hide_navigation',
+                'label' => 'Hide Main Navigation',
+                'name' => 'hide_site_navigation',
+                'type' => 'true_false',
+                'instructions' => 'This option will hide the navigation in the masthead.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Hide Main Nav',
+                'default_value' => 0,
+            ),
+            array (
+                'key' => 'field_hide_masthead',
+                'label' => 'Hide Masthead',
+                'name' => 'hide_site_masthead',
+                'type' => 'true_false',
+                'instructions' => 'This option will hide the masthead (logo nav etc) from this page',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Hide Masthead',
                 'default_value' => 0,
             ),
             array (
@@ -38,22 +86,6 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => 0,
             ),
             array (
-                'key' => 'field_57e28e51c2cd7',
-                'label' => 'Hide Masthead',
-                'name' => 'hide_site_masthead',
-                'type' => 'true_false',
-                'instructions' => 'This option will hide the masthead (logo nav etc) from this page',
-                'required' => 0,
-                'conditional_logic' => 0,
-                'wrapper' => array (
-                    'width' => '',
-                    'class' => '',
-                    'id' => '',
-                ),
-                'message' => 'Hide',
-                'default_value' => 0,
-            ),
-            array (
                 'key' => 'field_show_page_comments',
                 'label' => 'Show Page Comments',
                 'name' => 'show_page_comments',
@@ -69,8 +101,6 @@ if( function_exists('acf_add_local_field_group') ):
                 'message' => 'Show Comments',
                 'default_value' => 0,
             ),
-
-
         ),
         'location' => array (
             array (

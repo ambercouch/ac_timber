@@ -10,7 +10,7 @@
     </div>
   {% endif %}
 
-  <div class="l-masthead__branding">
+  <div class="l-masthead__branding {{ hidePageLogo ? 'is-hidden' : 'is-not-hidden' }}">
     <div class="l-masthead__site-title">
       {% if fn('get_field', 'company_logo', 'option') != false %}
         {% include 'inc/site-title-upload.twig' %}
@@ -22,7 +22,7 @@
     </div>
   </div>
 
-  <div class="l-masthead__navigation">
+  <div class="l-masthead__navigation {{ hideMainNavigation ? 'is-hidden' : 'is-not-hidden' }}">
     {% set menuName = "primary" %}
   {% include 'inc/navigation.twig' %}
   </div>

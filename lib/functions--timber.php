@@ -121,6 +121,8 @@ class StarterSite extends TimberSite {
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
+        $context['hidePageLogo'] = get_field('hide_site_logo', $post_id);
+        $context['hideMainNavigation'] = get_field('hide_site_navigation', $post_id);
 
         //ACF options
         $context['typeKitId'] = (get_field('type_kit_id', 'options') == '') ? acSettings()['typeKitId'] : get_field('type_kit_id', 'options') ;
