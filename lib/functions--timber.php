@@ -205,7 +205,7 @@ class StarterSite extends TimberSite {
     function add_to_twig( $twig ) {
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension( new Twig_Extension_StringLoader() );
-        $twig->addFilter( 'ac_dd', new Twig_Filter_Function( 'ac_dd' ) );
+        $twig->addFilter(new \Twig\TwigFilter('ac_dd', 'ac_dd'));
         return $twig;
     }
 
