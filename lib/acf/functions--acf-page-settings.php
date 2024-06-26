@@ -22,6 +22,21 @@ if( function_exists('acf_add_local_field_group') ):
                 'default_value' => 0,
             ),
             array (
+                'key' => 'field_page_title_css_classes',
+                'label' => 'Title CSS Classes',
+                'name' => 'page_title_css_classes',
+                'type' => 'text',
+                'instructions' => 'Add utility classes the the title of the page to chang the style or design ',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => ''
+            ),
+            array (
                 'key' => 'field_hide_logo',
                 'label' => 'Hide Logo',
                 'name' => 'hide_site_logo',
@@ -34,7 +49,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'message' => 'Hide logo',
+                'message' => 'Hide Logo',
                 'default_value' => 0,
             ),
             array (
