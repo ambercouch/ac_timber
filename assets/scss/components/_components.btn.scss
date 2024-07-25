@@ -4,7 +4,6 @@
 
 .c-btn {
   @extend .o-btn;
-  border-radius: 0;
   &.is-loading{
     cursor: default;
     pointer-events: none;
@@ -21,9 +20,11 @@
   }
   &primary{
     @extend .c-btn;
+    @extend .o-btn--pill;
     text-align: center;
     color: $col-text;
     background: $col-accent;
+    background-color: $col-accent;
     @include act-font-size($act-fs-4,1);
     font-weight: bold;
     padding-left: $act-unit ;
@@ -44,6 +45,7 @@
   }
   &secondary{
     @extend .c-btn;
+    @extend .o-btn--pill;
     //@extend .c-btn--ghost;
     color: $col-light;
     @include act-font-size($act-fs-4,1);

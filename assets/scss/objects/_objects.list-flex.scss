@@ -58,7 +58,11 @@
 
 .o-list-flex--center{
   @extend .o-list-flex;
-  justify-content: center;
+  justify-content: center !important;
+}
+.o-list-flex--start{
+  @extend .o-list-flex;
+  justify-content: flex-start !important;
 }
 
 .o-list-flex--1-1{

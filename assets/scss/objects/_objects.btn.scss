@@ -62,26 +62,10 @@
     @extend .o-btn;
     border-radius: $act-unit;
   }
-  &brand-1{
-    @extend .o-btn;
-    background: $brand-col-1;
-    border-color: $brand-col-1;
-    &:hover{
-      background: darken($brand-col-1, 10%);
-    }
-    a:hover{
-      color: white;
-    }
+  &pill{
+    border-radius: 9999px;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
   }
-  &brand-2{
-    @extend .o-btn;
-    background: $brand-col-2;
-    border-color: $brand-col-2;
-    &:hover{
-      background: darken($brand-col-2, 10%);
-    }
-    a:hover{
-      color: white;
-    }
-  }
+
 }

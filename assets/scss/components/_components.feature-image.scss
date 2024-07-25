@@ -3,6 +3,10 @@ BEM BLOCK .c-feature-image
  */
 .c-feature-image{
   position: relative;
+  img{
+    display: block;
+    width: 100%;
+  }
 }
 
 /*
@@ -72,6 +76,9 @@ BEM ELEMENTS.c-feature-image__
   &button{
 
   }
+  &link{
+    display: block;
+  }
 
 }
 
@@ -93,5 +100,13 @@ BEM ELEMENT MODS .c-feature-image__img--
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 9999px
+}
+
+/*
+BEM ELEMENT MODS .c-feature-image__img--
+ */
+
+[class*='c-feature-image__link--']{
+  @extend .c-feature-image__img;
 }
 

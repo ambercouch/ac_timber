@@ -35,11 +35,13 @@ BEM ELEMENTS .l-site__
      position: fixed;
      z-index: 9999;
      width: 100%;
+    pointer-events: none;
    }
   &burger-container{
     @extend .c-site-wrapper--responsive;
     position: relative;
     background: transparent;
+    pointer-events: none;
   }
   &off-page-container{
     transition: opacity 0.3s ease-in-out;

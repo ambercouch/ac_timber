@@ -86,7 +86,7 @@ BEM ELEMENTS .l-masthead__
     @include mq($from: desktop){
       display: block;
       margin: 0 auto;
-      padding: 0;
+      padding: $act-unit $act-unit-h;
     }
   }
   &widget-area{
@@ -102,7 +102,7 @@ BEM ELEMENTS .l-masthead__
      * Position the logo and strap centre
      */
     @extend .element--flush-left;
-    
+
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;

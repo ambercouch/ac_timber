@@ -17,5 +17,14 @@
   @include breakout-band($bgc : $brand-col-5)
 }
 .u-bob-6{
-  @include breakout-band($bgc : $brand-col-6)
+   @include breakout-band($bgc : $brand-col-6)
+ }
+.u-bob-7{
+  @include breakout-band($bgc : $brand-col-7)
+}
+.u-bob-8{
+  @include breakout-band($bgc : $brand-col-8)
+}
+.u-bob-9{
+  @include breakout-band($bgc : $brand-col-9)
 }
