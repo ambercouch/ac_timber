@@ -1,6 +1,6 @@
 <article id="post-{{ post.id }}" class="l-single-page{{ templateClass }} {{ hidePageTitle ? 'has-title-hidden' : '' }}">
 
-  {% if(post.thumbnail or acSettings.defaultImage) %}
+  {% if(post.meta('show_feature_image') and (post.thumbnail or acSettings.defaultImage)) %}
     <div class="l-single-page__feature-image{{ templateClass }} ">
       <div class="c-feature-image--single-page">
         {% if(post.thumbnail.src()) %}
@@ -12,7 +12,7 @@
     </div>
   {% endif %}
   {% if not hidePageTitle %}
-    <div class="l-single-page__header{{ templateClass }} ">
+    <div class="l-single-page__header{{ templateClass }} {{ pageTitleCssClasses }}">
     {% include "inc/header.twig"
       with {
       headerTitle : null,
