@@ -47,11 +47,22 @@
   &page-980-center-title{
     text-align: center !important;
   }
+  &sfwd-courses{
+    text-align: center !important;
+  }
   &page-full-center-title{
     text-align: center !important;
     //width: 980px;
     max-width: 100%;
     margin: 0 auto $act-unit-h auto;
+  }
+  &season-item{
+    display: flex;
+    margin-bottom: $act-unit;
+    align-items: center;
+    > :first-child{
+      margin-right: $act-unit;
+    }
   }
 
 }
@@ -85,7 +96,10 @@
     display: inline;
     position: relative;
     .c-header--page-980-center-title &,
-    .c-header--page-full-center-title &{
+    .c-header--page-full-center-title &,
+    .c-header--sfwd-courses &
+    {
+      display: inline-block;
       &:before{
         content: "";
         height: 3px;
@@ -97,6 +111,9 @@
         right: 100%;
         top:50%;
         margin-right: 0.5em;
+        .u-bob-1 &{
+          border-color: inherit !important;
+        }
       }
       &:after{
         content: "";
@@ -109,6 +126,9 @@
         top:50%;
         height: 3px;
         margin-left: 0.5em;
+        .u-bob-1 &{
+          border-color: inherit !important;
+        }
       }
     }
   }
@@ -117,7 +137,9 @@
   }
 
   &link {
-    display: inline
+    display: inline;
+    text-decoration: none;
+    color: $col-heading;
   }
 
   &content {
@@ -176,6 +198,10 @@
   }
   &footer{
     color: $col-light;
+  }
+  &season-item{
+    @include act-font-size($act-fs-4);
+    text-decoration: none;
   }
 }
 

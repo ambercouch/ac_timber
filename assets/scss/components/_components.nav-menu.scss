@@ -12,8 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($act-fs-6, 1.3);
-
+   @include act-font-size($act-fs-5, 1.3);
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
     .menu-item-has-children{
@@ -124,7 +123,11 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+    @extend .o-list-flex;
+    .home &{
+      @extend .o-list-flex--start;
+    }
+
     .c-widget--footer &{
       flex-direction: column;
       justify-content: flex-start;
@@ -154,8 +157,9 @@
 
 .c-nav-menu__item--{
   &primary{
-    margin-right: 0;
-    margin-left: 0;
+    margin-right: $act-unit-s;
+    margin-left: $act-unit-s;
+
   }
   &hero{
     margin-right: $act-unit;
@@ -192,13 +196,15 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    border-radius: 999px;
+    padding:$act-unit-t $act-unit;
     display: block;
-    background: transparent;
+    background: $brand-col-8;
     font-weight: 500;
-    color: $col-text;
+    color: $col-dark !important;
     &:hover{
-      color: $brand-col-3;
+      color: #fff;
+      background: darken($brand-col-8, 5%);
     }
     .is-overlay-hero &{
       color:white;
@@ -209,7 +215,7 @@
       padding:$act-unit-s $act-unit-t $act-unit-s 0;
     }
     .current-menu-item &{
-      background: transparent;
+      //background: transparent;
       font-weight: 500;
       .is-overlay-hero &{
         color: darken(white, 5%);
@@ -226,7 +232,7 @@
   }
   &mobile{
     //@extend .c-nav-menu__link--blocky;
-    color: $col-dark;
+    color: $col-light;
   }
   &blocky{
     padding:$act-unit-s;
@@ -265,6 +271,7 @@
 [class*=c-nav-menu__sub-menu-list--] {
   @extend .c-nav-menu__sub-menu-list !optional;
 }
+
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__sub-menu-item--
 

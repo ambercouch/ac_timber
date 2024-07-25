@@ -33,14 +33,27 @@ BEM BLOCK MODIFIERS .l-main--
 }
 
 .l-main--{
+  &single{
+    width: 980px;
+    max-width: 100%;
+    padding-top: $act-unit-l;
+  }
   &page{
     padding-top: $act-unit-l;
   }
   &service{
     @extend .l-main--page;
   }
+  &sfwd-courses{
+    @extend .l-main--page;
+    width: 980px;
+    max-width: 100%;
+    //display: none !important;
+  }
   &front-page{
-    padding-top: $act-unit-l;
+    /* Removed the padding top to add margin to the title */
+    //padding-top: $act-unit-l;
+    padding-top: 0;
   }
   &full-browser-width{
     padding: 0 !important;

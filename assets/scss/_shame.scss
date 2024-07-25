@@ -23,3 +23,159 @@
   max-width: 100%;
 }
 
+
+.pmpro_table{
+
+  th{
+    border-bottom: solid $brand-col-1 1px;
+    padding: $act-unit-l $act-unit;
+  }
+  td{
+    border-bottom: solid $brand-col-1 1px;
+    padding: $act-unit-l $act-unit;
+  }
+}
+
+.pmpro_btn:link,
+.pmpro_btn:visited{
+  @extend .c-btn--primary;
+  width: 100%;
+  text-align: center;
+}
+
+.pmpro_login_wrap{
+  form{
+    padding: $act-unit;
+    background: $brand-col-3;
+  }
+  label{
+    color:$col-light;
+  }
+  input{
+    width: 100%;
+    max-width: 100% !important;
+    padding: $act-unit-s;
+  }
+  .button-primary{
+    @extend .c-btn--primary;
+    width: 250px !important;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+.c-admin-link__link{
+  text-decoration: none;
+  font-weight: 400;
+  font-family: $act-font-family-sans;
+  @include act-font-size($act-fs-s);
+  cursor: pointer;
+}
+[class*=c-badge--]{
+  padding: $act-unit-t $act-unit-s;
+  background: #000;
+  @include act-font-size($act-fs-6);
+  color: #fff;
+  border-radius: 2px;
+  line-height: 1;
+  display: block;
+}
+
+.c-badge--{
+  &article{
+    background: $brand-col-6;
+  }
+  &video{
+    background: $brand-col-2;
+  }
+  &course{
+    background: $brand-col-3;
+  }
+}
+
+.login-remeber label{
+  display: flex;
+}
+input[type="checkbox"]{
+  width: auto;
+}
+input[type="submit"]{
+  cursor: pointer;
+}
+
+
+form.pmpro_form input[type=text],
+form.pmpro_form input[type=email],
+form.pmpro_form input[type=password]{
+  display: inline-block !important;
+  max-width: 100%;
+  min-height: 1.5rem;
+  width: 100%;
+  border: none;
+  padding: 12px;
+}
+.pmpro_checkout-field{
+  position: relative;
+  .pmpro_asterisk{
+    position: absolute;
+    top: $act-unit-t;
+    right: $act-unit-t;
+  }
+}
+
+.pmpro_checkout h2 span.pmpro_checkout-h2-msg{
+  font-family: $act-font-family-sans;
+  @include act-font-size($act-fs-6);
+}
+
+.pmpro_btn-submit-checkout{
+  @extend .c-btn--primary;
+}
+
+.pmpro_content_message a{
+  @extend .c-btn--secondary;
+  border-radius: 9999px !important;
+  border: none !important;
+  padding: $act-unit-s $act-unit !important;
+}
+.wp-block-pullquote {
+  padding: 2em 0 !important;
+
+}
+
+//.pmpro_levels_table{
+//  @include mq($until : desktop){
+//    table{
+//      display: block;
+//      width: 100%;
+//    }
+//    thead{
+//      display: none;
+//    }
+//    tbody{
+//      width: 100%;
+//      display: block;
+//    }
+//    th{
+//      width: 100%;
+//      display: block;
+//      padding: 0;
+//    }
+//    tr{
+//      width: 100%;
+//      display: block;
+//
+//    }
+//    td{
+//       width: 100%;
+//       display: block;
+//       padding: $act-unit-s 0;
+//      border-bottom-style: none;
+//      &:last-child{
+//        padding: 0;
+//        border-bottom-style: solid;
+//        margin-bottom: $act-unit-l;
+//      }
+//     }
+//  }
+//
+//}

@@ -18,22 +18,30 @@ $act-ashen-black: #1C232A;
 $act-electric-blue: #00A0E9;
 $act-amber: #e59700;
 
-$brand-col-1 : $act-charcoal-grey;
-$brand-col-2 : $act-steel-grey;
-$brand-col-3 : $act-slate-grey;
-$brand-col-4 : $act-off-white;
+$wdw-forest-green: #5E7365;
+$wdw-gold: #D4AF37;
+$wdw-soft-pink: #F8BBD0;
+$wdw-teal: #168281;
+$wdw-sunset-yellow: #FFD700;
+$wdw-sky-blue: #87CEEB;
+$wdw-lavender: #E6E6FA;
+
+$brand-col-1 : $wdw-teal;
+$brand-col-2 : $wdw-soft-pink;
+$brand-col-3 : $wdw-forest-green;
+$brand-col-4 : $wdw-lavender;
 $brand-col-5 : $act-ashen-black;
-$brand-col-6 : $act-electric-blue;
-$brand-col-7 : $act-amber;
-$brand-col-8 : $act-slate-grey;
+$brand-col-6 : $wdw-sky-blue;
+$brand-col-7 : $wdw-gold;
+$brand-col-8 : $wdw-sunset-yellow;
 $brand-col-9 : $act-slate-grey;
 
 $col-dark : $act-ashen-black;
-$col-light : $act-off-white;
-$col-accent : $act-amber;
+$col-light : $wdw-lavender;
+$col-accent : $wdw-gold;
 
 $col-text : $col-dark;
-$col-heading : $brand-col-2;
-$col-link :$col-accent;
+$col-heading : $brand-col-1;
+$col-link : $wdw-gold;
 $body-col: $col-light;
 

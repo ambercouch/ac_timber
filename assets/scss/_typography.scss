@@ -3,6 +3,7 @@
  */
 html{
   font-family: $act-font-family-body;
+  font-weight: 300;
 }
 
 @include headings(1,6){

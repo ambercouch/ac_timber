@@ -1,5 +1,6 @@
 .c-post-meta{
   @include inuit-font-size($inuit-font-size-h5, 1);
+  margin-bottom: $act-unit;
 }
 
 .c-post-meta__{
@@ -32,7 +33,7 @@
 
   &label{
     margin-bottom: $act-unit-t;
-    display: block;
+    display: none;
   }
 
   &post-date{

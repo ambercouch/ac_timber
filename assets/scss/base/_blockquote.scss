@@ -1,5 +1,10 @@
 blockquote{
-  border-left: solid ;
-  padding-left: $act-unit-s;
-  margin-left: $act-unit-s;
+  border-bottom: solid 9px $brand-col-1 ;
+  border-radius: 9px;
+  background: #fff;
+  padding: $act-unit;
+  color: $brand-col-1;
+  p{
+    color: $brand-col-1 !important;
+  }
 }

@@ -33,6 +33,16 @@
   &blog-list{
     text-align: left;
   }
+  &season-item{
+    flex-direction:row;
+    text-align: left;
+    > :first-child{
+      @extend .u-1-4--desktop
+    }
+    > :last-child{
+      @extend .u-3-4--desktop
+    }
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--
@@ -185,6 +195,9 @@
     margin-bottom: auto;
     margin-top: auto;
     padding: $act-unit 0;
+  }
+  &season-item{
+    padding-left: $act-unit-l
   }
 };
 

@@ -66,8 +66,8 @@
 
   }
   &site-info{
-    background: $brand-col-2;
-    @include breakout-band($bgc : $brand-col-2)
+    background: $brand-col-1;
+    @include breakout-band($bgc : $brand-col-1)
   }
 }
 

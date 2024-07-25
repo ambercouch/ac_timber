@@ -53,12 +53,22 @@ BEM ELEMENTS .c-site-title
     line-height:1;
   }
   &link{
-    @include act-font-size($act-fs-1, $modifier: 1);
+    transition: color 0.3s ease-in-out;
+    @include act-font-size($act-fs-k, $modifier: 1);
     display: block;
-    color: $col-text;
+    color: $brand-col-7;
     text-decoration: none;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3),
+    -1px -1px 3px rgba(255, 255, 255, 0.2);
     &:hover,&:focus{
-      color: $col-text;
+      color: darken($brand-col-7, 5%);
+    }
+    @include mq($until : tablet){
+      font-size: 7vw;
+    }
+    @include mq($from : tablet, $until : desktop){
+      font-size: 6vw;
     }
   }
   &img{

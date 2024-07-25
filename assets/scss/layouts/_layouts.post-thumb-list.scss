@@ -111,6 +111,9 @@
     display: block;
     text-align: left;
   }
+  &season{
+    @extend .l-post-thumb-list__list--column;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .l-post-thumb-list__item--
@@ -144,6 +147,9 @@
   }
   &member{
     text-align: left;
+    margin-bottom: $act-unit-l;
+  }
+  &season{
     margin-bottom: $act-unit-l;
   }
 }
