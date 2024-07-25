@@ -27,7 +27,7 @@ function act_cpt() {
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
         'has_archive' => 'service'
     );
-    register_post_type('service', $args);
+    //register_post_type('service', $args);
 
     // Registering the 'Member Type' Taxonomy
     $labels = array(
@@ -52,7 +52,7 @@ function act_cpt() {
         'rewrite'           => array('slug' => 'service-group'),
         'show_in_rest'      => false // Enables Gutenberg support for taxonomy
     );
-    register_taxonomy('service_group', array('service'), $args);
+    //register_taxonomy('service_group', array('service'), $args);
 
     // Registering the 'Project' Custom Post Type
     $labels = array(
@@ -80,7 +80,7 @@ function act_cpt() {
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments', 'page-attributes'),
         'has_archive' => true,
     );
-    register_post_type('project', $args);
+    //register_post_type('project', $args);
 
     // Registering the 'Team Member' Custom Post Type
     $labels = array(
@@ -109,7 +109,7 @@ function act_cpt() {
         'menu_icon' => 'dashicons-groups',
         'show_in_rest' => false // Enables Gutenberg support
     );
-    register_post_type('team_member', $args);
+    //register_post_type('team_member', $args);
 
     // Registering the 'Member Type' Taxonomy
     $labels = array(
@@ -134,7 +134,7 @@ function act_cpt() {
         'rewrite'           => array('slug' => 'member-type'),
         'show_in_rest'      => false // Enables Gutenberg support for taxonomy
     );
-    register_taxonomy('member_type', array('team_member'), $args);
+    //register_taxonomy('member_type', array('team_member'), $args);
 
     // Registering the 'Vacancy' Custom Post Type
     $labels = array(
@@ -162,7 +162,7 @@ function act_cpt() {
         'menu_icon' => 'dashicons-businessman',
         'show_in_rest' => false // Enables Gutenberg support
     );
-    register_post_type('vacancy', $args);
+    //register_post_type('vacancy', $args);
 
     // Registering the 'Testimonial' Custom Post Type
     $labels = array(
