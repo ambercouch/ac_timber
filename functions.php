@@ -29,6 +29,7 @@ require_once get_template_directory() . '/lib/acf/functions--acf-page-content.ph
 require_once get_template_directory() . '/lib/acf/functions--acf-menu-items.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-page-banner-image.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-testimonial-info.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-season-settings.php';
 
 require_once get_template_directory() . '/lib/acf/act-acf-team-member.php';
 
@@ -164,3 +165,95 @@ function act_disable_classic_editor() {
 add_action( 'admin_head', 'act_disable_classic_editor' );
 
 add_filter('wpcf7_autop_or_not', '__return_false');
+
+/*
+ * PMP functions
+ */
+
+function redirect_to_members_homepage($redirect_to, $request, $user) {
+    // Check if the user has an active membership
+    if (pmpro_hasMembershipLevel(null, $user->ID)) {
+        return site_url('/this-season');
+    }
+    return $redirect_to;
+}
+add_filter('login_redirect', 'redirect_to_members_homepage', 10, 3);
+
+function redirect_after_registration($user_id) {
+    // Check if the new user has an active membership
+    if (pmpro_hasMembershipLevel(null, $user_id)) {
+        wp_set_auth_cookie($user_id, true);
+        wp_redirect(site_url('/this-season'));
+        exit();
+    }
+}
+add_action('user_register', 'redirect_after_registration');
+
+
+function redirect_logged_in_users_from_homepage() {
+    // Check if the user is logged in, not an admin, and if they have an active membership
+    if (is_user_logged_in() && is_front_page() && !current_user_can('administrator') && pmpro_hasMembershipLevel(null, get_current_user_id())) {
+        wp_redirect(site_url('/this-season'));
+        exit();
+    }
+}
+add_action('template_redirect', 'redirect_logged_in_users_from_homepage');
+
+
+function get_current_season() {
+    // Get today's date in Ymd format
+    $today = date('Ymd');
+
+    // Query arguments
+    $args = array(
+        'post_type' => 'season',
+        'posts_per_page' => 1,
+        'meta_query' => array(
+            'relation' => 'AND',
+            array(
+                'key' => 'season_start_date',
+                'value' => $today,
+                'compare' => '<=',
+                'type' => 'DATE'
+            ),
+            array(
+                'key' => 'season_end_date',
+                'value' => $today,
+                'compare' => '>=',
+                'type' => 'DATE'
+            )
+        )
+    );
+
+    // Custom query
+    $query = new WP_Query($args);
+
+    // Start output buffering
+    ob_start();
+
+    // Check if we have posts
+    if ($query->have_posts()) {
+        // Load the template file
+        while ($query->have_posts()) {
+            $query->the_post();
+            include(locate_template('season-template.php'));
+        }
+        wp_reset_postdata();
+    } else {
+        echo 'No current season found';
+    }
+
+    // Return the buffered content
+    return ob_get_clean();
+}
+
+// Register shortcode
+add_shortcode('act_current_season', 'get_current_season');
+
+function enable_excerpts_for_learndash_courses() {
+    add_post_type_support('sfwd-courses', 'excerpt');
+}
+add_action('init', 'enable_excerpts_for_learndash_courses');
+
+
+

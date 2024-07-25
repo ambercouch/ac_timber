@@ -190,8 +190,35 @@ function act_cpt() {
         'menu_icon' => 'dashicons-format-quote',
         'show_in_rest' => false // Enables Gutenberg support
     );
-    register_post_type('testimonial', $args);
+    //register_post_type('testimonial', $args);
 
+    // Registering the 'Season' Custom Post Type
+    $labels = array(
+        'name' => _x('Seasons', 'post type general name'),
+        'singular_name' => _x('Season', 'post type singular name'),
+        'add_new' => _x('Add New', 'Season'),
+        'add_new_item' => __('Add New Season'),
+        'edit_item' => __('Edit Season'),
+        'new_item' => __('New Season'),
+        'all_items' => __('All Seasons'),
+        'view_item' => __('View Season'),
+        'search_items' => __('Search Seasons'),
+        'not_found' => __('No Seasons found'),
+        'not_found_in_trash' => __('No Seasons found in the trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Seasons'
+    );
+    // Args for the Season post type
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-calendar-alt',
+        'description' => 'Lists seasons offered',
+        'public' => true,
+        'menu_position' => 20,
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
+        'has_archive' => 'season'
+    );
+    register_post_type('season', $args);
 
 
 }
