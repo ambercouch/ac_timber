@@ -1,0 +1,129 @@
+{% set postFormat = postFormat? fn('get_post_format', post) : '' %}
+
+
+  <article id="post-{{ post.id }}" class="l-single-page {{ post.class }}">
+    {% if(post.meta('show_feature_image') and (post.thumbnail or acSettings.defaultImage)) %}
+      <div class="l-single-page__feature-image{{ templateClass }} ">
+        <div class="c-feature-image--single-page">
+          {% if(post.thumbnail.src()) %}
+            <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+          {% else %}
+            <img src="{{acSettings.defaultImage}}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    <header class="entry-header l-single-page__header--season ">
+      {% include "inc/header.twig"
+        with {
+        headerTitle : null,
+        headingLevel : '1' ,
+        headerModClass : templateClass
+      }%}
+        {% if is_admin %}
+          <small class="c-admin-link"><a class="c-admin-link__link" href="{{ post.edit_link }}">Edit Season</a></small>
+        {% endif %}
+
+    </header>
+
+      <div class="entry-content l-single-page__body">
+
+        <div class="l-single-page__content">
+
+          {% if post and post.post_type == 'season' %}
+            <div class="season-content">
+              {{ post.content | wpautop }}
+            </div>
+
+            {% if season_content %}
+              <div class="l-post-thumb-list--season">
+                <ul class="l-post-thumb-list__list--season">
+                  {% for related_post in season_content %}
+                    <li class="l-post-thumb-list__item--season">
+                      <div class="l-post-thumb-list__post-thumb--season">
+                        <div class="c-post-thumb--season-item">
+                          {% if related_post.thumbnail %}
+                            <div class="c-post-thumb__feature-image--season-item">
+                              <div class="c-feature-image--season-item">
+                                <a class="c-feature-image__link--season-item" href="{{ related_post.link }}">
+                                  <img class="c-feature-image__img--season-item" src="{{  related_post.thumbnail.src('thumbnail') }}" href="{{ related_post.thumbnail }}" />
+                                </a>
+                              </div>
+                            </div>
+                          {% endif %}
+
+                          <div class="c-post-thumb__body--season-item">
+
+                            <div class="c-post-thumb__header--season-item">
+                              <header class="c-header--season-item">
+                                <h3 class="c-header__heading--season-item">
+                                  <a class="c-header__link--season-item" href="{{ related_post.link }}">
+                                    {{ related_post.title }}
+                                  </a>
+                                </h3>
+                                <div class="c-header__meta">
+                                  {% if related_post.post_type == 'sfwd-courses' %}
+                                    <div class="c-badge--course">Course</div>
+                                  {% elseif related_post.post_type == 'post' %}
+                                    {% set post_format = related_post.post_format %}
+                                    {% if post_format == 'video' %}
+                                      <div class="c-badge--video">Video</div>
+                                    {% else %}
+                                      <div class="c-badge--article">Article</div>
+                                    {% endif %}
+                                  {% endif %}
+                                </div>
+                            </header>
+                            {% if related_post.post_excerpt %}
+                              <div class="c-post-thumb__content--season-item">
+                                {{ related_post.post_excerpt | wpautop }}
+                              </div>
+                              {% else %}
+                                <div class="c-post-thumb__content--season-item">
+                                  {{ related_post.preview }}
+                                </div>
+                            {% endif %}
+                            <div class="c-post-thumb__footer--season-item">
+                              {% if is_admin %}
+                                <a class="c-admin-link__link" href="{{ related_post.edit_link }}">Edit</a>
+                              {% endif %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% else %}
+              <p>There is no content for this season</p>
+            {% endif %}
+          {% endif %}
+
+
+        </div>
+        <div class="l-single-page__page-links">
+          {% if post.pagination %}
+            <nav>Pages:
+              {% for page in post.pagination.pages %}
+                {% if page.current %}
+                  <span class="current">{{ page.title }}</span>{{ loop.last ? '' : ', ' }}
+                {% else %}
+                  <a href="{{ page.link }}">{{ page.title }}</a>{{ loop.last ? '' : ', ' }}
+                {% endif %}
+              {% endfor %}
+            </nav>
+          {% endif %}
+        </div>
+
+      </div>
+
+
+    <footer class="l-single-page__footer">
+      {{ post.meta('season_test') }}
+    </footer>
+
+  </article>
+

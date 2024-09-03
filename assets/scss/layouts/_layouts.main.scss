@@ -38,6 +38,9 @@ BEM BLOCK MODIFIERS .l-main--
     max-width: 100%;
     padding-top: $act-unit-l;
   }
+  &single-season{
+    @extend .l-main--single;
+  }
   &page{
     padding-top: $act-unit-l;
   }
@@ -107,7 +110,5 @@ BEM BLOCK MODIFIERS .l-main--
         padding-right: $act-unit-h;
       }
     }
-
-
   }
 }
