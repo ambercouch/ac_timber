@@ -5,9 +5,12 @@ global $post;
 if (isset($post) && $post->post_type === 'season') : ?>
   <h2><?php the_title(); ?>
     <?php if (current_user_can('edit_post', $post->ID)) : ?>
-      <small class="c-admin-link"><a class="c-admin-link__link" href="<?php echo get_edit_post_link($post->ID); ?>">Edit Season</a></small>
     <?php endif; ?>
   </h2>
+  <p><small class="c-admin-link"><a class="c-admin-link__link" href="<?php echo get_edit_post_link($post->ID); ?>">Edit Season</a></small></p>
+
+  <p><a href="/seasons/">View all seasons</a></p>
+
   <div class="season-content">
       <?php echo wpautop(get_the_content()); ?>
   </div>
