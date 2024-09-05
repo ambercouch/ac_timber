@@ -42,12 +42,12 @@
 {#    </div>#}
 {#  {% endif %}#}
 
-  <div class="c-post-meta__section--post-date">
-    <div class="c-post-meta__post-date">
-      <span class="c-post-meta__label" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span>
-    </div>
-  </div>
-
+{#  <div class="c-post-meta__section--post-date">#}
+{#    <div class="c-post-meta__post-date">#}
+{#      <span class="c-post-meta__label" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span>#}
+{#    </div>#}
+{#  </div>#}
+  {% set postEditUrl = fn('get_edit_post_link', post.ID) %}
   {% if postEditUrl != '' %}
     <div class="c-post-meta__section--post-admin">
       <div class="c-post-meta__post-admin">

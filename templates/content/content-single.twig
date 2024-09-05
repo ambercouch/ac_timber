@@ -1,14 +1,18 @@
 {% set postFormat = postFormat? fn('get_post_format', post) : '' %}
 
-{% block content %}
+
   <article id="post-{{ post.id }}" class="l-single-article {{ post.class }}">
-  {% if post.thumbnail %}
-    <div class="l-single-article__feature-image--single">
-      <div class="c-feature-image--single">
-        <img src="{{ post.thumbnail.src('feature500') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
+    {% if(post.meta('show_feature_image') and (post.thumbnail or acSettings.defaultImage)) %}
+      <div class="l-single-page__feature-image{{ templateClass }} ">
+        <div class="c-feature-image--single-page">
+          {% if(post.thumbnail.src()) %}
+            <img src="{{ post.thumbnail.src('feature1000') }}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+          {% else %}
+            <img src="{{acSettings.defaultImage}}" class="c-feature-image--single-page__img" alt="{{ post.title }}"/>
+          {% endif %}
+        </div>
       </div>
-    </div>
-  {%  endif %}
+    {% endif %}
 
     <header class="entry-header single-article__header ">
       <h1 class="entry-title single-article__heading">
@@ -17,14 +21,7 @@
         </span>
       </h1>
       <div class="entry-meta single-article__post-meta">
-        <div class="post-meta">
-          {#<svg class="icon post-meta__icon" role="img" aria-label="Post type {{ postFormat }}" preserveAspectRatio="none" >#}
-            {#<title>{{ postFormat }}</title>#}
-            {#<desc>Post type {{ postFormat }}</desc>#}
-            {#<use xlink:href="#icon-post{{ postFormat }}" />#}
-          {#</svg>#}
-          <span class="post-meta__date">{{ post.date }}</span>
-        </div>
+        {% include 'inc/post-meta.twig' %}
       </div>
     </header>
 
@@ -56,4 +53,4 @@
     </footer>
 
   </article>
-{% endblock %}
+

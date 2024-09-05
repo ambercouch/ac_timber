@@ -32,6 +32,7 @@
         <div class="l-single-page__content">
 
           {% if post and post.post_type == 'season' %}
+
             <div class="season-content">
               {{ post.content | wpautop }}
             </div>
@@ -98,7 +99,7 @@
                 </ul>
               </div>
             {% else %}
-              <p>There is no content for this season</p>
+{#              <p>There is no content for this season</p>#}
             {% endif %}
           {% endif %}
 
@@ -122,7 +123,7 @@
 
 
     <footer class="l-single-page__footer">
-      {{ post.meta('season_test') }}
+
     </footer>
 
   </article>

@@ -15,8 +15,14 @@ $context['mainMod'] = '--'.$post->post_type;
 $context['contentMod'] = '--'.$post->post_type;
 $context['template'] = $post->post_type;
 $context['postType'] = $post->post_type;
-$season_content = get_field('season_content', $post->ID);
-$context['season_content'] = Timber::get_posts($post->meta('season_content'));
+if (pmpro_has_membership_access())
+{
+    $season_content = get_field('season_content', $post->ID);
+    $context['season_content'] = Timber::get_posts($post->meta('season_content'));
+}else{
+    $context['season_content'] = false;
+}
+
 //$context['season_content'] = $season_content ? array_map(function($post_id) {
 //    return new Timber\Post($post_id);
 //}, wp_list_pluck($season_content, 'ID')) : [];

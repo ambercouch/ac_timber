@@ -207,6 +207,8 @@ class StarterSite extends TimberSite {
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension( new Twig_Extension_StringLoader() );
         $twig->addFilter(new \Twig\TwigFilter('ac_dd', 'ac_dd'));
+        $twig->addFunction( new \Twig\TwigFunction( 'pmpro_has_membership_access', 'pmpro_has_membership_access' ) );
+
         return $twig;
     }
 

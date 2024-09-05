@@ -1,0 +1,56 @@
+{% set postFormatClass = postFormat ? '-'~postFormat : '--season-archive-item' %}
+<!-- content.twig -->
+
+  <article id="post-{{ post.id }}" class="c-post-thumb{{ postFormatClass }} {{ post.class }} is-restricted">
+
+
+    {% if post.thumbnail %}
+
+    <div class="c-post-thumb__feature-image{{ postFormatClass }}">
+      <div class="c-feature-image--post-thumb">
+        <img class="c-feature-image__img" src="{{ post.thumbnail.src('original') }}" class="feature-image__img" alt="{{ post.title }}"/>
+      </div>
+    </div>
+
+  {%  endif %}
+<div class="c-post-thumb__header{{ postFormatClass }}">
+
+  {% include "inc/header.twig"
+    with {
+    templateHeaderTitle : post.title,
+    headingLevel : '3',
+    headerModClass : postFormatClass
+  }%}
+
+</div>
+
+
+    {% if  post.post_excerpt != '' %}
+      <div class="entry-content c-post-thumb__body{{ postFormatClass }}">
+        <div class="c-post-thumb__excerpt">
+          <p>{{ post.post_excerpt }}</p>
+        </div>
+      </div>
+
+    {% else %}
+      <div class="entry-content c-post-thumb__body{{ postFormatClass }} ">
+        <div class="c-post-thumb__excerpt--truncated">
+          <p>{{ post.content | striptags | truncate(50) }}</p>
+        </div>
+      </div>
+
+    {% endif %}
+    <footer class="c-post-thumb__footer">
+{#      {% if (fn('comments_open', post) or post.comment_count > 0 ) %}#}
+{#      <a class="c-post-thumb__comment-link" href="{{ post.link }}#comments">#}
+{#        <span>{{ post.comment_count }} Comments </span>#}
+{#      </a>#}
+{#      {% endif %}#}
+      <div class="entry-meta c-footer__post-meta{{ postFormatClass }}">
+
+        {% include 'inc/season-meta.twig' %}
+      </div>
+
+    </footer>
+
+  </article>

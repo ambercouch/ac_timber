@@ -255,5 +255,12 @@ function enable_excerpts_for_learndash_courses() {
 }
 add_action('init', 'enable_excerpts_for_learndash_courses');
 
+function my_remove_pmp_content_filter_on_archives() {
+    if ( is_archive() ) {
+        remove_filter( 'the_content', 'pmpro_membership_content_filter', 5 );
+    }
+}
+add_action( 'wp', 'my_remove_pmp_content_filter_on_archives' );
+
 
 
