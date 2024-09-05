@@ -236,6 +236,16 @@ function get_current_season() {
         // Load the template file
         while ($query->have_posts()) {
             $query->the_post();
+            if ( function_exists( 'pmpro_has_membership_access' ) ) {
+                global $post;
+
+                // Check if the user has access to the current post/page
+                if ( ! pmpro_has_membership_access( $post->ID ) ) {
+                    // If the user doesn't have access, redirect to /seasons/
+                    wp_redirect( home_url( '/seasons/' ) );
+                    exit; // Always use exit after a redirect to stop further script execution
+                }
+            }
             include(locate_template('season-template.php'));
         }
         wp_reset_postdata();
