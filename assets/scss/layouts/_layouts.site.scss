@@ -88,6 +88,9 @@ BEM ELEMENTS .l-site__
     padding: 0;
     margin: 0;
   }
+  .post-type-archive &{
+    margin-bottom: $act-unit-l !important;
+  }
 }
 
 [class*=l-site__off-page-container--]{

@@ -64,6 +64,9 @@
       margin-right: $act-unit;
     }
   }
+  &season-list{
+    text-align: center;
+  }
 
 }
 
@@ -204,6 +207,10 @@
   }
   &season{
     @include act-font-size($act-fs-2);
+  }
+  &season-archive-item{
+    @include act-font-size($act-fs-5);
+    text-decoration: none;
   }
 }
 

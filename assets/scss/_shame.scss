@@ -179,3 +179,12 @@ form.pmpro_form input[type=password]{
 //  }
 //
 //}
+
+.is-restricted{
+    filter: grayscale(100%);
+  opacity: 0.5;
+}
+
+.logged-in .is-log-in{
+  display: none !important;
+}
