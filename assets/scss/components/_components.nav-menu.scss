@@ -124,7 +124,7 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--center;
+  @extend .o-list-flex--end;
     .c-widget--footer &{
       flex-direction: column;
       justify-content: flex-start;

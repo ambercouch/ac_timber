@@ -64,6 +64,10 @@
   @extend .o-list-flex;
   justify-content: flex-start !important;
 }
+.o-list-flex--end{
+  @extend .o-list-flex;
+  justify-content: flex-end !important;
+}
 
 .o-list-flex--1-1{
   @extend .o-list-flex;
