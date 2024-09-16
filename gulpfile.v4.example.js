@@ -16,6 +16,8 @@ const svgmin = require('gulp-svgmin');
 const rename = require('gulp-rename');
 const terser = require('gulp-terser');
 const replace = require('gulp-replace');
+const penthouse = require('gulp-penthouse');
+const cleanCSS = require('gulp-clean-css');
 
 
 /*
@@ -73,7 +75,7 @@ function scripts() {
     return pipeline(
         gulp.src(jsScripts),
         concat('main.js'),
-        //terser(),
+        terser(),
         gulp.dest('dist/js/')
     );
 }
@@ -137,6 +139,22 @@ function serve() {
 
 }
 
+// Task to generate critical CSS
+function criticalCss() {
+    return gulp.src('style.css') // This should point to your main CSS file
+        .pipe(penthouse({
+            url: `http://${siteLocalUrl}`, // Your local site URL
+            css: 'style.css', // Path to your full CSS file
+            width: 1300, // Define the viewport width
+            height: 900, // Define the viewport height
+            // You can add more Penthouse options as necessary
+        }))
+        .pipe(cleanCSS())
+        .pipe(rename('critical.css'))
+        .pipe(gulp.dest('templates/css')); // Define your output directory
+}
+
+exports.criticalCss = criticalCss;
 exports.serve = serve;
 exports.styles = styles;
 exports.scripts = scripts;
