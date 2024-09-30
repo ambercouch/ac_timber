@@ -1,23 +1,29 @@
-.h1 {
+.h1, h1 {
   @include inuit-font-size($inuit-heading-size-1);
+  font-weight: 900;
 }
 
-.h2 {
+.h2, h2 {
   @include inuit-font-size($inuit-heading-size-2);
+  font-weight: 900;
 }
 
-.h3 {
+.h3, h3 {
   @include inuit-font-size($inuit-heading-size-3);
+  font-weight: 900;
 }
 
-.h4 {
+.h4, h4 {
   @include inuit-font-size($inuit-heading-size-4);
+  font-weight: 900;
 }
 
-.h5 {
+.h5, h5 {
   @include inuit-font-size($inuit-heading-size-5);
+  font-weight: 900;
 }
 
-.h6 {
+.h6, h5 {
   @include inuit-font-size($inuit-heading-size-6);
+  font-weight: 900;
 }

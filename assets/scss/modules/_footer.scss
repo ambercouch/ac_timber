@@ -18,7 +18,7 @@
     @include inuit-font-size($inuit-heading-size-6, 1);
     text-align: center;
     padding: $inuit-global-spacing-unit;
-    background: black;
+    background: $vtc-gold;
     color: white;
     a, a:visited{
       color:white;

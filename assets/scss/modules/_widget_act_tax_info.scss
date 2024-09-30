@@ -10,7 +10,7 @@
 }
 
 .widget--subsidiary{
-  border-bottom: solid 3px $brand-col-1;
+  border-bottom: solid 3px $col-dark;
   .subsidiary__widget:first-child &{
     border-bottom: none;
   }
@@ -80,6 +80,7 @@
     @include inuit-font-size($inuit-heading-size-6);
     text-transform: uppercase;
     width: 140px;
+    padding: $act-unit-t $act-unit-s !important;
 
   }
 }
@@ -87,7 +88,7 @@
 .widget_act_tax_info__menu-link{
   &--more{
     @extend .widget_act_tax_info__menu-link;
-    @include btn-ghost($brand-col-1, $brand-col-1, false, 3px, $brand-col-1, 0.05 );
+    @include btn-ghost($col-dark, $col-dark, false, 3px, $col-dark, 0.05 );
     white-space: nowrap;
   }
   &--contact{

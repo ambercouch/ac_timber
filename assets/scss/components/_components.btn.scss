@@ -5,19 +5,24 @@
 .c-btn {
   @include inuit-font-size($act-fs-4, 1);
   display: inline-block;
-  background: $brand-col-1;
+
   color: white;
-  padding: $act-unit $act-unit;
+  padding: $act-unit $act-unit !important;
   border-radius: 0em;
+  border: solid 3px;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   &:hover, &:focus{
     color: white;
     background: darken($brand-col-1,10%);
   }
   &:active{
-    color: white;
+    color: white ;
     background: darken($brand-col-1,20%);
+  }
+  a{
+    color:white;
   }
 }
 
@@ -26,6 +31,16 @@
  */
 
 .c-btn-- {
+  &primary {
+    background: $brand-col-1;
+    border-color:$brand-col-1;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+  }
+  &dark {
+    background: $col-dark;
+    border-color: $col-dark;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+  }
   &type {
     display: block
   }
@@ -55,15 +70,21 @@
    }
   &ghost{
     @extend .c-btn;
-    border: solid 1px;
+    color: #fff !important;
+    border: solid 3px;
     background-color: transparent;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+    a {
+      color: #fff;
+    }
     &:hover{
-      background: $col-accent;
-      color: $brand-col-2;
+      background: rgba($col-link, 0.5);
+      color: #fff;
     }
     &:focus{
       background: $col-accent;
-      color: $brand-col-2;
+      color: $col-link;
     }
   }
   &pill{

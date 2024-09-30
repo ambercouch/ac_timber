@@ -1,0 +1,139 @@
+/*
+BEM BLOCK .c-hero
+ */
+.c-hero{
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  height: 100vh;
+  position: relative;
+}
+
+/*
+BEM ELEMENTS .c-hero__
+ */
+.c-hero__{
+  &container{
+    height: 100%;
+  }
+  &image{
+    width:100%;
+    height: 100%;
+    position: absolute;
+  }
+  &img{
+
+  }
+  &body{
+    position: relative;
+    width: 100%;
+    color: white;
+    max-height:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    flex-direction: row;
+    //@extend .u-p-l--desktop;
+    //@extend .u-p--tablet;
+    //@extend .u-p-s--mobile;
+  }
+  &content{
+    @extend .o-island;
+    display: inline-block;
+    padding: $act-unit-l;
+    text-align: center;
+    max-width: 100%;
+    position: relative;
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+  }
+ &menu{
+  @extend .o-list-inline;
+  text-align: center;
+   display: flex;
+ }
+  &logo{
+    text-align: center;
+    max-height:100%;
+    height: 100%;
+    padding: $act-unit;
+    height: 400px;
+  }
+  &logo-img{
+    display: block;
+    margin: 0 auto;
+    max-height:100%;
+
+  }
+}
+
+[class*=c-hero__body--]{
+  @extend .c-hero__body;
+}
+.c-hero__body--{
+  &full-browser-width{
+    //display: none !important;
+  }
+}
+
+.c-image--background{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  filter: saturate(10%);
+}
+
+.is-dark-background{
+  &.c-hero__content{
+    position: relative;
+    color: $col-light;
+    p{
+      color:  $col-light;
+    }
+    a{
+      color:  $col-light;
+    }
+    a:hover{
+      color: darken($col-dark, 20%);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+      background: $col-dark;
+    }
+  }
+}
+.is-light-background{
+  &.c-hero__content{
+    position: relative;
+    color: $col-dark;
+    p{
+      color: $col-dark;
+    }
+    a{
+      color: $col-dark;
+    }
+    a:hover{
+      color: darken($col-dark, 20%);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+      background: $col-light;
+    }
+  }
+}

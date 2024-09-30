@@ -1,5 +1,5 @@
 @mixin breakout-band(){
-  background: $brand-col-1--xlight;
+  background: $col-light;
   position: relative;
   z-index: 1;
   padding-top:$inuit-global-spacing-unit-large;
@@ -12,7 +12,7 @@
     top: 0;
     height: 100%;
     display: block;
-    background: $brand-col-1--xlight;
+    background: $col-light;
     z-index: -1;
     transform: translate( 50%, 0 );
   }

@@ -84,6 +84,10 @@
   @extend .o-list-flex--center;
   justify-content: center;
   }
+  &hero{
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__item--
@@ -96,6 +100,9 @@
   &primary{
     margin-right: $act-unit;
     margin-left: $act-unit;
+  }
+  &hero{
+
   }
 }
 
@@ -128,15 +135,21 @@
     padding:$act-unit-s;
     display: block;
     color: white;
-    background-color: darken($brand-col-1, 0%);
+    background-color: darken($brand-col-3--light, 0%);
     &:hover{
       color: white;
-      background-color: darken($brand-col-1, 5%);
+      background-color: darken($brand-col-3--light, 5%);
     }
     &:focus{
       color: white;
-      background-color: darken($brand-col-1, 5%);
+      background-color: darken($brand-col-3--light, 5%);
     }
+  }
+  &hero{
+    @include act-font-size($act-fs-6);
+    line-height: 1;
+    display: block;
+
   }
 }
 
