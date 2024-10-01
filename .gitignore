@@ -12,3 +12,5 @@ templates/inc/defs.svg
 assets/scss/_vendor.scss
 
 vendor/
+
+.idea/

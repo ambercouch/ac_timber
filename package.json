@@ -4,7 +4,7 @@
   "devDependencies": {
     "animate.css": "^3.5.2",
     "autoprefixer": "^6.7.6",
-    "browser-sync": "^2.18.8",
+    "browser-sync": "^2.29.3",
     "browsersync": "0.0.1-security",
     "critical": "^1.1.0",
     "cssnano": "^3.10.0",
@@ -30,7 +30,7 @@
     "pixrem": "^3.0.2",
     "postcss": "^8.4.47",
     "pump": "^1.0.2",
-    "readable-stream": "^3.4.0",
+    "readable-stream": "^3.6.2",
     "remodal": "^1.1.1",
     "webpack": "^2.2.1"
   },
