@@ -226,6 +226,8 @@ class StarterSite extends TimberSite {
         $context['cssPageBannerImageHeight'] = get_field('page_banner_image_height');
         $context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal');
 
+        $context['options'] = get_fields('options');
+
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));
 
