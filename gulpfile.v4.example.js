@@ -39,7 +39,7 @@ var jsNpmScripts = [
 
 var cssNpmScripts = [
     //Add any vendor css scripts here that you want to include
-    //'flickity/dist/flickity.css'
+    'flickity/dist/flickity.css',
     'remodal/dist/remodal.css',
     'remodal/dist/remodal-default-theme.css',
 ];
