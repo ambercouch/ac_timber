@@ -204,6 +204,7 @@ class StarterSite extends TimberSite {
 
         $context['hideBannerMenu'] = get_field('hide_banner_menu', 'options');
         $context['bannerImg'] = (get_field('banner_image', 'options') == '') ?  acSettings()['bannerImg'] : get_field('banner_image', 'options');
+        $context['bannerGallery'] = get_field('banner_slider_gallery', 'options');
         $context['bannerContent'] = get_field('banner_content', 'options');
         $context['bannerLogo'] = get_field('banner_logo', 'options');
 
@@ -225,6 +226,8 @@ class StarterSite extends TimberSite {
         $context['cssPageBannerColourCastMode'] = get_field('page_banner_image_colour_cast_mode');
         $context['cssPageBannerImageHeight'] = get_field('page_banner_image_height');
         $context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal');
+
+        $context['options'] = get_fields('options');
 
 
 //      $context['postComment'] = wp_list_comments(array( 'callback' => 'comment_layout' ), get_comments($post_id));

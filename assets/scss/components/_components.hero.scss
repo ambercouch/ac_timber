@@ -7,6 +7,7 @@ BEM BLOCK .c-hero
   min-height: 500px;
   height: 100vh;
   position: relative;
+  overflow: hidden;
 }
 
 /*
@@ -26,6 +27,9 @@ BEM ELEMENTS .c-hero__
   }
   &img{
 
+  }
+  &gallery-slider{
+    height: 100%;
   }
   &body{
     position: relative;

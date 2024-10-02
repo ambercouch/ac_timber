@@ -16,6 +16,16 @@ ACTIMBER = {
 
             fitvids();
 
+            var elem = document.querySelector('.c-gallery-slider');
+            var flkty = new Flickity( elem, {
+                // options
+                cellAlign: 'left',
+                contain: true,
+                imagesLoaded: true,
+                pageDots: false,
+                autoPlay: 4000
+            });
+
 
             /**
              * navigation.js
