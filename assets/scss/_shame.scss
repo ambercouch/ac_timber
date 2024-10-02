@@ -23,3 +23,10 @@
   max-width: 100%;
 }
 
+.flickity-page-dots{
+  bottom: $act-unit;
+  .dot{
+    padding: 0 !important;
+  }
+}
+

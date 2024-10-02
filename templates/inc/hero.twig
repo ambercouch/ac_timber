@@ -19,7 +19,7 @@
 
     {% if options.banner_slider and options.banner_slider_gallery %}
     <div class="c-hero__gallery-slider">
-      <div class="c-gallery-slider">
+      <div id="heroGallery" class="c-gallery-slider"  data-auto-play="{{ options.gallery_auto_play }}" data-dot-nav="{{ options.gallery_nav_dots }}" data-arrow-nav="{{ options.gallery_nav_arrows }}">
       {% for image in options.banner_slider_gallery %}
         <div class="c-gallery-slider__cell">
           <img src="{{  image.url }}" alt="{{  image.alt }}" class="c-gallery-slider__img">
