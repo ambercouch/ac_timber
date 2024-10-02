@@ -135,7 +135,7 @@ BEM ELEMENTS .l-masthead__
   .current-menu-item{
     .c-nav-menu__link{
       color: white;
-      background: darken($brand-col-2, 10%);
+      //background: darken($brand-col-2, 10%);
       font-weight: 500;
     }
   }
@@ -152,7 +152,7 @@ BEM ELEMENTS .l-masthead__
     color: #fff;
     &:hover{
       color: white;
-      background: darken($brand-col-2, 10%);;
+      //background: darken($brand-col-2, 10%);;
     }
   }
 }

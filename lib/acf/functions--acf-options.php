@@ -48,6 +48,8 @@ if( function_exists('acf_add_options_page') )
         'parent_slug' => 'theme-general-settings',
     ));
 
+
+
     acf_add_options_page(array(
         'page_title' => 'Company Settings',
         'menu_title' => 'Company Settings',
@@ -60,6 +62,26 @@ if( function_exists('acf_add_options_page') )
         'page_title' => 'Company Settings',
         'menu_title' => 'General',
         'parent_slug' => 'company-settings',
+    ));
+
+    acf_add_options_page(array(
+        'page_title' => 'Theme Design',
+        'menu_title' => 'Theme Design',
+        'menu_slug' => 'theme-design',
+        'capability' => 'edit_posts',
+        'redirect' => true
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Brand Colour Palette',
+        'menu_title' => 'Colour Palette',
+        'parent_slug' => 'theme-design',
+    ));
+
+    acf_add_options_sub_page(array(
+        'page_title' => 'Theme Colours',
+        'menu_title' => 'Theme Colours',
+        'parent_slug' => 'theme-design',
     ));
 
 }
@@ -76,3 +98,4 @@ require_once get_template_directory() . '/lib/acf/acf-options--banner-menu.php';
 require_once get_template_directory() . '/lib/acf/acf-options--footer-info.php';
 require_once get_template_directory() . '/lib/acf/acf-options--company-info.php';
 require_once get_template_directory() . '/lib/acf/acf-options--service-menu.php';
+require_once get_template_directory() . '/lib/acf/acf-options--design-settings.php';

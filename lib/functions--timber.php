@@ -117,6 +117,44 @@ class StarterSite extends TimberSite {
 
         //var_dump( get_field('page_banner_image')); die();
 
+        $context['act_brand_colour']['theme'][1] = get_field('act_brand_colour_1', 'option');
+        $context['act_brand_colour']['theme'][2] = get_field('act_brand_colour_2', 'option');
+        $context['act_brand_colour']['theme'][3] = get_field('act_brand_colour_3', 'option');
+        $context['act_brand_colour']['theme'][4] = get_field('act_brand_colour_4', 'option');
+        $context['act_brand_colour']['theme'][5] = get_field('act_brand_colour_5', 'option');
+        $context['act_brand_colour']['theme'][6] = get_field('act_brand_colour_6', 'option');
+        $context['act_brand_colour']['theme'][7] = get_field('act_brand_colour_7', 'option');
+        $context['act_brand_colour']['theme'][8] = get_field('act_brand_colour_8', 'option');
+        $context['act_brand_colour']['theme'][9] = get_field('act_brand_colour_9', 'option');
+        $context['act_brand_colour']['default']['1'] = acSettings()['brandColour']['1'];
+        $context['act_brand_colour']['default'][2] = acSettings()['brandColour']['2'];
+        $context['act_brand_colour']['default'][3] = acSettings()['brandColour']['3'];
+        $context['act_brand_colour']['default'][4] = acSettings()['brandColour']['4'];
+        $context['act_brand_colour']['default'][5] = acSettings()['brandColour']['5'];
+        $context['act_brand_colour']['default'][6] = acSettings()['brandColour']['6'];
+        $context['act_brand_colour']['default'][7] = acSettings()['brandColour']['7'];
+        $context['act_brand_colour']['default'][8] = acSettings()['brandColour']['8'];
+        $context['act_brand_colour']['default'][9] = acSettings()['brandColour']['9'];
+
+        // Get ACF theme color options
+        $context['header_background'] = get_field('header_background', 'option');
+        $context['header_text_colour'] = get_field('header_text_colour', 'option');
+        $context['header_link_colour'] = get_field('header_link_colour', 'option');
+
+        $context['body_background'] = get_field('body_background', 'option');
+        $context['body_text_colour'] = get_field('body_text_colour', 'option');
+        $context['body_header_colour'] = get_field('body_header_colour', 'option');
+        $context['body_link_colour'] = get_field('body_link_colour', 'option');
+
+        $context['footer_background'] = get_field('footer_background', 'option');
+        $context['footer_text_colour'] = get_field('footer_text_colour', 'option');
+        $context['footer_header_colour'] = get_field('footer_header_colour', 'option');
+        $context['footer_link_colour'] = get_field('footer_link_colour', 'option');
+
+        $context['footer_info_background'] = get_field('footer_info_background', 'option');
+        $context['footer_info_text_colour'] = get_field('footer_info_text_colour', 'option');
+        $context['footer_info_link_colour'] = get_field('footer_info_link_colour', 'option');
+
         $context['options'] = get_fields('options');
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);

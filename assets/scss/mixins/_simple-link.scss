@@ -10,7 +10,7 @@
   &:hover,
   &:focus{
     @if $darken == darken {
-      color: darken($color, 20%);
+      //color: darken($color, 20%);
     }
     @if $darken == lighten {
       color: lighten($color, 20%);

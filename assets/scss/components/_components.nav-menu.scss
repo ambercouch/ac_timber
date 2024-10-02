@@ -111,7 +111,7 @@
     &:hover{
       @extend .c-nav-menu__sub-menu-link;
       color: white;
-      background: darken($brand-col-2, 10%);
+      //background: darken($brand-col-2, 10%);
     }
   }
 }
@@ -198,7 +198,7 @@
     font-weight: 500;
     color: $col-text;
     &:hover{
-      color: $brand-col-3;
+      filter: brightness(0); /* Lighten the color on hover */
     }
     .is-overlay-hero &{
       color:white;
@@ -212,7 +212,7 @@
       background: transparent;
       font-weight: 500;
       .is-overlay-hero &{
-        color: darken(white, 5%);
+        //color: darken(white, 5%);
       }
     }
 
@@ -231,14 +231,14 @@
   &blocky{
     padding:$act-unit-s;
     display: block;
-    background-color: darken($brand-col-3, 15%);
+    //background-color: darken($brand-col-3, 15%);
     &:hover{
       color: white;
-      background-color: darken($brand-col-3, 20%);
+      //background-color: darken($brand-col-3, 20%);
     }
     &:focus{
       color: white;
-      background-color: darken($brand-col-3, 20%);
+      //background-color: darken($brand-col-3, 20%);
     }
   }
   &homepage-service{

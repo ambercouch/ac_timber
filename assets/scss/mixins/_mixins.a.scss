@@ -1,18 +1,25 @@
-@mixin a($col : $col-link, $col-hov : false, $hov-effect : darken, $hov-effect-amount : 20% ){
+@mixin a($col: $col-link, $col-hov: false, $hov-effect: 1.2) {
 
   color: $col;
+  transition: color 0.3s ease, filter 0.3s ease; // Transition for color and filter
 
-  &:focus{
+  &:focus {
     @extend a;
   }
+
   &:hover {
     @if $col-hov {
-      color: $col-hov;
+      filter: brightness(1);
+      color: $col-hov; // Use hover color if provided
+    } @else if $hov-effect {
+      filter: brightness($hov-effect); // Use brightness effect if no hover color is provided and hover effect is set
     } @else {
-    color: call($hov-effect, $color: $col, $amount: $hov-effect-amount);
+      // Do nothing if both $col-hov and $hov-effect are false
+    }
   }
-  }
-  &:focus{
-    @extend a:hover;
+
+  &:focus {
+    @extend a:hover; // Apply the hover effect on focus
   }
 }
+

@@ -20,7 +20,7 @@ BEM ELEMENTS .l-site__
  */
 .l-site__{
   &masthead{
-    background: $brand-col-2;
+    background: $brand-col-3;
     position: relative;
     z-index: 10;
     padding-bottom: $act-unit-s;
@@ -49,7 +49,7 @@ BEM ELEMENTS .l-site__
     width: 100vw;
     height: 100vh;
     position: fixed;
-    background: $brand-col-5;
+    background: $brand-col-2;
     z-index: 1000;
     opacity: 0;
     padding-top: $act-unit-h;
@@ -65,14 +65,14 @@ BEM ELEMENTS .l-site__
     }
   }
   &subsidiary{
-    background: $brand-col-8;
+    background: $brand-col-4;
   }
 
   &footer{
 
     /* #2 */
     margin-top: auto;
-    //background: $brand-col-4;
+    //background: $brand-col-5;
   }
 }
 

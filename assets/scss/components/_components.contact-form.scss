@@ -176,7 +176,7 @@
           @include act-font-size($act-fs-3);
           padding: $act-unit;
           &:hover{
-            background: darken($brand-col-3, 10%);
+            //background: darken($brand-col-3, 10%);
           }
         }
       }
@@ -265,7 +265,7 @@
   color: white;
   cursor: pointer;
   &:hover{
-    background: darken($brand-col-3, 5%);
+    //background: darken($brand-col-3, 5%);
   }
 }
 

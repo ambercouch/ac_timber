@@ -29,7 +29,7 @@
     padding: $act-unit-t 0;
     margin-bottom: 0;
     a{
-      @include a($col : $col-link, $col-hov : lighten($col-link, 20%))
+      @include a($col : $col-link, $col-hov : $col-link);
     }
     @include mq($from : tablet){
       text-align: right;
@@ -62,7 +62,7 @@
 
 .c-widget__ {
  &container{
-   @include breakout-band($bgc : darken($brand-col-1, 10%));
+   @include breakout-band($bgc : $brand-col-1);
     display: block;
 
  }

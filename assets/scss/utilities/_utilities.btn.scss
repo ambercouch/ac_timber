@@ -3,11 +3,11 @@
 
     color: $brand-col-4;
     @include size(45px);
-   
+
   }
   a:hover &{
       transition: color 0.3s ease;
-      color: darken($brand-col-4, 20%);
+      //color: darken($brand-col-4, 20%);
   }
 }
 

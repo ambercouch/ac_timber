@@ -104,7 +104,7 @@ BEM ELEMENTS .c-hero__
       color:  $col-light;
     }
     a:hover{
-      color: darken($col-dark, 20%);
+      //color: darken($col-dark, 20%);
     }
     &:after{
       content: '';
@@ -129,7 +129,7 @@ BEM ELEMENTS .c-hero__
       color: $col-dark;
     }
     a:hover{
-      color: darken($col-dark, 20%);
+      //color: darken($col-dark, 20%);
     }
     &:after{
       content: '';

@@ -1,3 +1,92 @@
+<style>
+  /*
+   * Dynamic Brand colour
+   */
+  :root {
+  {% if act_brand_colour.theme['1'] %}
+    --brand-col-1: {{ act_brand_colour.theme['1'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['2'] %}
+    --brand-col-2: {{ act_brand_colour.theme['2'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['3'] %}
+    --brand-col-3: {{ act_brand_colour.theme['3'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['4'] %}
+    --brand-col-4: {{ act_brand_colour.theme['4'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['5'] %}
+    --brand-col-5: {{ act_brand_colour.theme['5'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['6'] %}
+    --brand-col-6: {{ act_brand_colour.theme['6'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['7'] %}
+    --brand-col-7: {{ act_brand_colour.theme['7'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['8'] %}
+    --brand-col-8: {{ act_brand_colour.theme['8'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['9'] %}
+    --brand-col-9: {{ act_brand_colour.theme['9'] }};
+  {% endif %}
+
+  {% if act_brand_colour.theme['10'] %}
+    --brand-col-10: {{ act_brand_colour.theme['10'] }};
+  {% endif %}
+  }
+
+
+  {% if header_background %}
+  .l-site__masthead,
+  [class*=l-site__masthead--] {
+    background: var(--brand-col-{{ header_background }}, {{ act_brand_colour.default[header_background] }}) !important;
+  }
+  {% endif %}
+
+  {% if header_text_colour %}
+  .l-site__masthead .c-site-title__description-heading,
+  [class*=l-site__masthead--] .c-site-title__description-heading{
+    color: var(--brand-col-{{ header_text_colour }}, {{ act_brand_colour.default[header_text_colour] }}) !important;
+  }
+  {% endif %}
+
+  {% if header_link_colour %}
+  .l-site__masthead .c-nav-menu__link--primary,
+  [class*=l-site__masthead--] .c-nav-menu__link--primary{
+    color: var(--brand-col-{{ header_link_colour }}, {{ act_brand_colour.default[header_link_colour] }}) !important;
+  }
+
+  .l-site__masthead .c-nav-menu__link--primary:hover,
+  [class*=l-site__masthead--] .c-nav-menu__link--primary:hover{
+    filter: brightness(1.2); /* Lighten the color on hover */
+  }
+  {% endif %}
+
+  {% if body_header_colour %}
+  [class*=l-main] [class*=c-header__heading],
+  [class*=l-main] .wp-block-heading,
+  [class*=l-main] h1,
+  [class*=l-main] h2,
+  [class*=l-main] h3,
+  [class*=l-main] h4,
+  [class*=l-main] h5,
+  [class*=l-main] h6{
+    color: var(--brand-col-{{ body_header_colour }}, {{ act_brand_colour.default[body_header_colour] }}) !important;
+
+  }
+  {% endif %}
+
+</style>
+
 <!-- ACF Hero CSS -->
 <style>
 
