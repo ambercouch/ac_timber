@@ -25,6 +25,94 @@ if( function_exists('acf_add_local_field_group') ):
                 'ui_on_text' => '',
                 'ui_off_text' => '',
             ),
+
+            array(
+                'key' => 'field_gallery_auto_play',
+                'label' => 'Auto Play Gallery',
+                'name' => 'gallery_auto_play',
+                'type' => 'select',
+                'choices' => array(
+                    '' => 'No Auto Play',
+                    '2000' => '2 sec',
+                    '3000' => '3 sec',
+                    '4000' => '4 sec',
+                    '5000' => '5 sec'
+                ),
+                'instructions' => 'Select the speed the gallery auto play',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_banner_slider',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+            array(
+                'key' => 'field_gallery_nav_arrow',
+                'label' => 'Show Arrow Navigation',
+                'name' => 'gallery_nav_arrows',
+                'type' => 'true_false',
+                'instructions' => 'Select whether to show next/previous arrows',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_banner_slider',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'ui' => 1,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+                'default_value' => '1',
+            ),
+            array(
+                'key' => 'field_gallery_nav_dots',
+                'label' => 'Show Dot Navigation',
+                'name' => 'gallery_nav_dots',
+                'type' => 'true_false',
+                'instructions' => 'Select whether to show dot navigation',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_banner_slider',
+                            'operator' => '==',
+                            'value' => '1',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '33',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'ui' => 1,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
             array(
                 'key' => 'field_banner_slider_gallery',
                 'label' => 'Banner Slider Gallery',
@@ -60,14 +148,22 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array (
                 'key' => 'field_575ae9004da25',
-                'label' => 'Banner Image',
+                'label' => 'Single Banner Image',
                 'name' => 'banner_image',
                 'type' => 'image',
                 'instructions' => '',
                 'required' => 0,
-                'conditional_logic' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_banner_slider',
+                            'operator' => '==',
+                            'value' => '0',
+                        ),
+                    ),
+                ),
                 'wrapper' => array(
-                    'width' => '25',
+                    'width' => '100',
                     'class' => '',
                     'id' => '',
                 ),
@@ -84,14 +180,14 @@ if( function_exists('acf_add_local_field_group') ):
             ),
             array (
                 'key' => 'field_banner_image_height',
-                'label' => 'Banner Image Height',
+                'label' => 'Banner Height',
                 'name' => 'banner_image_height',
                 'type' => 'text',
-                'instructions' => 'Set the height of the banner image 100px 100% or 100vh will all work',
+                'instructions' => 'Set the height of the banner image or slider 100px 100% or 100vh will all work',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
-                    'width' => '25',
+                    'width' => '33',
                     'class' => '',
                     'id' => '',
                 ),
@@ -108,10 +204,10 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Position',
                 'name' => 'banner_image_position_horizontal',
                 'type' => 'select',
-                'instructions' => 'Set the horizontal position of the banner image',
+                'instructions' => 'Set the horizontal position of the single banner image',
                 'required' => 0,
                 'wrapper' => array(
-                    'width' => '25',
+                    'width' => '33',
                     'class' => '',
                     'id' => '',
                 ),
@@ -138,11 +234,11 @@ if( function_exists('acf_add_local_field_group') ):
                 'label' => 'Image Saturation',
                 'name' => 'banner_image_saturation',
                 'type' => 'number',
-                'instructions' => 'Adjust the image saturation',
+                'instructions' => 'Adjust the colour saturation of the single banner image',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '25',
+                    'width' => '34',
                     'class' => '',
                     'id' => '',
                 ),

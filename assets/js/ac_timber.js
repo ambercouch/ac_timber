@@ -17,13 +17,15 @@ ACTIMBER = {
             fitvids();
 
             var elem = document.querySelector('.c-gallery-slider');
+
             var flkty = new Flickity( elem, {
                 // options
                 cellAlign: 'left',
                 contain: true,
                 imagesLoaded: true,
-                pageDots: false,
-                autoPlay: 4000
+                pageDots:(elem.dataset.dotNav)? true: false,
+                prevNextButtons: (elem.dataset.arrowNav)? true: false,
+                autoPlay: (elem.dataset.autoPlay)? +elem.dataset.autoPlay: false,
             });
 
 
