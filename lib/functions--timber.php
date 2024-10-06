@@ -37,6 +37,7 @@ class StarterSite extends TimberSite {
         add_image_size ( 'feature500', 500, 500, true );
         add_image_size ( 'feature16-9', 1600, 900, true );
         add_image_size ( 'feature16-4', 1600, 400, true );
+        add_image_size ( 'featureMobile', 400, 800, true );
         add_image_size ( 'serviceMenuLarge', 900, 600, true );
         add_image_size ( 'serviceMenuMedium', 600, 400, true );
         add_image_size ( 'serviceMenuSmall', 300, 200, true );

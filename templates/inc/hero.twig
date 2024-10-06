@@ -28,9 +28,14 @@
       </div>
     </div>
     {% elseif bannerImg.url != '' %}
-    <div class="c-hero__image {{ classBackgroundImage }}">
-      <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="c-image--background c-image--hero-background">
-    </div>
+
+      <div class="c-hero__image {{ classBackgroundImage }}">
+        <picture>
+          <source media="(max-width: 768px)" srcset="{{ bannerImg.sizes['featureMobile'] }}" />
+          <source media="(min-width: 769px)" srcset="{{ bannerImg.sizes['feature16-9'] }}" />
+          <img src="{{ bannerImg.sizes['feature16-9'] }}" alt="{{ bannerImg.alt }}" class="c-image--background c-image--hero-background">
+        </picture>
+      </div>
 
     {% endif %}
 
