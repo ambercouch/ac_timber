@@ -7,7 +7,7 @@
   {% endblock %}
 
   <title>{{ site.title  }} | {{ site.description }}</title>
-
+  <meta name="description" content="{{ options.site_description | default(site.description) }}">
   <meta charset="{{ site.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,7 +78,7 @@
       <main class="l-main__content{{ mainMod }}">
         {% block before_content %}
         {% endblock %}
-        <div class="l-content{{ contentMod }}">
+        <div id="content" class="l-content{{ contentMod }}">
           {% block contentHeader %}
           {% endblock %}
           {% block content %}

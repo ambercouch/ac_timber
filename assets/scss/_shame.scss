@@ -29,4 +29,13 @@
     padding: 0 !important;
   }
 }
+.skip-link:focus {
+  top: 1.5em; /* Bring it into view */
+  left: 1em;
+  clip: auto; /* Remove clip properties */
+  clip-path: none !important; /* Remove clip-path properties */
+  height: auto !important; /* Restore height */
+  width: auto !important; /* Restore width */
+  overflow: visible; /* Show content */
+}
 
