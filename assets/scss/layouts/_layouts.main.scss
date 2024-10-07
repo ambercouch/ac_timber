@@ -15,9 +15,13 @@ BEM BLOCK .l-main
   &.has-sidebar{
     @include mq($from: tablet) {
       display: flex;
+      gap: $act-unit-h;
+      &:after{
+        display: none !important;
+      }
     }
   }
-  .page-template-page-980-center-title &,
+  .page-template-page-980 &,
   .service-template-page-980-center-title &{
     width: 980px;
     max-width: 100%;
