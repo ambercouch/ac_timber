@@ -1,6 +1,6 @@
 <?php
 
-/** Template Name: ACT - 980 center title
+/** Template Name: ACT - 980
  * Template Post Type: page,service
  *
  * @package WordPress
@@ -12,7 +12,7 @@ $context = Timber::get_context();
 /**  save the wordpress post **/
 $WPPost = $post;
 
-$templateSlug = 'page-980-center-title';
+$templateSlug = 'page-980';
 
 $post = new TimberPost();
 $context['post'] = $post;
