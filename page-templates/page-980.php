@@ -9,6 +9,8 @@
 
 $context = Timber::get_context();
 
+$pageSidebar = get_field('default_page_sidebar', 'options');
+
 /**  save the wordpress post **/
 $WPPost = $post;
 
@@ -16,6 +18,7 @@ $templateSlug = 'page-980';
 
 $post = new TimberPost();
 $context['post'] = $post;
+$context['hasSideBar'] = $pageSidebar;
 
 $context['mainMod'] = is_front_page() ? '--front-page' : '--page';
 $context['template'] = $templateSlug;

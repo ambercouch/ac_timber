@@ -55,14 +55,13 @@
     //padding: $act-unit-l;
   }
   &list{
-    display: flex;
     margin: 0 auto;
-    flex-wrap: nowrap;
-    justify-content: center;
     @extend .o-list-bare;
-    flex-direction: column;
     @include mq($from : tablet){
       flex-direction: row;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
     }
     ul{
       list-style: disc;
@@ -70,6 +69,7 @@
     }
     li{
       padding-left: 0;
+      max-width: 100%;
     }
   }
   &item{
