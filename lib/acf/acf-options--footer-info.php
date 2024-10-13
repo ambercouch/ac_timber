@@ -3,11 +3,11 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array (
-        'key' => 'group_57ea5c33b2bbf',
+        'key' => 'group_footer_settings',
         'title' => 'Footer Settings',
         'fields' => array (
             array (
-                'key' => 'field_57ea5c4cc30f5',
+                'key' => 'field_site_info',
                 'label' => 'Site Info',
                 'name' => 'site_info',
                 'type' => 'wysiwyg',
@@ -19,9 +19,7 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'default_value' => '<p>© [act_bloginfo key=\'name\' ] [act_date]
-<span class="sep"> | </span>
-<a title="Website Design Cardiff" href="http://ambercouch.co.uk/"> AmberCouch - Website Designer Cardiff</a></p>',
+                'default_value' => '<p>© [act_bloginfo key=\'name\' ] [act_date]<span class="sep"> | </span><a title="Website Design Cardiff" href="http://ambercouch.co.uk/"> AmberCouch - Website Designer Cardiff</a></p>',
                 'tabs' => 'all',
                 'toolbar' => 'full',
                 'media_upload' => 1,
