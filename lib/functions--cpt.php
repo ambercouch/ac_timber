@@ -1,6 +1,10 @@
 <?php
 function act_cpt() {
 
+    /*
+     * Services
+     */
+
     // Registering the 'Service' Custom Post Type
     $labels = array(
         'name' => _x('Services', 'post type general name'),
@@ -29,7 +33,7 @@ function act_cpt() {
     );
     //register_post_type('service', $args);
 
-    // Registering the 'Member Type' Taxonomy
+    // Registering the 'Service groups' Taxonomy
     $labels = array(
         'name'              => _x('Service Groups', 'taxonomy general name'),
         'singular_name'     => _x('Service Group', 'taxonomy singular name'),
@@ -53,6 +57,10 @@ function act_cpt() {
         'show_in_rest'      => false // Enables Gutenberg support for taxonomy
     );
     //register_taxonomy('service_group', array('service'), $args);
+
+    /*
+     * Project
+     */
 
     // Registering the 'Project' Custom Post Type
     $labels = array(
@@ -82,34 +90,8 @@ function act_cpt() {
     );
     //register_post_type('project', $args);
 
-    // Registering the 'Team Member' Custom Post Type
-    $labels = array(
-        'name' => _x('Team Members', 'post type general name'),
-        'singular_name' => _x('Team Member', 'post type singular name'),
-        'add_new' => _x('Add New', 'team member'),
-        'add_new_item' => __('Add New Team Member'),
-        'edit_item' => __('Edit Team Member'),
-        'new_item' => __('New Team Member'),
-        'all_items' => __('All Team Members'),
-        'view_item' => __('View Team Member'),
-        'search_items' => __('Search Team Members'),
-        'not_found' => __('No team members found'),
-        'not_found_in_trash' => __('No team members found in the Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Team Members'
-    );
-    // Args for the 'Team Member' post type
-    $args = array(
-        'labels' => $labels,
-        'description' => 'Holds our team members and their specific data',
-        'public' => true,
-        'menu_position' => 20,
-        'supports' => array('title', 'thumbnail', 'excerpt'),
-        'has_archive' => true,
-        'menu_icon' => 'dashicons-groups',
-        'show_in_rest' => false // Enables Gutenberg support
-    );
-    //register_post_type('team_member', $args);
+    require_once get_template_directory() . '/lib/cpt/cpt.team-member.php';
+
 
     // Registering the 'Member Type' Taxonomy
     $labels = array(
@@ -135,6 +117,10 @@ function act_cpt() {
         'show_in_rest'      => false // Enables Gutenberg support for taxonomy
     );
     //register_taxonomy('member_type', array('team_member'), $args);
+
+    /*
+     * Vacancies
+     */
 
     // Registering the 'Vacancy' Custom Post Type
     $labels = array(
@@ -164,6 +150,10 @@ function act_cpt() {
     );
     //register_post_type('vacancy', $args);
 
+    /*
+     * Testimonials
+     */
+
     // Registering the 'Testimonial' Custom Post Type
     $labels = array(
         'name' => _x('Testimonials', 'post type general name'),
@@ -190,7 +180,7 @@ function act_cpt() {
         'menu_icon' => 'dashicons-format-quote',
         'show_in_rest' => false // Enables Gutenberg support
     );
-    register_post_type('testimonial', $args);
+    //register_post_type('testimonial', $args);
 
 
 
