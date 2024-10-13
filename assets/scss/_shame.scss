@@ -39,3 +39,21 @@
   overflow: visible; /* Show content */
 }
 
+.em.em-calendar.size-small .em-cal-body .em-cal-day.eventful .em-cal-day-date.colored a{
+  background: $col-accent;
+  color: white !important;
+}
+.em.em-calendar .em-cal-head{
+  border-radius: 0;
+}
+
+.em.em-calendar.size-small .em-cal-nav {
+  padding: $act-unit-s $act-unit;
+  margin: 0;
+  background: $theme-col-3;
+}
+
+.em.em-calendar.size-medium .em-cal-body, .em.em-calendar.size-small .em-cal-body {
+
+  padding: 0 $act-unit $act-unit;
+}
