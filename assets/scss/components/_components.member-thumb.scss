@@ -4,6 +4,7 @@
 
 .c-member-thumb {
   display: block;
+  @include act-font-size($act-fs-5)
 }
 
 /*
@@ -28,7 +29,8 @@
 
 .c-member-thumb__ {
   &header {
-    display: block
+    display: block;
+    margin-bottom: $act-unit-t;
   }
 
   &heading {
@@ -50,9 +52,24 @@
   &footer {
     display: block
   }
-  &meta{
+  &content{
     @include act-font-size($act-fs-5);
     margin-bottom: $act-unit-s;
+  }
+  &feature-image{
+    margin-bottom: $act-unit;
+  }
+  &detail{
+    margin-bottom: $act-unit-t;
+  }
+  &detail-label{
+    @include act-font-size($act-fs-6);
+    font-weight: bold;
+
+  }
+  &detail-value{
+    @include act-font-size($act-fs-6);
+
   }
 }
 
@@ -61,3 +78,28 @@
 [class*=c-member-thumb__header--] {
   @extend .c-member-thumb__header;
 }
+
+//BEM ELEMENT MODIFIER FALLBACK .c-member-thumb--
+
+[class*=c-member-thumb__detail--] {
+  @extend .c-member-thumb__detail;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-member-thumb--
+
+[class*=c-member-thumb__detail-label--] {
+  @extend .c-member-thumb__detail-label;
+}
+
+.c-member-thumb__detail-label--position{
+  //display: block;
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-member-thumb--
+
+[class*=c-member-thumb__detail-value--] {
+  @extend .c-member-thumb__detail-value;
+}
+
+
+

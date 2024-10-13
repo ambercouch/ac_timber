@@ -177,6 +177,9 @@
   &footer{
     color: $col-light;
   }
+  &team-member{
+    @include act-font-size($act-fs-4);
+  }
 }
 
 
