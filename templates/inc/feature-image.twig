@@ -17,7 +17,7 @@ Include this with optional params
 
 {% if imgObj %}
 <div class="c-feature-image{{ imgModClass }}">
-  <img srcset="{{ imgObj.src(imgSize)|resize(480)}} 480w, {{ imgObj.src(imgSize)|resize(1200)}} 1200w, {{ imgObj.src(imgSize)|resize(1920)}} 1920w, " class="c-feature-image__img{{ imgModClass }}" alt="{{ imgAlt }}"/>
+    <img sizes="(max-width: 839px) 50vw,(min-width: 840px) 280px"  srcset="{{ imgObj.src(imgSize)|resize(480)}} 480w, {{ imgObj.src(imgSize)|resize(1200)}} 1200w, {{ imgObj.src(imgSize)|resize(1920)}} 1920w, " class="c-feature-image__img{{ imgModClass }}" alt="{{ imgAlt }}"/>
 {% if templateCap and templateCap != 'hide' %}
   <div class="c-feature-image__caption">
     {{ templateCap | wpautop }}
