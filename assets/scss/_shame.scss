@@ -214,3 +214,13 @@ img.aligncenter {
  font-size: 1.77777rem!important;
   line-height: 1.22728!important;;
 }
+
+
+[data-container][data-state=off]{
+  display: none !important;
+}
+[data-container][data-state=on]{
+  display: block !important;
+  left: 0;
+  position: static;
+}

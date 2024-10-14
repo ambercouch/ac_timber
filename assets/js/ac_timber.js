@@ -1,10 +1,21 @@
 /**
  * Created by Richard on 19/09/2016.
  */
-console.log('ACTIMBER image loaded webfonts');
+console.log('ACTIMBER some test 123');
 ACTIMBER = {
     common: {
         init: function () {
+
+            $('[data-control]').each(function () {
+                console.log("some control")
+                var controlId = $(this).attr('data-control')
+                if (controlId != ''){
+                    var showButton = $('[data-control='+controlId+']');
+                    var container = $('[data-container='+controlId+']');
+                    ACTIMBER.fn.open(container, showButton);
+                }
+
+            })
 
             var lastScrollTop = 0;
             var scrollTimer = null;
@@ -163,24 +174,16 @@ ACTIMBER = {
         }
     },
     fn: {
-        open: function (container, showButton, parent, pd  ) {
-
-            //console.log('pd1');
-            //console.log(pd);
-
-            pd = (pd === 'undefined' ) ? true : pd;
-
+        open: function (container, showButton, parent, listParent) {
             var elState = showButton.attr('data-state');
             var eventActOpen = new Event('actOpen');
             var eventActClose = new Event('actClose');
             var containId = container.attr('data-container')
             showButton.on('click', function (e) {
-                if(pd === true){
-                    e.preventDefault();
-                }
+                e.preventDefault();
+                console.log('clicker');
                 elState = showButton.attr('data-state');
                 if ('off' === elState) {
-                    console.log('off click')
                     showButton.attr('data-state', 'on');
                     $(container).attr('data-state', 'on');
                     $(parent).attr('data-state', 'on');
@@ -189,8 +192,7 @@ ACTIMBER = {
                     window.dispatchEvent(eventActOpen)
 
                 } else {
-                    console.log('NOT off click')
-                    //console.log(document.body.className)
+                    console.log(document.body.className)
                     $(showButton).attr('data-state', 'off');
                     $(container).attr('data-state', 'off');
                     $(parent).attr('data-state', 'off');

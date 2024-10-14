@@ -161,6 +161,10 @@ BEM ELEMENTS .l-site__
 
 .l-site__off-page-container--{
   &mobile-navigation{
+    height: 100vh;
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
     @include mq($from : tablet){
        width: 50vw;
       min-width: 300px;
