@@ -163,9 +163,11 @@ BEM ELEMENTS .l-site__
   &mobile-navigation{
     @include mq($from : tablet){
        width: 50vw;
+      min-width: 300px;
      }
     @include mq($from : desktop){
       width: 30vw;
+      min-width: 400px;
     }
   }
 }

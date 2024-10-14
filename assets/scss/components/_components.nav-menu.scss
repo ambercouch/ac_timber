@@ -365,5 +365,20 @@
   }
 }
 
-
+.menu-item-has-children{
+  &.c-nav-menu__item{
+    display: flex;
+    align-items: center;
+    &:after{
+      content: "+";
+      width: auto;
+      height: auto;
+      font-size: 1.5em;
+      color: #f7efe9;
+      font-weight: 700;
+      margin-left: .5em;
+      line-height: 0;
+    }
+  }
+}
 

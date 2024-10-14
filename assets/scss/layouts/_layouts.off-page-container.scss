@@ -65,6 +65,9 @@
    @extend .c-site-wrapper--responsive;
     background-color: transparent;
     padding-top: $act-unit-l ;
+    @include mq($from : tablet){
+      padding-right: $act-unit-s;
+    }
   }
   &widget-area{
     padding: 0 $act-unit;
