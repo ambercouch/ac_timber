@@ -20,8 +20,8 @@
   }
   .gallery-icon{
     width: 100%;
-    background: white;
-    padding: 24px;
+    background: transparent;
+    padding: $act-unit-t;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -36,7 +36,13 @@
     width: 32%;
   }
   .gallery-columns-4 &{
-    width: 25%;
+      width: 25%;
+  }
+  .gallery-columns-5 &{
+    width: 20%;
+  }
+  .gallery-columns-6 &{
+    width: 16.666%;
   }
   img{
     border-radius: 0;

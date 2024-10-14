@@ -1,0 +1,11 @@
+<div class="c-post-meta">
+
+  {% if  post.edit_link != '' %}
+    <div class="c-post-meta__section--post-admin">
+      <div class="c-post-meta__post-admin">
+        <span class="c-post-meta__post-links"><a  class="c-post-meta__post-edit-link" href="{{  post.edit_link }}" title="Edit {{ post.title }}">Edit</a></span>
+      </div>
+    </div>
+  {% endif %}
+
+</div>

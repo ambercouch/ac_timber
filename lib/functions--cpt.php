@@ -156,7 +156,7 @@ function  act_cpt() {
 
     //Media Post Type
     $labels = array(
-        'name' => _x('Media', 'post type general name'),
+        'name' => _x('MXB Media', 'post type general name'),
         'singular_name' => _x('Media', 'post type singular name'),
         'add_new' => _x('Add New', 'Media'),
         'add_new_item' => __('Add New Media'),
@@ -168,7 +168,7 @@ function  act_cpt() {
         'not_found' => __('No Media found'),
         'not_found_in_trash' => __('No Media found in the trash'),
         'parent_item_colon' => '',
-        'menu_name' => 'Media'
+        'menu_name' => 'MXB Media'
     );
     $args = array(
         'labels' => $labels,
@@ -180,7 +180,7 @@ function  act_cpt() {
         'has_archive' => false,
         'publicly_queryable' => false
     );
-    register_post_type('media', $args);
+    register_post_type('mxb_media', $args);
 
     //Media Categories
     $labels = array(
@@ -201,11 +201,11 @@ function  act_cpt() {
         'show_ui'           => true,
         'show_admin_column' => true,
         'query_var'         => true,
-        'rewrite'           => array( 'slug' => 'media-cat' ),
+        'rewrite'           => array( 'slug' => 'mxb-media-cat' ),
         'publicly_queryable' => false
 
     );
-    register_taxonomy( 'media_tags', array( 'media' ), $args );
+    register_taxonomy( 'media_type', array( 'mxb_media' ), $args );
 
 
 

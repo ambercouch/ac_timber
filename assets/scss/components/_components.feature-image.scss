@@ -96,6 +96,9 @@ BEM ELEMENTS.c-feature-image__
     //max-height: 16vw;
     aspect-ratio: 3/2;
   }
+  &mxb-media{
+    @extend .c-feature-image__img--blog
+  }
   &tax-collection{
     @include mq($from : tablet){
       aspect-ratio: 2/3;

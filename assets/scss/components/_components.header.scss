@@ -129,8 +129,11 @@
     font-weight: 900;
   }
   &blog{
-    @include act-font-size($act-fs-2);
+    @include act-font-size($act-fs-2, $important: true);
     margin-bottom: $act-unit-s;
+  }
+  &mxb-media{
+    @extend .c-header__heading--blog;
   }
   &single-post{
     text-align: center;
@@ -256,8 +259,11 @@
 
 .c-header__link-title--{
   &blog{
-    @include a($brand-col-1);
-    text-decoration: none;
+       @include a($brand-col-1);
+       text-decoration: none;
+  }
+  &mxb-media{
+    @extend .c-header__link-title--blog;
   }
   &cat-pod{
     @include a($brand-col-1);

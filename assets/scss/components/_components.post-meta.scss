@@ -1,5 +1,7 @@
 .c-post-meta{
   @include inuit-font-size($inuit-font-size-h5, 1);
+  display: flex;
+  justify-content: space-between;
 }
 
 .c-post-meta__{
@@ -36,7 +38,7 @@
   }
 
   &post-date{
-    @include inuit-font-size($inuit-font-size-h3, 1);
+    @include inuit-font-size($inuit-font-size-h5, 1);
     display: block;
     visibility: inherit;
   }
@@ -60,7 +62,8 @@
   }
 
   &post-edit-link{
-   @extend .c-btn;
+    @include a($col : $brand-col-1);
+    background: $brand-col-3;
   }
 }
 

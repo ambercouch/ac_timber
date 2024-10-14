@@ -40,10 +40,12 @@
     height: 100%;
     justify-content: flex-start;
   }
+  &mxb-media{
+    @extend .c-post-thumb--blog;
+  }
   &case-study-thumb{
     text-align: left;
     justify-content: flex-start;
-
   }
   &testimonial{
     text-align: left;
@@ -173,6 +175,9 @@
   &blog{
     padding-bottom: $act-unit-t;
   }
+  &mxb-media{
+    @extend .c-post-thumb__header--blog;
+  }
   &slide{
     @extend .u-1-2--desktop;
 
@@ -220,6 +225,9 @@
   &blog{
     margin-bottom: $act-unit;
   }
+  &mxb-media{
+    @extend .c-post-thumb__header--blog;
+  }
 }
 
 .c-post-thumb__content--{
@@ -259,6 +267,9 @@
   }
   &blog{
     margin-bottom: $act-unit;
+  }
+  &mxb-media{
+    @extend .c-post-thumb__feature-image--blog;
   }
   &tax-collection{
     margin-bottom: $act-unit;

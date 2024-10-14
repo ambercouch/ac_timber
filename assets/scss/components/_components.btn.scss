@@ -19,35 +19,35 @@
   &type {
     display: block
   }
-  &primary{
+    &primary{
 
-    @extend .o-btn--rounded;
-    text-align: center;
-    color: $brand-col-1;
-    background: $brand-col-3;
-    @include act-font-size($act-fs-3,1.5);
-    font-weight: bold;
-    padding-left: $act-unit ;
-    padding-right: $act-unit ;
-    margin-bottom: $act-unit;
-    &:hover{
-      background: darken($brand-col-3, 10%);
+      @extend .o-btn--rounded;
+      text-align: center;
       color: $brand-col-1;
-    }
-    @include mq($from : tablet){
-      line-height: 1;
-      text-align: left;
-    }
+      background: $brand-col-3;
+      @include act-font-size($act-fs-3,1.5);
+      font-weight: bold;
+      padding-left: $act-unit ;
+      padding-right: $act-unit ;
+      margin-bottom: $act-unit;
+      &:hover{
+        background: darken($brand-col-3, 10%);
+        color: $brand-col-1;
+      }
+      @include mq($from : tablet){
+        line-height: 1;
+        text-align: left;
+      }
 
-  }
-  &secondary{
-    color: $brand-col-2;
-    @extend .c-btn--ghost;
-    @include act-font-size($act-fs-3,1);
-    font-weight: bold;
-    padding-left: $act-unit ;
-    padding-right: $act-unit ;
-  }
+    }
+    &secondary{
+      color: $brand-col-2;
+      @extend .c-btn--ghost;
+      @include act-font-size($act-fs-3,1);
+      font-weight: bold;
+      padding-left: $act-unit ;
+      padding-right: $act-unit ;
+    }
   &shout-box{
     @extend .c-btn--primary;
     font-family: $act-font-family-headings;
