@@ -96,3 +96,29 @@ function my_admin_theme_style() {
 }
 add_action('admin_enqueue_scripts', 'my_admin_theme_style');
 add_action('login_enqueue_scripts', 'my_admin_theme_style');
+// Disable automatic loading of reCAPTCHA scripts
+
+add_action( 'wp_enqueue_scripts', 'disable_global_recaptcha', 20 );
+function disable_global_recaptcha() {
+    // Dequeue the scripts but don't deregister them
+    wp_dequeue_script( 'google-recaptcha' );
+    wp_dequeue_script( 'wpcf7-recaptcha' );
+}
+
+
+add_action( 'wp_enqueue_scripts', 'conditionally_load_recaptcha', 25 );
+function conditionally_load_recaptcha() {
+    global $post;
+
+    // Check if the current page contains the CF7 shortcode or is a specific page by ID
+    if ( is_page( 20 ) || ( isset( $post->post_content ) && has_shortcode( $post->post_content, 'contact-form-7' ) ) ) {
+        // Re-enqueue reCAPTCHA scripts on the specific pages
+        wp_enqueue_script( 'google-recaptcha' );
+        wp_enqueue_script( 'wpcf7-recaptcha' );
+    }
+}
+
+
+
+
+
