@@ -11,7 +11,7 @@ BEM BLOCK .l-masthead
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 1800px;
+  max-width: 1800px !important;
   &:after{
     //width: 100%;
   }

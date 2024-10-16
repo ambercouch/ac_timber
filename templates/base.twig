@@ -14,9 +14,12 @@
 
   {% include 'inc/favicon.twig' %}
 
+  <link rel="stylesheet" href="https://use.typekit.net/{{ typeKitId }}.css">
+
   <!-- Critical CSS -->
   <style>
     {% include 'css/critical.css' ignore missing %}
+    .l-main--front-page {padding-top: 48px;max-width: 100%;}  @media (min-width: 62.5em) {  .l-main, [class*=l-main--] {padding-top: 0;width: 1200px;max-width: 100%;}  }  .l-main, [class*=l-main--] {padding: 0 24px 24px;}
   </style>
   {% include 'inc/dynamic-styles-site-title.twig' %}
   {% include 'inc/dynamic-styles.twig' %}
