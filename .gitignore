@@ -8,3 +8,5 @@ yarn-error\.log
 style.css.map
 
 assets/scss/_vendor.scss
+
+templates/css/critical.css
