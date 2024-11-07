@@ -27,6 +27,9 @@
   &header{
     margin-top: $act-unit-l;
     margin-bottom: $act-unit-l;
+    .has-sidebar &{
+      margin-top: 0;
+    }
   }
 
   &heading{

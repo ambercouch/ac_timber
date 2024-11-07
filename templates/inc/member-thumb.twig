@@ -3,52 +3,68 @@
 {% set templateHeaderTitle = post.meta('member_name') ? post.meta('member_name') : post.title %}
 
 <article {{ fn('post_class', ['c-member-thumb'~modClass] ) }}>
-  {# Display the featured image if available #}
+  {# Display the featured image if availabel #}
   {% if imgObj %}
     <div class="c-member-thumb__feature-image{{ modClass }}">
       {% include "inc/feature-image.twig" with {
-        "imgObj" : imgObj
+        "imgObj" : imgObj,
+        "imgSize" : 'teamMember600',
+        "templateModClass" : '--team-member',
       } %}
     </div>
   {% endif %}
 
   <div class="c-member-thumb__content">
     <div class="c-member-thumb__header{{ modClass }}">
-      {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle } %}
+      {% include "inc/header.twig" with {
+        "templateHeaderTitle" : templateHeaderTitle,
+        "headerModClass" : '--team-member'
+      } %}
     </div>
 
     {# Display Member Position #}
     {% if post.meta('member_position') %}
-      <div class="c-member-thumb__position">
-        <strong>Position:</strong> {{ post.meta('member_position') }}
+      <div class="c-member-thumb__detail">
+        <span class="c-member-thumb__detail-label--position">Position:</span>
+        <span class="c-member-thumb__detail-value--position">{{ post.meta('member_position') }}</span>
       </div>
     {% endif %}
 
     {# Display Member Location #}
     {% if post.meta('member_location') %}
-      <div class="c-member-thumb__location">
-        <strong>Location:</strong> {{ post.meta('member_location') }}
+      <div class="c-member-thumb__detail">
+{#        <span class="c-member-thumb__detail-label--location" >Location:</span>#}
+        <span class="c-member-thumb__detail-value--location"><strong>{{ post.meta('member_location') }}</strong></span>
       </div>
     {% endif %}
 
     {# Display Member Bio #}
-    {% if post.meta('member_bio') %}
-      <div class="c-member-thumb__bio">
-        {{ post.meta('member_bio') }}
+{#    {% if post.meta('member_bio') %}#}
+{#      <div class="c-member-thumb__detail">#}
+{#        {{ post.meta('member_bio') }}#}
+{#      </div>#}
+{#    {% endif %}#}
+
+    {% if post.meta('member_website_url') %}
+      <div class="c-member-thumb__detail">
+        <span class="c-member-thumb__detail-label--email" >w:</span>
+        <span class="c-member-thumb__detail-value--email" ><a href="mailto:{{ post.meta('member_website_url') }}">{{ post.meta('member_website_url_label') }}</a></span>
       </div>
     {% endif %}
 
     {# Display Member Email #}
     {% if post.meta('member_email') %}
-      <div class="c-member-thumb__email">
-        <strong>Email:</strong> <a href="mailto:{{ post.meta('member_email') }}">{{ post.meta('member_email') }}</a>
+      <div class="c-member-thumb__detail">
+        <span class="c-member-thumb__detail-label--email" >e:</span>
+        <span class="c-member-thumb__detail-value--email" ><a href="mailto:{{ post.meta('member_email') }}">{{ post.meta('member_email') }}</a></span>
       </div>
     {% endif %}
 
     {# Display Member Telephone #}
     {% if post.meta('member_tel') %}
-      <div class="c-member-thumb__tel">
-        <strong>Tel:</strong> {{ post.meta('member_tel') }}
+      <div class="c-member-thumb__detail">
+        <span class="c-member-thumb__detail-label--tel">t:</span>
+        <span class="c-member-thumb__detail-label--value" ><a href="tel:{{ post.meta('member_tel') }}">{{ post.meta('member_tel') }}</a></span>
       </div>
     {% endif %}
   </div>

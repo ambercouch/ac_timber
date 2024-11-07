@@ -15,9 +15,16 @@ BEM BLOCK .l-main
   &.has-sidebar{
     @include mq($from: tablet) {
       display: flex;
+      //gap: $act-unit-h;
+      //.page-template-page-980 &{
+      //  gap: $act-unit;
+      //}
+      &:after{
+        display: none !important;
+      }
     }
   }
-  .page-template-page-980-center-title &,
+  .page-template-page-980 &,
   .service-template-page-980-center-title &{
     width: 980px;
     max-width: 100%;
@@ -52,7 +59,7 @@ BEM BLOCK MODIFIERS .l-main--
 
 .l-main__{
   &sidebar{
-    background: $brand-col-4;
+    background: $theme-col-4;
     padding: $act-unit;
 
     @include mq($from: tablet) {
@@ -60,6 +67,9 @@ BEM BLOCK MODIFIERS .l-main--
     }
     @include mq($from: desktop) {
       width: 25%;
+      .page-template-page-980 &{
+        width: 33%;
+      }
     }
   }
   &content{
@@ -69,7 +79,9 @@ BEM BLOCK MODIFIERS .l-main--
 }
 
 
-
+[class*=l-main__content--]{
+  @extend .l-main__content;
+}
 .l-main__content{
   .has-sidebar &{
 

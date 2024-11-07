@@ -74,7 +74,7 @@
 
   &heading {
     display: block;
-    @include act-font-size($act-fs-1);
+    @include act-font-size($act-fs-1, $modifier: 0);
     margin-bottom: 0;
     position: relative;
     overflow: hidden;
@@ -146,7 +146,7 @@
 .c-header__heading--{
   &page{
     text-decoration: none;
-    @include act-font-size($act-fs-g);
+    @include act-font-size($act-fs-g, $modifier: 3);
     font-weight: 900;
   }
   &service{
@@ -176,6 +176,9 @@
   }
   &footer{
     color: $col-light;
+  }
+  &team-member{
+    @include act-font-size($act-fs-4);
   }
 }
 

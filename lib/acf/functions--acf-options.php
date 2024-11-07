@@ -84,6 +84,12 @@ if( function_exists('acf_add_options_page') )
         'parent_slug' => 'theme-design',
     ));
 
+    acf_add_options_sub_page(array(
+        'page_title' => 'Page Layout',
+        'menu_title' => 'Page Layout',
+        'parent_slug' => 'theme-design',
+    ));
+
 }
 require_once get_template_directory() . '/lib/acf/acf-options--favicon.php';
 require_once get_template_directory() . '/lib/acf/acf-options--global-page.php';
@@ -99,3 +105,4 @@ require_once get_template_directory() . '/lib/acf/acf-options--footer-info.php';
 require_once get_template_directory() . '/lib/acf/acf-options--company-info.php';
 require_once get_template_directory() . '/lib/acf/acf-options--service-menu.php';
 require_once get_template_directory() . '/lib/acf/acf-options--design-settings.php';
+require_once get_template_directory() . '/lib/acf/acf-options--layout-settings.php';
