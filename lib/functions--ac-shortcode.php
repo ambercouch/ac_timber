@@ -149,8 +149,11 @@ function act_logo($atts){
         'w' => '300',
     ), $atts));
 
+    $output = "";
     $logo = get_field('company_logo_colour', 'options');
-    $output = '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'" width="'.$w.'">';
+    if($logo){
+        $output = '<img src="'.$logo['url'].'" alt="'.$logo['alt'].'" width="'.$w.'">';
+    }
 
     return $output;
 }
