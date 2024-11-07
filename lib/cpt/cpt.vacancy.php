@@ -31,4 +31,4 @@ $args = array(
     'show_in_rest' => false // Enables Gutenberg support
 );
 
-register_post_type('vacancy', $args);
+register_post_type('act_vacancy', $args);

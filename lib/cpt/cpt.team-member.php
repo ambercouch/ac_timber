@@ -32,7 +32,7 @@ $args = array(
     'show_in_rest' => false // Enables Gutenberg support
 );
 
-register_post_type('team_member', $args);
+register_post_type('act_team_member', $args);
 
 // Registering the 'Member Type' Taxonomy
 $labels = array(

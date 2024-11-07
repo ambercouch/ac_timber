@@ -32,4 +32,4 @@ $args = array(
     'has_archive' => true,
 );
 
-register_post_type('project', $args);
+register_post_type('act_project', $args);
