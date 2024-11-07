@@ -31,7 +31,7 @@ $args = array(
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
     'has_archive' => 'service'
 );
-register_post_type('service', $args);
+register_post_type('act_service', $args);
 
 // Registering the 'Service groups' Taxonomy
 $labels = array(

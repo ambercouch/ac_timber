@@ -30,4 +30,4 @@ $args = array(
     'show_in_rest' => false // Enables Gutenberg support
 );
 
-register_post_type('testimonial', $args);
+register_post_type('act_testimonial', $args);

@@ -31,6 +31,20 @@ function act_cpt() {
 
     //require_once get_template_directory() . '/lib/cpt/cpt.testimonial.php';
 
+    /*
+         * Include Case Studies
+         */
+
+    //require_once get_template_directory() . '/lib/cpt/cpt.case-studies.php';
+
+    /*
+     * Include Case Studies
+     */
+
+    //require_once get_template_directory() . '/lib/cpt/cpt.faqs.php';
+
+
+
 }
 
 add_action('init', 'act_cpt');
