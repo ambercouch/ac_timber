@@ -183,13 +183,36 @@ function act_logo_dark($atts){
 
     return $output;
 }
-
 add_shortcode('act_menu', 'act_shortcode_wp_nav_menu');
-function act_shortcode_wp_nav_menu($atts, $content = null) {
-    extract(shortcode_atts(array('name' => null), $atts));
-    $name = isset($name)? $name : $atts[0];
-    return wp_nav_menu(array('menu' => $name, 'echo' => false));
+function act_shortcode_wp_nav_menu($atts) {
+    // Define default attributes and merge with user-provided attributes
+    $atts = shortcode_atts(array(
+        'name' => 'Social', // Default menu name
+        'menu_class' => '', // Default to no class
+        'class' => '' // Default to no class
+    ), $atts);
+
+    // Get the menu name and CSS class from the shortcode attributes
+    $menu_name = $atts['name'];
+    $menu_class = $atts['menu_class'];
+    $container_class = $atts['class'];
+
+    // Generate the menu
+    $menu = wp_nav_menu(array(
+        'menu' => $menu_name,
+        'menu_class' => $menu_class, // Add the CSS class here
+        'container_class' => $container_class, // Add the CSS class here
+        'echo' => false
+    ));
+
+    // Check if the menu is not empty
+    if (!empty($menu)) {
+        return $menu; // Return the menu HTML
+    } else {
+        return '<p>Menu not found: ' . esc_html($menu_name) . '</p>'; // Optional error message
+    }
 }
+
 
 add_shortcode('act_svg_icon', 'act_shortcode_svg_icon');
 function act_shortcode_svg_icon($atts, $content = null) {
