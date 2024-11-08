@@ -60,7 +60,7 @@
     @include mq($from : tablet){
       flex-direction: row;
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       justify-content: center;
     }
     ul{
