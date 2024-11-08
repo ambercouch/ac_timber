@@ -232,11 +232,14 @@ function act_shortcode_btn($atts, $content){
 
     $a = shortcode_atts(array(
         'label' => 'Click',
+        'type' => '',
         'url' => '/',
         'class' => ''
     ), $atts);
 
-    $btnClass = "c-btn " . $a['class'];
+    $mod_class = ($atts['type']) ? '--'.$atts['type'] : '';
+
+    $btnClass = $a['class'] . " c-btn" . $mod_class ;
 
     $output = '';
 
