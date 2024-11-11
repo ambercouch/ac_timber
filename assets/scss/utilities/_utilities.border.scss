@@ -54,32 +54,65 @@
 }
 
 .u-bor-w-1{
-  border-width: 1px;
+  border-width: 1px !important;
+  border-style: solid;
 }
 .u-bor-w-2{
-  border-width: 2px;
+  border-width: 2px !important;
+  border-style: solid;
 }
 .u-bor-w-3{
-  border-width: 3px;
+  border-width: 3px !important;
+  border-style: solid;
 }
 .u-bor-w-4{
-  border-width: 4px;
+  border-width: 4px !important;
+  border-style: solid;
 }
 .u-bor-w-5{
-  border-width: 5px;
+  border-width: 5px !important;
+  border-style: solid;
 }
 .u-bor-w-t{
-  border-width: $act-unit-t;
+  border-width: $act-unit-t !important;
+  border-style: solid;
 }
 .u-bor-w-s{
-  border-width: $act-unit-s;
+  border-width: $act-unit-s !important;
+  border-style: solid;
 }
 .u-bor-w-m{
-  border-width: $act-unit;
+  border-width: $act-unit !important;
+  border-style: solid;
 }
 .u-bor-w-l{
-  border-width: $act-unit-l;
+  border-width: $act-unit-l !important;
+  border-style: solid;
 }
 .u-bor-w-h{
-  border-width: $act-unit-h;
+  border-width: $act-unit-h !important;
+  border-style: solid;
+}
+
+.u-brad-t{
+   border-radius: $act-unit-t !important;
+ }
+.u-brad-s{
+  border-radius: $act-unit-s !important;
+}
+.u-brad-m{
+  border-radius: $act-unit !important;
+}
+.u-brad{
+  border-radius: $act-unit !important;
+}
+.u-brad-l{
+  border-radius: $act-unit-l !important;
+}
+.u-brad-h{
+  border-radius: $act-unit-h !important;
+}
+
+.u-bshad{
+  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
 }
