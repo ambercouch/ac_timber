@@ -14,16 +14,7 @@
 /*
  SETTINGS
  */
-//@import "settings/settings.article";
-@import "settings/settings.fonts";
-@import "settings/settings.colours";
-@import "settings/settings.defaults";
-@import "settings/settings.shadows";
-@import "settings/settings.headings";
-@import "settings/settings.widths";
-
-@import "settings/settings.responsive";
-@import "settings/settings.spacings";
+@import "settings";
 
 /*
  INUIT FRAME WORK
@@ -87,10 +78,6 @@
 @import "modules/navigation";
 @import "modules/image-menu-item";
 
-
-@import "settings/settings.widths";
-
-
 /*
   WP
 */
@@ -101,6 +88,14 @@
   SHAME
 */
 @import "shame";
+
+/*
+  CLIENT STYLES
+ */
+
+//@import "client-styles";
+
+
 
 
 
