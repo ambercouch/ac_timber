@@ -16,3 +16,7 @@ vendor/
 .idea/
 
 templates/css/critical.css
+
+assets/scss/client-styles.scss
+
+assets/scss/settings/_settings.client.scss
