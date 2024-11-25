@@ -4,4 +4,11 @@ $mq-breakpoints: (
         tablet:  840px,
         desktop: 1000px,
         wide:    1300px
-)
+);
+
+$act-breakpoints: (
+        w: (from: wide),
+        d: (from: desktop, until: wide),
+        t: (from: tablet, until: desktop),
+        m: (until: tablet)
+);

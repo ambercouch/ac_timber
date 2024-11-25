@@ -20,3 +20,26 @@
   align-items: flex-end!important;
 }
 
+$flex-directions: (
+        r: row,
+        rr: row-reverse,
+        c: column,
+        cr: column-reverse
+);
+
+@each $key, $direction in $flex-directions {
+  // Base class
+  .u-fd-#{$key} {
+    flex-direction: $direction;
+  }
+
+  // Responsive classes
+  @each $breakpoint, $mq in $act-breakpoints {
+    .u-fd-#{$key}--#{$breakpoint} {
+      @include mq($mq...) {
+        flex-direction: $direction !important;
+      }
+    }
+  }
+}
+
