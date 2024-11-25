@@ -6,6 +6,45 @@ add_action( 'acf/include_fields', function() {
     }
 
     acf_add_local_field_group( array(
+        'key' => 'group_design_settings',
+        'title' => 'Design Settings',
+        'fields' => array(
+            array(
+                'key' => 'field_act_client_code',
+                'label' => 'ACT Client Code',
+                'name' => 'act_client_code',
+                'type' => 'text',
+                'instructions' => 'Set the client code that can be used as a css class to override css selectors<br> <i>.client-code-xxx</i>',
+                'wrapper' => array(
+                    'width' => '50',
+                ),
+                'default_value' => '',
+                'maxlength' => 5,
+                'placeholder' => 'xxx',
+                'prepend' => '.client-code-',
+                'append' => '',
+            )
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'acf-options-design-settings',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'left',
+        'instruction_placement' => 'field',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+
+    acf_add_local_field_group( array(
         'key' => 'group_brand_colours',
         'title' => 'Brand Colours',
         'fields' => array(

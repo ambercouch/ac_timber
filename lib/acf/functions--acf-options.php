@@ -73,6 +73,12 @@ if( function_exists('acf_add_options_page') )
     ));
 
     acf_add_options_sub_page(array(
+        'page_title' => 'Design Settings',
+        'menu_title' => 'Design Settings',
+        'parent_slug' => 'theme-design',
+    ));
+
+    acf_add_options_sub_page(array(
         'page_title' => 'Brand Colour Palette',
         'menu_title' => 'Colour Palette',
         'parent_slug' => 'theme-design',
