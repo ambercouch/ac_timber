@@ -3,23 +3,23 @@
   <style>
 
     .c-site-title--upload {
-    {% if logoWidthMobile != '' %}
-      width: {{ logoWidthMobile }}px !important;
+    {% if options.logo_width_mobile != '' %}
+      width: {{ options.logo_width_mobile }}px !important;
       height: auto !important;
     {% endif %}
-    {% if logoHeightMobile != '' %}
-      height: {{ logoHeightMobile }}px !important;
+    {% if options.logo_height_mobile != '' %}
+      height: {{ options.logo_height_mobile }}px !important;
     {% endif %}
     }
 
     @media (min-width: 440px) {
       .c-site-title--upload {
-      {% if logoWidthDesktop != '' %}
-        width: {{ logoWidthDesktop }}px !important;
+      {% if options.logo_width != '' %}
+        width: {{ options.logo_width }}px !important;
         height: auto !important;
       {% endif %}
-      {% if logoHeightDesktop != '' %}
-        height: {{ logoHeightDesktop }}px !important;
+      {% if options.logo_height != '' %}
+        height: {{ options.logo_height }}px !important;
       {% endif %}
       }
     }
