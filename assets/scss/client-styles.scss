@@ -1,0 +1,593 @@
+.l-site__masthead{
+  background: transparent;
+  margin-bottom: $act-unit-l;
+}
+.c-site-title__description-heading{
+  display: none;
+}
+
+.c-nav-menu--primary{
+  @include act-font-size($act-fs-5, 1);
+}
+
+.wp-block-image img{
+  border-radius: $act-unit-s;
+}
+
+
+.c-cta, [class*=c-cta--] {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border-radius: $act-unit;
+  background: linear-gradient(270deg, $brand-col-1 0%, $brand-col-2 100%);
+}
+
+.c-cta{
+  &:after{
+    position: absolute;
+    content: '';
+    background: url('assets/images/svg/rsr-man.svg') no-repeat right / contain;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: -20px;
+    right: 0;
+  }
+}
+
+.c-cta__content {
+
+  display: block;
+  width: 800px;
+  margin: 0 0 48px 0;
+  max-width: 100%;
+}
+
+.c-btn__link--cta{
+  color: $brand-col-2  !important;
+  background-color: white;
+  @extend .o-btn--pill;
+}
+.c-header__heading--cta{
+  color: #fff;
+  @include act-font-size($act-fs-1);
+  @include mq($from : tablet){
+    @include act-font-size($act-fs-k)
+  }
+}
+
+.c-btn__link--primary{
+  padding: $act-unit * 0.75;
+  @include mq($from : tablet){
+    padding: $act-unit * 0.75 $act-unit-l * 0.75;
+  }
+}
+
+.c-btn__link--arrow-text{
+  font-weight: 700;
+  transition: filter 0.3s ease-in-out;
+  background-color: transparent;
+  color: $brand-col-1;
+}
+
+.c-btn__link--arrow-text:hover{
+  color: $brand-col-1;
+  filter: brightness(0.6);
+}
+
+.c-btn__link--read-more{
+  @extend .c-btn__link--text;
+  padding-left: 0;
+  color: $brand-col-1;
+  &:hover,&:focus{
+    color: $brand-col-1;
+  }
+}
+
+.client-code-rsr .l-footer{
+background: transparent;
+}
+
+.client-code-rsr .l-footer__site-info:after{
+  background: transparent;
+}
+.client-code-rsr .l-footer__widget-area--footer-widgets{
+  padding-bottom: 0;
+}
+.c-widget--footer{
+  color: $col-text;
+  a{
+    color: $brand-col-1;
+    &:hover{
+      color: darken($brand-col-1, 10%);
+    }
+  }
+}
+
+.c-header__heading--footer{
+  color: $col-heading;
+  @include act-font-size($act-fs-4)
+}
+
+.l-widget-area--footer-widgets{
+  flex-wrap: wrap;
+}
+.c-widget--footer{
+  @include act-font-size($act-fs-5);
+}
+
+.client-code-rsr .l-widget-area__widget--footer-widgets:first-child{
+  flex-basis: 100% !important;
+  padding-bottom: $act-unit;
+  margin-left: 0;
+  @include mq($from : tablet){
+    padding-bottom: $act-unit-h;
+  }
+  img{
+    max-width: 50%;
+    @include mq($from : tablet){
+      max-width: none;
+    }
+  }
+}
+.client-code-rsr .l-widget-area__widget--footer-widgets:last-child{
+  flex-basis: 25% !important;
+  margin-left: 0;
+}
+.client-code-rsr .l-widget-area__widget--footer-widgets:nth-child(2){
+  flex-basis: 33% !important;
+ padding-left: 0;
+}
+.client-code-rsr .l-widget-area__widget--footer-widgets:nth-child(3){
+  margin-left: 0;
+  padding-left: 0;
+  margin-right: 0;
+  @include mq($from : tablet){
+    margin-left: auto;
+    padding-left: 0;
+    margin-right: $act-unit-l;
+  }
+}
+.c-header--footer{
+  margin-bottom: $act-unit-s;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit;
+  }
+}
+
+.c-widget--footer{
+  .c-nav-menu--main-navigation{
+    .c-btn--primary a{
+      background: transparent;
+      padding: 0;
+    }
+  }
+}
+
+.c-widget--footer .c-company-details__address{
+  color: $brand-col-1;
+}
+
+.u-lh-1{
+  line-height: 1;
+}
+
+.client-code-rsr .c-post-thumb--case-study{
+
+  width: 100%;
+  max-width: none;
+  @include mq($from : tablet){
+    display: flex;
+    flex-direction: row-reverse;  }
+  > *{
+    flex-basis: 50%;
+  }
+}
+
+.client-code-rsr .l-post-thumb-list__list--case-study{
+  display: block;
+}
+
+
+.client-code-rsr .l-post-thumb-list__item--case-study{
+  width: 100%;
+}
+
+.c-feature-image__img--case-study{
+  border-radius: $act-unit;
+  margin-bottom: $act-unit;
+  @include mq($from : tablet){
+    margin-bottom: 0;
+  }
+}
+
+
+.c-post-thumb--case-study{
+  color: #fff;
+  text-align: left;
+  @include act-font-size($act-fs-5)
+}
+.c-post-thumb__body--testimonial{
+ margin-top: 0 !important;
+}
+.c-post-thumb__body--case-study{
+  color: #fff;
+  margin-bottom: $act-unit;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit-l;
+  }
+}
+
+.c-header--case-study{
+  margin-bottom: $act-unit ;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit-l ;
+  }
+}
+
+.c-header__heading--case-study{
+  color: #fff;
+  @include act-font-size($act-fs-2);
+  font-weight: 600;
+}
+
+.wp-block-group{
+  height: 100%;
+}
+.c-post-thumb__content--testimonial{
+  padding: 0;
+}
+.c-post-thumb__content--case-study{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include mq($from : tablet){
+    padding-right: $act-unit-h;
+    margin-right: $act-unit-l;
+    padding-left: $act-unit ;
+  }
+}
+
+.c-post-thumb__image-link--case-study{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* Hide default Flickity button positioning */
+[class*=l-post-thumb-list] .flickity-prev-next-button {
+  position: absolute;
+  top: -80px; /* Move above the carousel */
+  right: 36px;
+  background-color: transparent; /* Optional: background color */
+  border: none;
+  @include size(50px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  border: solid 1px $brand-col-1;
+  @include mq($from : tablet){
+    right: 36px;
+    @include size(60px);
+    top: -172px; /* Move above the carousel */
+  }
+  svg{
+    fill: $brand-col-1;
+  }
+  .l-post-thumb-list--testimonial &{
+    top: -58px; /* Move above the carousel */
+    right: 72px;
+    @include mq($from : tablet){
+      top: -132px; /* Move above the carousel */
+      right: 120px;
+    }
+  }
+
+  .l-post-thumb-list--post & {
+    top: -58px; /* Move above the carousel */
+    right: 72px;
+    @include mq($from: tablet) {
+      top: -132px; /* Move above the carousel */
+      right: 120px;
+    }
+  }
+}
+
+/* Offset the next button slightly to the right of the previous button */
+[class*=l-post-thumb-list] .flickity-prev-next-button.next {
+  right: -24px;
+  @include mq($from : tablet){
+    right: -48px;
+  }
+  .l-post-thumb-list--testimonial &{
+    right: 12px;
+    @include mq($from : tablet){
+      right: 36px;
+    }
+
+  }
+  .l-post-thumb-list--post   &{
+    right: 12px;
+    @include mq($from : tablet){
+      right: 36px;
+    }
+  }
+}
+[class*=l-post-thumb-list] .flickity-prev-next-button.previous {
+  left: auto;
+}
+
+/* Optional: Add hover effect */
+[class*=l-post-thumb-list] .flickity-prev-next-button:hover {
+  //transform: scale(1.1);
+  background-color: $brand-col-1;
+  svg{
+    fill: #fff;
+  }
+}
+
+.flickity-button:disabled {
+  opacity: 1;
+  background-color: transparent;
+  svg{
+    fill: $brand-col-1;
+  }
+  opacity: 0.5;
+}
+
+.c-post-thumb--testimonial{
+  text-align: left;
+  @include act-font-size($act-fs-5);
+  padding: $act-unit;
+  background: #fff;
+  border-radius: $act-unit;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+  border: solid 1px #e3e3e3;
+  margin: $act-unit-t;
+  @include mq($from : tablet){
+    padding: $act-unit-l $act-unit $act-unit;
+  }
+}
+
+.l-post-thumb-list__item--testimonial{
+  width: 100%;
+  padding: $act-unit-t 0 $act-unit-s;
+  @include mq($from : tablet){
+    padding: $act-unit-t $act-unit $act-unit-s;
+    width: 33.33%;
+  }
+  .flickity-postThumbListTestimonial-loaded &{
+    height: 100%;
+  }
+}
+
+.l-post-thumb-list__list--testimonial{
+  display: block;
+}
+
+.c-header__header--testimonial{
+  margin-bottom: $act-unit;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit-l;
+  }
+}
+
+.c-header__heading--testimonial{
+  @include act-font-size($act-fs-2, 1.3);
+  font-weight: 600;
+  color: $brand-col-5;
+}
+
+.c-post-thumb__excerpt--testimonial{
+  margin-bottom: 0;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit-l;
+  }
+}
+
+.c-post-thumb__footer--testimonial{
+  margin-bottom: 0;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit;
+  }
+}
+
+.client-code-rsr .l-post-thumb-list__list--post{
+  display: block;
+}
+
+
+.l-post-thumb-list__item--post{
+  width: 100%;
+  padding: $act-unit-t 0 $act-unit-s;
+  .flickity-postThumbListPost-loaded &{
+    height: 100%;
+  }
+  @include mq($from : tablet){
+    padding: $act-unit-t $act-unit $act-unit-s;
+    width: 33.33%;
+  }
+}
+
+
+.c-post-thumb--post{
+  text-align: left;
+  @include act-font-size($act-fs-5);
+  padding: $act-unit-l $act-unit $act-unit;
+  background: #fff;
+  border-radius: $act-unit;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .2);
+  border: solid 1px #e3e3e3;
+  margin: $act-unit-t;
+}
+
+.c-header__heading--post{
+  @include act-font-size($act-fs-3, 1.2);
+  font-weight: 600;
+  color: $brand-col-5;
+}
+
+.c-header__header--post{
+  margin-bottom: 0;
+  @include mq($from : tablet){
+    margin-bottom: $act-unit-l;
+  }
+}
+
+.c-feature-image__img--post{
+  width: 100%;
+  display: block;
+  aspect-ratio: 3/2;
+  border-radius: $act-unit;
+}
+
+.c-post-thumb__image-link--post{
+  margin-bottom: $act-unit-l;
+}
+
+
+.c-btn__icon{
+  border: solid 1px $brand-col-1;
+  padding: $act-unit-s;
+  @include mq($from : tablet){
+    padding: $act-unit * 0.75;
+  }
+  border-radius: 999px;
+}
+
+.l-site__masthead{
+  @include mq($until:desktop){
+    margin-bottom: 0;
+  }
+}
+
+.l-main--front-page{
+  @include mq($until:desktop){
+    padding-top: 0;
+  }
+}
+
+.is-display-smart{
+  [data-scroll-direction=down] &, [data-pos-top=false] &{
+    background: $brand-col-7 !important;
+  }
+}
+
+.wp-block-columns.is-layout-flex{
+  @include mq($until : tablet){
+    gap:0;
+  }
+}
+
+.flickity-prev-next-button .flickity-button-icon {
+  @include mq($until : tablet){
+    left: 30%;
+    top: 30%;
+    width: 40%;
+    height: 40%;
+  }
+
+}
+
+figure.wp-block-gallery.has-nested-images{
+  justify-content: center !important;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image{
+  flex-grow: 0;
+}
+
+.client-code-rsr .c-wp-col--5050 > div{
+  @include mq($from : tablet){
+    flex-basis: 50% !important;
+    flex-grow: 0 !important;
+  }
+
+}
+
+.l-single-page__body--page{
+  padding-bottom: 0;
+  @include mq($from : tablet){
+    padding-bottom: $act-unit-l;
+  }
+}
+
+.client-code-rsr .l-footer__site-info{
+  color: $col-text;
+  .c-site-info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    > *{
+      margin-bottom: $act-unit-s !important;
+      @include mq($from : tablet){
+        margin-bottom: 0;
+      }
+    };
+  }
+  a{
+    color: $col-text;
+  }
+  .c-nav-menu--legal{
+
+
+    @include mq($from : tablet){
+      margin: 0 $act-unit;
+    }
+    a{
+      color: $col-link;
+    }
+    ul{
+      display: flex;
+      justify-content: flex-start;
+    }
+    li{
+      padding: $act-unit-t;
+      margin: 0 $act-unit-t;
+      &:first-child{
+        padding-left: 0;
+        margin-left: 0;
+        @include mq($from : tablet){
+          padding-left: $act-unit-t;
+          margin-left: $act-unit-t;
+        }
+      }
+    }
+  }
+}
+
+.client-code-rsr .l-site__off-page-container--mobile-navigation{
+  background: $brand-col-5;
+}
+
+.client-code-rsr .c-nav-menu__link--mobile{
+  color: $col-link;
+  padding: $act-unit-s;
+  padding-left: 0;
+  display: block;
+}
+
+.client-code-rsr  .c-nav-menu__item--mobile{
+  border-bottom: solid 1px $brand-col-6;
+  padding-bottom: $act-unit-s;
+  &:last-child{
+    border-bottom: none;
+  }
+  &:nth-last-child(2){
+    //border-bottom: none;
+  }
+}
+
+.c-nav-menu__item--mobile.c-btn--primary{
+  a{
+    background-color: transparent;
+    //text-transform: uppercase;
+    @include act-font-size($act-fs-4);
+  }
+}
