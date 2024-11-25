@@ -1,0 +1,12 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--case-study">
+  <ul id="postThumbListCaseStudy" class="l-post-thumb-list__list--case-study" data-flickity='{ "cellAlign": "left", "contain": true, "pageDots": false }'>
+    {% for post in posts %}
+      {% set templateHeaderTitle = (post.meta('service_title') ? post.meta('service_title') : post.title) %}
+      <li class="l-post-thumb-list__item--case-study">
+        {% include ["inc/post-thumb-case-study.twig"] with {'postType' : 'case-study', 'templateHeaderTitle' : templateHeaderTitle} %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

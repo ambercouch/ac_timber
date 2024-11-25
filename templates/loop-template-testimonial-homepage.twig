@@ -1,0 +1,11 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list--testimonial">
+  <ul id="postThumbListTestimonial" class="l-post-thumb-list__list--testimonial" data-flickity='{ "cellAlign": "center", "contain": true, "pageDots": false, "wrapAround": true }'>
+    {% for post in posts %}
+      <li class="l-post-thumb-list__item--testimonial">
+        {% include ["inc/post-thumb-testimonial.twig"] with  {'postType' : 'testimonial' }%}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -29,19 +29,19 @@ function act_cpt() {
      * Include Testimonial
      */
 
-    //require_once get_template_directory() . '/lib/cpt/cpt.testimonial.php';
+    require_once get_template_directory() . '/lib/cpt/cpt.testimonial.php';
 
     /*
          * Include Case Studies
          */
 
-    //require_once get_template_directory() . '/lib/cpt/cpt.case-studies.php';
+    require_once get_template_directory() . '/lib/cpt/cpt.case-studies.php';
 
     /*
      * Include Case Studies
      */
 
-    //require_once get_template_directory() . '/lib/cpt/cpt.faqs.php';
+    require_once get_template_directory() . '/lib/cpt/cpt.faqs.php';
 
 
 
