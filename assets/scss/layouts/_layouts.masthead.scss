@@ -31,7 +31,7 @@ BEM BLOCK MODIFIERS .l-masthead--
  */
 [class*="l-masthead--"]{
   @extend .l-masthead;
-  .is-overlay-hero &{
+  .is-display-overlay &{
     @include breakout-band($bgc : linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 80%) );
   }
 }
@@ -50,7 +50,7 @@ BEM ELEMENTS .l-masthead__
 .l-masthead__{
   &site-title{
     line-height: 1;
-    margin-top: $act-unit-s;
+    margin-top: $act-unit;
     @include mq($from:desktop){
       margin-top: $act-unit;
       margin-bottom: $act-unit;
@@ -86,7 +86,7 @@ BEM ELEMENTS .l-masthead__
     @include mq($from: desktop){
       display: block;
       margin: 0 auto;
-      padding: $act-unit $act-unit-h;
+      padding: $act-unit $act-unit-l;
     }
   }
   &widget-area{

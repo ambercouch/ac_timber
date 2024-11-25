@@ -32,7 +32,7 @@
     flex-wrap: wrap;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0 $act-unit;
+    padding: 0 0;
     @include mq($from : tablet){
       flex-direction: row;
       align-items: flex-start;
@@ -83,7 +83,7 @@
 
 .l-widget-area__widget--{
   &masthead-before-widgets{
-    
+
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;

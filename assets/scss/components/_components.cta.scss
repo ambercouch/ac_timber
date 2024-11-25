@@ -7,13 +7,16 @@
   background: $col-accent;
   width: 700px;
   max-width: 100%;
-  padding: $act-unit-l $act-unit-l;
+  padding: $act-unit-l $act-unit;
   text-align: left;
   border-radius: 0;
   color: #fff;
   a{
     color: $col-light;
     white-space: nowrap;
+  }
+  @include mq($from : tablet){
+    padding: $act-unit-h $act-unit-h;
   }
 }
 
@@ -62,7 +65,6 @@
     width: 800px;
     margin: 0 auto $act-unit-l;
     max-width: 100%;
-    @include act-font-size($act-fs-2)
   }
 
   &footer {
@@ -75,5 +77,7 @@
 [class*=c-cta__header--] {
   @extend .c-cta__header;
 }
+
+
 
 

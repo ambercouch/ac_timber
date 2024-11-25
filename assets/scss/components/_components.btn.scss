@@ -2,122 +2,77 @@
   BEM BLOCK .c-btn
  */
 
-.c-btn {
-  @extend .o-btn;
-  &.is-loading{
-    cursor: default;
-    pointer-events: none;
-  }
+.c-btn{
+  display: inline-block;
 }
 
-/*
-  BEM BLOCK MODIFIER .c-btn--
- */
-
-.c-btn--{
-  &type {
-    display: block
-  }
-  &primary{
-    @extend .c-btn;
-    @extend .o-btn--pill;
-    text-align: center;
-    color: $col-text;
-    background: $col-accent;
-    background-color: $col-accent;
-    @include act-font-size($act-fs-4,1);
-    font-weight: bold;
-    padding-left: $act-unit ;
-    padding-right: $act-unit ;
-    margin-bottom: $act-unit;
-    &:hover, &:active, &:focus {
-      background: $col-accent;
-      color: $col-text;
-    }
-    @include mq($from : tablet){
-      line-height: 1;
-      text-align: left;
-    }
-    a{
-      color: $col-light;
-    }
-
-  }
-  &secondary{
-    @extend .c-btn;
-    @extend .o-btn--pill;
-    //@extend .c-btn--ghost;
-    color: $col-light;
-    @include act-font-size($act-fs-4,1);
-    //font-weight: bold;
-    padding-left: $act-unit ;
-    padding-right: $act-unit ;
-    &:hover, &:active, &:focus {
-      //background: darken($col-accent, 10%);
-      color: $col-light;
-    }
-    a{
-      color: $col-light;
-    }
-  }
-  &read-more{
-    @extend .c-btn--primary;
-  }
-  &n{
-    @extend .c-btn;
-    padding: $inuit-global-spacing-unit-tiny  $inuit-global-spacing-unit-small;
-    @include act-font-size($act-fs-4, 1);
-    text-transform: none;
-  }
-  &ghost{
-    background: transparent !important;
-    border: solid 1px;
-    &.o-btn--brand-1{
-      &:hover{
-        background: rgba($brand-col-1, .8) !important;
-      }
-    }
-    &.o-btn--brand-2{
-      &:hover{
-        background: rgba($brand-col-2, .8) !important;
-      }
-    }
-  }
-}
-
-//BEM BLOCK MODIFIER FALLBACK .c-btn--
-
-[class*=c-btn--] {
+[class*=c-btn]{
   @extend .c-btn;
 }
 
-/*
-  BEM ELEMENTS .c-btn__
- */
-
-.c-btn__ {
-  &header {
-    display: block
+.c-btn--{
+  &primary{
+    a{
+      @extend .o-btn;
+      @extend .c-btn__link--primary;
+    }
   }
-  &heading {
-    display: block
+  &secondary{
+    a{
+      @extend .o-btn;
+      @extend .c-btn__link--secondary;
+    }
   }
-  &title {
-    display: inline;
-  }
-  &link {
-    display: inline
-  }
-  &content {
-    display: block
-  }
-  &footer {
-    display: block
+  &alt{
+    a{
+      @extend .o-btn;
+      @extend .c-btn__link--secondary;
+    }
   }
 }
 
-//BEM ELEMENT MODIFIER FALLBACK .c-btn--
+.c-btn__{
+  &link{
+    display: flex;
+    @extend .o-btn;
+    align-items: center;
+  }
+  &label{
+    display: inline-block;
+  }
+  &icon{
+    display: inline-block;
+    margin-right: $act-unit-s;
+    @include mq($from : tablet){
+      margin-right: $act-unit;
+    }
+  }
+}
 
-[class*=c-btn__header--] {
-  @extend .c-btn__header;
+[class*='c-btn__link--']{
+  @extend .c-btn__link;
+}
+
+.c-btn__link--{
+  &primary{
+    @extend .o-btn--pill;
+    padding: $act-unit * 0.75 $act-unit;
+  }
+  &secondary{
+    @extend .o-btn--pill;
+    padding: $act-unit * 0.75 $act-unit;
+    background: $brand-col-2;
+  }
+  &alt{
+    @extend .o-btn--pill;
+    padding: $act-unit * 0.75 $act-unit;
+    background: $brand-col-3;
+  }
+  &text{
+    background: transparent;
+    color: $col-text;
+    &:hover,&:focus{
+      color: $col-text;
+    }
+  }
 }

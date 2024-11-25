@@ -3,7 +3,7 @@
   pointer-events: all !important;
   position: fixed;
   right:  $act-unit;
-  top: $act-unit-l *1.25;
+  top: $act-unit * 1.5;
   z-index: 99999;
   @include act-font-size($act-fs-6);
 }

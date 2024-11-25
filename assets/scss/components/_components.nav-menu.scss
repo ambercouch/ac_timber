@@ -124,11 +124,16 @@
 
 .c-nav-menu__list--{
   &primary{
-  @extend .o-list-flex--end;
+    @extend .o-list-flex--end;
+    align-items: center;
+    > li:last-child{
+      margin-left: $act-unit-l;
+    }
     .c-widget--footer &{
       flex-direction: column;
       justify-content: flex-start;
     }
+
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -200,7 +205,7 @@
     &:hover{
       filter: brightness(0); /* Lighten the color on hover */
     }
-    .is-overlay-hero &{
+    .is-display-overlay &{
       color:white;
     }
     .c-nav-menu__item:last-child &{
@@ -211,7 +216,7 @@
     .current-menu-item &{
       background: transparent;
       font-weight: 500;
-      .is-overlay-hero &{
+      .is-display-overlay &{
         //color: darken(white, 5%);
       }
     }
@@ -220,7 +225,7 @@
   &secondary{
     @extend .o-btn;
     @extend .o-btn--rounded;
-    @extend .o-btn--brand-2;
+    //@extend .o-btn--brand-2;
     text-transform: uppercase;
     font-weight: 500;
   }
@@ -249,7 +254,7 @@
     }
   }
   &hero{
-    @extend .c-btn--primary;
+    @extend .c-btn__link--primary;
   }
 }
 

@@ -35,6 +35,7 @@
     margin: 0 auto $inuit-global-spacing-unit;
   }
   &site-info{
+    @include breakout-band($bgc : $brand-col-5);
     @extend .c-site-wrapper--responsive;
     @include inuit-font-size($inuit-font-size-h6, 1);
     text-align: left;
@@ -49,8 +50,7 @@
   }
   &widget-area{
     @extend .c-site-wrapper--responsive;
-    padding-top: $act-unit-l;
-    padding-bottom: $act-unit-l;
+    padding: $act-unit-l $act-unit;
     background-color: transparent;
   }
   &widgets{
@@ -64,10 +64,6 @@
   }
   &widget{
 
-  }
-  &site-info{
-    background: $brand-col-5;
-    @include breakout-band($bgc : $brand-col-5)
   }
 }
 
