@@ -186,14 +186,17 @@ class StarterSite extends TimberSite {
         $context['removeHeroBlog'] = get_field('remove_hero_banner_blog', 'options');
         $context['hasHeroClass'] = (get_field('remove_hero_banner', 'options') || ( get_field('banner_image', 'options') != '' or get_field('banner_image_colour_cast', 'options') != '' ) )? 'has-hero' : 'has-no-hero';
         //$context['siteMastheadModClass'] = (get_field('overlay_hero_banner', 'options'))? '--overlay-hero' : '';
-        if (get_field('page_force_show_masthead', $post_id)) {
-            $context['siteMastheadOverlayClass'] = 'is-not-overlay-hero';
-        } elseif (is_front_page()) {
-            $context['siteMastheadOverlayClass'] = get_field('overlay_hero_banner', 'options') ? 'is-overlay-hero' : 'is-not-overlay-hero';
-        } else {
-            $overlayCondition = get_field('overlay_hero_banner', 'options') && (get_field('page_banner_image') || get_field('show_site_hero'));
-            $context['siteMastheadOverlayClass'] = $overlayCondition ? 'is-overlay-hero' : 'is-not-overlay-hero';
-        }
+/*
+ * moved get_field('overlay_hero_banner', 'options') to twig {{option.hero_banner_display}} in templates
+ */
+//        if (get_field('page_force_show_masthead', $post_id)) {
+//            $context['siteMastheadOverlayClass'] = 'is-not-overlay-hero';
+//        } elseif (is_front_page()) {
+//            $context['siteMastheadOverlayClass'] = get_field('overlay_hero_banner', 'options') ? 'is-overlay-hero' : 'is-not-overlay-hero';
+//        } else {
+//            $overlayCondition = get_field('overlay_hero_banner', 'options') && (get_field('page_banner_image') || get_field('show_site_hero'));
+//            $context['siteMastheadOverlayClass'] = $overlayCondition ? 'is-overlay-hero' : 'is-not-overlay-hero';
+//        }
         $context['pageGlobalSettingHideComments'] = get_field('hide_page_comments','options');
         $context['pageSettingsShowComments'] = get_field('show_page_comments', $post_id);
         $context['pageSettingsShowSiteHero'] = get_field('show_site_hero', $post_id);

@@ -73,8 +73,8 @@
     {% endif %}
   {% endblock %}
 
-  <section id="primary" class="l-site__main">
-    <div class="l-main{{ mainMod }} {% if hasSideBar == true %}has-sidebar{% else %}has-no-sidebar{% endif %}">
+  <section id="primary" class="l-site__main has-masthead-{{ options.masthead_style | default('static') }}">
+    <div class="l-main{{ mainMod }}  {% if hasSideBar == true %}has-sidebar{% else %}has-no-sidebar{% endif %}">
       <main class="l-main__content{{ mainMod }}">
         {% block before_content %}
         {% endblock %}
