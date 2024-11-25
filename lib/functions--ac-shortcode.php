@@ -234,17 +234,41 @@ function act_shortcode_btn($atts, $content){
         'label' => 'Click',
         'type' => '',
         'url' => '/',
-        'class' => ''
+        'class' => '',
+        'icon' => ''
     ), $atts);
 
+    $a['icon'] = ($a['icon']) ? 'icon-' . $a['icon'] : '';
     $mod_class = ($atts['type']) ? '--'.$atts['type'] : '';
 
     $btnClass = $a['class'] . " c-btn" . $mod_class ;
 
+    $btnIcon = "";
+
+    if($a['icon'])
+    {
+        $btnIcon = <<<HTML
+<span class="c-btn__icon" >
+    <span class="c-svg-icon c-svg-icon--{$a['icon']}">
+        <svg class="c-svg-icon__svg--{$a['icon']}">
+            <use xlink:href="#{$a['icon']}"></use>
+        </svg>
+    </span>
+</span>
+HTML;
+
+    }
+
+
     $output = '';
 
     $output .= '<div class="'.$btnClass.'">';
-    $output .= '<a class="c-btn__link" href="'.$a['url'].'">'.$a['label'].'</a>';
+    $output .= '<a class="c-btn__link'. $mod_class. '" href="'.$a['url'].'">';
+    $output .= $btnIcon;
+    $output .= '<span class="c-btn__label">';
+    $output .= $a['label'];
+    $output .= '</span>';
+    $output .= '</a>';
     $output .= '</div>';
 
     return $output;
@@ -286,14 +310,14 @@ function act_shortcode_cta($atts, $content){
     if ($a['url1'] != '') {
 
         $output .= '<div class=" '.$class1.' ">';
-        $output .= '<a class="c-btn__link" href="'.$a['url1'].'">'.$a['btn1'].'</a>';
+        $output .= '<a class="c-btn__link--cta" href="'.$a['url1'].'">'.$a['btn1'].'</a>';
         $output .= '</div>';
 
     };
     if ($a['url2'] != '') {
 
         $output .= '<div class=" '.$class2.' ">';
-        $output .= '<a class="c-btn__link" href="'.$a['url2'].'">'.$a['btn2'].'</a>';
+        $output .= '<a class="c-btn__link--secondary" href="'.$a['url2'].'">'.$a['btn2'].'</a>';
         $output .= '</div>';
 
     };
