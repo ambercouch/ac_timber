@@ -36,13 +36,16 @@
 
 .o-svg-icon__ {
   &svg {
-    display: inline-block;
+    display: block;
     max-width: 100%;
     max-height: 100%;
     stroke-width: 0;
     stroke: currentColor;
     fill: currentColor;
     @include size($act-unit);
+    @include mq($from : tablet){
+      @include size($act-unit);
+    }
     //position: absolute;
     //left: 50%;
     //top: 50%;

@@ -69,6 +69,15 @@
       color: $brand-col-2 !important;
     }
   }
+  &header-link{
+    text-decoration: none;
+  }
+  &post-type{
+    margin-bottom: $act-unit;
+    @include mq($from : tablet){
+      margin-bottom: $act-unit-l;
+    }
+  }
   &content {
     display: flex;
     flex-direction: column;
@@ -128,6 +137,10 @@
   @extend .c-post-thumb__header;
 }
 
+[class*=c-post-thumb__header-link--] {
+  @extend .c-post-thumb__header-link;
+}
+
 [class*=c-post-thumb__wrapper--] {
   @extend .c-post-thumb__wrapper;
 }
@@ -157,6 +170,10 @@
 
 [class*=c-post-thumb__header--] {
   @extend .c-post-thumb__header;
+}
+
+[class*="c-post-thumb__content--"]{
+  @extend .c-post-thumb__content;
 }
 
 .c-post-thumb__content--{
