@@ -26,7 +26,13 @@
   &alt{
     a{
       @extend .o-btn;
-      @extend .c-btn__link--secondary;
+      @extend .c-btn__link--alt;
+    }
+  }
+  &ghost{
+    a{
+      @extend .o-btn;
+      @extend .c-btn__link--ghost;
     }
   }
 }
@@ -43,6 +49,7 @@
   &icon{
     display: inline-block;
     margin-right: $act-unit-s;
+    @include size($act-unit);
     @include mq($from : tablet){
       margin-right: $act-unit;
     }
@@ -75,4 +82,17 @@
       color: $col-text;
     }
   }
+  &ghost{
+    @extend .c-btn__link--primary;
+    background: transparent;
+    color: $col-text;
+    border: solid 1px $col-link;
+    &:hover,&:focus{
+      color: $col-text;
+    }
+  }
+}
+
+[class*='c-btn__icon--']{
+  @extend .c-btn__icon;
 }
