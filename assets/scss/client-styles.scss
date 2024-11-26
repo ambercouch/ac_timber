@@ -1,3 +1,10 @@
+.client-code-rsr [class*=l-main--]{
+  padding : 0 $act-unit-s $act-unit;
+  @include mq($from : tablet){
+    padding : 0 $act-unit $act-unit;
+  }
+}
+
 .l-site__masthead{
   background: transparent;
   margin-bottom: $act-unit-l;
@@ -84,6 +91,32 @@
   &:hover,&:focus{
     color: $brand-col-1;
   }
+}
+
+.c-btn--control{
+  transform: rotateZ(-90deg);
+  a{
+    @extend .c-btn__link--read-more;
+    color: $brand-col-1 !important;
+    span{
+      color: $brand-col-1 !important;
+    }
+    svg{
+      color: $brand-col-1 !important;
+      fill: $brand-col-1 !important;
+    }
+  }
+}
+.c-btn__icon--toggle{
+  margin-right: 0;
+}
+
+.c-btn__link--toggle{
+  padding: 0;
+
+}
+.c-btn__label--toggle{
+  display: none !important;
 }
 
 .client-code-rsr .l-footer{
@@ -452,13 +485,19 @@ background: transparent;
 }
 
 
-.c-btn__icon{
+[class*=c-btn__icon]{
   border: solid 1px $brand-col-1;
   padding: $act-unit-s;
+  @include size($act-unit-l);
   @include mq($from : tablet){
     padding: $act-unit * 0.75;
   }
   border-radius: 999px;
+}
+
+.c-btn__icon--toggle{
+  padding: $act-unit-t * 1.5;
+  @include size($act-unit * 1.5);
 }
 
 .l-site__masthead{
@@ -467,10 +506,23 @@ background: transparent;
   }
 }
 
-.l-main--front-page{
+.l-main--front-page, .l-main--page{
   @include mq($until:desktop){
     padding-top: 0;
   }
+}
+
+.l-single-page__header--page{
+  @include mq($until:desktop){
+    margin-top: 0;
+  }
+}
+
+.c-header__heading--page{
+  @include act-font-size($act-fs-1)
+}
+[class*=l-single-page__header--]{
+  margin-bottom: $act-unit * 1.5  ;
 }
 
 .is-display-smart{
