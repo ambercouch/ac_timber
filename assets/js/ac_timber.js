@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-//console.log('ACTIMBER');
+console.log('ACTIMBER state');
 ACTIMBER = {
     common: {
         init: function () {
@@ -16,93 +16,48 @@ ACTIMBER = {
 
             fitvids();
 
-            // Select the elements
-            const masthead = document.querySelector('#masthead');
-            const primary = document.querySelector('#primary.has-masthead-sticky,#primary.has-masthead-smart');
+            ACTIMBER.fn.actSmartMastheader();
+            ACTIMBER.fn.actMastheadPadding();
 
-            // Function to set padding-top
-            function adjustPadding() {
-                const mastheadHeight = masthead.offsetHeight; // Get the height of the masthead
-                primary.style.paddingTop = `${mastheadHeight}px`; // Set it as padding-top
-            }
+            $('[data-control]:not([data-control-radio])').each(function() {
+                console.log("data cons")
 
-            // Run on page load
-            adjustPadding();
+                const containerId = $(this).attr('data-control');
+                const controlSelector = (containerId != '' )? '[data-control='+ containerId + ']' : this;
+                const control = $(controlSelector);
+                const controlGroupId = control.attr('data-state-group');
+                const containerSelector = (containerId != '' )? '[data-container='+ containerId + ']' : $(this).closest('[data-container]');
+                const container = $(containerSelector);
 
-            // Adjust on window resize
-            window.addEventListener('resize', adjustPadding);
+                control.off('click');
 
-            var lastScrollTop = 0;
-            var scrollTimer = null;
-            var scrollTop = $(window).scrollTop();
-            var scrolling = false
-            var startScroll = false;
-            var topHight = 200;
+                control.on('click',  function (e) {
+                    console.log('clickered');
+                    const state = control.attr('data-state');
+                    e.preventDefault();
 
-            if(scrollTop >= topHight){
-                $('body').attr('data-pos-top', 'false')
-                console.log('top = false')
-            }else{
-                $('body').attr('data-pos-top', 'true')
-                console.log('top = true')
-            }
+                    ACTIMBER.fn.actStateToggleSelect(control, state);
 
-            $(window).scroll(function() {
 
-                scrollTop = $(this).scrollTop();
 
-                if (startScroll === false) {
-                    console.log("start scrolling")
-                    startScroll = true;
-                    if(scrollTop >= topHight){
-                        $('body').attr('data-pos-top', 'false')
-                        console.log('top = false')
+                    if(state == 'on'){
+                        $('body').addClass('has-' + containerId + '-off')
+                        $('body').removeClass('has-' + containerId + '-on')
                     }else{
-                        $('body').attr('data-pos-top', 'true')
-                        console.log('top = true')
+                        $('body').addClass('has-' + containerId + '-on')
+                        $('body').removeClass('has-' + containerId + '-off')
                     }
 
-                }
+                    if (controlGroupId){
+                        console.log('clickered group');
+                        ACTIMBER.fn.actStateToggleGroup(control, controlGroupId, state);
+                        ACTIMBER.fn.actStateToggleSelect(container, state);
 
-                if (scrolling === false) {
-                    setTimeout(function () {
-                        console.log("scrolling")
-                        if (scrollTop > lastScrollTop){
-                            //scrolling down
-                            $('body').attr('data-scroll-direction', 'down')
-                        } else {
-                            //scrolling up
-                            $('body').attr('data-scroll-direction', 'up')
-                        }
-                        if(scrollTop >= topHight){
-                            $('body').attr('data-pos-top', 'false')
-                            console.log('top = false')
-                        }else{
-                            $('body').attr('data-pos-top', 'true')
-                            console.log('top = true')
-                        }
-                    }, 200);
-
-                }
-
-                if (scrollTimer) {
-                    clearTimeout(scrollTimer);   // clear any previous pending timer
-                }
-
-                scrollTimer = setTimeout(function () {
-                    console.log("not scrolling")
-                    startScroll = false;
-                    lastScrollTop = scrollTop;
-                    if(scrollTop >= topHight){
-                        $('body').attr('data-pos-top', 'false')
-                        console.log('top = false')
                     }else{
-                        $('body').attr('data-pos-top', 'true')
-                        console.log('top = true')
+                        console.log('clickered not group');
+                        ACTIMBER.fn.actStateToggleSelect(container, state);
                     }
-                }, 200);   // set new timer
-
-
+                });
 
             });
 
@@ -393,6 +348,14 @@ ACTIMBER = {
             });
 
         },
+        actStateToggleSelect : function (element, state) {
+            if('off' === state ){
+                element.attr('data-state', 'on');
+            }
+            if('on' === state){
+                element.attr('data-state', 'off');
+            }
+        },
         actStateToggle: function (container, showButton, parent, listParent) {
             var elState = showButton.attr('data-state');
             var eventActOpen = new Event('actOpen');
@@ -457,6 +420,85 @@ ACTIMBER = {
                     }, pause);
                 }
             }
+        },
+        actSmartMastheader: function() {
+            var lastScrollTop = 0;
+            var scrollTimer = null;
+            var scrollTop = $(window).scrollTop();
+            var scrolling = false
+            var startScroll = false;
+            var topHight = 200;
+
+            if(scrollTop >= topHight){
+                $('body').attr('data-pos-top', 'false')
+            }else{
+                $('body').attr('data-pos-top', 'true')
+            }
+
+            $(window).scroll(function() {
+
+                scrollTop = $(this).scrollTop();
+
+                if (startScroll === false) {
+                    startScroll = true;
+                    if(scrollTop >= topHight){
+                        $('body').attr('data-pos-top', 'false')
+                    }else{
+                        $('body').attr('data-pos-top', 'true')
+                    }
+
+                }
+
+                if (scrolling === false) {
+                    setTimeout(function () {
+                        console.log("scrolling")
+                        if (scrollTop > lastScrollTop){
+                            //scrolling down
+                            $('body').attr('data-scroll-direction', 'down')
+                        } else {
+                            //scrolling up
+                            $('body').attr('data-scroll-direction', 'up')
+                        }
+                        if(scrollTop >= topHight){
+                            $('body').attr('data-pos-top', 'false')
+                        }else{
+                            $('body').attr('data-pos-top', 'true')
+                        }
+                    }, 200);
+
+                }
+
+                if (scrollTimer) {
+                    clearTimeout(scrollTimer);   // clear any previous pending timer
+                }
+
+                scrollTimer = setTimeout(function () {
+                    startScroll = false;
+                    lastScrollTop = scrollTop;
+                    if(scrollTop >= topHight){
+                        $('body').attr('data-pos-top', 'false')
+                    }else{
+                        $('body').attr('data-pos-top', 'true')
+                    }
+                }, 200);   // set new timer
+            });
+        },
+        actMastheadPadding: function() {
+            // Select the elements
+            const masthead = document.querySelector('#masthead');
+            const primary = document.querySelector('#primary.has-masthead-sticky,#primary.has-masthead-smart');
+
+            // Function to set padding-top
+            function adjustPadding() {
+                const mastheadHeight = masthead.offsetHeight; // Get the height of the masthead
+                primary.style.paddingTop = `${mastheadHeight}px`; // Set it as padding-top
+            }
+
+            // Run on page load
+            adjustPadding();
+
+            // Adjust on window resize
+            window.addEventListener('resize', adjustPadding);
         }
     }
 };

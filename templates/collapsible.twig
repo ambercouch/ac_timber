@@ -1,0 +1,23 @@
+<div class="c-collapsible-content">
+<ul class="c-collapsible-content__list">
+  {% for item in post.meta('act_collapsible_content_items') %}
+    <li class="c-collapsible-content__item" data-state="off" data-container>
+      <header class="c-collapsible-content__header">
+        <h4 class="c-collapsible-content__heading" >{{ item.act_content_item_title }}</h4>
+        <div class="c-collapsible-content__control">
+        {{ fn('do_shortcode',  '[act_btn class="c-btn--control" icon="arrow-right" type="toggle" url="#" label="Toggle"]')}}
+        </div>
+      </header>
+<div class="c-collapsible-content__wrapper">
+      <div class="c-collapsible-content__body">{{ item.act_content_item_text }}</div>
+      <div class="c-collapsible-content__footer">
+      {% if item.act_content_item_link %}
+        {{  fn('do_shortcode', '[act_btn type="primary" label="Contact" url="/contact" class="c-collapsible-content__btn"]  ') }}
+      {% endif %}
+      </div>
+</div>
+
+    </li>
+  {% endfor %}
+</ul>
+</div>

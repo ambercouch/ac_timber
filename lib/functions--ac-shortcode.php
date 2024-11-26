@@ -248,7 +248,7 @@ function act_shortcode_btn($atts, $content){
     if($a['icon'])
     {
         $btnIcon = <<<HTML
-<span class="c-btn__icon" >
+<span class="c-btn__icon{$mod_class}" >
     <span class="c-svg-icon c-svg-icon--{$a['icon']}">
         <svg class="c-svg-icon__svg--{$a['icon']}">
             <use xlink:href="#{$a['icon']}"></use>
@@ -256,16 +256,19 @@ function act_shortcode_btn($atts, $content){
     </span>
 </span>
 HTML;
-
     }
+
+    $btnAtts ="";
+
+    $btnAtts = 'data-state=off data-control';
 
 
     $output = '';
 
     $output .= '<div class="'.$btnClass.'">';
-    $output .= '<a class="c-btn__link'. $mod_class. '" href="'.$a['url'].'">';
+    $output .= '<a class="c-btn__link'. $mod_class. '" href="'.$a['url'].'" ' . $btnAtts . '>';
     $output .= $btnIcon;
-    $output .= '<span class="c-btn__label">';
+    $output .= '<span class="c-btn__label'. $mod_class .'">';
     $output .= $a['label'];
     $output .= '</span>';
     $output .= '</a>';
@@ -364,6 +367,17 @@ function act_shortcode_band($atts, $content){
     return $output;
 }
 
+add_shortcode('act_collapsible', 'act_collapsible_content');
+function act_collapsible_content($atts, $content){
+    $template = "collapsible.twig";
+
+    $context = Timber::get_context();
+    $context['post'] = new TimberPost();
+    ob_start();
+    Timber::render($template, $context);
+    $output = ob_get_clean();
+    return $output;
+}
 
 
 
