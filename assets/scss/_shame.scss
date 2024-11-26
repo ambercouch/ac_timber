@@ -57,3 +57,102 @@
 
   padding: 0 $act-unit $act-unit;
 }
+
+.c-background__container{
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 1500px !important;
+  overflow: hidden;
+}
+.c-background__svg--image-1{
+  position: absolute;
+  @include size(275px);
+  top: 50px;
+  right: -150px;
+  @include mq($from : desktop){
+    @include size(500px);
+    right: -220px;
+    top: -220px;
+  }
+}
+
+.c-background__svg--image-2{
+  position: absolute;
+  @include size(275px);
+  top: 260px;
+  left: -150px;
+  @include mq($from : desktop){
+    @include size(500px);
+    top: 260px;
+    left: -220px;
+  }
+}
+
+.c-background__svg--image-3{
+  position: absolute;
+  @include size(275px);
+  right: 0;
+  top: 660px;
+  right: -150px;
+  @include mq($from : desktop){
+    @include size(500px);
+    top: 660px;
+    right: -200px;
+  }
+}
+
+.c-collapsible-content{
+  text-align: left;
+}
+
+.c-collapsible-content__list{
+  @extend .o-list-bare;
+
+}
+.c-collapsible-content__item{
+  transition: background 0.3s ease-in-out;
+  background: $brand-col-4;
+  padding: $act-unit $act-unit-s;
+  border-radius: $act-unit-s;
+  color: $col-text;
+  margin-bottom: $act-unit;
+  p{
+    color: $col-text;
+  }
+  &[data-state=off]{
+    background: $brand-col-2;
+  }
+}
+
+.c-collapsible-content__wrapper{
+  transition: max-height 0.3s ease-in-out, background 0.3s ease-in-out;
+  [data-state=off] &{
+    max-height: 0;
+    overflow: hidden;
+  }
+  [data-state=on] &{
+    max-height: 999px;
+  }
+}
+
+.c-collapsible-content__heading{
+  color: $brand-col-1;
+  flex-shrink: 1;
+  margin-bottom: 0;
+}
+
+.c-collapsible-content__header{
+  display: flex;
+  transition: margin-bottom 0.3s ease-in-out;
+  [data-state=off] &{
+    margin-bottom: 0;
+  }
+  [data-state=on] &{
+    margin-bottom: $act-unit-l;
+  }
+}
+.c-collapsible-content__control{
+  padding: 0 $act-unit-t;
+  margin-left: auto;
+}

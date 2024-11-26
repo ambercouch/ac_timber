@@ -288,3 +288,119 @@ if( function_exists('acf_add_local_field_group') ):
     ));
 
 endif;
+
+add_action( 'acf/include_fields', function() {
+    if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+        return;
+    }
+
+    acf_add_local_field_group( array(
+        'key' => 'group_act_collapsible_content',
+        'title' => 'Collapsible Content',
+        'fields' => array(
+            array(
+                'key' => 'field_act_collapsible_content_items',
+                'label' => 'Collapsible Content Items',
+                'name' => 'act_collapsible_content_items',
+                'aria-label' => '',
+                'type' => 'repeater',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'layout' => 'block',
+                'pagination' => 0,
+                'min' => 0,
+                'max' => 0,
+                'collapsed' => 'field_act_content_item_name',
+                'button_label' => 'Add Content Item',
+                'rows_per_page' => 20,
+                'sub_fields' => array(
+                    array(
+                        'key' => 'field_act_content_item_title',
+                        'label' => 'Content Item Title',
+                        'name' => 'act_content_item_title',
+                        'aria-label' => '',
+                        'type' => 'text',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'maxlength' => '',
+                        'placeholder' => '',
+                        'prepend' => '',
+                        'append' => '',
+                        'parent_repeater' => 'field_act_collapsible_content',
+                    ),
+                    array(
+                        'key' => 'field_act_content_item_text',
+                        'label' => 'Content item text',
+                        'name' => 'act_content_item_text',
+                        'aria-label' => '',
+                        'type' => 'wysiwyg',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'default_value' => '',
+                        'tabs' => 'all',
+                        'toolbar' => 'full',
+                        'media_upload' => 1,
+                        'delay' => 0,
+                        'parent_repeater' => 'field_act_collapsible_content',
+                    ),
+                    array(
+                        'key' => 'field_act_content_item_link',
+                        'label' => 'Content Item Link',
+                        'name' => 'act_content_item_link',
+                        'aria-label' => '',
+                        'type' => 'link',
+                        'instructions' => '',
+                        'required' => 0,
+                        'conditional_logic' => 0,
+                        'wrapper' => array(
+                            'width' => '',
+                            'class' => '',
+                            'id' => '',
+                        ),
+                        'return_format' => 'array',
+                        'parent_repeater' => 'field_act_collapsible_content',
+                    ),
+                ),
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'normal',
+        'style' => 'default',
+        'label_placement' => 'left',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ) );
+} );
+
+
