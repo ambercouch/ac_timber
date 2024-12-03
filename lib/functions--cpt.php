@@ -11,7 +11,7 @@ function act_cpt() {
      * Includes Team member
      */
 
-    //require_once get_template_directory() . '/lib/cpt/cpt.team-member.php';
+    require_once get_template_directory() . '/lib/cpt/cpt.team-member.php';
 
     /*
      * Include Project
