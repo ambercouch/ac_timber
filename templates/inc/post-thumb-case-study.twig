@@ -12,12 +12,9 @@
 
 {% set imgObj = (post.meta('service_image')) ? Image(post.meta('service_image'))  : null %}
 
-
-
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
-
   {% if thumbLink %}
-  <a href="{{thumbLink}}" class="c-post-thumb__link" >
+  <a href="{{thumbLink}}" class="c-post-thumb__image-link{{ modClass }}" >
     {%  endif %}
   {% if post.meta('custom_post_icon') %}
     <div class="c-post-thumb__post-icon">
@@ -34,12 +31,21 @@
     {% if thumbLink %}
   </a>
   {%  endif %}
-<div class="c-post-thumb__content">
+
+  <div class="c-post-thumb__post-type--case-study">
+    <div class="c-btn__post-type">
+      <div class="c-btn">
+        <a href="/blog/" class="c-btn__link--primary">Case Study</a>
+      </div>
+    </div>
+  </div>
+
+<div class="c-post-thumb__content{{ modClass }}">
       {% if templateHeaderTitle != false %}
 
         <div class="c-post-thumb__header{{ modClass }}">
           {% if thumbLink %}
-          <a href="{{thumbLink}}" class="c-post-thumb__link">
+          <a href="{{thumbLink}}" class="c-post-thumb__header-link{{ modClass }}">
             {%  endif %}
           {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle }%}
             {% if thumbLink %}
@@ -48,19 +54,21 @@
         </div>
       {% endif %}
 
-  {% if  post.meta('service_intro_content') %}
+
   <div class="entry-content c-post-thumb__body{{ modClass }}">
-    <div class="c-post-thumb__excerpt">
-      {{ post.meta('service_intro_content') }}
+    <div class="c-post-thumb__excerpt{{ modClass }}">
+      {{ post.preview.length(35).read_more(false) }}
     </div>
   </div>
-  {% endif %}
 
   {% if thumbLink %}
     <div class="c-post-thumb__footer">
 
-      <div class="c-btn--read-more">
-        <a href="{{ thumbLink }}" class="c-btn__link--read-more">{{ thumbLinkLabel  }}</a>
+      <div class="c-btn--read-more c-btn--icon">
+        <a href="{{ thumbLink }}" class="c-btn__link--read-more">
+          <span class="c-btn__icon"> {% include "inc/svg-icon.twig" with {'icon' : 'icon-arrow-right'} %}</span>
+          <span class="c-btn__label">{{ thumbLinkLabel  }}</span>
+        </a>
       </div>
 
     </div>
