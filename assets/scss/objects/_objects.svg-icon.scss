@@ -45,7 +45,7 @@
     fill: currentColor;
     @include size(100%);
     @include mq($from : tablet){
-      @include size($act-unit);
+      //@include size($act-unit);
     }
     //position: absolute;
     //left: 50%;

@@ -114,7 +114,15 @@
       //background: darken($brand-col-2, 10%);
     }
   }
+  &svg-icon{
+    @include size($act-unit);
+  }
 }
+
+[class*=c-nav-menu__svg-icon--] {
+  @extend .c-nav-menu__svg-icon;
+}
+
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__list--
 
@@ -148,6 +156,10 @@
   }
   &mobile{
     @extend .o-list-flex--stacked;
+  }
+  &blog-filters{
+    @extend .o-list-flex--start;
+    margin-bottom: $act-unit-l;
   }
 }
 
@@ -203,7 +215,9 @@
     font-weight: 500;
     color: $col-text;
     &:hover{
-      filter: brightness(0); /* Lighten the color on hover */
+      :not(.c-btn--primary) {
+        filter: brightness(0); /* Lighten the color on hover */
+      }
     }
     .is-display-overlay &{
       color:white;
@@ -214,8 +228,11 @@
       padding:$act-unit-s $act-unit-t $act-unit-s 0;
     }
     .current-menu-item &{
-      background: transparent;
-      font-weight: 500;
+      :not(.c-btn--primary){
+        background: transparent;
+        font-weight: 500;
+      }
+
       .is-display-overlay &{
         //color: darken(white, 5%);
       }
@@ -255,6 +272,21 @@
   }
   &hero{
     @extend .c-btn__link--primary;
+  }
+  &blog-filters{
+    @extend .c-btn__link--ghost;
+    &:hover{
+      @extend .c-btn__link--primary;
+      filter: brightness(1);
+      color: white !important;
+    }
+    .current_page_item &{
+      @extend .c-btn__link--primary;
+      &:hover{
+        filter: brightness(1);
+        color: white;
+      }
+    }
   }
 }
 
