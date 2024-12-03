@@ -35,7 +35,8 @@ function act_contact( $atts ) {
     extract(shortcode_atts(array(
         'row' => 1,
         'type' => 'item',
-        'event_label' => 'acContact'
+        'event_label' => 'acContact',
+        'class' => '',
     ), $atts));
 
     //return 'contact' . $row;
@@ -48,13 +49,13 @@ function act_contact( $atts ) {
 
     switch ($contact_type){
         case 'email':
-            $contact_link = '<a  data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a  class="c-contact-detail__link--email '.$class.'" data-vars-ga-label="'.$event_label.'" href="mailto:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'tel':
-            $contact_link = '<a data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a class="c-contact-detail__link--tel '.$class.'" data-vars-ga-label="'.$event_label.'"  href="tel:'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'website':
-            $contact_link = '<a href="'.$contact_value.'">'.$contact_value.'</a>';
+            $contact_link = '<a class="c-contact-detail__link--web '.$class.'" href="'.$contact_value.'">'.$contact_value.'</a>';
             break;
         case 'other':
             $contact_link = $contact_value;
@@ -66,7 +67,7 @@ function act_contact( $atts ) {
     $output = '';
     switch ($type){
         case 'item' :
-            $output .= '<div class="c-company-contact-item">';
+            $output .= '<div class="c-company-contact-item '.$class.'">';
             $output .= '<span class="c-company-contact-item__label">';
             $output .= $contact_label;
             $output .= '</span>';
@@ -235,7 +236,8 @@ function act_shortcode_btn($atts, $content){
         'type' => '',
         'url' => '/',
         'class' => '',
-        'icon' => ''
+        'icon' => '',
+        'state' => 'off'
     ), $atts);
 
     $a['icon'] = ($a['icon']) ? 'icon-' . $a['icon'] : '';
@@ -260,7 +262,11 @@ HTML;
 
     $btnAtts ="";
 
-    $btnAtts = 'data-state=off data-control';
+    if($a['type'] == 'control'){
+        $btnAtts = 'data-state='.$a['state']. ' data-control';
+    }
+
+
 
 
     $output = '';
