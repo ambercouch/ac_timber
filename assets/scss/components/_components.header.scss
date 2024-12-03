@@ -149,6 +149,12 @@
     @include act-font-size($act-fs-g, $modifier: 3);
     font-weight: 900;
   }
+  &single-post{
+    text-decoration: none;
+    @include act-font-size($act-fs-g, $modifier: 3);
+    font-weight: 900;
+    margin-bottom: $act-unit-s;
+  }
   &service{
     @extend .c-header__heading--page;
     @include act-font-size($act-fs-1);

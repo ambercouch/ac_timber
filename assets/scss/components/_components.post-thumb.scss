@@ -33,6 +33,9 @@
   &blog-list{
     text-align: left;
   }
+  &faq{
+    @extend .c-post-thumb--post;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--
@@ -84,7 +87,7 @@
     justify-content: stretch;
     padding: $act-unit-s;
     height: 100%;
-    > *:nth-child(2){
+    > *:last-child{
       margin-top: auto;
     }
   }
@@ -204,6 +207,21 @@
     padding: $act-unit 0;
   }
 };
+
+[class*=c-post-thumb__post-type--] {
+  @extend .c-post-thumb__post-type;
+}
+
+.c-post-thumb__post-type--{
+
+  &case-study{
+    .c-content-slider--case-studies &{
+      display: none !important;
+    }
+
+  }
+
+}
 
 
 

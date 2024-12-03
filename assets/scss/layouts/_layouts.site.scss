@@ -52,6 +52,9 @@ BEM ELEMENTS .l-site__
       }
       position: fixed;
     }
+    body.admin-bar &{
+      margin-top: 32px;
+    }
   }
   &main{
     padding-top: 0;

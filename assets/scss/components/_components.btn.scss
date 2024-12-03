@@ -62,8 +62,10 @@
 
 .c-btn__link--{
   &primary{
+    @extend .o-btn;
     @extend .o-btn--pill;
     padding: $act-unit * 0.75 $act-unit;
+    background: $brand-col-1;
   }
   &secondary{
     @extend .o-btn--pill;
