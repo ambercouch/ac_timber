@@ -10,12 +10,15 @@
     {#</div>#}
   {#</div>#}
 
+  {% if metaAuthor %}
   <div class="c-post-meta__section--post-author">
     <div class="c-post-meta__post-author">
         <span class="c-post-meta__label">Posted by</span> <span class="c-post-meta__author-name"><a class="c-post-meta__link" href="{{ post.author.link }}">{{ post.author }}</a></span>
     </div>
   </div>
+  {% endif %}
 
+  {% if metaCategorys %}
   {% if post.terms('category') %}
   <div class="c-post-meta__section--post-cats">
     <div class="c-post-meta__post-cats">
@@ -28,7 +31,8 @@
     </div>
   </div>
   {% endif %}
-
+  {% endif %}
+{% if metaTags %}
   {% if post.terms('tag') %}
     <div class="c-post-meta__section--post-tags">
       <div class="c-post-meta__post-tags">
@@ -41,12 +45,15 @@
       </div>
     </div>
   {% endif %}
+  {% endif %}
 
+  {% if metaPostDate %}
   <div class="c-post-meta__section--post-date">
     <div class="c-post-meta__post-date">
       <span class="c-post-meta__label" >Posted on</span> <span class="c-post-meta__date-published">{{ post.date }}</span>
     </div>
   </div>
+  {% endif %}
 
   {% if postEditUrl != '' %}
     <div class="c-post-meta__section--post-admin">

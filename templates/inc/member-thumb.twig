@@ -39,22 +39,22 @@
     {% endif %}
 
     {# Display Member Bio #}
-{#    {% if post.meta('member_bio') %}#}
-{#      <div class="c-member-thumb__detail">#}
-{#        {{ post.meta('member_bio') }}#}
-{#      </div>#}
-{#    {% endif %}#}
+    {% if post.meta('member_bio') %}
+      <div class="c-member-thumb__detail--bio">
+        {{ post.meta('member_bio') }}
+      </div>
+    {% endif %}
 
     {% if post.meta('member_website_url') %}
-      <div class="c-member-thumb__detail">
-        <span class="c-member-thumb__detail-label--email" >w:</span>
-        <span class="c-member-thumb__detail-value--email" ><a href="mailto:{{ post.meta('member_website_url') }}">{{ post.meta('member_website_url_label') }}</a></span>
+      <div class="c-member-thumb__detail--url">
+        <span class="c-member-thumb__detail-label--url" >w:</span>
+        <span class="c-member-thumb__detail-value--url" ><a href="mailto:{{ post.meta('member_website_url') }}">{{ post.meta('member_website_url_label') }}</a></span>
       </div>
     {% endif %}
 
     {# Display Member Email #}
     {% if post.meta('member_email') %}
-      <div class="c-member-thumb__detail">
+      <div class="c-member-thumb__detail--email">
         <span class="c-member-thumb__detail-label--email" >e:</span>
         <span class="c-member-thumb__detail-value--email" ><a href="mailto:{{ post.meta('member_email') }}">{{ post.meta('member_email') }}</a></span>
       </div>

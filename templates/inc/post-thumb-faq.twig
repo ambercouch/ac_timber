@@ -1,0 +1,53 @@
+{% set modClass = (postType) ? '--'~postType : '' %}
+
+{% set templateHeaderTitle = (templateHeaderTitle) ? templateHeaderTitle : post.title %}
+{% set postLink = post.link %}
+{% set altLink = (altLink) ? altLink : post.meta('post_thumb_link') %}
+{% set disableLink = post.meta('hide_service_content_link') %}
+
+{% if disableLink != true %}
+  {% set thumbLink = (altLink) ? altLink : postLink  %}
+  {% set thumbLinkLabel = (post.meta('post_thumb_link_label')) ? post.meta('post_thumb_link_label') : 'Read More' %}
+{% endif %}
+
+{% set imgObj = (post.meta('service_image')) ? Image(post.meta('service_image'))  : null %}
+
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+
+<div class="c-post-thumb__content">
+      {% if templateHeaderTitle != false %}
+
+        <div class="c-post-thumb__header{{ modClass }}" data-state="off" data-control="faq{{ post.id }}">
+
+          {% include "inc/header.twig" with {"templateHeaderTitle" : templateHeaderTitle }%}
+
+          <div class="c-post-thumb__control--faq">
+            {{ fn('do_shortcode',  '[act_btn class="c-btn--faq-control is-off" icon="rsr-plus" state="'~ state ~'"  type="toggle" url="#" label="Toggle"]')}}
+            {{ fn('do_shortcode',  '[act_btn class="c-btn--faq-control  is-on" icon="rsr-minus" state="'~ state ~'"  type="toggle" url="#" label="Toggle"]')}}
+          </div>
+
+        </div>
+      {% endif %}
+
+
+  <div class="entry-content c-post-thumb__body{{ modClass }}" data-state="off" data-container="faq{{ post.id }}">
+    <div class="c-post-thumb__excerpt">
+      {{ post.content }}
+    </div>
+  </div>
+
+
+  {% if thumbLink %}
+{#    <div class="c-post-thumb__footer">#}
+
+{#      <div class="c-btn--read-more">#}
+{#        <a href="{{ thumbLink }}" class="c-btn__link--read-more">{{ thumbLinkLabel  }}</a>#}
+{#      </div>#}
+
+{#    </div>#}
+  {% endif %}
+</div>
+
+</article>

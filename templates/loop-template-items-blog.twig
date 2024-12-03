@@ -1,0 +1,19 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+
+<div class="l-post-thumb-list--blog">
+  <ul id="postThumbListPost" class="l-post-thumb-list__list--blog" >
+    {% for post in posts %}
+{% set map =  'post-thumb-post'  %}
+      {% set map =  {
+        'act_case_study': 'post-thumb-case-study',
+        'act_testimonial': 'post-thumb-testimonial',
+      } %}
+      {% set thumbTemplate = map[post.post_type] ?? 'post-thumb-post' %}
+
+      <li class="l-post-thumb-list__item--post">
+        {% include ['inc/' ~ thumbTemplate ~ '.twig'] with  {'postType' : 'post' }%}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

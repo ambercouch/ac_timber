@@ -1,11 +1,12 @@
 <div class="c-collapsible-content">
 <ul class="c-collapsible-content__list">
   {% for item in post.meta('act_collapsible_content_items') %}
-    <li class="c-collapsible-content__item" data-state="off" data-container>
+    {% set state = loop.first ? 'on' : 'off' %}
+    <li class="c-collapsible-content__item" data-state="{{ state }}" data-container data-parent>
       <header class="c-collapsible-content__header">
         <h4 class="c-collapsible-content__heading" >{{ item.act_content_item_title }}</h4>
         <div class="c-collapsible-content__control">
-        {{ fn('do_shortcode',  '[act_btn class="c-btn--control" icon="arrow-right" type="toggle" url="#" label="Toggle"]')}}
+        {{ fn('do_shortcode',  '[act_btn class="c-btn--control" icon="arrow-right" state="'~ state ~'"  type="toggle" url="#" label="Toggle"]')}}
         </div>
       </header>
 <div class="c-collapsible-content__wrapper">
@@ -16,7 +17,6 @@
       {% endif %}
       </div>
 </div>
-
     </li>
   {% endfor %}
 </ul>
