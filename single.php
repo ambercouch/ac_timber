@@ -14,7 +14,7 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['mainMod'] = '--'.$post->post_type;
 $context['contentMod'] = '--'.$post->post_type;
-$context['template'] = $post->post_type;
+$context['template'] = 'single-'.$post->post_type;
 $context['postType'] = $post->post_type;
 
 
