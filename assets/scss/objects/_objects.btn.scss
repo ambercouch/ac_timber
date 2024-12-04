@@ -13,7 +13,7 @@
 
 .o-btn{
   &:hover,&:focus{
-    //background: darken($brand-col-1, 5%);
+    @extend .o-btn;
     color: #fff;
   }
   a{

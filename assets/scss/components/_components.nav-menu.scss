@@ -116,6 +116,7 @@
   }
   &svg-icon{
     @include size($act-unit);
+    display: block;
   }
 }
 
@@ -149,6 +150,10 @@
   &social{
     @extend .o-list-flex;
     justify-content: center;
+  }
+  &social-share{
+    @extend .o-list-flex;
+    justify-content: flex-start;
   }
   &footer{
     display: flex;
@@ -334,6 +339,18 @@
     flex-direction: row-reverse;
   }
 
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link-label--
+
+[class*=c-nav-menu__link-label--] {
+  @extend .c-nav-menu__link-label !optional;
+}
+
+.c-nav-menu__link-label--{
+  &social-share{
+    display: none;
+  }
 }
 
 

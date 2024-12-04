@@ -42,6 +42,9 @@
     display: flex;
     @extend .o-btn;
     align-items: center;
+    &:hover, &:focus{
+      @extend .c-btn__link;
+    }
   }
   &label{
     display: inline-block;
@@ -91,6 +94,14 @@
     border: solid 1px $col-link;
     &:hover,&:focus{
       color: $col-text;
+    }
+  }
+  &blog-back{
+    @extend .c-btn__link--primary;
+    @extend .o-btn--s;
+    padding: $act-unit-s * 0.75 $act-unit !important;
+    &:hover, &:focus{
+      @extend .c-btn__link;
     }
   }
 }
