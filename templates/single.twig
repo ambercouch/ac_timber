@@ -12,9 +12,19 @@
   {% block hero %}
   {% endblock %}
 
-{% block feature %}
-{% endblock %}
 
+{%  block before_content %}
+  <div class="l-content__before--single">
+    <div class="l-content__blog-back">
+      <div class="c-btn--blog-back">
+        <a href="{{  fn('get_permalink', fn('get_option','page_for_posts') ) }}" class="c-btn__link--blog-back"><span class="c-btn__label">Back to blog</span></a>
+      </div>
+    </div>
+{#    <div class="l-content__category">#}
+{#      <a href="{{ PostCategories[0].url }}" >{{ PostCategories[0].cat_name }}</a>#}
+{#    </div>#}
+  </div>
+{% endblock %}
 
 {% block content %}
   {{  fn('is_paged')? fn('the_posts_navigation') : '' }}

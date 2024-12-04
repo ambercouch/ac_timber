@@ -4,6 +4,13 @@
 
 .c-post-meta__{
 
+  &heading{
+    font-weight: 500;
+    font-family: $act-font-family-sans;
+    color: $brand-col-1;
+    margin-bottom: 0;
+  }
+
   &section{
    margin-bottom: $act-unit-s;
     @include act-font-size($inuit-font-size-h6,1)
@@ -42,6 +49,8 @@
   }
 
 
+
+
   &post-tags{
     margin-bottom: $act-unit-t;
   }
@@ -72,6 +81,17 @@
   @extend .c-post-meta__section;
 }
 
+.c-post-meta__section--{
+  &social-share {
+    display: flex;
+  }
+  &post-date {
+    padding-bottom: $act-unit;
+    border-bottom: 1px solid $brand-col-1;
+    margin-bottom: $act-unit;
+  }
+}
+
 [class*=post-meta__post-date--]{
   @extend .c-post-meta__post-date;
 }
@@ -93,4 +113,14 @@
 }
 [class*=post-meta__item--]{
   @extend .c-post-meta__item;
+}
+
+[class*=c-post-meta__heading--]{
+  @extend .c-post-meta__heading
+}
+
+.c-post-meta__heading--{
+  &social-share{
+    margin-right: $act-unit !important;
+  }
 }
