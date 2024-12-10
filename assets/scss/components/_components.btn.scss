@@ -21,6 +21,9 @@
     a{
       @extend .o-btn;
       @extend .c-btn__link--secondary;
+      &:hover,&:focus{
+        @extend .c-btn__link--secondary
+      }
     }
   }
   &alt{
@@ -69,16 +72,26 @@
     @extend .o-btn--pill;
     padding: $act-unit * 0.75 $act-unit;
     background: $brand-col-1;
+    &:hover,&:focus {
+      @extend .c-btn__link--primary
+    }
   }
   &secondary{
     @extend .o-btn--pill;
     padding: $act-unit * 0.75 $act-unit;
     background: $brand-col-2;
+    &:hover,&:focus{
+      @extend .c-btn__link--secondary
+    }
   }
   &alt{
     @extend .o-btn--pill;
     padding: $act-unit * 0.75 $act-unit;
     background: $brand-col-3;
+    color: white;
+    &:hover,&:focus{
+      @extend .c-btn__link--alt
+    }
   }
   &text{
     background: transparent;
