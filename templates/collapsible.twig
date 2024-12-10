@@ -2,19 +2,19 @@
 <ul class="c-collapsible-content__list">
   {% for item in post.meta('act_collapsible_content_items') %}
     {% set state = loop.first ? 'on' : 'off' %}
-    <li class="c-collapsible-content__item" data-state="{{ state }}" data-container data-parent>
+    <li class="c-collapsible-content__item" data-state="{{ state }}" data-container-radio="onboarding" data-container data-parent>
       <header class="c-collapsible-content__header">
-        <h4 class="c-collapsible-content__heading" >{{ item.act_content_item_title }}</h4>
+        <h4 class="c-collapsible-content__heading" data-control data-control-radio="onboarding" data-state="{{ state }}"  >{{ item.act_content_item_title }}</h4>
         <div class="c-collapsible-content__control">
-        {{ fn('do_shortcode',  '[act_btn class="c-btn--control" icon="arrow-right" state="'~ state ~'"  type="toggle" url="#" label="Toggle"]')}}
+        {{ fn('do_shortcode',  '[act_btn class="c-btn--control" icon="arrow-right" state="'~ state ~'"  type="control" url="#" label="Toggle"]')}}
         </div>
       </header>
 <div class="c-collapsible-content__wrapper">
       <div class="c-collapsible-content__body">{{ item.act_content_item_text }}</div>
       <div class="c-collapsible-content__footer">
-      {% if item.act_content_item_link %}
-        {{  fn('do_shortcode', '[act_btn type="primary" label="Contact" url="/contact" class="c-collapsible-content__btn"]  ') }}
-      {% endif %}
+        {% if item.act_content_item_link %}
+          {{ fn('do_shortcode', '[act_btn type="primary" label="' ~ item.act_content_item_link.title ~ '" url="' ~ item.act_content_item_link.url ~ '" class="c-collapsible-content__btn"]') }}
+        {% endif %}
       </div>
 </div>
     </li>
