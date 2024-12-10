@@ -263,7 +263,7 @@ HTML;
     $btnAtts ="";
 
     if($a['type'] == 'control'){
-        $btnAtts = 'data-state='.$a['state']. ' data-control';
+        $btnAtts = 'data-state='.$a['state']. ' data-control data-control-radio=onboarding';
     }
 
 
