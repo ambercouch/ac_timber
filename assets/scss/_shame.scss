@@ -108,12 +108,16 @@
 
 .c-collapsible-content__list{
   @extend .o-list-bare;
-
+  @include mq($from : tablet){
+    display: grid;
+    grid-template-columns: calc(50% - 12px) calc(50% - 12px);
+    column-gap: $act-unit;
+  }
 }
 .c-collapsible-content__item{
   transition: background 0.3s ease-in-out;
   background: $brand-col-4;
-  padding: $act-unit $act-unit-s;
+  padding: $act-unit * 1.5 $act-unit;
   border-radius: $act-unit-s;
   color: $col-text;
   margin-bottom: $act-unit;
@@ -122,11 +126,20 @@
   }
   &[data-state=off]{
     background: $brand-col-2;
+    grid-column-start: 1
+  }
+  &[data-state=on]{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end:4;
   }
 }
 
 .c-collapsible-content__wrapper{
   transition: max-height 0.3s ease-in-out, background 0.3s ease-in-out;
+  @include mq($from : tablet){
+    transition: max-height 0s ease-in-out, background 0.3s ease-in-out;
+  }
   [data-state=off] &{
     max-height: 0;
     overflow: hidden;
@@ -145,6 +158,9 @@
 .c-collapsible-content__header{
   display: flex;
   transition: margin-bottom 0.3s ease-in-out;
+  @include mq($from : tablet){
+    transition: margin-bottom 0s ease-in-out;
+  }
   [data-state=off] &{
     margin-bottom: 0;
   }
@@ -155,6 +171,11 @@
 .c-collapsible-content__control{
   padding: 0 $act-unit-t;
   margin-left: auto;
+  a[data-state=on]{
+    @include mq($from : tablet){
+      display: none;
+    }
+  }
 }
 
 .c-icon-list__list {
@@ -212,6 +233,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include mq($from : tablet){
+      flex: 0 0 calc((100% - 72px) / 4); // 4 items per row
+    }
     &::before{
       position: static;
       display: block;

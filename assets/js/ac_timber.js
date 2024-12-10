@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-console.log('ACTIMBER state');
+console.log('ACTIMBER scroll test');
 ACTIMBER = {
     common: {
         init: function () {
@@ -18,6 +18,54 @@ ACTIMBER = {
 
             ACTIMBER.fn.actSmartMastheader();
             ACTIMBER.fn.actMastheadPadding();
+
+
+
+            /*
+           Radio toggle controls
+           */
+            //get all the radio control Ids
+            let aRadioIds = [];
+            $('[data-control-radio]').each(function(){
+                let radioId = $(this).attr('data-control-radio');
+                aRadioIds.indexOf(radioId) === -1 ? aRadioIds.push(radioId) : '';
+            });
+
+            $.each(aRadioIds, function(i, currentRadioId) {
+                let controls = $(`[data-control-radio=${currentRadioId}][data-control]`);
+                let containers = $(`[data-container-radio=${currentRadioId}][data-container]`);
+
+                controls.each(function() {
+                    const control = $(this);
+                    const containerId = control.attr('data-control');
+                    const container = containerId ? $(`[data-container=${containerId}]`) :  $(this).closest('[data-container]');
+
+                    control.on('click', function(e) {
+                        e.preventDefault();
+
+                        const state = control.attr('data-state');
+                        if (state === 'on') {
+                            console.log('This control is already on');
+                            return;
+                        }
+
+                        // Toggle state of the clicked control and container
+                        ACTIMBER.fn.actStateToggleSelect(control, state);
+                        ACTIMBER.fn.actStateToggleSelect(container, state);
+
+                        // Toggle off all other containers
+                        containers.not(container).each(function() {
+                            ACTIMBER.fn.actStateToggleSelect($(this), 'on');
+                        });
+
+                        // Toggle off all other controls
+                        controls.not(control).each(function() {
+                            ACTIMBER.fn.actStateToggleSelect($(this), 'on');
+                        });
+                    });
+                });
+            });
+
 
             $('[data-control]:not([data-control-radio])').each(function() {
                 console.log("data cons")
