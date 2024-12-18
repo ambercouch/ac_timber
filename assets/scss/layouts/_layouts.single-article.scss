@@ -16,7 +16,6 @@
   }
   &header {
     margin-bottom: $inuit-global-spacing-unit;
-
   }
   &heading {
     @include inuit-font-size($inuit-font-size-h1, 1);
@@ -32,6 +31,9 @@
     @include inuit-font-size($inuit-font-size-h1, 1);
   }
   &post-meta {
+    display: block;
+  }
+  &meta {
     display: block;
   }
   &body {
@@ -61,6 +63,20 @@ BEM BLOCK MODIFIERS .l-main__feature-image--
 
 .l-single-article__feature-image--{
 
+}
+
+/*
+BEM BLOCK MODIFIERS .l-main__feature-image--
+ */
+
+[class*="l-single-article__meta--"]{
+  @extend .l-single-article__meta;
+}
+
+.l-single-article__meta--{
+  &single-post{
+    //display: none;
+  }
 }
 
 .l-single-article{

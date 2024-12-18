@@ -10,7 +10,7 @@
   {% set thumbLinkLabel = (post.meta('post_thumb_link_label')) ? post.meta('post_thumb_link_label') : 'Read More' %}
 {% endif %}
 
-{% set imgObj = (post.meta('service_image')) ? Image(post.meta('service_image'))  : null %}
+{% set imgObj = (post.thumbnail) ? post.thumbnail : Image(options.default_blog_thumbnail)   %}
 
 <article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
   {% if thumbLink %}

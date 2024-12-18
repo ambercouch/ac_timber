@@ -150,12 +150,12 @@
     text-align: left;
     margin-bottom: $act-unit-l;
     @include mq($from : tablet, $until : desktop){
-      flex-basis: calc(50% - (24px));
-      width: calc(50% - (24px));
+      flex-basis: calc(50% - 24px);
+      width: calc(50% - 24px);
     }
     @include mq($from : desktop){
-      flex-basis: calc(33% - (21px));
-      width: calc(33% - (21px));
+      flex-basis: calc(50% - 24px);
+      width: calc(50% - 24px);
     }
 
   }

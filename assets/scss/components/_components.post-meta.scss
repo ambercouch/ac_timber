@@ -89,6 +89,7 @@
     padding-bottom: $act-unit;
     border-bottom: 1px solid $brand-col-1;
     margin-bottom: $act-unit;
+    display: none;
   }
 }
 
@@ -122,5 +123,6 @@
 .c-post-meta__heading--{
   &social-share{
     margin-right: $act-unit !important;
+    color: $brand-col-2;
   }
 }

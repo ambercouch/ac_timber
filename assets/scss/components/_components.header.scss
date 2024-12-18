@@ -53,6 +53,10 @@
     max-width: 100%;
     margin: 0 auto $act-unit-h auto;
   }
+  &single-post{
+    margin-bottom: $act-unit;
+    color: $brand-col-5;
+  }
 
 }
 
@@ -150,10 +154,25 @@
     font-weight: 900;
   }
   &single-post{
+     text-decoration: none;
+     @include act-font-size($act-fs-g, $modifier: 3);
+     font-weight: 900;
+     margin-bottom: $act-unit-s;
+     color: $brand-col-6;
+   }
+  &single-act_case_study{
     text-decoration: none;
     @include act-font-size($act-fs-g, $modifier: 3);
     font-weight: 900;
     margin-bottom: $act-unit-s;
+    color: $brand-col-6;
+  }
+  &single-act_testimonial{
+    text-decoration: none;
+    @include act-font-size($act-fs-g, $modifier: 3);
+    font-weight: 900;
+    margin-bottom: $act-unit-s;
+    color: $brand-col-6;
   }
   &service{
     @extend .c-header__heading--page;

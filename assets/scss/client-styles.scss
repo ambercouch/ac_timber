@@ -554,7 +554,9 @@ background: transparent;
 .c-header__heading--page{
   @include act-font-size($act-fs-1);
 }
-.c-header__heading--single-post{
+.c-header__heading--single-post,
+.c-header__heading--single-act_case_study,
+.c-header__heading--single-act_testimonial{
   @include act-font-size($act-fs-1);
 }
 [class*=l-single-page__header--]{
@@ -865,7 +867,10 @@ figure.wp-block-gallery.has-nested-images{
   display: none;
 }
 
-.l-single-article__header--single-post{
+.l-single-article__header--single-post,
+.l-single-article__header--single-act_case_study,
+.l-single-article__header--single-act_testimonial
+{
   margin-bottom: $act-unit;
 }
 

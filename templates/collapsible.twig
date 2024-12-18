@@ -3,8 +3,8 @@
   {% for item in post.meta('act_collapsible_content_items') %}
     {% set state = loop.first ? 'on' : 'off' %}
     <li class="c-collapsible-content__item" data-state="{{ state }}" data-container-radio="onboarding" data-container data-parent>
-      <header class="c-collapsible-content__header">
-        <h4 class="c-collapsible-content__heading" data-control data-control-radio="onboarding" data-state="{{ state }}"  >{{ item.act_content_item_title }}</h4>
+      <header class="c-collapsible-content__header" data-control data-control-radio="onboarding" data-state="{{ state }}">
+        <h4 class="c-collapsible-content__heading"   >{{ item.act_content_item_title }}</h4>
         <div class="c-collapsible-content__control">
         {{ fn('do_shortcode',  '[act_btn class="c-btn--control" icon="arrow-right" state="'~ state ~'"  type="control" url="#" label="Toggle"]')}}
         </div>

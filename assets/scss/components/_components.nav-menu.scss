@@ -117,6 +117,7 @@
   &svg-icon{
     @include size($act-unit);
     display: block;
+    color: $brand-col-3;
   }
 }
 
