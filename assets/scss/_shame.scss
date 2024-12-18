@@ -163,6 +163,8 @@
   }
   [data-state=off] &{
     margin-bottom: 0;
+    height: 100%;
+    cursor: pointer;
   }
   [data-state=on] &{
     margin-bottom: $act-unit-l;
