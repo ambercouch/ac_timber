@@ -23,7 +23,21 @@ add_action( 'acf/include_fields', function() {
                 'placeholder' => 'xxx',
                 'prepend' => '.client-code-',
                 'append' => '',
-            )
+            ),
+            array(
+                'key' => 'field_default_thumbnail',
+                'label' => 'Default Blog Thumbnail',
+                'name' => 'default_blog_thumbnail',
+                'type' => 'image',
+                'instructions' => 'Upload or select an image to be used as the default thumbnail for blog posts when no featured image is set.',
+                'wrapper' => array(
+                    'width' => '50',
+                ),
+                'return_format' => 'url', // Options: 'array', 'url', 'id'
+                'preview_size' => 'thumbnail', // Options: thumbnail size to preview in the admin
+                'library' => 'all', // Options: 'all', 'uploadedTo'
+                'mime_types' => 'jpg,jpeg,png,gif', // Restrict allowed file types
+            ),
         ),
         'location' => array(
             array(
