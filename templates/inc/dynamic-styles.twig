@@ -1,112 +1,212 @@
+<!-- ac dump options
+
+{{ dump(options) }}
+
+-->
+<style>
+    /*
+     * Dynamic Brand colour
+     */
+    :root {
+    {% if act_brand_colour.theme['1'] %}
+        --brand-col-1: {{ act_brand_colour.theme['1'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['2'] %}
+        --brand-col-2: {{ act_brand_colour.theme['2'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['3'] %}
+        --brand-col-3: {{ act_brand_colour.theme['3'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['4'] %}
+        --brand-col-4: {{ act_brand_colour.theme['4'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['5'] %}
+        --brand-col-5: {{ act_brand_colour.theme['5'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['6'] %}
+        --brand-col-6: {{ act_brand_colour.theme['6'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['7'] %}
+        --brand-col-7: {{ act_brand_colour.theme['7'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['8'] %}
+        --brand-col-8: {{ act_brand_colour.theme['8'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['9'] %}
+        --brand-col-9: {{ act_brand_colour.theme['9'] }};
+    {% endif %}
+
+    {% if act_brand_colour.theme['10'] %}
+        --brand-col-10: {{ act_brand_colour.theme['10'] }};
+    {% endif %}
+    }
+
+
+    {% if header_background %}
+    .l-site__masthead,
+    [class*=l-site__masthead--] {
+        background: var(--brand-col-{{ header_background }}, {{ act_brand_colour.default[header_background] }}) !important;
+    }
+    {% endif %}
+
+    {% if header_text_colour %}
+    .l-site__masthead .c-site-title__description-heading,
+    [class*=l-site__masthead--] .c-site-title__description-heading{
+        color: var(--brand-col-{{ header_text_colour }}, {{ act_brand_colour.default[header_text_colour] }}) !important;
+    }
+    {% endif %}
+
+    {% if header_link_colour %}
+    .l-site__masthead .c-nav-menu__link--primary,
+    [class*=l-site__masthead--] .c-nav-menu__link--primary{
+        color: var(--brand-col-{{ header_link_colour }}, {{ act_brand_colour.default[header_link_colour] }}) !important;
+    }
+
+    .l-site__masthead .c-nav-menu__link--primary:hover,
+    [class*=l-site__masthead--] .c-nav-menu__link--primary:hover{
+        filter: brightness(1.2); /* Lighten the color on hover */
+    }
+    {% endif %}
+
+    {% if body_header_colour %}
+    [class*=l-main] [class*=c-header__heading],
+    [class*=l-main] .wp-block-heading,
+    [class*=l-main] h1,
+    [class*=l-main] h2,
+    [class*=l-main] h3,
+    [class*=l-main] h4,
+    [class*=l-main] h5,
+    [class*=l-main] h6{
+        color: var(--brand-col-{{ body_header_colour }}, {{ act_brand_colour.default[body_header_colour] }}) !important;
+
+    }
+    {% endif %}
+
+</style>
+
 <!-- ACF Hero CSS -->
 <style>
 
-  {% if (fn('is_front_page') and cssBannerImageHeight) or
-   (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
-  /* cssBannerImageHeight */
-  .hero{
-    height: {{ cssBannerImageHeight }} !important;
-    min-height: unset !important;
+  {% if (fn('is_front_page') and options.banner_image_height) or
+   (not fn('is_front_page') and options.banner_image_height and options.show_site_hero == true)%}
+  /* options.banner_image_height */
+  .c-hero{
+      height: {{ options.banner_image_height }} !important;
+      min-height: unset !important;
   }
   {% else %}
-  /* NO cssBannerImageHeight */
+  /* NO options.banner_image_height */
   {% endif %}
 
-  {% if not fn('is_front_page') and cssPageBannerImageHeight and pageSettingsShowSiteHero == false %}
-  /* cssPageBannerImageHeight */
-  .hero{
-    height: {{ cssPageBannerImageHeight }} !important;
-    min-height: unset !important;
+  {% if not fn('is_front_page') and options.page_banner_image_height and options.show_site_hero == false %}
+  /*options.page_banner_image_height */
+  .c-hero{
+      height: {{options.page_banner_image_height }} !important;
+      min-height: unset !important;
   }
   {% else %}
-  /* NO cssBannerImageHeight */
+  /* NO options.banner_image_height */
   {% endif %}
 
-  {% if cssBannerImagePositionHorizontal %}
-  /* cssBannerImagePositionHorizontal */
-  .hero__background-img{
-    object-position: {{ cssBannerImagePositionHorizontal }} ;
+  {% if options.banner_image_position_horizontal %}
+  /*options.banner_image_position_horizontal */
+  .c-image--hero-background{
+      object-position: {{options.banner_image_position_horizontal }} ;
   }
   {% else %}
-    /* NO cssBannerImagePositionHorizontal */
+  /* NOoptions.banner_image_position_horizontal */
   {% endif %}
 
-  {% if (fn('is_front_page') and cssBannerImageSaturation ) or (not fn('is_front_page') and pageSettingsShowSiteHero == true  and cssBannerImageSaturation) %}
-  /*  cssBannerImageSaturation */
-  .hero__background-img {
-    -webkit-filter: saturate({{ cssBannerImageSaturation }}%) !important;
-    filter: saturate({{ cssBannerImageSaturation }}%) !important;
+  {% if (fn('is_front_page') and options.banner_image_saturation ) or (not fn('is_front_page') and options.show_site_hero == true  and options.banner_image_saturation) %}
+  /*  options.banner_image_saturation */
+  .c-image--background {
+      -webkit-filter: saturate({{ options.banner_image_saturation }}%) !important;
+      filter: saturate({{ options.banner_image_saturation }}%) !important;
   }
   {% else %}
-  /* NO cssBannerImageSaturation */
+  /* NO options.banner_image_saturation */
+  /* TESTING  {{ fn('is_front_page') ~ 'options.banner_image_saturation ' ~ options.banner_image_saturation ~ ' END TEST' }}*/
   {% endif %}
 
-  {% if  cssPageBannerImageSaturation %}
-  /* cssPageBannerImageSaturation */
-  .hero__background-img {
-    -webkit-filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
-    filter: saturate({{ cssPageBannerImageSaturation }}%) !important;
+  {% if  options.page_banner_image_saturation %}
+  /* options.page_banner_image_saturation */
+  .c-image--background {
+      -webkit-filter: saturate({{ options.page_banner_image_saturation }}%) !important;
+      filter: saturate({{ options.page_banner_image_saturation }}%) !important;
   }
   {% else %}
-  /* NO cssPageBannerImageSaturation */
+  /* NO options.page_banner_image_saturation */
   {% endif %}
 
-  {% if (fn('is_front_page') and cssBannerColourCast) or
-  (not fn('is_front_page') and cssBannerColourCast and pageSettingsShowSiteHero == true )%}
-  .hero__background:before{
-    display: block !important;
-    background: {{cssBannerColourCastColour}} !important;
-    opacity: {{cssBannerColourCastOpacity}} !important;
-    mix-blend-mode: {{cssBannerColourCastMode}} !important;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    transition: all .5s ease;
+  {% if (fn('is_front_page') and options.banner_colour_cast) or
+  (not fn('is_front_page') and options.banner_colour_cast and options.show_site_hero == true )%}
+  /* options.banner_colour_cast */
+  .c-hero__image:before{
+      display: block !important;
+      background: {{options.banner_image_colour_cast_colour}} !important;
+      opacity: {{options.banner_image_colour_cast_opacity}} !important;
+      mix-blend-mode: {{options.banner_image_colour_cast_mode}}!important;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      transition: all .5s ease;
   }
   {% else %}
-  /* NO cssBannerColourCast */
+  /* NO options.banner_colour_cast */
   {% endif %}
 
-  {% if cssPageBannerColourCast and pageSettingsShowSiteHero == false %}
-  /* cssPageBannerColourCast */
-  .hero__background:before{
-    display: block !important;
-    background: {{cssPageBannerColourCastColour}} !important;
-    opacity: {{cssPageBannerColourCastOpacity}} !important;
-    mix-blend-mode: {{cssPageBannerColourCastMode}} !important;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    transition: all .5s ease;
+  {%  if options.page_banner_colour_cast and options.show_site_hero == false %}
+  /*options.page_banner_colour_cast */
+  .c-hero__image:before{
+      display: block !important;
+      background: {{options.page_banner_colour_cast_colour}} !important;
+      opacity: {{options.page_banner_colour_cast_opacity}} !important;
+      mix-blend-mode: {{options.page_banner_colour_cast_mode}} !important;
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+      transition: all .5s ease;
   }
   {% else %}
-  /* NO cssPageBannerColourCast */
+  /* NO options.page_banner_colour_cast */
   {% endif %}
 
-  {% if cssPageBannerImageHeight %}
-  /* cssPageBannerImageHeight */
-  .hero--page{
-    height: {{ cssPageBannerImageHeight }} !important;
-    min-height: unset !important;
+  {% if options.page_banner_image_height %}
+  /*options.page_banner_image_height */
+  .c-hero--page{
+      height: {{options.page_banner_image_height }} !important;
+      min-height: unset !important;
   }
   {% else %}
-  /* NO cssPageBannerImageHeight */
+  /* NOoptions.page_banner_image_height */
   {% endif %}
 
-  {% if cssPageBannerImagePositionHorizontal %}
-  /* cssPageBannerImagePositionHorizontal */
-  .hero__background-img{
-    object-position: {{ cssPageBannerImagePositionHorizontal }} ;
+  {% if options.page_banner_image_position_horizontal %}
+  /* options.page_banner_image_position_horizontal */
+  .c-image--background{
+      object-position: {{ options.page_banner_image_position_horizontal }} ;
   }
   {% else %}
-  /* NO cssPageBannerImagePositionHorizontal */
+  /* NO options.page_banner_image_position_horizontal */
   {% endif %}
+
+  .c-hero__content:after{
+      opacity: {{ options.banner_content_background_opacity /100 }};
+  }
 
 
 </style>

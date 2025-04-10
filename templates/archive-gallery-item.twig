@@ -1,0 +1,53 @@
+{% extends "base.twig" %}
+
+{% block before_head %}
+  <!-- home.twig -->
+{% endblock %}
+
+{% block hero %}
+  {% if removeHero %}
+  {% else %}
+  <section id="siteHero" class="l-site__hero">
+    {% include 'inc/hero.twig' ignore missing %}
+  </section>
+  {% endif %}
+{% endblock %}
+
+
+    {% block content %}
+      <div class="l-post-thumb-list">
+        <div class="l-post-thumb-list__list--column">
+              {% for post in posts %}
+                <div class="l-post-thumb-list__item--column">
+                  <div class="l-post-thumb-list__post-thumb">
+                      {% set postFormat = fn('get_post_format', post)? '-'~fn('get_post_format', post) : '' %}
+                      {% include ['content/content'~postFormat~'.twig', 'content/content.twig'] %}
+                  </div>
+                </div>
+              {% endfor %}
+        </div>
+      </div>
+    {% endblock %}
+
+
+
+{% block belowContent %}
+  <div class="content__below">
+    {% if posts.pagination.pages is not empty %}
+    <div class="content__pagination">
+      {% include 'inc/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+    </div>
+    {% endif %}
+  </div>
+  <!-- removed comments in home.twig -->
+{% endblock %}
+
+{% set hasSideBar = true %}
+
+{% block sidebar %}
+  <div id="sidebar" class="c-main__sidebar">
+    <div class="c-sidebar-widgets">
+      {{ sidebar_widgets }}
+    </div>
+  </div>
+{% endblock %}

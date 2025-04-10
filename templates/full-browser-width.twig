@@ -1,0 +1,41 @@
+{% extends "base.twig" %}
+{% set templateClass =  template ? '--'~template  : '' %}
+{% set templateSlug = template ?  '-'~template  : '' %}
+{% set mainMod = "--full-browser-width" %}
+
+{% block before_head %}
+  <!-- front-page.twig -->
+  <!-- template - {{ template }} -->
+  <!-- {{ hidePageTitle }} -->
+{% endblock %}
+
+{% block hero %}
+  {% if removeHero %}
+  {% else %}
+    {{  parent() }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% for post in posts %}
+    {% include ['content/content-'~templateSlug~'.twig','content/content-single-page.twig'] %}
+  {% endfor %}
+
+{% endblock %}
+
+{% block subsidiary %}
+
+  {{ parent() }}
+
+{% endblock %}
+
+{% block belowContent %}
+  <!-- Removed comments from front-page.twig -->
+{% endblock %}
+
+
+
+
+
+

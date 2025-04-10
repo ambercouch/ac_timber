@@ -1,0 +1,21 @@
+{% set modClass = (postType) ? '--'~postType : '' %}
+{% set headerTitle = (headerTitle) ? headerTitle : post.title %}
+
+
+<article {{ fn('post_class', ['c-post-thumb'~modClass] ) }}>
+  <a href="{{ post.link }}" class="ac-test c-post-thumb__thumb-link{{ modClass }}">
+  {% if post.meta('custom_post_icon') %}
+  <div class="c-post-thumb__post-icon">
+              <img class="c-post-thumb__post-icon-img{{ modClass }} is-svg-replace" src="{{ post.meta('custom_post_icon').url }}" />
+  </div>
+  {% endif %}
+
+      {% if headerTitle != false %}
+        <div class="c-post-thumb__header{{ modClass }}">
+          {% include "inc/header.twig" %}
+        </div>
+      {% endif %}
+
+  </a>
+
+</article>

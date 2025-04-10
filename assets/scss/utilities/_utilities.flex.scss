@@ -1,0 +1,45 @@
+.u-jc-l{
+ justify-content: flex-start !important;
+}
+.u-jc-r{
+  justify-content: flex-end !important;
+}
+.u-jc-c{
+  justify-content: center !important;
+}
+
+.u-ai-c{
+  align-items: center !important;
+}
+
+.u-ai-s{
+  align-items: flex-start!important;
+}
+
+.u-ai-e{
+  align-items: flex-end!important;
+}
+
+$flex-directions: (
+        r: row,
+        rr: row-reverse,
+        c: column,
+        cr: column-reverse
+);
+
+@each $key, $direction in $flex-directions {
+  // Base class
+  .u-fd-#{$key} {
+    flex-direction: $direction;
+  }
+
+  // Responsive classes
+  @each $breakpoint, $mq in $act-breakpoints {
+    .u-fd-#{$key}--#{$breakpoint} {
+      @include mq($mq...) {
+        flex-direction: $direction !important;
+      }
+    }
+  }
+}
+

@@ -19,6 +19,13 @@
  */
 
 .c-btn--{
+  &secondry{
+    background: $brand-col-2;
+    border: solid 1px #fff;
+    &:hover{
+      background: lighten($brand-col-2, 10%) !important;
+    }
+  }
   &type {
     display: block
   }

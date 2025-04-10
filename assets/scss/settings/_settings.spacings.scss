@@ -1,0 +1,52 @@
+
+$inuit-spacing-directions: (
+        null: null,
+        "t": "-top",
+        "r": "-right",
+        "b": "-bottom",
+        "l": "-left",
+        "h": "-left" "-right",
+        "v": "-top" "-bottom",
+);
+
+$inuit-spacing-properties: (
+        "p": "padding",
+        "m": "margin",
+);
+
+$inuit-spacing-sizes: (
+        null: $inuit-global-spacing-unit,
+        "-t": $inuit-global-spacing-unit-tiny,
+        "-s": $inuit-global-spacing-unit-small,
+        "-m": $inuit-global-spacing-unit,
+        "-l": $inuit-global-spacing-unit-large,
+        "-h": $inuit-global-spacing-unit-huge,
+        "-0": 0,
+        "-a": auto
+);
+
+
+$inuit-responsive-spacing-directions: (
+        null: null,
+        "t": "-top",
+        "r": "-right",
+        "b": "-bottom",
+        "l": "-left",
+        "h": "-left" "-right",
+        "v": "-top" "-bottom",
+);
+
+$inuit-responsive-spacing-properties: (
+        "p": "padding",
+        "m": "margin",
+);
+
+$inuit-responsive-spacing-sizes: (
+        null: $inuit-global-spacing-unit,
+        "-t": $inuit-global-spacing-unit-tiny,
+        "-s": $inuit-global-spacing-unit-small,
+        "-l": $inuit-global-spacing-unit-large,
+        "-h": $inuit-global-spacing-unit-huge,
+        "-0": 0,
+        "-a": auto
+);

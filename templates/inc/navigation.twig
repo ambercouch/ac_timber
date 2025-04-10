@@ -5,7 +5,12 @@
   <ul class="c-nav-menu__list--{{ menuName }}">
     {% for item in  menu.get_items %}
       <li class="c-nav-menu__item--{{ menuName }} {{item.classes | join(' ')}}">
-        <a class="c-nav-menu__link--{{ menuName }}" href="{{item.get_link}}">
+        <a class="c-nav-menu__link--{{ menuName }}" href="{{item.get_link}}"
+            {% if item.acsm_modal_id %}
+              data-modal-opener="modal{{ item.acsm_modal_id }}"
+              data-modal-type="{{ item.acsm_modal_type | default('inline') }}"
+            {% endif %}
+        >
           <span class="c-nav-menu__link-label--{{ menuName }}">{{item.title}}</span>
         </a>
         {% if item.get_children %}

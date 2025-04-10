@@ -3,39 +3,68 @@
   {%   set bannerLogo = pageBannerLogo %}
   {%   set bannerContent = pageBannerContent %}
   {%   set menuName = pageBannerMenuName %}
-  {% else %}
-    {% set menuName = "hero" %}
+{% else %}
+  {% set menuName = "hero" %}
+  {% set menu = _context['menu' ~ menuName | capitalize ] %}
+{% endif %}
+{% if bannerContent != '' or  bannerLogo.url != '' or ( not hideBannerMenu and menu | length ) %}
+  {% set classBackgroundImage = "has-banner-overlay-content" %}
+{% else %}
+  {% set classBackgroundImage = "has-no-banner-overlay-content" %}
 {% endif %}
 
-<div class="hero" >
-  <div class="hero__container">
 
-    <div class="hero__background">
-      {% if bannerImg.url != '' %}
-      <img src="{{  bannerImg.url }}" alt="{{  bannerImg.alt }}" class="hero__background-img">
-      {% endif %}
-    </div>
+<div class="c-hero" >
+  <!-- dump bannerImg
+  {{ dump(bannerImg) }}
+  -->
+  <div class="c-hero__container">
 
-
-    <div class="hero__body{{ templateClass }}">
-
-      {% if bannerLogo.url != '' %}
-      <div class="hero__logo">
-          <img class="hero__logo-img" src=" {{  bannerLogo.url  }}" alt="{{ bannerLogo.alt }}">
+    {% if fn('is_front_page') and options.banner_slider and options.banner_slider_gallery %}
+      <div class="c-hero__gallery-slider">
+        <div id="heroGallery" class="c-gallery-slider"  data-auto-play="{{ options.gallery_auto_play }}" data-dot-nav="{{ options.gallery_nav_dots }}" data-arrow-nav="{{ options.gallery_nav_arrows }}">
+          {% for image in options.banner_slider_gallery %}
+            <div class="c-gallery-slider__cell">
+              <img src="{{  image.url }}" alt="{{  image.alt }}" class="c-gallery-slider__img">
+            </div>
+          {% endfor %}
+        </div>
       </div>
-      {% endif %}
+    {% elseif bannerImg.url != '' %}
 
-      {% if  bannerContent != '' %}
-      <div class="hero__content">
-        {{  bannerContent  }}
+      <div class="c-hero__image {{ classBackgroundImage }}">
+        <picture>
+          <source media="(max-width: 768px)" srcset="{{ bannerImg.sizes['featureMobile'] }}" />
+          <source media="(min-width: 769px)" srcset="{{ bannerImg.sizes['feature16-9'] }}" />
+          <img src="{{ bannerImg.sizes['feature16-9'] }}" alt="{{ bannerImg.alt }}" class="c-image--background c-image--hero-background">
+        </picture>
       </div>
-      {% endif %}
 
-      {% if not hideBannerMenu and menuName != '' %}
-      <div class="hero__call-to-action">
-        {% include 'inc/navigation.twig' %}
+    {% endif %}
+
+    {% if bannerContent != '' or  bannerLogo.url != '' %}
+      <div class="c-hero__body{{ templateClass }} {{ options.banner_content_position_horizontal}} {{ options.banner_content_position_vertical }}">
+
+        {% if bannerLogo.url != '' %}
+          <div class="c-hero__logo">
+            <img class="c-hero__img--logo" src=" {{  bannerLogo.url  }}" alt="{{ bannerLogo.alt }}">
+          </div>
+        {% endif %}
+
+        {% if  bannerContent != '' or (not hideBannerMenu and menuName != '') %}
+          <div class="c-hero__content is-{{ options.banner_content_style }}-background {{ options.banner_content_width }}" >
+            {{  bannerContent  }}
+
+            {% if not hideBannerMenu and menu | length %}
+              <div class="c-hero__nav-menu--hero-cta">
+                {% include 'inc/navigation.twig' %}
+              </div>
+            {% endif %}
+
+          </div>
+        {% endif %}
+
       </div>
-      {% endif %}
-    </div>
+    {% endif %}
   </div>
 </div>

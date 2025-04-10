@@ -1,22 +1,22 @@
 
 .u-bgc1, .u-bgc-1 {
   background-color: $brand-col-1 !important;
-  color: white; //default
+  //color: white; //default
 }
 
 .u-bgc2, .u-bgc-2  {
   background-color: $brand-col-2 !important;
-  color: $brand-col-1; //default
+  //color: $brand-col-1; //default
 }
 
 .u-bgc3, .u-bgc-3  {
   background-color: $brand-col-3 !important;
-  color: white; //default
+  //color: white; //default
 }
 
 .u-bgc4, .u-bgc-4 {
   background-color: $brand-col-4 !important;
-  color: white;
+  //color: white;
   .nav-menu__link *{
     color: white;
   }
@@ -24,25 +24,36 @@
 
 .u-bgc5, .u-bgc-5  {
   background-color: $brand-col-5 !important;
-  color: white; //default
+  //color: white; //default
 }
 
 .u-bgc6, .u-bgc-6  {
   background-color: $brand-col-6 !important;
-  color: white; //default
+  //color: white; //default
 }
 
 .u-bgc7, .u-bgc-7  {
   background-color: $brand-col-7 !important;
-  color: white; //default
+  //color: white; //default
 }
 
 .u-bgc8, .u-bgc-8  {
   background-color: $brand-col-8 !important;
-  color: white; //default
+  //color: white; //default
 }
 
 .u-bgc9, .u-bgc-9  {
   background-color: $brand-col-9 !important;
-  color: white; //default
+  //color: white; //default
 }
+
+.u-bgc-w {
+  background-color: #fff !important;
+  //color: white; //default
+}
+
+.u-bgc-b {
+  background-color: #000 !important;
+  //color: white; //default
+}
+

@@ -215,3 +215,33 @@
 [data-remodal-id="modal-calendar"]{
   //background: transparent !important;
 }
+
+.is-dark-background.c-hero__content:after {
+  transition: opacity 0.3s ease-in-out;
+  background: #000;
+}
+.is-dark-background.c-hero__content:hover:after {
+  opacity: 0.7;
+}
+.is-dark-background.c-hero__content{
+  color: #fff;
+  h2{
+    color: #fff;
+    text-shadow: 2px 2px 5px BLACK;
+  }
+}
+
+.c-btn-group{
+  justify-content: center;
+  display: flex;
+  gap: $act-unit-l;
+}
+
+.c-hero__content{
+  margin-top: 60%;
+  @include mq($from : desktop){
+    min-width: 600px;
+    margin-top: 30%;
+  }
+}
+

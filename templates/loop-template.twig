@@ -1,0 +1,11 @@
+{# This is an example of a twig template.
+ it can be copied to your theme template folder if you are using the timber plugin #}
+<div class="l-post-thumb-list">
+  <ul class="l-post-thumb-list__list">
+    {% for post in posts %}
+      <li class="l-post-thumb-list__item">
+        {% include ["inc/post-thumb.twig"] %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

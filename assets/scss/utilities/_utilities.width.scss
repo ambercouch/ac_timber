@@ -4,6 +4,10 @@
 
 .u-w-100{
   width: 100% !important;
+  img{
+    width: 100% !important;
+    height: auto;
+  }
 }
 
 /*
@@ -14,6 +18,14 @@ UTILITIES width in px from 500 to 1500
 .u-w-500px{
    width: 500px !important;
  }
+.u-w-500px---{
+  &desk{
+    @include mq($from : desktop){
+      width: 500px !important;
+    }
+  }
+
+}
 
 .u-w-600px{
   width: 600px !important;
@@ -24,7 +36,7 @@ UTILITIES width in px from 500 to 1500
 }
 
 .u-w-800px{
-  max-width: 800px !important;
+  width: 800px !important;
 }
 
 .u-w-900px{
@@ -73,12 +85,4 @@ UTILITIES width in %
 
 .u-max-25{
   max-width: 50% !important;
-}
-
-/*
-UTILITIES max-width in px
-*/
-
-.u-max-800px{
-  max-width: 800px !important;
 }

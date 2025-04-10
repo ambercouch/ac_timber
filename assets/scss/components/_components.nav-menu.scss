@@ -220,14 +220,26 @@
     margin-left: 0;
     text-transform: uppercase;
     display: table-cell;
-    &:last-child{
+    &.c-btn--nav-main{
+      background: transparent;
+      &:hover{
+        color: white !important;
+        .c-nav-menu__icon-title{
+          color: white !important;
+        }
+        .c-nav-menu__svg-icon{
+          color: white !important;
+          fill: white !important;
+        }
+      }
       @include mq ($from: desktop){
         border: solid 1px $brand-col-1;
         margin-right: $act-unit;
-
         .home & {
           border: solid 1px white;
+
         }
+
       }
     }
 

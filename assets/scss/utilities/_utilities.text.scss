@@ -1,40 +1,40 @@
 //text-align
-.u-tac{
+.u-ta-c, .u-tac{
   text-align: center !important;
 }
-.u-tal{
+.u-ta-l, .u-tal{
   text-align: left !important;
 }
-.u-tar{
+.u-ta-r, .u-tar{
    text-align: right !important;
  }
-.u-taj{
+.u-ta-j, .u-taj{
   text-align: justify !important;
 }
 
 
 
 //text-transform
-.u-ttu{
-   text-transform: uppercase !important;
+.u-tt-u{
+   text-transform: uppercase;
  }
-.u-ttl{
-  text-transform: lowercase !important;
+.u-tt-l{
+  text-transform: lowercase;
 }
-.u-ttc{
-  text-transform: capitalize !important;
+.u-tt-c{
+  text-transform: capitalize;
 }
 
-.u-tdn{
-  text-decoration: none !important;
-
+.u-td-n{
+  text-decoration: none;
   *{
     text-decoration: none;
   }
 }
-.u-tdu{
-  text-decoration: underline !important;
+.u-td-u{
+  text-decoration: underline;
   a{
     text-decoration: underline;
   }
 }
+
