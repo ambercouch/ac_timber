@@ -290,6 +290,8 @@ function act_shortcode_cta($atts, $content){
         'text' => '',
         'btn1' => 'Submit',
         'btn2' => 'Submit',
+        'btn1data' => '',
+        'btn2data' => '',
         'class' => '',
         'class1' => 'c-btn--cta ',
         'class2' => 'c-btn--secondary',
@@ -297,12 +299,28 @@ function act_shortcode_cta($atts, $content){
         'url2' => ''
     ), $atts);
 
-    extract($a);
+    // Helper to convert btnXdata string to data attributes
+    function act_parse_data_atts($data_str) {
+        if (empty($data_str)) return '';
+        $attrs = [];
+        $pairs = explode(',', $data_str);
+        foreach ($pairs as $pair) {
+            $kv = explode(':', $pair, 2);
+            if (count($kv) == 2) {
+                $key = trim($kv[0]);
+                $val = trim($kv[1]);
+                if ($key && $val) {
+                    $data_key = 'data-' . str_replace('_', '-', $key);
+                    $attrs[] = $data_key . "='" . esc_attr($val) . "'";
+                }
+            }
+        }
+        return $attrs ? ' ' . implode(' ', $attrs) : '';
+    }
 
     $a['text'] = '<p>'.$a['text'].'</p>';
 
-
-    $output = '<div class="c-cta '.$class.'">';
+    $output = '<div class="c-cta '.$a['class'].'">';
     $output .= '<div class="c-cta__header">';
     $output .= '<header class="c-header--cta">';
     $output .= '<h4 class="c-header__heading--cta">';
@@ -317,26 +335,22 @@ function act_shortcode_cta($atts, $content){
     $output .= '<div class="c-cta__footer">';
     $output .= '<div class="c-btn-group">';
     if ($a['url1'] != '') {
-
-        $output .= '<div class=" '.$class1.' ">';
-        $output .= '<a class="c-btn__link--cta" href="'.$a['url1'].'">'.$a['btn1'].'</a>';
+        $output .= '<div class="'.esc_attr($a['class1']).'">';
+        $output .= '<a class="c-btn__link--cta" href="'.esc_url($a['url1']).'"'. act_parse_data_atts($a['btn1data']) .'>'.esc_html($a['btn1']).'</a>';
         $output .= '</div>';
-
-    };
+    }
     if ($a['url2'] != '') {
-
-        $output .= '<div class=" '.$class2.' ">';
-        $output .= '<a class="c-btn__link--secondary" href="'.$a['url2'].'">'.$a['btn2'].'</a>';
+        $output .= '<div class="'.esc_attr($a['class2']).'">';
+        $output .= '<a class="c-btn__link--secondary" href="'.esc_url($a['url2']).'"'. act_parse_data_atts($a['btn2data']) .'>'.esc_html($a['btn2']).'</a>';
         $output .= '</div>';
-
-    };
+    }
     $output .= '</div>';
-
     $output .= '</div>';
     $output .= '</div>';
 
     return $output;
 }
+
 
 add_shortcode('act_band', 'act_shortcode_band');
 function act_shortcode_band($atts, $content){
