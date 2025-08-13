@@ -36,6 +36,9 @@
   &faq{
     @extend .c-post-thumb--post;
   }
+  &post{
+    display: inline-block;
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-post-thumb--

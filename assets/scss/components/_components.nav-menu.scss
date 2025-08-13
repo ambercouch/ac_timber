@@ -40,6 +40,11 @@
   &social{
     //margin-top: $act-unit-l;
   }
+  &service{
+    margin-bottom: $act-unit-l;
+    text-align: left;
+  }
+
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-nav-menu--
@@ -53,10 +58,27 @@
  */
 
 .c-nav-menu__ {
+  &heading{
+    color : $theme-col-7;
+  }
+  &body{
+    color : $theme-col-7;
+  }
+  &media{
+    margin-bottom: $act-unit;
+  }
+  &footer{
+    text-align: center;
+  }
  &list{
    @extend .o-list-bare;
    margin-bottom: 0;
    justify-content: flex-end;
+   ul li{
+     list-style: disc;
+     padding-left: 0;
+     @include act-font-size($act-fs-5)
+  }
  }
   &item{
     position: relative;
@@ -142,7 +164,9 @@
       flex-direction: column;
       justify-content: flex-start;
     }
-
+  }
+  &service{
+    @extend .o-list-flex;
   }
   &pagination{
     @extend .o-flex-split--last;

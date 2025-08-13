@@ -78,3 +78,18 @@
     color: #000 ;
   }
 }
+
+.u-col-text{
+  color : $col-text !important;
+  *{
+    color : $col-text
+  }
+}
+.u-col-heading{
+  color : $col-heading !important;
+  *{
+    color : $col-heading
+  }
+}
+
+

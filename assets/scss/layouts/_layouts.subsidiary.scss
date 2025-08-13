@@ -3,9 +3,10 @@
  */
 
 .l-subsidiary {
-  @extend .c-site-wrapper--responsive;
-  padding-bottom: 0;
-  background: transparent;
+  display: block;
+  text-align: center;
+  padding: $act-unit-l 0;
+
 }
 
 /*
@@ -46,6 +47,11 @@
   }
   &footer {
     display: block
+  }
+  &nav-menu{
+    @extend .c-site-wrapper--responsive;
+    padding: $act-unit-l $act-unit;
+    background-color: transparent;
   }
 }
 

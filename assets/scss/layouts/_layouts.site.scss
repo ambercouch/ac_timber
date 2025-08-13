@@ -53,8 +53,12 @@ BEM ELEMENTS .l-site__
       position: fixed;
     }
     body.admin-bar &{
-      margin-top: 32px;
+      //Not needed in WP 6.8.1!!??
+      //margin-top: 32px;
     }
+  }
+  &main-before{
+    background: $brand-col-4;
   }
   &main{
     padding-top: 0;
@@ -93,14 +97,19 @@ BEM ELEMENTS .l-site__
     }
   }
   &subsidiary{
+    padding-top: 0;
     background: $brand-col-4;
+    color: white;
+    *{
+      color: white;
+    }
   }
 
   &footer{
 
     /* #2 */
     margin-top: auto;
-    //background: $brand-col-5;
+    background: $brand-col-5;
   }
 }
 

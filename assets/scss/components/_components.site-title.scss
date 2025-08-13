@@ -57,6 +57,12 @@ BEM ELEMENTS .c-site-title
     display: block;
     color: $col-text;
     text-decoration: none;
+    .is-display-overlay &{
+      color: $col-light;
+      &:hover,&:focus{
+        color: $col-light;
+      }
+    }
     &:hover,&:focus{
       color: $col-text;
     }

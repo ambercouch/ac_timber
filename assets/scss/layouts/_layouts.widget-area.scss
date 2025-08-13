@@ -24,7 +24,8 @@
       grid-template-columns: calc(50% - 24px ) calc(50% - 24px);
       grid-template-rows: auto auto;
       grid-column-gap: $act-unit-l;
-      grid-row-gap: $act-unit-h;
+      grid-row-gap: $act-unit-l;
+      margin-bottom: - $act-unit-l;
     }
   }
   &footer-widgets{
@@ -122,7 +123,10 @@
       @include mq($from : desktop){
         padding-left:0 ;
         flex-basis: 33.33% !important;
-        margin-left: auto ;
+        &:not(:only-chiled){
+          margin-left: auto ;
+        }
+
       }
     }
   }

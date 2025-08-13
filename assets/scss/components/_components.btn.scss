@@ -6,7 +6,7 @@
   display: inline-block;
 }
 
-[class*=c-btn]{
+[class*=c-btn--]{
   @extend .c-btn;
 }
 
@@ -35,6 +35,20 @@
       @extend .c-btn__link--ghost;
     }
   }
+  &cta{
+    a{
+      @extend .o-btn;
+      @extend .c-btn__link--alt;
+    }
+  }
+  &more{
+    width: $act-unit-h * 3;
+    max-width: 100%;
+    a{
+      @extend .o-btn;
+      @extend .c-btn__link--alt;
+    }
+  }
 }
 
 .c-btn__{
@@ -42,6 +56,7 @@
     display: flex;
     @extend .o-btn;
     align-items: center;
+    justify-content: center;
     &:hover, &:focus{
       @extend .c-btn__link;
     }
@@ -102,7 +117,16 @@
     padding: $act-unit-s * 0.75 $act-unit !important;
     &:hover, &:focus{
       @extend .c-btn__link;
-    }
+    } }
+  &cta{
+    @extend .o-btn--pill;
+    padding: $act-unit * 0.75 $act-unit;
+    background: $brand-col-3;
+  }
+  &more{
+    @extend .o-btn--pill;
+    padding: $act-unit * 0.75 $act-unit;
+    background: $brand-col-3;
   }
 }
 
