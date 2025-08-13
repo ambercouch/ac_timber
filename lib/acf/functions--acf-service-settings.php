@@ -2,32 +2,6 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array (
-        'key' => 'group_service_settings',
-        'title' => 'Service Settings',
-        'fields' => array (
-
-
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'post_type',
-                    'operator' => '==',
-                    'value' => 'service',
-                ),
-            ),
-        ),
-        'menu_order' => 0,
-        'position' => 'side',
-        'style' => 'default',
-        'label_placement' => 'top',
-        'instruction_placement' => 'label',
-        'hide_on_screen' => '',
-        'active' => 1,
-        'description' => '',
-    ));
-
-    acf_add_local_field_group(array (
         'key' => 'group_service_additional_content',
         'title' => 'Service Content',
         'fields' => array (
@@ -78,7 +52,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '50',
+                    'width' => '25',
                     'class' => '',
                     'id' => '',
                 ),
@@ -102,7 +76,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '50',
+                    'width' => '25',
                     'class' => '',
                     'id' => '',
                 ),
@@ -118,25 +92,47 @@ if( function_exists('acf_add_local_field_group') ):
                 'mime_types' => '',
             ),
             array(
-                'key' => 'field_post_thumb_link',
-                'label' => 'Post Thumb Link',
-                'name' => 'post_thumb_link',
-                'type' => 'url',
-                'instructions' => 'Link to an external site or alternative page',
+                'key' => 'field_service_content',
+                'label' => 'Service Content',
+                'name' => 'service_content',
+                'type' => 'wysiwyg',
+                'instructions' => 'Content to be displayed on the service thumbnail. Keep it short!',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '33',
+                    'width' => '50',
                     'class' => '',
                     'id' => '',
                 ),
                 'default_value' => '',
-                'placeholder' => '',
+                'tabs' => 'all',
+                'toolbar' => 'basic',
+                'media_upload' => 0,
+                'delay' => 1,
             ),
             array(
-                'key' => 'field_post_thumb_link_label',
-                'label' => 'Post Thumb Link Label',
-                'name' => 'post_thumb_link_label',
+                'key'           => 'field_service_link',
+                'label'         => 'Service Link',
+                'name'          => 'service_link',
+                'type'          => 'text',  // changed from 'url'
+                'instructions'  => 'Enter a full URL (https://…) or a relative URL/path (e.g. /contact or #contact).',
+                'required'      => 0,
+                'conditional_logic' => 0,
+                'wrapper'       => array(
+                    'width' => '33',
+                    'class' => '',
+                    'id'    => '',
+                ),
+                'default_value' => '',
+                'placeholder'   => '/contact or https://example.com',
+                'prepend'       => '',
+                'append'        => '',
+                'maxlength'     => '',
+            ),
+            array(
+                'key' => 'field_service_link_label',
+                'label' => 'Service Link Label',
+                'name' => 'service_link_label',
                 'type' => 'text',
                 'instructions' => 'The text that appears on the link',
                 'required' => 0,
@@ -171,7 +167,7 @@ if( function_exists('acf_add_local_field_group') ):
                 array (
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'service',
+                    'value' => 'act_service',
                 ),
             ),
         ),
