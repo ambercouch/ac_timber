@@ -1,14 +1,14 @@
 <div class="l-subsidiary">
-  {% if menuService %}
-  <div class="l-subsidiary__navigation">
-    {% include 'inc/navigation-service.twig' %}
-  </div>
-  {% endif %}
   {% if subsidiary_widgets %}
   <div class="l-subsidiary__widget-area">
     <div class="l-widget-area--subsidiary">
       {{ subsidiary_widgets }}
     </div>
   </div>
+  {% endif %}
+  {% if menuService %}
+    <div class="l-subsidiary__nav-menu">
+      {% include 'inc/navigation-service.twig' %}
+    </div>
   {% endif %}
 </div>
