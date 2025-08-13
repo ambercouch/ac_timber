@@ -1,53 +1,70 @@
-<div class="navigation--service">
-  <ul class="navigation__list--service">
+{# templates/partials/nav-service.twig #}
+{% set defaultImgId = 10 %}
+<div class="c-nav-menu c-nav-menu--service">
+  <ul class="c-nav-menu__list c-nav-menu__list--service">
     {% for item in menuService.get_items %}
-      {% set objectId = item._menu_item_object_id  %}
-      {#{% set thumb = fn('get_the_post_thumbnail', objectId) %}#}
-      {% set thumbId = fn('get_post_thumbnail_id', objectId ) %}
-      {% set defautImgId = 10 %}
-      {% set itemImageId =  (thumbId == '') ?   defautImgId : thumbId %}
-      {% set thumbSrc = fn('wp_get_attachment_image_url', itemImageId , 'serviceMenuLarge') %}
-      {% set thumbSrcset = fn('wp_get_attachment_image_srcset', itemImageId, 'serviceMenuLarge') %}
-      {% set thumbSizes = fn('wp_get_attachment_image_sizes' , itemImageId, 'serviceMenuLarge') %}
-      {% set theExcerpt = fn('get_post_field', 'post_excerpt', objectId) %}
-      {% set theContent = fn('get_post_field', 'post_content', objectId) %}
-      {% set itemContent = (theExcerpt != '' )? theExcerpt:  theContent %}
-
-      <li class="navigation__item--service">
-        <div class="navigation__image-menu-item" >
-          <div class="image-menu-item">
-            <a class="image-menu-item__image-link" href="{{item.url}}">
-              <img class="image-menu-item__img" alt="{{ item.title }}" src="{{ thumbSrc }}" srcset="{{ thumbSrcset }}" sizes="{{ thumbSizes }}"/>
-
-              <div class="image-menu-item__wrapper">
-            <div class="image-menu-item__header">
-            <h3 class="image-menu-item__heading">
-              <span class="image-menu-item__title" >{{ item.title }}</span>
-            </h3>
-            </div>
-              {% if serviceMenuShowExcerpt  == 1 %}
-              <div class="body">
-                <div class="image-menu-item__content">
-                  <h6 class="image-menu-item__content-title" >{{ item.title }}</h6>
-                  {{ itemContent }}
-                  <hr class="image-menu-item__content-hr">
-                  {% if fn('get_field','hide_service_content_link', objectId) == 1  or fn('get_post_field','post_content', objectId ) == '' %}
-                    <!-- content link removed -->
-                    <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
-                  {% else %}
-                    <!-- content link  -->
-                    <!-- hide_content_link : {{ post.get_field('hide_service_content_link', objectId) }} -->
-                    <a href="{{item.url}}" class="image-menu-item__content-link" title="{{ item.title }}">Find Out More</a>
-                  {% endif %}
-                  <a href="#custom_html-4" class="image-menu-item__content-link" title="Contact us to find out more">Contact Us</a>
-
-                </div>
-              </div>
-              {% endif %}
-            </div>
-            </a>
+      {% set id          = item._menu_item_object_id %}
+      {% set title       = fn('get_field', 'service_title', id) ?: item.title %}
+      {% set intro       = fn('get_field', 'service_intro_content', id)
+        ?: fn('get_post_field', 'post_excerpt', id) %}
+      {% set imgField    = fn('get_field', 'service_image', id) %}
+      {% if imgField and imgField.ID %}
+        {% set imgId = imgField.ID %}
+      {% else %}
+        {% set imgId = fn('get_post_thumbnail_id', id) ?: defaultImgId %}
+      {% endif %}
+      {% set imgSrc      = fn('wp_get_attachment_image_url', imgId, 'serviceMenuLarge') %}
+      {% set imgSrcset   = fn('wp_get_attachment_image_srcset', imgId, 'serviceMenuLarge') %}
+      {% set imgSizes    = fn('wp_get_attachment_image_sizes', imgId, 'serviceMenuLarge') %}
+      {% set iconField   = fn('get_field', 'custom_post_icon', id) %}
+      {% set contentFld  = fn('get_field', 'service_content', id) %}
+      {% set href        = fn('get_field', 'service_link', id) ?: item.url %}
+      {% set linkLabel   = fn('get_field', 'service_link_label', id) ?: 'Find Out More' %}
+      {% set hideLink    = fn('get_field', 'hide_service_content_link', id) %}
+      {# choose wrapper tag: <a> if not hidden, else <div> #}
+      {% set wrapperTag = hideLink ? 'div' : 'a' %}
+      <li class="c-nav-menu__item c-nav-menu__item--service">
+      <{{ wrapperTag }}
+      {% if not hideLink %} href="{{ href }}" title="{{ title }}"{% endif %}
+      class="c-nav-menu__link c-nav-menu__link--service"
+      >
+      <header class="c-nav-menu--header">
+      <div class="c-nav-menu__media c-nav-menu__media--service">
+        <img
+            class="c-nav-menu__img c-nav-menu__img--service"
+            src="{{ imgSrc }}"
+            srcset="{{ imgSrcset }}"
+            sizes="{{ imgSizes }}"
+            alt="{{ title }}"
+        />
+        {% if iconField and iconField.url %}
+          <img
+              class="c-nav-menu__icon c-nav-menu__icon--service"
+              src="{{ iconField.url }}"
+              alt="{{ title }} icon"
+          />
+        {% endif %}
+      </div>
+      <h3 class="c-nav-menu__heading c-nav-menu__heading--service">{{ title }}</h3>
+      </header>
+      <div class="c-nav-menu__body c-nav-menu__body--service">
+        {% if intro %}
+          <p class="c-nav-menu__intro c-nav-menu__intro--service">{{ intro }}</p>
+        {% endif %}
+        {% if contentFld %}
+          <div class="c-nav-menu__content c-nav-menu__content--service">
+            {{ contentFld|raw }}
           </div>
-        </div>
+        {% endif %}
+        {# only show link label if not hidden #}
+        {% if not hideLink %}
+          <div class="c-nav-menu__footer">
+            <div class="c-btn--more"><span class="c-btn__link--more"><span class="c-btn__link-label--more">{{ linkLabel }}</span></span></div>
+
+              </div>
+        {% endif %}
+      </div>
+      </{{ wrapperTag }}>
       </li>
     {% endfor %}
   </ul>
