@@ -139,7 +139,7 @@ if( function_exists('acf_add_local_field_group') ):
                 array (
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'project',
+                    'value' => 'act_project',
                 ),
             ),
         ),
