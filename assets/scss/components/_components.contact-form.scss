@@ -12,33 +12,8 @@
   BEM BLOCK MODIFIER .c-contact-form--
  */
 
-.c-contact-form-- {
-  &request {
-    .c-contact-form__content{
-      @include mq($from : tablet){
-        display: flex;
-        align-items: flex-end;
-      }
+.c-contact-form--{
 
-      > *{
-        margin-right:$act-unit-t;
-        &:last-child{
-          margin-right: 0;
-        }
-      }
-    }
-    .c-contact-form__input-wrapper--submit{
-      padding: 0;
-      margin-bottom: $act-unit-t;
-    }
-
-    .ajax-loader{
-      display: none !important;
-    }
-  }
-  &next-step{
-    @extend .c-contact-form--placeholder-blocks;
-  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-contact-form--
@@ -54,6 +29,14 @@
 .c-contact-form__ {
   &header{
     display: block;
+  }
+  &content {
+    display: block;
+    padding: $act-unit;
+    background:  $col-dark;
+    color: $col-light;
+  ;
+    //@extend .c-contact-form__content--placeholder-blocks;
   }
   &fieldset{
     background: $col-text;
@@ -95,26 +78,23 @@
     padding: 0.5em 1em;
     color: white;
   }
-  &content {
-    display: block;
-    padding: $act-unit;
-    background:  $col-dark;
-    color: $col-light;
-  ;
-    //@extend .c-contact-form__content--placeholder-blocks;
-  }
+
   &footer {
     display: block
   }
 }
 
 
-//BEM ELEMENT MODIFIER  .c-contact-form__ELEMENT--
-
+//BEM ELEMENT MODIFIER  .c-contact-form__header--
 [class*=contact-form__header--] {
   @extend .c-contact-form__header;
 }
 
+[class*=contact-form__input-wrapper--] {
+  @extend .c-contact-form__input-wrapper;
+}
+
+//BEM ELEMENT MODIFIER  .c-contact-form__wrapper--
 [class*=contact-form__input-wrapper--] {
   @extend .c-contact-form__input-wrapper;
 }
@@ -130,29 +110,50 @@
   }
 }
 
-[class*=contact-form__input-content--] {
+//BEM ELEMENT MODIFIER  .c-contact-form__input-content--
+[class*=contact-form__content--] {
   @extend .c-contact-form__content;
 }
+
+.c-contact-form__content--{
+
+}
+
+//BEM ELEMENT MODIFIER  .c-contact-form__input-label--
+[class*=contact-form__label--] {
+  @extend .c-contact-form__label;
+}
+
+.c-contact-form__label--{
+  &full{
+    width: 100% !important;
+  }
+}
+
 /*
- * c-contact-form--placeholder-block
+ PLACEHOLDER BLOCKS
  */
 .c-contact-form--placeholder-blocks {
 
   .c-contact-form__ {
     &content {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+
+      @include mq($from:tablet){
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
     }
     &label {
-      width: 49%;
+      width: 100%;
+      @include mq($from:tablet){
+        width: calc(50% - 12px);
+      }
       margin-bottom: $act-unit;
     }
     &label--{
-      &textarea{
-        width: 100%;
-        margin-bottom: $act-unit;
-
+      &textarea {
+        @extend .c-contact-form__label--full;
       }
     }
     &label-text {
@@ -160,11 +161,11 @@
     }
     &input-wrapper {
       padding: $act-unit-s;
-      background: $brand-col-4;
+      background: $col-light;
     }
     &input-wrapper-- {
       &textarea{
-        background: #eee !important;
+        background: $col-light;
       }
       &submit{
         background: transparent;
@@ -172,11 +173,12 @@
         padding: 0;
         input{
           width: 100%;
-          background: $brand-col-3;
+          background: $brand-col-2;
           @include act-font-size($act-fs-3);
           padding: $act-unit;
+          color: $col-light;
           &:hover{
-            //background: darken($brand-col-3, 10%);
+            background: darken($brand-col-2, 10%);
           }
         }
       }
@@ -184,41 +186,27 @@
   }
   input {
     width: 100%;
-    color: #fff;
+    color: $col-dark;
     background: transparent;
     &::placeholder{
-      color: #fff;
+      color: $col-dark;
       opacity: 1;
     }
   }
   select {
     width: 100%;
-    color: #fff !important;
+    color: $col-dark !important;
     background: transparent !important;
   }
   textarea{
     background: transparent;
-    color: white;
+    color: $col-dark;
     &::placeholder{
-      color: $brand-col-1;
+      color: $col-dark;
       opacity: 1;
     }
   }
 }
-
-
-
-
-
-
-
-[class*=contact-form__input-label--] {
-  @extend .c-contact-form__label;
-}
-
-
-
-
 
 /*
  CONTACT FORM 7 CLASSES .wpcf7

@@ -202,8 +202,8 @@
   {% endif %}
   
   {% if options.body_text_colour %}
-  .l-site__main, .l-site__main *,
-  [class*=l-site__main--], [class*=l-site__main--] *{
+  .l-site__main, .l-site__main *:not(h1, h1 *):not(h2, h2 *):not(h3, h3 *):not(h4, h4 *):not(h5, h5 *):not(h6, h6 *):not(a, a *),
+  [class*=l-site__main--], [class*=l-site__main--] *:not(h1, h1 *):not(h2, h2 *):not(h3, h3 *):not(h4, h4 *):not(h5, h5 *):not(h6, h6 *):not(a, a *){
       color: var(--brand-col-{{ options.body_text_colour }}, {{ act_brand_colour.default[options.body_text_colour] }}) !important;
   }
   {% endif %}

@@ -1,5 +1,9 @@
 .o-list-flex{
-  display: flex;
+  display: block;
+  @include mq($from : tablet){
+    display: flex;
+  }
+
 
   > *{
     margin: 0 $act-unit-s;

@@ -64,6 +64,12 @@
   &body{
     color : $theme-col-7;
   }
+  &content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
   &media{
     margin-bottom: $act-unit;
   }
@@ -166,7 +172,7 @@
     }
   }
   &service{
-    @extend .o-list-flex;
+      @extend .o-list-flex;
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -227,6 +233,16 @@
   }
   &homepage-service{
     margin-bottom: $act-unit-l;
+  }
+  &service{
+    display: flex;
+    margin-bottom: $act-unit-l;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    @include mq($from : tablet){
+    margin-bottom: 0;
+    }
   }
 }
 
@@ -297,6 +313,13 @@
       .c-post-thumb__image:after{
         background: rgba(#000, 0.2);
       }
+    }
+  }
+  &service{
+    display: flex;
+    flex-direction: column;
+    > div:last-child{
+      flex: 1;
     }
   }
   &hero{
