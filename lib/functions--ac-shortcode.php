@@ -299,7 +299,10 @@ function act_shortcode_cta($atts, $content){
         'url2' => ''
     ), $atts);
 
+    $content = ($content) ? $content : $atts['text'];
+
     // Helper to convert btnXdata string to data attributes
+    if( ! function_exists('act_parse_data_atts') ):
     function act_parse_data_atts($data_str) {
         if (empty($data_str)) return '';
         $attrs = [];
@@ -317,6 +320,7 @@ function act_shortcode_cta($atts, $content){
         }
         return $attrs ? ' ' . implode(' ', $attrs) : '';
     }
+    endif;
 
     $a['text'] = '<p>'.$a['text'].'</p>';
 
@@ -328,10 +332,11 @@ function act_shortcode_cta($atts, $content){
     $output .= '</h4>';
     $output .= '</header>';
     $output .= '</div>';
-    $output .= '<div class="c-cta__content">';
-    $output .= $a['text'];
-    $output .= $content;
-    $output .= '</div>';
+    if ($content) {
+        $output .= '<div class="c-cta__content">';
+        $output .= wpautop($content);
+        $output .= '</div>';
+    }
     $output .= '<div class="c-cta__footer">';
     $output .= '<div class="c-btn-group">';
     if ($a['url1'] != '') {
