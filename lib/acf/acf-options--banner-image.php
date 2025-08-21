@@ -163,7 +163,7 @@ if( function_exists('acf_add_local_field_group') ):
                     ),
                 ),
                 'wrapper' => array(
-                    'width' => '100',
+                    'width' => '50',
                     'class' => '',
                     'id' => '',
                 ),
@@ -178,6 +178,29 @@ if( function_exists('acf_add_local_field_group') ):
                 'max_size' => '',
                 'mime_types' => '',
             ),
+            array(
+                'key' => 'field_banner_background_colour',
+                'label' => 'Banner Background Color',
+                'name' => 'banner_background_colour',
+                'type' => 'color_picker',
+                'instructions' => 'Pick a colour for the banner background',
+                'required' => 0,
+                'conditional_logic' => array(
+                    array(
+                        array(
+                            'field' => 'field_banner_slider',
+                            'operator' => '==',
+                            'value' => '0',
+                        ),
+                    ),
+                ),
+                'wrapper' => array(
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+            ),
             array (
                 'key' => 'field_banner_image_height',
                 'label' => 'Banner Height',
@@ -187,7 +210,28 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
-                    'width' => '33',
+                    'width' => '50',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+                'readonly' => 0,
+                'disabled' => 0,
+            ),
+            array (
+                'key' => 'field_banner_image_width',
+                'label' => 'Banner Width',
+                'name' => 'banner_image_width',
+                'type' => 'text',
+                'instructions' => 'set the width of the banner use auto or % vw or px value',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '50',
                     'class' => '',
                     'id' => '',
                 ),
@@ -207,7 +251,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'instructions' => 'Set the horizontal position of the single banner image',
                 'required' => 0,
                 'wrapper' => array(
-                    'width' => '33',
+                    'width' => '50',
                     'class' => '',
                     'id' => '',
                 ),
@@ -238,7 +282,7 @@ if( function_exists('acf_add_local_field_group') ):
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array(
-                    'width' => '34',
+                    'width' => '50',
                     'class' => '',
                     'id' => '',
                 ),

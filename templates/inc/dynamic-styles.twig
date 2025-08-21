@@ -296,12 +296,33 @@
 <!-- ACF Hero CSS -->
 <style>
 
+  {% if (fn('is_front_page') and options.banner_image_width ) or
+   (not fn('is_front_page') and options.page_banner_image_width and pageSettingsShowSiteHero == true)%}
+  /* options.banner_image_width */
+  .c-image--hero-background{
+      width: {{ options.banner_image_width }} !important;
+      min-width: unset !important;
+  }
+  {% else %}
+  /* NO options.banner_image_width */
+  {% endif %}
+
+  {% if (fn('is_front_page') and options.banner_background_colour ) or
+ (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
+  /* options.banner_image_width */
+  .l-site__hero{
+      background: {{ options.banner_background_colour }} !important;
+  }
+  {% else %}
+  /* NO options.banner_image_width */
+  {% endif %}
+
   {% if (fn('is_front_page') and cssBannerImageHeight) or
    (not fn('is_front_page') and cssBannerImageHeight and pageSettingsShowSiteHero == true)%}
   /* cssBannerImageHeight */
   .c-hero{
-    height: {{ cssBannerImageHeight }} !important;
-    min-height: unset !important;
+      height: {{ cssBannerImageHeight }} !important;
+      min-height: unset !important;
   }
   {% else %}
   /* NO cssBannerImageHeight */
