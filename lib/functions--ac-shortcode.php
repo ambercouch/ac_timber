@@ -299,7 +299,7 @@ function act_shortcode_cta($atts, $content){
         'url2' => ''
     ), $atts);
 
-    $content = ($content) ? $content : $atts['text'];
+    $content = ($content) ? $content : $a['text'];
 
     // Helper to convert btnXdata string to data attributes
     if( ! function_exists('act_parse_data_atts') ):
@@ -322,16 +322,18 @@ function act_shortcode_cta($atts, $content){
     }
     endif;
 
-    $a['text'] = '<p>'.$a['text'].'</p>';
 
     $output = '<div class="c-cta '.$a['class'].'">';
-    $output .= '<div class="c-cta__header">';
-    $output .= '<header class="c-header--cta">';
-    $output .= '<h4 class="c-header__heading--cta">';
-    $output .= '<span class="c-header__title--cta">'.$a['title'].'</span>';
-    $output .= '</h4>';
-    $output .= '</header>';
-    $output .= '</div>';
+    if ($a['title'])
+    {
+        $output .= '<div class="c-cta__header">';
+        $output .= '<header class="c-header--cta">';
+        $output .= '<h4 class="c-header__heading--cta">';
+        $output .= '<span class="c-header__title--cta">' . $a['title'] . '</span>';
+        $output .= '</h4>';
+        $output .= '</header>';
+        $output .= '</div>';
+    }
     if ($content) {
         $output .= '<div class="c-cta__content">';
         $output .= wpautop($content);
