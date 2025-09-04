@@ -18,6 +18,10 @@ ACTIMBER = {
 
             ACTIMBER.fn.actSmartMastheader();
             ACTIMBER.fn.actMastheadPadding();
+            ACTIMBER.fn.actScrollTo('40');
+            ACTIMBER.fn.actAlignNav();
+
+
 
             $('[data-control]:not([data-control-radio])').each(function() {
                 console.log("data cons")
@@ -490,6 +494,7 @@ ACTIMBER = {
 
             // Function to set padding-top
             function adjustPadding() {
+                if (!masthead || !primary) return; // escape if either doesn't exist
                 const mastheadHeight = masthead.offsetHeight; // Get the height of the masthead
                 primary.style.paddingTop = `${mastheadHeight}px`; // Set it as padding-top
             }
@@ -499,6 +504,15 @@ ACTIMBER = {
 
             // Adjust on window resize
             window.addEventListener('resize', adjustPadding);
+        },
+        actAlignNav: function(){
+            const branding = document.querySelector('.l-masthead__branding');
+            const nav = document.querySelector('.l-masthead__navigation');
+
+            if (branding && nav) {
+                const brandingTop = branding.offsetTop;
+                nav.style.top = brandingTop + 'px';
+            }
         }
     }
 };
