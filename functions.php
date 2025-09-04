@@ -167,4 +167,13 @@ add_action( 'admin_head', 'act_disable_classic_editor' );
 
 add_filter('wpcf7_autop_or_not', '__return_false');
 
+add_action('admin_head', function () { ?>
+    <style>
+        /* Only affect your Theme Colours group */
+        #acf-group_colours .acf-field-tab { clear: both; width:100% !important; }
+        /* Belt-and-braces: if anything still slips beside the tab, clear the next field */
+        #acf-group_colours .acf-field-tab + .acf-field { clear: both; }
+    </style>
+<?php });
+
 
