@@ -29,6 +29,12 @@
   &type {
     display: block
   }
+  &aligned-left{
+    text-align: left;
+    .c-btn-group{
+      justify-content: flex-start;
+    }
+  }
 }
 
 //BEM BLOCK MODIFIER FALLBACK .c-cta--

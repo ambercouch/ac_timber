@@ -39,8 +39,6 @@ $brand-col-8: $act-success-green !default;
 $brand-col-9: $act-fail-red !default;
 $brand-col-10: $act-amber !default;
 
-
-
 // Now Use CSS Variables with SASS Fallbacks
 $theme-col-1: var(--brand-col-1, $brand-col-1);
 $theme-col-2: var(--brand-col-2, $brand-col-2);
@@ -59,7 +57,7 @@ $theme-col-9: var(--brand-col-10, $brand-col-10);
 // Use Fallback Variables for SASS Styling
 $col-dark: $theme-col-6 !default;
 $col-light: $theme-col-7 !default;
-$col-accent: $theme-col-1 !default;
+$col-accent: $theme-col-2 !default;
 
 $col-text: $col-dark !default;
 $col-heading: $theme-col-4 !default;

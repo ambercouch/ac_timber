@@ -20,6 +20,17 @@
   align-items: flex-end!important;
 }
 
+.u-ai-str{
+  align-items: stretch;
+}
+
+.u-f-eq{
+  flex : 1 1 calc(50% - 0.5em);
+  @include mq($from : desktop){
+    flex : 1 1 0;
+  }
+}
+
 $flex-directions: (
         r: row,
         rr: row-reverse,

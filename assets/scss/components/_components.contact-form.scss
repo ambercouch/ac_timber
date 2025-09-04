@@ -33,7 +33,7 @@
   &content {
     display: block;
     padding: $act-unit;
-    background:  $col-dark;
+    background:  $brand-col-2;
     color: $col-light;
   ;
     //@extend .c-contact-form__content--placeholder-blocks;
@@ -101,7 +101,13 @@
 
 .c-contact-form__input-wrapper--{
   &submit{
-    padding-top:$inuit-global-spacing-unit-small;
+    transition: color 0.3s ease, filter 0.3s ease;
+    margin-top:$inuit-global-spacing-unit-small;
+    position: relative;
+    background: $brand-col-1;
+    &:hover{
+      filter: brightness(1.2);
+    }
   }
   &check{
     .wpcf7-list-item{
@@ -171,6 +177,7 @@
         background: transparent;
         width: 100%;
         padding: 0;
+        position: relative;
         input{
           width: 100%;
           background: $brand-col-2;
@@ -249,7 +256,7 @@
   transition: background 0.3s ease;
   @extend .c-contact-form__input;
   padding:$act-unit-t;
-  background: $brand-col-3;
+  background: transparent;
   color: white;
   cursor: pointer;
   &:hover{
@@ -259,4 +266,8 @@
 
 .wpcf7-form-control-wrap{
   //@extend .c-contact-form__input-wrapper;
+}
+
+.wpcf7-spinner{
+  position: absolute;
 }

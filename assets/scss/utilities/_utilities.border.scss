@@ -96,23 +96,29 @@
 
 .u-brad-t{
    border-radius: $act-unit-t !important;
+  overflow: hidden;
  }
 .u-brad-s{
   border-radius: $act-unit-s !important;
+  overflow: hidden;
 }
 .u-brad-m{
   border-radius: $act-unit !important;
+  overflow: hidden;
 }
 .u-brad{
   border-radius: $act-unit !important;
+  overflow: hidden;
 }
 .u-brad-l{
   border-radius: $act-unit-l !important;
+  overflow: hidden;
 }
 .u-brad-h{
   border-radius: $act-unit-h !important;
+  overflow: hidden;
 }
 
 .u-bshad{
-  box-shadow: 0 4px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
 }

@@ -21,7 +21,6 @@
     color: white;
   }
 }
-
 .u-bgc5, .u-bgc-5  {
   background-color: $brand-col-5 !important;
   //color: white; //default
@@ -61,6 +60,24 @@
   background-color: transparent !important;
   //color: white; //default
 }
+
+// Utility background colour classes
+@for $i from 1 through 9 {
+  .u-bgc-t#{$i} {
+    background-color: nth((
+            $theme-col-1,
+            $theme-col-2,
+            $theme-col-3,
+            $theme-col-4,
+            $theme-col-5,
+            $theme-col-6,
+            $theme-col-7,
+            $theme-col-8,
+            $theme-col-9
+    ), $i) !important;
+  }
+}
+
 
 
 

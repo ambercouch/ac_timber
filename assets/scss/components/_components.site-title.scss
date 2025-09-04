@@ -22,6 +22,14 @@ BEM BLOCK MODIFIERS .c-site-title
   @extend .c-site-title;
 }
 
+.c-site-title--{
+  &upload{
+   a:hover{
+     filter:brightness(1) !important;
+   }
+  }
+}
+
 .c-site-title__heading--{
   &page{
      margin-left: auto;
