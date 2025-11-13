@@ -50,4 +50,42 @@
     font-family: $act-font-family-sans;
   }
 }
+.l-site__subsidiary{
+  background: rgba($brand-col-2, 0.1);
 
+}
+.l-subsidiary{
+  background: transparent;
+  padding: $act-unit $act-unit-h;
+}
+.l-widget-area--subsidiary{
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  display: block;
+}
+.c-accl-post-list{
+  margin-bottom: 0 !important;
+}
+
+
+.c-accl-post-list__post-thumb{
+  width: 33.33%;
+}
+.c-accl-post-list__post-thumb{
+  padding: $act-unit ;
+}
+.c-accl-post-thumb {
+  padding: 0 0 0 0;
+  background: #fff;
+  height: 100%;
+  margin-bottom: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 6px #00000029;
+}
+.c-header--subsidiary{
+  text-align: center;
+}
+.c-accl-post-thumb__heading a{
+  color: $brand-col-1;
+}
