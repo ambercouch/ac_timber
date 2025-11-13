@@ -13,7 +13,11 @@
           <div class="c-nav-menu__item--social-share">
             <a class="c-nav-menu__link--social-share" href="https://www.facebook.com/sharer/sharer.php?u={{ post.link }}" target="_blank">
               <span class="c-nav-menu__link-label--social-share">Share on Facebook</span><span class="c-nav-menu__svg-icon">{% include 'inc/svg-use.twig' with {'icon' : 'icon-facebook'} %}</span>
-
+            </a>
+          </div>
+          <div class="c-nav-menu__item--social-share">
+            <a class="c-nav-menu__link--social-share" href="https://www.linkedin.com/sharing/share-offsite/?url={{ post.link }}" target="_blank">
+              <span class="c-nav-menu__link-label--social-share">Share on Linkedin</span><span class="c-nav-menu__svg-icon">{% include 'inc/svg-use.twig' with {'icon' : 'icon-linkedin'} %}</span>
             </a>
           </div>
         </div>

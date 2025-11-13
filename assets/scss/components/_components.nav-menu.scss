@@ -12,7 +12,7 @@
 
 .c-nav-menu-- {
   &primary {
-   @include act-font-size($act-fs-6, 1.3);
+   //@include act-font-size($act-fs-6, 1.3);
 
     //@include breakout-band($brand-col-2);
     //margin: 0 auto;
@@ -116,6 +116,7 @@
 .c-nav-menu__list--{
   &primary{
   @extend .o-list-flex--center;
+    flex-wrap: wrap;
   }
   &pagination{
     @extend .o-flex-split--last;
@@ -183,7 +184,8 @@
 
 .c-nav-menu__link--{
   &primary{
-    padding:$act-unit $act-unit-s;
+    @include act-font-size($act-fs-4);
+    padding: $act-unit-s;
     display: block;
     background: transparent;
     font-weight: 500;
