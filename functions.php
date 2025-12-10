@@ -169,25 +169,37 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 /*
  * PMP functions
  */
-
-function redirect_to_members_homepage($redirect_to, $request, $user) {
-    // Check if the user has an active membership
-    if (pmpro_hasMembershipLevel(null, $user->ID)) {
-        return site_url('/this-season');
+function redirect_to_members_homepage( $redirect_to, $request, $user ) {
+    // If PMP isn't active, do nothing special.
+    if ( ! function_exists( 'pmpro_hasMembershipLevel' ) ) {
+        return $redirect_to;
     }
+
+    // Check if the user has an active membership
+    if ( $user instanceof WP_User && pmpro_hasMembershipLevel( null, $user->ID ) ) {
+        return site_url( '/this-season' );
+    }
+
     return $redirect_to;
 }
-add_filter('login_redirect', 'redirect_to_members_homepage', 10, 3);
 
-function redirect_after_registration($user_id) {
+function redirect_after_registration( $user_id ) {
+    // If PMP isn't active, do nothing.
+    if ( ! function_exists( 'pmpro_hasMembershipLevel' ) ) {
+        return;
+    }
+
     // Check if the new user has an active membership
-    if (pmpro_hasMembershipLevel(null, $user_id)) {
-        wp_set_auth_cookie($user_id, true);
-        wp_redirect(site_url('/this-season'));
+    if ( pmpro_hasMembershipLevel( null, $user_id ) ) {
+        wp_set_auth_cookie( $user_id, true );
+        wp_redirect( site_url( '/this-season' ) );
         exit();
     }
 }
-add_action('user_register', 'redirect_after_registration');
+if ( function_exists( 'pmpro_hasMembershipLevel' ) ) {
+    add_filter( 'login_redirect', 'redirect_to_members_homepage', 10, 3 );
+    add_action( 'user_register', 'redirect_after_registration' );
+}
 
 
 function redirect_logged_in_users_from_homepage() {
