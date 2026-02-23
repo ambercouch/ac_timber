@@ -200,6 +200,7 @@
     .current-menu-item &{
       background: transparent;
       font-weight: 500;
+      color: $col-dark;
       .is-overlay-hero &{
         color: darken(white, 5%);
       }

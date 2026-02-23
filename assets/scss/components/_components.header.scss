@@ -121,7 +121,7 @@
   }
   &page{
     text-decoration: none;
-    @include act-font-size($act-fs-g);
+    @include act-font-size($act-fs-m);
     font-weight: 900;
   }
   &single-col-page-800{
@@ -200,7 +200,7 @@
 
 .c-header__title-link--{
   &blog-list{
-    color: $brand-col-1;
+    //color: $brand-col-1;
   }
 }
 

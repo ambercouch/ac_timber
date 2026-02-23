@@ -22,18 +22,31 @@ $btl-dark-yellow: #b18201;
 $btl-dark-red: #790641;
 $btl-grey-light: #f2f2f2;
 
-$brand-col-1 : $btl-dark-blue;
-$brand-col-2 : $btl-turquoise;
-$brand-col-3 : $btl-dark-turquoise;
-$brand-col-4 : $btl-yellow;
-$brand-col-5 : $btl-dark-yellow;
-$brand-col-6 : $btl-dark-red;
-$brand-col-7 : $btl-grey-light;
-$brand-col-8 : $act-grey-light;
-$brand-col-9 : $act-grey-dark;
+// BTL colour pallet 2026
+$btl-cream:            #F6F1EA;
+$btl-deep-cocoa:       #3C1414;
+$btl-deep-teal:        #1F4E4A;
+$btl-rust-orange:      #9F4416;
+$btl-river-path-teal:  #5F8F87;
+$btl-green:            #4F7F6A;
+$btl-warm-cream:       #EFE5D8;
+$btl-sage-teal:        #8FB8A8;
 
-$col-text : $brand-col-1;
-$col-heading : $brand-col-2;
-$col-link : $brand-col-2;
-$col-accent : $brand-col-3;
+$brand-col-1: $btl-cream;
+$brand-col-2: $btl-deep-cocoa;
+$brand-col-3: $btl-deep-teal;
+$brand-col-4: $btl-rust-orange;
+$brand-col-5: $btl-river-path-teal;
+$brand-col-6: $btl-green;
+$brand-col-7: $btl-warm-cream;
+$brand-col-8: $btl-sage-teal;
+$brand-col-9: $btl-sage-teal;
+
+$col-dark:        $brand-col-3; // Deep Teal
+$col-light:       $brand-col-1; // Cream
+$col-accent:      $brand-col-4; // Rust Orange (primary buttons)
+$col-accent-alt:  $brand-col-5; // River Path Teal (secondary buttons)
+$col-text:        $brand-col-2; // Deep Cocoa
+$col-heading:     $brand-col-2; // Deep Cocoa
+$col-link:        $brand-col-6; // Green
 

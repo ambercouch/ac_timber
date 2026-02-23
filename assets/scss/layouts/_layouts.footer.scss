@@ -1,7 +1,8 @@
 .l-footer{
   display: block;
-  background: $brand-col-1;
+  background: $col-dark;
   text-align: center;
+  color: $col-light;
 }
 
 //BEM BLOCK MODIFIER FALLBACK .l-footer--
@@ -73,11 +74,15 @@
 
 .l-footer{
   a{
-    color: $brand-col-2;
+    color: $col-light;
     text-decoration: none;
     &:hover{
       color: white;
     }
+
+  }
+  h3{
+    color: $col-light;
   }
 }
 

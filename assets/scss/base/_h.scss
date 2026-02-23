@@ -3,11 +3,15 @@
   color: $col-heading;
   .l-single-article &{
     color: $col-text;
-    font-family: $act-font-family-sans;
+    font-family: $act-font-family-serif;
   }
 
 }
 
 h1{
   @include act-font-size($act-fs-k)
+}
+
+h2, h3, h4{
+  font-family: dm-sans !important;
 }

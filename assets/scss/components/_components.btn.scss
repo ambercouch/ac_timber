@@ -43,15 +43,35 @@
     }
   }
   &read-more{
-    @extend .o-btn--brand-2;
-    @extend .o-btn--pill
+    @extend .o-btn--pill;
+    background: $col-accent-alt;
+    &:hover {
+      background: darken($col-accent-alt, 5%);
+      a{
+        color: #fff;
+        &:hover{
+          color: white !important;
+        }
+      }
+
+  }
   }
   &primary{
-    @extend .o-btn--brand-2;
     @extend .o-btn--pill;
-    a{
-    color:white !important;
+    background: $col-accent;
+    a {
+      color: white !important;
+      &:hover{
+        color: white !important;
+      }
+    }
   }
+    &secondary{
+      background: $col-accent-alt;
+      @extend .o-btn--pill;
+      a{
+        color:white !important;
+      }
   }
   &blog-back{
     @extend .c-btn--primary;

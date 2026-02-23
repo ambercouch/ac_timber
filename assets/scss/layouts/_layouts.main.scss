@@ -4,6 +4,7 @@ BEM BLOCK .l-main
 
 .l-main{
   @extend .c-site-wrapper--responsive;
+  background: transparent;
   padding-top: 0;
   padding-left: $act-unit;
   padding-right: $act-unit;
