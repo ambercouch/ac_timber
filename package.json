@@ -30,7 +30,7 @@
     "inuitcss": "^6.0.0-beta.5",
     "merge-stream": "^1.0.1",
     "pixrem": "^3.0.2",
-    "postcss": "^8.4.47",
+    "postcss": "^8.5.8",
     "pump": "^1.0.2",
     "readable-stream": "^3.6.2",
     "remodal": "^1.1.1",
