@@ -5,21 +5,18 @@ BEM BLOCK .l-masthead
   border-bottom:none;
   width: 100%;
   @extend .o-wrapper;
-  position: relative;
   padding: $act-unit;
   padding-top: 0;
   padding-bottom: 0;
   display: flex;
   flex-wrap: wrap;
-  //justify-content: center;
-  //margin-bottom: $act-unit;
   @include mq($from : desktop){
     padding: $act-unit-l;
     padding-top: 0;
     padding-bottom: 0;
   }
   &:after{
-    //width: 100%;
+
   }
   &.has-before-widgets{
     padding-top: 0;
@@ -38,9 +35,7 @@ BEM BLOCK MODIFIERS .l-masthead--
 
 .l-masthead--{
   &front-page{
-    background: transparent;
-    position: absolute;
-    z-index: 9999;
+
   }
 }
 
@@ -63,26 +58,6 @@ BEM ELEMENTS .l-masthead__
      */
     display: none;
 
-    /*
-     * band-block-bottom - Blocking navigation band positioned below the logo
-     */
-    //@extend .element--band-block-bottom;
-
-    /*
-     * band-block-top - Blocking navigation band positioned Above the logo
-     */
-    //@extend .element--band-block-top;
-
-    /*
-    * is-split-nav - splits the nav items left and right
-    */
-    // @extend .is-split-nav;
-
-    /*
-     * abso-layer position absolute to move the navigation inline with the logo
-     */
-    @extend .element--abso-layer;
-
     @include mq($from: desktop){
       display: block;
       margin: 0 auto;
@@ -93,16 +68,6 @@ BEM ELEMENTS .l-masthead__
     width: 100%;
   }
   &branding{
-    /*
-     * Position the logo and strap centre
-     */
-    //@extend .element--items-centre;
-
-    /*
-     * Position the logo and strap centre
-     */
-    @extend .element--flush-left;
-
     background: transparent;
     max-width: 100%;
     margin-bottom: 0;
@@ -174,6 +139,10 @@ BEM ELEMENTS .l-masthead__
   display: flex;
   justify-content: center;
   text-align: center;
+  *{
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /*
@@ -194,13 +163,19 @@ BEM ELEMENTS .l-masthead__
   position: absolute;
   pointer-events: none;
 }
+.element--abso-layer--window-right{
+  right: 0;
+  left: auto;
+  position: absolute;
+  pointer-events: none;
+}
 
 .is-split-nav{
   width: 100%;
   .c-nav-menu__list{
     width: 100%;
     justify-content: center;
-    > :nth-child(4){
+    > :nth-child(3){
       margin-left: auto;
     }
   }

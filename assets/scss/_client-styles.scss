@@ -3,6 +3,50 @@
  */
 .client-code-{
   &xxx{
+    .l-masthead{
+      /*
+       * contain the navigation to the site width when positioning
+       */
+      //position: relative;
+    }
+    .l-masthead__navigation{
+      /*
+       * band-block-bottom - Blocking navigation band positioned below the logo
+       */
+      //@extend .element--band-block-bottom;
 
+      /*
+       * band-block-top - Blocking navigation band positioned Above the logo
+       */
+      //@extend .element--band-block-top;
+
+      /*
+      * is-split-nav - splits the nav items left and right
+      */
+      //@extend .is-split-nav;
+
+      /*
+       * abso-layer position absolute to move the navigation inline with the logo
+       */
+      //@extend .element--abso-layer;
+
+      /*
+      * abso-layer position absolute to move the navigation inline with the logo and to the far right of the window
+      */
+      //@extend .element--abso-layer--window-right;
+    }
+
+    .l-masthead__branding{
+      /*
+       * Position the logo and strap centre
+       */
+      //@extend .element--items-centre;
+
+      /*
+       * Position the logo and strap centre
+       */
+      //@extend .element--flush-left;
+
+    }
   }
 }
