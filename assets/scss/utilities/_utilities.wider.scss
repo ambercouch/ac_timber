@@ -1,0 +1,18 @@
+
+.u-wider--50{
+  margin-left: clamp(-24%, calc((100vw - 100%) / -2), 0px) ;
+  margin-right: clamp(-25%, calc((100vw - 100%) / -2), 0px) ;
+  padding: 0 24px;
+}
+
+.u-wider--25{
+  margin-left: clamp(-12.5%, calc((100vw - 100%) / -2), 0px)!important;
+  margin-right: clamp(-12.5%, calc((100vw - 100%) / -2), 0px)!important;
+  padding: 0 24px;
+}
+
+.u-wider--100{
+  margin-left: clamp(-50%, calc((100vw - 100%) / -2), 0px)!important;
+  margin-right: clamp(-50%, calc((100vw - 100%) / -2), 0px)!important;
+  padding: 0 24px;
+}
