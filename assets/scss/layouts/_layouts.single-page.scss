@@ -94,7 +94,9 @@
 }
 .l-single-page__header--{
   &single-col-page-800{
-    text-align: center;
+    width: 36em;
+    margin-right: auto;
+    margin-left: auto;
   }
   &single-col-page-centred{
     text-align: center;
@@ -123,7 +125,7 @@
     max-width: 36em;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    text-align: left;
   }
   &page{
     //padding-top: $act-unit-l;
@@ -138,6 +140,14 @@
 
 [class*='l-single-page__footer--']{
   @extend .l-single-page__footer;
+}
+
+.l-single-page__footer--{
+  &single-col-page-800{
+    width: 36rem;
+    max-width: 100%;
+    padding: 0
+  }
 }
 
 [class*='l-single-page__aside--']{

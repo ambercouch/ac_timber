@@ -28,8 +28,10 @@ $args = array(
     'description' => 'Lists services offered',
     'public' => true,
     'menu_position' => 10,
-    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes', 'post-formats'),
-    'has_archive' => 'service'
+    'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'page-attributes'),
+    'has_archive' => 'service',
+    'rewrite' => array('slug' => 'service'),
+    'show_in_rest' => true // Enables Gutenberg support for taxonomy
 );
 register_post_type('act_service', $args);
 

@@ -14,13 +14,13 @@
   {%  endif %}
 <div class="c-post-thumb__header">
 
-  <header class="entry-header c-header--post-thumb{{ postFormatClass }} ">
-    <h2 class="entry-title c-header--heading--post-thumb{{ postFormatClass }}">
+  <header class="entry-header c-header--post-thumb">
+    <h2 class="entry-title c-header--heading--post-thumb">
         <span class="c-header__title">
-          <a class="c-header__title-link{{ postFormatClass }}" href="{{ post.link }}">{{ post.title }}</a>
+          <a class="c-header__title-link--post-thumb" href="{{ post.link }}">{{ post.title }}</a>
         </span>
     </h2>
-    <div class="entry-meta c-header__post-meta{{ postFormatClass }}">
+    <div class="entry-meta c-header__post-meta--post-thumb">
       {% include 'inc/post-meta.twig' %}
     </div>
   </header>

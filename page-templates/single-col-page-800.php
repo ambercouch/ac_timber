@@ -1,5 +1,6 @@
 <?php
 /** Template Name: Single Col Page 800
+ *  Template Post Type: page, act_service
  *
  * @package WordPress
  * @subpackage ac_timber
