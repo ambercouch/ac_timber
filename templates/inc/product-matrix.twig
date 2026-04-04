@@ -2,23 +2,27 @@
   <table class="c-product-matrix">
     <thead>
       <tr>
-        <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--feature">Feature</th>
+        <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--feature">Service</th>
         {% for product in products %}
           <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--product">
             <span class="c-product-matrix__product-title">{{ product.title|e }}</span>
-            {% if product.price %}
-              <span class="c-product-matrix__product-price">
-                <span class="c-product-matrix__product-currency">£</span>{{ product.price|e }}
-                {% if product.price_frequency %}
-                  <span class="c-product-matrix__product-frequency">{{ product.price_frequency|e }}</span>
-                {% endif %}
-              </span>
-            {% endif %}
           </th>
         {% endfor %}
       </tr>
     </thead>
     <tbody>
+    <tr>
+      <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--feature">{{  'Monthly Cost' }}</th>
+      {% for product in products %}
+        <td scope="col" class="c-product-matrix__heading c-product-matrix__heading--product">
+          {% if product.price %}
+            <span class="c-product-matrix__product-price">
+                <span class="c-product-matrix__product-currency">£</span>{{ product.price|e }}
+              </span>
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
       {% for row in matrix_rows %}
         <tr>
           <th scope="row" class="c-product-matrix__feature">{{ row.label|e }}</th>
