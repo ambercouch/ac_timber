@@ -1,0 +1,47 @@
+<div class="c-product-matrix-wrap">
+  <table class="c-product-matrix">
+    <thead>
+      <tr>
+        <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--feature">Service</th>
+        {% for product in products %}
+          <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--product">
+            <span class="c-product-matrix__product-title">{{ product.title|e }}</span>
+          </th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="col" class="c-product-matrix__heading c-product-matrix__heading--feature">{{  'Monthly Cost' }}</th>
+      {% for product in products %}
+        <td scope="col" class="c-product-matrix__heading c-product-matrix__heading--product">
+          {% if product.price %}
+            <span class="c-product-matrix__product-price">
+                <span class="c-product-matrix__product-currency">£</span>{{ product.price|e }}
+              </span>
+          {% endif %}
+        </td>
+      {% endfor %}
+    </tr>
+      {% for row in matrix_rows %}
+        <tr>
+          <th scope="row" class="c-product-matrix__feature">{{ row.label|e }}</th>
+          {% for cell in row.cells %}
+            <td class="c-product-matrix__value c-product-matrix__value--{{ cell.display_type }} {{ cell.display_type == 'boolean' and cell.is_enabled ? 'is-yes' : '' }} {{ cell.display_type == 'boolean' and not cell.is_enabled ? 'is-no' : '' }}">
+              {% if cell.display_type == 'text' and cell.text %}
+                <span class="c-product-matrix__value-text">{{ cell.text|e }}</span>
+              {% elseif cell.display_type == 'boolean' and cell.is_enabled %}
+                <span class="c-product-matrix__status" aria-label="Included">✓</span>
+              {% else %}
+                <span class="c-product-matrix__status" aria-label="Not included">✕</span>
+              {% endif %}
+              {% if cell.note %}
+                <span class="c-product-matrix__note">{{ cell.note|e }}</span>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

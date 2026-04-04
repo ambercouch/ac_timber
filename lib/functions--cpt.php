@@ -106,6 +106,35 @@ function  act_cpt() {
     );
     register_post_type('product', $args);
 
+    /*
+    Register Product Features
+    */
+
+    $labels = array(
+        'name' => _x('Product Features', 'post type general name'),
+        'singular_name' => _x('Product Feature', 'post type singular name'),
+        'add_new' => _x('Add New', 'product_feature'),
+        'add_new_item' => __('Add New Product Feature'),
+        'edit_item' => __('Edit Product Feature'),
+        'new_item' => __('New Product Feature'),
+        'all_items' => __('All Product Features'),
+        'view_item' => __('View Product Feature'),
+        'search_items' => __('Search Product Features'),
+        'not_found' => __('No product features found'),
+        'not_found_in_trash' => __('No product features found in the Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Product Features'
+    );
+    $args = array(
+        'labels' => $labels,
+        'menu_icon' => 'dashicons-list-view',
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'supports' => array('title', 'page-attributes'),
+    );
+    register_post_type('product_feature', $args);
+
 //    $labels = array(
 //        'name' => _x('Testimonials', 'post type general name'),
 //        'singular_name' => _x('Testimonial', 'post type singular name'),
