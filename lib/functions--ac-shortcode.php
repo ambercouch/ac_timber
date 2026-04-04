@@ -307,3 +307,129 @@ function act_shortcode_content_gallery($atts, $content){
 
 
 
+
+add_shortcode('ac_product_matrix', 'act_shortcode_product_matrix');
+function act_shortcode_product_matrix($atts) {
+    $a = shortcode_atts(array(
+        'products' => '',
+    ), $atts);
+
+    $product_ids = array_filter(array_map('absint', array_map('trim', explode(',', $a['products']))));
+
+    if (empty($product_ids)) {
+        return '';
+    }
+
+    $products = get_posts(array(
+        'post_type' => 'product',
+        'post_status' => 'publish',
+        'post__in' => $product_ids,
+        'orderby' => 'post__in',
+        'posts_per_page' => -1,
+    ));
+
+    if (empty($products)) {
+        return '';
+    }
+
+    $features = get_posts(array(
+        'post_type' => 'product_feature',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'orderby' => array(
+            'menu_order' => 'ASC',
+            'title' => 'ASC',
+        ),
+    ));
+
+    if (empty($features)) {
+        return '';
+    }
+
+    $products_context = array();
+    foreach ($products as $product) {
+        $price = get_field('product_price', $product->ID);
+        $products_context[] = array(
+            'id' => $product->ID,
+            'title' => get_the_title($product->ID),
+            'price' => ($price !== '' && $price !== null) ? number_format((float) $price, 2) : '',
+            'price_frequency' => get_field('price_frequency', $product->ID),
+        );
+    }
+
+    $product_values = array();
+    foreach ($products as $product) {
+        $rows = get_field('matrix_items', $product->ID);
+        $product_values[$product->ID] = array();
+
+        if (!empty($rows) && is_array($rows)) {
+            foreach ($rows as $row) {
+                $feature_id = !empty($row['matrix_feature']) ? absint($row['matrix_feature']) : 0;
+                if (!$feature_id) {
+                    continue;
+                }
+
+                $value_type = isset($row['matrix_value_type']) ? $row['matrix_value_type'] : 'boolean';
+                $value = array(
+                    'display_type' => 'boolean',
+                    'is_enabled' => false,
+                    'text' => '',
+                    'note' => isset($row['matrix_note']) ? $row['matrix_note'] : '',
+                );
+
+                if ($value_type === 'text' && !empty($row['matrix_custom_text'])) {
+                    $value['display_type'] = 'text';
+                    $value['text'] = $row['matrix_custom_text'];
+                } else {
+                    $value['display_type'] = 'boolean';
+                    $value['is_enabled'] = !empty($row['matrix_enabled']);
+                }
+
+                $product_values[$product->ID][$feature_id] = $value;
+            }
+        }
+    }
+
+    $matrix_rows = array();
+    foreach ($features as $feature) {
+        $feature_id = $feature->ID;
+        $feature_label = get_field('feature_label', $feature_id);
+        $row_label = $feature_label ? $feature_label : get_the_title($feature_id);
+
+        $cells = array();
+        foreach ($products as $product) {
+            $value = isset($product_values[$product->ID][$feature_id]) ? $product_values[$product->ID][$feature_id] : array(
+                'display_type' => 'boolean',
+                'is_enabled' => false,
+                'text' => '',
+                'note' => '',
+            );
+
+            $cells[] = array(
+                'product_id' => $product->ID,
+                'display_type' => $value['display_type'],
+                'is_enabled' => !empty($value['is_enabled']),
+                'text' => $value['text'],
+                'note' => $value['note'],
+            );
+        }
+
+        $matrix_rows[] = array(
+            'feature_id' => $feature_id,
+            'label' => $row_label,
+            'cells' => $cells,
+        );
+    }
+
+    $context = array(
+        'products' => $products_context,
+        'features' => $features,
+        'matrix_rows' => $matrix_rows,
+    );
+
+    if (class_exists('Timber')) {
+        return Timber::compile('inc/product-matrix.twig', $context);
+    }
+
+    return '';
+}
