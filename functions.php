@@ -32,6 +32,7 @@ require_once get_template_directory() . '/lib/functions--template-tags.php';
 require_once get_template_directory() . '/lib/functions--ac-menu-filters.php';
 require_once get_template_directory() . '/lib/functions--cpt.php';
 require_once get_template_directory() . '/lib/functions--seed-product-features.php';
+require_once get_template_directory() . '/lib/functions--seed-products-matrix.php';
 
 require_once get_template_directory() . '/lib/admin/functions--admin-clean.php';
 require_once get_template_directory() . '/lib/admin/functions--admin-widgets.php';
