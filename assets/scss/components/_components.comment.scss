@@ -1,0 +1,63 @@
+/*
+  BEM BLOCK .c-comment
+ */
+
+.c-comment {
+  display: block;
+  background: $col-light;
+  padding: $act-unit;
+ display: flex;
+  gap: $act-unit
+}
+
+/*
+  BEM BLOCK MODIFIER .c-comment--
+ */
+
+.c-comment-- {
+  &type {
+    display: block
+  }
+}
+
+//BEM BLOCK MODIFIER FALLBACK .c-comment--
+
+[class*=c-comment--] {
+  @extend .c-comment;
+}
+
+/*
+  BEM ELEMENTS .c-comment__
+ */
+
+.c-comment__ {
+  &header {
+    display: block
+  }
+
+  &heading {
+    display: block
+  }
+
+  &title {
+    display: inline;
+  }
+
+  &link {
+    display: inline
+  }
+
+  &content {
+    display: block
+  }
+
+  &footer {
+    display: block
+  }
+}
+
+//BEM ELEMENT MODIFIER FALLBACK .c-comment--
+
+[class*=c-comment__header--] {
+  @extend .c-comment__header;
+}

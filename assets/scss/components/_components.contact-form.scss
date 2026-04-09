@@ -22,6 +22,8 @@
   @extend .c-contact-form;
 }
 
+
+
 /*
   BEM ELEMENTS .c-contact-form__
  */
@@ -33,7 +35,7 @@
   &content {
     display: block;
     padding: $act-unit;
-    background:  $brand-col-2;
+    background:  $theme-col-2;
     color: $col-light;
   ;
     //@extend .c-contact-form__content--placeholder-blocks;
@@ -63,6 +65,12 @@
   }
   &label-text{
     @include act-font-size($act-fs-5, 1);
+    .c-contact-form--comment-form &{
+      display: none;
+    }
+  }
+  &label-notes{
+    color: $col-text ;
   }
   &label-text-radio{
     @include act-font-size($act-fs-5, 1);
@@ -104,7 +112,6 @@
     transition: color 0.3s ease, filter 0.3s ease;
     margin-top:$inuit-global-spacing-unit-small;
     position: relative;
-    background: $brand-col-1;
     &:hover{
       filter: brightness(1.2);
     }
@@ -114,6 +121,9 @@
       margin: 0;
     }
   }
+  &comment-cancel{
+    display: none !important;
+  }
 }
 
 //BEM ELEMENT MODIFIER  .c-contact-form__input-content--
@@ -122,7 +132,10 @@
 }
 
 .c-contact-form__content--{
-
+  &comment-form{
+    background: transparent;
+    padding: 0;
+  }
 }
 
 //BEM ELEMENT MODIFIER  .c-contact-form__input-label--
@@ -133,6 +146,21 @@
 .c-contact-form__label--{
   &full{
     width: 100% !important;
+  }
+}
+
+//BEM ELEMENT MODIFIER  .c-contact-form__input-label--
+[class*=contact-form__input--] {
+  @extend .c-contact-form__input;
+}
+
+.c-contact-form__input--{
+  &comment-form{
+    border: 5px solid rgba(0, 0, 0, .2);
+    padding: $act-unit-s $act-unit-t;
+    line-height: 1;
+    width: 100%;
+    display: block !important;
   }
 }
 
