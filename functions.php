@@ -22,6 +22,8 @@ require_once get_template_directory() . '/lib/functions--acf.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-options.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-video-settings.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-page-settings.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-page-masthead-settings.php';
+require_once get_template_directory() . '/lib/acf/functions--acf-post-settings.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-service-settings.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-project-settings.php';
 require_once get_template_directory() . '/lib/acf/functions--acf-post-title-settings.php';

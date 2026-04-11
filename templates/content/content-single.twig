@@ -2,7 +2,23 @@
 
 {% block content %}
   <article id="post-{{ post.id }}" class="l-single-article {{ post.class }}">
-  {% if post.thumbnail %}
+
+    {% if not post.meta('hide_post_title') and post.meta('title_position') == 'above' %}
+      <div class="l-single-article__header{{ templateClass }} {{ pageTitleCssClasses }}">
+        {% include "inc/header.twig"
+          with {
+          headerTitle : null,
+          headingLevel : '1' ,
+          headerModClass : templateClass
+        }%}
+
+        <div class="l-single-article__meta{{ templateClass }}">
+          {% include 'inc/post-meta.twig' with { metaPostDate : true, metaSocialShare : post.meta('show_share_links') } %}
+        </div>
+      </div>
+    {% endif %}
+
+  {% if post.thumbnail and not post.meta('hide_featured_image') %}
     <div class="l-single-article__feature-image--single">
       <div class="c-feature-image--single">
         <img src="{{ post.thumbnail.src('feature500') }}" class="c-feature-image__img" alt="{{ post.title }}"/>
@@ -10,7 +26,7 @@
     </div>
   {%  endif %}
 
-    {% if not hidePageTitle %}
+    {% if not post.meta('hide_post_title') and post.meta('title_position') != 'above' %}
       <div class="l-single-article__header{{ templateClass }} {{ pageTitleCssClasses }}">
         {% include "inc/header.twig"
           with {

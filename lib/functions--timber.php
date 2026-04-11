@@ -160,7 +160,9 @@ class StarterSite extends TimberSite {
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['pageTitleCssClasses'] = get_field('page_title_css_classes', $post_id);
-        $context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
+        $queried_object_id = get_queried_object_id();
+        $context['hide_site_masthead'] = $queried_object_id ? get_field('hide_site_masthead', $queried_object_id) : false;
+        //$context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
         $context['hidePageLogo'] = get_field('hide_site_logo', $post_id);
         $context['hideMainNavigation'] = get_field('hide_site_navigation', $post_id);
 

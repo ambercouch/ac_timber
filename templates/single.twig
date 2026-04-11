@@ -35,13 +35,14 @@
 {% endblock %}
 
 
-{% block belowContent %}
+{% block after_content %}
     {{ parent() }}
 {% endblock %}
 
-{% set hasSideBar = true %}
+{% set hasSideBar = false %}
 
 {% block sidebar %}
+  {% if hasSideBar == true %}
   <div class="l-main__sidebar {{ not sidebar_widgets ? 'is-empty' : ''}}">
     {% if sidebar_widgets == '' %}
       <!-- Add some widgets to the footer -->
@@ -53,6 +54,7 @@
       </div>
     {% endif %}
   </div>
+  {% endif %}
 {% endblock %}
 
 

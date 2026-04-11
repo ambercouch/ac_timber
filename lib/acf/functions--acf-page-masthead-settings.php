@@ -2,15 +2,15 @@
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array (
-        'key' => 'group_page_settings',
-        'title' => 'Page Settings',
+        'key' => 'group_page_masthead_settings',
+        'title' => 'Page Masthead Settings',
         'fields' => array (
             array (
-                'key' => 'field_hide_title',
-                'label' => 'Hide Title',
-                'name' => 'hide_title',
+                'key' => 'field_hide_logo',
+                'label' => 'Hide Logo',
+                'name' => 'hide_site_logo',
                 'type' => 'true_false',
-                'instructions' => 'This option will remove the title from this page',
+                'instructions' => 'This option will hide the logo that is in the masthead.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -18,15 +18,16 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'message' => 'Hide Title',
+                'message' => 'Hide Logo',
                 'default_value' => 0,
+                'ui' => 1,
             ),
             array (
-                'key' => 'field_page_title_css_classes',
-                'label' => 'Title CSS Classes',
-                'name' => 'page_title_css_classes',
-                'type' => 'text',
-                'instructions' => 'Add utility classes the the title of the page to change the style or design ',
+                'key' => 'field_hide_navigation',
+                'label' => 'Hide Main Navigation',
+                'name' => 'hide_site_navigation',
+                'type' => 'true_false',
+                'instructions' => 'This option will hide the navigation in the masthead.',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -34,14 +35,16 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'message' => ''
+                'message' => 'Hide Main Nav',
+                'default_value' => 0,
+                'ui' => 1,
             ),
             array (
-                'key' => 'field_show_page_comments',
-                'label' => 'Show Page Comments',
-                'name' => 'show_page_comments',
+                'key' => 'field_hide_masthead',
+                'label' => 'Hide Masthead',
+                'name' => 'hide_site_masthead',
                 'type' => 'true_false',
-                'instructions' => 'This option will show the page comment even if they are hidden globally',
+                'instructions' => 'This option will hide the masthead (logo nav etc) from this page',
                 'required' => 0,
                 'conditional_logic' => 0,
                 'wrapper' => array (
@@ -49,8 +52,26 @@ if( function_exists('acf_add_local_field_group') ):
                     'class' => '',
                     'id' => '',
                 ),
-                'message' => 'Show Comments',
+                'message' => 'Hide Masthead',
                 'default_value' => 0,
+                'ui' => 1,
+            ),
+            array (
+                'key' => 'field_page_force_show_masthead',
+                'label' => 'Show the masthead above the hero',
+                'name' => 'page_force_show_masthead',
+                'type' => 'true_false',
+                'instructions' => 'This option will show the masthead above the hero even if the global option is to overlay it.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => 'Don\'t Overlay Masthead',
+                'default_value' => 0,
+                'ui' => 1,
             ),
         ),
         'location' => array (
@@ -66,6 +87,13 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'act_service',
+                )
+            ),
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'post',
                 )
             ),
         ),
