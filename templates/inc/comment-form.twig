@@ -1,6 +1,6 @@
 
 
-    <form class="c-contact-form__form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
+    <form class="c-contact-form__form--comment-form" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
       <div class="c-contact-form__content--comment-form" >
         {% if  user %}
             <input type="hidden" name="email" value="{{ user.email }}">
@@ -10,32 +10,35 @@
             <label class="c-contact-form__label">
               <span class="c-contact-form__label-text" >Email</span>
               <span class="c-contact-form__input-wrapper" >
-                <input class="c-contact-form__input" placeholder="Email" required name="email" type="email" id="email">
+                <input class="c-contact-form__input--comment-form" placeholder="Email" required name="email" type="email" id="email">
               </span>
+              <div class="c-contact-form__label-notes"><small>Your email will not be published</small></div>
             </label>
             <label class="c-contact-form__label">
               <span class="c-contact-form__label-text" >Name</span>
               <span class="c-contact-form__input-wrapper" >
-                <input class="c-contact-form__input" placeholder="Name"  required name="author" type="text">
+                <input class="c-contact-form__input--comment-form" placeholder="Name"  required name="author" type="text">
               </span>
             </label>
             <label class="c-contact-form__label">
               <span class="c-contact-form__label-text" >Website</span>
               <span class="c-contact-form__input-wrapper" >
-                <input class="c-contact-form__input" placeholder="Website" name="url" type="url">
+                <input class="c-contact-form__input--comment-form" placeholder="Website" name="url" type="url">
               </span>
             </label>
         {% endif %}
-        <label class="c-contact-form__label--textarea">
+        <label class="c-contact-form__label--comment-form-textarea">
           <span class="c-contact-form__label-text" >Comment</span>
-            <textarea class="c-contact-form__input--textarea" placeholder="Leave a comment..." name="comment" cols="60" rows="3"></textarea>
+            <textarea class="c-contact-form__input--comment-form" placeholder="Leave a comment..." name="comment" cols="60" rows="3"></textarea>
         </label>
         <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
         <input name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
         <div class="c-contact-form__input-wrapper--submit" >
-        <input class="c-contact-form__input--submit c-btn--primary" type="submit" name="Post comment" class="btn">
+        <input class="c-contact-form__input--comment-form-submit c-btn__input--primary" type="submit" name="Post comment" class="btn">
         </div>
+        <div class="c-contact-form__input-wrapper--comment-cancel" >
         <button class="c-btn--cancel-comment" type="reset">Cancel</button>
+        </div>
 {#        <p>Your comment will be revised by the site if needed.</p>#}
       </div>
     </form>
