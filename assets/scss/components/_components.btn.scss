@@ -72,6 +72,9 @@
       margin-right: $act-unit;
     }
   }
+  &input{
+    @extend .c-btn__link;
+  }
 }
 
 [class*='c-btn__link--']{
@@ -132,4 +135,14 @@
 
 [class*='c-btn__icon--']{
   @extend .c-btn__icon;
+}
+
+[class*='c-btn__input--']{
+  @extend .c-btn__input;
+}
+.c-btn__input--{
+  &primary{
+    @extend .c-btn__link--primary;
+    width: auto;
+  }
 }
