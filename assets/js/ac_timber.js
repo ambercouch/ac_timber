@@ -19,7 +19,7 @@ ACTIMBER = {
             ACTIMBER.fn.actSmartMastheader();
             ACTIMBER.fn.actMastheadPadding();
             ACTIMBER.fn.actScrollTo('40');
-            ACTIMBER.fn.actAlignNav();
+            //ACTIMBER.fn.actAlignNav();
 
 
 

@@ -2,7 +2,7 @@
  * Client specific settings that override the defaults
  */
 .client-code-{
-  &xxx{
+  &cmt{
     .l-masthead{
       /*
        * contain the navigation to the site width when positioning
@@ -33,14 +33,14 @@
       /*
       * abso-layer position absolute to move the navigation inline with the logo and to the far right of the window
       */
-      //@extend .element--abso-layer--window-right;
+      @extend .element--abso-layer--window-right;
     }
 
     .l-masthead__branding{
       /*
        * Position the logo and strap centre
        */
-      //@extend .element--items-centre;
+      @extend .element--items-centre;
 
       /*
        * Position the logo and strap centre
@@ -50,3 +50,57 @@
     }
   }
 }
+
+.client-code- {
+  &cmt {
+    .c-accl-post-list {
+      justify-content: center;
+    }
+    .c-accl-post-list__post-thumb {
+      padding: $act-unit;
+    }
+
+    .c-accl-post-thumb{
+      border-radius: $act-unit-s;
+      overflow: hidden;
+      box-shadow: 0 3px 6px #00000029;
+    }
+
+    .c-accl-post-list__post-thumb{
+      @extend .u-1-3
+    }
+    .c-accl-post-thumb__link{
+      text-decoration: none;
+    }
+
+    .l-post-thumb-list{
+      width: 36rem;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .l-post-thumb-list__item{
+      margin-bottom: $act-unit-l;
+    }
+
+    .c-post-thumb--blog-list {
+      text-align: left;
+      border-radius: $act-unit;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 3px 6px #00000029;
+    }
+    .c-post-thumb__feature-image--blog-list{
+      margin-bottom: $act-unit-l;
+    }
+    .c-post-thumb__header{
+      padding: 0 $act-unit-l;
+    }
+    .c-post-thumb__body{
+      padding: 0 $act-unit-l;
+    }
+    .c-post-thumb__footer{
+      padding: 0 $act-unit-l $act-unit-l ;
+    }
+  } //.client-code-
+} //&cmt

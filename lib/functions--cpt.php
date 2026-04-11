@@ -5,7 +5,7 @@ function act_cpt() {
      * Include Service
      */
 
-    //require_once get_template_directory() . '/lib/cpt/cpt.service.php';
+    require_once get_template_directory() . '/lib/cpt/cpt.service.php';
 
     /*
      * Includes Team member
