@@ -20,5 +20,6 @@ define('ACT_MENUS', serialize([
         'Mobile',
         'Hero',
         'Service',
+        'Categories'
     ]));
 

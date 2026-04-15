@@ -116,6 +116,8 @@ class StarterSite extends TimberSite {
          */
         global $post_id;
 
+        $queried_object_id = get_queried_object_id();
+
         //var_dump( get_field('page_banner_image')); die();
 
         $context['act_brand_colour']['theme'][1] = get_field('act_brand_colour_1', 'option');
@@ -160,7 +162,7 @@ class StarterSite extends TimberSite {
         //ACF page setup
         $context['hidePageTitle'] = get_field('hide_title', $post_id);
         $context['pageTitleCssClasses'] = get_field('page_title_css_classes', $post_id);
-        $queried_object_id = get_queried_object_id();
+
         $context['hide_site_masthead'] = $queried_object_id ? get_field('hide_site_masthead', $queried_object_id) : false;
         //$context['hidePageMasthead'] = get_field('hide_site_masthead', $post_id);
         $context['hidePageLogo'] = get_field('hide_site_logo', $post_id);
@@ -221,17 +223,18 @@ class StarterSite extends TimberSite {
         $context['cssBannerColourCastMode'] = get_field('banner_image_colour_cast_mode', 'options');
         $context['cssBannerImageHeight'] = get_field('banner_image_height', 'options');
         $context['cssBannerImagePositionHorizontal'] = get_field('banner_image_position_horizontal', 'options');
-        $context['pageBannerImg'] = get_field('page_banner_image');
-        $context['pageBannerContent'] = get_field('page_banner_content');
-        $context['pageBannerLogo'] = get_field('page_banner_logo');
 
-        $context['cssPageBannerImageSaturation'] = get_field('page_banner_image_saturation');
-        $context['cssPageBannerColourCast'] = get_field('page_banner_image_colour_cast');
-        $context['cssPageBannerColourCastColour'] = get_field('page_banner_image_colour_cast_colour');
-        $context['cssPageBannerColourCastOpacity'] = get_field('page_banner_image_colour_cast_opacity');
-        $context['cssPageBannerColourCastMode'] = get_field('page_banner_image_colour_cast_mode');
-        $context['cssPageBannerImageHeight'] = get_field('page_banner_image_height');
-        $context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal');
+        $context['pageBannerImg'] = get_field('page_banner_image', $queried_object_id);
+        $context['pageBannerContent'] = get_field('page_banner_content', $queried_object_id);
+        $context['pageBannerLogo'] = get_field('page_banner_logo', $queried_object_id);
+
+        $context['cssPageBannerImageSaturation'] = get_field('page_banner_image_saturation', $queried_object_id);
+        $context['cssPageBannerColourCast'] = get_field('page_banner_image_colour_cast', $queried_object_id);
+        $context['cssPageBannerColourCastColour'] = get_field('page_banner_image_colour_cast_colour', $queried_object_id);
+        $context['cssPageBannerColourCastOpacity'] = get_field('page_banner_image_colour_cast_opacity', $queried_object_id);
+        $context['cssPageBannerColourCastMode'] = get_field('page_banner_image_colour_cast_mode', $queried_object_id);
+        $context['cssPageBannerImageHeight'] = get_field('page_banner_image_height', $queried_object_id);
+        $context['cssPageBannerImagePositionHorizontal'] = get_field('page_banner_image_position_horizontal', $queried_object_id);
 
         $context['options'] = get_fields('options');
 

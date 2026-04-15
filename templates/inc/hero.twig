@@ -1,9 +1,11 @@
 {% if not fn('is_front_page') and pageSettingsShowSiteHero != true %}
+  <!-- not front page -->
   {%   set bannerImg = pageBannerImg %}
   {%   set bannerLogo = pageBannerLogo %}
   {%   set bannerContent = pageBannerContent %}
   {%   set menuName = pageBannerMenuName %}
   {% else %}
+    <!-- is front page -->
     {% set menuName = "hero" %}
     {% set menu = _context['menu' ~ menuName | capitalize ] %}
 {% endif %}
@@ -37,7 +39,7 @@
         </picture>
       </div>
 
-    {% endif %}
+   {% endif %}
 
 {% if bannerContent != '' or  bannerLogo.url != '' %}
     <div class="c-hero__body{{ templateClass }} {{ classSiteBannerContentPosHoz}} {{ classSiteBannerContentPosVert }}">
