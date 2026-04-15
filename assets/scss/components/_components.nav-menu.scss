@@ -105,8 +105,8 @@
     margin-left: 0;
     z-index: 999;
     pointer-events: all!important;
-    background: $theme-col-3;
-    padding: $act-unit-t;
+    //background: $theme-col-4;
+    //padding: $act-unit-t;
     .menu-item-has-children:hover &{
       left: 0;
       display: block;
@@ -138,8 +138,12 @@
     width: 100%;
     padding: $act-unit-s;
     color: $col-text;
+    background: $theme-col-4;
     text-decoration: none;
-    &:hover{
+    &:hover, &:focus{
+      @extend .c-nav-menu__sub-menu-link;
+      background: $theme-col-4;
+      color: $col-text;
       :not(.c-btn--primary) {
         filter: brightness(0); /* Lighten the color on hover */
       }
@@ -167,7 +171,7 @@
     @extend .o-list-flex--end;
     align-items: center;
     > li:last-child{
-      margin-left: $act-unit-l;
+      // margin-left: $act-unit-l;
     }
     .c-widget--footer &{
       flex-direction: column;
@@ -247,6 +251,9 @@
     margin-bottom: 0;
     }
   }
+  &categories{
+    display: inline-block;
+  }
 }
 
 //BEM ELEMENT MODIFIER FALLBACK .c-nav-menu__link--
@@ -264,8 +271,13 @@
     color: $col-text;
     &:hover{
       :not(.c-btn--primary) {
-        filter: brightness(0); /* Lighten the color on hover */
+        filter:none; /* Lighten the color on hover */
+        background: $theme-col-4;
       }
+    }
+    .c-nav-menu__item--primary:hover &{
+      background: $theme-col-4;
+      filter:none;
     }
     .is-display-overlay &{
       color:white;
@@ -284,6 +296,9 @@
       .is-display-overlay &{
         //color: darken(white, 5%);
       }
+    }
+    .menu-item-has-children &{
+      margin-right: $act-unit-t;
     }
 
   }
@@ -341,6 +356,23 @@
         filter: brightness(1);
         color: white;
       }
+    }
+  }
+  &categories{
+    @extend .c-btn;
+    @extend .o-btn--pill;
+    @extend .o-btn--transparent;
+    color: $brand-col-2;
+    &:hover{
+      .current_page_item &{
+        background: $brand-col-2;
+        color: white;
+      }
+    }
+    .current_page_item &, .current-menu-item &{
+      background: $brand-col-2;
+      color: white;
+      cursor: default;
     }
   }
 }

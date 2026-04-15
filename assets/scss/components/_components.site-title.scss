@@ -86,6 +86,7 @@ BEM ELEMENTS .c-site-title
     font-family: $act-font-family-sans;
     font-weight: 500;
     @include act-font-size($act-fs-6, $modifier: 1);
+    padding: $act-unit 0;
   }
 }
 
