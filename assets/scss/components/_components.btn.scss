@@ -49,6 +49,31 @@
       @extend .c-btn__link--alt;
     }
   }
+  &h{
+    a{
+      @extend .o-btn--h;
+    }
+  }
+  &l{
+    a{
+      @extend .o-btn--l;
+    }
+  }
+  &m{
+    a{
+      @extend .o-btn--m;
+    }
+  }
+  &s{
+    a{
+      @extend .o-btn--s;
+    }
+  }
+  &t{
+    a{
+      @extend .o-btn--t;
+    }
+  }
 }
 
 .c-btn__{

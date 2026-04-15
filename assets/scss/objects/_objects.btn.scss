@@ -27,28 +27,43 @@
 .o-btn--{
   &h {
     @extend .o-btn;
-    padding: $act-unit-h !important;
+    padding: $act-unit-h * 0.66 $act-unit-h !important;
     @include act-font-size($act-fs-2, 1);
+    *{
+      @include act-font-size($act-fs-2, 1);
+    }
   }
   &l {
     @extend .o-btn;
-    padding: $act-unit-l !important;
+    padding: $act-unit-l * 0.66 $act-unit-l !important;
     @include act-font-size($act-fs-3, 1);
+    *{
+      @include act-font-size($act-fs-3, 1);
+    }
   }
   &m {
     @extend .o-btn;
-    padding: $act-unit !important;
+    padding: $act-unit * 0.66 $act-unit !important;
     @include act-font-size($act-fs-4, 1);
+    *{
+      @include act-font-size($act-fs-4, 1);
+    }
   }
   &s {
     @extend .o-btn;
-    padding: $act-unit-s !important;
+    padding: $act-unit-s * 0.66 $act-unit-s !important;
     @include act-font-size($act-fs-5, 1);
+    *{
+      @include act-font-size($act-fs-5, 1);
+    }
   }
   &t {
     @extend .o-btn;
-    padding: $act-unit-t !important;
+    padding: $act-unit-t * 0.66 $act-unit-t !important;
     @include act-font-size($act-fs-6, 1);
+    *{
+      @include act-font-size($act-fs-6, 1);
+    }
   }
   &transparent{
     @extend .o-btn;
