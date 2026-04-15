@@ -235,7 +235,7 @@
   {% endif %}
 
   {% if options.body_link_colour %}
-  .l-site__main a, .l-site__main [class*=__link]  {
+  .l-site__main a:not('.wp-block-button__link'), .l-site__main [class*=__link]  {
       color: var(--brand-col-{{ body_link_colour }}, {{ act_brand_colour.default[ body_link_colour] }}) !important;
   }
 
