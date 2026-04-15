@@ -35,8 +35,8 @@
   &content {
     display: block;
     padding: $act-unit;
-    background:  $theme-col-2;
-    color: $col-light;
+    background:  $col-light;
+    color: $col-dark;
   ;
     //@extend .c-contact-form__content--placeholder-blocks;
   }
@@ -109,11 +109,21 @@
 
 .c-contact-form__input-wrapper--{
   &submit{
-    transition: color 0.3s ease, filter 0.3s ease;
-    margin-top:$inuit-global-spacing-unit-small;
-    position: relative;
-    &:hover{
-      filter: brightness(1.2);
+    padding: $act-unit-s 0;
+    input{
+      transition: background 0.3s ease;
+        @extend .c-contact-form__input;
+        padding:$act-unit-t;
+        background:$theme-col-1;
+        color: white;
+        cursor: pointer;
+        &:hover:not([disabled]){
+          filter: brightness(1.2);
+        }
+      &[disabled]{
+        opacity: 0.6;
+        filter: saturate(0.8);
+      }
     }
   }
   &check{
@@ -208,12 +218,12 @@
         position: relative;
         input{
           width: 100%;
-          background: $brand-col-2;
+          background: $theme-col-3;
           @include act-font-size($act-fs-3);
           padding: $act-unit;
           color: $col-light;
           &:hover{
-            background: darken($brand-col-2, 10%);
+            background: darken($brand-col-3, 10%);
           }
         }
       }
@@ -280,17 +290,17 @@
   @extend .c-contact-form__label-text;
 }
 
-.wpcf7-submit{
-  transition: background 0.3s ease;
-  @extend .c-contact-form__input;
-  padding:$act-unit-t;
-  background: transparent;
-  color: white;
-  cursor: pointer;
-  &:hover{
-    //background: darken($brand-col-3, 5%);
-  }
-}
+//.wpcf7-submit{
+//  transition: background 0.3s ease;
+//  @extend .c-contact-form__input;
+//  padding:$act-unit-t;
+//  background: ;
+//  color: white;
+//  cursor: pointer;
+//  &:hover{
+//    //background: darken($brand-col-3, 5%);
+//  }
+//}
 
 .wpcf7-form-control-wrap{
   //@extend .c-contact-form__input-wrapper;
