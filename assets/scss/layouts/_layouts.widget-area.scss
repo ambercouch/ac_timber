@@ -106,18 +106,18 @@
   }
   &footer-widgets{
     @include inuit-font-size($act-fs-6);
-    margin-bottom:$inuit-global-spacing-unit;
+    margin-bottom:$act-unit;
     text-align: left;
     @include mq($from: tablet){
-      padding-left:$inuit-global-spacing-unit ;
+      margin-top-left:$act-unit ;
       flex-basis: 50%;
     }
     @include mq($from: desktop){
-      padding-left:$inuit-global-spacing-unit ;
+      margin-left:$act-unit ;
       flex-basis: 25%;
     }
     &:first-child{
-      padding-left:0 ;
+      margin-left:0 ;
     }
     &:last-child{
       @include mq($from : tablet){
