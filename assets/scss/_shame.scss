@@ -279,3 +279,11 @@
 .wpcf7-list-item{
   margin-left: 0;
 }
+.wp-block-button__link{
+  background: $theme-col-1;
+  color: $col-light;
+  &:hover, &:focus{
+    @extend .wp-block-button__link;
+    filter: brightness(1.2);
+  }
+}
