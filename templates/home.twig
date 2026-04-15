@@ -5,12 +5,49 @@
 {% endblock %}
 
 {% block hero %}
-  {% if removeHeroBlog %}
-  {% else %}
-  <section id="siteHero" class="l-site__hero">
-    {% include 'inc/hero.twig' ignore missing %}
-  </section>
+  {% if pageBannerImg != ''
+    or cssPageBannerColourCast != ''
+    or pageSettingsShowSiteHero == true
+    or (fn('is_front_page') and pageSettingsHideSiteHero != true )
+  %}
+    <section id="siteHero" class="l-site__hero{{ templateClass }}">
+      {% include 'inc/hero.twig' ignore missing %}
+    </section>
+    {% else %}
+    <!-- No hero -->
   {% endif %}
+{% endblock %}
+
+{% block before_main %}
+  <section class="l-main-before--blog">
+    {% if not hidePageTitle %}
+      <div class="l-main-before__header--blog ">
+        {% include "inc/header.twig"
+          with {
+          headingLevel : '1' ,
+          headerModClass : '--blog'
+        }%}
+      </div>
+    {% endif %}
+      {% if post.content %}
+        <div class="l-main-before__content--blog ">
+          {{ post.content }}
+        </div>
+      {% endif %}
+      <div class="l-main-before__nav-menu--blog">
+        {% set menuName = "categories" %}
+        {% set menuTitle = "Categories" %}
+        {% include 'inc/navigation.twig' %}
+      </div>
+
+
+    {#    <div class="l-main-before__widget-area">#}
+    {#      {% include 'inc/widget-area.twig' with {'widgetContainer' : 'main-before'}%}#}
+    {#    </div>#}
+
+  </section>
+
+
 {% endblock %}
 
 
