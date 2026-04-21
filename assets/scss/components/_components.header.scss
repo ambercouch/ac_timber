@@ -146,18 +146,18 @@
 .c-header__heading--{
   &page{
     text-decoration: none;
-    @include act-font-size($act-fs-g, $modifier: 3);
+    @include act-font-size($act-fs-k, $modifier: 3);
     font-weight: 900;
   }
   &single-post{
     text-decoration: none;
-    @include act-font-size($act-fs-g, $modifier: 3);
+    @include act-font-size($act-fs-k, $modifier: 3);
     font-weight: 900;
     margin-bottom: $act-unit-s;
   }
   &service{
     @extend .c-header__heading--page;
-    @include act-font-size($act-fs-1);
+    @include act-font-size($act-fs-k, $modifier: 3);
     text-decoration: none;
     font-weight: 500;
   }
@@ -177,7 +177,6 @@
     color: $brand-col-2;
   }
   &single-col-page-800{
-    @include act-font-size($act-fs-g);
     margin-bottom: $act-unit-l;
   }
   &footer{
