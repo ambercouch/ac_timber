@@ -154,10 +154,11 @@
     @include act-font-size($act-fs-k, $modifier: 3);
     font-weight: 900;
     margin-bottom: $act-unit-s;
+    text-align: left;
   }
   &service{
     @extend .c-header__heading--page;
-    @include act-font-size($act-fs-k, $modifier: 3);
+    @include act-font-size($act-fs-4, $modifier: 1);
     text-decoration: none;
     font-weight: 500;
   }

@@ -178,4 +178,10 @@ add_action('admin_head', function () { ?>
     </style>
 <?php });
 
+add_filter('acf/settings/current_language', function() {
+    return apply_filters('wpml_default_language', null);
+});
 
+add_action('wp_head', function () {
+    echo '<meta name="google" content="notranslate">';
+});
