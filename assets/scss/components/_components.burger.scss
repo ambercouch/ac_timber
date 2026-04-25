@@ -10,9 +10,10 @@
 .c-burger__btn{
   cursor: pointer;
   border: 0;
-  padding: 0;
+  padding: $act-unit-s $act-unit-t;
   transition: right 0.3s 0s cubic-bezier(0.6, 0.72, 0.38, 1.08);
   background: transparent;
+  display: block;
   &[data-state=on]{
     //transition: right 0.3s 0.1s cubic-bezier(0.6, 0.72, 0.38, 1.08);
     //right: 14rem;
@@ -38,7 +39,7 @@
 .c-burger__bars{
   position: relative;
   @include size(40px, 26px);
-  margin-bottom: $act-unit-s;
+  //margin-bottom: $act-unit-s;
 
 }
 
