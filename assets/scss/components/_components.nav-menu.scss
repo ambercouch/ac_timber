@@ -362,15 +362,16 @@
     @extend .c-btn;
     @extend .o-btn--pill;
     @extend .o-btn--transparent;
-    color: $brand-col-2;
+    color: $theme-col-2;
     &:hover{
+      color: $theme-col-2;
       .current_page_item &{
-        background: $brand-col-2;
+        background: $theme-col-2;
         color: white;
       }
     }
     .current_page_item &, .current-menu-item &{
-      background: $brand-col-2;
+      background: $theme-col-2;
       color: white;
       cursor: default;
     }
