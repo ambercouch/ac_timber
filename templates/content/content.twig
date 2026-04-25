@@ -32,7 +32,7 @@
         <div class="c-post-thumb__excerpt">
           <p>{{ post.post_excerpt }}</p>
         </div>
-        <a href="{{ post.link }}" class="c-post-thumb__read-more">Read More</a>
+        <a href="{{ post.link }}" class="c-post-thumb__read-more">{{ function('__', 'Read More', '_act') }}</a>
       </div>
 
     {% else %}
@@ -40,14 +40,14 @@
         <div class="c-post-thumb__excerpt--truncated">
           <p>{{ post.content | striptags | truncate(50) }}</p>
         </div>
-        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">Read More</a>
+        <a href="{{ post.link }}" class="post{{ postFormatClass }}__read-more">{{ function('__', 'Read More', '_act') }}</a>
       </div>
 
     {% endif %}
     <footer class="c-post-thumb__footer">
       {% if (fn('comments_open', post) or post.comment_count > 0 ) %}
       <a class="c-post-thumb__comment-link" href="{{ post.link }}#comments">
-        <span>{{ post.comment_count }} Comments </span>
+        <span>{{ post.comment_count }} {{ function('__', 'Comments', '_act') }} </span>
       </a>
       {% endif %}
 

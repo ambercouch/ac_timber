@@ -26,6 +26,11 @@ if (is_category()){
     $context['catDescription'] = category_description();
 }
 
+if (false) { __('Read More', '_act'); }
+if (false) { __('Older Posts', '_act'); }
+if (false) { __('Newer Posts', '_act'); }
+if (false) { __('Comments', '_act'); }
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
     array_unshift( $templates, 'home.twig' );
