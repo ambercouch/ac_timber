@@ -8,13 +8,13 @@
                 <li class="c-nav-menu__item--pagination c-nav-menu__item--prev">
                     <a class="c-nav-menu__link--pagination" href="{{ pagination.prev.link }}">
                       <span class="c-nav-menu__link-label--pagination">
-                         Previous
+                         {{ function('__', 'Newer Posts', '_act') }}
                       </span>
                     </a>
                 </li>
             {% else %}
                 <li class="c-nav-menu__item--pagination c-nav-menu__item--prev is-disabled">
-                  <span class="c-nav-menu__link-label-disabled--pagination" >Previous</span>
+                  <span class="c-nav-menu__link-label-disabled--pagination" >{{ function('__', 'Newer Posts', '_act') }}</span>
                 </li>
             {% endif %}
 
@@ -22,13 +22,13 @@
             <li class="c-nav-menu__item--pagination c-nav-menu__item--next">
               <a class="c-nav-menu__link--pagination" href="{{ pagination.next.link }}">
                       <span class="c-nav-menu__link-label--pagination">
-                         Next
+                         {{ function('__', 'Older Posts', '_act') }}
                       </span>
               </a>
             </li>
           {% else %}
             <li class="c-nav-menu__item--pagination c-nav-menu__item--next is-disabled">
-              <span class="c-nav-menu__link-label-disabled--pagination" >Next</span>
+              <span class="c-nav-menu__link-label-disabled--pagination" >{{ function('__', 'Older Posts', '_act') }}</span>
             </li>
           {% endif %}
 

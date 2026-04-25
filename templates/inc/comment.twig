@@ -3,7 +3,7 @@
 		<img src="{{ comment.avatar(200) }}" alt="Avatar for {{ comment.author.name  }}" class="c-comment__avatar-img">
 	</div>
 	<div class="c-comment__content">
-	<h5 class="c-comment__heading">{{comment.author.name}} says</h5>
+	<h5 class="c-comment__heading">{{comment.author.name}} {{ function('__', 'says', '_act') }}</h5>
 	<div class="c-comment__body">{{comment.comment_content|wpautop}}</div>
 </div>
 </div>
