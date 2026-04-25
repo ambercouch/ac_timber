@@ -170,6 +170,10 @@
     }
     .c-post-thumb__body{
       padding: 0 $act-unit-l;
+      text-align: left;
+    }
+    .c-post-thumb__body--service{
+      padding: 0;
     }
     .c-post-thumb__footer{
       padding: 0 $act-unit-l $act-unit-l ;
@@ -187,6 +191,23 @@
     }
     .l-masthead, [class*=l-masthead--]{
       max-width: none;
+    }
+    .c-site-title__description-heading{
+      display: none;
+    }
+    @include mq($from : desktop){
+      .l-masthead__site-title {
+        margin-top: 48px;
+        margin-bottom: 48px;
+      }
+    }
+
+    .c-burger{
+      top: 96px;
+      background: rgba(#e2725b, 0.1);
+    }
+    .l-site__off-page-container--mobile-navigation{
+      padding-top: 156px !important;
     }
   } //.client-code-
 } //&cmt

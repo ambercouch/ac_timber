@@ -205,9 +205,7 @@
 
 .c-post-thumb__body--{
   &service{
-    margin-bottom: auto;
-    margin-top: auto;
-    padding: $act-unit 0;
+    margin-top: 0 !important;
   }
 };
 
