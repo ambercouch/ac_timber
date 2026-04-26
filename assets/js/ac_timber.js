@@ -23,7 +23,9 @@ ACTIMBER = {
 
 
 
-            $('[data-control]:not([data-control-radio])').each(function() {
+            $('[data-control]:not([data-control-radio])').not(function () {
+                return $(this).closest('.l-masthead__navigation').length;
+            }).each(function() {
                 console.log("data cons")
 
                 const containerId = $(this).attr('data-control');

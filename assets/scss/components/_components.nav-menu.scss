@@ -98,7 +98,9 @@
     pointer-events: all !important;
   }
   &sub-menu{
-    position: absolute;
+    @include mq($from : desktop){
+      position: absolute;
+    }
     left: -99999px;
     display: none;
     top: 100%;
@@ -140,10 +142,17 @@
     color: $col-text;
     background: $theme-col-4;
     text-decoration: none;
+    .l-off-page-container--mobile-navigation &{
+      background: $col-light;
+      padding-left: 0;
+    }
     &:hover, &:focus{
       @extend .c-nav-menu__sub-menu-link;
       background: $theme-col-4;
       color: $col-text;
+      .l-off-page-container--mobile-navigation &{
+        background: $col-light;
+      }
       :not(.c-btn--primary) {
         filter: brightness(0); /* Lighten the color on hover */
       }
