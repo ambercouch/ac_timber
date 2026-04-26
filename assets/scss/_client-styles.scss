@@ -141,7 +141,10 @@
     }
 
     .l-post-thumb-list__item--service{
-      flex: 0 0 calc((100% - 100px) / 3);
+      @include mq($from : desktop){
+        flex: 0 0 calc((100% - 100px) / 3);
+      }
+
     }
 
     .l-post-thumb-list--service{
@@ -208,6 +211,13 @@
     }
     .l-site__off-page-container--mobile-navigation{
       padding-top: 156px !important;
+    }
+    .c-nav-menu__sub-menu-link--mobile{
+      background: rgba(0,0,0, 0.05);
+      padding-left: $act-unit-s;
+    }
+    .c-nav-menu__link--mobile{
+      margin-bottom: $act-unit-s;
     }
   } //.client-code-
 } //&cmt
