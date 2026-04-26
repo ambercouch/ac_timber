@@ -261,17 +261,17 @@
 [data-container]:not([data-parent]){
   transition: max-height 0.3s ease-in-out, margin-bottom 0.3s ease-in-out;
   overflow: hidden;
-  &[data-state=on]{
+  &[data-state=on]:not(.c-nav-menu__sub-menu--primary){
      max-height:999px;
     .is-off{
     display: none
   }
    }
-  &[data-state=off]{
+  &[data-state=off]:not(.c-nav-menu__sub-menu--primary){
     max-height:0;
     margin-bottom: 0;
     .is-on{
-      display: none
+      display: block
     }
   }
 }
