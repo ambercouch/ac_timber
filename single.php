@@ -18,7 +18,10 @@ $context['template'] = 'single-'.$post->post_type;
 $context['postType'] = $post->post_type;
 
 
-require_once get_template_directory() . '/lib/wp-timber/timber--comment-form.php';
+if (false) { __('Be the first to leave a comment!', '_act'); }
+if (false) { __('Submit a comment', '_act'); }
+if (false) { __('comments for this post are closed', '_act'); }
+if (false) { __('says', '_act'); }
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

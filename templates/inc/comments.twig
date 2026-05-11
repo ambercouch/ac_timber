@@ -2,7 +2,7 @@
   <div class="l-comments__wrapper--responses">
     <div class="l-comments__responses">
       <div class="l-responses-list">
-        <h3 class="l-responses-list__heading">Comments</h3>
+        <h3 class="l-responses-list__heading">{{ function('__', 'Comments', '_act') }}</h3>
         {% if post.comment_count > 0 %}
           <ol class="l-responses-list__list">
             {% for cmt in post.comments %}
@@ -17,7 +17,7 @@
             {% endfor %}
           </ol>
           {% else %}
-          <p>Be the first to leave a comment!</p>
+          <p>{{ function('__', 'Be the first to leave a comment!', '_act') }}</p>
         {% endif %}
       </div>
     </div>
@@ -25,9 +25,9 @@
 
   <div class="l-comments__wrapper--comment-form">
     <div class="c-contact-form--comment-form">
-      <h3 class="c-contact-form__heading--comment-form">Submit a comment</h3>
+      <h3 class="c-contact-form__heading--comment-form">{{ function('__', 'Submit a comment', '_act') }}</h3>
     {% if post.comment_status == "closed" %}
-      <p> comments for this post are closed </p>
+      <p>{{ function('__', 'comments for this post are closed', '_act') }}</p>
     {% else %}
       <!-- comment form -->
       {% include "inc/comment-form.twig" %}
