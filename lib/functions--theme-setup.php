@@ -10,7 +10,7 @@ if ( ! function_exists( '_act_setup' ) ) :
      */
     function _act_setup() {
 
-        load_theme_textdomain( '_s', get_template_directory() . '/languages' );
+        load_theme_textdomain( '_act', get_template_directory() . '/languages' );
 
         // Add default posts and comments RSS feed links to head.
         add_theme_support( 'automatic-feed-links' );

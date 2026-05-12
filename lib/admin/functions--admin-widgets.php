@@ -67,11 +67,11 @@ function actDashboardIntro() {
 
 // calling all custom dashboard widgets
 function bones_custom_dashboard_widgets() {
-    wp_add_dashboard_widget( 'act-intro', __( 'Thomas Vaughan Website by AmberCouch', 'act' ), 'actDashboardIntro' );
+    wp_add_dashboard_widget( 'act-intro', __( 'Thomas Vaughan Website by AmberCouch', '_act' ), 'actDashboardIntro' );
 
-    add_meta_box( 'act-video-overview', __( 'Website Video Overview', 'act' ), 'actVideoOverview', 'dashboard', 'side' );
-    add_meta_box( 'act-video-tutorials', __( 'Website Video Tutorials', 'act' ), 'actVideoTutorials', 'dashboard', 'side' );
-    add_meta_box( 'act-short-codes', __( 'Website Short Codes', 'act' ), 'actShortCodeHelp', 'dashboard', 'side' );
+    add_meta_box( 'act-video-overview', __( 'Website Video Overview', '_act' ), 'actVideoOverview', 'dashboard', 'side' );
+    add_meta_box( 'act-video-tutorials', __( 'Website Video Tutorials', '_act' ), 'actVideoTutorials', 'dashboard', 'side' );
+    add_meta_box( 'act-short-codes', __( 'Website Short Codes', '_act' ), 'actShortCodeHelp', 'dashboard', 'side' );
 }
 
 // adding any custom widgets

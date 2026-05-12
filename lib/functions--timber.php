@@ -273,7 +273,7 @@ class StarterSite extends TimberSite {
     function act_excertp_more ($more)
     {
         global $post;
-        return '... <a class="c-post-thumb__link-more" href="' . get_permalink($post->ID) . '">' . __('View Article', 'html5blank') . '</a>';
+        return '... <a class="c-post-thumb__link-more" href="' . get_permalink($post->ID) . '">' . __('View Article', '_act') . '</a>';
     }
 
     function act_add_footer_styles() {

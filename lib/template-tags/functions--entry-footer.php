@@ -20,19 +20,19 @@ if (!function_exists('_act_entry_footer')) :
             $categories_list = get_the_category_list(esc_html__(', ', '_act'));
             if ($categories_list && _s_categorized_blog())
             {
-                printf('<span class="tagged__cat-links">' . esc_html__('Posted in %1$s', '_s') . '</span>', $categories_list); // WPCS: XSS OK.
+                printf('<span class="tagged__cat-links">' . esc_html__('Posted in %1$s', '_act') . '</span>', $categories_list); // WPCS: XSS OK.
             }
             /* translators: used between list items, there is a space after the comma */
             $tags_list = get_the_tag_list('', esc_html__(', ', '_act'));
             if ($tags_list)
             {
-                printf('<span class="tagged__tag-links">' . esc_html__('Tagged %1$s', '_s') . '</span>', $tags_list); // WPCS: XSS OK.
+                printf('<span class="tagged__tag-links">' . esc_html__('Tagged %1$s', '_act') . '</span>', $tags_list); // WPCS: XSS OK.
             }
         }
 //        if (!is_single() && !post_password_required() && (comments_open() || get_comments_number()))
 //        {
 //            echo '<span class="tagged__comment-links">';
-//            comments_popup_link(esc_html__('Leave a comment', '_s'), esc_html__('1 Comment', '_s'), esc_html__('% Comments', '_s'));
+//            comments_popup_link(esc_html__('Leave a comment', '_act'), esc_html__('1 Comment', '_act'), esc_html__('% Comments', '_act'));
 //            echo '</span>';
 //        }
     }
