@@ -34,7 +34,7 @@
         <input name="comment_post_ID" value="{{ post.id }}" type="hidden">
         <input name="comment_parent"  value="{{ comment.ID|default('0') }}" type="hidden">
         <div class="c-contact-form__input-wrapper--submit" >
-        <input class="c-contact-form__input--comment-form-submit c-btn__input--primary" type="submit" name="Post comment" class="btn">
+        <input class="c-contact-form__input--comment-form-submit c-btn--primary" type="submit" value="{{ function('__', 'Submit', '_act') }}" name="Post comment">
         </div>
         <div class="c-contact-form__input-wrapper--comment-cancel" >
         <button class="c-btn--cancel-comment" type="reset">{{ function('__', 'Cancel', '_act') }}</button>

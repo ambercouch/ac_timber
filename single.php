@@ -22,6 +22,12 @@ if (false) { __('Be the first to leave a comment!', '_act'); }
 if (false) { __('Submit a comment', '_act'); }
 if (false) { __('comments for this post are closed', '_act'); }
 if (false) { __('says', '_act'); }
+if (false) { __('Back to blog', '_act'); }
+if (false) { __('Posted on', '_act'); }
+if (false) { __('Posted by', '_act'); }
+if (false) { __('Share', '_act'); }
+if (false) { __('Submit', '_act'); }
+if (false) { __('Edit', '_act'); }
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );

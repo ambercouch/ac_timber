@@ -8,7 +8,7 @@ class Ac_Custom_Loop extends WP_Widget
 
         parent::__construct('ac_custom_loop', // Base ID
             'Custom Loop', // Name
-            array('description' => __('Custom loops', 'ambercouch'),) // Args
+            array('description' => __('Custom loops', '_act'),) // Args
         );
     }
 
@@ -19,21 +19,21 @@ class Ac_Custom_Loop extends WP_Widget
             $title = $instance['title'];
         } else
         {
-            $title = __('New title', 'ambercouch');
+            $title = __('New title', '_act');
         }
         if (isset($instance['post_type']))
         {
             $post_type = $instance['post_type'];
         } else
         {
-            $post_type = __('', 'ambercouch');
+            $post_type = __('', '_act');
         }
         if (isset($instance['show']))
         {
             $show = $instance['show'];
         } else
         {
-            $show = __('1', 'ambercouch');
+            $show = __('1', '_act');
         }
         ?>
         <p>
@@ -107,7 +107,7 @@ class Act_Tax_Link extends WP_Widget
 
         parent::__construct('act_tax_info', // Base ID
             'Term Link', // Name
-            array('description' => __('Displays the content in a taxonomy term.', 'act'),) // Args
+            array('description' => __('Displays the content in a taxonomy term.', '_act'),) // Args
         );
     }
 
@@ -119,7 +119,7 @@ class Act_Tax_Link extends WP_Widget
             $tax_term = $instance['tax_term'];
         } else
         {
-            $tax_term = __('', 'act');
+            $tax_term = __('', '_act');
         }
 
         $terms = get_terms(array(
@@ -199,7 +199,7 @@ class Act_Company_Address extends WP_Widget
 
         parent::__construct('act_company_address', // Base ID
             'Company Address', // Name
-            array('description' => __('Displays company address from the site options.', 'act'),)
+            array('description' => __('Displays company address from the site options.', '_act'),)
         );
     }
 

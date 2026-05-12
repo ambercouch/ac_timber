@@ -17,7 +17,7 @@
   <div class="l-content__before--single">
     <div class="l-content__blog-back">
       <div class="c-btn--blog-back">
-        <a href="{{  fn('get_permalink', fn('get_option','page_for_posts') ) }}" class="c-btn__link--blog-back"><span class="c-btn__label">Back to blog</span></a>
+        <a href="{{  fn('get_permalink', fn('get_option','page_for_posts') ) }}" class="c-btn__link--blog-back"><span class="c-btn__label">{{ function('__', 'Back to blog', '_act') }}</span></a>
       </div>
     </div>
 {#    <div class="l-content__category">#}
