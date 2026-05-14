@@ -7,7 +7,7 @@
 
 {% if disableLink != true %}
   {% set thumbLink = (altLink) ? altLink : postLink  %}
-  {% set thumbLinkLabel = (post.meta('post_thumb_link_label')) ? post.meta('post_thumb_link_label') : 'Read More' %}
+  {% set thumbLinkLabel = (post.meta('service_link_label')) ? post.meta('service_link_label') : function('__', 'Read more', '_act') %}
 {% endif %}
 
 {% set imgObj = (post.meta('service_image')) ? Image(post.meta('service_image'))  : null %}
