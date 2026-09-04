@@ -5,16 +5,20 @@
       <img class="c-site-title__img is-svg-replace" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
     </a>
   </h1>
-  <h2 class="c-site-title__description-heading" >
-    <span class="c-site-title__description-text" >{{ site.description }}</span>
-  </h2>
+  {% if not options.hide_site_description %}
+    <h2 class="c-site-title__description-heading" >
+      <span class="c-site-title__description-text" >{{ site.description }}</span>
+    </h2>
+  {% endif %}
 {% else %}
   <span class="c-site-title--upload c-site-title--page">
     <a class="c-site-title__link" href="{{ site.url }} " rel="home">
        <img class="c-site-title__img is-svg-replace" src=" {{  company_logo.url  }}" alt="{{ site.title }} - {{ site.description }}">
     </a>
   </span>
-  <h2 class="c-site-title__description-heading" >
-    <span class="c-site-title__description-text" >{{ site.description }}</span>
-  </h2>
+  {% if not options.hide_site_description %}
+    <h2 class="c-site-title__description-heading" >
+      <span class="c-site-title__description-text" >{{ site.description }}</span>
+    </h2>
+  {% endif %}
 {% endif %}
