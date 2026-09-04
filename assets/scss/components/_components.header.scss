@@ -168,6 +168,7 @@
   &sidebar{
     @include act-font-size($act-fs-4);
     margin-bottom: $act-unit-s;
+    color: $theme-col-1;
   }
   &main-before{
     @include act-font-size($act-fs-4);
