@@ -29,6 +29,25 @@ if( function_exists('acf_add_local_field_group') ):
                 'allow_null' => 0,
                 'multiple' => 0,
             ),
+            array(
+                'key' => 'field_hide_site_description',
+                'label' => 'Hide Site Description',
+                'name' => 'hide_site_description',
+                'type' => 'true_false',
+                'instructions' => 'Hide the WordPress site description from the masthead.',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'message' => '',
+                'default_value' => 0,
+                'ui' => 1,
+                'ui_on_text' => '',
+                'ui_off_text' => '',
+            ),
         ),
         'location' => array (
             array (
