@@ -50,3 +50,330 @@
     }
   }
 }
+
+/*
+ * Cale & Co.
+ *
+ * The page body is editor-managed, so these rules deliberately enhance the
+ * existing AC Timber and WordPress block classes rather than adding a second
+ * component vocabulary in Twig.
+ */
+.client-code-cch{
+  background: $cch-col-cream;
+  color: $cch-col-green;
+  font-family: $act-font-family-body;
+  font-size: 14px;
+  line-height: 1.65;
+
+  h1,
+  h2,
+  h3,
+  h4{
+    color: $cch-col-green;
+    font-family: $act-font-family-headings;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+  }
+
+  h1{
+    font-size: 48px;
+  }
+
+  h2{
+    font-size: 38px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
+
+  p,
+  li{
+    color: $cch-col-muted;
+  }
+
+  a{
+    color: inherit;
+  }
+
+  .l-site__masthead{
+    background: $cch-col-green;
+    border-bottom: 1px solid rgba($cch-col-gold, 0.2);
+    color: $cch-col-cream;
+  }
+
+  .l-masthead{
+    align-items: center;
+    max-width: $inuit-wrapper-width;
+    min-height: 66px;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
+  }
+
+  .l-masthead__site-title{
+    margin: $act-unit-s 0;
+  }
+
+  .c-site-title__img{
+    display: block;
+    height: 44px;
+    max-width: 116px;
+    object-fit: contain;
+    object-position: left center;
+    width: auto;
+  }
+
+  .c-site-title__description-heading{
+    display: none;
+  }
+
+  .l-masthead__navigation{
+    padding-right: 0;
+  }
+
+  .c-nav-menu__list--primary{
+    align-items: center;
+  }
+
+  .c-nav-menu__link--primary{
+    color: $cch-col-cream;
+    font-size: 11px;
+    font-weight: 600;
+    padding: $act-unit-s;
+    text-decoration: none;
+  }
+
+  .c-nav-menu__item--primary:last-child .c-nav-menu__link--primary{
+    background: $cch-col-gold;
+    color: $cch-col-green;
+    margin-left: $act-unit-s;
+    padding: 11px 16px;
+  }
+
+  .l-site__main,
+  .l-main,
+  .l-main__content--front-page,
+  .l-content,
+  .l-single-page--front-page,
+  .l-single-page__body--front-page{
+    max-width: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .l-single-page__header--front-page{
+    display: none;
+  }
+
+  .l-single-page__body-intro > .wp-block-group,
+  .l-single-page__body-intro > .wp-block-cover{
+    margin: 0;
+    padding: 72px $act-unit;
+  }
+
+  .wp-block-group__inner-container,
+  .wp-block-cover__inner-container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $inuit-wrapper-width;
+    width: 100%;
+  }
+
+  .wp-block-columns{
+    display: flex;
+    gap: $act-unit-l;
+    margin-bottom: 0;
+  }
+
+  .wp-block-column{
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .wp-block-group.has-background,
+  .wp-block-cover{
+    background-color: $cch-col-stone;
+  }
+
+  .wp-block-group.has-background-color,
+  .wp-block-cover.has-background-dim{
+    background-color: $cch-col-green;
+    color: $cch-col-cream;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    li{
+      color: $cch-col-cream;
+    }
+  }
+
+  .has-small-font-size{
+    color: $cch-col-gold;
+    font-size: 11px !important;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    margin-bottom: $act-unit-s;
+    text-transform: uppercase;
+  }
+
+  .wp-block-button__link,
+  .c-btn,
+  .o-btn,
+  input[type="submit"],
+  button{
+    background: $cch-col-green;
+    border: 1px solid $cch-col-green;
+    border-radius: 0;
+    color: $cch-col-cream;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 13px 17px;
+    text-decoration: none;
+  }
+
+  .has-background-color .wp-block-button__link,
+  .wp-block-cover .wp-block-button__link{
+    background: $cch-col-gold;
+    border-color: $cch-col-gold;
+    color: $cch-col-green;
+  }
+
+  .wp-block-button.is-style-outline .wp-block-button__link{
+    background: transparent;
+    border-color: $cch-col-cream;
+    color: $cch-col-cream;
+  }
+
+  .wp-block-separator{
+    border-color: rgba($cch-col-green, 0.18);
+  }
+
+  .wp-block-image img{
+    width: 100%;
+  }
+
+  .wp-block-table table{
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  .wp-block-table td{
+    border-color: rgba($cch-col-green, 0.16);
+    color: $cch-col-green;
+    font-size: 12px;
+    padding: 9px 0;
+  }
+
+  .wp-block-columns .wp-block-column.has-background{
+    border-top: 3px solid $cch-col-green;
+    padding: $act-unit;
+  }
+
+  .wp-block-columns .wp-block-column.has-background h3{
+    margin-bottom: $act-unit-s;
+  }
+
+  .wp-block-columns .wp-block-column.has-background ul{
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .wp-block-columns .wp-block-column.has-background li{
+    border-bottom: 1px solid rgba($cch-col-green, 0.1);
+    font-size: 12px;
+    padding: 6px 0 6px 14px;
+    position: relative;
+  }
+
+  .wp-block-columns .wp-block-column.has-background li:before{
+    color: $cch-col-gold;
+    content: "\2022";
+    left: 0;
+    position: absolute;
+  }
+
+  input:not([type="submit"]),
+  select,
+  textarea{
+    background: #fff;
+    border: 1px solid #d9ddd9;
+    border-radius: 0;
+    color: $cch-col-green;
+    font-family: $act-font-family-body;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  textarea{
+    min-height: 108px;
+  }
+
+  label{
+    color: $cch-col-green;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .l-site__subsidiary,
+  .l-site__footer{
+    background: $cch-col-green;
+    color: $cch-col-cream;
+  }
+
+  .l-footer,
+  .l-footer-before,
+  .l-footer-after{
+    max-width: $inuit-wrapper-width;
+  }
+
+  .c-site-info,
+  .l-site__footer p,
+  .l-site__footer li,
+  .l-site__footer a{
+    color: rgba($cch-col-cream, 0.76);
+    font-size: 10px;
+  }
+
+  @include mq($until: desktop){
+    h1{
+      font-size: 40px;
+    }
+
+    h2{
+      font-size: 32px;
+    }
+
+    .l-single-page__body-intro > .wp-block-group,
+    .l-single-page__body-intro > .wp-block-cover{
+      padding-bottom: $act-unit-h;
+      padding-top: $act-unit-h;
+    }
+
+    .wp-block-columns{
+      gap: $act-unit;
+    }
+  }
+
+  @include mq($until: tablet){
+    .wp-block-columns{
+      display: block;
+    }
+
+    .wp-block-column + .wp-block-column{
+      margin-top: $act-unit;
+    }
+
+    .l-single-page__body-intro > .wp-block-group,
+    .l-single-page__body-intro > .wp-block-cover{
+      padding: $act-unit-l $act-unit;
+    }
+  }
+}

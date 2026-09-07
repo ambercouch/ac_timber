@@ -1,3 +1,28 @@
 /*
  * Client specific settings that override the defaults
  */
+
+// Cale & Co. brand palette. These values are loaded before the theme defaults,
+// so the existing colour, typography and wrapper utilities inherit the client
+// treatment without changing the reusable theme layers.
+$brand-col-1: #c4a34b;
+$brand-col-2: #17372d;
+$brand-col-3: #6e756e;
+$brand-col-4: #17372d;
+$brand-col-5: #243b33;
+$brand-col-6: #102b23;
+$brand-col-7: #f8f5ed;
+
+$act-font-family-body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$act-font-family-headings: Georgia, "Times New Roman", Times, serif;
+
+$inuit-global-font-size: 16px;
+$inuit-global-font-size-mobile: 16px;
+$inuit-wrapper-width: 900px;
+
+$cch-col-green: #102b23;
+$cch-col-green-soft: #17372d;
+$cch-col-gold: #c4a34b;
+$cch-col-cream: #f8f5ed;
+$cch-col-stone: #efede4;
+$cch-col-muted: #657069;
