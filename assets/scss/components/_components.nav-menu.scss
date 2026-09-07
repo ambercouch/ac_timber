@@ -277,9 +277,9 @@
     display: block;
     background: transparent;
     font-weight: 500;
-    color: $col-text;
+    color: $col-link;
     &:hover{
-      :not(.c-btn--primary) {
+      :not(.c-btn--primary, c-nav-menu__link-label--primary) {
         filter:none; /* Lighten the color on hover */
         background: $theme-col-4;
       }
@@ -299,7 +299,6 @@
     .current-menu-item &{
       :not(.c-btn--primary){
         background: transparent;
-        font-weight: 500;
       }
 
       .is-display-overlay &{
