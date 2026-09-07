@@ -75,7 +75,7 @@
   }
   &rounded {
     @extend .o-btn;
-    border-radius: $act-unit;
+    border-radius: $act-unit-t;
   }
   &pill{
     border-radius: 9999px;
