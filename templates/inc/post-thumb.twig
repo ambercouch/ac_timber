@@ -48,13 +48,22 @@
         </div>
       {% endif %}
 
-  {% if  post.meta('service_intro_content') %}
+
   <div class="entry-content c-post-thumb__body{{ modClass }}">
+    {% if  post.meta('service_intro_content') %}
     <div class="c-post-thumb__excerpt">
       {{ post.meta('service_intro_content') }}
     </div>
+    {% endif %}
+    {% if  post.meta('service_content') %}
+      <div class="c-post-thumb__excerpt">
+        {{ post.meta('service_content') }}
+      </div>
+    {% endif %}
+
   </div>
-  {% endif %}
+
+
 
   {% if thumbLink %}
     <div class="c-post-thumb__footer">
