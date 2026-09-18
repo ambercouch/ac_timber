@@ -50,3 +50,367 @@
     }
   }
 }
+
+/*
+ * Cale & Co.
+ *
+ * The homepage content is managed in WordPress, so the rules below retain the
+ * rendered block markup and use AC Timber's existing page, navigation, button
+ * and footer classes as the styling hooks.
+ */
+.client-code-CCH{
+  background: $cch-cream;
+  color: $col-text;
+  font-family: $act-font-family-body;
+  font-size: 16px;
+  line-height: 1.65;
+
+  @include headings(){
+    color: $col-heading;
+    font-family: $act-font-family-headings;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+  }
+
+  h1{
+    font-size: clamp(2.75rem, 5vw, 4.75rem);
+  }
+
+  h2{
+    font-size: clamp(2.25rem, 4vw, 4rem);
+  }
+
+  h3{
+    font-size: clamp(1.35rem, 2vw, 1.75rem);
+  }
+
+  p{
+    margin-bottom: $act-unit;
+  }
+
+  .l-site__masthead,
+  .l-site__footer{
+    background: $cch-green-dark;
+  }
+
+  .l-masthead{
+    align-items: center;
+    min-height: 82px;
+    padding-left: $act-unit;
+    padding-right: $act-unit;
+
+    @include mq($from: desktop){
+      min-height: 104px;
+      padding-left: $act-unit-h;
+      padding-right: $act-unit-h;
+    }
+  }
+
+  .l-masthead__site-title{
+    margin: $act-unit-s 0;
+  }
+
+  .c-site-title{
+    min-height: 0;
+    width: 74px;
+
+    @include mq($from: tablet){
+      width: 92px;
+    }
+  }
+
+  .c-site-title__description-heading{
+    display: none;
+  }
+
+  .l-masthead__navigation{
+    padding-right: 0;
+  }
+
+  .c-nav-menu__link--primary{
+    color: $cch-cream;
+    font-size: 14px;
+    font-weight: 700;
+    padding: $act-unit-s;
+
+    &:hover,
+    &:focus{
+      color: $cch-gold;
+    }
+  }
+
+  .c-nav-menu__item--primary:last-child .c-nav-menu__link--primary{
+    background: $cch-gold;
+    border-radius: 3px;
+    color: $cch-green-dark;
+    margin-left: $act-unit;
+    padding: $act-unit-s $act-unit;
+  }
+
+  .l-main,
+  .l-main__content--front-page,
+  .l-content--page,
+  .l-single-page__body--page{
+    max-width: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  .entry-content{
+    > .l-single-page__body-intro{
+      width: 100%;
+    }
+
+    // WordPress group blocks form the full-width homepage bands.
+    .wp-block-group{
+      margin: 0;
+      padding: $act-unit-h $act-unit;
+
+      @include mq($from: tablet){
+        padding: $act-unit-h * 1.5 $act-unit-l;
+      }
+
+      @include mq($from: desktop){
+        padding: $act-unit-h * 2 $act-unit-h;
+      }
+
+      > .wp-block-group__inner-container{
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1320px;
+      }
+    }
+
+    .wp-block-group:first-child{
+      background: $cch-green-dark;
+      color: $cch-cream;
+      min-height: 420px;
+      padding-bottom: $act-unit-h;
+      padding-top: $act-unit-h;
+
+      @include headings(){
+        color: $cch-cream;
+      }
+
+      @include mq($from: desktop){
+        min-height: 620px;
+        padding-top: $act-unit-h * 1.5;
+      }
+    }
+
+    .wp-block-group:nth-child(2),
+    .wp-block-group:nth-child(5){
+      background: $cch-cream;
+    }
+
+    .wp-block-group:nth-child(3){
+      background: $cch-stone;
+    }
+
+    .wp-block-group:nth-child(4){
+      background: $cch-green;
+      color: $cch-cream;
+
+      @include headings(){
+        color: $cch-cream;
+      }
+    }
+
+    .wp-block-columns{
+      display: flex;
+      gap: $act-unit;
+      margin-bottom: 0;
+
+      @include mq($until: tablet){
+        display: block;
+      }
+    }
+
+    .wp-block-column{
+      flex: 1 1 0;
+
+      @include mq($until: tablet){
+        margin-bottom: $act-unit;
+        margin-left: 0 !important;
+      }
+    }
+
+    // Service cards use the editor columns already present in the supplied page.
+    .wp-block-group:nth-child(3) .wp-block-column{
+      background: $cch-cream;
+      box-shadow: 0 12px 28px rgba($cch-green-dark, 0.06);
+      overflow: hidden;
+
+      > *:not(figure){
+        margin-left: $act-unit;
+        margin-right: $act-unit;
+      }
+
+      figure{
+        background: $cch-muted;
+        border-top: 4px solid $cch-green;
+        margin: 0 0 $act-unit;
+      }
+
+      img{
+        display: block;
+        width: 100%;
+      }
+
+      ul{
+        list-style: none;
+        margin: 0 $act-unit $act-unit;
+        padding: 0;
+      }
+
+      li{
+        border-top: 1px solid $cch-rule;
+        padding: $act-unit-t 0 $act-unit-t $act-unit-s;
+        position: relative;
+
+        &:before{
+          color: $cch-gold;
+          content: "◆";
+          font-size: 7px;
+          left: 0;
+          position: absolute;
+          top: 13px;
+        }
+      }
+    }
+
+    // The reasons row is intentionally a single bordered strip on desktop.
+    .wp-block-group:nth-child(4) .wp-block-columns{
+      border: 1px solid rgba($cch-gold, 0.35);
+      gap: 0;
+    }
+
+    .wp-block-group:nth-child(4) .wp-block-column{
+      padding: $act-unit;
+
+      + .wp-block-column{
+        border-left: 1px solid rgba($cch-gold, 0.35);
+      }
+
+      @include mq($until: tablet){
+        border-bottom: 1px solid rgba($cch-gold, 0.35);
+        margin-bottom: 0;
+
+        + .wp-block-column{
+          border-left: 0;
+        }
+      }
+    }
+
+    .wp-block-group:nth-child(4) h3{
+      color: $cch-gold;
+    }
+
+    .wp-block-button__link,
+    .c-btn__link,
+    input[type="submit"]{
+      background: $cch-green-dark;
+      border: 1px solid $cch-green-dark;
+      border-radius: 3px;
+      color: $cch-cream;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      padding: $act-unit-s $act-unit;
+      text-decoration: none;
+    }
+
+    .wp-block-group:first-child .wp-block-button:first-child .wp-block-button__link{
+      background: $cch-gold;
+      border-color: $cch-gold;
+      color: $cch-green-dark;
+    }
+
+    .wp-block-group:first-child .wp-block-button:not(:first-child) .wp-block-button__link{
+      background: transparent;
+      border-color: rgba($cch-cream, 0.5);
+    }
+  }
+
+  .wpcf7,
+  .gform_wrapper{
+    input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+    select,
+    textarea{
+      background: #fff;
+      border: 1px solid rgba($cch-green-dark, 0.22);
+      border-radius: 0;
+      padding: $act-unit-s;
+      width: 100%;
+    }
+
+    label{
+      color: $cch-green-dark;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    input[type="submit"]{
+      width: 100%;
+    }
+  }
+
+  .l-site__footer{
+    color: $cch-cream;
+    padding: $act-unit-l $act-unit;
+
+    a{
+      color: $cch-cream;
+    }
+  }
+
+  .l-footer,
+  .l-footer__site-info,
+  .footer__site-info{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1320px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .c-site-info{
+    border-top: 1px solid rgba($cch-cream, 0.14);
+    padding-top: $act-unit;
+  }
+
+  @include mq($until: tablet){
+    font-size: 15px;
+
+    .entry-content .wp-block-group{
+      padding: $act-unit-l $act-unit;
+    }
+
+    .entry-content .wp-block-group:first-child{
+      min-height: 0;
+      padding-bottom: $act-unit-l;
+      padding-top: $act-unit-l;
+    }
+
+    .entry-content .wp-block-buttons{
+      align-items: stretch;
+      display: flex;
+      gap: $act-unit-s;
+    }
+
+    .entry-content .wp-block-button{
+      flex: 1 1 auto;
+    }
+
+    .entry-content .wp-block-button__link{
+      text-align: center;
+      width: 100%;
+    }
+
+    .l-site__footer{
+      padding: $act-unit-l $act-unit;
+    }
+  }
+}

@@ -1,3 +1,34 @@
 /*
  * Client specific settings that override the defaults
  */
+
+// Cale & Co. brand palette. These are loaded before the theme defaults so the
+// existing colour utilities, buttons, masthead and footer inherit the client
+// identity without changing the reusable theme layers.
+$brand-col-1: #d6b85f;
+$brand-col-2: #d6b85f;
+$brand-col-3: #17372d;
+$brand-col-4: #17372d;
+$brand-col-5: #102a22;
+$brand-col-6: #102a22;
+$brand-col-7: #f8f5ed;
+
+$col-dark: #102a22;
+$col-light: #f8f5ed;
+$col-accent: #d6b85f;
+$col-text: #35453f;
+$col-heading: #172c25;
+$col-link: #17372d;
+$body-col: #f8f5ed;
+
+$act-font-family-body: Arial, "Helvetica Neue", Helvetica, sans-serif;
+$act-font-family-headings: Georgia, "Times New Roman", serif;
+
+// Values used only by the scoped CCH rules in _client-styles.scss.
+$cch-green: #17372d;
+$cch-green-dark: #102a22;
+$cch-gold: #d6b85f;
+$cch-cream: #f8f5ed;
+$cch-stone: #eeece2;
+$cch-muted: #dfe3dc;
+$cch-rule: rgba($cch-green, 0.18);
