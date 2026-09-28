@@ -144,7 +144,17 @@
     width: 100%;
   }
 
-  .l-single-page__body--page { padding: 0; }
+  .l-main--front-page{
+    padding-top:0;
+  }
+
+  .l-site__main{
+  padding-top: 0;
+  }
+
+  .l-single-page__body--page {
+    padding: 0;
+  }
 
   .section {
     margin: 0;
