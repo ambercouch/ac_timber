@@ -2,7 +2,7 @@
  * Created by Richard on 19/09/2016.
  */
 
-console.log('ACTIMBER state');
+console.log('ACTIMBER state 123');
 ACTIMBER = {
     common: {
         init: function () {
@@ -490,21 +490,28 @@ ACTIMBER = {
             });
         },
         actMastheadPadding: function() {
-            // Select the elements
-            const masthead = document.querySelector('#masthead');
-            const primary = document.querySelector('#primary.has-masthead-sticky,#primary.has-masthead-smart');
 
-            // Function to set padding-top
+            const masthead = document.querySelector('#masthead');
+            const primary = document.querySelector('#primary.has-masthead-sticky, #primary.has-masthead-smart');
+            const siteHero = document.querySelector('#siteHero.has-masthead-sticky, #siteHero.has-masthead-smart');
+
             function adjustPadding() {
-                if (!masthead || !primary) return; // escape if either doesn't exist
-                const mastheadHeight = masthead.offsetHeight; // Get the height of the masthead
-                primary.style.paddingTop = `${mastheadHeight}px`; // Set it as padding-top
+
+                if (!masthead || !primary) return;
+
+
+                // The site hero handles the masthead offset when present.
+                if (siteHero) {
+
+                    siteHero.style.paddingTop = `${masthead.offsetHeight}px`;
+                    return;
+                }
+
+                primary.style.paddingTop = `${masthead.offsetHeight}px`;
             }
 
-            // Run on page load
             adjustPadding();
 
-            // Adjust on window resize
             window.addEventListener('resize', adjustPadding);
         },
         actAlignNav: function(){

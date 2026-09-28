@@ -125,7 +125,7 @@
     or pageSettingsShowSiteHero == true
     or (fn('is_front_page') and pageSettingsHideSiteHero != true )
     %}
-    <section id="siteHero" class="l-site__hero">
+    <section id="siteHero" class="l-site__hero has-masthead-{{ options.masthead_style | default('static') }}">
       {% include 'inc/hero.twig' ignore missing %}
     </section>
     {% endif %}
