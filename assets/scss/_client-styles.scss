@@ -74,12 +74,12 @@
   }
 
   .c-hero {
-    background: $cale-green-dark;
+    background: $cale-green;
     height: 250px !important;
     min-height: 250px !important;
   }
 
-  .c-hero__image:before { background: $cale-green-dark !important; }
+  .c-hero__image:before { background: $cale-green !important; }
 
   .c-hero__body--page { padding: 0; }
 
@@ -90,6 +90,7 @@
   }
 
   .c-hero__content > .c-hero__container {
+    align-items: flex-start;
     display: grid;
     grid-template-columns: 55% 45%;
     margin: 0 auto;
@@ -102,13 +103,20 @@
 
   .c-hero__cta { margin-bottom: $act-unit-l; }
 
-  .c-cta--hero { display: flex; gap: $act-unit-s; }
+  .c-cta--hero {
+    align-items: stretch;
+    display: flex;
+    gap: $act-unit-s;
+  }
+
+  .c-cta--hero br { display: none; }
 
   .c-cta--hero [class*="c-btn__link--"] {
     border: 1px solid rgba(#fff, .35);
     border-radius: 2px;
     font-size: 15px;
     font-weight: 700;
+    line-height: 1.4;
     min-width: 190px;
     padding: 11px 22px;
     text-decoration: none;
@@ -119,6 +127,8 @@
     border-color: $cale-gold;
     color: $cale-green-dark;
   }
+
+  .c-cta--hero .c-btn__link--alt { color: #fff; }
 
   .c-list__ulist--trust-list {
     display: flex;
@@ -139,8 +149,9 @@
   .hero__media {
     background: rgba(#fff, .08);
     border-bottom: 30px solid rgba(#fff, .035);
-    height: 140px;
+    height: 116px;
     margin-left: auto;
+    margin-top: -32px;
     width: 100%;
   }
 
@@ -217,10 +228,13 @@
   .l-post-thumb-list__list--service { gap: 30px; }
 
   .l-post-thumb-list__item--service {
-    flex-basis: calc((100% - 60px) / 3);
+    flex: 0 1 calc((100% - 60px) / 3);
+    max-width: calc((100% - 60px) / 3);
+    min-width: 0;
     margin: 0;
     padding: 0;
     text-align: left;
+    width: calc((100% - 60px) / 3);
   }
 
   .c-post-thumb--service {
@@ -357,7 +371,11 @@
     .about__callout { margin: 28px 0 72px; padding: 28px; }
     .services .section__head { margin-bottom: 36px; }
     .l-post-thumb-list__list--service { display: block; }
-    .l-post-thumb-list__item--service { margin-bottom: 22px; width: 100%; }
+    .l-post-thumb-list__item--service {
+      margin-bottom: 22px;
+      max-width: none;
+      width: 100%;
+    }
     .c-feature-image--service { height: 205px; }
     .c-post-thumb__content { padding: 24px 26px 28px; }
     .c-header__heading--service { font-size: 25px; }
