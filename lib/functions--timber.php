@@ -57,15 +57,17 @@ class StarterSite extends TimberSite {
         add_action( 'wp_footer',  array( $this, 'act_add_footer_styles' )  );
 
 
-        // Register all the menu locations.
-        foreach (unserialize(ACT_MENUS) as $menu)
-        {
-            register_nav_menus(array(
-                strtolower($menu) => esc_html__(ucfirst($menu), '_act'),
-            ));
-        }
+        add_action( 'after_setup_theme', array( $this, 'register_menus' ), 20 );
 
         parent::__construct();
+    }
+
+    function register_menus() {
+        foreach ( unserialize( ACT_MENUS ) as $menu ) {
+            register_nav_menus( array(
+                strtolower( $menu ) => esc_html__( ucfirst( $menu ), '_act' ),
+            ) );
+        }
     }
 
     function register_post_types() {
