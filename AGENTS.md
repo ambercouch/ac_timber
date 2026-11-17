@@ -21,7 +21,8 @@
 ## Theme source and build workflow
 
 - Active standalone theme: `web/wp-content/themes/ac_timber`; repository: `https://github.com/ambercouch/ac_timber.git`, base branch `master-BTL`.
-- The theme uses Timber 1.x PHP/Twig and ACF. Preserve its current ACF integration; dependency removal is separate work.
+- The theme requires Timber 1.x PHP/Twig and the standalone Advanced Custom Fields PRO plugin (validated with ACF Pro 6.5.0). Keep ACF Pro installed and active locally, on staging and in production.
+- Field definitions and options pages remain in `lib/acf/`. Do not embed another ACF copy or override its filesystem/asset paths; ACF PHP and assets must resolve to `wp-content/plugins/advanced-custom-fields-pro/`. The embedded `lib/acfp/` library has been removed.
 - Edit theme PHP controllers, `page-templates/`, `templates/`, `lib/`, `assets/scss/`, `assets/js/ac_timber.js` and source images for the relevant change. `assets/css/ac-admin.css` is used directly.
 - Use the tracked `gulpfile.js`, not historical/example Gulp files. Load NVM before Node commands.
 - Legacy build runtime: Node **10.24.1**, npm **6.14.12**. The theme `.nvmrc` selects Node 10.24.1. DDEV Node 24 is not the theme build runtime.
