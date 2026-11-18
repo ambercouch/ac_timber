@@ -1,0 +1,21 @@
+{
+  "url": "https://dev.businesstranslated.com",
+  "ssh_alias": "btl-development",
+  "wp_root": "/REPLACE/verified/application/public_html",
+  "theme_dir": "/REPLACE/verified/application/public_html/wp-content/themes/ac_timber",
+  "git_dir": "/REPLACE/verified/cloudways/git/worktree",
+  "backup_root": "/REPLACE/verified/application/private_html/btl-releases",
+  "cloudways_git_hook": [
+    "/REPLACE/local/private/bin/btl-cloudways-git"
+  ],
+  "purge_hook": [
+    "/REPLACE/local/private/bin/btl-purge-development"
+  ],
+  "validate_hook": [
+    "/REPLACE/local/private/bin/btl-validate-development"
+  ],
+  "ssh_app_root": "/REPLACE/verified/application",
+  "sftp_theme_dir": "/public_html/wp-content/themes/ac_timber",
+  "sftp_backup_root": "/private_html/btl-releases",
+  "cloudflare_verification_file": null
+}
