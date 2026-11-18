@@ -93,6 +93,14 @@ require_once get_template_directory() . '/lib/functions--walkers.php';
 //// Attach callback to 'tiny_mce_before_init'
 //add_filter( 'tiny_mce_before_init', 'my_custom_styles' );
 
+function act_enqueue_main_stylesheet() {
+    $stylesheet = get_stylesheet_directory() . '/style.css';
+    $version = is_readable( $stylesheet ) ? hash_file( 'sha256', $stylesheet ) : null;
+
+    wp_enqueue_style( 'ac-style', get_stylesheet_directory_uri() . '/style.css', array(), $version ?: null );
+}
+add_action( 'wp_enqueue_scripts', 'act_enqueue_main_stylesheet' );
+
 function my_admin_theme_style() {
     wp_enqueue_style('ac-admin-theme', get_stylesheet_directory_uri().'/assets/css/ac-admin.css');
 }

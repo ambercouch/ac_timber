@@ -46,7 +46,7 @@
   position: absolute;
   width: 50%;
   height: 2px;
-  background-color: $brand-col-1;
+  background-color: $col-dark;
   .c-burger__btn[data-state=on] &{
     background-color: $brand-col-1;
   }
