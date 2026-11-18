@@ -4,6 +4,7 @@ import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import os from 'node:os';
+import { requestFingerprint, diagnosticUrl, classifyCookieControlDiagnostics, unexpectedDiagnostics } from './validation-baseline.mjs';
 const baseline = process.argv.includes('--baseline');
 const [url, outputDir, manifestPath] = process.argv.slice(2).filter(a => a !== '--baseline');
 if (url !== 'https://dev.businesstranslated.com' || !outputDir) throw Error('Usage: node validate.mjs https://dev.businesstranslated.com <output-dir> [manifest.json]');
@@ -22,10 +23,17 @@ try {
     page.setDefaultTimeout(10000);
     const report = {width,height,console:[],jsErrors:[],failedRequests:[],httpErrors:[],failures:[]};
     const check = (ok, message) => { if (!ok) report.failures.push(message); };
-    page.on('console', m => { if (['warning','error'].includes(m.type())) report.console.push(m.text()); });
+    page.on('console', m => {
+      if (['warning','error'].includes(m.type())) {
+        const location = m.location();
+        report.console.push({type:m.type(), text:m.text(), url:diagnosticUrl(location.url),
+          requestFingerprint:requestFingerprint(location.url), line:location.lineNumber, column:location.columnNumber});
+      }
+    });
     page.on('pageerror', e => report.jsErrors.push(String(e)));
     page.on('requestfailed', r => report.failedRequests.push({url:r.url().split('?')[0], error:r.failure()?.errorText}));
-    page.on('response', r => { if (r.status() >= 400) report.httpErrors.push({status:r.status(),url:r.url().split('?')[0]}); });
+    page.on('response', r => { if (r.status() >= 400) report.httpErrors.push({status:r.status(),
+      url:diagnosticUrl(r.url()), requestFingerprint:requestFingerprint(r.url()), resourceType:r.request().resourceType()}); });
     try {
       report.status = (await page.goto(url, {waitUntil:'networkidle',timeout:60000})).status();
       check(report.status === 200, 'Document must return HTTP 200');
@@ -68,8 +76,9 @@ try {
       }
     } catch(e) { report.failures.push(String(e)); }
     check(!report.jsErrors.length, 'Uncaught JavaScript errors');
-    check(!report.console.length, 'Console warnings/errors require review');
-    check(!report.httpErrors.length, 'HTTP errors require review');
+    Object.assign(report, classifyCookieControlDiagnostics(report.httpErrors, report.console));
+    check(!unexpectedDiagnostics(report.console), 'Unexpected console warnings/errors require review');
+    check(!unexpectedDiagnostics(report.httpErrors), 'Unexpected HTTP errors require review');
     report.baselineRequests = report.failedRequests.filter(r => (r.url === 'https://widgetlogic.org/v2/js/data.js' && r.error === 'net::ERR_BLOCKED_BY_ORB') || (/^https:\/\/(region1\.)?google-analytics.com\/g\/collect$/.test(r.url) && r.error === 'net::ERR_ABORTED'));
     check(report.failedRequests.length === report.baselineRequests.length, 'Unexpected failed requests');
     reports.push(report);
