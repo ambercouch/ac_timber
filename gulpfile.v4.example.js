@@ -92,7 +92,7 @@ function styles() {
     return gulp.src('assets/scss/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass().on('error',sass.logError))
-        .pipe(postcss([ autoprefixer(), cssnano() ]))
+        .pipe(postcss([ autoprefixer(), cssnano({ convertValues: false }) ]))
         .pipe(concat('style.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('.'))
