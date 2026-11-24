@@ -6,7 +6,7 @@
     <!-- beforehead block -->
   {% endblock %}
 
-  <title>{{ site.title  }} | {{ site.description }}</title>
+  <title>{% block document_title %}{{ site.title  }} | {{ site.description }}{% endblock %}</title>
   <meta name="description" content="{{ options.site_description | default(site.description) }}">
   <meta charset="{{ site.charset }}">
   <meta http-equiv="x-ua-compatible" content="ie=edge">

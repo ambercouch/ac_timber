@@ -1,0 +1,15 @@
+<article class="c-insights-card c-post-thumb--blog-list {{ featured ? 'c-insights-card--featured' : '' }}" data-insights-type="{{ item.type }}" data-insights-key="{{ item.key }}">
+  {% if featured %}
+    <div class="c-insights-card__visual" aria-hidden="true">
+      {% if item.image %}<img src="{{ item.image|e('html_attr') }}" alt="" loading="lazy">{% else %}<span>{{ insights_types[item.type] }}</span>{% endif %}
+    </div>
+  {% endif %}
+  <div class="c-insights-card__content">
+    <p class="c-insights-card__meta">{{ insights_types[item.type] }}{% if item.date %} · <time datetime="{{ item.date }}">{{ item.date|date('j M Y') }}</time>{% endif %}</p>
+    <h3>{% if item.url %}<a href="{{ item.url|e('html_attr') }}" {% if item.language %}hreflang="{{ item.language|e('html_attr') }}"{% endif %}>{{ item.title|e }}</a>{% else %}{{ item.title|e }}{% endif %}</h3>
+    <p>{{ item.summary|e }}</p>
+    {% if item.sample %}<p class="c-insights-card__availability">{{ __('Sample', '_act') }}</p>
+    {% elseif item.slug %}<p class="c-insights-card__availability">{{ item.language_label }}</p>
+    {% elseif item.file %}<p class="c-insights-card__availability">{{ __('English PDF', '_act') }}</p>{% endif %}
+  </div>
+</article>

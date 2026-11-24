@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+{% block document_title %}{{ post.title|e }} | {{ site.title|e }}{% endblock %}
+{% block hero %}{% endblock %}
+{% block content %}
+<div class="c-insights" data-insights>
+  <header class="c-insights__intro">
+    {% if insights_eyebrow %}<p class="c-insights__eyebrow">{{ insights_eyebrow|e }}</p>{% endif %}
+    <h1>{{ post.title|e }}</h1>
+    {% if insights_introduction %}<p>{{ insights_introduction|e|nl2br }}</p>{% endif %}
+  </header>
+  <section aria-labelledby="insights-featured-title">
+    <h2 id="insights-featured-title">{{ __('Featured', '_act') }}</h2>
+    <div class="c-insights__featured">
+      {% for item in insights_featured %}
+        {% include 'inc/insights-card.twig' with {featured: true} %}
+      {% endfor %}
+    </div>
+  </section>
+  <section class="c-insights__browse" aria-labelledby="insights-browse-title">
+    <h2 id="insights-browse-title">{{ __('Explore all insights', '_act') }}</h2>
+    <div class="c-insights__filters c-nav-menu--categories" role="group" aria-label="{{ __('Filter content by type', '_act') }}" hidden>
+      <ul class="c-nav-menu__list--categories">
+      {% for key, label in insights_types %}
+        <li class="c-nav-menu__item--categories {{ key == 'all' ? 'current-menu-item' : '' }}"><button class="c-nav-menu__link--categories" type="button" data-insights-filter="{{ key }}" aria-pressed="{{ key == 'all' ? 'true' : 'false' }}" aria-controls="insights-results">{{ label }}</button></li>
+      {% endfor %}
+      </ul>
+    </div>
+    <p class="screen-reader-text c-insights__status" role="status" aria-live="polite" data-insights-status data-result-label="{{ __('items shown', '_act') }}"></p>
+    <div id="insights-results" class="c-insights__list l-post-thumb-list">
+      {% for item in insights_items %}
+        {% include 'inc/insights-list-card.twig' %}
+      {% endfor %}
+    </div>
+  </section>
+</div>
+{% endblock %}
+{% block after_content %}{% endblock %}

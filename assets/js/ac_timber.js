@@ -541,3 +541,28 @@ UTIL = {
     }
 };
 jQuery(window).load(UTIL.init);
+
+// Progressive enhancement: all catalogue items remain visible without JavaScript.
+jQuery(function () {
+    document.querySelectorAll('[data-insights]').forEach(function (hub) {
+        var controls = hub.querySelector('.c-insights__filters');
+        var cards = hub.querySelectorAll('.c-insights__list [data-insights-type]');
+        var status = hub.querySelector('[data-insights-status]');
+        controls.hidden = false;
+        controls.querySelectorAll('button').forEach(function (button) {
+            button.addEventListener('click', function () {
+                var type = button.getAttribute('data-insights-filter');
+                var count = 0;
+                cards.forEach(function (card) {
+                    card.hidden = type !== 'all' && card.getAttribute('data-insights-type') !== type;
+                    if (!card.hidden) { count++; }
+                });
+                controls.querySelectorAll('button').forEach(function (control) {
+                    control.setAttribute('aria-pressed', control === button ? 'true' : 'false');
+                    control.parentElement.classList.toggle('current-menu-item', control === button);
+                });
+                status.textContent = button.textContent + ': ' + count + ' ' + status.getAttribute('data-result-label');
+            });
+        });
+    });
+});

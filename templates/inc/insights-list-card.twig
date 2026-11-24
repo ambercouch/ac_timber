@@ -1,0 +1,20 @@
+<article class="c-insights-list-card c-post-thumb--blog-list {{ not item.image ? 'c-insights-list-card--text' : '' }}" data-insights-type="{{ item.type }}" data-insights-key="{{ item.key }}">
+  {% if item.image %}
+    <div class="c-post-thumb__feature-image--blog-list">
+      <div class="c-feature-image--post-thumb"><img class="c-feature-image__img" src="{{ item.image|e('html_attr') }}" alt="" loading="lazy"></div>
+    </div>
+  {% endif %}
+  <div class="c-post-thumb__header">
+    <header class="entry-header c-header--post-thumb">
+      <h3 class="entry-title c-header--heading--post-thumb"><span class="c-header__title">
+        {% if item.url %}<a class="c-header__title-link--post-thumb" href="{{ item.url|e('html_attr') }}">{{ item.title|e }}</a>{% else %}{{ item.title|e }}{% endif %}
+      </span></h3>
+      <p class="entry-meta c-header__post-meta--post-thumb">{{ insights_types[item.type] }}{% if item.date %} · <time datetime="{{ item.date }}">{{ item.date|date('j M Y') }}</time>{% endif %}{% if item.sample %} · {{ __('Sample', '_act') }}{% endif %}</p>
+    </header>
+  </div>
+  <div class="entry-content c-post-thumb__body">
+    <div class="c-post-thumb__excerpt"><p>{{ item.summary|e }}</p></div>
+    {% if item.url %}<a href="{{ item.url|e('html_attr') }}" class="c-post-thumb__read-more">{{ item.file ? __('Download PDF', '_act') : __('Read More', '_act') }}</a>{% endif %}
+  </div>
+  <footer class="c-post-thumb__footer"></footer>
+</article>

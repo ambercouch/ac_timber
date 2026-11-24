@@ -185,3 +185,4 @@ add_filter('acf/settings/current_language', function() {
 add_action('wp_head', function () {
     echo '<meta name="google" content="notranslate">';
 });
+require_once get_template_directory() . '/lib/functions--insights.php';
