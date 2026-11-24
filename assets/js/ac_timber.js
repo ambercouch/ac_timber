@@ -24,7 +24,9 @@ ACTIMBER = {
 
 
             $('[data-control]:not([data-control-radio])').not(function () {
-                return $(this).closest('.l-masthead__navigation').length;
+                // Twig submenu controls still use the generic state toggle.
+                return $(this).closest('.l-masthead__navigation').length &&
+                    !$(this).is('a[class*="c-nav-menu__link--"][data-control$="_submenu"]');
             }).each(function() {
                 console.log("data cons")
 
