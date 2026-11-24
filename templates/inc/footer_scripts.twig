@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="https://use.typekit.net/{{ typeKitId }}.css">
 
-<script src="{{site.theme.link}}/dist/js/main.js?v=20160315"></script>
+<script src="{{site.theme.link}}/dist/js/main.js?v={{ fn('filemtime', fn('get_template_directory') ~ '/dist/js/main.js') }}"></script>
 
 <script>
 
